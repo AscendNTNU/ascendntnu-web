@@ -1,0 +1,39 @@
+{
+  "name": "ascendntnu-web",
+  "version": "0.0.0",
+  "description": "AscendNTNU website",
+  "main": "app/index.tsx",
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack -w",
+    "dev": "webpack-dev-server --inline --hot"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/AscendNTNU/ascendntnu-web.git"
+  },
+  "keywords": [
+    "ascendntnu",
+    "webpage",
+    "drone",
+    "education"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AscendNTNU/ascendntnu-web/issues"
+  },
+  "devDependencies": {
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.1",
+    "typescript": "^2.0.3",
+    "typings": "^1.4.0",
+    "ts-loader": "^0.8.2",
+    "source-map-loader": "^0.1.5"
+  },
+  "dependencies": {
+    "express": "~4.14.0",
+    "react-dom": "~15.3.2",
+    "react": "~15.3.2"
+  }
+}
