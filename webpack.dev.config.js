@@ -20,14 +20,16 @@ module.exports = {
     loaders: [
       {
         test: /\.tsx?$/,
-        exclude: /node_modules/,
-        loader: "ts-loader"
-      }
-    ],
-    preLoaders: [
+        loader: 'babel',
+        exclude: path.join(__dirname, 'node_modules')
+      },
       {
-        test: /\.js$/,
-        loader: "source-map-loader"
+        test: /\.png$/,
+        loader: 'file'
+      },
+      {
+        test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+        loader: 'file'
       }
     ]
   },
