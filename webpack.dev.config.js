@@ -20,7 +20,7 @@ module.exports = {
     loaders: [
       {
         test: /\.tsx?$/,
-        loader: 'babel',
+        loader: 'ts-loader',
         exclude: path.join(__dirname, 'node_modules')
       },
       {
