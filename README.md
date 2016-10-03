@@ -38,4 +38,8 @@ $ make dev # Running the dev environment.
 
 ```bash
 $ npm install --production
+$ typings install --global --save dt~react
+$ typings install --global --save dt~react-dom
+$ npm install -g typescript typings webpack
+$ npm link typescript
 ```
