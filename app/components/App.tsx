@@ -7,7 +7,7 @@ export class App extends React.Component<AppProps, {}> {
     return (
       <div>
         <img src="images/logo-ascend-below.svg" />
-        <pre>Welcome to AscendNTNU.</pre>
+        <pre>Welcome to AscendNTNU!</pre>
       </div>
     )
   }
