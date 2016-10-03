@@ -28,8 +28,8 @@ body {
 }
 
 .content {
-    display: flex;
     flex: 1;
+    display: flex;
     align-items: center;
     padding-bottom: 6em;
 }
