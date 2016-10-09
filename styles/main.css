@@ -30,7 +30,8 @@ body {
     flex: 1;
     display: flex;
     align-items: center;
-    padding: 6em 0;
+    flex-direction: column;
+    width: 100%;
 }
 
 .logo-title {
@@ -72,4 +73,51 @@ body {
 
 .foot-content {
     margin: auto;
+}
+
+.page {
+    width: 100%;
+    flex: 1;
+    display: flex;
+}
+
+.front-splash {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    flex: 1;
+    min-height: 100vh;
+}
+
+.front-splash-left {
+    flex: 1;
+    background-color: #333;
+    color: #fff;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.front-splash-left:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 100%;
+    box-sizing: border-box;
+    border-right: 30vh solid transparent;
+    border-bottom: 100vh solid #333;
+}
+
+.front-splash-center {
+    position: absolute;
+}
+
+.front-splash-right {
+    flex: 1;
+    background-image: url("/images/drones/drone2.jpg");
+    background-attachment: fixed;
 }
