@@ -20,6 +20,8 @@ Using `npm`:
 
 ```bash
 $ npm install # Installing dependencies.
+$ typings install --global --save dt~react
+$ typings install --global --save dt~react-dom
 $ npm run build # Building the application.
 $ npm run watch # Build + watch for changes / Rebuild on change.
 $ npm run dev # Running the dev environment.
