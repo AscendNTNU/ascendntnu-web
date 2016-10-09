@@ -1,19 +1,18 @@
-@import 'https://fonts.googleapis.com/css?family=Open+Sans';
+@import 'https://fonts.googleapis.com/css?family=Open+Sans|Questrial|Roboto+Slab';
 
 body {
     font-family: 'Open Sans', sans-serif;
     min-height: 100vh;
     margin: 0;
     background-color: #eee;
-    background-image: radial-gradient(#fff, #ddd, #aaa, #666);
-    background-size: 100vh 100vh;
-    background-position: center;
 }
 
-@media (min-aspect-ratio: 1/1) {
-    body {
-        background-size: 100vw 100vw;
-    }
+.logo-font {
+    font-family: 'Questrial', sans-serif;
+}
+
+.logo-text-font {
+    font-family: 'Roboto Slab', serif;
 }
 
 .app,
@@ -31,10 +30,46 @@ body {
     flex: 1;
     display: flex;
     align-items: center;
-    padding-bottom: 6em;
+    padding: 6em 0;
 }
 
 .logo-title {
     margin: 10px 0;
     font-size: 2em;
+}
+
+.head, .foot {
+    width: 100%;
+}
+
+.head {
+    min-height: 64px;
+    box-sizing: border-box;
+    background-color: #fff;
+    padding: 0 16px;
+    position: relative;
+}
+
+.head:after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    /*border-top: 1px solid #999;*/
+    background-image: linear-gradient(0deg, transparent, rgba(0, 0, 0, .1));
+    height: 5px;
+}
+
+.foot {
+    background-color: #ddd;
+    color: #666;
+    flex: 0 0 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.foot-content {
+    margin: auto;
 }
