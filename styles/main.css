@@ -245,6 +245,16 @@ a {
     }
 }
 
+@media (max-width: 560px) and (min-height: 960px) {
+    .front-splash {
+        min-height: 896px;
+    }
+
+    .front-splash-left > p {
+        min-height: 340px;
+    }
+}
+
 @media (max-width: 560px) and (min-aspect-ratio: 1 / 1) {
     .front-splash-right:after,
     .front-splash-right {
