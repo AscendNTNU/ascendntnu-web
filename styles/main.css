@@ -7,7 +7,12 @@ body {
     background-color: #eee;
 }
 
-.logo-font {
+a {
+    color: #81D4FA;
+    text-decoration: none;
+}
+
+.logo-font, .logo-title {
     font-family: 'Questrial', sans-serif;
 }
 
@@ -35,8 +40,23 @@ body {
 }
 
 .logo-title {
-    margin: 10px 0;
     font-size: 2em;
+    color: #c49a6c;
+    display: flex;
+}
+
+.logo-title .logo-img {
+    height: 36px;
+}
+
+.logo-title-text {
+    margin-left: 8px;
+    letter-spacing: -.05em;
+}
+
+.logo-title-e {
+    transform: rotate(-10deg);
+    display: inline-block;
 }
 
 .head, .foot {
@@ -45,10 +65,13 @@ body {
 
 .head {
     min-height: 64px;
+    display: flex;
+    align-items: center;
     box-sizing: border-box;
     background-color: #fff;
     padding: 0 16px;
     position: relative;
+    z-index: 1;
 }
 
 .head:after {
@@ -60,6 +83,7 @@ body {
     /*border-top: 1px solid #999;*/
     background-image: linear-gradient(0deg, transparent, rgba(0, 0, 0, .1));
     height: 5px;
+    z-index: 1;
 }
 
 .foot {
@@ -86,18 +110,27 @@ body {
     position: relative;
     flex-direction: row;
     flex: 1;
-    min-height: 100vh;
+    min-height: calc(100vh - 64px);
 }
 
 .front-splash-left {
     flex: 1;
-    background-color: #333;
+    background-color: #231F20;
     color: #fff;
     min-height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     position: relative;
+    box-sizing: border-box;
+}
+
+.front-splash-left > p {
+    padding: 16px 80px 64px 16px;
+    box-sizing: border-box;
+    line-height: 28px;
+    margin: 0 auto;
+    max-width: 512px;
 }
 
 .front-splash-left:after {
@@ -108,16 +141,104 @@ body {
     top: 0;
     left: 100%;
     box-sizing: border-box;
-    border-right: 30vh solid transparent;
-    border-bottom: 100vh solid #333;
+    border-right: calc(30vh - .3 * 64px) solid transparent;
+    border-bottom: calc(100vh - 64px) solid #231F20;
 }
 
 .front-splash-center {
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.front-splash-center > img {
+    max-width: 180px;
+    min-width: 100px;
+    width: 16vw;
 }
 
 .front-splash-right {
     flex: 1;
     background-image: url("/images/drones/drone2.jpg");
-    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+@media (max-height: 484px) {
+    .front-splash-left:after {
+        border-right: calc(.3 * 420px) solid transparent;
+        border-bottom: calc(420px) solid #231F20;
+    }
+
+    .front-splash {
+        min-height: 420px;
+    }
+}
+
+@media (min-height: 704px) {
+    .front-splash-left:after {
+        border-right: calc(.3 * 640px) solid transparent;
+        border-bottom: calc(640px) solid #231F20;
+    }
+
+    .front-splash {
+        min-height: 640px;
+        max-height: 640px;
+    }
+}
+
+@media (max-width: 560px) {
+    .front-splash-left:after {
+        content: none;
+    }
+
+    .front-splash-left > p {
+        padding: 16px;
+        padding-top: 80px;
+        text-align: center;
+    }
+
+    .front-splash-left {
+        min-height: auto;
+        display: block;
+        order: 2;
+        flex: 0;
+    }
+
+    .front-splash-center {
+        position: static;
+        margin: auto;
+        top: 50%;
+        margin-top: -70px;
+        margin-bottom: -70px;
+        order: 1;
+        left: 50%;
+        transform: translateX(0) translateY(0);
+    }
+
+    .front-splash {
+        flex-direction: column;
+        min-height: calc(100vh - 64px);
+    }
+
+    .front-splash-right {
+        flex: 1 0 120px;
+    }
+
+    .front-splash-left:after {
+        content: "";
+        top: auto;
+        bottom: 100%;
+        left: 0;
+        right: auto;
+        border-bottom: 50vw solid #231F20;
+        border-right: calc(100vw - 0px) solid transparent;
+    }
+}
+
+@media (max-width: 560px) and (min-aspect-ratio: 1 / 1) {
+    .front-splash-left:after {
+        content: none;
+    }
 }
