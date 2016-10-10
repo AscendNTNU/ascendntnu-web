@@ -208,6 +208,7 @@ a {
 
     .front-splash-center {
         position: static;
+		text-align: center;
         margin: auto;
         top: 50%;
         margin-top: -70px;
