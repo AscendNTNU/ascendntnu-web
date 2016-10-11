@@ -244,6 +244,8 @@ a {
     .front-splash-right:after {
         left: 0;
         top: 30vw;
+        height: calc(100vh - 160px);
+        max-height: calc(896px);
         height: 100%;
         transform: skewY(-30deg) skewX(0);
     }
