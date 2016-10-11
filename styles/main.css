@@ -162,9 +162,9 @@ a {
 .front-splash-right:after {
     content: "";
     display: block;
-    position: relative;
+    position: absolute;
     left: -15vh;
-    height: calc(100vh - 64px);
+    height: 100%;
     width: 100%;
     transform: skewX(-16.7deg); /* 90 - atan(10/3) */
     background-image: url("/images/drones/drone2.jpg");
@@ -179,7 +179,6 @@ a {
 
     .front-splash-right:after {
         left: -72.6px;
-        height: 420px;
     }
 
     .front-splash {
@@ -194,7 +193,6 @@ a {
 
     .front-splash-right:after {
         left: -105.6px;
-        height: 640px;
     }
 
     .front-splash {
