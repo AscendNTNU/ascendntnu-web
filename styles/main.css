@@ -156,6 +156,7 @@ a {
     position: relative;
     left: 15vh;
     transform: skewX(16.7deg); /* 90 - atan(10/3) */
+    box-shadow: 0 0 16px #000;
 }
 
 .front-splash-right:after {
@@ -163,7 +164,7 @@ a {
     display: block;
     position: relative;
     left: -15vh;
-    height: 100%;
+    height: calc(100vh - 64px);
     width: 100%;
     transform: skewX(-16.7deg); /* 90 - atan(10/3) */
     background-image: url("/images/drones/drone2.jpg");
@@ -178,6 +179,7 @@ a {
 
     .front-splash-right:after {
         left: -72.6px;
+        height: 420px;
     }
 
     .front-splash {
@@ -192,6 +194,7 @@ a {
 
     .front-splash-right:after {
         left: -105.6px;
+        height: 640px;
     }
 
     .front-splash {
@@ -241,6 +244,7 @@ a {
     .front-splash-right:after {
         left: 0;
         top: 30vw;
+        height: 100%;
         transform: skewY(-30deg) skewX(0);
     }
 }
