@@ -197,7 +197,7 @@ a {
 
     .front-splash {
         min-height: 640px;
-        max-height: 100%;
+        max-height: 640px;
     }
 }
 
@@ -230,8 +230,7 @@ a {
     .front-splash {
         flex-direction: column;
         flex: 0 1 640px;
-        max-height: auto;
-        /*min-height: calc(100vh - 64px);*/
+        max-height: 100%;
     }
 
     .front-splash-right {
