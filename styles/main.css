@@ -52,11 +52,33 @@ a {
 .logo-title-text {
     margin-left: 8px;
     letter-spacing: -.05em;
+    white-space: nowrap;
 }
 
 .logo-title-e {
-    transform: rotate(-10deg);
+    transform: rotate(-16deg);
     display: inline-block;
+}
+
+.nav-bar {
+    display: flex;
+}
+
+.nav-bar > .nav-element {
+    flex: 1;
+    margin: 8px;
+    white-space: nowrap;
+    color: #333;
+}
+
+@media (max-width: 640px) {
+    .nav-bar {
+        flex-direction: column;
+    }
+}
+
+.nav-bar > .nav-element.active {
+    color: #388;
 }
 
 .head, .foot {
@@ -66,6 +88,7 @@ a {
 .head {
     min-height: 64px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
     background-color: #fff;
@@ -103,6 +126,7 @@ a {
     width: 100%;
     flex: 1;
     display: flex;
+    flex-direction: column;
 }
 
 .front-splash {
@@ -237,7 +261,7 @@ a {
         flex: 1 0 calc(100px + 50vw);
         left: 0;
         top: -30vw;
-        transform: skewY(30deg) skewX(0);
+        transform: skewY(26.6deg) skewX(0);
     }
 
     .front-splash-right:after {
@@ -246,7 +270,7 @@ a {
         height: calc(100vh - 160px);
         max-height: calc(896px);
         height: 100%;
-        transform: skewY(-30deg) skewX(0);
+        transform: skewY(-26.6deg) skewX(0);
     }
 }
 
