@@ -1,9 +1,26 @@
 import * as React from 'react'
 import { render } from 'react-dom'
+import { Router, Route, hashHistory, browserHistory, IndexRoute } from 'react-router'
 
 import App from './components/App'
 
+import FrontPage from './components/FrontPage'
+import BlogPage from './components/BlogPage'
+import DronePage from './components/DronePage'
+import TeamPage from './components/TeamPage'
+import JoinPage from './components/JoinPage'
+import AboutPage from './components/AboutPage'
+
 render (
-  <App />,
+  <Router history={browserHistory}>
+    <Route path="/" component={App}>
+      <IndexRoute component={FrontPage} />
+      <Route path="/blog" component={BlogPage} />
+      <Route path="/drones" component={DronePage} />
+      <Route path="/team" component={TeamPage} />
+      <Route path="/join" component={JoinPage} />
+      <Route path="/about" component={AboutPage} />
+    </Route>
+  </Router>,
   document.querySelector('#app')
 )
