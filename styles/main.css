@@ -66,14 +66,50 @@ a {
 
 .nav-bar > .nav-element {
     flex: 1;
-    margin: 8px;
+    padding: 8px;
+    box-sizing: border-box;
     white-space: nowrap;
     color: #333;
 }
 
-@media (max-width: 640px) {
+.toggle-menu {
+    display: none;
+    font-size: 2rem;
+    padding: 10px 16px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 560px) {
     .nav-bar {
+        display: none;
         flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #fff;
+        height: calc(100vh - 64px);
+        width: 100%;
+        z-index: 3;
+        overflow: auto;
+        font-size: 2rem;
+    }
+
+    .app.menu-visible .nav-bar {
+        display: flex;
+    }
+
+    .toggle-menu {
+        display: inline-block;
+    }
+
+    .app.menu-visible {
+        overflow: hidden;
+        height: 100vh;
+    }
+
+    .nav-bar > .nav-element {
+        flex: 0;
+        text-align: center;
     }
 }
 
@@ -228,6 +264,42 @@ a {
     background-position: center;
 }
 
+.section {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    box-sizing: border-box;
+    line-height: 1.6;
+}
+.section a {
+    color: #f80;
+    border-bottom: 1px dashed #f80;
+}
+
+.section.row {
+    flex-direction: row;
+    align-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.sub-section {
+    flex: 1;
+    margin: 0 auto;
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+.drone-container {
+    flex: 0 1 420px;
+}
+
+.drone-image {
+    width: 100%;
+    display: block;
+    max-width: 360px;
+    margin: auto;
+}
+
 @media (max-height: 484px) {
     .front-splash-right {
         left: 72.6px;
@@ -280,6 +352,7 @@ a {
         margin-bottom: -70px;
         order: 1;
         left: 50%;
+        z-index: 0;
         transform: translateX(0) translateY(0);
     }
 

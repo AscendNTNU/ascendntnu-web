@@ -18,9 +18,9 @@ export class Footer extends React.Component<FooterProps, {}> {
   }
 
   render () {
-    let links = this.links.map(link => {
+    let links = this.links.map((link, i) => {
       return (
-        <a className="link" href={link.href}>
+        <a className="link" href={link.href} key={i}>
             <i className={link.icon ? "fa fa-" + link.icon : ""}></i> {link.content}
         </a>
       )
