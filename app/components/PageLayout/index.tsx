@@ -26,7 +26,7 @@ export class Section extends React.Component<SectionProps, {}> {
       )
     }
 
-    this.className = "section"
+    this.className = "section page-container"
 
     if (this.props.theme) {
       let theme: string = ""

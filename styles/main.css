@@ -87,14 +87,12 @@ a {
 
 .head {
     min-height: 64px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-sizing: border-box;
     background-color: #fff;
+    box-sizing: border-box;
     padding: 0 16px;
     position: relative;
     z-index: 1;
+    display: flex;
 }
 
 .head:after {
@@ -109,17 +107,51 @@ a {
     z-index: 1;
 }
 
+.head-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page-container {
+    max-width: 1200px;
+    width: 100%;
+    flex: 1;
+    margin: auto;
+}
+
 .foot {
-    background-color: #ddd;
-    color: #666;
-    flex: 0 0 240px;
+    background-color: #333;
+    color: #ddd;
+    flex: 0;
+    min-height: 240px;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 16px;
+    box-sizing: border-box;
 }
 
 .foot-content {
     margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex: 1;
+}
+
+.foot-element {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 280px;
+    margin: 8px;
+}
+
+.foot-image > img {
+    max-width: 140px;
+    max-height: 140px;
+    margin: auto;
+    display: block;
 }
 
 .page {
