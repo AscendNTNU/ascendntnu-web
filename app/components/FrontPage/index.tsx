@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 import Splash from './splash'
-import { Section } from '../PageLayout'
+import { Section, SubSection } from '../PageLayout'
 
 export interface FrontPageProps {}
 
@@ -10,7 +10,7 @@ export class FrontPage extends React.Component<FrontPageProps, {}> {
     return (
       <div className="page page-front">
         <Splash />
-        <Section title="Our sponsors" theme="dark">
+        <Section title="Our sponsors big">
           <p>Sponsor</p>
         </Section>
       </div>
