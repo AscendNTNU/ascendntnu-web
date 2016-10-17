@@ -9,17 +9,11 @@ export interface AppState {
 }
 
 export class App extends React.Component<AppProps, AppState> {
-  isChomeMobile: boolean
-  userAgent: any
-
   constructor(props: any) {
     super(props)
     this.state = {
       showMenu: false
     }
-
-    this.userAgent = navigator.userAgent
-    this.isChomeMobile = this.userAgent.match('CriOS')
   }
 
   toggleMenu() {
@@ -30,7 +24,7 @@ export class App extends React.Component<AppProps, AppState> {
 
   render () {
     return (
-      <div className={"app" + (this.state.showMenu ? " menu-visible" : "") + (this.isChomeMobile ? " is-chrome-mobile" : "")}>
+      <div className={"app" + (this.state.showMenu ? " menu-visible" : "")}>
           <Header toggleMenuHandler={this.toggleMenu.bind(this)} toggle={this.state.showMenu} />
           {this.props.children}
           <Footer />
