@@ -207,27 +207,6 @@ a {
     background-image: url("/images/web/material.svg");
 }
 
-@media (max-device-aspect-ratio: 3/4) {
-    .is-chrome-mobile .front-splash {
-        min-height: calc(100vw * 1.333 - 9%);
-    }
-}
-@media (max-device-aspect-ratio: 2/3) {
-    .is-chrome-mobile .front-splash {
-        min-height: calc(100vw * 1.5 - 9%);
-    }
-}
-@media (max-device-aspect-ratio: 10/16) {
-    .is-chrome-mobile .front-splash {
-        min-height: calc(100vw * 1.6 - 9%);
-    }
-}
-@media (max-device-aspect-ratio: 9/16) {
-    .is-chrome-mobile .front-splash {
-        min-height: calc(100vw * 1.778 - 9%);
-    }
-}
-
 .front-splash-left {
     flex: 1;
     background-color: #231F20;
