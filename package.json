@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack",
     "watch": "webpack -w",
-    "dev": "webpack-dev-server --inline --hot",
+    "dev": "webpack-dev-server --inline --hot --content-base . --history-api-fallback",
     "deploy": "NODE_ENV=production webpack -p --config webpack.prod.config.js"
   },
   "repository": {
@@ -38,10 +38,13 @@
     "source-map-loader": "^0.1.5"
   },
   "dependencies": {
-    "webpack": "^1.13.2",
-    "ts-loader": "^0.8.2",
     "express": "~4.14.0",
+    "mkdirp": "^0.5.1",
+    "react": "~15.3.2",
     "react-dom": "~15.3.2",
-    "react": "~15.3.2"
+    "react-router": "^2.8.1",
+    "ts-loader": "^0.8.2",
+    "webpack": "^1.13.2",
+    "yamljs": "^0.2.8"
   }
 }

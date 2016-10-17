@@ -22,6 +22,8 @@ Using `npm`:
 $ npm install # Installing dependencies.
 $ typings install --global --save dt~react
 $ typings install --global --save dt~react-dom
+$ typings install --global --save dt~react-router
+$ typings install --global --save dt~react-router/history
 $ npm run build # Building the application.
 $ npm run watch # Build + watch for changes / Rebuild on change.
 $ npm run dev # Running the dev environment.
@@ -42,6 +44,8 @@ $ make dev # Running the dev environment.
 $ npm install --production
 $ typings install --global --save dt~react
 $ typings install --global --save dt~react-dom
+$ typings install --global --save dt~react-router
+$ typings install --global --save dt~react-router/history
 $ npm install -g typescript typings webpack
 $ npm link typescript
 ```
