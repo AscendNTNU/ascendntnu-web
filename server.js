@@ -11,7 +11,7 @@ app.use('/node_modules', express.static(__dirname + '/node_modules'))
 
 app.listen(8080)
 
-app.get('/', function (req, res) {
+app.get(['/', '/blog', '/drones', '/team', '/join', '/about'], function (req, res) {
   res.sendFile(__dirname + '/index.html')
 })
 
