@@ -10,8 +10,9 @@ export class FrontPage extends React.Component<FrontPageProps, {}> {
     return (
       <div className="page page-front">
         <Splash />
-        <Section title="Our sponsors big">
-          <p>Sponsor</p>
+        <Section title="Our sponsors">
+          <p>Sponsor 1</p>
+          <p>Sponsor 2</p>
         </Section>
       </div>
     )

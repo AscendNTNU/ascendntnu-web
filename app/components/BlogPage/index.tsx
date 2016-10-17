@@ -1,12 +1,15 @@
 import * as React from 'react'
 
+import { Section, SubSection } from '../PageLayout'
+
 export interface BlogPageProps {}
 
 export class BlogPage extends React.Component<BlogPageProps, {}> {
   render () {
     return (
       <div className="page page-blog">
-        <h2>Blog page.</h2>
+        <Section title="Blog page">
+        </Section>
       </div>
     )
   }
