@@ -5,18 +5,36 @@ import { Section, SubSection } from '../PageLayout'
 export interface DronePageProps {}
 
 export class DronePage extends React.Component<DronePageProps, {}> {
+  drones: any[]
+  constructor () {
+    super()
+
+    this.drones = [
+      {
+        style: {
+          backgroundImage: 'url(/images/drones/drone1-flying-minimized.jpg)'
+        }
+      },
+      {
+        style: {
+          backgroundImage: 'url(/images/drones/drone2-minimized.jpg)'
+        }
+      }
+    ]
+  }
+
   render () {
     return (
       <div className="page page-drone">
         <Section className="row">
           <SubSection title="Drone 1" className="drone-container">
-            <img className="drone-image" src="/images/drones/drone1-flying.jpg" />
+            <div className="drone-image" style={this.drones[0].style}></div>
             <p className="drone-text">
               Our first aerial robot was born last fall. Creating it, flying it and using it has been a great learning experience for the team. The drone is however quite small, and we needed an upgrade in order to carry all the desired equipment.
             </p>
           </SubSection>
           <SubSection title="Drone 2" className="drone-container">
-            <img className="drone-image" src="/images/drones/drone2.jpg" />
+            <div className="drone-image" style={this.drones[1].style}></div>
             <p className="drone-text">
               Our second aerial robot is custom designed using carbon fiber and 3D-printed parts. It was build for the 2016 IARC and designed with Mission 7 in mind, and it is able to carry all the equipment we need to herd the target robots across the green line.
             </p>
