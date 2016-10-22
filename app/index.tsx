@@ -11,8 +11,12 @@ import TeamPage from './components/TeamPage'
 import JoinPage from './components/JoinPage'
 import AboutPage from './components/AboutPage'
 
+let gotoTop = () => {
+  document.querySelector('#app').scrollTop = 0
+}
+
 render (
-  <Router history={browserHistory}>
+  <Router onUpdate={gotoTop} history={browserHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={FrontPage} />
       <Route path="/blog" component={BlogPage} />
