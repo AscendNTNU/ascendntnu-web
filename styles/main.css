@@ -22,7 +22,7 @@ a {
 
 .app,
 .app-container {
-    min-height: 100vh;
+    min-height: calc(100vh - 64px);
 }
 
 .app {
@@ -74,6 +74,7 @@ a {
 
 .toggle-menu {
     display: none;
+    cursor: pointer;
     font-size: 2rem;
     padding: 10px 16px;
     box-sizing: border-box;
@@ -104,7 +105,6 @@ a {
 
     .app.menu-visible {
         overflow: hidden;
-        height: 100vh;
     }
 
     .nav-bar > .nav-element {
@@ -121,12 +121,25 @@ a {
     width: 100%;
 }
 
+body {
+    overflow: hidden;
+}
+
+.app-container {
+    overflow-y: auto;
+    height: calc(100vh - 64px);
+    min-height: calc(100vh - 64px);
+    margin-top: 64px;
+}
+
 .head {
     min-height: 64px;
     background-color: #fff;
     box-sizing: border-box;
     padding: 0 16px;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
     z-index: 1;
     display: flex;
 }
@@ -179,15 +192,20 @@ a {
 .foot-element {
     display: flex;
     flex-direction: column;
-    flex: 0 0 280px;
-    margin: 8px;
+    flex: 0 1 280px;
+    margin: 16px 8px;
 }
 
 .foot-image > img {
+    width: 100%;
     max-width: 140px;
     max-height: 140px;
     margin: auto;
     display: block;
+}
+
+.foot-element:nth-child(2) {
+    align-items: flex-start;
 }
 
 .page {
@@ -296,8 +314,14 @@ a {
 .drone-image {
     width: 100%;
     display: block;
-    max-width: 360px;
+    padding-bottom: calc(100% / 1.618);
+    background-size: cover;
+    background-position: center center;
     margin: auto;
+}
+
+.drone-text {
+    text-align: justify;
 }
 
 @media (max-height: 484px) {
