@@ -20,6 +20,7 @@ render (
     <Route path="/" component={App}>
       <IndexRoute component={FrontPage} />
       <Route path="/blog" component={BlogPage} />
+      <Route path="/blog/:post" component={BlogPage} />
       <Route path="/drones" component={DronePage} />
       <Route path="/team" component={TeamPage} />
       <Route path="/join" component={JoinPage} />

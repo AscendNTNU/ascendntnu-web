@@ -3,6 +3,7 @@ var app = express()
 var fs = require('fs')
 var mkdirp = require('mkdirp')
 var yamljs = require('yamljs')
+var fm = require('front-matter')
 
 app.use('/images', express.static(__dirname + '/images'))
 app.use('/dist', express.static(__dirname + '/dist'))
@@ -11,12 +12,31 @@ app.use('/node_modules', express.static(__dirname + '/node_modules'))
 
 app.listen(8080)
 
-app.get(['/', '/blog', '/drones', '/team', '/join', '/about'], function (req, res) {
+app.get(['/', '/blog*', '/drones', '/team', '/join', '/about'], function (req, res) {
   res.sendFile(__dirname + '/index.html')
 })
 
 app.get('/api/v1', function (req, res) {
   res.sendFile(__dirname + '/api/v1/index.html')
+})
+
+app.get('/api/v1/posts', function (req, res) {
+  var files = fs.readdirSync('./posts').filter(file => /\.md$/.test(file))
+  
+  res.setHeader('Content-Type', 'application/json; charset=utf-8')
+  res.send(JSON.stringify(files, null, 2))
+})
+
+app.get('/api/v1/posts/:post', function (req, res) {
+  var postName = req.params.post
+  var pathToPost = __dirname + '/posts/' + postName
+  
+  res.setHeader('Content-Type', 'application/json; charset=utf-8')
+
+  if (fileExists(pathToPost))
+    res.send(JSON.stringify(fm(fs.readFileSync(pathToPost) + ''), null, 2))
+  else
+    res.send('Could not find post.')
 })
 
 app.get('/api/v1/:section', function (req, res) {

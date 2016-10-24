@@ -29,12 +29,6 @@ export class Section extends React.Component<SectionProps, {}> {
   constructor(props: SectionProps) {
     super(props)
 
-    if (this.props.title) {
-      this.title = (
-        <Title>{this.props.title}</Title>
-      )
-    }
-
     this.className = "section page-container"
 
     if (this.props.className)
@@ -57,6 +51,12 @@ export class Section extends React.Component<SectionProps, {}> {
   }
 
   render() {
+    if (this.props.title) {
+      this.title = (
+        <Title>{this.props.title}</Title>
+      )
+    }
+
     return (
       <div className={this.className}>
         {this.title}
@@ -79,12 +79,6 @@ export class SubSection extends React.Component<SubSectionProps, {}> {
   constructor(props: SectionProps) {
     super(props)
 
-    if (this.props.title) {
-      this.title = (
-        <SubTitle>{this.props.title}</SubTitle>
-      )
-    }
-
     this.className = "sub-section page-container"
 
     if (this.props.className)
@@ -105,6 +99,12 @@ export class SubSection extends React.Component<SubSectionProps, {}> {
   }
 
   render() {
+    if (this.props.title) {
+      this.title = (
+        <SubTitle>{this.props.title}</SubTitle>
+      )
+    }
+
     return (
       <div className={this.className}>
         {this.title}
