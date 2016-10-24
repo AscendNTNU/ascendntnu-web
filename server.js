@@ -6,6 +6,7 @@ var yamljs = require('yamljs')
 var fm = require('front-matter')
 
 app.use('/images', express.static(__dirname + '/images'))
+app.use('/public/assets', express.static(__dirname + '/images/assets'))
 app.use('/dist', express.static(__dirname + '/dist'))
 app.use('/styles', express.static(__dirname + '/styles'))
 app.use('/node_modules', express.static(__dirname + '/node_modules'))
