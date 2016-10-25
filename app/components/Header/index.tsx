@@ -7,18 +7,23 @@ export interface HeaderProps {
 }
 
 export class Header extends React.Component<HeaderProps, {}> {
+  private hideMenu () {
+    if (this.props.toggle)
+      this.props.toggleMenuHandler
+  }
+
   render() {
     return (
       <div className="head">
         <div className="head-content page-container">
-          <Link to="/">
+          <IndexLink onClick={this.hideMenu} to="/">
             <div className="logo-title">
               <img className="logo-img" src="images/logo/logo.png" />
               <div className="logo-title-text">
                 asc<span className="logo-title-e">e</span>nd
               </div>
             </div>
-          </Link>
+          </IndexLink>
           <div className="toggle-menu" onClick={this.props.toggleMenuHandler}>
             <i className={"fa fa-" + (this.props.toggle ? "times" : "bars")}></i>
           </div>
