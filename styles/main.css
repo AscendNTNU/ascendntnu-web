@@ -526,6 +526,10 @@ found {
     flex: 0;
 }
 
+.page-container.flex.no-grow {
+    min-height: calc(12px + 32px + 1.3em);
+}
+
 @media (max-height: 484px) {
     .front-splash-right {
         left: 72.6px;
