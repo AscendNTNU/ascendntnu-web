@@ -353,6 +353,12 @@ a {
     font-weight: bold;
 }
 
+@media (max-width: 540px) {
+    .page-blog-list-link .blog-list-link {
+        font-size: 1.2em;
+    }
+}
+
 .blog-list-details,
 .blog-post-details {
     display: flex;
