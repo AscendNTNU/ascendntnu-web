@@ -55,6 +55,7 @@ export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
       .then(r => r.json())
       .then(r => {
         let parsed: any = this.parser.parse(r.body)
+        r.attributes['dateFormatted'] = this.formatDate(r.attributes.date, 'dag DD/MM/YY')
         this.setState({
           attributes: r.attributes,
           post: this.renderer.render(parsed)
@@ -68,6 +69,7 @@ export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
       .then(r => r.json())
       .then(r => {
         r = r.map((p: any) => {
+          p.attributes['dateFormatted'] = this.formatDate(p.attributes.date, 'dag DD/MM/YY')
           p['parsedBody'] = this.parser.parse(p.body)
           p['renderedBody'] = this.renderer.render(p.parsedBody._firstChild)
           return p
@@ -81,21 +83,42 @@ export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
 
   public filterBySearch (filter: string, el: any, keys?: string[]): boolean {
     let prop: string
+
+    if (filter.length < 2) {
+      for (let key in keys) {
+        prop = keys[key]
+        if (el.hasOwnProperty(prop)) {
+          el[prop] = el[prop].replace(/<\/?found>/g, '')
+        } else if (el.attributes.hasOwnProperty(prop)) {
+          el.attributes[prop] = el.attributes[prop].replace(/<\/?found>/g, '')
+        }
+      }
+
+      return true
+    }
+
     let re: RegExp = new RegExp(filter, 'i')
+    let rer: RegExp = new RegExp(`(${filter})`, 'ig')
+    let hasFound: boolean = false
+
     for (let key in keys) {
       prop = keys[key]
       if (el.hasOwnProperty(prop)) {
+        el[prop] = el[prop].replace(/<\/?found>/g, '')
         if (re.test(el[prop])) {
-          return true
+          el[prop] = el[prop].replace(rer, '<found>$1</found>')
+          hasFound = true
         }
       } else if (el.attributes.hasOwnProperty(prop)) {
+        el.attributes[prop] = el.attributes[prop].replace(/<\/?found>/g, '')
         if (re.test(el.attributes[prop])) {
-          return true
+          el.attributes[prop] = el.attributes[prop].replace(rer, '<found>$1</found>')
+          hasFound = true
         }
       }
     }
 
-    return false
+    return hasFound
   }
 
   public search (evt: any) {
@@ -167,7 +190,7 @@ export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
                 {this.state.attributes.author}
               </div>
               <div className="blog-post-date">
-                {this.formatDate(this.state.attributes.date, 'dag DD/MM/YY (HH:mm)')}
+                {this.state.attributes.dateFormatted}
               </div>
               <div className="blog-post-categories">
                 {categories}
@@ -179,7 +202,7 @@ export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
       )
     } else {
       let links: any[] = this.state.posts
-        .filter(post => this.filterBySearch(this.state.searchValue, post, ['title', 'date', 'author', 'body']))
+        .filter(post => this.filterBySearch(this.state.searchValue, post, ['title', 'dateFormatted', 'author', 'renderedBody']))
         .map((post, i) => {
         let categories: any[] = post.attributes.categories.split(" ").map((cat:string, k:number) => {
           return (<div className="category" key={k}>{cat}</div>)
@@ -187,13 +210,12 @@ export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
         return (
           <div className="page-blog-list-link" key={i}>
             <div className="blog-list-details">
-              <Link className="blog-list-link" onClick={this.reload} to={'/blog/' + post.link}>{post.attributes.title}</Link>
-              <div className="blog-list-author">
-                {post.attributes.author}
-              </div>
-              <div className="blog-list-date">
-                {this.formatDate(post.attributes.date, 'dag DD/MM/YY')}
-              </div>
+              <Link className="blog-list-link"
+                onClick={this.reload}
+                to={'/blog/' + post.link}
+                dangerouslySetInnerHTML={ {__html: post.attributes.title } } />
+              <div className="blog-list-author" dangerouslySetInnerHTML={ {__html: post.attributes.author } } />
+              <div className="blog-list-date" dangerouslySetInnerHTML={ {__html: post.attributes.dateFormatted } } />
             </div>
             <div className="blog-list-preview">
               <div dangerouslySetInnerHTML={ {__html: post.renderedBody } } />
