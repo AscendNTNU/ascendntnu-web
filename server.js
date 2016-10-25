@@ -22,21 +22,52 @@ app.get('/api/v1', function (req, res) {
 })
 
 app.get('/api/v1/posts', function (req, res) {
-  var files = fs.readdirSync('./posts').filter(file => /\.md$/.test(file))
-  
+  var files = fs.readdirSync('./posts')
+    .filter(file => /\.md$/.test(file))
+    .map(slugify)
+
+  res.setHeader('Content-Type', 'application/json; charset=utf-8')
+  res.send(JSON.stringify(files, null, 2))
+})
+
+function slugify (fileName) {
+  return fileName
+    .toLowerCase()
+    //.replace(/^[0-9]{2,4}-[0-9]{1,2}-[0-9]{1,2}-/, '')
+    .replace(/\.md$/, '')
+}
+
+app.get('/api/v1/posts/all', function (req, res) {
+  var files = fs.readdirSync('./posts')
+    .filter(file => /\.md$/.test(file))
+    .map(postName => {
+    var pathToPost = __dirname + '/posts/' + postName
+    var element = {}
+    if (fileExists(pathToPost))
+      element = fm(fs.readFileSync(pathToPost) + '')
+    element['file'] = postName
+    element['link'] = slugify(postName)
+    return element
+  })
+
   res.setHeader('Content-Type', 'application/json; charset=utf-8')
   res.send(JSON.stringify(files, null, 2))
 })
 
 app.get('/api/v1/posts/:post', function (req, res) {
   var postName = req.params.post
-  var pathToPost = __dirname + '/posts/' + postName
-  
+  var files = fs.readdirSync('./posts')
+    .filter(file => new RegExp(postName, 'i').test(file))
+  var pathToPost = __dirname + '/posts/' + (files[0] || '')
+
   res.setHeader('Content-Type', 'application/json; charset=utf-8')
 
-  if (fileExists(pathToPost))
-    res.send(JSON.stringify(fm(fs.readFileSync(pathToPost) + ''), null, 2))
-  else
+  if (fileExists(pathToPost) && files.length) {
+    var postData = fm(fs.readFileSync(pathToPost) + '')
+    postData['file'] = files[0]
+    postData['link'] = slugify(files[0])
+    res.send(JSON.stringify(postData, null, 2))
+  } else
     res.send('Could not find post.')
 })
 
