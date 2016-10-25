@@ -1,6 +1,7 @@
 import * as React from 'react'
 
 import { Section, SubSection } from '../PageLayout'
+import { Breadcrumb } from '../Common/breadcrumb'
 
 export interface AboutPageProps {}
 
@@ -8,6 +9,7 @@ export class AboutPage extends React.Component<AboutPageProps, {}> {
   render () {
     return (
       <div className="page page-about">
+        <Breadcrumb routes={['about']} />
         <Section title="About Us">
           <p>Ascend NTNU is a non-profit student organization created to represent the <a href="http://www.ntnu.edu/">Norwegian University Of Science and Technology</a> (NTNU) in the <a href="http://www.aerialroboticscompetition.org/">International Aerial Robotics Competition</a>.</p>
           <p>Ascend was founded during the spring of 2015. In 2016 we competed and became third in IARC. We are now, again, preparing for a new competition in 2017.</p>

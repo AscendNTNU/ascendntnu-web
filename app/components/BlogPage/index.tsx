@@ -3,6 +3,7 @@ import { Link } from 'react-router'
 import { HtmlRenderer, Parser } from 'commonmark'
 
 import { Section, SubSection } from '../PageLayout'
+import { Breadcrumb } from '../Common/breadcrumb'
 
 export interface BlogPageProps {
   params: any
@@ -128,6 +129,7 @@ export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
     if (this.props.params.post) {
       return (
         <div className="page page-blog">
+          <Breadcrumb routes={['blog', this.props.params.post]} />
           <Section title={this.state.attributes.title}>
             <div dangerouslySetInnerHTML={ {__html: this.state.post} } />
           </Section>
@@ -160,6 +162,7 @@ export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
       })
       return (
         <div className="page page-blog">
+          <Breadcrumb routes={['blog']} />
           <Section title="Artikler">
             <SubSection className="page-blog-list">
               {links}
