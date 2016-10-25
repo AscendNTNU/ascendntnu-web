@@ -1,6 +1,7 @@
 import * as React from 'react'
 
 import { Section, SubSection } from '../PageLayout'
+import { Breadcrumb } from '../Common/breadcrumb'
 
 export interface DronePageProps {}
 
@@ -26,6 +27,7 @@ export class DronePage extends React.Component<DronePageProps, {}> {
   render () {
     return (
       <div className="page page-drone">
+        <Breadcrumb routes={['drone']} />
         <Section className="row">
           <SubSection title="Drone 1" className="drone-container">
             <div className="drone-image" style={this.drones[0].style}></div>

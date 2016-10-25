@@ -420,6 +420,44 @@ body {
     font-style: italic;
 }
 
+.breadcrumb-container {
+    display: flex;
+    background-color: rgba(0, 0, 0, .04);
+    border-radius: 4px;
+    align-self: flex-start;
+    padding: 6px 12px;
+    margin: 32px;
+    margin-bottom: 0;
+    text-transform: capitalize;
+}
+
+.breadcrumb-container > a {
+    color: #f80;
+    text-transform: capitalize;
+}
+
+.breadcrumb-container > span {
+    color: #000;
+}
+
+.breadcrumb-container > a:after {
+    content: "/";
+    margin: 0 8px;
+    color: #000;
+}
+
+.breadcrumb-container > ::first-child:after {
+    content: "";
+}
+
+.flex {
+    display: flex;
+}
+
+.no-grow {
+    flex: 0;
+}
+
 @media (max-height: 484px) {
     .front-splash-right {
         left: 72.6px;

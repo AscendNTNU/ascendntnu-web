@@ -1,6 +1,7 @@
 import * as React from 'react'
 
 import { Section, SubSection } from '../PageLayout'
+import { Breadcrumb } from '../Common/breadcrumb'
 
 export interface JoinPageProps {}
 
@@ -8,6 +9,7 @@ export class JoinPage extends React.Component<JoinPageProps, {}> {
   render () {
     return (
       <div className="page page-join">
+        <Breadcrumb routes={['join']} />
         <Section title="Nå nye høyder">
 
             <div className="row">
