@@ -16,6 +16,7 @@ export interface BlogPageState {
     categories?: string,
     author?: string,
   },
+  searchValue?: string,
   post?: string,
   posts?: any[],
 }
@@ -35,6 +36,7 @@ export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
         categories: '',
         author: '',
       },
+      searchValue: 'e',
       post: '',
       posts: [],
     }
@@ -75,6 +77,32 @@ export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
         })
       })
       .catch(err => console.error('Could not fetch file from: ' + url))
+  }
+
+  public filterBySearch (filter: string, el: any, keys?: string[]): boolean {
+    let prop: string
+    let re: RegExp = new RegExp(filter, 'i')
+    for (let key in keys) {
+      prop = keys[key]
+      if (el.hasOwnProperty(prop)) {
+        if (re.test(el[prop])) {
+          return true
+        }
+      } else if (el.attributes.hasOwnProperty(prop)) {
+        if (re.test(el.attributes[prop])) {
+          return true
+        }
+      }
+    }
+
+    return false
+  }
+
+  public search (evt: any) {
+    let value: string = evt.target.value
+    this.setState({
+      searchValue: value
+    })
   }
 
   public reload () {
@@ -150,7 +178,9 @@ export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
         </div>
       )
     } else {
-      let links: any[] = this.state.posts.map((post, i) => {
+      let links: any[] = this.state.posts
+        .filter(post => this.filterBySearch(this.state.searchValue, post, ['title', 'date', 'author', 'body']))
+        .map((post, i) => {
         let categories: any[] = post.attributes.categories.split(" ").map((cat:string, k:number) => {
           return (<div className="category" key={k}>{cat}</div>)
         })
@@ -178,6 +208,7 @@ export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
         <div className="page page-blog">
           <Breadcrumb routes={['blog']} />
           <Section title="Artikler">
+            <input onChange={this.search.bind(this)} placeholder="Finn artikler..." />
             <SubSection className="page-blog-list">
               {links}
             </SubSection>
