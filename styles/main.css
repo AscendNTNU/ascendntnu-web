@@ -129,7 +129,7 @@ body {
 
 .app-container {
     overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
+    /*-webkit-overflow-scrolling: touch;*/
     height: calc(100vh - 64px);
     min-height: calc(100vh - 64px);
     margin-top: 64px;
