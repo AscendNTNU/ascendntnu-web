@@ -345,13 +345,20 @@ body {
     font-weight: bold;
 }
 
-.blog-list-details {
+.blog-list-details,
+.blog-post-details {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
 }
 
-.blog-list-author {
+.blog-post-details {
+    flex-direction: row;
+    margin-bottom: 32px;
+}
+
+.blog-list-author,
+.blog-post-author {
     align-self: flex-end;
     margin-left: 20px;
     flex: 1;
@@ -359,16 +366,23 @@ body {
     white-space: nowrap;
 }
 
-.blog-list-author:after {
+.blog-post-author {
+    flex: 0;
+}
+
+.blog-list-author:after,
+.blog-post-author:after {
     content: ", ";
     margin-right: 6px;
 }
 
-.blog-list-author:empty:after {
+.blog-list-author:empty:after,
+.blog-post-author:empty:after {
     content: "Ukjent forfatter, ";
 }
 
-.blog-list-date {
+.blog-list-date,
+.blog-post-date {
     font-size: .8em;
     color: rgba(0, 0, 0, .6);
     font-style: italic;
@@ -381,13 +395,20 @@ body {
     padding: 0 200px 0 30px;
 }
 
-.blog-list-categories {
+.blog-list-categories,
+.blog-post-categories {
     display: flex;
     flex-flow: row wrap;
     margin: 0 20px;
 }
 
-.blog-list-categories > .category {
+.blog-post-categories {
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.blog-list-categories > .category,
+.blog-post-categories > .category {
     margin: 2px 4px;
     padding: 2px 10px;
     font-size: .8em;

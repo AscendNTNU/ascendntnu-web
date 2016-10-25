@@ -96,19 +96,19 @@ export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
       return ''
 
     if (typeof date === 'string') {
-      format = (typeof format === 'string' ? format : 'dag DD.MM.YYYY (HH:MM:SS)')
+      format = (typeof format === 'string' ? format : 'dag DD.MM.YYYY (HH:mm:SS)')
       let dager: string[] = ['Man', 'Tirs', 'Ons', 'Tors', 'Fre', 'Lør', 'Søn']
       let d: Date = new Date(date.replace(/-/g, '/').replace(/T/g, ' ').slice(0,19))
       let formatted: string = format.replace(new RegExp('da[gy]', 'ig'), dager[d.getDay()])
 
       for (let i: number = 5; i > 0; i--) {
         formatted = formatted
-          .replace(new RegExp(`(^|\\W)y{${i},}($|\\W)`, 'ig'), `$1${this.digits(d.getFullYear(), i)}$2`)
-          .replace(new RegExp(`(^|\\W)m{${i},}($|\\W)`, 'ig'), `$1${this.digits(d.getMonth() + 1, i)}$2`)
-          .replace(new RegExp(`(^|\\W)d{${i},}($|\\W)`, 'ig'), `$1${this.digits(d.getDate(), i)}$2`)
-          .replace(new RegExp(`(^|\\W)h{${i},}($|\\W)`, 'ig'), `$1${this.digits(d.getHours(), i)}$2`)
-          .replace(new RegExp(`(^|\\W)m{${i},}($|\\W)`, 'ig'), `$1${this.digits(d.getMinutes(), i)}$2`)
-          .replace(new RegExp(`(^|\\W)s{${i},}($|\\W)`, 'ig'), `$1${this.digits(d.getSeconds(), i)}$2`)
+          .replace(new RegExp(`(^|\\W)Y{${i},}($|\\W)`, 'g'), `$1${this.digits(d.getFullYear(), i)}$2`)
+          .replace(new RegExp(`(^|\\W)M{${i},}($|\\W)`, 'g'), `$1${this.digits(d.getMonth() + 1, i)}$2`)
+          .replace(new RegExp(`(^|\\W)D{${i},}($|\\W)`, 'g'), `$1${this.digits(d.getDate(), i)}$2`)
+          .replace(new RegExp(`(^|\\W)H{${i},}($|\\W)`, 'g'), `$1${this.digits(d.getHours(), i)}$2`)
+          .replace(new RegExp(`(^|\\W)m{${i},}($|\\W)`, 'g'), `$1${this.digits(d.getMinutes(), i)}$2`)
+          .replace(new RegExp(`(^|\\W)S{${i},}($|\\W)`, 'g'), `$1${this.digits(d.getSeconds(), i)}$2`)
       }
 
       return formatted
@@ -127,10 +127,24 @@ export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
     }
 
     if (this.props.params.post) {
+      let categories: any[] = this.state.attributes.categories.split(" ").map((cat:string, k:number) => {
+        return (<div className="category" key={k}>{cat}</div>)
+      })
       return (
         <div className="page page-blog">
           <Breadcrumb routes={['blog', this.props.params.post]} />
           <Section title={this.state.attributes.title}>
+            <div className="blog-post-details">
+              <div className="blog-post-author">
+                {this.state.attributes.author}
+              </div>
+              <div className="blog-post-date">
+                {this.formatDate(this.state.attributes.date, 'dag DD/MM/YY (HH:mm)')}
+              </div>
+              <div className="blog-post-categories">
+                {categories}
+              </div>
+            </div>
             <div dangerouslySetInnerHTML={ {__html: this.state.post} } />
           </Section>
         </div>
