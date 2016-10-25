@@ -2,7 +2,7 @@ var path = require('path')
 var webpack = require('webpack')
 
 module.exports = {
-  entry: './app/index.tsx',
+  entry: ['whatwg-fetch', './app/index.tsx'],
   output: {
     path: path.join(__dirname, 'dist'),
     publicPath: '/dist/',
