@@ -416,10 +416,34 @@ body {
     border-radius: 3px;
 }
 
+.page-blog input {
+    border: none;
+    padding: 6px 8px;
+    background-color: #f9f9f9;
+    font-size: 1.2em;
+    outline: none;
+    align-self: flex-end;
+    margin-bottom: 24px;
+    box-sizing: border-box;
+    transition-property: background-color;
+    transition-duration: .2s;
+    transition-timing-function: ease-in-out;
+}
+
+.page-blog input:focus {
+    background-color: #fff;
+    transition-duration: .05s;
+}
+
 @media (max-width: 720px) {
     .blog-list-details {
         flex-wrap: wrap;
     }
+
+    .blog-list-date {
+        justify-content: flex-end;
+    }
+
     .blog-list-preview {
         padding: 0;
     }
