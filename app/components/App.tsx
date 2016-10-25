@@ -20,6 +20,11 @@ export class App extends React.Component<AppProps, AppState> {
     this.setState({
       showMenu: !this.state.showMenu
     })
+
+    if (this.state.showMenu)
+      document.body.classList.remove('no-scroll')
+    else
+      document.body.classList.add('no-scroll')
   }
 
   render () {
