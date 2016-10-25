@@ -123,14 +123,19 @@ a {
     width: 100%;
 }
 
-body {
-    overflow: hidden;
+@media (min-width: 769px) {
+    body {
+        overflow: hidden;
+    }
+
+    .app-container {
+        /*-webkit-overflow-scrolling: touch;*/
+        height: calc(100vh - 64px);
+    }
 }
 
 .app-container {
     overflow-y: auto;
-    /*-webkit-overflow-scrolling: touch;*/
-    height: calc(100vh - 64px);
     min-height: calc(100vh - 64px);
     margin-top: 64px;
 }
