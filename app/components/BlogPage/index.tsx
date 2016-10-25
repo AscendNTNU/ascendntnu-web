@@ -69,9 +69,8 @@ export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
           p['renderedBody'] = this.renderer.render(p.parsedBody._firstChild)
           return p
         })
-        console.log(r)
         this.setState({
-          posts: r
+          posts: r.sort((a: any, b: any) => a.file > b.file ? -1 : 1)
         })
       })
       .catch(err => console.error('Could not fetch file from: ' + url))
