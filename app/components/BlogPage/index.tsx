@@ -26,7 +26,6 @@ export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
 
   constructor (props: BlogPageProps) {
     super(props)
-    console.log(props)
     this.state = {
       attributes: {
         layout: '',
@@ -44,11 +43,11 @@ export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
     if (this.props.params.post) {
       this.fetchPost('/api/v1/posts/' + this.props.params.post)
     } else {
-      this.fetchPosts('/api/v1/posts')
+      this.fetchPosts('/api/v1/posts/all')
     }
   }
 
-  fetchPost (url: string) {
+  private fetchPost (url: string) {
     fetch(url)
       .then(r => r.json())
       .then(r => {
@@ -61,10 +60,16 @@ export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
       .catch(err => console.error('Could not fetch file from: ' + url))
   }
 
-  fetchPosts (url: string) {
+  private fetchPosts (url: string) {
     fetch(url)
       .then(r => r.json())
       .then(r => {
+        r = r.map((p: any) => {
+          p['parsedBody'] = this.parser.parse(p.body)
+          p['renderedBody'] = this.renderer.render(p.parsedBody._firstChild)
+          return p
+        })
+        console.log(r)
         this.setState({
           posts: r
         })
@@ -72,13 +77,45 @@ export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
       .catch(err => console.error('Could not fetch file from: ' + url))
   }
 
-  reload () {
+  public reload () {
     if (this.props.params.post) {
       this.fetchPost('/api/v1/posts/' + this.props.params.post)
     } else {
-      this.fetchPosts('/api/v1/posts')
+      this.fetchPosts('/api/v1/posts/all')
     }
   }
+
+  public digits (value: number, places?: number): string {
+    places = (typeof places === 'number' ? places : 2)
+
+    return (Array(places).join('0') + value).slice(-(places))
+  }
+
+  public formatDate (date: string, format?: string): string {
+    if (!date.length)
+      return ''
+
+    if (typeof date === 'string') {
+      format = (typeof format === 'string' ? format : 'dag DD.MM.YYYY (HH:MM:SS)')
+      let dager: string[] = ['Man', 'Tirs', 'Ons', 'Tors', 'Fre', 'Lør', 'Søn']
+      let d: Date = new Date(date.replace(/-/g, '/').replace(/T/g, ' ').slice(0,19))
+      let formatted: string = format.replace(new RegExp('da[gy]', 'ig'), dager[d.getDay()])
+
+      for (let i: number = 5; i > 0; i--) {
+        formatted = formatted
+          .replace(new RegExp(`(^|\\W)y{${i},}($|\\W)`, 'ig'), `$1${this.digits(d.getFullYear(), i)}$2`)
+          .replace(new RegExp(`(^|\\W)m{${i},}($|\\W)`, 'ig'), `$1${this.digits(d.getMonth() + 1, i)}$2`)
+          .replace(new RegExp(`(^|\\W)d{${i},}($|\\W)`, 'ig'), `$1${this.digits(d.getDate(), i)}$2`)
+          .replace(new RegExp(`(^|\\W)h{${i},}($|\\W)`, 'ig'), `$1${this.digits(d.getHours(), i)}$2`)
+          .replace(new RegExp(`(^|\\W)m{${i},}($|\\W)`, 'ig'), `$1${this.digits(d.getMinutes(), i)}$2`)
+          .replace(new RegExp(`(^|\\W)s{${i},}($|\\W)`, 'ig'), `$1${this.digits(d.getSeconds(), i)}$2`)
+      }
+
+      return formatted
+    }
+
+  return ''
+}
 
   render () {
     if (this.showAllPosts && !this.props.params.post) {
@@ -99,12 +136,35 @@ export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
       )
     } else {
       let links: any[] = this.state.posts.map((post, i) => {
-        return (<Link onClick={this.reload} to={'/blog/' + post} key={i}>{post}</Link>)
+        let categories: any[] = post.attributes.categories.split(" ").map((cat:string, k:number) => {
+          return (<div className="category" key={k}>{cat}</div>)
+        })
+        return (
+          <div className="page-blog-list-link" key={i}>
+            <div className="blog-list-details">
+              <Link className="blog-list-link" onClick={this.reload} to={'/blog/' + post.link}>{post.attributes.title}</Link>
+              <div className="blog-list-author">
+                {post.attributes.author}
+              </div>
+              <div className="blog-list-date">
+                {this.formatDate(post.attributes.date, 'dag DD/MM/YY')}
+              </div>
+            </div>
+            <div className="blog-list-preview">
+              <div dangerouslySetInnerHTML={ {__html: post.renderedBody } } />
+            </div>
+            <div className="blog-list-categories">
+              {categories}
+            </div>
+          </div>
+        )
       })
       return (
         <div className="page page-blog">
           <Section title="Artikler">
-            {links}
+            <SubSection className="page-blog-list">
+              {links}
+            </SubSection>
           </Section>
         </div>
       )
