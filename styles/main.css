@@ -89,8 +89,6 @@ a {
         top: 100%;
         left: 0;
         background-color: #fff;
-        height: calc(100vh - 64px);
-        height: calc(100vh);
         width: 100%;
         z-index: 3;
         overflow: auto;
@@ -124,14 +122,19 @@ a {
     width: 100%;
 }
 
+@media (min-width: 560px) {
+    body {
+        overflow: hidden;
+    }
+
+    body .app-container {
+        /*-webkit-overflow-scrolling: touch;*/
+        height: calc(100vh - 64px);
+    }
+}
 
 body.no-scroll {
     overflow: hidden;
-}
-
-body.no-scroll .app-container {
-    /*-webkit-overflow-scrolling: touch;*/
-    height: calc(100vh - 64px);
 }
 
 .app-container {
