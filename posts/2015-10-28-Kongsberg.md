@@ -3,6 +3,7 @@ layout: post
 title:  "Announcing our main sponsor: Kongsberg"
 date:   2015-10-27 13:00:00
 categories: sponsorship
+author: Johan Hatleskog
 ---
 We are very pleased to announce that Kongsberg is now the main sponsor of our team.
 
