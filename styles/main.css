@@ -285,10 +285,11 @@ body {
 .section {
     display: flex;
     flex-direction: column;
-    padding: 16px;
+    padding: 16px 32px;
     box-sizing: border-box;
     line-height: 1.6;
 }
+
 .section a {
     color: #f80;
     border-bottom: 1px dashed #f80;
@@ -322,6 +323,85 @@ body {
 
 .drone-text {
     text-align: justify;
+}
+
+.page-blog-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.page-blog-list-link {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.page-blog-list-link .blog-list-link {
+    border: none;
+    font-size: 1.6em;
+    align-self: flex-start;
+    font-weight: bold;
+}
+
+.blog-list-details {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.blog-list-author {
+    align-self: flex-end;
+    margin-left: 20px;
+    flex: 1;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.blog-list-author:after {
+    content: ", ";
+    margin-right: 6px;
+}
+
+.blog-list-author:empty:after {
+    content: "Ukjent forfatter, ";
+}
+
+.blog-list-date {
+    font-size: .8em;
+    color: rgba(0, 0, 0, .6);
+    font-style: italic;
+    align-self: flex-end;
+    white-space: nowrap;
+}
+
+.blog-list-preview {
+    font-size: .8em;
+    padding: 0 200px 0 30px;
+}
+
+.blog-list-categories {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0 20px;
+}
+
+.blog-list-categories > .category {
+    margin: 2px 4px;
+    padding: 2px 10px;
+    font-size: .8em;
+    background-color: rgba(0, 0, 0, .1);
+    border-radius: 3px;
+}
+
+@media (max-width: 720px) {
+    .blog-list-details {
+        flex-wrap: wrap;
+    }
+    .blog-list-preview {
+        padding: 0;
+    }
 }
 
 .page-blog img {
