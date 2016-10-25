@@ -285,7 +285,7 @@ body {
 .section {
     display: flex;
     flex-direction: column;
-    padding: 16px 32px;
+    padding: 16px 32px 42px 16px;
     box-sizing: border-box;
     line-height: 1.6;
 }
