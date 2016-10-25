@@ -23,7 +23,7 @@ app.get('/api/v1', function (req, res) {
 
 app.get('/api/v1/posts', function (req, res) {
   var files = fs.readdirSync('./posts')
-    .filter(file => /\.md$/.test(file))
+    .filter(file => /\.md$|\.markdown$/.test(file))
     .map(slugify)
 
   res.setHeader('Content-Type', 'application/json; charset=utf-8')
@@ -34,12 +34,12 @@ function slugify (fileName) {
   return fileName
     .toLowerCase()
     //.replace(/^[0-9]{2,4}-[0-9]{1,2}-[0-9]{1,2}-/, '')
-    .replace(/\.md$/, '')
+    .replace(/\.md$|\.markdown$/, '')
 }
 
 app.get('/api/v1/posts/all', function (req, res) {
   var files = fs.readdirSync('./posts')
-    .filter(file => /\.md$/.test(file))
+    .filter(file => /\.md$|\.markdown$/.test(file))
     .map(postName => {
     var pathToPost = __dirname + '/posts/' + postName
     var element = {}
