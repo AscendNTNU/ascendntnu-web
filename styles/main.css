@@ -123,7 +123,7 @@ a {
     width: 100%;
 }
 
-@media only screen and (min-device-width: 768px) {
+@media only screen and (min-device-width: 1024px) {
     body {
         overflow: hidden;
     }
@@ -297,7 +297,7 @@ body.no-scroll {
 .section {
     display: flex;
     flex-direction: column;
-    padding: 16px 32px 42px 16px;
+    padding: 16px 16px 42px 16px;
     box-sizing: border-box;
     line-height: 1.6;
 }
