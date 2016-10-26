@@ -125,7 +125,7 @@ export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
     let value: string = evt.target.value
     value = value.replace(/^[^a-zøæå0-9 \-]|[^a-zøæå0-9 \-*]+/gi, '')
     value = value.replace(/^\*+/gi, '')
-    value = value.replace(/\*/gi, '.')
+    value = value.replace(/\*/gi, '[a-zøæå0-9 \-]')
     this.setState({
       searchValue: value
     })
