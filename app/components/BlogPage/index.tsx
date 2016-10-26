@@ -123,6 +123,9 @@ export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
 
   public search (evt: any) {
     let value: string = evt.target.value
+    value = value.replace(/^[^a-zøæå0-9 \-]|[^a-zøæå0-9 \-*]+/gi, '')
+    value = value.replace(/^\*+/gi, '')
+    value = value.replace(/\*/gi, '.')
     this.setState({
       searchValue: value
     })
@@ -230,7 +233,7 @@ export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
         <div className="page page-blog">
           <Breadcrumb routes={['blog']} />
           <Section title="Artikler">
-            <input onChange={this.search.bind(this)} placeholder="Finn artikler..." />
+            <input onChange={this.search.bind(this)} placeholder="Søk i artikler..." title="Bruk * som wildcard" />
             <SubSection className="page-blog-list">
               {links}
             </SubSection>
