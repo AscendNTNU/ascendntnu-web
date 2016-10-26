@@ -12,6 +12,7 @@ import JoinPage from './components/JoinPage'
 import AboutPage from './components/AboutPage'
 
 let gotoTop = () => {
+  document.querySelector('body').scrollTop = 0
   document.querySelector('#app').scrollTop = 0
 }
 
