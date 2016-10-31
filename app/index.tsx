@@ -24,6 +24,7 @@ render (
       <Route path="/blog/:post" component={BlogPage} />
       <Route path="/drones" component={DronePage} />
       <Route path="/team" component={TeamPage} />
+      <Route path="/team/:year" component={TeamPage} />
       <Route path="/join" component={JoinPage} />
       <Route path="/about" component={AboutPage} />
     </Route>

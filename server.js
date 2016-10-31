@@ -13,10 +13,6 @@ app.use('/node_modules', express.static(__dirname + '/node_modules'))
 
 app.listen(8080)
 
-app.get(['/', '/blog*', '/drones', '/team', '/join', '/about'], function (req, res) {
-  res.sendFile(__dirname + '/index.html')
-})
-
 app.get('/api/v1', function (req, res) {
   res.sendFile(__dirname + '/api/v1/index.html')
 })
@@ -148,3 +144,7 @@ function fileExists (filePath) {
     return false
   }
 }
+
+app.get('/*', function (req, res) {
+  res.sendFile(__dirname + '/index.html')
+})
