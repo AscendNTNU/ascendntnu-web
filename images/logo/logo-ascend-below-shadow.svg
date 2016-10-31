@@ -4,8 +4,10 @@
     stroke-dasharray: 180;
     stroke-dashoffset: 180;
     animation: dash 2s linear forwards;
+    animation-delay: .5s;
     stroke-width: 1;
     fill-opacity: 0;
+    stroke-opacity: 0;
   }
 
   .path.text {
@@ -15,15 +17,21 @@
 
   @keyframes dash {
     0% {
+      stroke-opacity: 0;
       fill-opacity: 0;
     }
-    80% {
+    60% {
+      stroke-opacity: 1;
       stroke-dashoffset: 0;
       fill-opacity: 0;
       stroke-width: 1;
       fill: #fff;
     }
-    90% {
+    70% {
+      stroke-opacity: 0;
+      fill-opacity: 1;
+    }
+    80% {
       fill: #fff;
     }
     100% {
