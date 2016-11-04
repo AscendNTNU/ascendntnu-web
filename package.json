@@ -4,6 +4,7 @@
   "description": "AscendNTNU website",
   "main": "app/index.tsx",
   "scripts": {
+    "start": "webpack -w",
     "build": "webpack",
     "watch": "webpack -w",
     "dev": "webpack-dev-server --inline --hot --content-base . --history-api-fallback",
