@@ -10,6 +10,7 @@ import DronePage from './components/DronePage'
 import TeamPage from './components/TeamPage'
 import JoinPage from './components/JoinPage'
 import AboutPage from './components/AboutPage'
+import SponsorPage from './components/SponsorPage'
 
 let gotoTop = () => {
   document.querySelector('body').scrollTop = 0
@@ -26,6 +27,8 @@ render (
       <Route path="/team" component={TeamPage} />
       <Route path="/team/:year" component={TeamPage} />
       <Route path="/join" component={JoinPage} />
+      <Route path="/sponsors" component={SponsorPage} />
+      <Route path="/sponsors/:year" component={SponsorPage} />
       <Route path="/about" component={AboutPage} />
     </Route>
   </Router>,

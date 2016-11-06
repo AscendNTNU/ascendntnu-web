@@ -372,6 +372,24 @@ body.no-scroll {
     /*filter: none;*/
 }
 
+.select-sponsor {
+    transition-property: background-color;
+    transition-duration: .2s;
+    transition-timing-function: ease-in-out;
+    border-radius: 3px;
+    background-color: #ddd;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding: 2px 12px;
+    cursor: pointer;
+}
+
+.select-sponsor:hover {
+    background-color: #ccc;
+    transition-duration: .2s;
+}
+
 .section {
     display: flex;
     flex-direction: column;
