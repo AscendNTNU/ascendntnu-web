@@ -585,6 +585,14 @@ found {
     font-style: italic;
 }
 
+.team-members .team-member-image {
+    width: 120px;
+}
+
+.team-members .team-member-image > img {
+    width: 100%;
+}
+
 .breadcrumb-container {
     display: flex;
     background-color: rgba(0, 0, 0, .04);

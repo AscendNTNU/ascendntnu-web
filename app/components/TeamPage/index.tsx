@@ -135,7 +135,12 @@ export class TeamPage extends React.Component<TeamPageProps, TeamPageState> {
         })
         .map((m: any, i: number) => {
         return (
-          <div key={i} className="team-member team-leader"><b>{m.name}</b> - {m.role}</div>
+          <div key={i} className="team-member team-leader">
+            <div className="team-member-image">
+              <img src={m.image} />
+            </div>
+            <b>{m.name}</b> - {m.role}
+          </div>
         )
       })
 
@@ -148,7 +153,12 @@ export class TeamPage extends React.Component<TeamPageProps, TeamPageState> {
         })
         .map((m: any, i: number) => {
         return (
-          <div key={i} className="team-member"><b>{m.name}</b> - {m.role}</div>
+          <div key={i} className="team-member">
+            <div className="team-member-image">
+              <img src={m.image} />
+            </div>
+            <b>{m.name}</b> - {m.role}
+          </div>
         )
       })
 
