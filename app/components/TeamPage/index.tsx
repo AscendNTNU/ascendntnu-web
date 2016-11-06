@@ -129,7 +129,8 @@ export class TeamPage extends React.Component<TeamPageProps, TeamPageState> {
    * @memberOf TeamPage
    */
   private transformMailAddress (evt: any): void {
-    evt.target.href = evt.target.href.replace(/\[at\]/g, '@')
+    if (evt.target.href)
+      evt.target.href = evt.target.href.replace(/\[at\]/g, '@')
   }
 
   render () {
@@ -149,15 +150,23 @@ export class TeamPage extends React.Component<TeamPageProps, TeamPageState> {
           return m.group.indexOf(group) !== -1 && m.group.indexOf('Leader') !== -1
         })
         .map((m: any, i: number) => {
+        let mail: any;
+
+        if (m.mail && m.mail.length) {
+          mail = (
+            <div className="team-member-mail">
+              <a href={'mailto:' + m.mail} onMouseOver={this.transformMailAddress}>
+                <i className="fa fa-envelope" aria-hidden="true"></i>
+              </a>
+            </div>
+          )
+        }
+
         return (
           <div key={i} className="team-member team-leader">
             <div className="team-member-image">
               <img src={m.image} />
-              <div className="team-member-mail">
-                <a href={'mailto:' + m.mail} onMouseOver={this.transformMailAddress}>
-                  <i className="fa fa-envelope" aria-hidden="true"></i>
-                </a>
-              </div>
+              {mail}
             </div>
             <div className="team-member-name">{m.name}</div>
             <div className="team-member-role">{m.role}</div>
@@ -169,19 +178,27 @@ export class TeamPage extends React.Component<TeamPageProps, TeamPageState> {
        * Adding the rest of the members which is not a leader.
        */
       let members: any = this.state.members
-        .filter((m: any) => {
-          return m.group.indexOf(group) !== -1 && m.group.indexOf('Leader') == -1
-        })
-        .map((m: any, i: number) => {
+      .filter((m: any) => {
+        return m.group.indexOf(group) !== -1 && m.group.indexOf('Leader') == -1
+      })
+      .map((m: any, i: number) => {
+        let mail: any;
+
+        if (m.mail && m.mail.length) {
+          mail = (
+            <div className="team-member-mail">
+              <a href={'mailto:' + m.mail} onMouseOver={this.transformMailAddress}>
+                <i className="fa fa-envelope" aria-hidden="true"></i>
+              </a>
+            </div>
+          )
+        }
+
         return (
           <div key={i} className="team-member">
             <div className="team-member-image">
               <img src={m.image} />
-              <div className="team-member-mail">
-                <a href={'mailto:' + m.mail} onMouseOver={this.transformMailAddress}>
-                  <i className="fa fa-envelope" aria-hidden="true"></i>
-                </a>
-              </div>
+              {mail}
             </div>
             <div className="team-member-name">{m.name}</div>
             <div className="team-member-role">{m.role}</div>

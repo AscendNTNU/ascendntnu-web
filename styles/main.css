@@ -615,6 +615,7 @@ found {
 }
 
 .team-member .team-member-image {
+    font-size: 0;
     width: 100%;
     position: relative;
     box-shadow: 0 0 8px -2px #000;
@@ -647,21 +648,28 @@ found {
 
 .team-member .team-member-mail > a {
     border-radius: 4px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     border: none;
     position: absolute;
-    /*transform: translateX(-50%) translateY(-50%);*/
     background-color: rgba(0, 0, 0, .5);
-    top: 0;
+    top: 100%;
     left: 0;
     right: 0;
     bottom: 0;
     color: lightgray;
-    font-size: 1.2em;
+    font-size: 1.2rem;
     text-shadow: 0 0 3px #000;
-    transition: color .2s ease-in-out;
+    transition-property: color top;
+    transition-duration: .2s;
+    transition-timing-function: ease-in-out;
+}
+
+.team-member .team-member-image:hover > .team-member-mail > a {
+    top: 70%;
 }
 
 .team-member .team-member-mail > a:hover {
