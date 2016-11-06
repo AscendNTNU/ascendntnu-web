@@ -391,7 +391,7 @@ body.no-scroll {
     flex-wrap: wrap;
 }
 
-.section.centered {
+.section.centered, .sub-section.centered {
     text-align: center;
 }
 
