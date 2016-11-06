@@ -47,7 +47,7 @@ export class SponsorPage extends React.Component<SponsorPageProps, SponsorPageSt
 
   render () {
     let title: any = (
-      <span>Our sponsors <select onChange={this.changeYear.bind(this)} defaultValue={this.state.year + ''}>
+      <span>Our sponsors <select className="select-sponsor select" onChange={this.changeYear.bind(this)} defaultValue={this.state.year + ''}>
         <option value="2016">2016</option>
         <option value="2017">2017</option>
       </select>
