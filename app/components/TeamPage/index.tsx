@@ -117,6 +117,21 @@ export class TeamPage extends React.Component<TeamPageProps, TeamPageState> {
     })
   }
 
+  /**
+   * Transformes the mail address to avoid bots from reading the plain address.
+   * Since the user allways is going to hover the mouse over the mail, we transform the
+   * address according to that.
+   * 
+   * @private
+   * @param {*} evt Should be a mouse over event.
+   * @returns
+   * 
+   * @memberOf TeamPage
+   */
+  private transformMailAddress (evt: any): void {
+    evt.target.href = evt.target.href.replace(/\[at\]/g, '@')
+  }
+
   render () {
 
     /**
@@ -139,7 +154,9 @@ export class TeamPage extends React.Component<TeamPageProps, TeamPageState> {
             <div className="team-member-image">
               <img src={m.image} />
             </div>
-            <b>{m.name}</b> - {m.role}
+            <div className="team-member-name">{m.name}</div>
+            <div className="team-member-role">{m.role}</div>
+            <div className="team-member-mail"><a href={'mailto:' + m.mail} onMouseOver={this.transformMailAddress}>mail</a></div>
           </div>
         )
       })
@@ -157,7 +174,9 @@ export class TeamPage extends React.Component<TeamPageProps, TeamPageState> {
             <div className="team-member-image">
               <img src={m.image} />
             </div>
-            <b>{m.name}</b> - {m.role}
+            <div className="team-member-name">{m.name}</div>
+            <div className="team-member-role">{m.role}</div>
+            <div className="team-member-mail"><a href={'mailto:' + m.mail} onMouseOver={this.transformMailAddress}>mail</a></div>
           </div>
         )
       })
