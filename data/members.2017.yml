@@ -16,7 +16,7 @@
 - name: Emilie Udnæs
   background: Electrical Engineering
   role: Communication Leader
-  group: Marketing, Board, Admin, Leader
+  group: Marketing, Board, Admin
   image: "/images/team-2017/emilie-u-2017.jpg"
   mail: "emilie.udnaes[at]ascendntnu.no"
 
@@ -170,31 +170,31 @@
   image: "/images/team-2017/vilde-g-2017.jpg"
   mail: "vilde.gjaerum[at]ascendntnu.no"
 
-## Team System ##
+## Team Hardware ##
 - name: Christian Wilhelmsen
   background: Mechanical Engineering
-  role: System Leader
-  group: System, Leader
+  role: Hardware Leader
+  group: Hardware, Leader
   image: "/images/team-2017/christian-w-2017.jpg"
   mail: "christian.wilhelmsen[at]ascendntnu.no"
 
 - name: Hans Theodor Johnsen
   background: Electrical Engineering
-  role: System Member
-  group: System
+  role: Hardware Member
+  group: Hardware
   image: "/images/team-2017/hans-tj-2017.jpg"
   mail: "hans.theodor.johnsen[at]ascendntnu.no"
 
 - name: Patrick Sjåstad Langseth
   background: Mechanical Engineering
-  role: System Member
-  group: System
+  role: Hardware Member
+  group: Hardware
   image: "/images/team-2017/patrick-sl-2017.jpg"
   mail: "patrick.langseth[at]ascendntnu.no"
 
 - name: Per Kristian Pöcher
   background: Cybernetics and Robotics
-  role: System Member
-  group: System
+  role: Hardware Member
+  group: Hardware
   image: "/images/team-2017/per-kp-2017.jpg"
   mail: "per.kristian.pocher[at]ascendntnu.no"

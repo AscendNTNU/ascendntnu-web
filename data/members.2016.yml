@@ -3,19 +3,19 @@
 - name: Johan Hatleskog
   background: Cybernetics and Robotics
   role: Project manager
-  group: Board
+  group: Board, Admin
   image: "/images/team/johan.jpg"
 
 - name: Tobias Stene Hansteen
   background: Cybernetics and Robotics
   role: Technical leader
-  group: Board, Leader
+  group: Board, Leader, Admin
   image: "/images/team/tobias.jpg"
 
 - name: Marius Maaland
   background: Computer Science
   role: Deputy project manager
-  group: Board
+  group: Board, Admin
   image: "/images/team/marius.jpg"
 
 - name: Simen Haugo
@@ -27,26 +27,26 @@
 - name: Martin Sollie
   background: Cybernetics and Robotics
   role: Group leader Control
-  group: Board, Leader
+  group: Board, Leader, Control
   image: "/images/team/martin.jpg"
 
 - name: Matias Christensen
   background: Computer Science
   role: Group leader Perception
-  group: Board, Leader
+  group: Board, Leader, Admin
   image: "/images/team/matias.jpg"
 
 ##Team members Admin##
 - name: Ann Therese Kjenes
   background: Economics and Business Administration
   role: Business manager
-  group: Admin
+  group: Admin, Business
   image: "/images/team/ann-therese.jpg"
 
 - name: Emilie Udnæs
   background: Electrical Engineering
   role: Marketing manager
-  group: Admin
+  group: Admin, Marketing
   image: "/images/team/emilie.jpg"
 
 ##Team members AI## 
@@ -81,13 +81,13 @@
   group: Control
   image: "/images/team/brage.jpg"
 
+##Team members Perception
 - name: Stein-Inge Torset Øien
   background: Cybernetics and Robotics
   role: Control engineer
   group: Perception
   image: "/images/team/stein-inge.jpg"
 
-##Team members Perception
 - name: Thomas Rostrup Andersen
   background: Cybernetics and Robotics
   role: Perception engineer
