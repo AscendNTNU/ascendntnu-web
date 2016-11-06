@@ -617,12 +617,13 @@ found {
 .team-member .team-member-image {
     width: 100%;
     position: relative;
+    box-shadow: 0 0 8px -2px #000;
+    border-radius: 4px;
+    overflow: hidden;
 }
 
 .team-member .team-member-image > img {
     width: 100%;
-    box-shadow: 0 0 8px -2px #000;
-    border-radius: 4px;
 }
 
 .team-member .team-member-name {
@@ -635,18 +636,8 @@ found {
 }
 
 .team-member .team-member-image > .team-member-mail {
-    position: absolute;
-    /*transform: translateX(-50%) translateY(-50%);*/
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     transition: opacity .2s ease-in-out;
     opacity: 0;
-    background-color: rgba(0, 0, 0, .5);
 }
 
 .team-member .team-member-image:hover > .team-member-mail {
@@ -655,7 +646,14 @@ found {
 }
 
 .team-member .team-member-mail > a {
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: none;
+    position: absolute;
+    /*transform: translateX(-50%) translateY(-50%);*/
+    background-color: rgba(0, 0, 0, .5);
     top: 0;
     left: 0;
     right: 0;
