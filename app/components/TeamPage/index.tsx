@@ -6,27 +6,37 @@ import { Breadcrumb } from '../Common/breadcrumb'
 
 export interface TeamPageProps {
   params?: any & {
-    year?: number
+    year?: number,
   }
 }
 
 export interface TeamPageState {
   year: number,
+  grouping: RegExp,
   members: any[],
+  groups: string[],
 }
 
 export class TeamPage extends React.Component<TeamPageProps, TeamPageState> {
+  private groupings: any
+
   constructor(props: any){
     super(props)
 
     let year = 2017
+    this.groupings = {
+      '2016': new RegExp('Admin|Control|Perception|AI', 'i'),
+      '2017': new RegExp('Admin|Control|Perception|Planning|Hardware', 'i'),
+    }
 
     if (props.params && props.params.year)
       year = props.params.year
 
     this.state = {
       year: year,
-      members: []
+      grouping: this.groupings[year],
+      members: [],
+      groups: [],
     }
 
     this.getMembers(year)
@@ -41,7 +51,9 @@ export class TeamPage extends React.Component<TeamPageProps, TeamPageState> {
 
       this.state = {
         year: year,
-        members: this.state.members
+        grouping: this.groupings[year],
+        members: this.state.members,
+        groups: this.state.groups,
       }
 
       this.getMembers(year)
@@ -54,17 +66,57 @@ export class TeamPage extends React.Component<TeamPageProps, TeamPageState> {
 
   public getMembers (year: number) {
     fetch("/api/v1/members/" + year).then(r => r.json()).then(r => {
+      let groups: string[] = []
+      r.forEach((m: any, i: number) => {
+        let g = m.group.split(/, ?/)
+        for (let i: number = 0; i < g.length; i++) {
+          if (groups.indexOf(g[i]) === -1)
+            groups.push(g[i])
+        }
+      })
+
       this.setState({
         year: year,
-        members: r
+        grouping: this.groupings[year],
+        members: r.sort((a: any, b: any) => {
+          return a.name > b.name ? 1 : -1
+        }),
+        groups: groups.sort((a: any, b: any) => {
+          return a > b ? 1 : -1
+        }),
       })
     })
   }
 
   render () {
-    let members = this.state.members.map((m: any, i: number) => {
+    let groups: any = this.state.groups
+      .filter((group: any) => this.state.grouping.test(group))
+      .map((group: any, n: number) => {
+      let leader: any = this.state.members
+        .filter((m: any) => {
+          return m.group.indexOf(group) !== -1 && m.group.indexOf('Leader') !== -1
+        })
+        .map((m: any, i: number) => {
+        return (
+          <div key={i}><b>{m.name}</b> - {m.role}</div>
+        )
+      })
+      let members: any = this.state.members
+        .filter((m: any) => {
+          return m.group.indexOf(group) !== -1 && m.group.indexOf('Leader') == -1
+        })
+        .map((m: any, i: number) => {
+        return (
+          <div key={i}><b>{m.name}</b> - {m.role}</div>
+        )
+      })
+
       return (
-        <div key={i}><b>{m.name}</b> - {m.role}</div>
+        <div key={n}>
+          <h3>{group}</h3>
+          <div>{leader}</div>
+          <div>{members}</div>
+        </div>
       )
     })
 
@@ -76,7 +128,7 @@ export class TeamPage extends React.Component<TeamPageProps, TeamPageState> {
           <SubSection title="Members">
             <Link to="team/2016"><button>2016</button></Link>
             <Link to="team/2017"><button>2017</button></Link>
-            {members}
+            {groups}
           </SubSection>
         </Section>
       </div>
