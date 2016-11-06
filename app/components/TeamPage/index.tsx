@@ -129,7 +129,8 @@ export class TeamPage extends React.Component<TeamPageProps, TeamPageState> {
    * @memberOf TeamPage
    */
   private transformMailAddress (evt: any): void {
-    evt.target.href = evt.target.href.replace(/\[at\]/g, '@')
+    if (evt.target.href)
+      evt.target.href = evt.target.href.replace(/\[at\]/g, '@')
   }
 
   render () {
