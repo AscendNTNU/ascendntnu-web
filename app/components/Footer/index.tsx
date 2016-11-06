@@ -20,8 +20,8 @@ export class Footer extends React.Component<FooterProps, {}> {
   render () {
     let links = this.links.map((link, i) => {
       return (
-        <a className="link" target="_blank" href={link.href} key={i}>
-            <i className={link.icon ? "fa fa-" + link.icon : ""}></i> {link.content}
+        <a className={'link icon icon-' + link.icon } target="_blank" href={link.href} key={i}>
+            <i className={link.icon ? "fa fa-" + link.icon : ""}></i>
         </a>
       )
     })
@@ -36,6 +36,15 @@ export class Footer extends React.Component<FooterProps, {}> {
           </div>
           <div className="foot-element">
             {links}
+            <div className="fb-like"
+              data-href="https://www.facebook.com/ascendntnu/?fref=ts"
+              data-width="100"
+              data-layout="standard"
+              data-action="like"
+              data-size="small"
+              data-colorscheme="dark"
+              data-show-faces="false"
+              data-share="true"></div>
           </div>
           <div className="foot-element">
             Autonomus aerial robotics. Ascend NTNU is The Norwegian University of Science and Technology's team in the International Aerial Robotics Competition (IARC).
