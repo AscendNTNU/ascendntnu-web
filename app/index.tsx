@@ -28,6 +28,7 @@ render (
       <Route path="/team/:year" component={TeamPage} />
       <Route path="/join" component={JoinPage} />
       <Route path="/sponsors" component={SponsorPage} />
+      <Route path="/sponsors/:year" component={SponsorPage} />
       <Route path="/about" component={AboutPage} />
     </Route>
   </Router>,

@@ -21,6 +21,16 @@ export class SponsorList extends React.Component<SponsorListProps, SponsorListSt
     this.getSponsors(this.state.year)
   }
 
+  componentWillReceiveProps (nextProps: any) {
+    let nextYear: number = nextProps.year || 2017
+    let year: number = this.props.year || this.state.year
+
+    if (nextYear != year) {
+      year = nextYear
+      this.getSponsors(year)
+    }
+  }
+
   public getSponsors (year: number) {
     fetch("/api/v1/sponsors/" + year).then(r => r.json()).then(r => {
       this.setState({
