@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { browserHistory } from 'react-router'
 
 import { Section, SubSection } from '../PageLayout'
 import { Breadcrumb } from '../Common/breadcrumb'
@@ -24,8 +25,10 @@ export class SponsorPage extends React.Component<SponsorPageProps, SponsorPageSt
   }
 
   private changeYear (evt: any) {
+    let year: number = evt.target.value
+    browserHistory.push('/sponsors/' + year)
     this.setState({
-      year: evt.target.value,
+      year: year,
     })
   }
 
