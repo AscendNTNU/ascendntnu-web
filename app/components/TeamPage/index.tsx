@@ -17,6 +17,13 @@ export interface TeamPageState {
   groups: string[],
 }
 
+/**
+ * This is the page for showing team members.
+ * 
+ * @export
+ * @class TeamPage
+ * @extends {React.Component<TeamPageProps, TeamPageState>}
+ */
 export class TeamPage extends React.Component<TeamPageProps, TeamPageState> {
   private groupings: any
 
@@ -42,6 +49,13 @@ export class TeamPage extends React.Component<TeamPageProps, TeamPageState> {
     this.getMembers(year)
   }
 
+  /**
+   * Changing year if props.params has changed. This is to avoid a new route.
+   * 
+   * @param {*} nextProps
+   * 
+   * @memberOf TeamPage
+   */
   componentWillReceiveProps (nextProps: any) {
     let nextYear: number = parseInt(nextProps.params.year) || 2017
     let year: number = parseInt(this.props.params.year) || this.state.year
