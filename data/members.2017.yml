@@ -2,47 +2,49 @@
 - name: Brage Eikanger
   background: Cybernetics and Robotics
   role: Project Manager
-  group: Project
+  group: Project, Board, Admin
   image: "/images/team-2017/brage-e-2017.jpg"
   mail: "brage.eikanger[at]ascendntnu.no"
 
 - name: Erling Solberg
   background: Electrical Engineering
   role: Sponsor Manager
-  group: Marketing
+  group: Marketing, Admin
   image: "/images/team-2017/erling-s-2017.jpg"
   mail: "erling.solberg[at]ascendntnu.no"
 
 - name: Emilie Udnæs
   background: Electrical Engineering
   role: Communication Leader
-  group: Marketing
+  group: Marketing, Board, Admin, Leader
   image: "/images/team-2017/emilie-u-2017.jpg"
   mail: "emilie.udnaes[at]ascendntnu.no"
 
 - name: Matias Christensen
   background: Computer Science
   role: Chief Engineer
+  group: Board, Admin
   image: "/images/team-2017/matias-c-2017.jpg"
   mail: "matias.christensen[at]ascendntnu.no"
 
 - name: Niklas Molnes Hole
   background: Computer Science
   role: Web Developer
-  group: Marketing
+  group: Marketing, Admin
   image: "/images/team-2017/niklas-mh-2017.jpg"
   mail: "niklas.hole[at]ascendntnu.no"
 
 - name: Simon Blindheim
   background: Cybernetics and Robotics
   role: Head of Economics
+  group: Board, Admin
   image: "/images/team-2017/simon-b-2017.jpg"
   mail: "simon.blindheim[at]ascendntnu.no"
 
 - name: Vebjørn Isaksen
   background: Cybernetics and Robotics
   role: Deputy Project Manager
-  group: Marketing
+  group: Marketing, Board, Admin
   image: "/images/team-2017/vebjorn-i-2017.jpg"
   mail: "vebjorn.isaksen[at]ascendntnu.no"
 
@@ -50,7 +52,7 @@
 - name: Martin Sollie
   background: Cybernetics and Robotics
   role: Control Leader
-  group: Control
+  group: Control, Leader
   image: "/images/team-2017/martin-s-2017.jpg"
   mail: "martin.sollie[at]ascendntnu.no"
 
@@ -86,14 +88,14 @@
 - name: Håkon Flatval
   background: Computer Science
   role: Perception Leader
-  group: Perception
+  group: Perception, Leader
   image: "/images/team-2017/hakon-f-2017.jpg"
   mail: "hakon.flatval[at]ascendntnu.no"
 
 - name: Ivar Thokle Hovden
   background: Computer Science
   role: Perception Member
-  group: Perception
+  group: Perception, Board
   image: "/images/team-2017/ivar-th-2017.jpg"
   mail: "ivar.thokle.hovden[at]ascendntnu.no"
 
@@ -136,7 +138,7 @@
 - name: Magnus Reiersen
   background: Computer Science
   role: Planning Leader
-  group: Planning
+  group: Planning, Leader
   image: "/images/team-2017/magnus-r-2017.jpg"
   mail: "magnus.reiersen[at]ascendntnu.no"
 
@@ -172,7 +174,7 @@
 - name: Christian Wilhelmsen
   background: Mechanical Engineering
   role: System Leader
-  group: System
+  group: System, Leader
   image: "/images/team-2017/christian-w-2017.jpg"
   mail: "christian.wilhelmsen[at]ascendntnu.no"
 
