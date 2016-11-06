@@ -3,91 +3,99 @@
 - name: Johan Hatleskog
   background: Cybernetics and Robotics
   role: Project manager
-  image: "/images/team/johan.jpg"
+  group: Board, Admin
+  image: "/images/teams/2016/johan.jpg"
 
 - name: Tobias Stene Hansteen
   background: Cybernetics and Robotics
   role: Technical leader
-  image: "/images/team/tobias.jpg"
+  group: Board, Leader, Admin
+  image: "/images/teams/2016/tobias.jpg"
 
 - name: Marius Maaland
   background: Computer Science
   role: Deputy project manager
-  image: "/images/team/marius.jpg"
+  group: Board, Admin
+  image: "/images/teams/2016/marius.jpg"
 
 - name: Simen Haugo
   background: Cybernetics and Robotics
   role: Group leader AI
-  image: "/images/team/simen.jpg"
+  group: Board, AI, Leader
+  image: "/images/teams/2016/simen.jpg"
 
 - name: Martin Sollie
   background: Cybernetics and Robotics
   role: Group leader Control
-  image: "/images/team/martin.jpg"
+  group: Board, Leader, Control
+  image: "/images/teams/2016/martin.jpg"
 
 - name: Matias Christensen
   background: Computer Science
   role: Group leader Perception
-  image: "/images/team/matias.jpg"
-  
+  group: Board, Leader, Admin
+  image: "/images/teams/2016/matias.jpg"
+
 ##Team members Admin##
 - name: Ann Therese Kjenes
   background: Economics and Business Administration
   role: Business manager
-  image: "/images/team/ann-therese.jpg"
-  
+  group: Admin, Business
+  image: "/images/teams/2016/ann-therese.jpg"
+
 - name: Emilie Udnæs
   background: Electrical Engineering
   role: Marketing manager
-  image: "/images/team/emilie.jpg"
+  group: Admin, Marketing
+  image: "/images/teams/2016/emilie.jpg"
 
 ##Team members AI## 
 - name: Mikkel Antonsen
   background: Computer Science
-  role: "AI engineer"
-  group: "AI"
-  image: "/images/team/mikkel.jpg"
+  role: AI engineer
+  group: AI
+  image: "/images/teams/2016/mikkel.jpg"
 
 - name: Alexander Bakke
   background: Computer Science
-  role: "AI engineer"
-  group: "AI"
-  image: "/images/team/alexander.jpg"
+  role: AI engineer
+  group: AI
+  image: "/images/teams/2016/alexander.jpg"
 
 - name: Nils Inge Rugsveen
   background: Computer Science
-  role: "AI engineer"
-  group: "AI"
-  image: "/images/team/nils.jpg"
+  role: AI engineer
+  group: AI
+  image: "/images/teams/2016/nils.jpg"
 
 ##Team members Control##
 - name: Christian Wilhelmsen
   background: Mechanical Engineering
-  role: "Mechanical engineer"
-  group: "Control"
-  image: "/images/team/christian.jpg"
+  role: Mechanical engineer
+  group: Control
+  image: "/images/teams/2016/christian.jpg"
 
 - name: Brage Eikanger
   background: Cybernetics and Robotics
-  role: "Control engineer"
-  group: "Control"
-  image: "/images/team/brage.jpg"
-
-- name: Stein-Inge Torset Øien
-  background: Cybernetics and Robotics
-  role: "Control engineer"
-  group: "Perception"
-  image: "/images/team/stein-inge.jpg"
+  role: Control engineer
+  group: Control
+  image: "/images/teams/2016/brage.jpg"
 
 ##Team members Perception
+- name: Stein-Inge Torset Øien
+  background: Cybernetics and Robotics
+  role: Control engineer
+  group: Perception
+  image: "/images/teams/2016/stein-inge.jpg"
+
 - name: Thomas Rostrup Andersen
   background: Cybernetics and Robotics
-  role: "Perception engineer"
-  group: "Perception"
-  image: "/images/team/thomas.jpg"
+  role: Perception engineer
+  group: Perception
+  image: "/images/teams/2016/thomas.jpg"
 
 - name: Håkon Flatval
   background: Computer Science
-  role: "Perception engineer"
-  group: "Perception"
-  image: "/images/team/hakon.jpg"
+  role: Perception engineer
+  group: Perception
+  image: "/images/teams/2016/hakon.jpg"

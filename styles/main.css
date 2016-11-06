@@ -391,7 +391,7 @@ body.no-scroll {
     flex-wrap: wrap;
 }
 
-.section.centered {
+.section.centered, .sub-section.centered {
     text-align: center;
 }
 
@@ -583,6 +583,90 @@ found {
     margin: auto;
     text-align: center;
     font-style: italic;
+}
+
+.teampage-team {
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: center;
+}
+
+.team-leaders {
+    width: 100%;
+}
+
+.team-leaders, .team-members {
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: center;
+}
+
+.team-leaders:empty {
+    display: none;
+}
+
+.teampage-team .sub-section-title {
+    width: 100%;
+}
+
+.team-member {
+    width: 120px;
+    margin: 8px;
+}
+
+.team-member .team-member-image {
+    width: 100%;
+    position: relative;
+    box-shadow: 0 0 8px -2px #000;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.team-member .team-member-image > img {
+    width: 100%;
+}
+
+.team-member .team-member-name {
+    font-weight: bold;
+    font-size: .8em;
+}
+
+.team-member .team-member-role {
+    font-size: .6em;
+}
+
+.team-member .team-member-image > .team-member-mail {
+    transition: opacity .2s ease-in-out;
+    opacity: 0;
+}
+
+.team-member .team-member-image:hover > .team-member-mail {
+    transition-duration: .05s;
+    opacity: 1;
+}
+
+.team-member .team-member-mail > a {
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    position: absolute;
+    /*transform: translateX(-50%) translateY(-50%);*/
+    background-color: rgba(0, 0, 0, .5);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: lightgray;
+    font-size: 1.2em;
+    text-shadow: 0 0 3px #000;
+    transition: color .2s ease-in-out;
+}
+
+.team-member .team-member-mail > a:hover {
+    transition-duration: .05s;
+    color: white;
 }
 
 .breadcrumb-container {
