@@ -585,12 +585,65 @@ found {
     font-style: italic;
 }
 
-.team-members .team-member-image {
-    width: 120px;
+.teampage-team {
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: center;
 }
 
-.team-members .team-member-image > img {
+.team-leaders {
     width: 100%;
+}
+
+.team-leaders, .team-members {
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: center;
+}
+
+.team-leaders:empty {
+    display: none;
+}
+
+.teampage-team .sub-section-title {
+    width: 100%;
+}
+
+.team-member {
+    width: 120px;
+    margin: 8px;
+}
+
+.team-member .team-member-image {
+    width: 100%;
+}
+
+.team-member .team-member-image > img {
+    width: 100%;
+    box-shadow: 0 0 8px -2px #000;
+    border-radius: 4px;
+}
+
+.team-member .team-member-name {
+    font-weight: bold;
+    font-size: .8em;
+}
+
+.team-member .team-member-role {
+    font-size: .6em;
+}
+
+.team-member .team-member-mail > a {
+    border: none;
+    color: lightgray;
+    font-size: 1.2em;
+    text-shadow: 0 0 3px #000;
+    transition: color .2s ease-in-out;
+}
+
+.team-member .team-member-mail > a:hover {
+    transition-duration: .05s;
+    color: white;
 }
 
 .breadcrumb-container {

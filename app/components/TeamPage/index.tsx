@@ -153,10 +153,14 @@ export class TeamPage extends React.Component<TeamPageProps, TeamPageState> {
           <div key={i} className="team-member team-leader">
             <div className="team-member-image">
               <img src={m.image} />
+              <div className="team-member-mail">
+                <a href={'mailto:' + m.mail} onMouseOver={this.transformMailAddress}>
+                  <i className="fa fa-envelope" aria-hidden="true"></i>
+                </a>
+              </div>
             </div>
             <div className="team-member-name">{m.name}</div>
             <div className="team-member-role">{m.role}</div>
-            <div className="team-member-mail"><a href={'mailto:' + m.mail} onMouseOver={this.transformMailAddress}>mail</a></div>
           </div>
         )
       })
@@ -173,10 +177,14 @@ export class TeamPage extends React.Component<TeamPageProps, TeamPageState> {
           <div key={i} className="team-member">
             <div className="team-member-image">
               <img src={m.image} />
+              <div className="team-member-mail">
+                <a href={'mailto:' + m.mail} onMouseOver={this.transformMailAddress}>
+                  <i className="fa fa-envelope" aria-hidden="true"></i>
+                </a>
+              </div>
             </div>
             <div className="team-member-name">{m.name}</div>
             <div className="team-member-role">{m.role}</div>
-            <div className="team-member-mail"><a href={'mailto:' + m.mail} onMouseOver={this.transformMailAddress}>mail</a></div>
           </div>
         )
       })
