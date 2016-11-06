@@ -60,10 +60,25 @@ export class TeamPage extends React.Component<TeamPageProps, TeamPageState> {
     }
   }
 
+  /**
+   * Change team based from a button with a year as a dataset.
+   * 
+   * @private
+   * @param {*} evt The mouseevent from the button which executed the action.
+   * 
+   * @memberOf TeamPage
+   */
   private changeTeam(evt: any) {
     this.getMembers(parseInt(evt.target.dataset.year))
   }
 
+  /**
+   * Fetch member data from the API based om a year.
+   * 
+   * @param {number} year The year to fetch from.
+   * 
+   * @memberOf TeamPage
+   */
   public getMembers (year: number) {
     fetch("/api/v1/members/" + year).then(r => r.json()).then(r => {
       let groups: string[] = []
@@ -89,9 +104,17 @@ export class TeamPage extends React.Component<TeamPageProps, TeamPageState> {
   }
 
   render () {
+
+    /**
+     * Creating the groups to an array of elements.
+     */
     let groups: any = this.state.groups
       .filter((group: any) => this.state.grouping.test(group))
       .map((group: any, n: number) => {
+
+      /**
+       * Adding leader(s) to an own list on each group.
+       */
       let leader: any = this.state.members
         .filter((m: any) => {
           return m.group.indexOf(group) !== -1 && m.group.indexOf('Leader') !== -1
@@ -101,6 +124,10 @@ export class TeamPage extends React.Component<TeamPageProps, TeamPageState> {
           <div key={i}><b>{m.name}</b> - {m.role}</div>
         )
       })
+
+      /**
+       * Adding the rest of the members which is not a leader.
+       */
       let members: any = this.state.members
         .filter((m: any) => {
           return m.group.indexOf(group) !== -1 && m.group.indexOf('Leader') == -1
