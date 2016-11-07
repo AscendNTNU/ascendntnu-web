@@ -11,41 +11,6 @@ a {
     text-decoration: none;
 }
 
-button,
-input[type="submit"],
-input[type="reset"] {
-    background-color: rgba(0, 0, 0, .3);
-    border: none;
-    border-radius: 3px;
-    color: #fff;
-    margin: 4px;
-    font-size: 1em;
-    padding: 8px 16px;
-    outline: none;
-    cursor: pointer;
-    box-shadow: 0 1px 4px -2px #000;
-    transition: background-color box-shadow;
-    transition-duration: .2s;
-    transition-timing-function: ease-in-out;
-}
-
-button a,
-input[type="submit"] a,
-input[type="reset"] a {
-    border: none;
-}
-
-button.active,
-input[type="reset"].active,
-input[type="submit"].active,
-.active button,
-.active input[type="submit"],
-.active input[type="reset"] {
-    transition-duration: .05s;
-    background-color: rgba(255, 127, 0, .7);
-    box-shadow: 0 1px 8px -2px #000;
-}
-
 .logo-font, .logo-title {
     font-family: 'Questrial', sans-serif;
 }
@@ -465,10 +430,7 @@ body.no-scroll {
     line-height: 1.6;
 }
 
-.page-blog a,
-.page-join a,
-.page-about a,
-.styled-link {
+.section a, .styled-link {
     color: #f80;
     cursor: pointer;
     border-bottom: 1px dashed #f80;

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Link, IndexLink } from 'react-router'
+import { Link } from 'react-router'
 
 import { Section, SubSection } from '../PageLayout'
 import { Breadcrumb } from '../Common/breadcrumb'
@@ -229,20 +229,14 @@ export class TeamPage extends React.Component<TeamPageProps, TeamPageState> {
       )
     })
 
-    let title: any = (
-      <span>
-        Members&nbsp;&nbsp;
-        <Link to="team/2016" activeClassName="active"><button>2016</button></Link>
-        <IndexLink to="team/2017" activeClassName="active"><button className={this.props.params.year ? '' : 'active'}>2017</button></IndexLink>
-      </span>
-    )
-
     return (
       <div className="page page-team">
         <Breadcrumb routes={['team']} />
         <Section title="The team">
           We have five groups: Control, Perception, Planning, Hardware and Admin. The board consists of the project manager, the deputy project manager, the technical leader and the group leaders. This means that we formally have a quite hierarchical stucture. However, in practice we have a very flat structure where everybody contributes within the areas they want and where attention is needed.
-          <SubSection title={title}>
+          <SubSection title="Members">
+            <Link to="team/2016"><button>2016</button></Link>
+            <Link to="team/2017"><button>2017</button></Link>
             {groups}
           </SubSection>
         </Section>
