@@ -26,6 +26,7 @@ export interface TeamPageState {
  */
 export class TeamPage extends React.Component<TeamPageProps, TeamPageState> {
   private groupings: any
+  private groupTexts: any
 
   constructor(props: any){
     super(props)
@@ -34,6 +35,14 @@ export class TeamPage extends React.Component<TeamPageProps, TeamPageState> {
     this.groupings = {
       '2016': new RegExp('Admin|Control|Perception|AI', 'i'),
       '2017': new RegExp('Admin|Control|Perception|Planning|Hardware', 'i'),
+    }
+    this.groupTexts = {
+      'Admin': 'Admin is the group responsible for the whole team. We plan the future of Ascend and try to make the whole team visible on NTNU.',
+      'Control': 'The control group takes care of all the physical aspects of the drone. Bridging the gap between commands and actions.',
+      'Perception': 'State estimation of the drone and beyond. The perception group converts sensor input to meaningful information about the drone and its environment.',
+      'Planning': 'Finding the optimal behaviour to solve the mission at hand. The Planning group takes the latest AI research from theory to practice.',
+      'AI': 'Finding the optimal behaviour to solve the mission at hand. The AI group takes the latest AI research from theory to practice.',
+      'Hardware': 'The hardware group is responsible for the design of the drone. Material choice, strength calculations, electrical, aerodynamics, propulsion and production.',
     }
 
     if (props.params && props.params.year)
@@ -207,8 +216,14 @@ export class TeamPage extends React.Component<TeamPageProps, TeamPageState> {
       })
 
       return (
-        <SubSection key={n} className="teampage-team centered" title={group}>
-          <div className="team-leaders">{leader}</div>
+        <SubSection key={n} className="teampage-team centered">
+          <div className="team-leaders">
+            {leader}
+            <div className="team-description">
+              <div className="team-title">{group}</div>
+              <div className="team-text">{this.groupTexts[group]}</div>
+            </div>
+          </div>
           <div className="team-members">{members}</div>
         </SubSection>
       )

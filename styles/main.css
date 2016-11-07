@@ -674,16 +674,31 @@ found {
     display: flex;
     flex-flow: wrap row;
     justify-content: center;
-}
-
-.team-leaders {
-    width: 100%;
+    margin-bottom: 100px;
 }
 
 .team-leaders, .team-members {
     display: flex;
     flex-flow: wrap row;
     justify-content: center;
+}
+
+.team-leaders {
+    width: 100%;
+    padding: 0 0 0 calc(50% - 272px);
+    align-items: flex-end;
+    flex-wrap: wrap-reverse;
+    box-sizing: border-box;
+}
+
+.teampage-team:nth-child(odd) .team-leaders {
+    padding: 0 calc(50% - 272px) 0 0;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.teampage-team:nth-child(odd) .team-leader {
+    order: 2;
 }
 
 .team-leaders:empty {
@@ -697,6 +712,10 @@ found {
 .team-member {
     width: 120px;
     margin: 8px;
+}
+
+.team-leader {
+    min-width: 120px;
 }
 
 .team-member .team-member-image {
@@ -760,6 +779,47 @@ found {
 .team-member .team-member-mail > a:hover {
     transition-duration: .05s;
     color: white;
+}
+
+.team-title {
+    font-size: 6em;
+    font-weight: bold;
+}
+
+.team-description {
+    flex: 1 0 240px;
+    font-size: .8em;
+    margin: 0 16px 24px 16px;
+}
+
+@media (min-width: 400px) and (max-width: 987px) {
+    .team-title {
+        font-size: calc(3rem + 16 * (6 - 3) * ((100vw - 400px) / (987 - 400)));
+    }
+
+    .team-text {
+        font-size: calc(.8rem + 16 * (1.2 - .8) * ((100vw - 400px) / (987 - 400)));
+    }
+}
+
+@media (min-width: 987px) {
+    .team-title {
+        font-size: 6rem;
+    }
+
+    .team-text {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .team-title {
+        font-size: 3rem;
+    }
+
+    .team-text {
+        font-size: .8rem;
+    }
 }
 
 .breadcrumb-container {
