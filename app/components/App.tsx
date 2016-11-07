@@ -13,7 +13,7 @@ export class App extends React.Component<AppProps, AppState> {
   constructor(props: any) {
     super(props)
 
-    if (!localStorage['theme'].length)
+    if (!localStorage['theme'] || !localStorage['theme'].length)
       localStorage['theme'] = 'light'
 
     this.state = {
