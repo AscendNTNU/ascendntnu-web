@@ -879,6 +879,7 @@ found {
 .breadcrumb-container > a {
     color: #f80;
     text-transform: capitalize;
+    border: none;
 }
 
 .breadcrumb-container > span {
