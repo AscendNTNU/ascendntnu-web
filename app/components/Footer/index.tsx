@@ -1,6 +1,9 @@
 import * as React from 'react'
 
-export interface FooterProps {}
+export interface FooterProps {
+  changeTheme: any,
+  theme: string,
+}
 
 export class Footer extends React.Component<FooterProps, {}> {
   links: any[];
@@ -47,7 +50,8 @@ export class Footer extends React.Component<FooterProps, {}> {
               data-share="true"></div>
           </div>
           <div className="foot-element">
-            Autonomus aerial robotics. Ascend NTNU is The Norwegian University of Science and Technology's team in the International Aerial Robotics Competition (IARC).
+            <div>Autonomus aerial robotics. Ascend NTNU is The Norwegian University of Science and Technology's team in the International Aerial Robotics Competition (IARC).</div>
+            <div onClick={this.props.changeTheme.bind(this)} className="styled-link">Change to {this.props.theme == 'dark' ? 'light' : 'dark'} theme</div>
           </div>
         </div>
       </div>
