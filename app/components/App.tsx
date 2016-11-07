@@ -12,6 +12,10 @@ export interface AppState {
 export class App extends React.Component<AppProps, AppState> {
   constructor(props: any) {
     super(props)
+
+    if (!localStorage['theme'].length)
+      localStorage['theme'] = 'light'
+
     this.state = {
       showMenu: false,
       theme: localStorage['theme'],
