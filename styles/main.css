@@ -514,9 +514,9 @@ body.no-scroll {
 }
 
 .blog-post-details {
-    flex-direction: row;
+    flex-flow: row wrap;
     margin-bottom: 32px;
-    flex-wrap: wrap;
+    max-width: 100%;
 }
 
 .blog-list-author,
@@ -581,6 +581,15 @@ body.no-scroll {
     font-size: .8em;
     background-color: rgba(0, 0, 0, .1);
     border-radius: 3px;
+}
+
+.app.dark-theme .blog-list-categories > .category,
+.app.dark-theme .blog-post-categories > .category {
+    background-color: rgba(0, 0, 0, .3);
+}
+
+.page-blog video {
+    max-width: 100%;
 }
 
 .page-blog input {
@@ -754,6 +763,7 @@ found {
 
 .breadcrumb-container {
     display: flex;
+    flex-flow: wrap row;
     background-color: rgba(0, 0, 0, .04);
     border-radius: 4px;
     align-self: flex-start;
