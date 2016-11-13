@@ -33,7 +33,7 @@ export class TeamPage extends React.Component<TeamPageProps, TeamPageState> {
 
     let year = 2017
     this.groupings = {
-      '2016': new RegExp('Admin|Control|Perception|AI', 'i'),
+      '2016': new RegExp('Admin|Control|Perception|Planning', 'i'),
       '2017': new RegExp('Admin|Control|Perception|Planning|Hardware', 'i'),
     }
     this.groupTexts = {
