@@ -9,7 +9,7 @@
 - name: Tobias Stene Hansteen
   background: Cybernetics and Robotics
   role: Technical leader
-  group: Board, Leader, Admin
+  group: Board, Admin
   image: "/images/teams/2016/tobias.jpg"
 
 - name: Marius Maaland
@@ -33,7 +33,7 @@
 - name: Matias Christensen
   background: Computer Science
   role: Group leader Perception
-  group: Board, Leader, Admin
+  group: Board, Leader, Admin, Perception
   image: "/images/teams/2016/matias.jpg"
 
 ##Team members Admin##
