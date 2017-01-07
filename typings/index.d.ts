@@ -5,3 +5,5 @@
 /// <reference path="globals/react-router/history/index.d.ts" />
 /// <reference path="globals/react-router/index.d.ts" />
 /// <reference path="globals/react/index.d.ts" />
+/// <reference path="globals/three/index.d.ts" />
+/// <reference path="globals/three-stl-loader/index.d.ts" />
