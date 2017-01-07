@@ -6,6 +6,7 @@ interface ModelRendererProps {
   models?: string[],
   width?: number,
   height?: number,
+  style?: any,
   wireframe?: boolean
 }
 
