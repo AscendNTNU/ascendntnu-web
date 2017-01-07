@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { render } from 'react-dom'
-import { Router, Route, hashHistory, IndexRoute, useRouterHistory } from 'react-router'
-import { createHistory } from 'history'
+import { Router, Route, hashHistory, browserHistory, IndexRoute, useRouterHistory } from 'react-router'
+//import { createHistory } from 'history'
 
 import App from './components/App'
 
@@ -18,7 +18,7 @@ let gotoTop = () => {
   document.querySelector('#app').scrollTop = 0
 }
 
-const browserHistory = useRouterHistory(createHistory)({ basename: '/' })
+//const browserHistory = useRouterHistory(createHistory)({ basename: '/' })
 
 render (
   <Router onUpdate={gotoTop} history={browserHistory}>
