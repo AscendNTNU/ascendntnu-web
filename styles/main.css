@@ -314,7 +314,7 @@ body.no-scroll {
 
 .model-renderer {
     width: 100%;
-    height: 100%;
+    height: 100vh;
 }
 
 .front-splash {
@@ -944,11 +944,16 @@ found {
     }
 
     .front-splash {
-        min-height: 420px;
+        min-height: 484px;
     }
 
     .front-splash-right > .model-renderer {
-        min-height: 420px;
+        right: calc(480px * .15);
+    }
+
+    .front-splash-right > .model-renderer,
+    .front-splash > .model-renderer {
+        min-height: 484px;
     }
 }
 
@@ -959,6 +964,8 @@ found {
 
     .front-splash-right > .model-renderer {
         right: 105.6px;
+        min-height: 640px;
+        max-height: 640px;
     }
 
     .front-splash-right:after {
@@ -970,8 +977,7 @@ found {
         max-height: 640px;
     }
     
-    .front-splash-right > .model-renderer {
-        min-height: 640px;
+    .front-splash > .model-renderer {
         max-height: 640px;
     }
 }
@@ -1021,7 +1027,6 @@ found {
     }
 
     .front-splash-right > .model-renderer {
-        max-height: 100%;
         left: 0;
         right: auto;
         top: 30vw;
@@ -1054,7 +1059,8 @@ found {
 
 @media (max-width: 560px) and (min-aspect-ratio: 1 / 1) {
     .front-splash-right:after,
-    .front-splash-right {
+    .front-splash-right,
+    .front-splash-right > .model-renderer {
         top: 0;
         transform: skewY(0) skewX(0);
     }
