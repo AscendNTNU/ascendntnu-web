@@ -7,3 +7,7 @@
 /// <reference path="globals/react/index.d.ts" />
 /// <reference path="globals/three/index.d.ts" />
 /// <reference path="globals/three-stl-loader/index.d.ts" />
+
+declare interface ObjectConstructor {
+    assign(target: any, ...sources: any[]): any;
+}

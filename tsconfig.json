@@ -7,8 +7,5 @@
     "allowJs": true,
     "target": "es5",
     "jsx": "react"
-  },
-  "files": [
-    "./typings/index.d.ts"
-  ]
+  }
 }
