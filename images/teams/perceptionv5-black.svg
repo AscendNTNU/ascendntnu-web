@@ -1,0 +1,13 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="320px" height="320px">
+    <g stroke="#000000" stroke-width="160">
+      <line x1="80" y1="160" x2="240" y2="160" stroke-linecap="round" />
+    </g>
+    <g stroke="#ffffff" stroke-width="80">
+      <line x1="80" y1="160" x2="240" y2="160" stroke-linecap="round" />
+    </g>
+    <g fill="#000000">
+      <circle cx="80" cy="160" r="20" />
+      <circle cx="240" cy="160" r="20" />
+      <path d="M140 240 L160 280 L180 240 Z" />
+    </g>
+</svg>

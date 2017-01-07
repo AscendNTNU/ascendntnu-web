@@ -312,6 +312,11 @@ body.no-scroll {
     flex-direction: column;
 }
 
+.model-renderer {
+    width: 100%;
+    height: 100%;
+}
+
 .front-splash {
     display: flex;
     position: relative;
@@ -320,6 +325,14 @@ body.no-scroll {
     flex: 1;
     min-height: calc(100vh - 64px);
     background-image: url("/images/web/material.svg");
+}
+
+.front-splash .model-renderer {
+    width: 100vw;
+}
+
+.front-splash > .model-renderer {
+    right: 0;
 }
 
 .app.dark-theme .front-splash {
@@ -368,10 +381,18 @@ body.no-scroll {
     left: 15vh;
     transform: skewX(16.7deg); /* 90 - atan(10/3) */
     box-shadow: 0 0 16px #000;
+    background: #282828;
+}
+
+.front-splash-right > .model-renderer {
+    right: 15vh;
+    transform: skewX(-16.7deg); /* 90 - atan(10/3) */
+    min-height: calc(100vh - 64px);
+    width: 100vw;
 }
 
 .front-splash-right:after {
-    content: "";
+    /*content: "";*/
     display: block;
     position: absolute;
     left: -15vh;
@@ -925,6 +946,10 @@ found {
     .front-splash {
         min-height: 420px;
     }
+
+    .front-splash-right > .model-renderer {
+        min-height: 420px;
+    }
 }
 
 @media (min-height: 704px) {
@@ -932,11 +957,20 @@ found {
         left: 105.6px;
     }
 
+    .front-splash-right > .model-renderer {
+        right: 105.6px;
+    }
+
     .front-splash-right:after {
         left: -105.6px;
     }
 
     .front-splash {
+        min-height: 640px;
+        max-height: 640px;
+    }
+    
+    .front-splash-right > .model-renderer {
         min-height: 640px;
         max-height: 640px;
     }
@@ -975,11 +1009,23 @@ found {
         max-height: 100%;
     }
 
+    .front-splash > .model-renderer {
+        left: 0;
+    }
+
     .front-splash-right {
         flex: 1 0 calc(100px + 50vw);
         left: 0;
         top: -30vw;
         transform: skewY(26.6deg) skewX(0);
+    }
+
+    .front-splash-right > .model-renderer {
+        max-height: 100%;
+        left: 0;
+        right: auto;
+        top: 30vw;
+        transform: skewY(-26.6deg) skewX(0);
     }
 
     .front-splash-right:after {
@@ -994,6 +1040,10 @@ found {
 
 @media (max-width: 560px) and (min-height: 960px) {
     .front-splash {
+        min-height: 896px;
+    }
+
+    .front-splash-right > .model-renderer {
         min-height: 896px;
     }
 

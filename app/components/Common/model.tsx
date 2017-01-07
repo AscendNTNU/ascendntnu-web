@@ -5,7 +5,8 @@ import * as THREESTLLoader from 'three-stl-loader'
 interface ModelRendererProps {
   models?: string[],
   width?: number,
-  height?: number
+  height?: number,
+  wireframe?: boolean
 }
 
 export class ModelRenderer extends React.Component<ModelRendererProps, void> {
@@ -23,7 +24,15 @@ export class ModelRenderer extends React.Component<ModelRendererProps, void> {
 
     let geometry = new THREE.BoxGeometry(50, 50, 50)
     let material = new THREE.MeshNormalMaterial()
-    material = new THREE.MeshBasicMaterial({ color: 0xffffff, wireframe: true })
+    if (this.props.wireframe) {
+      material = new THREE.MeshBasicMaterial({ color: 0xffffff, wireframe: true })
+    } else {
+      material = new THREE.MeshStandardMaterial({
+        color: 0xff8800,
+        roughness: 0.95,
+        metalness: 0.0
+      })
+    }
     let mesh = new THREE.Mesh(geometry, material)
     mesh.position.x = 0
     mesh.position.y = 0
@@ -62,11 +71,16 @@ export class ModelRenderer extends React.Component<ModelRendererProps, void> {
   updateModels (models: string[]) {
     models.forEach((model) => {
       this.loader.load(model, (geometry: any) => {
-        var meshMaterial = new THREE.MeshStandardMaterial({
-          color: 0xff8800,
-          roughness: 0.95,
-          metalness: 0.0
-        })
+        var meshMaterial = null
+        if (this.props.wireframe) {
+          meshMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff, wireframe: true })
+        } else {
+          meshMaterial = new THREE.MeshStandardMaterial({
+            color: 0xff8800,
+            roughness: 0.95,
+            metalness: 0.0
+          })
+        }
         //if (geometry.hasColors) {
         //  meshMaterial = new THREE.MeshPhongMaterial({ opacity: geometry.alpha, vertexColors: THREE.VertexColors })
         //}
