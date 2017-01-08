@@ -119,7 +119,7 @@ export class SubSection extends React.Component<SubSectionProps, {}> {
 export class ToTopButton extends React.Component<any, void> {
 
   clickHandler (evt: any) {
-    document.querySelector('body').scrollTop = 0
+    document.querySelector('#app').scrollTop = 0
   }
 
   render () {
