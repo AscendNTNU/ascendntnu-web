@@ -116,17 +116,57 @@ export class SubSection extends React.Component<SubSectionProps, {}> {
   }
 }
 
-export class ToTopButton extends React.Component<any, void> {
+interface ToTopButtonState {
+  onTop: boolean
+}
+
+export class ToTopButton extends React.Component<any, ToTopButtonState> {
+
+  constructor (props: any) {
+    super(props)
+
+    this.state = {
+      onTop: true
+    }
+
+    document.querySelector('#app').addEventListener('scroll', this.scrollHandler.bind(this))
+    document.querySelector('#app').addEventListener('touchmove', this.scrollHandler.bind(this))
+    document.querySelector('#app').addEventListener('touchend', this.scrollHandler.bind(this))
+  }
+
+  scrollHandler (evt: any) {
+    let app: any = document.querySelector('#app')
+    if ((app.scrollTop || document.body.scrollTop) > 100 && this.state.onTop) {
+      this.setState({
+        onTop: false
+      })
+    } else if ((app.scrollTop || document.body.scrollTop) <= 100 && !this.state.onTop) {
+      this.setState({
+        onTop: true
+      })
+    }
+  }
 
   clickHandler (evt: any) {
-    document.querySelector('#app').scrollTop = 0
+    let app: any = document.querySelector('#app')
+    let startScroll: number = (app.scrollTop || document.body.scrollTop)
+    let interval = setInterval(() => {
+      app.scrollTop -= 10 / (.1 + Math.pow(app.scrollTop / startScroll - .5, 2))
+      document.body.scrollTop -= 10 / (.1 + Math.pow(document.body.scrollTop / startScroll - .5, 2))
+      if ((app.scrollTop || document.body.scrollTop) <= 0) {
+        clearInterval(interval)
+        this.setState({
+          onTop: true
+        })
+      }
+    }, 10)
   }
 
   render () {
     return (
-      <AddHover type="div" className="totop-button" onClick={this.clickHandler.bind(this)}>
+      <AddHover type="div" className={'totop-button' + (this.state.onTop ? ' on-top' : '')} onClick={this.clickHandler.bind(this)}>
         <svg viewBox="0 0 64 64">
-          <path fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="6" d="M 16 38 L 32 25 L 48 38" />
+          <path fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="5" d="M 16 38 L 32 25 L 48 38" />
         </svg>
       </AddHover>
     )

@@ -413,11 +413,13 @@ body.no-scroll {
     width: 64px;
     height: 64px;
     background: rgba(0, 0, 0, .2);
-    transition: background-color .2s ease-in-out;
+    transition: background-color, top, bottom;
+    transition-duration: .2s;
+    transition-timing-function: ease-in-out;
     color: #fff;
     border-radius: 6px;
     position: fixed;
-    bottom: 0;
+    top: calc(100% - 64px - 16px * 2);
     right: 14px;
     margin: 16px;
     cursor: pointer;
@@ -426,6 +428,12 @@ body.no-scroll {
 .totop-button.hover {
     background-color: rgba(0, 0, 0, .5);
     transition-duration: .05s;
+}
+
+.totop-button.on-top {
+    transition-duration: .2s;
+    bottom: auto;
+    top: 100%;
 }
 
 .totop-button path {
