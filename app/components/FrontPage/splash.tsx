@@ -141,9 +141,11 @@ export class Splash extends React.Component<SplashProps, SplashState> {
   }
 
   mouseUpHandler (evt: any) {
-    this.setState(Object.assign({}, this.state, {
-      down: false
-    }))
+    if (this.state.down) {
+      this.setState(Object.assign({}, this.state, {
+        down: false
+      }))
+    }
   }
 
   render () {
