@@ -4,7 +4,12 @@ import { ModelRenderer } from '../Common/model'
 
 export interface SplashProps {}
 export interface SplashState {
-  pos: number
+  pos: number,
+  down: boolean,
+  startPos: {
+    x: number,
+    y: number
+  }
 }
 
 export class Splash extends React.Component<SplashProps, SplashState> {
@@ -14,16 +19,76 @@ export class Splash extends React.Component<SplashProps, SplashState> {
     super(props)
     this.distance = window.innerWidth
     this.state = {
-      pos: this.distance / 2
+      pos: this.distance / 2,
+      down: false,
+      startPos: {
+        x: 0,
+        y: 0
+      }
     }
     window.addEventListener('resize', () => {
       this.distance = window.innerWidth
     })
+    window.addEventListener('mousemove', this.mouseMoveHandler.bind(this))
+    window.addEventListener('mouseup', this.mouseUpHandler.bind(this))
+    window.addEventListener('touchmove', this.mouseMoveHandler.bind(this))
+    window.addEventListener('touchend', this.mouseUpHandler.bind(this))
+    window.addEventListener('touchcancel', this.mouseUpHandler.bind(this))
   }
 
-  mouseMove (evt: any) {
+  mouseMoveHandler (evt: any) {
+    if (this.state.down) {
+      let pos = {
+        x: 0,
+        y: 0
+      }
+
+      if (evt.type === 'mousemove') {
+        pos = {
+          x: evt.clientX,
+          y: evt.clientY
+        }
+      } else {
+        evt.preventDefault()
+        pos = {
+          x: evt.touches[0].clientX,
+          y: evt.touches[0].clientY
+        }
+      }
+
+      this.setState(Object.assign({}, this.state, {
+        pos: pos.x - this.state.startPos.x
+      }))
+    }
+  }
+
+  mouseDownHandler (evt: any) {
+    let pos = {
+      x: 0,
+      y: 0
+    }
+
+    if (evt.type === 'mousedown') {
+      pos = {
+        x: evt.clientX - this.state.pos,
+        y: evt.clientY - this.state.pos
+      }
+    } else {
+      pos = {
+        x: evt.touches[0].clientX - this.state.pos,
+        y: evt.touches[0].clientY - this.state.pos
+      }
+    }
+
     this.setState(Object.assign({}, this.state, {
-      pos: evt.nativeEvent.clientX
+      down: true,
+      startPos: pos
+    }))
+  }
+
+  mouseUpHandler (evt: any) {
+    this.setState(Object.assign({}, this.state, {
+      down: false
     }))
   }
 
@@ -63,8 +128,10 @@ export class Splash extends React.Component<SplashProps, SplashState> {
               &nbsp;<a href="http://www.aerialroboticscompetition.org/">International Aerial Robotics Competition</a>.
           </p>
         </div>
-        <div className="front-splash-center" style={styles.centerStyle} onMouseMove={this.mouseMove.bind(this)}>
-          <img src="images/logo/logo-ascend-below-shadow.svg" />
+        <div className="front-splash-center" style={styles.centerStyle}
+          onMouseDown={this.mouseDownHandler.bind(this)}
+          onTouchStart={this.mouseDownHandler.bind(this)}>
+          <img src="images/logo/logo-ascend-below-shadow.svg" draggable={false} />
         </div>
         <div className="front-splash-right" style={styles.rightStyle}>
           <ModelRenderer models={['images/drones/sylinder2.stl']} style={{ position: 'absolute' }} />
