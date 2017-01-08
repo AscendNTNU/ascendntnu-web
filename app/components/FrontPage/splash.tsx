@@ -9,31 +9,75 @@ export interface SplashState {
   startPos: {
     x: number,
     y: number
-  }
+  },
+  smallScreen: boolean
 }
 
 export class Splash extends React.Component<SplashProps, SplashState> {
+  private width: number
+  private height: number
   private distance: number
+  private process: number
+  private dirty: boolean
 
   constructor (props: any) {
     super(props)
-    this.distance = window.innerWidth
+    this.dirty = false
+    this.width = window.innerWidth
+    this.height = 640
+    this.distance = this.width < 560 ? this.height : this.width
     this.state = {
-      pos: this.distance / 2,
+      pos: this.width / 2,
       down: false,
       startPos: {
         x: 0,
         y: 0
-      }
+      },
+      smallScreen: this.width < 560
     }
     window.addEventListener('resize', () => {
-      this.distance = window.innerWidth
+      let splash = document.querySelector('.front-splash')
+      this.width = window.innerWidth
+      this.height = splash.clientHeight
+      this.process = this.state.pos / this.distance
+      this.distance = this.width < 560 ? this.height : this.width
+      if (!this.dirty && this.width < 560) {
+        this.setState(Object.assign({}, this.state, {
+          smallScreen: true,
+          pos: splash.querySelector('p').clientHeight
+        }))
+      } else {
+        if (!this.dirty) {
+          this.setState(Object.assign({}, this.state, {
+            smallScreen: this.width < 560,
+            pos: this.width / 2
+          }))
+        } else {
+          if (this.state.smallScreen !== this.width < 560) {
+            this.setState(Object.assign({}, this.state, {
+              smallScreen: this.width < 560,
+              pos: Math.max(
+                Math.min(
+                  this.process * this.distance,
+                  this.distance * (this.state.smallScreen ? .85 : .9)
+                ),
+                this.distance * .1
+              )
+            }))
+          }
+        }
+      }
     })
     window.addEventListener('mousemove', this.mouseMoveHandler.bind(this))
     window.addEventListener('mouseup', this.mouseUpHandler.bind(this))
     window.addEventListener('touchmove', this.mouseMoveHandler.bind(this))
     window.addEventListener('touchend', this.mouseUpHandler.bind(this))
     window.addEventListener('touchcancel', this.mouseUpHandler.bind(this))
+  }
+
+  componentDidMount () {
+    this.height = document.querySelector('.front-splash').clientHeight
+    this.distance = this.width < 560 ? this.height : this.width
   }
 
   mouseMoveHandler (evt: any) {
@@ -57,7 +101,15 @@ export class Splash extends React.Component<SplashProps, SplashState> {
       }
 
       this.setState(Object.assign({}, this.state, {
-        pos: pos.x - this.state.startPos.x
+        pos: Math.max(
+          Math.min(
+            this.state.smallScreen
+              ? this.distance - pos.y + this.state.startPos.y
+              : pos.x - this.state.startPos.x,
+            this.distance * (this.state.smallScreen ? .85 : .9)
+          ),
+          this.distance * .1
+        )
       }))
     }
   }
@@ -71,14 +123,16 @@ export class Splash extends React.Component<SplashProps, SplashState> {
     if (evt.type === 'mousedown') {
       pos = {
         x: evt.clientX - this.state.pos,
-        y: evt.clientY - this.state.pos
+        y: evt.clientY - (this.height - this.state.pos)
       }
     } else {
       pos = {
         x: evt.touches[0].clientX - this.state.pos,
-        y: evt.touches[0].clientY - this.state.pos
+        y: evt.touches[0].clientY - (this.height - this.state.pos)
       }
     }
+
+    this.dirty = true
 
     this.setState(Object.assign({}, this.state, {
       down: true,
@@ -93,8 +147,9 @@ export class Splash extends React.Component<SplashProps, SplashState> {
   }
 
   render () {
-    let centerPos = this.distance / 2
-    let process = this.state.pos / this.distance
+    let centerPos: number = this.distance / 2
+    let process: number = this.state.pos / this.distance
+    if (this.state.smallScreen) process = 1 - process
 
     let growLeft: number = centerPos / (1 - process) - centerPos
     let growRight: number = centerPos
@@ -105,14 +160,14 @@ export class Splash extends React.Component<SplashProps, SplashState> {
 
     let styles: any = {
       leftStyle: {
-        flexGrow: growLeft
+        flexGrow: this.state.smallScreen ? growRight : growLeft
       },
       centerStyle: {
-        position: 'absolute',
-        left: (100 * this.state.pos / this.distance) + '%'
+        position: this.state.smallScreen ? 'static' : 'absolute',
+        left: this.state.smallScreen ? '50%' : Math.min(this.width, 100 * this.state.pos / this.width) + '%'
       },
       rightStyle: {
-        flexGrow: growRight
+        flexGrow: this.state.smallScreen ? growLeft : growRight
       }
     }
 

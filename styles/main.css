@@ -353,11 +353,15 @@ body.no-scroll {
 }
 
 .front-splash-left > p {
-    padding: 16px 80px 64px 16px;
+    padding: 16px 80px 64px 32px;
     box-sizing: border-box;
     line-height: 28px;
     margin: 0 auto;
-    max-width: 512px;
+    width: 512px;
+    max-width: 100vw;
+    position: absolute;
+    left: 0;
+    z-index: 1;
 }
 
 .front-splash-center {
@@ -366,6 +370,7 @@ body.no-scroll {
     left: 50%;
     z-index: 1;
     transform: translateX(-50%) translateY(-50%);
+    cursor: ew-resize;
 }
 
 .front-splash-center > img {
@@ -987,6 +992,9 @@ found {
         padding: 16px;
         padding-top: 80px;
         text-align: center;
+        position: absolute;
+        bottom: 0;
+        z-index: 0;
     }
 
     .front-splash-left {
@@ -998,7 +1006,7 @@ found {
 
     .front-splash-center {
         position: static;
-		text-align: center;
+        text-align: center;
         margin: auto;
         top: 50%;
         margin-top: -70px;
@@ -1007,6 +1015,7 @@ found {
         left: 50%;
         z-index: 1;
         transform: translateX(0) translateY(0);
+        cursor: ns-resize;
     }
 
     .front-splash {
@@ -1020,7 +1029,7 @@ found {
     }
 
     .front-splash-right {
-        flex: 1 0 calc(100px + 50vw);
+        /*flex: 1 0 calc(100px + 50vw);*/
         left: 0;
         top: -30vw;
         transform: skewY(26.6deg) skewX(0);
