@@ -78,6 +78,11 @@ export class Splash extends React.Component<SplashProps, SplashState> {
   componentDidMount () {
     this.height = document.querySelector('.front-splash').clientHeight
     this.distance = this.width < 560 ? this.height : this.width
+    if (this.width < 560) {
+      this.setState(Object.assign({}, this.state, {
+        pos: document.querySelector('.front-splash p').clientHeight
+      }))
+    }
   }
 
   mouseMoveHandler (evt: any) {
