@@ -2,6 +2,7 @@ import * as React from 'react'
 
 import Header from './Header'
 import Footer from './Footer'
+import { ToTopButton } from './PageLayout'
 
 export interface AppProps {}
 export interface AppState {
@@ -47,6 +48,7 @@ export class App extends React.Component<AppProps, AppState> {
       <div className={'app' + (this.state.showMenu ? ' menu-visible' : '') + (this.state.theme === 'dark' ? ' dark-theme' : '')}>
           <Header toggleMenuHandler={this.toggleMenu.bind(this)} toggle={this.state.showMenu} />
           {this.props.children}
+          <ToTopButton />
           <Footer changeTheme={this.changeTheme.bind(this)} theme={this.state.theme} />
       </div>
     )

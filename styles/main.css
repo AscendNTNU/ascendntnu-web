@@ -409,6 +409,29 @@ body.no-scroll {
     background-position: center;
 }
 
+.totop-button {
+    width: 64px;
+    height: 64px;
+    background: rgba(0, 0, 0, .2);
+    transition: background-color .2s ease-in-out;
+    color: #fff;
+    border-radius: 6px;
+    position: fixed;
+    bottom: 0;
+    right: 14px;
+    margin: 16px;
+    cursor: pointer;
+}
+
+.totop-button.hover {
+    background-color: rgba(0, 0, 0, .5);
+    transition-duration: .05s;
+}
+
+.totop-button path {
+    stroke: #fff;
+}
+
 .sponsors {
     flex-direction: row;
     flex-flow: wrap;

@@ -1,5 +1,7 @@
 import * as React from 'react'
 
+import { AddHover } from '../Common/eventHandler'
+
 export class Title extends React.Component<{}, {}> {
   render() {
     return (
@@ -110,6 +112,23 @@ export class SubSection extends React.Component<SubSectionProps, {}> {
         {this.title}
         {this.props.children}
       </div>
+    )
+  }
+}
+
+export class ToTopButton extends React.Component<any, void> {
+
+  clickHandler (evt: any) {
+    document.querySelector('body').scrollTop = 0
+  }
+
+  render () {
+    return (
+      <AddHover type="div" className="totop-button" onClick={this.clickHandler.bind(this)}>
+        <svg viewBox="0 0 64 64">
+          <path fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="6" d="M 16 38 L 32 25 L 48 38" />
+        </svg>
+      </AddHover>
     )
   }
 }
