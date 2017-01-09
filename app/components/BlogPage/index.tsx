@@ -74,11 +74,8 @@ export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
         r = r.map((p: any) => {
           p.attributes['dateFormatted'] = this.formatDate(p.attributes.date, 'dag DD/MM/YY')
           p['parsedBody'] = this.parser.parse(p.body)
-
-          if (this.state.viewMode && this.state.viewMode == 'small')
-            p['renderedBody'] = this.renderer.render(p.parsedBody._firstChild)
-          else
-            p['renderedBody'] = this.renderer.render(p.parsedBody)
+          p['renderedFirstChild'] = this.renderer.render(p.parsedBody._firstChild)
+          p['renderedBody'] = this.renderer.render(p.parsedBody)
 
           return p
         })
@@ -184,7 +181,6 @@ export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
       viewMode: type
     })
     localStorage['viewMode'] = type
-    location.reload()
   }
 
   private changeViewToSmallHandler (evt: any) {
@@ -245,7 +241,7 @@ export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
               <div className="blog-list-date" dangerouslySetInnerHTML={ {__html: post.attributes.dateFormatted } } />
             </div>
             <div className="blog-list-preview">
-              <div dangerouslySetInnerHTML={ {__html: post.renderedBody } } />
+              <div dangerouslySetInnerHTML={ {__html: this.state.viewMode && this.state.viewMode == 'small' ? post.renderedFirstChild : post.renderedBody } } />
             </div>
             <div className="blog-list-categories">
               {categories}
@@ -258,8 +254,8 @@ export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
         <div className="page page-blog">
           <Breadcrumb routes={['blog']} />
           <Section title="Artikler">
-            <div onClick={this.changeViewToBigHandler.bind(this)}><i className="fa fa-file-text"></i></div>
-            <div onClick={this.changeViewToSmallHandler.bind(this)}><i className="fa fa-th-list"></i></div>
+            <div title="Hele innlegg" onClick={this.changeViewToBigHandler.bind(this)}><i className="fa fa-file-text"></i></div>
+            <div title="Listevisning" onClick={this.changeViewToSmallHandler.bind(this)}><i className="fa fa-th-list"></i></div>
             <input onChange={this.search.bind(this)} placeholder="Søk i artikler..." title="Bruk * som wildcard" />
             <SubSection className="page-blog-list">
               {links}
