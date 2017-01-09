@@ -2,9 +2,12 @@ FROM node:6
 
 RUN mkdir /ascend-web
 WORKDIR /ascend-web
+ADD package.json ./
 RUN npm install
 
-VOLUME /ascend-web
+RUN npm i -g pm2
+
+COPY . ./
 EXPOSE 8080
 
-ENTRYPOINT ["node server.js"]
+CMD ["pm2", "start", "server.js", "--no-daemon"]
