@@ -180,7 +180,7 @@ export class Splash extends React.Component<SplashProps, SplashState> {
 
     return (
       <div className="front-splash">
-        <ModelRenderer models={['images/drones/drone2.stl']} process={Date.now()} wireframe={true} style={{ position: 'absolute' }} />
+        <ModelRenderer models={['images/drones/drone2.stl']} process={Date.now()} autospin={true} wireframe={true} style={{ position: 'absolute' }} />
         <div className="front-splash-left" style={styles.leftStyle}>
           <p>
               Autonomus aerial robotics for fun and learning.
@@ -196,7 +196,7 @@ export class Splash extends React.Component<SplashProps, SplashState> {
           <img src="images/logo/logo-ascend-below-shadow.svg" draggable={false} />
         </div>
         <div className="front-splash-right" style={styles.rightStyle}>
-          <ModelRenderer models={['images/drones/drone2.stl']} process={Date.now()} style={{ position: 'absolute' }} />
+          <ModelRenderer models={['images/drones/drone2.stl']} process={Date.now()} autospin={true} style={{ position: 'absolute' }} />
         </div>
       </div>
     )
