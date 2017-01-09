@@ -9,7 +9,7 @@ ADD package.json ./
 RUN npm install
 
 RUN npm i -g pm2 typescript typings webpack
-RUN npm run deploy
+RUN webpack
 
 COPY . ./
 EXPOSE 8080
