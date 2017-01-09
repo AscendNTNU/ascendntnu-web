@@ -4,3 +4,4 @@ dist
 images/assets
 images/teams/20*
 typings/**/*.json
+*.ignorefile.*

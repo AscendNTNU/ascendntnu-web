@@ -7,7 +7,8 @@ interface ModelRendererProps {
   width?: number,
   height?: number,
   style?: any,
-  wireframe?: boolean
+  wireframe?: boolean,
+  autospin?:boolean,
 }
 
 export class ModelRenderer extends React.Component<ModelRendererProps, void> {
@@ -21,9 +22,11 @@ export class ModelRenderer extends React.Component<ModelRendererProps, void> {
     super(props)
     this.scene = new THREE.Scene()
     this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000)
-    this.camera.position.y = 50
+    this.camera.position.x = 0
+    this.camera.position.y = 200
+    this.camera.position.z = 0
 
-    let geometry = new THREE.BoxGeometry(50, 50, 50)
+    let geometry = new THREE.BoxGeometry(10, 10, 10)
     let material = new THREE.MeshNormalMaterial()
     if (this.props.wireframe) {
       material = new THREE.MeshBasicMaterial({ color: 0xffffff, wireframe: true })
@@ -38,13 +41,13 @@ export class ModelRenderer extends React.Component<ModelRendererProps, void> {
     mesh.position.x = 0
     mesh.position.y = 0
     mesh.position.z = 0
-    this.scene.add(mesh)
+    //this.scene.add(mesh)
 
     var STLLoader = new THREESTLLoader(THREE)
     this.loader = new STLLoader()
     this.updateModels(props.models || [])
 
-    var light = new THREE.HemisphereLight(0xffffbb, 0x080820, 1)
+    var light = new THREE.HemisphereLight(0xffffff, 0x444444, 1)
     this.scene.add(light)
   }
 
@@ -64,9 +67,13 @@ export class ModelRenderer extends React.Component<ModelRendererProps, void> {
       this.camera.updateProjectionMatrix()
     })
 
-    setInterval(() => {
+    if (this.props.autospin) {
+      setInterval(() => {
+        this.updateRendering()
+      }, 100)
+    } else {
       this.updateRendering()
-    }, 10)
+    }
   }
 
   updateModels (models: string[]) {
@@ -79,26 +86,31 @@ export class ModelRenderer extends React.Component<ModelRendererProps, void> {
           meshMaterial = new THREE.MeshStandardMaterial({
             color: 0xff8800,
             roughness: 0.95,
-            metalness: 0.0
+            metalness: 0.0,
+            side: THREE.DoubleSide
           })
         }
         //if (geometry.hasColors) {
         //  meshMaterial = new THREE.MeshPhongMaterial({ opacity: geometry.alpha, vertexColors: THREE.VertexColors })
         //}
+        geometry.translate(-360, 0, -300)
         var mesh = new THREE.Mesh(geometry, meshMaterial)
-        mesh.position.set(0.5, 0.2, 0)
-        mesh.rotation.set(- Math.PI / 2, Math.PI / 2, 0)
-        mesh.scale.set(0.3, 0.3, 0.3)
+        mesh.position.set(0, 0, 0)
+        mesh.rotation.set(0, 0, 0)
+        let scale = .5
+        mesh.scale.set(scale, scale, scale)
         mesh.castShadow = true
         mesh.receiveShadow = true
         this.scene.add(mesh)
+        this.updateRendering()
       })
     })
   }
 
   updateRendering () {
-    this.camera.position.x = 100 * Math.sin(Date.now() / 1000)
-    this.camera.position.z = 100 * Math.cos(Date.now() / 1000)
+    this.camera.position.x = 200 * Math.sin(Date.now() / 4000)
+    this.camera.position.z = 200 * Math.cos(Date.now() / 4000)
+    this.camera.position.y = 200 * Math.cos(Date.now() / 5000)
     this.camera.lookAt(this.scene.position)
     this.renderer.render(this.scene, this.camera)
     this.renderer.setClearColor(0, 0)
