@@ -8,7 +8,8 @@ interface ModelRendererProps {
   height?: number,
   style?: any,
   wireframe?: boolean,
-  autospin?:boolean,
+  autospin?: boolean,
+  process?: number,
 }
 
 export class ModelRenderer extends React.Component<ModelRendererProps, void> {
@@ -108,9 +109,9 @@ export class ModelRenderer extends React.Component<ModelRendererProps, void> {
   }
 
   updateRendering () {
-    this.camera.position.x = 200 * Math.sin(Date.now() / 4000)
-    this.camera.position.z = 200 * Math.cos(Date.now() / 4000)
-    this.camera.position.y = 200 * Math.cos(Date.now() / 5000)
+    this.camera.position.x = 200 * Math.sin((this.props.process || Date.now()) / 4000)
+    this.camera.position.z = 200 * Math.cos((this.props.process || Date.now()) / 4000)
+    this.camera.position.y = 200 * Math.cos((this.props.process || Date.now()) / 5000)
     this.camera.lookAt(this.scene.position)
     this.renderer.render(this.scene, this.camera)
     this.renderer.setClearColor(0, 0)
