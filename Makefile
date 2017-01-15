@@ -30,8 +30,8 @@ docker-image-removed:
 
 docker-container:
 	@echo Removing previous container...
-	@docker stop ascend-web-container
-	@docker rm ascend-web-container
+	@docker stop $(docker ps -a -q)
+	@docker rm $(docker ps -a -q)
 	@echo Creating a container from ascend-web image...
 	@docker run --name ascend-web-container \
 		-d -p 8080:8080 \
