@@ -16,6 +16,10 @@ dev:
 	@echo Starting dev server
 	@npm run dev
 
+docker-baseimage:
+	@echo Building a docker image...
+	@docker build -t ascend/ascend-web-baseimage -f Dockerfile.baseimage .
+
 docker-image:
 	@echo Building a docker image...
 	@docker build -t ascend/ascend-web .
@@ -25,6 +29,9 @@ docker-image-removed:
 	@docker rmi ascend/ascend-web -f
 
 docker-container:
+	@echo Removing previous container...
+	@docker stop ascend-web-container
+	@docker rm ascend-web-container
 	@echo Creating a container from ascend-web image...
 	@docker run --name ascend-web-container \
 		-d -p 8080:8080 \
@@ -35,7 +42,7 @@ docker-enter-container:
 	@docker exec -it ascend-web-container /bin/bash
 
 docker-container-removed:
-	@echo Removing previous container...
+	@echo Removing container...
 	@docker rm ascend-web-container -f
 
 .PHONY: default install build watch dev
