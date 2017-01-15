@@ -1,0 +1,21 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="320px" height="320px">
+    <g fill="#000000">
+      <path d="M0 160 Q160 0 320 160 Z" />
+      <path d="M320 160 Q160 320 0 160 Z" />
+    </g>
+    <g stroke="#ffffff" fill="none">
+      <g stroke-width="16">
+        <circle cx="160" cy="160" r="64" />
+      </g>
+      <g stroke-width="3">
+        <path d="M160 104 L160 216" />
+        <path d="M104 160 L216 160" />
+      </g>
+      <g stroke-width="3">
+        <path d="M180 104 Q220 160 180 216" />
+        <path d="M140 104 Q100 160 140 216" />
+        <path d="M104 180 Q160 220 216 180" />
+        <path d="M104 140 Q160 100 216 140" />
+      </g>
+    </g>
+</svg>

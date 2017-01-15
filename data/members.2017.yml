@@ -2,197 +2,199 @@
 - name: Brage Eikanger
   background: Cybernetics and Robotics
   role: Project Manager
-  group: Project
-  image: "/images/team-2017/brage-e-2017.jpg"
+  group: Project, Board, Admin, Leader
+  image: "/images/teams/2017/brage-e-2017.jpg"
   mail: "brage.eikanger[at]ascendntnu.no"
 
 - name: Erling Solberg
   background: Electrical Engineering
   role: Sponsor Manager
-  group: Marketing
-  image: "/images/team-2017/erling-s-2017.jpg"
+  group: Marketing, Admin
+  image: "/images/teams/2017/erling-s-2017.jpg"
   mail: "erling.solberg[at]ascendntnu.no"
 
 - name: Emilie Udnæs
   background: Electrical Engineering
   role: Communication Leader
-  group: Marketing
-  image: "/images/team-2017/emilie-u-2017.jpg"
+  group: Marketing, Board, Admin
+  image: "/images/teams/2017/emilie-u-2017.jpg"
   mail: "emilie.udnaes[at]ascendntnu.no"
 
 - name: Matias Christensen
   background: Computer Science
   role: Chief Engineer
-  image: "/images/team-2017/matias-c-2017.jpg"
+  group: Board, Admin
+  image: "/images/teams/2017/matias-c-2017.jpg"
   mail: "matias.christensen[at]ascendntnu.no"
 
 - name: Niklas Molnes Hole
   background: Computer Science
   role: Web Developer
-  group: Marketing
-  image: "/images/team-2017/niklas-mh-2017.jpg"
+  group: Marketing, Admin
+  image: "/images/teams/2017/niklas-mh-2017.jpg"
   mail: "niklas.hole[at]ascendntnu.no"
 
 - name: Simon Blindheim
   background: Cybernetics and Robotics
   role: Head of Economics
-  image: "/images/team-2017/simon-b-2017.jpg"
+  group: Board, Admin
+  image: "/images/teams/2017/simon-b-2017.jpg"
   mail: "simon.blindheim[at]ascendntnu.no"
 
 - name: Vebjørn Isaksen
   background: Cybernetics and Robotics
   role: Deputy Project Manager
-  group: Marketing
-  image: "/images/team-2017/vebjorn-i-2017.jpg"
+  group: Marketing, Board, Admin
+  image: "/images/teams/2017/vebjorn-i-2017.jpg"
   mail: "vebjorn.isaksen[at]ascendntnu.no"
 
 ## Team Control ##
 - name: Martin Sollie
   background: Cybernetics and Robotics
   role: Control Leader
-  group: Control
-  image: "/images/team-2017/martin-s-2017.jpg"
+  group: Control, Leader
+  image: "/images/teams/2017/martin-s-2017.jpg"
   mail: "martin.sollie[at]ascendntnu.no"
 
 - name: Amine Othmane
   background: Cybernetics and Robotics
   role: Control Member
   group: Control
-  image: "/images/team-2017/amine-o-2017.jpg"
+  image: "/images/teams/2017/amine-o-2017.jpg"
   mail: "amine.othmane[at]hotmail.fr"
 
 - name: Fredrik Opeide
   background: Cybernetics and Robotics
   role: Control Member
   group: Control
-  image: "/images/team-2017/fredrik-o-2017.jpg"
+  image: "/images/teams/2017/fredrik-o-2017.jpg"
   mail: "fredrik.opeide[at]ascendntnu.no"
 
 - name: Håvard Skåra Mellbye
   background: Cybernetics and Robotics
   role: Control Member
   group: Control
-  image: "/images/team-2017/havard-sm-2017.jpg"
+  image: "/images/teams/2017/havard-sm-2017.jpg"
   mail: "havard.mellbye[at]ascendntnu.no"
 
 - name: Roy Angelsen
   background: Cybernetics and Robotics
   role: Control Member
   group: Control
-  image: "/images/team-2017/roy-a-2017.jpg"
+  image: "/images/teams/2017/roy-a-2017.jpg"
   mail: "roy.angelsen[at]ascendntnu.no"
 
 ## Team Perception ##
 - name: Håkon Flatval
   background: Computer Science
   role: Perception Leader
-  group: Perception
-  image: "/images/team-2017/hakon-f-2017.jpg"
+  group: Perception, Leader
+  image: "/images/teams/2017/hakon-f-2017.jpg"
   mail: "hakon.flatval[at]ascendntnu.no"
 
 - name: Ivar Thokle Hovden
   background: Computer Science
   role: Perception Member
-  group: Perception
-  image: "/images/team-2017/ivar-th-2017.jpg"
+  group: Perception, Board
+  image: "/images/teams/2017/ivar-th-2017.jpg"
   mail: "ivar.thokle.hovden[at]ascendntnu.no"
 
 - name: Erlend Eriksen
   background: Cybernetics and Robotics
   role: Perception Member
   group: Perception
-  image: "/images/team-2017/erlend-e-2017.jpg"
+  image: "/images/teams/2017/erlend-e-2017.jpg"
   mail: "erlend.eriksen[at]ascendntnu.no"
 
 - name: Johan Wind
   background: Applied Physics and Mathematics
   role: Perception Member
   group: Perception
-  image: "/images/team-2017/johan-w-2017.jpg"
+  image: "/images/teams/2017/johan-w-2017.jpg"
   mail: "johan.wind[at]ascendntnu.no"
 
 - name: Markus Pike
   background: Computer Science
   role: Perception Member
   group: Perception
-  image: "/images/team-2017/markus-p-2017.jpg"
+  image: "/images/teams/2017/markus-p-2017.jpg"
   mail: "markus.pike[at]ascendntnu.no"
 
 - name: Rune Nordmo
   background: Cybernetics and Robotics
   role: Perception Member
   group: Perception
-  image: "/images/team-2017/rune-n-2017.jpg"
+  image: "/images/teams/2017/rune-n-2017.jpg"
   mail: "rune.nordmo[at]ascendntnu.no"
 
 - name: Simen Haugo
   background: Cybernetics and Robotics
   role: Perception Member
   group: Perception
-  image: "/images/team-2017/simen-h-2017.jpg"
+  image: "/images/teams/2017/simen-h-2017.jpg"
   mail: "simen.haugo[at]ascendntnu.no"
 
 ## Team Planning ##
 - name: Magnus Reiersen
   background: Computer Science
   role: Planning Leader
-  group: Planning
-  image: "/images/team-2017/magnus-r-2017.jpg"
+  group: Planning, Leader
+  image: "/images/teams/2017/magnus-r-2017.jpg"
   mail: "magnus.reiersen[at]ascendntnu.no"
 
 - name: Adrian Tofting
   background: Engineering and ICT
   role: Planning Member
   group: Planning
-  image: "/images/team-2017/adrian-t-2017.jpg"
+  image: "/images/teams/2017/adrian-t-2017.jpg"
   mail: "adrian.tofting[at]ascendntnu.no"
 
 - name: Alexander Danielsen-Haces
   background: Cybernetics and Robotics
   role: Planning Member
   group: Planning
-  image: "/images/team-2017/alexander-dh-2017.jpg"
+  image: "/images/teams/2017/alexander-dh-2017.jpg"
   mail: "alexander.danielsen[at]ascendntnu.no"
 
 - name: Rasmus Munter
   background: Applied Mathematics
   role: Planning Member
   group: Planning
-  image: "/images/team-2017/rasmus-m-2017.jpg"
+  image: "/images/teams/2017/rasmus-m-2017.jpg"
   mail: "rasmus.munter[at]ascendntnu.no"
 
 - name: Vilde Gjærum
   background: Cybernetics and Robotics
   role: Planning Member
   group: Planning
-  image: "/images/team-2017/vilde-g-2017.jpg"
+  image: "/images/teams/2017/vilde-g-2017.jpg"
   mail: "vilde.gjaerum[at]ascendntnu.no"
 
-## Team System ##
+## Team Hardware ##
 - name: Christian Wilhelmsen
   background: Mechanical Engineering
-  role: System Leader
-  group: System
-  image: "/images/team-2017/christian-w-2017.jpg"
+  role: Hardware Leader
+  group: Hardware, Leader
+  image: "/images/teams/2017/christian-w-2017.jpg"
   mail: "christian.wilhelmsen[at]ascendntnu.no"
 
 - name: Hans Theodor Johnsen
   background: Electrical Engineering
-  role: System Member
-  group: System
-  image: "/images/team-2017/hans-tj-2017.jpg"
+  role: Hardware Member
+  group: Hardware
+  image: "/images/teams/2017/hans-tj-2017.jpg"
   mail: "hans.theodor.johnsen[at]ascendntnu.no"
 
 - name: Patrick Sjåstad Langseth
   background: Mechanical Engineering
-  role: System Member
-  group: System
-  image: "/images/team-2017/patrick-sl-2017.jpg"
+  role: Hardware Member
+  group: Hardware
+  image: "/images/teams/2017/patrick-sl-2017.jpg"
   mail: "patrick.langseth[at]ascendntnu.no"
 
 - name: Per Kristian Pöcher
   background: Cybernetics and Robotics
-  role: System Member
-  group: System
-  image: "/images/team-2017/per-kp-2017.jpg"
+  role: Hardware Member
+  group: Hardware
+  image: "/images/teams/2017/per-kp-2017.jpg"
   mail: "per.kristian.pocher[at]ascendntnu.no"

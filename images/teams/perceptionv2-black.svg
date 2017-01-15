@@ -1,0 +1,23 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="320px" height="320px">
+    <g fill="#000000">
+      <path d="M0 160 Q160 0 320 160 Z" />
+      <path d="M320 160 Q160 320 0 160 Z" />
+    </g>
+    <g stroke="#ffffff" fill="none">
+      <g stroke-width="16">
+        <circle cx="160" cy="160" r="60" />
+      </g>
+      <g stroke-width="1">
+        <path d="M168 104 Q195 160 168 216" />
+        <path d="M152 104 Q125 160 152 216" />
+        <path d="M104 168 Q160 195 216 168" />
+        <path d="M104 152 Q160 125 216 152" />
+      </g>
+      <g stroke-width="1">
+        <path d="M180 104 Q225 160 180 216" />
+        <path d="M140 104 Q95 160 140 216" />
+        <path d="M104 180 Q160 225 216 180" />
+        <path d="M104 140 Q160 95 216 140" />
+      </g>
+    </g>
+</svg>

@@ -1,0 +1,6 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="400" height="400" >
+    <circle cx="200" cy="200" r="100" stroke-dasharray="31.4,31.4" stroke-width="24"  stroke="red" fill="red" />
+    <!--<circle cx="200" cy="200" r="167" stroke-dasharray="1200,1200 " stroke-width="30" stroke-dashoffset="0" stroke="white" fill="none">
+       <animate attributeType="XML" attributeName="stroke-dashoffset" from="0" to="1200" dur="4s" repeatCount="1" fill="freeze" />
+    </circle>-->
+</svg>

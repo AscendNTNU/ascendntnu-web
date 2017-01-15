@@ -8,6 +8,7 @@ import { Breadcrumb } from '../Common/breadcrumb'
 export interface BlogPageProps {
   params: any
 }
+
 export interface BlogPageState {
   attributes?: any & {
     layout?: string,
@@ -19,6 +20,7 @@ export interface BlogPageState {
   searchValue?: string,
   post?: string,
   posts?: any[],
+  viewMode?: string,
 }
 
 export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
@@ -39,6 +41,7 @@ export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
       searchValue: 'e',
       post: '',
       posts: [],
+      viewMode: localStorage['viewMode'] || 'small',
     }
     this.parser = new Parser()
     this.renderer = new HtmlRenderer()
@@ -71,7 +74,9 @@ export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
         r = r.map((p: any) => {
           p.attributes['dateFormatted'] = this.formatDate(p.attributes.date, 'dag DD/MM/YY')
           p['parsedBody'] = this.parser.parse(p.body)
-          p['renderedBody'] = this.renderer.render(p.parsedBody._firstChild)
+          p['renderedFirstChild'] = this.renderer.render(p.parsedBody._firstChild)
+          p['renderedBody'] = this.renderer.render(p.parsedBody)
+
           return p
         })
         this.setState({
@@ -168,8 +173,23 @@ export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
       return formatted
     }
 
-  return ''
-}
+    return ''
+  }
+
+  private changeView (type: string) {
+    this.setState({
+      viewMode: type
+    })
+    localStorage['viewMode'] = type
+  }
+
+  private changeViewToSmallHandler (evt: any) {
+    this.changeView('small')
+  }
+
+  private changeViewToBigHandler (evt: any) {
+    this.changeView('big')
+  }
 
   render () {
     if (this.showAllPosts && !this.props.params.post) {
@@ -181,7 +201,7 @@ export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
     }
 
     if (this.props.params.post) {
-      let categories: any[] = this.state.attributes.categories.split(" ").map((cat:string, k:number) => {
+      let categories: any[] = this.state.attributes.categories.split(" ").map((cat: string, k: number) => {
         return (<div className="category" key={k}>{cat}</div>)
       })
       return (
@@ -221,7 +241,7 @@ export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
               <div className="blog-list-date" dangerouslySetInnerHTML={ {__html: post.attributes.dateFormatted } } />
             </div>
             <div className="blog-list-preview">
-              <div dangerouslySetInnerHTML={ {__html: post.renderedBody } } />
+              <div dangerouslySetInnerHTML={ {__html: this.state.viewMode && this.state.viewMode == 'small' ? post.renderedFirstChild : post.renderedBody } } />
             </div>
             <div className="blog-list-categories">
               {categories}
@@ -229,10 +249,13 @@ export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
           </div>
         )
       })
+
       return (
         <div className="page page-blog">
           <Breadcrumb routes={['blog']} />
           <Section title="Artikler">
+            <div title="Hele innlegg" onClick={this.changeViewToBigHandler.bind(this)}><i className="fa fa-file-text"></i></div>
+            <div title="Listevisning" onClick={this.changeViewToSmallHandler.bind(this)}><i className="fa fa-th-list"></i></div>
             <input onChange={this.search.bind(this)} placeholder="Søk i artikler..." title="Bruk * som wildcard" />
             <SubSection className="page-blog-list">
               {links}

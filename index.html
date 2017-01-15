@@ -12,14 +12,26 @@
     <meta name="keywords" content="Ascend, NTNU, robotics, autonomus, team, IARC, international, aerial, robotics, competition, AI" />
     <meta name="author" content="Ascend NTNU" />
     <meta property="fb:app_id" content="202744680073731" />
+    <meta property="og:type" content="website" />
     <meta property="og:image" content="images/logo/logo.png" />
-    <meta property="og:url" content="http://www.ascendntnu.no/" />
     <meta property="og:title" content="Ascend NTNU - Home" />
+    <meta property="og:description" content="Autonomus aerial robotics. Ascend NTNU is The Norwegian University of Science and Technology's team in  the International Aerial Robotics Competition (IARC)." />
+    <meta property="og:url" content="http://www.ascendntnu.no/" />
   </head>
   <body>
     <div id="app" class="app-container"></div>
     <script src="/node_modules/react/dist/react.js"></script>
     <script src="/node_modules/react-dom/dist/react-dom.js"></script>
     <script src="/dist/bundle.js"></script>
+    <div id="fb-root"></div>
+    <script>
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/nb_NO/sdk.js#xfbml=1&version=v2.8&appId=202744680073731";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script>
   </body>
 </html>

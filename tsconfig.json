@@ -4,11 +4,8 @@
     "sourceMap": true,
     "noImplicitAny": true,
     "module": "commonjs",
+    "allowJs": true,
     "target": "es5",
     "jsx": "react"
-  },
-  "files": [
-    "./typings/index.d.ts",
-    "./app/index.tsx"
-  ]
+  }
 }
