@@ -30,9 +30,7 @@ docker-image-removed:
 
 docker-container:
 	@echo Creating a container from ascend-web image...
-	@docker run --name ascend-web-container \
-		-d -p 8080:8080 \
-		ascend/ascend-web
+	@docker run --name ascend-web-container -d -p 8080:8080 ascend/ascend-web
 	@echo Created container successfully!
 
 docker-container-removed:
