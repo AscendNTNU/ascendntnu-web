@@ -80,7 +80,7 @@ export class ModelRenderer extends React.Component<ModelRendererProps, void> {
   updateModels (models: string[]) {
     models.forEach((model) => {
       this.loader.load(model, (geometry: any) => {
-        var meshMaterial = null
+        var meshMaterial: any = null
         if (this.props.wireframe) {
           meshMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff, wireframe: true })
         } else {
