@@ -28,12 +28,20 @@ docker-image-removed:
 	@echo Removing docker image...
 	@docker rmi ascend/ascend-web -f
 
-docker-container: docker-container-removed
+docker-container:
+	@if [ `docker ps -a | grep ascend-web-container | wc -l` -ne "0" ]; then \
+	echo "Found existing ascend-web-container. Replacing it..."; \
+	make docker-container-removed; \
+	fi
 	@echo Creating a container from ascend-web image...
 	@docker run --name ascend-web-container -d -p 8081:8080 ascend/ascend-web
 	@echo Created container successfully!
 
-docker-container-prod: docker-container-removed
+docker-container-prod:
+	@if [ `docker ps -a -q | grep ascend-web-container | wc -l` -ne "0" ]; then \
+	echo "Found existing ascend-web-container. Replacing it..."; \
+	make docker-container-removed; \
+	fi
 	@echo Creating a container from ascend-web image...
 	@docker run --name ascend-web-container -d -p 8080:8080 ascend/ascend-web
 	@echo Created container successfully!
@@ -45,9 +53,5 @@ docker-container-removed:
 
 docker-enter-container:
 	@docker exec -it ascend-web-container /bin/bash
-
-docker-container-removed:
-	@echo Removing container...
-	@docker rm ascend-web-container -f
 
 .PHONY: default install build watch dev
