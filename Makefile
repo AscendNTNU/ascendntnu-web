@@ -38,7 +38,7 @@ docker-container:
 	@echo Created container successfully!
 
 docker-container-prod:
-	@if [ `docker ps -a -q | grep ascend-web-container | wc -l` -ne "0" ]; then \
+	@if [ `docker ps -a | grep ascend-web-container | wc -l` -ne "0" ]; then \
 	echo "Found existing ascend-web-container. Replacing it..."; \
 	make docker-container-removed; \
 	fi
