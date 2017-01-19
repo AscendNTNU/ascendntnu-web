@@ -48,8 +48,8 @@ docker-container-prod:
 
 docker-container-removed:
 	@echo Removing container...
-	@docker stop ascend-web-container || true
-	@docker rm ascend-web-container || true
+	@docker stop ascend-web-container
+	@docker rm ascend-web-container
 
 docker-enter-container:
 	@docker exec -it ascend-web-container /bin/bash
