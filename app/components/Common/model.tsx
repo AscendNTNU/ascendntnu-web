@@ -50,6 +50,8 @@ export class ModelRenderer extends React.Component<ModelRendererProps, void> {
 
     var light = new THREE.HemisphereLight(0xffffff, 0x444444, 1)
     this.scene.add(light)
+
+    this.fitToContainerHandler = this.fitToContainerHandler.bind(this)
   }
 
   componentDidMount () {
@@ -62,11 +64,7 @@ export class ModelRenderer extends React.Component<ModelRendererProps, void> {
     this.renderer.setSize(this.canvas.clientWidth, this.canvas.clientHeight, false)
     this.camera.aspect = this.canvas.clientWidth / this.canvas.clientHeight
     this.camera.updateProjectionMatrix()
-    window.addEventListener('resize', () => {
-      this.renderer.setSize(this.canvas.clientWidth, this.canvas.clientHeight, false)
-      this.camera.aspect = this.canvas.clientWidth / this.canvas.clientHeight
-      this.camera.updateProjectionMatrix()
-    })
+    window.addEventListener('resize', this.fitToContainerHandler)
 
     if (this.props.autospin) {
       setInterval(() => {
@@ -75,6 +73,16 @@ export class ModelRenderer extends React.Component<ModelRendererProps, void> {
     } else {
       this.updateRendering()
     }
+  }
+
+  componentWillUnmount () {
+    window.removeEventListener('resize', this.fitToContainerHandler)
+  }
+
+  private fitToContainerHandler (evt: any) {
+    this.renderer.setSize(this.canvas.clientWidth, this.canvas.clientHeight, false)
+    this.camera.aspect = this.canvas.clientWidth / this.canvas.clientHeight
+    this.camera.updateProjectionMatrix()
   }
 
   updateModels (models: string[]) {

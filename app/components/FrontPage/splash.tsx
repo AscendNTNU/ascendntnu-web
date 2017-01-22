@@ -35,53 +35,69 @@ export class Splash extends React.Component<SplashProps, SplashState> {
       },
       smallScreen: this.width < 560
     }
-    window.addEventListener('resize', () => {
-      let splash = document.querySelector('.front-splash')
-      this.width = window.innerWidth
-      this.height = splash.clientHeight
-      this.process = this.state.pos / this.distance
-      this.distance = this.width < 560 ? this.height : this.width
-      if (!this.dirty && this.width < 560) {
-        this.setState(Object.assign({}, this.state, {
-          smallScreen: true,
-          pos: splash.querySelector('p').clientHeight
-        }))
-      } else {
-        if (!this.dirty) {
-          this.setState(Object.assign({}, this.state, {
-            smallScreen: this.width < 560,
-            pos: this.width / 2
-          }))
-        } else {
-          if (this.state.smallScreen !== this.width < 560) {
-            this.setState(Object.assign({}, this.state, {
-              smallScreen: this.width < 560,
-              pos: Math.max(
-                Math.min(
-                  this.process * this.distance,
-                  this.distance * (this.state.smallScreen ? .85 : .9)
-                ),
-                this.distance * .1
-              )
-            }))
-          }
-        }
-      }
-    })
-    window.addEventListener('mousemove', this.mouseMoveHandler.bind(this))
-    window.addEventListener('mouseup', this.mouseUpHandler.bind(this))
-    window.addEventListener('touchmove', this.mouseMoveHandler.bind(this))
-    window.addEventListener('touchend', this.mouseUpHandler.bind(this))
-    window.addEventListener('touchcancel', this.mouseUpHandler.bind(this))
+
+    this.fitSplashToContainerHandler = this.fitSplashToContainerHandler.bind(this)
+    this.mouseMoveHandler = this.mouseMoveHandler.bind(this)
+    this.mouseUpHandler = this.mouseUpHandler.bind(this)
   }
 
   componentDidMount () {
+    window.addEventListener('resize', this.fitSplashToContainerHandler)
+    window.addEventListener('mousemove', this.mouseMoveHandler)
+    window.addEventListener('mouseup', this.mouseUpHandler)
+    window.addEventListener('touchmove', this.mouseMoveHandler)
+    window.addEventListener('touchend', this.mouseUpHandler)
+    window.addEventListener('touchcancel', this.mouseUpHandler)
+
     this.height = document.querySelector('.front-splash').clientHeight
     this.distance = this.width < 560 ? this.height : this.width
     if (this.width < 560) {
       this.setState(Object.assign({}, this.state, {
         pos: document.querySelector('.front-splash p').clientHeight
       }))
+    }
+  }
+
+  componentWillUnmount () {
+    window.removeEventListener('resize', this.fitSplashToContainerHandler)
+    window.removeEventListener('mousemove', this.mouseMoveHandler)
+    window.removeEventListener('mouseup', this.mouseUpHandler)
+    window.removeEventListener('touchmove', this.mouseMoveHandler)
+    window.removeEventListener('touchend', this.mouseUpHandler)
+    window.removeEventListener('touchcancel', this.mouseUpHandler)
+  }
+
+  fitSplashToContainerHandler (evt: any) {
+    let splash = document.querySelector('.front-splash')
+    this.width = window.innerWidth
+    this.height = splash.clientHeight
+    this.process = this.state.pos / this.distance
+    this.distance = this.width < 560 ? this.height : this.width
+    if (!this.dirty && this.width < 560) {
+      this.setState(Object.assign({}, this.state, {
+        smallScreen: true,
+        pos: splash.querySelector('p').clientHeight
+      }))
+    } else {
+      if (!this.dirty) {
+        this.setState(Object.assign({}, this.state, {
+          smallScreen: this.width < 560,
+          pos: this.width / 2
+        }))
+      } else {
+        if (this.state.smallScreen !== this.width < 560) {
+          this.setState(Object.assign({}, this.state, {
+            smallScreen: this.width < 560,
+            pos: Math.max(
+              Math.min(
+                this.process * this.distance,
+                this.distance * (this.state.smallScreen ? .85 : .9)
+              ),
+              this.distance * .1
+            )
+          }))
+        }
+      }
     }
   }
 
