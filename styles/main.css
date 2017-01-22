@@ -191,7 +191,7 @@ input[type="submit"].active,
     }
 
     .nav-bar > .nav-element {
-        flex: 0;
+        flex: 0 0 auto;
         text-align: center;
     }
 }
@@ -277,7 +277,7 @@ body.no-scroll {
 .foot {
     background-color: #333;
     color: #ddd;
-    flex: 0;
+    flex: 0 0 auto;
     min-height: 240px;
     display: flex;
     align-items: center;
@@ -522,7 +522,7 @@ body.no-scroll {
 
 .sponsors a.sponsor-adblock-link img {
     width: 100%;
-    flex: 0;
+    flex: 0 0 auto;
     margin: auto;
     /*opacity: .5;*/
     /*filter: contrast(0%) brightness(0%);*/
@@ -1047,7 +1047,7 @@ found {
 }
 
 .no-grow {
-    flex: 0;
+    flex: 0 0 auto;
 }
 
 .page-container.flex.no-grow {
@@ -1116,7 +1116,7 @@ found {
         min-height: auto;
         display: block;
         order: 2;
-        flex: 0;
+        flex: 0 0 auto;
     }
 
     .front-splash-center {
