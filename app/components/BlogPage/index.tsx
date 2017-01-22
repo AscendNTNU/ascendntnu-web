@@ -44,7 +44,7 @@ export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
       tagValues: [],
       post: '',
       posts: [],
-      viewMode: localStorage['viewMode'] || 'small',
+      viewMode: 'big', //localStorage['viewMode'] || 'small',
     }
     this.parser = new Parser()
     this.renderer = new HtmlRenderer()
