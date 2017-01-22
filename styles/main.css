@@ -705,12 +705,37 @@ body.no-scroll {
     padding: 2px 10px;
     font-size: .8em;
     background-color: rgba(0, 0, 0, .1);
+    transition: background-color .2s ease-in-out;
+    border: none;
+    color: #ddd;
     border-radius: 3px;
+    cursor: pointer;
+}
+
+.blog-list-categories > .category:hover,
+.blog-post-categories > .category:hover {
+    background-color: rgba(0, 0, 0, .15);
+    transition-duration: .05s;
 }
 
 .app.dark-theme .blog-list-categories > .category,
 .app.dark-theme .blog-post-categories > .category {
     background-color: rgba(0, 0, 0, .3);
+}
+
+.app.dark-theme .blog-list-categories > .category:hover,
+.app.dark-theme .blog-post-categories > .category:hover {
+    background-color: rgba(0, 0, 0, .4);
+}
+
+.app .blog-list-categories > .category.selected,
+.app .blog-post-categories > .category.selected {
+    background-color: #f80;
+}
+
+.app .blog-list-categories > .category.selected:hover,
+.app .blog-post-categories > .category.selected:hover {
+    background-color: #a60;
 }
 
 .page-blog video {

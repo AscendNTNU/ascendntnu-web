@@ -21,18 +21,19 @@ let gotoTop = () => {
 //const browserHistory = useRouterHistory(createHistory)({ basename: '/' })
 
 render (
-  <Router onUpdate={gotoTop} history={browserHistory}>
+  <Router history={browserHistory}>
     <Route path="/" component={App}>
-      <IndexRoute component={FrontPage} />
-      <Route path="/blog" component={BlogPage} />
+      <IndexRoute component={FrontPage} onEnter={gotoTop} />
+      <Route path="/blog" component={BlogPage} onEnter={gotoTop} />
+      <Route path="/blog/tags(/:tags)" component={BlogPage} />
       <Route path="/blog/:post" component={BlogPage} />
-      <Route path="/drones" component={DronePage} />
-      <Route path="/team" component={TeamPage} />
+      <Route path="/drones" component={DronePage} onEnter={gotoTop} />
+      <Route path="/team" component={TeamPage} onEnter={gotoTop} />
       <Route path="/team/:year" component={TeamPage} />
-      <Route path="/join" component={JoinPage} />
-      <Route path="/sponsors" component={SponsorPage} />
+      <Route path="/join" component={JoinPage} onEnter={gotoTop} />
+      <Route path="/sponsors" component={SponsorPage} onEnter={gotoTop} />
       <Route path="/sponsors/:year" component={SponsorPage} />
-      <Route path="/about" component={AboutPage} />
+      <Route path="/about" component={AboutPage} onEnter={gotoTop} />
     </Route>
   </Router>,
   document.querySelector('#app')
