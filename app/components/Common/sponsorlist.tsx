@@ -44,10 +44,10 @@ export class SponsorList extends React.Component<SponsorListProps, SponsorListSt
     let sponsors = this.state.sponsors.map((sponsor: any, i: number) => {
       return (
         <div key={i} className="sponsor">
-          <a href={sponsor.link} className="sponsor-link">
+          <a href={sponsor.link} className="sponsor-adblock-link">
             <img src={sponsor.logo} title={sponsor.name} />
           </a>
-          <div className="sponsor-text">
+          <div className="sponsor-adblock-text">
             {sponsor.short_text}
           </div>
         </div>

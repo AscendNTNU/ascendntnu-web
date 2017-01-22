@@ -493,7 +493,7 @@ body.no-scroll {
     margin: 16px 16px;
 }
 
-.sponsors a.sponsor-link {
+.sponsors a.sponsor-adblock-link {
     text-decoration: none;
     border: none;
 }
@@ -503,7 +503,7 @@ body.no-scroll {
     width: 100%;
     flex-basis: 100%;
 }
-.sponsors .sponsor:first-child .sponsor-text {
+.sponsors .sponsor:first-child .sponsor-adblock-text {
     max-width: 600px;
     width: 100%;
     margin: auto;
@@ -513,14 +513,14 @@ body.no-scroll {
     max-width: 300px;
 }
 
-.sponsors .sponsor:not(:first-child) a.sponsor-link {
+.sponsors .sponsor:not(:first-child) a.sponsor-adblock-link {
     height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.sponsors a.sponsor-link img {
+.sponsors a.sponsor-adblock-link img {
     width: 100%;
     flex: 0;
     margin: auto;
@@ -528,7 +528,7 @@ body.no-scroll {
     /*filter: contrast(0%) brightness(0%);*/
 }
 
-.sponsors a.sponsor-link:hover img {
+.sponsors a.sponsor-adblock-link:hover img {
     opacity: 1;
     /*filter: none;*/
 }
