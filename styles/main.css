@@ -1,5 +1,21 @@
 @import 'https://fonts.googleapis.com/css?family=Open+Sans|Questrial|Roboto+Slab';
 
+:root {
+    --primary-light: #eee;
+    --primary-dark: #444;
+    --logo-color: #c49a6c;
+    --link-color: #81D4FA;
+    --navbar-background-color-light: #fff;
+    --navbar-background-color-dark: #333;
+    --head-background-color-light: #fff;
+    --head-background-color-dark: #222;
+    --head-after-background-color-light: linear-gradient(0deg, transparent, rgba(0, 0, 0, .1));
+    --head-after-background-color-dark: linear-gradient(0deg, transparent, rgba(0, 0, 0, .2));
+    --markdown-link-color: rgba(255, 127, 0, .7);
+    --button-color: #fff;
+    --button-background-color: rgba(0, 0, 0, .3);
+}
+
 body {
     font-family: 'Open Sans', sans-serif;
     min-height: 100vh;
@@ -8,6 +24,7 @@ body {
 
 a {
     color: #81D4FA;
+    color: var(--link-color);
     text-decoration: none;
 }
 
@@ -15,9 +32,11 @@ button,
 input[type="submit"],
 input[type="reset"] {
     background-color: rgba(0, 0, 0, .3);
+    background-color: var(--button-background-color);
     border: none;
     border-radius: 3px;
     color: #fff;
+    color: var(--button-color);
     margin: 4px;
     font-size: 1em;
     padding: 8px 16px;
@@ -43,6 +62,7 @@ input[type="submit"].active,
 .active input[type="reset"] {
     transition-duration: .05s;
     background-color: rgba(255, 127, 0, .7);
+    background-color: var(--markdown-link-color);
     box-shadow: 0 1px 8px -2px #000;
 }
 
@@ -64,10 +84,12 @@ input[type="submit"].active,
     flex-direction: column;
     align-items: center;
     background-color: #eee;
+    background-color: var(--primary-light);
 }
 
 .app.dark-theme {
     background-color: #444;
+    background-color: var(--primary-dark);
     color: #ddd;
 }
 
@@ -82,6 +104,7 @@ input[type="submit"].active,
 .logo-title {
     font-size: 2em;
     color: #c49a6c;
+    color: var(--logo-color);
     display: flex;
 }
 
@@ -133,6 +156,7 @@ input[type="submit"].active,
         top: 100%;
         left: 0;
         background-color: #fff;
+        background-color: var(--navbar-background-color-light);
         width: 100%;
         height: calc(100vh - 64px);
         z-index: 3;
@@ -143,6 +167,7 @@ input[type="submit"].active,
 
     .app.dark-theme .nav-bar {
         background-color: #333;
+        background-color: var(--navbar-background-color-dark);
     }
 
     .app.menu-visible .nav-bar {
@@ -195,6 +220,7 @@ body.no-scroll {
 .head {
     min-height: 64px;
     background-color: #fff;
+    background-color: var(--head-background-color-light);
     box-sizing: border-box;
     padding: 0 16px;
     position: fixed;
@@ -206,6 +232,7 @@ body.no-scroll {
 
 .app.dark-theme .head {
     background-color: #222;
+    background-color: var(--head-background-color-dark);
 }
 
 .head:after {
@@ -216,12 +243,14 @@ body.no-scroll {
     width: 100%;
     /*border-top: 1px solid #999;*/
     background-image: linear-gradient(0deg, transparent, rgba(0, 0, 0, .1));
+    background-image: var(--head-after-background-color-light);
     height: 5px;
     z-index: 1;
 }
 
 .app.dark-theme .head:after {
     background-image: linear-gradient(0deg, transparent, rgba(0, 0, 0, .2));
+    background-image: var(--head-after-background-color-dark);
 }
 
 .head-content {
