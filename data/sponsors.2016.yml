@@ -6,12 +6,12 @@
 
 - name: Elefun
   link: http://elefun.no/rc/multikopter.aspx
-  logo: https://img.prisguide.no/1687/1687182/original.350x88.png
+  logo: /public/assets/sponsor-elefun.png
   short_text: Elefun is a Norwegian web shop selling a plethora of great drones, multicopters and FPV-systems. 
 
 - name: 3D Robotics
   link: https://3drobotics.com/
-  logo: https://www.airmap.com/wp-content/uploads/2016/03/3DR_logo_Light-349x136.png
+  logo: /public/assets/sponsor-elefun.png
   short_text: 3D Robotics are the makers of Pixhawk - the worlds leading autopilot system for UAVs. Our drones are powered by their hardware. 
 
 - name: Løten RC-shop
