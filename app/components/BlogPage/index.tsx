@@ -301,8 +301,8 @@ export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
       return (
         <div className="page page-blog">
           <Breadcrumb routes={['blog']} />
-          <Section title="Artikler">
-            <input onChange={this.search.bind(this)} placeholder="Søk i artikler..." title="Bruk * som wildcard" />
+          <Section title="Our blog">
+            <input onChange={this.search.bind(this)} placeholder="Search in articles..." title="Use * as wildcard" />
             <SubSection className="page-blog-list">
               {links}
             </SubSection>
