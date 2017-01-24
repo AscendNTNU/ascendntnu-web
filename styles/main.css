@@ -227,6 +227,7 @@ body.no-scroll {
 
 .head {
     min-height: 64px;
+    height: 64px;
     background-color: #fff;
     background-color: var(--head-background-color);
     box-sizing: border-box;
