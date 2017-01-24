@@ -50,7 +50,7 @@ export class Footer extends React.Component<FooterProps, {}> {
               data-share="true"></div>
           </div>
           <div className="foot-element">
-            <div>Autonomus aerial robotics. Ascend NTNU is The Norwegian University of Science and Technology's team in the International Aerial Robotics Competition (IARC).</div>
+            <p>Autonomus aerial robotics. Ascend NTNU is The Norwegian University of Science and Technology's team in the International Aerial Robotics Competition (IARC).</p>
             <div onClick={this.props.changeTheme.bind(this)} className="styled-link">Change to {this.props.theme == 'dark' ? 'light' : 'dark'} theme</div>
           </div>
         </div>
