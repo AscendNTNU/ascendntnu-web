@@ -29,7 +29,7 @@ export class DronePage extends React.Component<DronePageProps, {}> {
       <div className="page page-drone">
         <Breadcrumb routes={['drone']} />
         <Section className="row">
-          <SubSection title="Drone 1" className="drone-container">
+          <SubSection title="Valkyrie" className="drone-container">
             <div className="drone-image" style={this.drones[0].style}></div>
             <p className="drone-text">
               Our first aerial robot was born last fall. Creating it, flying it and using it has been a great learning experience for the team. The drone is however quite small, and we needed an upgrade in order to carry all the desired equipment.
