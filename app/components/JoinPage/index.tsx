@@ -7,13 +7,49 @@ export interface JoinPageProps {}
 
 export class JoinPage extends React.Component<JoinPageProps, {}> {
   render () {
+    let positions: any = (
+      <div className="row">
+          <h3>Stillinger</h3>
+          <h4>Teknisk</h4>
+          <ul>
+            <li>
+              <strong>Control gruppemedlem.</strong> Control gruppen lager systemene som tar seg av lavnivå styringen av dronen. Dette vil si å holde dronen stabil og kontrollerbar, og kunne styre dronen raskt og effektivt dit vi vil uten at den kolliderer med noe.<br />Som et gruppemedlem i denne gruppen vil du lage reguleringssystemene som styrer dronen.<br />
+              <i>Nøkkelord: Reguleringsteknikk, Kalman-filter, Sensor fusion, Collision Avoidance</i>
+            </li>
+            <li>
+              <strong>Perception gruppemedlem.</strong> Perception gruppen har som oppgave å la dronen kunne oppfatte sine omgivelser og forstå hva den ser. Vi samler inn data fra en rekke sensorer og kombinerer dette for å bygge et mest mulig riktig bilde av omverdenen.<br />Som gruppemedlem i denne gruppen vil du jobbe med å skrive programvare som klarer å tyde dataen vi får fra sensorikk på dronen.<br />
+              <i>Nøkkelord: Sensorikk, Datasyn, LIDAR.</i>
+            </li>
+            <li>
+              <strong>Hardware gruppemedlem.</strong> Det er Hardware gruppen som designer og bygger dronene til Ascend. Som medlem av denne gruppen kan du jobbe med å designe og produsere de mekaniske delene til dronen. Du kan også jobbe med å designe det elektriske systemet på dronen, ved å designe egne kretskort og samarbeide med de andre gruppene for å integrere sensorikk og datamaskinene vi har ombord.<br />
+              <i>Nøkkelord: Mekanisk design, Styrkeberegning, Materialvalg, Elektrisk design, Kretskortdesign, Aerodynamikk.</i>
+            </li>
+            <li>
+              <strong>Planning gruppemedlem og gruppeleder.</strong> Vi tar opp en ny gruppeleder for planning gruppen vår, i tillegg til gruppemedlemmer. Denne gruppen jobber med den overordnede intelligensen til dronen. Det er dette som tar avgjørelser om hvilke handlinger som skal gjøres.<br />Som medlem av denne gruppen vil du jobbe med å lage en intelligens som tar avgjørelser om hva dronen skal gjøre basert på informasjonen fra sensorikk.<br />
+              <i>Nøkkelord: Kunstig Intelligens, Ruteplanlegging, Maskinlæring</i>
+            </li>
+          </ul>
+          <h4>Admin</h4>
+          <ul>
+            <li>
+              <strong>Web og grafikk.</strong> Som web og grafikk ansvarlig vil ha ansvar for å utvikle Ascends grafiske profil. Du vil jobbe sammen med markedsansvarlig med å videreutvikle Ascends markedsmateriale, og presentasjonen av Ascend eksternt. Jobben vil innebære ting som å produsere plakater, rollups og videoer til markedsføring. Du vil også være ansvarlig for å vedlikeholde og oppdatere Ascends nettsider. Erfaring med alt dette er ikke krav så lenge du er villig til å bruke tid til å lære deg det.<br />
+              <i>Nøkkelord: Grafikk, Tekst og Layout, Videoredigering, Web Design</i>
+            </li>
+            <li>
+              <strong>Sponsorkontakt.</strong> Vi i Ascend er helt avhengig av våre sponsorer for å kunne gjøre det arbeidet vi gjør. Som sponsorkontakt i Ascend har du som hovedoppgave å skape mest mulig verdiskapning for våre sponsorer. Du vil jobbe med å velge ut og kontakte potensielle nye sponsorer, og være med å forhandle kontrakter. Du vil også jobbe med å opprettholde god kommunikasjon til eksisterende sponsorer og være med å planlegge og organisere sponsoraktiviteter.<br />
+              <i>Nøkkelord: Presentasjonteknikk, Gode Forhandlingsevner, Utadvent, Organisert</i>
+            </li>
+          </ul>
+        <p></p>
+      </div>
+    )
+
     return (
       <div className="page page-join">
         <Breadcrumb routes={['join']} />
         <Section title="Nå nye høyder">
 
             <div className="row">
-              
               <h2>Søk Ascend!</h2>
               <p>Opptaket er ikke før neste år.</p>
               <p>
@@ -36,47 +72,8 @@ export class JoinPage extends React.Component<JoinPageProps, {}> {
                 <a href="http://ascendntnu.us14.list-manage2.com/subscribe?u=dfce303a41ce42b342c75a3ef&amp;id=002e04db12" target="_blank">Interesseliste for opptak.</a>
               </h4>
             </div>
+            {/*positions*/null}
 
-            <div className="row">
-              <div className="row">				
-                  <h3>Stillinger</h3>
-                  <h4>Teknisk</h4>
-                  <ul>
-                    <li>
-                      <strong>Control gruppemedlem.</strong> Control gruppen lager systemene som tar seg av lavnivå styringen av dronen. Dette vil si å holde dronen stabil og kontrollerbar, og kunne styre dronen raskt og effektivt dit vi vil uten at den kolliderer med noe.<br />Som et gruppemedlem i denne gruppen vil du lage reguleringssystemene som styrer dronen.<br />
-                      <i>Nøkkelord: Reguleringsteknikk, Kalman-filter, Sensor fusion, Collision Avoidance</i>
-                    </li>
-                    <li>
-                      <strong>Perception gruppemedlem.</strong> Perception gruppen har som oppgave å la dronen kunne oppfatte sine omgivelser og forstå hva den ser. Vi samler inn data fra en rekke sensorer og kombinerer dette for å bygge et mest mulig riktig bilde av omverdenen.<br />Som gruppemedlem i denne gruppen vil du jobbe med å skrive programvare som klarer å tyde dataen vi får fra sensorikk på dronen.<br />
-                      <i>Nøkkelord: Sensorikk, Datasyn, LIDAR.</i>
-                    </li>
-                    <li>
-                      <strong>Hardware gruppemedlem.</strong> Det er Hardware gruppen som designer og bygger dronene til Ascend. Som medlem av denne gruppen kan du jobbe med å designe og produsere de mekaniske delene til dronen. Du kan også jobbe med å designe det elektriske systemet på dronen, ved å designe egne kretskort og samarbeide med de andre gruppene for å integrere sensorikk og datamaskinene vi har ombord.<br />
-                      <i>Nøkkelord: Mekanisk design, Styrkeberegning, Materialvalg, Elektrisk design, Kretskortdesign, Aerodynamikk.</i>
-                    </li>
-                    <li>
-                      <strong>Planning gruppemedlem og gruppeleder.</strong> Vi tar opp en ny gruppeleder for planning gruppen vår, i tillegg til gruppemedlemmer. Denne gruppen jobber med den overordnede intelligensen til dronen. Det er dette som tar avgjørelser om hvilke handlinger som skal gjøres.<br />Som medlem av denne gruppen vil du jobbe med å lage en intelligens som tar avgjørelser om hva dronen skal gjøre basert på informasjonen fra sensorikk.<br />
-                      <i>Nøkkelord: Kunstig Intelligens, Ruteplanlegging, Maskinlæring</i>
-                    </li>
-                  </ul>
-                  <h4>Admin</h4>
-                  <ul>
-                    <li>
-                      <strong>Web og grafikk.</strong> Som web og grafikk ansvarlig vil ha ansvar for å utvikle Ascends grafiske profil. Du vil jobbe sammen med markedsansvarlig med å videreutvikle Ascends markedsmateriale, og presentasjonen av Ascend eksternt. Jobben vil innebære ting som å produsere plakater, rollups og videoer til markedsføring. Du vil også være ansvarlig for å vedlikeholde og oppdatere Ascends nettsider. Erfaring med alt dette er ikke krav så lenge du er villig til å bruke tid til å lære deg det.<br />
-                      <i>Nøkkelord: Grafikk, Tekst og Layout, Videoredigering, Web Design</i>
-                    </li>
-                    <li>
-                      <strong>Sponsorkontakt.</strong> Vi i Ascend er helt avhengig av våre sponsorer for å kunne gjøre det arbeidet vi gjør. Som sponsorkontakt i Ascend har du som hovedoppgave å skape mest mulig verdiskapning for våre sponsorer. Du vil jobbe med å velge ut og kontakte potensielle nye sponsorer, og være med å forhandle kontrakter. Du vil også jobbe med å opprettholde god kommunikasjon til eksisterende sponsorer og være med å planlegge og organisere sponsoraktiviteter.<br />
-                      <i>Nøkkelord: Presentasjonteknikk, Gode Forhandlingsevner, Utadvent, Organisert</i>
-                    </li>
-                  </ul>
-                <p></p>
-              </div>
-
-              
-            
-            
-              
             <div className="row">
               <div className="col-md-12">
                 <h2>Hvorfor søke</h2>
@@ -98,9 +95,10 @@ export class JoinPage extends React.Component<JoinPageProps, {}> {
                   </li>
                 </ul>
               </div>
-            </div>	
+            </div>
+
             <div className="row">
-              <div className="col-md-12">	
+              <div className="col-md-12">
               <h2>Konkurransen</h2>
                 <p>
                   International Aerial robotics competition (IARC) er en årlig konkurranse som avholdes i USA og Kina med mål om å presse grensene for hva man får til med autonome droner. Dette gjør de ved å presentere meningsfulle og nyttige oppdrag som er umulige å løse på det tidspunktet de lanseres. Ideen er at når den oppførselen som etterspørres til slutt demonstres i konkurransen, vil konkurransen ha bidratt til en meningsfull utvikling innenfor autonom robotikk. En utvikling som fortrinnsvis er til fordel for verden.
@@ -109,7 +107,8 @@ export class JoinPage extends React.Component<JoinPageProps, {}> {
                 <p><a className="btn btn-primary btn-lg" href="http://www.ascendntnu.no/iarc/competition/2016/02/25/The-Competition.html" role="button">Les mer om konkurransen og om oppdraget vi skal løse her.</a></p> 
                 
               </div>
-            </div>		
+            </div>
+
             <div className="row">
               <div className="col-md-12">
                 <h3>Forventet arbeidstid</h3>
@@ -118,7 +117,6 @@ export class JoinPage extends React.Component<JoinPageProps, {}> {
                 </p>
               </div>
             </div>
-            
 
             <div className="row">
               <div className="col-md-12">
@@ -170,8 +168,6 @@ export class JoinPage extends React.Component<JoinPageProps, {}> {
             </div>
 
             <p></p>
-            
-          </div>
         </Section>
       </div>
     )
