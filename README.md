@@ -6,7 +6,7 @@ This page shows who AscendNTNU are and what we do.
 
 To set up the environment, follow the instructions below.
 
-### SetUp
+### Set up the dev environment
 
 You should have `node.js` installed with `npm`. Just go to their website.
 
@@ -40,4 +40,20 @@ $ make dev # Running the dev environment.
 $ npm install --production
 $ npm install -g typescript typings webpack
 $ npm link typescript
+```
+
+### Run in Docker (Because it only works)
+
+```bash
+$ make docker-baseimage # To initialise a base image. Setting up the environment. It is only needed once.
+$ make docker-image # Create a new image which extends the baseimage. This one is way faster.
+$ make docker-container # To create a dev-container. It will find the old and replace if nessesary.
+$ make docker-container-prod # To create a production container. It will find the old  production and replace if nessesary.
+# Prod container runs at port 8080 and dev container at port 8081.
+```
+
+Shortcut for entering the containers:
+
+```bash
+$ make docker-enter-container(-prod)
 ```
