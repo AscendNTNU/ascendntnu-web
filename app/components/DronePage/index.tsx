@@ -20,6 +20,11 @@ export class DronePage extends React.Component<DronePageProps, {}> {
         style: {
           backgroundImage: 'url(/images/drones/drone2-minimized.jpg)'
         }
+      },
+      {
+        style: {
+          backgroundImage: 'url(/images/drones/drone2-minimized.jpg)'
+        }
       }
     ]
   }
@@ -48,6 +53,14 @@ export class DronePage extends React.Component<DronePageProps, {}> {
             </p>
             <p className="drone-text">
               Our <b>software</b> can recognize the lines and corners of the grid, detect target robots and decide when and how to interact with them.
+            </p>
+          </SubSection>
+          <SubSection title="Drone 3" className="drone-container">
+            <p className="drone-text">
+              Our third quadcopter was designed as a physically robust platform for testing new control software. The small size and low weight means that we can test new control strategies, including landing on ground robots, with less risk of damage to equipment.
+            </p>
+            <p className="drone-text">
+              It has a Pixhawk flight controller, an Odroid XU4 onboard computer running Ubuntu Server with ROS, and is used with an Optitrack tracking system. The custom made frame made of carbon fiber and 3D-printed parts allows compact placement of the hardware and even weight distribution, and well balanced motors from T-Motor minimize vibrations and yields high efficiency.
             </p>
           </SubSection>
         </Section>
