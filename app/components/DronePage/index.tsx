@@ -23,7 +23,7 @@ export class DronePage extends React.Component<DronePageProps, {}> {
       },
       {
         style: {
-          backgroundImage: 'url(/images/drones/drone2-minimized.jpg)'
+          backgroundImage: 'url(/images/drones/drone3-minimized.jpg)'
         }
       }
     ]
@@ -56,6 +56,7 @@ export class DronePage extends React.Component<DronePageProps, {}> {
             </p>
           </SubSection>
           <SubSection title="Drone 3" className="drone-container">
+            <div className="drone-image" style={this.drones[2].style}></div>
             <p className="drone-text">
               Our third quadcopter was designed as a physically robust platform for testing new control software. The small size and low weight means that we can test new control strategies, including landing on ground robots, with less risk of damage to equipment.
             </p>
