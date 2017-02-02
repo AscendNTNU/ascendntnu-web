@@ -50,15 +50,15 @@ export class DronePage extends React.Component<DronePageProps, {}> {
       <div className="page page-drone">
         <Breadcrumb routes={['drone']} />
         <Section className="row">
-          <SubSection title="Drone 1" className="drone-container">
+          <SubSection title={this.drones[0].name} className="drone-container">
             <div className="drone-image" style={this.drones[0].style}></div>
             {this.drones[0].content.forEach((e: String) => <div className="drone-text">e</div>)}
           </SubSection>
-          <SubSection title="Drone 2" className="drone-container">
+          <SubSection title={this.drones[1].name} className="drone-container">
             <div className="drone-image" style={this.drones[1].style}></div>
             {this.drones[1].content.forEach((e: String) => <div className="drone-text">e</div>)}
           </SubSection>
-          <SubSection title="Drone 3" className="drone-container">
+          <SubSection title={this.drones[2].name} className="drone-container">
             <div className="drone-image" style={this.drones[2].style}></div>
             {this.drones[2].content.forEach((e: String) => <div className="drone-text">e</div>)}
           </SubSection>
