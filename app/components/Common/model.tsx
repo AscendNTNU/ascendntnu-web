@@ -9,7 +9,7 @@ interface ModelRendererProps {
   style?: any,
   wireframe?: boolean,
   autospin?: boolean,
-  process?: number,
+  process?: any,
 }
 
 export class ModelRenderer extends React.Component<ModelRendererProps, void> {
@@ -117,10 +117,17 @@ export class ModelRenderer extends React.Component<ModelRendererProps, void> {
   }
 
   updateRendering () {
-    let process = this.props.autospin ? Date.now() : (this.props.process || Date.now())
-    this.camera.position.x = 200 * Math.sin(process / 4000)
-    this.camera.position.z = 200 * Math.cos(process / 4000)
-    this.camera.position.y = 200 * Math.cos(process / 5000)
+    if (typeof this.props.process === 'number') {
+      let process = this.props.autospin ? Date.now() : (this.props.process || Date.now())
+      this.camera.position.x = 200 * Math.sin(process / 4000)
+      this.camera.position.z = 200 * Math.cos(process / 4000)
+      this.camera.position.y = 200 * Math.cos(process / 5000)
+    } else {
+      let process = this.props.process
+      this.camera.position.x = process[0]
+      this.camera.position.z = process[1]
+      this.camera.position.y = process[2]
+    }
     this.camera.lookAt(this.scene.position)
     this.renderer.render(this.scene, this.camera)
     this.renderer.setClearColor(0, 0)

@@ -2,10 +2,14 @@ import * as React from 'react'
 
 import { Section, SubSection } from '../PageLayout'
 import { Breadcrumb } from '../Common/breadcrumb'
+import { ModelRenderer } from '../Common/model'
 
 export interface DronePageProps {}
+export interface DronePageState {
+  droneImages: any
+}
 
-export class DronePage extends React.Component<DronePageProps, {}> {
+export class DronePage extends React.Component<DronePageProps, DronePageState> {
   drones: any[]
   constructor () {
     super()
@@ -22,6 +26,7 @@ export class DronePage extends React.Component<DronePageProps, {}> {
       },
       {
         name: 'Drone 2',
+        models: ['images/drones/drone2.stl', 'images/drones/propell.stl'],
         style: {
           backgroundImage: 'url(/images/drones/drone2-minimized.jpg)'
         },
@@ -43,6 +48,15 @@ export class DronePage extends React.Component<DronePageProps, {}> {
         ]
       }
     ]
+
+    this.state = {
+      droneImages: [
+        (<div className="drone-image" style={this.drones[0].style}></div>),
+        (<div className="drone-image" style={this.drones[1].style}></div>),
+        //(<div className="drone-model"><ModelRenderer models={this.drones[1].models} process={[-80, 160, 160]} /></div>),
+        (<div className="drone-image" style={this.drones[2].style}></div>),
+      ]
+    }
   }
 
   render () {
@@ -51,15 +65,15 @@ export class DronePage extends React.Component<DronePageProps, {}> {
         <Breadcrumb routes={['drone']} />
         <Section className="row">
           <SubSection title={this.drones[0].name} className="drone-container">
-            <div className="drone-image" style={this.drones[0].style}></div>
+            {this.state.droneImages[0]}
             {this.drones[0].content}
           </SubSection>
           <SubSection title={this.drones[1].name} className="drone-container">
-            <div className="drone-image" style={this.drones[1].style}></div>
+            {this.state.droneImages[1]}
             {this.drones[1].content}
           </SubSection>
           <SubSection title={this.drones[2].name} className="drone-container">
-            <div className="drone-image" style={this.drones[2].style}></div>
+            {this.state.droneImages[2]}
             {this.drones[2].content}
           </SubSection>
         </Section>
