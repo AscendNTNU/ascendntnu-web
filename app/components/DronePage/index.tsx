@@ -12,7 +12,7 @@ export class DronePage extends React.Component<DronePageProps, {}> {
 
     this.drones = [
       {
-        name: 'Drone 1',
+        name: 'Valkyrie',
         style: {
           backgroundImage: 'url(/images/drones/drone1-flying-minimized.jpg)'
         },
@@ -50,11 +50,7 @@ export class DronePage extends React.Component<DronePageProps, {}> {
       <div className="page page-drone">
         <Breadcrumb routes={['drone']} />
         <Section className="row">
-<<<<<<< HEAD
-          <SubSection title="Valkyrie" className="drone-container">
-=======
           <SubSection title={this.drones[0].name} className="drone-container">
->>>>>>> dev
             <div className="drone-image" style={this.drones[0].style}></div>
             {this.drones[0].content}
           </SubSection>
