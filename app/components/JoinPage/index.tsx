@@ -51,7 +51,7 @@ export class JoinPage extends React.Component<JoinPageProps, {}> {
 
             <div className="row">
               <h2>Søk Ascend!</h2>
-              <p>Opptaket er ikke før neste år.</p>
+              <p>Opptaket er dessverre ikke før til september.</p>
               <p>
                 Ønsker du å være med på å drive med cutting-edge droneteknologi i en ambisiøs og teknologi-fokusert studentorganisasjon?
               </p>
