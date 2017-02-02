@@ -24,7 +24,7 @@ export class SponsorList extends React.Component<SponsorListProps, SponsorListSt
   }
 
   componentWillReceiveProps (nextProps: any) {
-    let nextYear: number = nextProps.year || 2017
+    let nextYear: number = nextProps.year || 2016
     let year: number = this.props.year || this.state.year
 
     if (nextYear != year) {
