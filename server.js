@@ -4,6 +4,7 @@ var fs = require('fs')
 var mkdirp = require('mkdirp')
 var yamljs = require('yamljs')
 var fm = require('front-matter')
+var constants = require('./constants')
 
 app.use('/images', express.static(__dirname + '/images'))
 app.use('/public/assets', express.static(__dirname + '/images/assets'))
@@ -11,7 +12,7 @@ app.use('/dist', express.static(__dirname + '/dist'))
 app.use('/styles', express.static(__dirname + '/styles'))
 app.use('/node_modules', express.static(__dirname + '/node_modules'))
 
-app.listen(8080)
+app.listen(constants.port || 8080)
 
 app.get('/api/v1', function (req, res) {
   res.sendFile(__dirname + '/api/v1/index.html')
