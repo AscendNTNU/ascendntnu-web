@@ -506,6 +506,10 @@ body.no-scroll {
     margin: 8px auto;
 }
 
+.sponsors .sponsor:first-child a.sponsor-adblock-link img {
+    margin: 16px;
+}
+
 .sponsors .sponsor:first-child {
     max-width: 100%;
     width: 100%;
@@ -544,7 +548,7 @@ body.no-scroll {
 
 .app.dark-theme .sponsors a.sponsor-adblock-link img:last-child,
 .sponsors a.sponsor-adblock-link img:first-child {
-    display: block;
+    display: inline-block;
 }
 
 .sponsors a.sponsor-adblock-link:hover img {
