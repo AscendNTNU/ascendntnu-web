@@ -2,6 +2,7 @@
   type: main
   link: http://kongsberg.com/
   logo: /public/assets/kongsberg.svg
+  logo_dark: /public/assets/kongsberg_dark_bg.svg
   short_text: Our main sponsor Kongsberg is an international, knowledge-based group that supplies high-technology systems and solutions to customers engaged in the oil and gas industry, the merchant marine, and the defence and aerospace industries.
 
 - name: Elefun

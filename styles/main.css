@@ -503,6 +503,7 @@ body.no-scroll {
 .sponsors a.sponsor-adblock-link {
     text-decoration: none;
     border: none;
+    margin: 8px auto;
 }
 
 .sponsors .sponsor:first-child {
@@ -510,10 +511,11 @@ body.no-scroll {
     width: 100%;
     flex-basis: 100%;
 }
+
 .sponsors .sponsor:first-child .sponsor-adblock-text {
     max-width: 600px;
     width: 100%;
-    margin: auto;
+    margin: 16px auto;
 }
 
 .sponsors .sponsor:first-child img {
@@ -531,8 +533,18 @@ body.no-scroll {
     width: 100%;
     flex: 0 0 auto;
     margin: auto;
+}
+
+.app.dark-theme .sponsors a.sponsor-adblock-link img,
+.sponsors a.sponsor-adblock-link img:last-child {
+    display: none;
     /*opacity: .5;*/
     /*filter: contrast(0%) brightness(0%);*/
+}
+
+.app.dark-theme .sponsors a.sponsor-adblock-link img:last-child,
+.sponsors a.sponsor-adblock-link img:first-child {
+    display: block;
 }
 
 .sponsors a.sponsor-adblock-link:hover img {

@@ -17,7 +17,7 @@ export class SponsorList extends React.Component<SponsorListProps, SponsorListSt
 
     this.state = {
       year: props.year || 2016,
-      sponsors: []
+      sponsors: [],
     }
 
     this.getSponsors(this.state.year)
@@ -37,7 +37,7 @@ export class SponsorList extends React.Component<SponsorListProps, SponsorListSt
     fetch("/api/v1/sponsors/" + year).then(r => r.json()).then(r => {
       this.setState({
         year: year,
-        sponsors: r
+        sponsors: r,
       })
     })
   }
@@ -48,6 +48,7 @@ export class SponsorList extends React.Component<SponsorListProps, SponsorListSt
         <div key={i} className="sponsor">
           <a href={sponsor.link} className="sponsor-adblock-link">
             <img src={sponsor.logo} title={sponsor.name} />
+            {sponsor.logo_dark ? <img src={sponsor.logo_dark} title={sponsor.name} /> : null}
           </a>
           <div className="sponsor-adblock-text">
             {sponsor.short_text}
