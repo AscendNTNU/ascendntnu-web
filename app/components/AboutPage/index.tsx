@@ -25,7 +25,7 @@ export class AboutPage extends React.Component<AboutPageProps, {}> {
               <li>Navigation in a sterile environment with no external navigation aids such as GPS or SLAM.</li>
               <li>Interaction between competing autonomous air vehicles (mission 7b).</li>
             </ul>
-            <iframe src="https://player.vimeo.com/video/103487384" className="about-mission-video" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            <iframe src="https://player.vimeo.com/video/103487384" className="about-mission-video" webkitallowFullScreen mozallowFullScreen allowFullScreen></iframe>
           </SubSection>
 
           <SubSection title="Contact us">
