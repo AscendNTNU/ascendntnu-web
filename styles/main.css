@@ -1037,6 +1037,16 @@ found {
     }
 }
 
+.page-about .about-mission-video {
+    border: none;
+    width: calc(100vw - 32px * 2);
+    height: calc((100vw - 32px * 2) * 360 / 640);
+    max-width: 640px;
+    max-height: 360px;
+    display: block;
+    margin: auto;
+}
+
 .breadcrumb-container {
     display: flex;
     flex-flow: wrap row;
