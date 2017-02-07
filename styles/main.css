@@ -224,6 +224,7 @@ body.no-scroll {
 }
 
 .app-container {
+    overflow-x: hidden;
     overflow-y: auto;
     min-height: calc(100vh - 64px);
     margin-top: 64px;
@@ -1090,6 +1091,80 @@ found {
 
 .breadcrumb-container > ::first-child:after {
     content: "";
+}
+
+.history-viewer {
+    display: block;
+    background-color: rgba(0, 0, 0, .5);
+    margin: 0 -16px;
+    padding: 24px 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    cursor: ew-resize;
+    box-shadow: inset 0 0 8px #000;
+    width: 100vw;
+    position: relative;
+    left: calc((960px - 100vw) / 2);
+}
+
+.history-viewer > .history-content {
+    position: relative;
+    height: 72px;
+    white-space: pre;
+    user-select: none;
+}
+
+.history-content .event {
+    position: absolute;
+    display: inline-block;
+    background-color: rgba(0, 0, 0, .5);
+    font-size: .7em;
+    border-radius: 4px;
+    margin: 8px;
+    padding: 8px;
+}
+
+.history-content .event-timeline-year {
+     color: rgba(255, 255, 255, .1);
+     bottom: 0;
+     position: absolute;
+     font-size: 64px;
+     padding-left: 8px;
+}
+
+.history-content .event-timeline-year:before {
+    content: "";
+    height: 0;
+    width: 0;
+    margin-left: -8px;
+    border: 52px solid transparent;
+    border-top-width: calc((72px + 2px + 24px) / 2);
+    border-bottom-width: calc((72px + 2px + 24px) / 2);
+    border-left: 52px solid rgba(0, 0, 0, .1);
+    position: absolute;
+}
+
+.history-content .event-timeline {
+    position: absolute;
+    bottom: -4px;
+    border: 1px solid gray;
+    border-top: none;
+    border-right: none;
+    width: 60px;
+    height: 2px;
+    text-align: left;
+    vertical-align: baseline;
+    text-transform: capitalize;
+    font-size: .7em;
+    color: gray;
+}
+
+.history-content .event-title {
+    font-weight: bold;
+}
+
+.history-content .event-date {
+    text-transform: capitalize;
 }
 
 .flex {
