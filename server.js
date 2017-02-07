@@ -99,6 +99,7 @@ app.get('/api/v1/:section/:year', function (req, res) {
 
 var years = [2016, 2017]
 var groups = {
+  'history': {},
   'sponsors': {},
   'members': {}
 }
