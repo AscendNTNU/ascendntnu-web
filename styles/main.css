@@ -1103,19 +1103,24 @@ found {
     cursor: ew-resize;
     box-shadow: inset 0 0 8px #000;
     width: 100vw;
+}
+
+.page-container .history-viewer {
     position: relative;
     left: calc((960px - 100vw) / 2);
 }
 
 .history-viewer > .history-content {
     position: relative;
-    height: 72px;
+    height: 128px;
     white-space: pre;
     user-select: none;
 }
 
 .history-content .event {
     position: absolute;
+    top: auto;
+    bottom: auto;
     display: inline-block;
     background-color: rgba(0, 0, 0, .5);
     font-size: .7em;
@@ -1159,6 +1164,13 @@ found {
     color: gray;
 }
 
+.history-content .event.important {
+    /*box-shadow: 0 0 0 1px #fd0;*/
+}
+
+.history-content .event.important .event-title {
+    color: #fd0;
+}
 .history-content .event-title {
     font-weight: bold;
 }
