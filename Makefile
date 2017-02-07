@@ -16,6 +16,9 @@ dev:
 	@echo Starting dev server
 	@npm run dev
 
+init:
+	@cp constants-example.js constants.js
+
 docker-baseimage:
 	@echo Building a docker image...
 	@docker build -t ascend/ascend-web-baseimage -f Dockerfile.baseimage .

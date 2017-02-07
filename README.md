@@ -8,6 +8,10 @@ To set up the environment, follow the instructions below.
 
 ### Set up the dev environment
 
+**First step after clone:**
+If you have make, run: `make init`
+Else: `cp constants-example.js constants.js` - Create constants.js from constants-example.js
+
 You should have `node.js` installed with `npm`. Just go to their website.
 
 If you are new to `typescript` and `webpack`, you should get these packages first:
