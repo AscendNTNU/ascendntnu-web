@@ -22,7 +22,7 @@ export class HistoryViewer extends React.Component<HistoryViewerProps, HistoryVi
   constructor (props: any) {
     super(props)
 
-    this.timelineScale = 1 / 50000000
+    this.timelineScale = 2 / 50000000
     this.mnd = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'des']
 
     this.state = {
@@ -86,7 +86,7 @@ export class HistoryViewer extends React.Component<HistoryViewerProps, HistoryVi
       }
 
       this.setState(Object.assign({}, this.state, {
-        pos: Math.max(-300, Math.min(1400 - this.state.width, pos - this.state.startPos))
+        pos: Math.max(-300, Math.min(2*1400 - this.state.width, pos - this.state.startPos))
       }))
     }
   }
@@ -116,7 +116,7 @@ export class HistoryViewer extends React.Component<HistoryViewerProps, HistoryVi
 
   scrollHandler (evt: any) {
     this.setState(Object.assign({}, this.state, {
-      pos: Math.max(-300, Math.min(1400 - this.state.width, this.state.pos - evt.deltaX))
+      pos: Math.max(-300, Math.min(2*1400 - this.state.width, this.state.pos - evt.deltaX))
     }))
   }
 
@@ -156,7 +156,7 @@ export class HistoryViewer extends React.Component<HistoryViewerProps, HistoryVi
 
     historyElement = history.map((event: any, i: number) => {
       return (
-        <div key={i} className="event" style={{right: event.pos}}>
+        <div key={i} className={`event ${event.categories}`} style={{ right: event.pos, top: `${20 + 42*Math.cos(event.pos)}px` }}>
           <div className="event-title">
             {event.title}
           </div>
@@ -168,7 +168,7 @@ export class HistoryViewer extends React.Component<HistoryViewerProps, HistoryVi
     })
 
     let styles: any = {
-      left: Math.max(-300, Math.min(1400 - this.state.width, this.state.pos)) + 'px'
+      left: Math.max(-300, Math.min(2*1400 - this.state.width, this.state.pos)) + 'px'
     }
 
     let historyTimeline: any[] = []
@@ -176,21 +176,26 @@ export class HistoryViewer extends React.Component<HistoryViewerProps, HistoryVi
     let fromDate: Date = new Date(2014, 10)
     let toDate: Date = new Date()
     let d: Date = fromDate
-    let i = 0
+    let i: number = 0
+    let p: number
 
     while (toDate.getTime() + 5*30*24*60*60*1000 > d.getTime()) {
       d = new Date(fromDate.getFullYear() + Math.floor((i + fromDate.getMonth()) / 12), (fromDate.getMonth() + i) % 12)
-      let p: number = - Math.floor((d.getTime() - Date.now()) * this.timelineScale)
+      p = - Math.floor((d.getTime() - Date.now() + 30*24*3600*1000) * this.timelineScale)
+      let style: any = {
+        right: `${p}px`,
+        width: `${32*24*3600*1000*this.timelineScale}px`
+      }
       if (d.getMonth() === 0) {
         historyTimeline.push(
-          <div key={i} className="event-timeline" style={{ right: `${p}px`, width: `${32*24*3600*1000*this.timelineScale}px` }}>
+          <div key={i} className="event-timeline" style={style}>
             <span className="event-timeline-year">{d.getFullYear()} </span>
             {this.mnd[d.getMonth()]}
           </div>
         )
       } else {
         historyTimeline.push(
-          <div key={i} className="event-timeline" style={{ right: `${p}px`, width: `${32*24*3600*1000*this.timelineScale}px` }}>
+          <div key={i} className="event-timeline" style={style}>
             {this.mnd[d.getMonth()]}
           </div>
         )
