@@ -26,6 +26,7 @@ export class AboutPage extends React.Component<AboutPageProps, {}> {
               <li>Interaction between competing autonomous air vehicles (mission 7b).</li>
             </ul>
             <iframe src="https://player.vimeo.com/video/103487384" className="about-mission-video" allowFullScreen></iframe>
+            <p><i className="small">"The International Aerial Robotics Competition is the longest running collegiate aerial robotics challenge in the world. Entering the third decade of advancing the state of the art in autonomous aerial robotic behavior, the competition continues to tackle challenges that are currently impossible for any flying robots owned by government or industry."</i> - <a href="http://www.aerialroboticscompetition.org/">www.aerialroboticscompetition.org</a></p>
           </SubSection>
 
           <SubSection title="Contact us">
