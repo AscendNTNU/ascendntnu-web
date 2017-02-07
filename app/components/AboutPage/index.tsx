@@ -3,6 +3,7 @@ import { Link } from 'react-router'
 
 import { Section, SubSection } from '../PageLayout'
 import { Breadcrumb } from '../Common/breadcrumb'
+import { HistoryViewer } from '../Common/historyViewer'
 
 export interface AboutPageProps {}
 
@@ -17,6 +18,8 @@ export class AboutPage extends React.Component<AboutPageProps, {}> {
 
             <p>Our group was founded during the spring of 2015. In 2016 we competed and became third in IARC. We are now, again, preparing for a new competition in 2017.</p>
           </SubSection>
+
+          <HistoryViewer />
 
           <SubSection title="Our team and mission">
             <p>We are currently <Link to="/team">28 students</Link> at NTNU studying electronics, computer science, IT, mechanics and cybernetics, working together to solve <a href="http://www.aerialroboticscompetition.org/rules.php">Mission 7a</a>. The mission consists of 3 new major challenges:</p>
