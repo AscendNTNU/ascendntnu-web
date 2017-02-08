@@ -1105,9 +1105,11 @@ found {
     width: 100vw;
 }
 
-.page-container .history-viewer {
-    position: relative;
-    left: calc((960px - 100vw) / 2);
+@media (min-width: 960px) {
+    .page-container .history-viewer {
+        position: relative;
+        left: calc((960px - 100vw) / 2);
+    }
 }
 
 .history-viewer > .history-content {
