@@ -1106,7 +1106,7 @@ found {
 }
 
 .page-container .history-viewer {
-        margin: 0 -16px;
+    margin: 0 -16px;
 }
 
 @media (min-width: 960px) {
@@ -1120,6 +1120,9 @@ found {
     position: relative;
     height: 128px;
     white-space: pre;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     user-select: none;
 }
 
