@@ -9,15 +9,21 @@ export interface HistoryViewerProps {
 export interface HistoryViewerState {
   year?: number,
   history: any[],
+  historyElements: any[],
   pos: number,
   down: boolean,
   startPos: number,
   width: number,
+  selectedEvent: any,
+  eventViewHeight: any,
 }
 
 export class HistoryViewer extends React.Component<HistoryViewerProps, HistoryViewerState> {
   public mnd: string[]
   public timelineScale: number
+  private observer: any
+  private historyTimeline: any[]
+  private historyElements: any[]
 
   constructor (props: any) {
     super(props)
@@ -27,10 +33,13 @@ export class HistoryViewer extends React.Component<HistoryViewerProps, HistoryVi
 
     this.state = {
       history: [],
+      historyElements: [],
       pos: -300,
       down: false,
       startPos: 0,
-      width: 0
+      width: 0,
+      selectedEvent: null,
+      eventViewHeight: null,
     }
 
     if (props.year)
@@ -41,6 +50,34 @@ export class HistoryViewer extends React.Component<HistoryViewerProps, HistoryVi
     this.resizeHandler = this.resizeHandler.bind(this)
     this.mouseMoveHandler = this.mouseMoveHandler.bind(this)
     this.mouseUpHandler = this.mouseUpHandler.bind(this)
+
+    this.historyTimeline = []
+    let fromDate: Date = new Date(2014, 10)
+    let toDate: Date = new Date()
+    let d: Date = fromDate
+    let i: number = 0
+    let p: number
+
+    while (toDate.getTime() + 5*30*24*60*60*1000 > d.getTime()) {
+      d = new Date(
+        fromDate.getFullYear() + Math.floor((i + fromDate.getMonth()) / 12),
+        (fromDate.getMonth() + i) % 12
+      )
+      p = - Math.floor((d.getTime() - Date.now() + 30*24*3600*1000) * this.timelineScale)
+      let style: any = {
+        right: `${p}px`,
+        width: `${32*24*3600*1000*this.timelineScale}px`
+      }
+      let title: any = null
+      if (d.getMonth() === 0) title = <span className="event-timeline-year">{d.getFullYear()} </span>
+      this.historyTimeline.push(
+        <div key={i} className="event-timeline" style={style}>
+          {title}
+          {this.mnd[d.getMonth()]}
+        </div>
+      )
+      i++
+    }
   }
 
   componentWillReceiveProps (nextProps: any) {
@@ -55,8 +92,21 @@ export class HistoryViewer extends React.Component<HistoryViewerProps, HistoryVi
     window.addEventListener('touchcancel', this.mouseUpHandler)
 
     this.setState(Object.assign({}, this.state, {
-      width: document.querySelector('.history-viewer').clientWidth
+      width: document.querySelector('.history-viewer').clientWidth,
+      eventViewHeight: 0
     }))
+
+    this.observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        this.setState(Object.assign({}, this.state, {
+          eventViewHeight: mutation.target.parentElement.clientHeight
+        }))
+      })
+    })
+
+    let target: any = document.querySelector('.history-event-view-title')
+    let config = { attributes: true, childList: true, characterData: true }
+    this.observer.observe(target, config)
   }
 
   componentWillUnmount () {
@@ -66,6 +116,8 @@ export class HistoryViewer extends React.Component<HistoryViewerProps, HistoryVi
     window.removeEventListener('touchmove', this.mouseMoveHandler)
     window.removeEventListener('touchend', this.mouseUpHandler)
     window.removeEventListener('touchcancel', this.mouseUpHandler)
+    this.observer.disconnect()
+    this.historyElements = []
   }
 
   resizeHandler (evt: any) {
@@ -86,7 +138,10 @@ export class HistoryViewer extends React.Component<HistoryViewerProps, HistoryVi
       }
 
       this.setState(Object.assign({}, this.state, {
-        pos: Math.max(Math.max(-400, -this.state.width / 2), Math.min(2*1400 - this.state.width, pos - this.state.startPos))
+        pos: Math.max(
+          Math.max(-400, -this.state.width / 2),
+          Math.min(2*1400 - this.state.width, pos - this.state.startPos)
+        )
       }))
     }
   }
@@ -97,6 +152,7 @@ export class HistoryViewer extends React.Component<HistoryViewerProps, HistoryVi
     if (evt.type === 'mousedown') {
       pos = evt.clientX - this.state.pos
     } else {
+      evt.preventDefault()
       pos = evt.touches[0].clientX - this.state.pos
     }
 
@@ -115,6 +171,7 @@ export class HistoryViewer extends React.Component<HistoryViewerProps, HistoryVi
   }
 
   scrollHandler (evt: any) {
+    if (evt.deltaX !== 0) evt.preventDefault()
     this.setState(Object.assign({}, this.state, {
       pos: Math.max(Math.max(-400, -this.state.width / 2), Math.min(2*1400 - this.state.width, this.state.pos - evt.deltaX))
     }))
@@ -129,78 +186,67 @@ export class HistoryViewer extends React.Component<HistoryViewerProps, HistoryVi
     return { dateFormatted, dateParsed, time }
   }
 
+  selectEventHandler (evt: any, event?: any) {
+    let selectedEvent: any = event || this.state.history[2016][0]
+    this.setState(Object.assign({}, this.state, {
+      selectedEvent: selectedEvent === this.state.selectedEvent
+        ? null
+        : selectedEvent
+    }))
+  }
+
   public getHistory (year?: number) {
     fetch('/api/v1/history/' + (year || '')).then(r => r.json()).then(r => {
 
+      let history: any[] = []
       for (let year in r) {
         for (let event in r[year]) {
           const { dateFormatted, time } = this.dateParser(r[year][event].date)
           r[year][event].dateFormatted = dateFormatted
           r[year][event].pos = - (time.getTime() - Date.now()) * this.timelineScale
+          history.push(r[year][event])
         }
       }
 
-      this.setState(Object.assign({}, this.state, { history: r }))
+      this.historyElements = history.map((event: any, i: number) => {
+        let style: any = {
+          right: event.pos,
+          top: `${20 + 42*Math.cos(event.pos)}px`
+        }
+        return (
+          <div key={i}
+            className={`event ${event.categories}`}
+            onClick={(evt) => this.selectEventHandler(evt, event)}
+            style={style}>
+            <div className="event-title">
+              {event.title}
+            </div>
+            <div className="event-date">
+              {event.dateFormatted}
+            </div>
+          </div>
+        )
+      })
+
+      this.setState(Object.assign({}, this.state, {
+        history: r,
+        historyElements: this.historyElements
+      }))
     })
   }
 
   render() {
-    let history: any[] = []
-    let historyElement: any
-
-    for (let year in this.state.history) {
-      for (let event in this.state.history[year]) {
-        history.push(this.state.history[year][event])
-      }
+    let historyContentStyles: any = {
+      left: Math.max(
+        Math.max(-400, -this.state.width / 2),
+        Math.min(2*1400 - this.state.width, this.state.pos)
+      ) + 'px'
     }
 
-    historyElement = history.map((event: any, i: number) => {
-      return (
-        <div key={i} className={`event ${event.categories}`} style={{ right: event.pos, top: `${20 + 42*Math.cos(event.pos)}px` }}>
-          <div className="event-title">
-            {event.title}
-          </div>
-          <div className="event-date">
-            {event.dateFormatted}
-          </div>
-        </div>
-      )
-    })
-
-    let styles: any = {
-      left: Math.max(Math.max(-400, -this.state.width / 2), Math.min(2*1400 - this.state.width, this.state.pos)) + 'px'
-    }
-
-    let historyTimeline: any[] = []
-
-    let fromDate: Date = new Date(2014, 10)
-    let toDate: Date = new Date()
-    let d: Date = fromDate
-    let i: number = 0
-    let p: number
-
-    while (toDate.getTime() + 5*30*24*60*60*1000 > d.getTime()) {
-      d = new Date(fromDate.getFullYear() + Math.floor((i + fromDate.getMonth()) / 12), (fromDate.getMonth() + i) % 12)
-      p = - Math.floor((d.getTime() - Date.now() + 30*24*3600*1000) * this.timelineScale)
-      let style: any = {
-        right: `${p}px`,
-        width: `${32*24*3600*1000*this.timelineScale}px`
-      }
-      if (d.getMonth() === 0) {
-        historyTimeline.push(
-          <div key={i} className="event-timeline" style={style}>
-            <span className="event-timeline-year">{d.getFullYear()} </span>
-            {this.mnd[d.getMonth()]}
-          </div>
-        )
-      } else {
-        historyTimeline.push(
-          <div key={i} className="event-timeline" style={style}>
-            {this.mnd[d.getMonth()]}
-          </div>
-        )
-      }
-      i++
+    let eventViewStyles: any = {
+      minHeight: this.state.selectedEvent
+        ? this.state.eventViewHeight + 'px'
+        : 0
     }
 
     return (
@@ -209,9 +255,19 @@ export class HistoryViewer extends React.Component<HistoryViewerProps, HistoryVi
         onTouchStart={this.mouseDownHandler.bind(this)}
         onWheel={this.scrollHandler.bind(this)}
         draggable={false}>
-        <div className="history-content" style={styles}>
-          {historyTimeline}
-          {historyElement}
+        <div className="history-content" style={historyContentStyles}>
+          {this.historyTimeline}
+          {this.state.historyElements}
+        </div>
+        <div className={`history-event-view ${this.state.selectedEvent ? 'open' : ''}`} style={eventViewStyles}>
+          <div className="page-container history-event-view-container">
+            <h1 className="history-event-view-title">
+              {this.state.selectedEvent && this.state.selectedEvent.title}
+            </h1>
+            <p className="history-event-view-content">
+              {this.state.selectedEvent && this.state.selectedEvent.content}
+            </p>
+          </div>
         </div>
       </div>
     )

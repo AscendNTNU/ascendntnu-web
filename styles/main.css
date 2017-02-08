@@ -1137,6 +1137,11 @@ found {
     border-bottom-right-radius: 0;
     margin: 8px;
     padding: 8px;
+    cursor: pointer;
+}
+
+.history-content .event:hover {
+    background-color: rgba(0, 0, 0, .6);
 }
 
 .history-content .event:after {
@@ -1200,6 +1205,26 @@ found {
 .history-content .event-date {
     color: #fff;
     text-transform: capitalize;
+}
+
+.history-event-view:not(.open) {
+    min-height: 0;
+}
+
+.history-event-view {
+    cursor: default;
+    height: 0;
+    min-height: 100px;
+    transition: min-height .2s;
+    display: block;
+    margin-top: 32px;
+    margin-bottom: -24px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, .1);
+}
+
+.history-event-view-container {
+    padding: 24px;
 }
 
 .flex {
