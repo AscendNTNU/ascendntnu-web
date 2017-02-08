@@ -1095,7 +1095,7 @@ found {
 
 .history-viewer {
     display: block;
-    background-color: rgba(0, 0, 0, .5);
+    background-color: #333;
     margin: 0 -16px;
     padding: 24px 0;
     box-sizing: border-box;
