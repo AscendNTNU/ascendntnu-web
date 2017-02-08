@@ -1215,7 +1215,7 @@ found {
     cursor: default;
     height: 0;
     min-height: 100px;
-    transition: min-height .2s;
+    transition: min-height .2s ease-in-out;
     display: block;
     margin-top: 32px;
     margin-bottom: -24px;
