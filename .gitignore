@@ -2,6 +2,7 @@ node_modules
 dist
 *.log
 images/assets
+images/retrospect-16
 images/teams/20*
 typings/**/*.json
 *.ignorefile.*

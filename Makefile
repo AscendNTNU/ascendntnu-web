@@ -19,6 +19,19 @@ dev:
 init:
 	@cp constants-example.js constants.js
 
+upload-images:
+	@scp -r ./images/assets/* ascend@dev.ascendntnu.no:/home/ascend/ascendntnu-web/images/assets
+	@scp -r ./images/teams/20* ascend@dev.ascendntnu.no:/home/ascend/ascendntnu-web/images/teams
+	@scp -r ./images/retrospect-16/* ascend@dev.ascendntnu.no:/home/ascend/ascendntnu-web/images/retrospect-16
+
+download-images:
+	@mkdir -p ./images/assets
+	@scp -r ascend@dev.ascendntnu.no:/home/ascend/ascendntnu-web/images/assets/* ./images/assets
+	@mkdir -p ./images/teams
+	@scp -r ascend@dev.ascendntnu.no:/home/ascend/ascendntnu-web/images/teams/20* ./images/teams
+	@mkdir -p ./images/retrospect-16
+	@scp -r ascend@dev.ascendntnu.no:/home/ascend/ascendntnu-web/images/retrospect-16/* ./images/retrospect-16
+
 docker-baseimage:
 	@echo Building a docker image...
 	@docker build -t ascend/ascend-web-baseimage -f Dockerfile.baseimage .
