@@ -27,7 +27,7 @@ export class HistoryViewer extends React.Component<HistoryViewerProps, HistoryVi
 
     this.state = {
       history: [],
-      pos: -200,
+      pos: -300,
       down: false,
       startPos: 0,
       width: 0
@@ -86,7 +86,7 @@ export class HistoryViewer extends React.Component<HistoryViewerProps, HistoryVi
       }
 
       this.setState(Object.assign({}, this.state, {
-        pos: Math.max(-300, Math.min(2*1400 - this.state.width, pos - this.state.startPos))
+        pos: Math.max(Math.max(-400, -this.state.width / 2), Math.min(2*1400 - this.state.width, pos - this.state.startPos))
       }))
     }
   }
@@ -116,7 +116,7 @@ export class HistoryViewer extends React.Component<HistoryViewerProps, HistoryVi
 
   scrollHandler (evt: any) {
     this.setState(Object.assign({}, this.state, {
-      pos: Math.max(-300, Math.min(2*1400 - this.state.width, this.state.pos - evt.deltaX))
+      pos: Math.max(Math.max(-400, -this.state.width / 2), Math.min(2*1400 - this.state.width, this.state.pos - evt.deltaX))
     }))
   }
 
@@ -168,7 +168,7 @@ export class HistoryViewer extends React.Component<HistoryViewerProps, HistoryVi
     })
 
     let styles: any = {
-      left: Math.max(-300, Math.min(2*1400 - this.state.width, this.state.pos)) + 'px'
+      left: Math.max(Math.max(-400, -this.state.width / 2), Math.min(2*1400 - this.state.width, this.state.pos)) + 'px'
     }
 
     let historyTimeline: any[] = []
