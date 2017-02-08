@@ -133,7 +133,7 @@ export class HistoryViewer extends React.Component<HistoryViewerProps, HistoryVi
       if (evt.type === 'mousemove') {
         pos = evt.clientX
       } else {
-        evt.preventDefault()
+        //evt.preventDefault()
         pos = evt.touches[0].clientX
       }
 
@@ -152,7 +152,7 @@ export class HistoryViewer extends React.Component<HistoryViewerProps, HistoryVi
     if (evt.type === 'mousedown') {
       pos = evt.clientX - this.state.pos
     } else {
-      evt.preventDefault()
+      //evt.preventDefault()
       pos = evt.touches[0].clientX - this.state.pos
     }
 
