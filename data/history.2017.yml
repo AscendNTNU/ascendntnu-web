@@ -2,6 +2,7 @@
 
 - date: 2017-01-29 13:00:00
   title: Unveiling of new website!
-  content: At the sunday meeting the 29th of Jan. 2017 the new website was released.
+  content: At the sunday meeting the 29th of Jan. 2017 the new website was <a target="_blank" href="https://github.com/AscendNTNU/ascendntnu-web/releases/tag/v1.0">released</a>.
+  image: /public/assets/website-screenshot-v1.png
   tags: website release
   categories: important

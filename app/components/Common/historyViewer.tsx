@@ -98,9 +98,12 @@ export class HistoryViewer extends React.Component<HistoryViewerProps, HistoryVi
 
     this.observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
-        this.setState(Object.assign({}, this.state, {
-          eventViewHeight: mutation.target.parentElement.clientHeight
-        }))
+        console.log(mutation.type)
+        setTimeout(() => {
+          this.setState(Object.assign({}, this.state, {
+            eventViewHeight: mutation.target.parentElement.clientHeight
+          }))
+        }, 100)
       })
     })
 
@@ -250,23 +253,32 @@ export class HistoryViewer extends React.Component<HistoryViewerProps, HistoryVi
     }
 
     return (
-      <div className="history-viewer"
-        onMouseDown={this.mouseDownHandler.bind(this)}
-        onTouchStart={this.mouseDownHandler.bind(this)}
-        onWheel={this.scrollHandler.bind(this)}
-        draggable={false}>
-        <div className="history-content" style={historyContentStyles}>
+      <div className="history-viewer">
+        <div className="history-content" style={historyContentStyles}
+          onMouseDown={this.mouseDownHandler.bind(this)}
+          onTouchStart={this.mouseDownHandler.bind(this)}
+          onWheel={this.scrollHandler.bind(this)}
+          draggable={false}>
           {this.historyTimeline}
           {this.state.historyElements}
         </div>
         <div className={`history-event-view ${this.state.selectedEvent ? 'open' : ''}`} style={eventViewStyles}>
           <div className="page-container history-event-view-container">
-            <h1 className="history-event-view-title">
-              {this.state.selectedEvent && this.state.selectedEvent.title}
-            </h1>
-            <p className="history-event-view-content">
-              {this.state.selectedEvent && this.state.selectedEvent.content}
-            </p>
+            <div className="history-event-view-block">
+              <h1 className="history-event-view-title">
+                {this.state.selectedEvent && this.state.selectedEvent.title}
+              </h1>
+              <p className="history-event-view-content" dangerouslySetInnerHTML={{
+                  __html: this.state.selectedEvent && this.state.selectedEvent.content
+              }} />
+            </div>
+            {
+              this.state.selectedEvent && this.state.selectedEvent.image && (
+                <div>
+                  <img src={this.state.selectedEvent.image} />
+                </div>
+              )
+            }
           </div>
         </div>
       </div>

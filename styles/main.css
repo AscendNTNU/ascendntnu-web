@@ -1097,7 +1097,7 @@ found {
     display: block;
     background-color: #333;
     margin: 0;
-    padding: 24px 0;
+    padding-bottom: 24px;
     box-sizing: border-box;
     overflow: hidden;
     cursor: ew-resize;
@@ -1118,7 +1118,7 @@ found {
 
 .history-viewer > .history-content {
     position: relative;
-    height: 128px;
+    height: 180px;
     white-space: pre;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -1177,7 +1177,7 @@ found {
 
 .history-content .event-timeline {
     position: absolute;
-    bottom: -4px;
+    bottom: 24px;
     border: 1px solid gray;
     border-top: none;
     border-right: none;
@@ -1217,7 +1217,6 @@ found {
     min-height: 100px;
     transition: min-height .2s ease-in-out;
     display: block;
-    margin-top: 32px;
     margin-bottom: -24px;
     box-sizing: border-box;
     background: rgba(0, 0, 0, .1);
