@@ -1230,6 +1230,11 @@ found {
 
 .history-event-view-container {
     padding: 24px;
+    box-sizing: border-box;
+}
+
+.history-event-view img {
+    width: 100%;
 }
 
 .flex {

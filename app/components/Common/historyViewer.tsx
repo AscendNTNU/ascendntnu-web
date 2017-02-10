@@ -146,7 +146,8 @@ export class HistoryViewer extends React.Component<HistoryViewerProps, HistoryVi
 
   resizeHandler (evt: any) {
     this.setState(Object.assign({}, this.state, {
-      width: document.querySelector('.history-viewer').clientWidth
+      width: document.querySelector('.history-viewer').clientWidth,
+      eventViewHeight: document.querySelector('.history-event-view-container').clientHeight
     }))
   }
 
