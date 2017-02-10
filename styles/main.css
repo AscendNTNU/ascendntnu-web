@@ -1116,14 +1116,20 @@ found {
     }
 }
 
-.history-viewer > .history-content {
+.history-viewer .history-content-view {
     position: relative;
     height: 180px;
-    white-space: pre;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+.history-viewer .history-content {
+    white-space: pre;
+    position: absolute;
+    height: 180px;
+    width: 100%;
 }
 
 .history-content .event {

@@ -98,18 +98,20 @@ export class HistoryViewer extends React.Component<HistoryViewerProps, HistoryVi
 
     this.observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
-        console.log(mutation.type)
         setTimeout(() => {
           this.setState(Object.assign({}, this.state, {
-            eventViewHeight: mutation.target.parentElement.clientHeight
+            eventViewHeight: document.querySelector('.history-event-view-container').clientHeight
           }))
-        }, 100)
+        }, 50)
       })
     })
 
-    let target: any = document.querySelector('.history-event-view-title')
-    let config = { attributes: true, childList: true, characterData: true }
-    this.observer.observe(target, config)
+    let target: any = document.querySelector('.history-event-view')
+    this.observer.observe(target, {
+      childList: true,
+      characterData: true,
+      subtree: true,
+    })
   }
 
   componentWillUnmount () {
@@ -206,6 +208,7 @@ export class HistoryViewer extends React.Component<HistoryViewerProps, HistoryVi
         for (let event in r[year]) {
           const { dateFormatted, time } = this.dateParser(r[year][event].date)
           r[year][event].dateFormatted = dateFormatted
+          r[year][event].time = time
           r[year][event].pos = - (time.getTime() - Date.now()) * this.timelineScale
           history.push(r[year][event])
         }
@@ -214,12 +217,12 @@ export class HistoryViewer extends React.Component<HistoryViewerProps, HistoryVi
       this.historyElements = history.map((event: any, i: number) => {
         let style: any = {
           right: event.pos,
-          top: `${20 + 42*Math.cos(event.pos)}px`
+          top: `${20 + 42 * Math.cos(event.time.getTime * this.timelineScale)}px`
         }
         return (
           <div key={i}
             className={`event ${event.categories}`}
-            onClick={(evt) => this.selectEventHandler(evt, event)}
+            onClick={(evt: any) => this.selectEventHandler(evt, event)}
             style={style}>
             <div className="event-title">
               {event.title}
@@ -254,13 +257,15 @@ export class HistoryViewer extends React.Component<HistoryViewerProps, HistoryVi
 
     return (
       <div className="history-viewer">
-        <div className="history-content" style={historyContentStyles}
+        <div className="history-content-view"
           onMouseDown={this.mouseDownHandler.bind(this)}
           onTouchStart={this.mouseDownHandler.bind(this)}
           onWheel={this.scrollHandler.bind(this)}
           draggable={false}>
-          {this.historyTimeline}
-          {this.state.historyElements}
+          <div className="history-content" style={historyContentStyles}>
+            {this.historyTimeline}
+            {this.state.historyElements}
+          </div>
         </div>
         <div className={`history-event-view ${this.state.selectedEvent ? 'open' : ''}`} style={eventViewStyles}>
           <div className="page-container history-event-view-container">
