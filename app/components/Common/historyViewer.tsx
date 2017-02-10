@@ -50,6 +50,7 @@ export class HistoryViewer extends React.Component<HistoryViewerProps, HistoryVi
     this.resizeHandler = this.resizeHandler.bind(this)
     this.mouseMoveHandler = this.mouseMoveHandler.bind(this)
     this.mouseUpHandler = this.mouseUpHandler.bind(this)
+    this.loadedNewContent = this.loadedNewContent.bind(this)
 
     this.historyTimeline = []
     let fromDate: Date = new Date(2014, 10)
@@ -98,11 +99,21 @@ export class HistoryViewer extends React.Component<HistoryViewerProps, HistoryVi
 
     this.observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
-        setTimeout(() => {
-          this.setState(Object.assign({}, this.state, {
-            eventViewHeight: document.querySelector('.history-event-view-container').clientHeight
-          }))
-        }, 50)
+        //console.log(mutation)
+        switch (mutation.type) {
+          case 'childList':
+          let target: any = mutation.target
+          Array.prototype.forEach.call(target.children, (e: any) => {
+            e.querySelectorAll('img').forEach((img: any) => {
+              img.addEventListener('load', this.loadedNewContent, false)
+            })
+          })
+          break
+        }
+
+        this.setState(Object.assign({}, this.state, {
+          eventViewHeight: document.querySelector('.history-event-view-container').clientHeight
+        }))
       })
     })
 
@@ -123,6 +134,14 @@ export class HistoryViewer extends React.Component<HistoryViewerProps, HistoryVi
     window.removeEventListener('touchcancel', this.mouseUpHandler)
     this.observer.disconnect()
     this.historyElements = []
+  }
+
+  loadedNewContent (evt: any) {
+    evt.target.removeEventListener('load', this.loadedNewContent, false)
+
+    this.setState(Object.assign({}, this.state, {
+      eventViewHeight: document.querySelector('.history-event-view-container').clientHeight
+    }))
   }
 
   resizeHandler (evt: any) {
