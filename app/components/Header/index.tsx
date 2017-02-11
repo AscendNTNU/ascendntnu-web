@@ -18,7 +18,7 @@ export class Header extends React.Component<HeaderProps, {}> {
         <div className="head-content page-container">
           <IndexLink onClick={this.hideMenu} to="/">
             <div className="logo-title">
-              <img className="logo-img" src="images/logo/logo.png" />
+              <img className="logo-img" src="/images/logo/logo.png" />
               <div className="logo-title-text">
                 asc<span className="logo-title-e">e</span>nd
               </div>

@@ -26,7 +26,7 @@ export class DronePage extends React.Component<DronePageProps, DronePageState> {
       },
       {
         name: 'Drone 2',
-        models: ['images/drones/drone2.stl', 'images/drones/propell.stl'],
+        models: ['/images/drones/drone2.stl', '/images/drones/propell.stl'],
         style: {
           backgroundImage: 'url(/images/drones/drone2-minimized.jpg)'
         },
