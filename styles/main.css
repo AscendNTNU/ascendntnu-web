@@ -1096,6 +1096,7 @@ found {
 .history-viewer {
     display: block;
     background-color: #333;
+    color: #ddd;
     margin: 0;
     padding-bottom: 24px;
     box-sizing: border-box;
@@ -1234,7 +1235,7 @@ found {
     display: block;
     margin-bottom: -24px;
     box-sizing: border-box;
-    background: rgba(0, 0, 0, .1);
+    background-color: rgba(0, 0, 0, .1);
 }
 
 .history-event-view-container {
