@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Link, IndexLink } from 'react-router'
-import { polyfill } from 'es6-promise';
-polyfill();
+import { polyfill } from 'es6-promise'
+polyfill()
 
 import { Section, SubSection } from '../PageLayout'
 import { Breadcrumb } from '../Common/breadcrumb'
