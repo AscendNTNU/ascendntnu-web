@@ -237,15 +237,14 @@ export class HistoryViewer extends React.Component<HistoryViewerProps, HistoryVi
       let historyViewer: any = document.querySelector('.history-viewer')
       let app: any = document.querySelector('#app')
 
-      let startScroll: number = (app.scrollTop || document.body.scrollTop)
-      let scrollTo = historyViewer.offsetTop - 64
+      let startScroll: number = app.scrollTop
+      let scrollTo: number = historyViewer.offsetTop - 64
 
       if (startScroll < scrollTo) {
         let interval = setInterval(() => {
           app.scrollTop += 10 / (.1 + Math.pow((app.scrollTop - scrollTo) / (startScroll - scrollTo) - .5, 2))
-          document.body.scrollTop += 10 / (.1 + Math.pow((document.body.scrollTop - scrollTo) / (startScroll - scrollTo) - .5, 2))
-          if ((app.scrollTop || document.body.scrollTop) - scrollTo >= 0) {
-            app.scrollTop = document.body.scrollTop = scrollTo
+          if (app.scrollTop - scrollTo >= 0) {
+            app.scrollTop = scrollTo
             clearInterval(interval)
           }
         }, 10)
