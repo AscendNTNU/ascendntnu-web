@@ -148,10 +148,6 @@ input[type="submit"].active,
     color: #333;
 }
 
-.dark-theme .nav-bar > .nav-element {
-    color: #eee;
-}
-
 .toggle-menu {
     display: none;
     cursor: pointer;
@@ -202,6 +198,10 @@ input[type="submit"].active,
 
 .nav-bar > .nav-element.active {
     color: #388;
+}
+
+.dark-theme .nav-bar > .nav-element {
+    color: #eee;
 }
 
 .head, .foot {
