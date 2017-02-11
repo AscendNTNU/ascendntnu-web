@@ -1,6 +1,8 @@
 import * as React from 'react'
-import { polyfill } from 'es6-promise';
-polyfill();
+import { polyfill } from 'es6-promise'
+polyfill()
+
+import { BlogArticle } from '../BlogPage/blogArticle'
 
 export interface HistoryViewerProps {
   year?: number,
@@ -312,8 +314,15 @@ export class HistoryViewer extends React.Component<HistoryViewerProps, HistoryVi
             </div>
             {
               this.state.selectedEvent && this.state.selectedEvent.image && (
-                <div>
+                <div className="history-event-view-image">
                   <img src={this.state.selectedEvent.image} />
+                </div>
+              )
+            }
+            {
+              this.state.selectedEvent && this.state.selectedEvent.post && (
+                <div className="history-event-view-post">
+                  <BlogArticle post={this.state.selectedEvent.post} />
                 </div>
               )
             }
