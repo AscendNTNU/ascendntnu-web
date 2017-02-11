@@ -6,19 +6,13 @@ polyfill();
 
 import { Section, SubSection } from '../PageLayout'
 import { Breadcrumb } from '../Common/breadcrumb'
+import { BlogArticle } from './blogArticle'
 
 export interface BlogPageProps {
   params: any
 }
 
 export interface BlogPageState {
-  attributes?: any & {
-    layout?: string,
-    title: string,
-    date?: string,
-    categories?: string,
-    author?: string,
-  },
   searchValue?: string,
   tagValues?: string[],
   post?: string,
@@ -34,17 +28,8 @@ export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
   constructor (props: BlogPageProps) {
     super(props)
     this.state = {
-      attributes: {
-        layout: '',
-        title: '',
-        date: '',
-        categories: '',
-        categoriesList: [],
-        author: '',
-      },
       searchValue: 'e',
       tagValues: [],
-      post: '',
       posts: [],
       viewMode: 'big', //localStorage['viewMode'] || 'small',
     }
@@ -53,27 +38,11 @@ export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
     this.showAllPosts = true
 
     if (this.props.params && this.props.params.post) {
-      this.fetchPost('/api/v1/posts/' + this.props.params.post)
     } else {
       if (this.props.params && this.props.params.tags)
         this.state.tagValues = this.props.params.tags.split(',')
       this.fetchPosts('/api/v1/posts/all')
     }
-  }
-
-  private fetchPost (url: string) {
-    fetch(url)
-      .then(r => r.json())
-      .then(r => {
-        let parsed: any = this.parser.parse(r.body)
-        r.attributes['dateFormatted'] = this.formatDate(r.attributes.date, 'dag DD/MM/YY')
-        r.attributes['categoriesList'] = r.attributes.categories.split(" ")
-        this.setState({
-          attributes: r.attributes,
-          post: this.renderer.render(parsed)
-        })
-      })
-      .catch(err => console.error('Could not fetch file from: ' + url))
   }
 
   private fetchPosts (url: string) {
@@ -95,6 +64,12 @@ export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
         })
       })
       .catch(err => console.error('Could not fetch file from: ' + url))
+  }
+
+  componentWillReceiveProps (nextProps: any) {
+    if (this.props.params !== nextProps.params && nextProps.params.tags) {
+      this.state.tagValues = nextProps.params.tags.split(',')
+    }
   }
 
   public addTagToFilterHandler (evt: any) {
@@ -174,7 +149,6 @@ export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
 
   public reload () {
     if (this.props.params && this.props.params.post) {
-      this.fetchPost('/api/v1/posts/' + this.props.params.post)
     } else {
       this.fetchPosts('/api/v1/posts/all')
     }
@@ -237,28 +211,10 @@ export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
     }
 
     if (this.props.params && this.props.params.post) {
-      let categories: any[] = this.state.attributes.categoriesList.map((cat: string, k: number) => {
-        return (
-          <Link to={`/blog/tags/${cat}`} className="category" key={k} onClick={this.addTagToFilterHandler.bind(this)}>{cat}</Link>
-        )
-      })
       return (
         <div className="page page-blog">
           <Breadcrumb routes={['blog', this.props.params.post]} />
-          <Section title={this.state.attributes.title}>
-            <div className="blog-post-details">
-              <div className="blog-post-author">
-                {this.state.attributes.author}
-              </div>
-              <div className="blog-post-date">
-                {this.state.attributes.dateFormatted}
-              </div>
-              <div className="blog-post-categories">
-                {categories}
-              </div>
-            </div>
-            <div dangerouslySetInnerHTML={ {__html: this.state.post} } />
-          </Section>
+          <BlogArticle post={this.props.params.post} />
         </div>
       )
     } else {
