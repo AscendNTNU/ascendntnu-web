@@ -291,7 +291,7 @@ export class HistoryViewer extends React.Component<HistoryViewerProps, HistoryVi
     }
 
     return (
-      <div className="history-viewer">
+      <div className="history-viewer dark-theme">
         <div className="history-content-view"
           onMouseDown={this.mouseDownHandler.bind(this)}
           onTouchStart={this.mouseDownHandler.bind(this)}
