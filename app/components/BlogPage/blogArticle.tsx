@@ -101,7 +101,7 @@ export class BlogArticle extends React.Component<BlogArticleProps, BlogArticleSt
     })
 
     return (
-      <Section title={this.state.attributes.title}>
+      <Section className="page-blog" title={this.state.attributes.title}>
         <div className="blog-post-details">
           <div className="blog-post-author">
             {this.state.attributes.author}
