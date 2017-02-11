@@ -544,16 +544,16 @@ body.no-scroll {
     margin: auto;
 }
 
-.dark-theme .sponsors a.sponsor-adblock-link img,
-.sponsors a.sponsor-adblock-link img:last-child {
-    display: none;
-    /*opacity: .5;*/
-    /*filter: contrast(0%) brightness(0%);*/
-}
-
 .dark-theme .sponsors a.sponsor-adblock-link img:last-child,
 .sponsors a.sponsor-adblock-link img:first-child {
     display: inline-block;
+}
+
+.dark-theme .sponsors a.sponsor-adblock-link img,
+.sponsors .sponsor-adblock-link img:last-child {
+    display: none;
+    /*opacity: .5;*/
+    /*filter: contrast(0%) brightness(0%);*/
 }
 
 .sponsors a.sponsor-adblock-link:hover img {
