@@ -1144,10 +1144,12 @@ found {
     margin: 8px;
     padding: 8px;
     cursor: pointer;
+    transition: box-shadow .2s;
 }
 
 .history-content .event:hover {
     background-color: rgba(0, 0, 0, .6);
+    box-shadow: 0 0 24px rgba(0, 0, 0, .3);
 }
 
 .history-content .event:after {
@@ -1160,6 +1162,7 @@ found {
     border: 5px solid rgba(0, 0, 0, .5);
     border-bottom-color: transparent;
     border-left-color: transparent;
+    transition: border-color .2s;
 }
 
 .history-content .event-timeline-year {
@@ -1196,8 +1199,14 @@ found {
     color: gray;
 }
 
-.history-content .event.important {
-    /*box-shadow: 0 0 0 1px #fd0;*/
+.history-content .event.selected {
+    box-shadow: 0 0 24px rgba(0, 0, 0, .3), inset 0 0 0 2px #666;
+}
+
+.history-content .event.selected:after {
+    border-color: #666;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
 }
 
 .history-content .event.important .event-title {

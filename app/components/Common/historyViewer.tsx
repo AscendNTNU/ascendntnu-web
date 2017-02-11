@@ -99,7 +99,6 @@ export class HistoryViewer extends React.Component<HistoryViewerProps, HistoryVi
 
     this.observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
-        //console.log(mutation)
         switch (mutation.type) {
           case 'childList':
           let target: any = mutation.target
@@ -218,6 +217,20 @@ export class HistoryViewer extends React.Component<HistoryViewerProps, HistoryVi
         ? null
         : selectedEvent
     }))
+
+    let events: any = document.querySelectorAll('.history-content > .event')
+    events.forEach((e: any) => {
+      e.classList.remove('selected')
+    })
+
+    let target = evt.target.classList.contains('event')
+      ? evt.target
+      : evt.target.parentElement
+
+    if (selectedEvent === this.state.selectedEvent)
+      target.classList.remove('selected')
+    else
+      target.classList.add('selected')
   }
 
   public getHistory (year?: number) {
