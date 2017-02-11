@@ -19,6 +19,7 @@ export class Splash extends React.Component<SplashProps, SplashState> {
   private distance: number
   private process: number
   private dirty: boolean
+  private svgAnimate: boolean
 
   constructor (props: any) {
     super(props)
@@ -26,6 +27,7 @@ export class Splash extends React.Component<SplashProps, SplashState> {
     this.width = window.innerWidth
     this.height = 640
     this.distance = this.width < 560 ? this.height : this.width
+    this.svgAnimate = !navigator.userAgent.match(/Trident|Firefox/)
     this.state = {
       pos: this.width / 2,
       down: false,
@@ -209,7 +211,7 @@ export class Splash extends React.Component<SplashProps, SplashState> {
         <div className="front-splash-center" style={styles.centerStyle}
           onMouseDown={this.mouseDownHandler.bind(this)}
           onTouchStart={this.mouseDownHandler.bind(this)}>
-          <img src="/images/logo/logo-ascend-below-shadow.svg" draggable={false} />
+          <img src={`/images/logo/logo-ascend-below-shadow${this.svgAnimate ? '-animation' : ''}.svg`} draggable={false} />
         </div>
         <div className="front-splash-right" style={styles.rightStyle}>
           <ModelRenderer models={['/images/drones/drone2.stl']} process={Date.now()} autospin={true} style={{ position: 'absolute' }} />
