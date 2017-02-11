@@ -99,7 +99,7 @@ input[type="submit"].active,
     background-color: var(--primary);
 }
 
-.dark-theme {
+.app.dark-theme {
     background-color: #444;
     background-color: var(--primary-dark);
     color: #ddd;
