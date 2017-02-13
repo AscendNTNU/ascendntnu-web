@@ -6,7 +6,7 @@ declare module 'katex' {
 // Definitions by: Michael Randolph <https://github.com/mrand01>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 
-export as namespace katex;
+//export as namespace katex;
 
 export interface KatexOptions {
     displayMode?: boolean;
@@ -14,12 +14,12 @@ export interface KatexOptions {
     errorColor?: string;
 }
 
-export class ParseError implements Error {
-    constructor(message: string, lexer: any, position: number);
-    name: string;
-    message: string;
-    position: number;
-}
+//export class ParseError implements Error {
+//    constructor(message: string, lexer: any, position: number);
+//    name: string;
+//    message: string;
+//    position: number;
+//}
 
 /**
  * Renders a TeX expression into the specified DOM element
