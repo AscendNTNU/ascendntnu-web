@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Link } from 'react-router'
 import { HtmlRenderer, Parser } from 'commonmark'
+import * as Katex from 'katex'
 import { polyfill } from 'es6-promise'
 polyfill()
 
@@ -46,16 +47,32 @@ export class BlogArticle extends React.Component<BlogArticleProps, BlogArticleSt
     this.fetchPost(`/api/v1/posts/${this.props.post}`)
   }
 
+  componentDidUpdate (prevProp: any, prevState: any) {
+    let refs: any = this.refs
+
+    if (refs.post) {
+      for (let child of refs.post.children) {
+        if (child.tagName === 'TEX') Katex.render(child.innerText, child)
+        else {
+          for (let subchild of child.children) {
+            if (subchild.tagName === 'TEX') Katex.render(subchild.innerText, subchild)
+          }
+        }
+      }
+    }
+  }
+
   private fetchPost (url: string) {
     fetch(url)
       .then(r => r.json())
       .then(r => {
         let parsed: any = this.parser.parse(r.body)
+        let rendered: any = this.renderer.render(parsed)
         r.attributes['dateFormatted'] = this.formatDate(r.attributes.date, 'dag DD/MM/YY')
         r.attributes['categoriesList'] = r.attributes.categories.split(" ")
         this.setState({
           attributes: r.attributes,
-          post: this.renderer.render(parsed)
+          post: rendered
         })
       })
       .catch(err => console.error('Could not fetch file from: ' + url))
@@ -113,7 +130,7 @@ export class BlogArticle extends React.Component<BlogArticleProps, BlogArticleSt
             {categories}
           </div>
         </div>
-        <div dangerouslySetInnerHTML={ {__html: this.state.post} } />
+        <div ref="post" dangerouslySetInnerHTML={ {__html: this.state.post} } />
       </Section>
     )
   }
