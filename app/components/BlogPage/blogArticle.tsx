@@ -47,7 +47,7 @@ export class BlogArticle extends React.Component<BlogArticleProps, BlogArticleSt
     this.fetchPost(`/api/v1/posts/${this.props.post}`)
   }
 
-  componentDidUpdate (prevProp: any, prevState: any) {
+  componentDidUpdate (prevProp: BlogArticleProps, prevState: BlogArticleState) {
     let refs: any = this.refs
 
     if (refs.post) {
