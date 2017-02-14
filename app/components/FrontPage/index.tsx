@@ -14,8 +14,8 @@ export class FrontPage extends React.Component<{}, FrontPageState> {
     return (
       <div className="page page-front">
         <Splash />
-        <Section title="History of Ascend NTNU" className="centered" />
-        <HistoryViewer />
+        {/*<Section title="History of Ascend NTNU" className="centered" />
+        <HistoryViewer />*/}
         <Section title="Our sponsors" className="centered">
           <SponsorList />
         </Section>
