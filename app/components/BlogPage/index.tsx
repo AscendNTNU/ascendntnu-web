@@ -25,6 +25,7 @@ export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
   private parser: Parser
   private renderer: HtmlRenderer
   private showAllPosts: boolean
+  private renderedTex: boolean
 
   constructor (props: BlogPageProps) {
     super(props)
@@ -37,6 +38,7 @@ export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
     this.parser = new Parser()
     this.renderer = new HtmlRenderer()
     this.showAllPosts = true
+    this.renderedTex = false
 
     if (this.props.params && this.props.params.post) {
     } else {
@@ -47,16 +49,24 @@ export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
   }
 
   componentDidUpdate (prevProp: BlogPageProps, prevState: BlogPageState) {
-    let refs: any = this.refs
+    this.renderTex()
+    console.log("update", this.refs)
+  }
 
-    for (let i = 0; i < this.state.posts.length; i++) {
-      let ref: any = refs[`post-${i}`]
-      if (ref) {
-        for (let child of ref.children) {
-          if (child.tagName === 'TEX') Katex.render(child.innerText, child)
-          else {
-            for (let subchild of child.children) {
-              if (subchild.tagName === 'TEX') Katex.render(subchild.innerText, subchild)
+  private renderTex () {
+    if (!this.renderedTex) {
+      let refs: any = this.refs
+
+      for (let i = 0; i < this.state.posts.length; i++) {
+        this.renderedTex = true
+        let ref: any = refs[`post-${i}`]
+        if (ref) {
+          for (let child of ref.children) {
+            if (child.tagName === 'TEX') Katex.render(child.innerText, child)
+            else {
+              for (let subchild of child.children) {
+                if (subchild.tagName === 'TEX') Katex.render(subchild.innerText, subchild)
+              }
             }
           }
         }
@@ -185,7 +195,7 @@ export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
 
     if (typeof date === 'string') {
       format = (typeof format === 'string' ? format : 'dag DD.MM.YYYY (HH:mm:SS)')
-      let dager: string[] = ['Man', 'Tirs', 'Ons', 'Tors', 'Fre', 'Lør', 'Søn']
+      let dager: string[] = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
       let d: Date = new Date(date.replace(/-/g, '/').replace(/T/g, ' ').slice(0,19))
       let formatted: string = format.replace(new RegExp('da[gy]', 'ig'), dager[d.getDay()])
 
