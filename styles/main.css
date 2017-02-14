@@ -730,6 +730,8 @@ body.no-scroll {
 figcaption {
     text-align: center;
     font-weight: bold;
+    font-size: .8em;
+    font-style: italic;
 }
 
 .dark-theme .blog-list-date,
