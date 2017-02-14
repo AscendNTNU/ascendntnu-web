@@ -3,8 +3,10 @@ layout: post
 title: "Planning Update: How to get a drone to think"
 date: 2017-02-14 12:00:00
 categories: planning tech update
-author: Adrian Tofting & Vilde Gjærum
+author: Vilde Gjærum & Adrian Tofting
 ---
+
+![Flying dog](http://fpv.tv/wp-content/uploads/2015/12/Drone-take-your-dog-for-a-walk.jpg)
 
 The planning group is working on creating an algorithm for how to solve the mission, i.e. making the drone autonomously decide what action it should do on which ground robot. We started working together in August and spent the first semester going through the rules, getting to know the problem and finally researching and brainstorming different solutions. This semester we are mainly working on two possible solutions we’ll outline in this blog.
 
@@ -31,7 +33,7 @@ One way to do this is by Least Squares Method (LSM). In short, LSM finds the bes
 Here, <tex>\\vec{b}</tex> is the data you want to describe with your chosen model <tex>\\vec{A}</tex>.
 In our case <tex>\\vec{b}</tex> is the discrete grid values calculated earlier, and <tex>\\vec{A}</tex> is a general polynomial function with coefficients <tex>\\vec{x}</tex>.
 
-So we want to find <tex>\\vec{x}</tex>, the coefficients that make <tex>\\vec{A}</tex> equal to <tex>\\vec{b}</tex>. Normally we would solve with <tex>A\\vec{x} = \\vec{b}</tex>. But in our illustration we can see that <tex>\\vec{b}</tex> is not parallel to <tex>\\vec{A}</tex>, thus there is no correct solution. We will therefore have to approximate a solution, and LSM gives us the solution where the sum of errors are the least. And which solution is this? The part of <tex>\\vec{A}</tex> that is closest to <tex>\\vec{b}</tex> of course: <tex>b_{||}</tex>
+So we want to find <tex>\\vec{x}</tex>, the coefficients that make <tex>\\vec{A}</tex> equal to <tex>\\vec{b}</tex>. Normally we would solve with <tex>A\\vec{x} = \\vec{b}</tex>. But in our illustration we can see that <tex>\\vec{b}</tex> is not parallel to <tex>\\vec{A}</tex>, thus there is no correct solution. We will therefore have to approximate a solution, and LSM gives us the solution where the sum of errors are the least. And which solution is this? The part of <tex>\\vec{A}</tex> that is closest to <tex>\\vec{b}</tex> of course: <tex>\\vec{b}_{||}</tex>
 
 So try to keep up here, and I promise you will become a mathmagician.
 
@@ -39,10 +41,12 @@ We have:
 
 <tex>\\vec{b} = \\vec{b}\_{||} + \\vec{b}\_{\\bot}</tex>, and we want to solve  
 <tex>A\\vec{x} = \\vec{b}\_{||}</tex> , giving us  
-<tex>A\\vec{x} = \\vec{b} - \\vec{b}\_{\\bot}</tex> , right? But how can we calculate <tex>b\_{\\bot}</tex>? Multiplying by <tex>A^{T}</tex> on both sides, we actually won’t have to.  
-<tex>A^{T}A\\vec{x} = A^{T}\\vec{b} - A^{T}\\vec{b}\_{\\bot} \\Leftrightarrow A^{T}A\\vec{x} = A^{T}\\vec{b}</tex>
+<tex>A\\vec{x} = \\vec{b} - \\vec{b}\_{\\bot}</tex> , right? But how can we calculate <tex>\\vec{b}\_{\\bot}</tex>? Multiplying by <tex>A^{T}</tex> on both sides, we actually won’t have to.  
+<tex>A^{T}A\\vec{x} = A^{T}\\vec{b} - A^{T}\\vec{b}\_{\\bot}</tex>  
+<tex style="margin-left: 60px">\\Updownarrow</tex>  
+<tex>A^{T}A\\vec{x} = A^{T}\\vec{b}</tex>
 
-You see what I did there? If you remember the course TMA4115 you will know <tex>A^{T}b\_{\\bot}</tex> disappears because the dot product of orthogonal vectors **= zero**. So the least squares solution boils down to something that is quite easy to calculate with our given knowledge:
+You see what I did there? If you remember the course TMA4115 you will know <tex>A^{T}\\vec{b}\_{\\bot}</tex> disappears because the dot product of orthogonal vectors **= zero**. So the least squares solution boils down to something that is quite easy to calculate with our given knowledge:
 
 <tex>\\vec{x} = (A^{T}A)^{-1}A^{T}\\vec{b}</tex>
 
