@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Link } from 'react-router'
 import { HtmlRenderer, Parser } from 'commonmark'
+import * as Katex from 'katex'
 import { polyfill } from 'es6-promise'
 polyfill()
 
@@ -42,6 +43,24 @@ export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
       if (this.props.params && this.props.params.tags)
         this.state.tagValues = this.props.params.tags.split(',')
       this.fetchPosts('/api/v1/posts/all')
+    }
+  }
+
+  componentDidUpdate (prevProp: BlogPageProps, prevState: BlogPageState) {
+    let refs: any = this.refs
+
+    for (let i = 0; i < this.state.posts.length; i++) {
+      let ref: any = refs[`post-${i}`]
+      if (ref) {
+        for (let child of ref.children) {
+          if (child.tagName === 'TEX') Katex.render(child.innerText, child)
+          else {
+            for (let subchild of child.children) {
+              if (subchild.tagName === 'TEX') Katex.render(subchild.innerText, subchild)
+            }
+          }
+        }
+      }
     }
   }
 
@@ -247,7 +266,7 @@ export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
               <div className="blog-list-date" dangerouslySetInnerHTML={ {__html: post.attributes.dateFormatted } } />
             </div>
             <div className="blog-list-preview">
-              <div dangerouslySetInnerHTML={ {__html: this.state.viewMode && this.state.viewMode == 'small' ? post.renderedFirstChild : post.renderedBody } } />
+              <div ref={`post-${i}`} dangerouslySetInnerHTML={ {__html: this.state.viewMode && this.state.viewMode == 'small' ? post.renderedFirstChild : post.renderedBody } } />
             </div>
             <div className="blog-list-categories">
               {categories}
