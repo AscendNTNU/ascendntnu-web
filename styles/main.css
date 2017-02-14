@@ -727,6 +727,11 @@ body.no-scroll {
     white-space: nowrap;
 }
 
+figcaption {
+    text-align: center;
+    font-weight: bold;
+}
+
 .dark-theme .blog-list-date,
 .dark-theme .blog-post-date {
     color: rgba(255, 255, 255, .6);
