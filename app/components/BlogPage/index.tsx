@@ -50,7 +50,6 @@ export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
 
   componentDidUpdate (prevProp: BlogPageProps, prevState: BlogPageState) {
     this.renderTex()
-    console.log("update", this.refs)
   }
 
   private renderTex () {
