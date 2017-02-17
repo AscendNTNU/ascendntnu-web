@@ -8,7 +8,7 @@ polyfill()
 import { Section } from '../PageLayout'
 
 interface BlogArticleProps {
-  post: any,
+  post: string,
 }
 
 interface BlogArticleState {
@@ -50,15 +50,23 @@ export class BlogArticle extends React.Component<BlogArticleProps, BlogArticleSt
   componentDidUpdate (prevProp: BlogArticleProps, prevState: BlogArticleState) {
     let refs: any = this.refs
 
-    if (refs.post) {
-      for (let child of refs.post.children) {
-        if (child.tagName === 'TEX') Katex.render(child.innerText, child)
-        else {
-          for (let subchild of child.children) {
-            if (subchild.tagName === 'TEX') Katex.render(subchild.innerText, subchild)
+    if (prevState.post !== this.state.post) {
+      if (refs.post) {
+        for (let child of refs.post.children) {
+          if (child.tagName === 'TEX') Katex.render(child.innerText, child)
+          else {
+            for (let subchild of child.children) {
+              if (subchild.tagName === 'TEX') Katex.render(subchild.innerText, subchild)
+            }
           }
         }
       }
+    }
+  }
+
+  componentWillReceiveProps (nextProps: any) {
+    if (nextProps.post !== this.props.post) {
+      this.fetchPost(`/api/v1/posts/${nextProps.post}`)
     }
   }
 
