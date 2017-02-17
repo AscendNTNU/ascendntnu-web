@@ -14,12 +14,19 @@ export class App extends React.Component<AppProps, AppState> {
   constructor(props: any) {
     super(props)
 
-    if (!localStorage['theme'] || !localStorage['theme'].length)
-      localStorage['theme'] = 'light'
+    try {
+      if (!localStorage['theme'] || !localStorage['theme'].length)
+        localStorage['theme'] = 'light'
 
-    this.state = {
-      showMenu: false,
-      theme: localStorage['theme'],
+      this.state = {
+        showMenu: false,
+        theme: localStorage['theme'],
+      }
+    } catch (ex) {
+      this.state = {
+        showMenu: false,
+        theme: 'light',
+      }
     }
   }
 
@@ -36,11 +43,18 @@ export class App extends React.Component<AppProps, AppState> {
   }
 
   private changeTheme (evt: any) {
-    localStorage['theme'] = localStorage['theme'] == 'dark' ? 'light' : 'dark'
-    this.setState({
-      showMenu: this.state.showMenu,
-      theme: localStorage['theme']
-    })
+    try {
+      localStorage['theme'] = localStorage['theme'] == 'dark' ? 'light' : 'dark'
+      this.setState({
+        showMenu: this.state.showMenu,
+        theme: localStorage['theme']
+      })
+    } catch (ex) {
+      this.setState({
+        showMenu: this.state.showMenu,
+        theme: this.state.theme == 'dark' ? 'light' : 'dark'
+      })
+    }
   }
 
   render () {

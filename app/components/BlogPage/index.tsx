@@ -218,7 +218,9 @@ export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
     this.setState({
       viewMode: type
     })
-    localStorage['viewMode'] = type
+    try {
+      localStorage['viewMode'] = type
+    } catch (ex) {}
   }
 
   private changeViewToSmallHandler (evt: any) {
