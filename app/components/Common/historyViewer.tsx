@@ -198,9 +198,17 @@ export class HistoryViewer extends React.Component<HistoryViewerProps, HistoryVi
 
   scrollHandler (evt: any) {
     if (evt.deltaX !== 0) evt.preventDefault()
-    this.setState(Object.assign({}, this.state, {
-      pos: Math.max(Math.max(-400, -this.state.width / 2), Math.min(2*1400 - this.state.width, this.state.pos - evt.deltaX))
-    }))
+
+    let pos: number = Math.max(
+      Math.max(-400, -this.state.width / 2),
+      Math.min(2*1400 - this.state.width, this.state.pos - evt.deltaX)
+    )
+
+    if (pos !== this.state.pos) {
+      this.setState(Object.assign({}, this.state, {
+        pos: pos
+      }))
+    }
   }
 
   dateParser (date: string): any {
