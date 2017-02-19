@@ -734,6 +734,16 @@ figcaption {
     font-style: italic;
 }
 
+.page-blog .img-float-right + img {
+    float: right;
+    margin: 8px 0 16px 16px;
+}
+
+.page-blog .img-float-left + img {
+    float: left;
+    margin: 8px 16px 16px 0;
+}
+
 .dark-theme .blog-list-date,
 .dark-theme .blog-post-date {
     color: rgba(255, 255, 255, .6);
@@ -887,6 +897,7 @@ found {
 .page-blog iframe {
     display: block;
     margin: auto;
+    clear: both;
 }
 
 .page-blog img:after {
