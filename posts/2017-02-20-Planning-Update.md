@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Planning Update 2: Lazy planning group let’s drone do all the work"
-date: 2017-02-15 12:00:00
+date: 2017-02-20 12:00:00
 categories: planning tech update
 author: Rasmus Munter
 ---
