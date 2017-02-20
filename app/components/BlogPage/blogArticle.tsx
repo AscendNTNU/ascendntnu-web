@@ -50,6 +50,10 @@ export class BlogArticle extends React.Component<BlogArticleProps, BlogArticleSt
   }
 
   componentDidMount () {
+    this.updateMetaTags()
+  }
+
+  updateMetaTags () {
     let title: any = document.querySelector('meta[property^="og:title"]')
     let description: any = document.querySelector('meta[property^="og:description"]')
     let image: any = document.querySelector('meta[property^="og:image"]')
@@ -64,6 +68,7 @@ export class BlogArticle extends React.Component<BlogArticleProps, BlogArticleSt
     let refs: any = this.refs
 
     if (prevState.post !== this.state.post) {
+      this.updateMetaTags()
       if (refs.post) {
         for (let child of refs.post.children) {
           if (child.tagName === 'TEX') Katex.render(child.innerText, child)
@@ -74,6 +79,7 @@ export class BlogArticle extends React.Component<BlogArticleProps, BlogArticleSt
           }
         }
       }
+      this.updateMetaTags()
     }
   }
 
