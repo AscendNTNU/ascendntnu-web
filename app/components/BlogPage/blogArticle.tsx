@@ -136,6 +136,17 @@ export class BlogArticle extends React.Component<BlogArticleProps, BlogArticleSt
           </div>
           <div className="blog-post-categories">
             {categories}
+            <div className="fb-share-button"
+              data-href={`https://ascendntnu.no/blog/${this.props.post}`}
+              data-layout="button_count"
+              data-size="large"
+              data-mobile-iframe="true">
+              <a className="fb-xfbml-parse-ignore"
+                target="_blank"
+                href={encodeURIComponent(`https://www.facebook.com/sharer/sharer.php?u=https://ascendntnu.no/blog/${this.props.post}&amp;src=sdkpreparse`)}>
+                Share
+              </a>
+            </div>
           </div>
         </div>
         <div ref="post" dangerouslySetInnerHTML={ {__html: this.state.post} } />
