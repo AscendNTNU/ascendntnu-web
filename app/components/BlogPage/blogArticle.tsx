@@ -145,6 +145,23 @@ export class BlogArticle extends React.Component<BlogArticleProps, BlogArticleSt
       )
     })
 
+    let shareBtn: any = null
+    if (this.state.pretext.length) {
+      shareBtn = (
+        <div className="fb-share-button"
+          data-href={`https://ascendntnu.no/blog/${this.props.post}`}
+          data-layout="button_count"
+          data-size="small"
+          data-mobile-iframe="true">
+          <a className="fb-xfbml-parse-ignore"
+            target="_blank"
+            href={encodeURIComponent(`https://www.facebook.com/sharer/sharer.php?u=https://ascendntnu.no/blog/${this.props.post}&amp;src=sdkpreparse`)}>
+            Del
+          </a>
+        </div>
+      )
+    }
+
     return (
       <Section className="page-blog" title={this.state.attributes.title}>
         <div className="blog-post-details">
@@ -155,17 +172,7 @@ export class BlogArticle extends React.Component<BlogArticleProps, BlogArticleSt
             {this.state.attributes.dateFormatted}
           </div>
           <div className="blog-post-categories">
-            <div className="fb-share-button"
-              data-href={`https://ascendntnu.no/blog/${this.props.post}`}
-              data-layout="button_count"
-              data-size="small"
-              data-mobile-iframe="true">
-              <a className="fb-xfbml-parse-ignore"
-                target="_blank"
-                href={encodeURIComponent(`https://www.facebook.com/sharer/sharer.php?u=https://ascendntnu.no/blog/${this.props.post}&amp;src=sdkpreparse`)}>
-                Del
-              </a>
-            </div>
+            {shareBtn}
             {categories}
           </div>
         </div>
