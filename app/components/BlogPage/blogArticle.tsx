@@ -20,6 +20,7 @@ interface BlogArticleState {
     author?: string,
   },
   post: any,
+  pretext: any,
 }
 
 export class BlogArticle extends React.Component<BlogArticleProps, BlogArticleState> {
@@ -39,12 +40,24 @@ export class BlogArticle extends React.Component<BlogArticleProps, BlogArticleSt
         author: '',
       },
       post: '',
+      pretext: '',
     }
 
     this.parser = new Parser()
     this.renderer = new HtmlRenderer()
 
     this.fetchPost(`/api/v1/posts/${this.props.post}`)
+  }
+
+  componentDidMount () {
+    let title: any = document.querySelector('meta[property^="og:title"]')
+    let description: any = document.querySelector('meta[property^="og:description"]')
+    let image: any = document.querySelector('meta[property^="og:image"]')
+    let url: any = document.querySelector('meta[property^="og:url"]')
+
+    title.content = `Ascend NTNU - ${this.state.attributes.title}`
+    description.content = this.state.pretext
+    description.url = `https://ascendntnu.no/blog/${this.props.post}`
   }
 
   componentDidUpdate (prevProp: BlogArticleProps, prevState: BlogArticleState) {
@@ -77,10 +90,11 @@ export class BlogArticle extends React.Component<BlogArticleProps, BlogArticleSt
         let parsed: any = this.parser.parse(r.body)
         let rendered: any = this.renderer.render(parsed)
         r.attributes['dateFormatted'] = this.formatDate(r.attributes.date, 'dag DD/MM/YY')
-        r.attributes['categoriesList'] = r.attributes.categories.split(" ")
+        r.attributes['categoriesList'] = r.attributes.categories.split(' ')
         this.setState({
           attributes: r.attributes,
-          post: rendered
+          post: rendered,
+          pretext: parsed._firstChild.innerText
         })
       })
       .catch(err => console.error('Could not fetch file from: ' + url))
@@ -135,18 +149,18 @@ export class BlogArticle extends React.Component<BlogArticleProps, BlogArticleSt
             {this.state.attributes.dateFormatted}
           </div>
           <div className="blog-post-categories">
-            {categories}
             <div className="fb-share-button"
               data-href={`https://ascendntnu.no/blog/${this.props.post}`}
               data-layout="button_count"
-              data-size="large"
+              data-size="small"
               data-mobile-iframe="true">
               <a className="fb-xfbml-parse-ignore"
                 target="_blank"
                 href={encodeURIComponent(`https://www.facebook.com/sharer/sharer.php?u=https://ascendntnu.no/blog/${this.props.post}&amp;src=sdkpreparse`)}>
-                Share
+                Del
               </a>
             </div>
+            {categories}
           </div>
         </div>
         <div ref="post" dangerouslySetInnerHTML={ {__html: this.state.post} } />
