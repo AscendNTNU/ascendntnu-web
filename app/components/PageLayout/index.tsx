@@ -18,6 +18,14 @@ export class SubTitle extends React.Component<{}, {}> {
   }
 }
 
+export class SubSubTitle extends React.Component<{}, {}> {
+  render() {
+    return (
+      <h3 className="sub-sub-section-title">{this.props.children}</h3>
+    )
+  }
+}
+
 export interface SectionProps {
   title?: string,
   theme?: string,
@@ -104,6 +112,54 @@ export class SubSection extends React.Component<SubSectionProps, {}> {
     if (this.props.title) {
       this.title = (
         <SubTitle>{this.props.title}</SubTitle>
+      )
+    }
+
+    return (
+      <div className={this.className}>
+        {this.title}
+        {this.props.children}
+      </div>
+    )
+  }
+}
+
+export interface SubSubSectionProps {
+  title?: string,
+  theme?: string,
+  className?: string,
+}
+
+export class SubSubSection extends React.Component<SubSubSectionProps, {}> {
+  public title: JSX.Element
+  public className: string
+
+  constructor(props: SectionProps) {
+    super(props)
+
+    this.className = "sub-sub-section page-container"
+
+    if (this.props.className)
+      this.className += " " + this.props.className
+
+    if (this.props.theme) {
+      let theme: string = ""
+
+      switch (this.props.theme) {
+        case "dark":
+          theme = "dark"
+          break
+        default:
+          theme = "light"
+          break
+      }
+    }
+  }
+
+  render() {
+    if (this.props.title) {
+      this.title = (
+        <SubSubTitle>{this.props.title}</SubSubTitle>
       )
     }
 
