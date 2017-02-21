@@ -49,26 +49,10 @@ export class BlogArticle extends React.Component<BlogArticleProps, BlogArticleSt
     this.fetchPost(`/api/v1/posts/${this.props.post}`)
   }
 
-  componentDidMount () {
-    this.updateMetaTags()
-  }
-
-  updateMetaTags () {
-    let title: any = document.querySelector('meta[property^="og:title"]')
-    let description: any = document.querySelector('meta[property^="og:description"]')
-    let image: any = document.querySelector('meta[property^="og:image"]')
-    let url: any = document.querySelector('meta[property^="og:url"]')
-
-    title.content = `Ascend NTNU - ${this.state.attributes.title}`
-    description.content = this.state.pretext
-    description.url = `https://ascendntnu.no/blog/${this.props.post}`
-  }
-
   componentDidUpdate (prevProp: BlogArticleProps, prevState: BlogArticleState) {
     let refs: any = this.refs
 
     if (prevState.post !== this.state.post) {
-      this.updateMetaTags()
       if (refs.post) {
         for (let child of refs.post.children) {
           if (child.tagName === 'TEX') Katex.render(child.innerText, child)
@@ -79,7 +63,6 @@ export class BlogArticle extends React.Component<BlogArticleProps, BlogArticleSt
           }
         }
       }
-      this.updateMetaTags()
     }
   }
 
@@ -145,23 +128,6 @@ export class BlogArticle extends React.Component<BlogArticleProps, BlogArticleSt
       )
     })
 
-    let shareBtn: any = null
-    if (this.state.pretext.length) {
-      shareBtn = (
-        <div className="fb-share-button"
-          data-href={`https://ascendntnu.no/blog/${this.props.post}`}
-          data-layout="button_count"
-          data-size="small"
-          data-mobile-iframe="true">
-          <a className="fb-xfbml-parse-ignore"
-            target="_blank"
-            href={encodeURIComponent(`https://www.facebook.com/sharer/sharer.php?u=https://ascendntnu.no/blog/${this.props.post}&amp;src=sdkpreparse`)}>
-            Del
-          </a>
-        </div>
-      )
-    }
-
     return (
       <Section className="page-blog" title={this.state.attributes.title}>
         <div className="blog-post-details">
@@ -172,7 +138,17 @@ export class BlogArticle extends React.Component<BlogArticleProps, BlogArticleSt
             {this.state.attributes.dateFormatted}
           </div>
           <div className="blog-post-categories">
-            {shareBtn}
+            <div className="fb-share-button"
+              data-href={`https://ascendntnu.no/blog/${this.props.post}`}
+              data-layout="button_count"
+              data-size="small"
+              data-mobile-iframe="true">
+              <a className="fb-xfbml-parse-ignore"
+                target="_blank"
+                href={encodeURIComponent(`https://www.facebook.com/sharer/sharer.php?u=https://ascendntnu.no/blog/${this.props.post}&amp;src=sdkpreparse`)}>
+                Del
+              </a>
+            </div>
             {categories}
           </div>
         </div>

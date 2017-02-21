@@ -148,6 +148,62 @@ function fileExists (filePath) {
   }
 }
 
+app.get('/blog/:post', function (req, res) {
+  var post = req.params.post
+
+  var files = fs.readdirSync('./posts')
+    .filter(file => new RegExp(post, 'i').test(file))
+  var pathToPost = __dirname + '/posts/' + (files[0] || '')
+
+  if (fileExists(pathToPost) && files.length) {
+    var postData = fm(fs.readFileSync(pathToPost) + '')
+    var link = slugify(files[0])
+    var title = postData.attributes.title
+    var desc = postData.body.slice(0,320)
+
+    res.send(`<!doctype html>
+<html>
+  <head>
+    <title>AscendNTNU</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui" />
+    <meta name="description" content="${desc}" />
+    <meta name="keywords" content="Ascend, NTNU, robotics, autonomus, team, IARC, international, aerial, robotics, competition, AI" />
+    <meta name="author" content="Ascend NTNU" />
+    <meta property="fb:app_id" content="202744680073731" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/images/logo/logo.png" />
+    <meta property="og:title" content="Ascend NTNU - ${title}" />
+    <meta property="og:description" content="${desc}..." />
+    <meta property="og:url" content="https://ascendntnu.no/blog/${link}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <link rel="shortcut icon" href="/images/logo/logo.png" />
+    <link rel="stylesheet" href="/node_modules/katex/dist/katex.min.css" />
+    <link rel="stylesheet" href="/styles/main.css" />
+    <script defer src="/node_modules/react/dist/react.js"></script>
+    <script defer src="/node_modules/react-dom/dist/react-dom.js"></script>
+    <script defer src="/dist/bundle.js"></script>
+  </head>
+  <body>
+    <div id="app" class="app-container"></div>
+    <div id="fb-root"></div>
+    <script>
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/nb_NO/sdk.js#xfbml=1&version=v2.8&appId=202744680073731";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, "script", "facebook-jssdk"));
+    </script>
+  </body>
+</html>`)
+  } else {
+    res.sendFile(__dirname + '/index.html')
+  }
+})
+
 app.get('/*', function (req, res) {
   res.sendFile(__dirname + '/index.html')
 })
