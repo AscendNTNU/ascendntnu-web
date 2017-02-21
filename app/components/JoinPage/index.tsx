@@ -6,6 +6,19 @@ import { Breadcrumb } from '../Common/breadcrumb'
 export interface JoinPageProps {}
 
 export class JoinPage extends React.Component<JoinPageProps, {}> {
+  private emails: string[]
+
+  constructor (props: any) {
+    super(props)
+
+    this.emails = [
+      'brage.eikanger',
+      'vebjorn.isaksen',
+      'emilie.udnaes',
+      'simon.blindheim',
+    ].map((e: string) => `${e}@`)
+  }
+
   render () {
     let positions: any[] = [
       (
@@ -56,6 +69,7 @@ export class JoinPage extends React.Component<JoinPageProps, {}> {
             <li>Deg som vil finne gode løsninger i samarbeid med andre og tar utfordringer på strak arm. </li>
             <li>Deg som har god struktur og oversikt, og liker å jobbe med organisasjonen som en helhet.</li>
           </ul>
+          <p>Har du spørsmål om denne stillingen kan du kontakte Brage Eikanger på <a href={ `mailto:${this.emails[0]}ascendntnu.no` }>{ this.emails[0] }ascendntnu.no</a>.</p>
         </SubSubSection>
         <SubSubSection title="Teknisk Leder">
           <p>Som teknisk leder har du det overordnede ansvaret for all teknisk arbeid i Ascend. Dette innebærer å planlegge, organisere og samkjøre det tekniske arbeidet sammen med gruppelederne. Som teknisk leder er det din oppgave å lede det tekniske arbeidet slik at alle de tekniske gruppene jobber mot samme mål. Du må ha en god innsikt i hele systemet som utvikler slik at arbeidet kan legges til rette for å unngå potensielle tekniske problemer og integreres på en best mulig måte. Teknisk leder jobber tett med alle de tekniske gruppelederene og gruppemedlemmene, og bistår med det tekniske der det til enhver tid er størt behov. Jobben vil gi deg en innsikt og erfaring i en rekke forskjellige ingeniørdisipliner, og gi deg et helhetsbilde som få andre har.</p>
@@ -67,6 +81,7 @@ export class JoinPage extends React.Component<JoinPageProps, {}> {
             <li>Du som liker å jobbe med store kompliserte systemer.</li>
             <li>Du som er strukturert, ryddig og organisert.</li>
           </ul>
+          <p>Har du spørsmål om denne stillingen kan du kontakte Vebjørn Isaksen på <a href={ `mailto:${this.emails[1]}ascendntnu.no` }>{ this.emails[1] }ascendntnu.no</a>.</p>
         </SubSubSection>
         <SubSubSection title="Kommunikasjonsleder">
           <p>For å lykkes med dette ambisiøse prosjektet er Ascend avhengig av gode samarbeid, både med industri og utdanningsinstitusjoner. Som markedsansvarlig vil du sørge for finansieringen og samarbeidene som bringer Ascend nærmere sine mål. Dette innebærer å oppnå avtaler med nye spennende sponsorer, samt å pleie relasjonene til våre eksisterende samarbeidspartnere. Det innebærer også håndtering av presse og skriving av pressemeldinger. Dette vil du bli kurset i hvis du ikke har erfaring med det fra før. Kommunikasjonsleder har ansvaret for at facebooksiden og internettsiden er vedlikeholdt og oppdatert jevnlig. Dette innebærer å være kreativ og ha gode kommunikasjonsevner.</p>
@@ -78,6 +93,7 @@ export class JoinPage extends React.Component<JoinPageProps, {}> {
             <li>Du som har erfaring med grafikk og/eller web-utvikling (et stort pluss - men ikke et krav).</li>
             <li>Du som er løsningsorientert, kreativ, ambisiøs, samarbeidsvillig, målrettet og resultatdrevet</li>
           </ul>
+          <p>Har du spørsmål om denne stillingen kan du kontakte Emilie Udnæs på <a href={ `mailto:${this.emails[2]}ascendntnu.no` }>{ this.emails[2] }ascendntnu.no</a>.</p>
         </SubSubSection>
         <SubSubSection title="Økonomiansvarlig">
           <p>Som økonomiansvarlig har du kontroll på organisasjonens ressursbruk. Ascend opererer som I likhet med andre organisasjoner innenfor visse økonomiske rammer, og en pålitelig samt forutsigbar flyt av ressurser kan dermed hjelpe resten av teamet å oppnå sitt fulle potensial.</p>
@@ -88,6 +104,7 @@ export class JoinPage extends React.Component<JoinPageProps, {}> {
             <li>Du som har kunnskap om, eller interesse for å lære om føring av økonomi i organisasjoner.</li>
             <li>Du som har ryddige og oversiktlige arbeidsmetoder.</li>
           </ul>
+          <p>Har du spørsmål om denne stillingen kan du kontakte Simon Blindheim på <a href={ `mailto:${this.emails[3]}ascendntnu.no` }>{ this.emails[3] }ascendntnu.no</a>.</p>
         </SubSubSection>
       </SubSection>
     )]
