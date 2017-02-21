@@ -172,7 +172,7 @@ app.get('/blog/:post', function (req, res) {
     <meta name="keywords" content="Ascend, NTNU, robotics, autonomus, team, IARC, international, aerial, robotics, competition, AI" />
     <meta name="author" content="Ascend NTNU" />
     <meta property="fb:app_id" content="202744680073731" />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content="article" />
     <meta property="og:image" content="/images/logo/logo.png" />
     <meta property="og:title" content="Ascend NTNU - ${title}" />
     <meta property="og:description" content="${desc}..." />
