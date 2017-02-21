@@ -1,12 +1,13 @@
 ---
 layout: post
+image: /public/assets/planning-update-2/reward-system-context.jpg
 title: "Planning Update 2: Lazy planning group let’s drone do all the work"
 date: 2017-02-20 12:00:00
 categories: planning tech update
 author: Rasmus Munter
 ---
 
-Planning group here, back at it! Earlier this week we went into some detail about our first planning algorithm using a value field ([Link to previous post](/blog/2017-02-14-planning-update)). However, we are also working on a second solution using something called reinforcement learning.
+Planning group here, back at it! Earlier this week we went into some detail about our [first planning algorithm](/blog/2017-02-14-planning-update) using a value field. However, we are also working on a second solution using something called reinforcement learning.
 
 Due to all the random movement of the ground robots and limited awareness of the world around us, solving the challenge can be pretty cumbersome at times. So instead of doing our job and programming the drone so that it actually manages to solve the challenge, reinforcement learning lets us sit down and relax while the drone has to spend hundreds of thousands of attempts trying to figure out where it is and what’s going on.
 

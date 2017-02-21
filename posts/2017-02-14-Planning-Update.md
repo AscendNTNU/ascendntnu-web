@@ -1,5 +1,6 @@
 ---
 layout: post
+image: http://fpv.tv/wp-content/uploads/2015/12/Drone-take-your-dog-for-a-walk.jpg
 title: "Planning Update: How to get a drone to think"
 date: 2017-02-14 12:00:00
 categories: planning tech update
