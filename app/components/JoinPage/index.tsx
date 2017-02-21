@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { Section, SubSection } from '../PageLayout'
+import { Section, SubSection, SubSubSection } from '../PageLayout'
 import { Breadcrumb } from '../Common/breadcrumb'
 
 export interface JoinPageProps {}
@@ -44,8 +44,8 @@ export class JoinPage extends React.Component<JoinPageProps, {}> {
       </SubSection>
     ),
     (
-      <div>
-        <SubSection title="Prosjektleder/Nestleder">
+      <SubSection title="Stillinger">
+        <SubSubSection title="Prosjektleder/Nestleder">
           <p>Prosjektleder er styrets leder og jobber med å videreutvikle Ascend i ønsket retning basert på Ascends visjoner og mål. Prosjektleder jobber tett opp mot alle Ascends undergrupper og koordinerer mye av arbeidet som skjer mellom gruppene. Sammen med kommunikasjonsgruppen jobber prosjektleder for å fremme Ascends omdømme, planlegge opptak, og jobbe med sponsorer. Arbeidsoppgavene man har vil variere fra uke til uke og gir muligheter til å jobbe med de fleste aspekter i prosjektet. Faste oppgaver inkluderer å lede styremøter og allmøter, og ansvar for samarbeid med hovedsponsor.</p>
           <p>Som nestleder har man mange spennende oppgaver. Først og fremst er man hovedansvarlig for rekruttering av nytt styre, nye gruppemedlemmer, gruppeledere og arbeid med masteroppgaver. Man skal også bistå prosjektleder med planlegging, oppfølging og målsetting. Videre holder man medarbeidersamtaler for å sikre at alle gruppemedlemmene blir hørt, samt at man er en tillitsperson for gruppemedlemmene.</p>
           <p>Prosjektleder og nestleder jobber tett sammen og fordeler arbeidsoppgaver mellom seg. Dette samarbeidet gir en stor fleksibilitet når det kommer til arbeidsoppgaver, og lar begge to tilpasse ansvarsområder slik at man kan jobbe med det man har størst interesse for.</p>
@@ -56,8 +56,8 @@ export class JoinPage extends React.Component<JoinPageProps, {}> {
             <li>Deg som vil finne gode løsninger i samarbeid med andre og tar utfordringer på strak arm. </li>
             <li>Deg som har god struktur og oversikt, og liker å jobbe med organisasjonen som en helhet.</li>
           </ul>
-        </SubSection>
-        <SubSection title="Teknisk Leder">
+        </SubSubSection>
+        <SubSubSection title="Teknisk Leder">
           <p>Som teknisk leder har du det overordnede ansvaret for all teknisk arbeid i Ascend. Dette innebærer å planlegge, organisere og samkjøre det tekniske arbeidet sammen med gruppelederne. Som teknisk leder er det din oppgave å lede det tekniske arbeidet slik at alle de tekniske gruppene jobber mot samme mål. Du må ha en god innsikt i hele systemet som utvikler slik at arbeidet kan legges til rette for å unngå potensielle tekniske problemer og integreres på en best mulig måte. Teknisk leder jobber tett med alle de tekniske gruppelederene og gruppemedlemmene, og bistår med det tekniske der det til enhver tid er størt behov. Jobben vil gi deg en innsikt og erfaring i en rekke forskjellige ingeniørdisipliner, og gi deg et helhetsbilde som få andre har.</p>
           <p>Teknisk leder fungerer som representant for det tekniske inn mot styret og admin gruppen. Jobben innebærer derfor også å jobbe sammen med de administrative stillingene. Oppgaver som å planlegge innkjøp av teknisk utstyr sammen med økonomiansvarlig og bistå med formidlingen av det tekniske arbeidet sammen med kommunikasjonslederen.</p>
           <p><b>Vi ser etter</b></p>
@@ -67,8 +67,8 @@ export class JoinPage extends React.Component<JoinPageProps, {}> {
             <li>Du som liker å jobbe med store kompliserte systemer.</li>
             <li>Du som er strukturert, ryddig og organisert.</li>
           </ul>
-        </SubSection>
-        <SubSection title="Kommunikasjonsleder">
+        </SubSubSection>
+        <SubSubSection title="Kommunikasjonsleder">
           <p>For å lykkes med dette ambisiøse prosjektet er Ascend avhengig av gode samarbeid, både med industri og utdanningsinstitusjoner. Som markedsansvarlig vil du sørge for finansieringen og samarbeidene som bringer Ascend nærmere sine mål. Dette innebærer å oppnå avtaler med nye spennende sponsorer, samt å pleie relasjonene til våre eksisterende samarbeidspartnere. Det innebærer også håndtering av presse og skriving av pressemeldinger. Dette vil du bli kurset i hvis du ikke har erfaring med det fra før. Kommunikasjonsleder har ansvaret for at facebooksiden og internettsiden er vedlikeholdt og oppdatert jevnlig. Dette innebærer å være kreativ og ha gode kommunikasjonsevner.</p>
           <p>Enda viktigere enn sponsorer og industrisamarbeid, er dyktige og engasjerte studenter. Ascend har som mål å bli en vedvarende studentorganisajon som er godt kjent på NTNU Gløshaugen. Som kommunikasjonsleder har du all friheten til å finne måter å nå ut til studentene på, med konkrete og målbare resultater. Som en relativt nyoppstarta organisasjon (2015) vil du ha betydelig innvirkning på merkevarebyggingen til Ascend. Dette innebærer å skape en kultur utad som inspirer studenter til å drive med forskning og innovasjon på autonome droner.</p>
           <p><b>Vi ser etter</b></p>
@@ -78,8 +78,8 @@ export class JoinPage extends React.Component<JoinPageProps, {}> {
             <li>Du som har erfaring med grafikk og/eller web-utvikling (et stort pluss - men ikke et krav).</li>
             <li>Du som er løsningsorientert, kreativ, ambisiøs, samarbeidsvillig, målrettet og resultatdrevet</li>
           </ul>
-        </SubSection>
-        <SubSection title="Økonomiansvarlig">
+        </SubSubSection>
+        <SubSubSection title="Økonomiansvarlig">
           <p>Som økonomiansvarlig har du kontroll på organisasjonens ressursbruk. Ascend opererer som I likhet med andre organisasjoner innenfor visse økonomiske rammer, og en pålitelig samt forutsigbar flyt av ressurser kan dermed hjelpe resten av teamet å oppnå sitt fulle potensial.</p>
           <p>Din oppgave vil hovedsaklig være å forsikre at styret har oversiktlig regnskap, kontobalanse og budsjetter tilgjengelig i forbindelse med avgjørelser for både teknisk og organisatorisk drift. I tillegg vil du ha ansvar for å holde oversikt over interne utlegg, inventar og likviditet, og selvfølgelig sørge for at innkommende fakturaer blir betalt til rett tid.</p>
           <p><b>Vi ser etter</b></p>
@@ -88,8 +88,8 @@ export class JoinPage extends React.Component<JoinPageProps, {}> {
             <li>Du som har kunnskap om, eller interesse for å lære om føring av økonomi i organisasjoner.</li>
             <li>Du som har ryddige og oversiktlige arbeidsmetoder.</li>
           </ul>
-        </SubSection>
-      </div>
+        </SubSubSection>
+      </SubSection>
     )]
 
     return (
