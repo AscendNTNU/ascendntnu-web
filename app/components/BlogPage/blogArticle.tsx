@@ -19,8 +19,7 @@ interface BlogArticleState {
     categories?: string,
     author?: string,
   },
-  post: any,
-  pretext: any,
+  post: any
 }
 
 export class BlogArticle extends React.Component<BlogArticleProps, BlogArticleState> {
@@ -39,8 +38,7 @@ export class BlogArticle extends React.Component<BlogArticleProps, BlogArticleSt
         categoriesList: [],
         author: '',
       },
-      post: '',
-      pretext: '',
+      post: ''
     }
 
     this.parser = new Parser()
@@ -82,8 +80,7 @@ export class BlogArticle extends React.Component<BlogArticleProps, BlogArticleSt
         r.attributes['categoriesList'] = r.attributes.categories.split(' ')
         this.setState({
           attributes: r.attributes,
-          post: rendered,
-          pretext: parsed._firstChild.innerText
+          post: rendered
         })
       })
       .catch(err => console.error('Could not fetch file from: ' + url))
