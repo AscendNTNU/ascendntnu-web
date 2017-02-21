@@ -54,7 +54,7 @@ export class JoinPage extends React.Component<JoinPageProps, {}> {
             <li>Deg som ønsker å jobbe tett med hele organisasjonen og liker varierte arbeidsoppgaver</li>
             <li>Deg som vil jobbe eksterne aktører, sponsorer og andre samarbeidspartnere.</li>
             <li>Deg som vil finne gode løsninger i samarbeid med andre og tar utfordringer på strak arm. </li>
-            <li>Deg som har god struktur og oversikt, og liker å jobbe med organisasjonen som en helhet</li>
+            <li>Deg som har god struktur og oversikt, og liker å jobbe med organisasjonen som en helhet.</li>
           </ul>
         </SubSection>
         <SubSection title="Teknisk Leder">
