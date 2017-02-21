@@ -36,16 +36,25 @@ a {
     text-decoration: none;
 }
 
+a.button {
+    color: #fff !important;
+    color: var(--button-color) !important;
+    text-decoration: none;
+    border: none !important;
+}
+
 .small {
     font-size: .8em;
 }
 
 button,
+a.button,
 input[type="submit"],
 input[type="reset"] {
     background-color: rgba(0, 0, 0, .3);
     background-color: var(--button-background-color);
     border: none;
+    text-decoration: none;
     border-radius: 3px;
     color: #fff;
     color: var(--button-color);
@@ -60,13 +69,14 @@ input[type="reset"] {
     transition-timing-function: ease-in-out;
 }
 
-button a,
-input[type="submit"] a,
-input[type="reset"] a {
+.app button a,
+.app input[type="submit"] a,
+.app input[type="reset"] a {
     border: none;
 }
 
 button.active,
+a.button.active,
 input[type="reset"].active,
 input[type="submit"].active,
 .active button,

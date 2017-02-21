@@ -98,10 +98,11 @@ export class JoinPage extends React.Component<JoinPageProps, {}> {
         <Section title="Nå nye høyder - Søk til styret i Ascend!">
           <p><b>Søknadsfrist 11. mars 2017 kl. 23:59</b></p>
           <p>Ønsker du å være med på å drive med cutting-edge droneteknologi i en ambisiøs og teknologi-fokusert studentorganisasjon?</p>
-          <p>Ascend NTNU har hoveropptak på høsten hvert år for å ta in nye medlemmer.</p>
+          {/*<p>Ascend NTNU har hovedopptak på høsten hvert år for å ta in nye medlemmer.</p>*/}
           <p>Tidligere erfaring er ikke et krav for å bli med i Ascend. Det viktigste er å ha en interesse for det vi jobber med, og en interesse for å lære.</p>
-          <p><strong>Ny mulighet vil annonseres senere. Hvis du vil bli oppdatert om denne - skriv deg opp på linken under!</strong></p>
-          <h4><a href="http://ascendntnu.us14.list-manage2.com/subscribe?u=dfce303a41ce42b342c75a3ef&amp;id=002e04db12" target="_blank">Interesseliste for opptak.</a></h4>
+          <a className="button active" style={ { alignSelf: 'flex-start' } } href="https://docs.google.com/forms/d/e/1FAIpQLSeio9VmSXvX41QT17WSloXhJzM5FF_MafCVs6P6TiP0iR6Gow/viewform?c=0&w=1">Søk her!</a>
+          {/*<p><strong>Ny mulighet vil annonseres senere. Hvis du vil bli oppdatert om denne - skriv deg opp på linken under!</strong></p>
+          <h4><a href="http://ascendntnu.us14.list-manage2.com/subscribe?u=dfce303a41ce42b342c75a3ef&amp;id=002e04db12" target="_blank">Interesseliste for opptak.</a></h4>*/}
 
           {positions[1]}
 
