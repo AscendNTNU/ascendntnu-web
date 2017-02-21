@@ -143,7 +143,6 @@ export class BlogArticle extends React.Component<BlogArticleProps, BlogArticleSt
               <a className="fb-xfbml-parse-ignore"
                 target="_blank"
                 href={encodeURIComponent(`https://www.facebook.com/sharer/sharer.php?u=https://ascendntnu.no/blog/${this.props.post}&amp;src=sdkpreparse`)}>
-                Del
               </a>
             </div>
             {categories}
