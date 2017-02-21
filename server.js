@@ -159,7 +159,13 @@ app.get('/blog/:post', function (req, res) {
     var postData = fm(fs.readFileSync(pathToPost) + '')
     var link = slugify(files[0])
     var title = postData.attributes.title
-    var image = postData.attributes.image || '/images/logo/logo.png'
+    var image = 'https://ascendntnu.no/images/logo/logo.png'
+    if (postData.attributes.image) {
+      if (/^http/.test(postData.attributes.image))
+        image = postData.attributes.image
+      else
+        image = 'https://ascendntnu.no' + postData.attributes.image
+    }
     var desc = postData.body.slice(0, 320)
 
     res.send(`<!doctype html>
@@ -174,7 +180,7 @@ app.get('/blog/:post', function (req, res) {
     <meta name="author" content="Ascend NTNU" />
     <meta property="fb:app_id" content="202744680073731" />
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://ascendntnu.no${image}" />
+    <meta property="og:image" content="${image}" />
     <meta property="og:title" content="Ascend NTNU - ${title}" />
     <meta property="og:description" content="${desc}..." />
     <meta property="og:url" content="https://ascendntnu.no/blog/${link}" />
