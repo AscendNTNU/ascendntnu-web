@@ -49,6 +49,13 @@ export class JoinPage extends React.Component<JoinPageProps, {}> {
           <p>Prosjektleder er styrets leder og jobber med å videreutvikle Ascend i ønsket retning basert på Ascends visjoner og mål. Prosjektleder jobber tett opp mot alle Ascends undergrupper og koordinerer mye av arbeidet som skjer mellom gruppene. Sammen med kommunikasjonsgruppen jobber prosjektleder for å fremme Ascends omdømme, planlegge opptak, og jobbe med sponsorer. Arbeidsoppgavene man har vil variere fra uke til uke og gir muligheter til å jobbe med de fleste aspekter i prosjektet. Faste oppgaver inkluderer å lede styremøter og allmøter, og ansvar for samarbeid med hovedsponsor.</p>
           <p>Som nestleder har man mange spennende oppgaver. Først og fremst er man hovedansvarlig for rekruttering av nytt styre, nye gruppemedlemmer, gruppeledere og arbeid med masteroppgaver. Man skal også bistå prosjektleder med planlegging, oppfølging og målsetting. Videre holder man medarbeidersamtaler for å sikre at alle gruppemedlemmene blir hørt, samt at man er en tillitsperson for gruppemedlemmene.</p>
           <p>Prosjektleder og nestleder jobber tett sammen og fordeler arbeidsoppgaver mellom seg. Dette samarbeidet gir en stor fleksibilitet når det kommer til arbeidsoppgaver, og lar begge to tilpasse ansvarsområder slik at man kan jobbe med det man har størst interesse for.</p>
+          <p><b>Vi ser etter</b></p>
+          <ul>
+            <li>Deg som ønsker å jobbe tett med hele organisasjonen og liker varierte arbeidsoppgaver</li>
+            <li>Deg som vil jobbe eksterne aktører, sponsorer og andre samarbeidspartnere.</li>
+            <li>Deg som vil finne gode løsninger i samarbeid med andre og tar utfordringer på strak arm. </li>
+            <li>Deg som har god struktur og oversikt, og liker å jobbe med organisasjonen som en helhet</li>
+          </ul>
         </SubSection>
         <SubSection title="Teknisk Leder">
           <p>Som teknisk leder har du det overordnede ansvaret for all teknisk arbeid i Ascend. Dette innebærer å planlegge, organisere og samkjøre det tekniske arbeidet sammen med gruppelederne. Som teknisk leder er det din oppgave å lede det tekniske arbeidet slik at alle de tekniske gruppene jobber mot samme mål. Du må ha en god innsikt i hele systemet som utvikler slik at arbeidet kan legges til rette for å unngå potensielle tekniske problemer og integreres på en best mulig måte. Teknisk leder jobber tett med alle de tekniske gruppelederene og gruppemedlemmene, og bistår med det tekniske der det til enhver tid er størt behov. Jobben vil gi deg en innsikt og erfaring i en rekke forskjellige ingeniørdisipliner, og gi deg et helhetsbilde som få andre har.</p>
