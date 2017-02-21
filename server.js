@@ -173,7 +173,7 @@ app.get('/blog/:post', function (req, res) {
     <meta name="author" content="Ascend NTNU" />
     <meta property="fb:app_id" content="202744680073731" />
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="/images/logo/logo.png" />
+    <meta property="og:image" content="https://ascendntnu.no/images/logo/logo.png" />
     <meta property="og:title" content="Ascend NTNU - ${title}" />
     <meta property="og:description" content="${desc}..." />
     <meta property="og:url" content="https://ascendntnu.no/blog/${link}" />
