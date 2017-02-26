@@ -113,6 +113,8 @@ export class JoinPage extends React.Component<JoinPageProps, {}> {
       <div className="page page-join">
         <Breadcrumb routes={['join']} />
         <Section title="Nå nye høyder - Søk til styret i Ascend!">
+          <iframe style={{margin: "0 auto"}} width="560" height="315" src="https://www.youtube.com/embed/rWTa-20bNms" frameborder="0" allowfullscreen></iframe>
+
           <p><b>Søknadsfrist 11. mars 2017 kl. 23:59</b></p>
           <p>Ønsker du å være med på å drive med cutting-edge droneteknologi i en ambisiøs og teknologi-fokusert studentorganisasjon?</p>
           {/*<p>Ascend NTNU har hovedopptak på høsten hvert år for å ta in nye medlemmer.</p>*/}
@@ -120,8 +122,6 @@ export class JoinPage extends React.Component<JoinPageProps, {}> {
           <a className="button active" style={ { alignSelf: 'flex-start' } } href="https://docs.google.com/forms/d/e/1FAIpQLSeio9VmSXvX41QT17WSloXhJzM5FF_MafCVs6P6TiP0iR6Gow/viewform?c=0&w=1">Søk her!</a>
           {/*<p><strong>Ny mulighet vil annonseres senere. Hvis du vil bli oppdatert om denne - skriv deg opp på linken under!</strong></p>
           <h4><a href="http://ascendntnu.us14.list-manage2.com/subscribe?u=dfce303a41ce42b342c75a3ef&amp;id=002e04db12" target="_blank">Interesseliste for opptak.</a></h4>*/}
-
-          <video style={{margin: "0 auto"}} src="/public/assets/join/recruiting-2017.mp4" width="480" height="270" controls></video>
 
           {positions[1]}
 
