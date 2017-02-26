@@ -113,7 +113,7 @@ export class JoinPage extends React.Component<JoinPageProps, {}> {
       <div className="page page-join">
         <Breadcrumb routes={['join']} />
         <Section title="Nå nye høyder - Søk til styret i Ascend!">
-          <iframe style={{margin: "0 auto"}} width="560" height="315" src="https://www.youtube.com/embed/rWTa-20bNms" frameborder="0" allowfullscreen></iframe>
+          <iframe style={{margin: '0 auto', border: 'none'}} width="560" height="315" src="https://www.youtube.com/embed/rWTa-20bNms" frameborder="0" allowfullscreen></iframe>
 
           <p><b>Søknadsfrist 11. mars 2017 kl. 23:59</b></p>
           <p>Ønsker du å være med på å drive med cutting-edge droneteknologi i en ambisiøs og teknologi-fokusert studentorganisasjon?</p>
