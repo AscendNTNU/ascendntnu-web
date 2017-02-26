@@ -140,10 +140,6 @@ export class JoinPage extends React.Component<JoinPageProps, {}> {
 
             <p><a href="http://www.ascendntnu.no/iarc/competition/2016/02/25/The-Competition.html" role="button">Les mer om konkurransen og om oppdraget vi skal løse her.</a></p> 
           </SubSection>
-
-          <SubSection title="Forventet arbeidstid">
-            <p>Vi estimerer at medlemmer av organisasjonen må påregne et sted mellom 10 og 15 arbeidstimer per uke. Behovet vil også variere gjennom semesteret. Det er stor frihet til å arbeide når det passer best for deg. Vi legger opp til at man skal kunne kombinere Ascend med studier på en balansert måte. I eksamenstiden vil vi ha lav aktivitet - slik at medlemmene kan fokusere på faglige resultater.</p>
-          </SubSection>
         </Section>
 
         <Section title="Om oss">
