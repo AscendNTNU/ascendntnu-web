@@ -15,7 +15,7 @@ export class MissionPage extends React.Component<MissionPageProps, {}> {
         title: 'Mission 7',
         content: (
           <div>
-            <p>Mission 7 is split into two parts, a and b. Part b will begin when enough teams have completed part a. Here we will give a brief overview of the mission, for a complete version of the rules see [the official rules](http://www.aerialroboticscompetition.org/rules.php).</p>
+            <p>Mission 7 is split into two parts, a and b. Part b will begin when enough teams have completed part a. Here we will give a brief overview of the mission, for a complete version of the rules see <a href="http://www.aerialroboticscompetition.org/rules.php">the official rules</a>.</p>
             <p>The mission takes place indoors on a 20x20 meter grid arena. The square arena has two white edges, one green edge and one red edge, as shown in figure 1. In the middle of the arena, 10 ground robots (Roomba vacuum cleaner robots) start driving from the middle at a speed of 1/3 m/s, outwards towards the edges. The ground robots move in a specific pattern:</p>
             <code>
               Every 20 seconds they rotate 180 degrees.{'\n'}
@@ -53,7 +53,7 @@ export class MissionPage extends React.Component<MissionPageProps, {}> {
             <p>The missions have evolved with the arrival of new technology to continously push the limits. Mission 1, issued in 1991, was to move a metallic disc from one side of an arena to another. Not a challenging misson by today's standard, but remove a quarter of a century's worth of technologic development and you have yourself a challenge. In the last mission to be completed, mission 6, it is however not hard to see the challenge. The descripion of the mission was:</p>
             <blockquote>The robots had to locate an opening in a building, enter when a surveillance camera was not looking, navigate crowded hallways, avoid or disable security systems, interpret signage in Arabic, and finally reach a particular room without bumping any walls or landing. From there, the robot had to locate a particular paper inbox containing a flash drive. It had to then retrieve that flash drive, replace it with an identical blank flash drive, and exit the building within a short time span.</blockquote>
             <p>After four years, Tsinghua University completed the mission and pushed the competition along. Which brings us to todays challenge, and the mission Ascend NTNU is trying to solve: mission 7.</p>
-            <p>For more information and about the different missions see [past missions](http://www.aerialroboticscompetition.org/pastmissions.php).</p>
+            <p>For more information and about the different missions see <a href="http://www.aerialroboticscompetition.org/pastmissions.php">past missions</a>.</p>
             {missions}
           </SubSection>
         </Section>
