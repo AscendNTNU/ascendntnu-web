@@ -1087,6 +1087,45 @@ found {
     margin: auto;
 }
 
+blockquote:before, blockquote:after {
+    font-size: 1em;
+}
+
+blockquote:before {
+    content: "\201c";
+    vertical-align: text-bottom;
+}
+
+blockquote:after {
+    content: "\201d";
+    vertical-align: text-top;
+}
+
+blockquote {
+    margin: 32px 0;
+    box-sizing: border-box;
+    padding: 0 0 0 32px;
+    border-left: 4px solid rgba(0, 0, 0, .2);
+    font-style: italic;
+    color: #666;
+    font-weight: bold;
+}
+
+.app.dark-theme blockquote {
+    border-left: 4px solid rgba(255, 255, 255, .2);
+    color: #aaa;
+}
+
+code {
+    white-space: pre-wrap;
+    padding: 16px 24px;
+    font-size: .9em;
+    color: #ddd;
+    background-color: #333;
+    display: block;
+    border-radius: 2px;
+}
+
 .breadcrumb-container {
     display: flex;
     flex-flow: wrap row;
