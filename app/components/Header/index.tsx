@@ -33,6 +33,7 @@ export class Header extends React.Component<HeaderProps, {}> {
             <Link onClick={this.props.toggleMenuHandler} className="nav-element" activeClassName="active" to="/drones">Drones</Link>
             <Link onClick={this.props.toggleMenuHandler} className="nav-element" activeClassName="active" to="/team">Team</Link>
             <Link onClick={this.props.toggleMenuHandler} className="nav-element" activeClassName="active" to="/join">Join Us</Link>
+            <Link onClick={this.props.toggleMenuHandler} className="nav-element" activeClassName="active" to="/missions">Missions</Link>
             <Link onClick={this.props.toggleMenuHandler} className="nav-element" activeClassName="active" to="/about">About</Link>
           </nav>
         </div>
