@@ -23,6 +23,16 @@ export class MissionPage extends React.Component<MissionPageProps, {}> {
               If they bump into anything, they rotate 180 degrees.
             </code>
             <p>In addition to the grond robots, there are four obstacle robots. The obstacle robots are Roombas as well, but have a 1-2 meter high pole on top. They are programmed to drive around in a circle, and are there to create havoc. If the drone touches the obstacle robots more than two times the run will be terminated.</p>
+            <div className="split-img-container">
+              <figure className="split-img">
+                <img className="img-responsive" alt="Mission start state" src="/public/assets/start-state.png" />
+                <figcaption className="text-center">Figure 1. Mission start state.</figcaption>
+              </figure>
+              <figure className="split-img">
+                <img className="img-responsive" alt="Desired end state" src="/public/assets/end-state.png" />
+                <figcaption className="text-center">Figure 2. Desired end state.</figcaption>
+              </figure>
+            </div>
             <p>Our drone’s mission is to “herd” or guide these ground robots over the green edge, and to keep them from running over any of the other edges, as shown in figure 2. It has to do this autonomously; we are not allowed to control its movement in any way. To interact with the ground robots we have two possibilities.</p>
             <code>
               Tapping a tactile button on the top of the ground robots, turning them 45 degrees, clockwise.{'\n'}
@@ -37,8 +47,8 @@ export class MissionPage extends React.Component<MissionPageProps, {}> {
   }
 
   render () {
-    let missions: any = this.missions.map((e: any) => (
-        <SubSubSection title={e.title}>{e.content}</SubSubSection>
+    let missions: any = this.missions.map((e: any, i: number) => (
+        <SubSubSection title={e.title} key={i}>{e.content}</SubSubSection>
     ))
 
     return (

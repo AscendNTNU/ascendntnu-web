@@ -499,6 +499,10 @@ body.no-scroll {
     stroke: #fff;
 }
 
+.sponsors .sponsor img {
+    max-height: initial;
+}
+
 .sponsors {
     flex-direction: row;
     flex-flow: wrap;
@@ -752,12 +756,12 @@ figcaption {
     font-style: italic;
 }
 
-.page-blog .img-float-right + img {
+.page .img-float-right + img {
     float: right;
     margin: 8px 0 16px 16px;
 }
 
-.page-blog .img-float-left + img {
+.page .img-float-left + img {
     float: left;
     margin: 8px 16px 16px 0;
 }
@@ -899,26 +903,26 @@ found {
     }
 }
 
-.page-blog img {
+.page img {
     max-width: 100%;
     max-height: 240px;
 }
 
-.page-blog iframe {
+.page iframe {
     width: 560px;
     height: 315px;
     max-width: calc(100vw - 32px - 14px);
     max-height: calc((100vw - 32px - 14px) * 315 / 560);
 }
 
-.page-blog img,
-.page-blog iframe {
+.page img,
+.page iframe {
     display: block;
     margin: auto;
     clear: both;
 }
 
-.page-blog img:after {
+.page img:after {
     content: attr(alt);
     display: block;
     margin: auto;
@@ -1086,6 +1090,19 @@ found {
     max-height: 360px;
     display: block;
     margin: auto;
+}
+
+.split-img-container {
+    display: flex;
+    width: 100%;
+    flex-flow: wrap;
+    justify-content: center;
+}
+
+.split-img {
+    box-sizing: border-box;
+    flex: 0 1 320px;
+    margin: 0;
 }
 
 blockquote:before, blockquote:after {
