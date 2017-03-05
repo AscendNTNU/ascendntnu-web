@@ -1337,6 +1337,7 @@ code {
 
 .history-event-view-image img {
     width: 100%;
+    max-height: initial;
 }
 
 .flex {
