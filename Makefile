@@ -23,6 +23,9 @@ upload-images:
 	@scp -r ./images/assets/* ascend@dev.ascendntnu.no:/home/ascend/ascendntnu-web/images/assets
 	@scp -r ./images/teams/20* ascend@dev.ascendntnu.no:/home/ascend/ascendntnu-web/images/teams
 
+upload-image:
+	@scp -r ./images/assets/${file} ascend@dev.ascendntnu.no:/home/ascend/ascendntnu-web/images/assets
+
 download-images:
 	@mkdir -p ./images/assets
 	@scp -r ascend@dev.ascendntnu.no:/home/ascend/ascendntnu-web/images/assets/* ./images/assets
