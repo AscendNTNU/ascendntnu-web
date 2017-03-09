@@ -20,7 +20,7 @@ export class SponsorPage extends React.Component<SponsorPageProps, SponsorPageSt
     super(props)
 
     this.state = {
-      year: props.params.year || 2016,
+      year: props.params.year || 2017,
     }
   }
 

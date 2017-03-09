@@ -1,4 +1,12 @@
-- name: Elefun
-  link: http://elefun.no/rc/multikopter.aspx
-  logo: /public/assets/elefun.png
-  short_text: Elefun is a Norwegian web shop selling a plethora of great drones, multicopters and FPV-systems. 
+- name: Kongsberg
+  type: main
+  link: http://kongsberg.com/
+  logo: /public/assets/kongsberg.svg
+  logo_dark: /public/assets/kongsberg_dark_bg.svg
+  short_text: Our main sponsor Kongsberg is an international, knowledge-based group that supplies high-technology systems and solutions to customers engaged in the oil and gas industry, the merchant marine, and the defence and aerospace industries.
+
+- name: NORBIT
+  link: https://norbit.com/
+  logo: /public/assets/norbit.svg
+  logo_dark: /public/assets/norbit_hvit.svg
+  short_text: NORBIT is an international, knowledge-based group that continuously designs, develops and manufactures high technology products, systems and solutions to meet their customers´ changing needs.
