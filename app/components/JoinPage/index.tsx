@@ -116,7 +116,7 @@ export class JoinPage extends React.Component<JoinPageProps, {}> {
         <Section title="Nå nye høyder - Søk til styret i Ascend!">
           <iframe style={{margin: '0 auto', border: 'none'}} width="560" height="315" src="https://www.youtube.com/embed/rWTa-20bNms" frameborder="0" allowfullscreen></iframe>
 
-          <p style={{color: 'red', fontSize: '2em'}}><b>Søknadsfrist 12. mars 2017 kl. 23:59</b></p>
+          <p style={{color: 'red', fontSize: '1.4em'}}><b>Søknadsfrist 12. mars 2017 kl. 23:59</b></p>
           <p><a href="https://www.facebook.com/events/621132008084025/"><b>Kom på infomøte i S4, Sentralbygget, Gløshaugen. Fredag 10. mars kl 16:15</b></a></p>
           <p>Ønsker du å være med på å drive med cutting-edge droneteknologi i en ambisiøs og teknologi-fokusert studentorganisasjon?</p>
           {/*<p>Ascend NTNU har hovedopptak på høsten hvert år for å ta in nye medlemmer.</p>*/}
