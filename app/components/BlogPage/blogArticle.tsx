@@ -92,7 +92,7 @@ export class BlogArticle extends React.Component<BlogArticleProps, BlogArticleSt
 
     if (typeof date === 'string') {
       format = (typeof format === 'string' ? format : 'dag DD.MM.YYYY (HH:mm:SS)')
-      let dager: string[] = ['Man', 'Tirs', 'Ons', 'Tors', 'Fre', 'Lør', 'Søn']
+      let dager: string[] = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
       let d: Date = new Date(date.replace(/-/g, '/').replace(/T/g, ' ').slice(0,19))
       let formatted: string = format.replace(new RegExp('da[gy]', 'ig'), dager[d.getDay()])
 
