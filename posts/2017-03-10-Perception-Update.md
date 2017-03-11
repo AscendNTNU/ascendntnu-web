@@ -18,7 +18,7 @@ Those artificial neurons are in fact, when put together in unimaginable amounts 
 ![Network Graph](/public/assets/perception-update-1/network-graph.jpg)
 <figcaption>A decription of a fully connected(hidden) layer.</figcaption>
 
-### Enough data for training.
+### Enough data for training
 
 Today's most accurate visual object detection systems are often associated with an extensive use of CNN. Due to their highly dimensional sub-symbolic nature, such networks can learn a lot of useful features in an image, if it is trained with enough data. That is where the "deep" part comes in. We make a black box learn to output if it is a red ground robot, green ground robot or nothing, with desired input. It is thus supervised learning. A lot of time has gone into making the data, which started with taking pictures of green and red roomba ground robots. Luckily, the process of training our first network was later done in a semi-supervised fashion, where we started with these pictures, then made a program to generate variants of each of these pictures (rotation, blurring etc.). An interactive correction of false negatives and false positives by altering training dataset was done using the NVIDIA Digits framework. At first, a we did transfer learning on a pre-trained AlexNet NN, a CNN that outperformed its competitors on the ILSVR 2012 competition with only 16% error rate, having its closest competitor at 26% error rate. Depicted is a similar smaller CNN following the same principles. Here, rectifier linear units (ReLU) are artificial neurons with rectifier activation functions stacked up in layers. Pooling is a type of dimensional reduction.
 
@@ -28,7 +28,7 @@ Then, using a sliding window approach, we got a very slow but accurate ground ro
 
 ![Ground Robot Detection](/public/assets/perception-update-1/ground-robot-detection.jpg)
 
-### Real-time.
+### Real-time
 
 Nevertheless, due to the sliding window approach, AlexNet was too slow for ground robot tracking (~1 minute computation time/total image). AlexNet was designed to take in low resolution images (128x128) and predict to which class it belongs, while we want to take in images not smaller than 640x480. In addition to detect robot in the image, we also wanted to find more of them, and their positions on the image. Despite low error on detection of robots, AlexNet with sliding window did not suffice in speed; we needed a faster network with similar performance on each of the robot detections.
 
@@ -41,10 +41,10 @@ Following the nature of a CNN, when doing convolutions on the features, the netw
 ![SSD VS. YOLO](/public/assets/perception-update-1/ssd-vs-yolo.jpg)
 <figcaption>You Only Look Once (YOLO) network, a similar much appraised one, is shown for comparison.</figcaption>
 
-### Parallelism.
+### Parallelism
 
 The basic algorithm used to train such networks, I.e. adjusting the weights, is called backpropagation. This training procedure can be done with high parallelism, thus it is a huge trade-off investing in high-end GPUs compared to CPUs. We have made use of various high end NVIDIA GPUs in our labs. Ascend NTNU's upcoming quadrotor will most likely contain 3 NVIDIA Jetson cards (TX1/TX2), which is quite impressive to have on a flying machine, although the training procedure itself will be done on faster computers.
 
-### The course.
+### The course
 
 What is left with this work, is to get a real-time or near real-time ground robot tracking system that is just as robust against illumination, occlusion etc. as AlexNet with a sliding window approach. To do so, the SSD network shall be re-trained with our robot data on the convolutional parts shown in the figure after the box with stipples. The CNN in this box is, again, a complex CNN trained on a huge image dataset such as ImageNet, with its last fully connected (classifier) layers removed. We are really looking forward to have such an accurate and robust CNN object recognition and detection system running at a sufficiently high framerate.
