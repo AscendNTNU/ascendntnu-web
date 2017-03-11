@@ -1,6 +1,6 @@
 ---
 layout: post
-image: /public/assets/planning-update-2/reward-system-context.jpg
+image: /public/assets/perception-update-1/ground-robot-detection.jpg
 title: "Perception Update: Deep learning in the Perception field of view"
 date: 2017-02-20 12:00:00
 categories: perception tech update
