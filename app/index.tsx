@@ -13,6 +13,7 @@ import JoinPage from './components/JoinPage'
 import AboutPage from './components/AboutPage'
 import SponsorPage from './components/SponsorPage'
 import MissionPage from './components/MissionPage'
+import CVPage from './components/CVPage'
 
 let gotoTop = () => {
   document.querySelector('body').scrollTop = 0
@@ -36,6 +37,7 @@ render (
       <Route path="/sponsors/:year" component={SponsorPage} />
       <Route path="/about" component={AboutPage} onEnter={gotoTop} />
       <Route path="/missions" component={MissionPage} onEnter={gotoTop} />
+      <Route path="/cv(/:key)" component={CVPage} onEnter={gotoTop} />
     </Route>
   </Router>,
   document.querySelector('#app')
