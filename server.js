@@ -60,11 +60,16 @@ app.get('/api/v1/posts/all', function (req, res) {
   res.send(JSON.stringify(files, null, 2))
 })
 
-app.get('/api/v1/cv/:key', function (req, res) {
+app.get('/api/v1/cv/:key?', function (req, res) {
   res.setHeader('Content-Type', 'application/json; charset=utf-8')
 
-  if (constants.access.indexOf(req.params.key) === -1) {
+  if (!req.params.key) {
     res.send(JSON.stringify({ error: 'Missing key' }, null, 2))
+    return false
+  }
+
+  if (constants.access.indexOf(req.params.key) === -1) {
+    res.send(JSON.stringify({ error: 'Key does not match' }, null, 2))
     return false
   }
 
