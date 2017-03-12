@@ -39,6 +39,10 @@ function pascalCase (str) {
   return str.split(' ').map(word => word.slice(0, 1).toUpperCase() + word.slice(1).toLowerCase()).join(' ')
 }
 
+function digits (value, places = 2) {
+  return (Array(places).join('0') + value).slice(-places)
+}
+
 app.get('/api/v1/posts/all', function (req, res) {
   var files = fs.readdirSync('./posts')
     .filter(file => /\.md$|\.markdown$/.test(file))
@@ -69,14 +73,17 @@ app.get('/api/v1/cv/:key', function (req, res) {
       .filter(file => /^\d+--[a-z\-øæå]+--[a-z]+--\d\d?--[a-z0-9]+\.[a-z0-9]+$/.test(file))
       .map(postName => {
         let info = postName.split('--')
-        let date = new Date(info[0])
-        let dateFormatted = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
+        let date = new Date(parseInt(info[0]))
+        let dateFormatted = `${date.getFullYear()}-${digits(date.getMonth())}-${digits(date.getDate())} ${digits(date.getHours())}:${digits(date.getMinutes())}:${digits(date.getSeconds())}`
         let name = info[1].split('-')
         return {
           date: dateFormatted,
           first_name: pascalCase(name.shift()),
           last_name: pascalCase(name.pop()),
-          middle_name: pascalCase(name ? name.join(' ') : '')
+          middle_name: pascalCase(name ? name.join(' ') : ''),
+          study: info[2],
+          year: parseInt(info[3]),
+          cv: postName
         }
     })
 
