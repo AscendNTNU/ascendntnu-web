@@ -842,9 +842,11 @@ figcaption {
     max-width: 100%;
 }
 
-.page-blog input {
+.page-blog input,
+.page-cv input {
     border: none;
     padding: 6px 8px;
+    border-radius: 3px;
     background-color: #f9f9f9;
     font-size: 1.2em;
     outline: none;
@@ -856,17 +858,20 @@ figcaption {
     transition-timing-function: ease-in-out;
 }
 
-.page-blog input:focus {
+.page-blog input:focus,
+.page-cv input:focus {
     background-color: #fff;
     transition-duration: .05s;
 }
 
-.dark-theme .page-blog input {
+.dark-theme .page-blog input,
+.dark-theme .page-cv input {
     background-color: #333;
     color: #ddd;
 }
 
-.dark-theme .page-blog input:focus {
+.dark-theme .page-blog input:focus,
+.dark-theme .page-cv input:focus {
     background-color: #292929;
 }
 
