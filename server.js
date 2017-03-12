@@ -35,6 +35,10 @@ function slugify (fileName) {
     .replace(/\.md$|\.markdown$/, '')
 }
 
+function pascalCase (str) {
+  return str.split(' ').map(word => word.slice(0, 1).toUpperCase() + word.slice(1).toLowerCase()).join(' ')
+}
+
 app.get('/api/v1/posts/all', function (req, res) {
   var files = fs.readdirSync('./posts')
     .filter(file => /\.md$|\.markdown$/.test(file))
@@ -50,6 +54,34 @@ app.get('/api/v1/posts/all', function (req, res) {
 
   res.setHeader('Content-Type', 'application/json; charset=utf-8')
   res.send(JSON.stringify(files, null, 2))
+})
+
+app.get('/api/v1/cv/:key', function (req, res) {
+  res.setHeader('Content-Type', 'application/json; charset=utf-8')
+
+  if (constants.access.indexOf(req.params.key) === -1) {
+    res.send(JSON.stringify({ error: 'Missing key' }, null, 2))
+    return false
+  }
+
+  if (constants.pathToCV) {
+    var files = fs.readdirSync(constants.pathToCV)
+      .filter(file => /^\d+--[a-z\-øæå]+--[a-z]+--\d\d?--[a-z0-9]+\.[a-z0-9]+$/.test(file))
+      .map(postName => {
+        let info = postName.split('--')
+        let date = new Date(info[0])
+        let dateFormatted = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
+        let name = info[1].split('-')
+        return {
+          date: dateFormatted,
+          first_name: pascalCase(name.shift()),
+          last_name: pascalCase(name.pop()),
+          middle_name: pascalCase(name ? name.join(' ') : '')
+        }
+    })
+
+    res.send(JSON.stringify({ students: files }, null, 2))
+  }
 })
 
 app.get('/api/v1/posts/:post', function (req, res) {
