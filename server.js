@@ -60,7 +60,7 @@ app.get('/api/v1/posts/all', function (req, res) {
   res.send(JSON.stringify(files, null, 2))
 })
 
-app.get('/api/v1/cv/:key?', function (req, res) {
+app.get('/api/v1/cv/:key?/:file?', function (req, res) {
   res.setHeader('Content-Type', 'application/json; charset=utf-8')
 
   if (!req.params.key) {
@@ -70,6 +70,18 @@ app.get('/api/v1/cv/:key?', function (req, res) {
 
   if (constants.access.indexOf(req.params.key) === -1) {
     res.send(JSON.stringify({ error: 'Key does not match' }, null, 2))
+    return false
+  }
+
+  if (req.params.file && /^\d+--[a-z\-øæå]+--[a-z]+--\d\d?--[a-z0-9]+\.[a-z0-9]+$/.test(req.params.file)) {
+    var files = fs.readdirSync(constants.pathToCV).filter(file => file === req.params.file)
+
+    if (files.length) {
+      res.download(__dirname + '/' + constants.pathToCV + '/' + files[0])
+    } else {
+      res.send('Could not find file.')
+    }
+
     return false
   }
 
