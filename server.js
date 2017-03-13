@@ -69,7 +69,7 @@ app.get('/api/v1/cv/:key?/:file?', function (req, res) {
   }
 
   if (constants.access.indexOf(req.params.key) === -1) {
-    res.send(JSON.stringify({ error: 'Key does not match' }, null, 2))
+    res.send(JSON.stringify({ error: 'Key do not match' }, null, 2))
     return false
   }
 
