@@ -70,7 +70,7 @@ export class CVPage extends React.Component<CVPageProps, CVPageState> {
         <SubSection key={i} title={`${e.first_name} ${e.middle_name ? (e.middle_name + ' ') : ''}${e.last_name}`}>
           <div>Study: {e.study.toUpperCase()}</div>
           <div>Year: {e.year}</div>
-          <div>CV: {e.cv}</div>
+          <div>CV: <a href={'/api/v1/cv/' + this.props.params.key + '/' + e.cv}>File</a></div>
         </SubSection>
       ))
     }
