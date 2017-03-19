@@ -243,10 +243,14 @@ input[type="submit"].active,
         display: flex;
     }
 
+    .nav-bar .dropdown > .links,
+    .app.dark-theme .nav-bar .dropdown > .links {
+        background: rgba(0, 0, 0, .1);
+    }
+
     .nav-bar .dropdown > .links {
         position: static;
         margin: 0;
-        background: rgba(0, 0, 0, .1);
         font-size: .8em;
         margin: 13px -8px;
     }
