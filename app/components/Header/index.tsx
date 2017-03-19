@@ -6,7 +6,18 @@ export interface HeaderProps {
   toggle: boolean,
 }
 
-export class Header extends React.Component<HeaderProps, {}> {
+export interface HeaderState {
+  hoverAbout: boolean
+}
+
+export class Header extends React.Component<HeaderProps, HeaderState> {
+  constructor (props: HeaderProps) {
+    super(props)
+    this.state = {
+      hoverAbout: false
+    }
+  }
+
   private hideMenu () {
     if (this.props.toggle)
       this.props.toggleMenuHandler
@@ -31,10 +42,23 @@ export class Header extends React.Component<HeaderProps, {}> {
             <IndexLink onClick={this.props.toggleMenuHandler} className="nav-element" activeClassName="active" to="/">Home</IndexLink>
             <Link onClick={this.props.toggleMenuHandler} className="nav-element" activeClassName="active" to="/blog">Blog</Link>
             <Link onClick={this.props.toggleMenuHandler} className="nav-element" activeClassName="active" to="/drones">Drones</Link>
-            <Link onClick={this.props.toggleMenuHandler} className="nav-element" activeClassName="active" to="/team">Team</Link>
             <Link onClick={this.props.toggleMenuHandler} className="nav-element" activeClassName="active" to="/join">Join Us</Link>
-            <Link onClick={this.props.toggleMenuHandler} className="nav-element" activeClassName="active" to="/missions">Missions</Link>
-            <Link onClick={this.props.toggleMenuHandler} className="nav-element" activeClassName="active" to="/about">About</Link>
+            <Link onClick={this.props.toggleMenuHandler} className="nav-element" activeClassName="active" to="/sponsors">Sponsors</Link>
+            <div className={`nav-element dropdown ${this.state.hoverAbout ? 'show' : ''}`}
+              onClick={() => {this.setState({ hoverAbout: !this.state.hoverAbout })}}>
+              <div className="toggle-menu">
+                <i className={`fa fa-${this.state.hoverAbout ? 'times' : 'bars'}`}></i>
+              </div>
+              <div className="toggle-menu-small-screen">
+                More <i className={`fa fa-caret-${this.state.hoverAbout ? 'up' : 'down'}`}></i>
+              </div>
+              <div className="links">
+                <Link onClick={this.props.toggleMenuHandler} className="nav-element" activeClassName="active" to="/about">About</Link>
+                <Link onClick={this.props.toggleMenuHandler} className="nav-element" activeClassName="active" to="/missions">Missions</Link>
+                <Link onClick={this.props.toggleMenuHandler} className="nav-element" activeClassName="active" to="/teams">Teams</Link>
+                <Link onClick={this.props.toggleMenuHandler} className="nav-element" activeClassName="active" to="/contact">Contact</Link>
+              </div>
+            </div>
           </nav>
         </div>
       </div>
