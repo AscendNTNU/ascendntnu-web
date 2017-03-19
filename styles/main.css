@@ -209,6 +209,10 @@ input[type="submit"].active,
     box-sizing: border-box;
 }
 
+.app.dark-theme .nav-bar .dropdown > .links {
+    background-color: #333;
+}
+
 .nav-bar .dropdown.show .links {
     display: flex;
 }
