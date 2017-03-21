@@ -55,7 +55,7 @@ export class Header extends React.Component<HeaderProps, HeaderState> {
               <div className="links">
                 <Link onClick={this.props.toggleMenuHandler} className="nav-element" activeClassName="active" to="/about">About</Link>
                 <Link onClick={this.props.toggleMenuHandler} className="nav-element" activeClassName="active" to="/missions">Missions</Link>
-                <Link onClick={this.props.toggleMenuHandler} className="nav-element" activeClassName="active" to="/teams">Teams</Link>
+                <Link onClick={this.props.toggleMenuHandler} className="nav-element" activeClassName="active" to="/team">Team</Link>
                 <Link onClick={this.props.toggleMenuHandler} className="nav-element" activeClassName="active" to="/contact">Contact</Link>
               </div>
             </div>
