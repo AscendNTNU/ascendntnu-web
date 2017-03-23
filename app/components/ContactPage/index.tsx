@@ -47,7 +47,7 @@ export class Addresses extends React.Component<{}, {}> {
     return (
       <SubSection title="Addresses">
         <p>
-          <strong>Physical address</strong>, <a href="http://maps.google.com/?q=O.+S.+Bragstads+Plass+2,+7034+Trondheim,+Norway">click here to view in google maps</a>
+          <strong>Postal address</strong>, <a href="http://maps.google.com/?q=O.+S.+Bragstads+Plass+2,+7034+Trondheim,+Norway">click here to view in google maps</a>
         </p>
         <address>
           Ascend NTNU<br />
@@ -57,12 +57,12 @@ export class Addresses extends React.Component<{}, {}> {
           Norway
         </address>
 
-        <p><strong>Postal address</strong></p>
+        <p><strong>Physical address</strong></p>
         <address>
           Ascend NTNU<br />
-          NTNU Gløshaugen<br />
+          EL-bygget, NTNU Gløshaugen<br />
           7491 Trondheim<br />
-          Norway  
+          Norway
         </address>
       </SubSection>
     )
