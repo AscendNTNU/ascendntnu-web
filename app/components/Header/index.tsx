@@ -47,7 +47,7 @@ export class Header extends React.Component<HeaderProps, HeaderState> {
             <div className={`nav-element dropdown ${this.state.hoverAbout ? 'show' : ''}`}
               onClick={() => {this.setState({ hoverAbout: !this.state.hoverAbout })}}>
               <div className="toggle-menu">
-                <i className={`fa fa-${this.state.hoverAbout ? 'caret-down' : 'caret-up'}`}></i>
+                More <i className={`fa fa-${this.state.hoverAbout ? 'caret-up' : 'caret-down'}`}></i>
               </div>
               <div className="toggle-menu-small-screen">
                 More <i className={`fa fa-caret-${this.state.hoverAbout ? 'up' : 'down'}`}></i>
