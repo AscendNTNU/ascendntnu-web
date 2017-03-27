@@ -835,14 +835,17 @@ figcaption {
     font-weight: bold;
     font-size: .8em;
     font-style: italic;
+    padding: .5em 0;
 }
 
-.page .img-float-right + img {
+.page .img-float-right + img,
+.page .img-float-right + figure {
     float: right;
     margin: 8px 0 16px 16px;
 }
 
-.page .img-float-left + img {
+.page .img-float-left + img,
+.page .img-float-left + figure {
     float: left;
     margin: 8px 16px 16px 0;
 }
@@ -1188,7 +1191,7 @@ found {
 .split-img {
     box-sizing: border-box;
     flex: 0 1 320px;
-    margin: 0;
+    margin: 8px;
 }
 
 blockquote:before, blockquote:after {
