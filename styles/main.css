@@ -1024,7 +1024,22 @@ found {
     flex-flow: wrap row;
     justify-content: center;
     margin-bottom: 100px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
+
+.teampage-team[data-group='admin'] { background-image: url(/images/teams/current-logoes/admin-white.svg); }
+.teampage-team[data-group='control'] { background-image: url(/images/teams/current-logoes/control-white.svg); }
+.teampage-team[data-group='hardware'] { background-image: url(/images/teams/current-logoes/hardware-white.svg); }
+.teampage-team[data-group='perception'] { background-image: url(/images/teams/current-logoes/perception-white.svg); }
+.teampage-team[data-group='planning'] { background-image: url(/images/teams/current-logoes/planning-white.svg); }
+
+.app.dark-theme .teampage-team[data-group='admin'] { background-image: url(/images/teams/current-logoes/admin.svg); }
+.app.dark-theme .teampage-team[data-group='control'] { background-image: url(/images/teams/current-logoes/control.svg); }
+.app.dark-theme .teampage-team[data-group='hardware'] { background-image: url(/images/teams/current-logoes/hardware.svg); }
+.app.dark-theme .teampage-team[data-group='perception'] { background-image: url(/images/teams/current-logoes/perception.svg); }
+.app.dark-theme .teampage-team[data-group='planning'] { background-image: url(/images/teams/current-logoes/planning.svg); }
 
 .team-leaders, .team-members {
     display: flex;
