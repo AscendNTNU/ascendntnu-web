@@ -68,7 +68,7 @@ export class Section extends React.Component<SectionProps, {}> {
     }
 
     return (
-      <div className={this.className}>
+      <div {...this.props} className={this.className}>
         {this.title}
         {this.props.children}
       </div>
@@ -116,7 +116,7 @@ export class SubSection extends React.Component<SubSectionProps, {}> {
     }
 
     return (
-      <div className={this.className}>
+      <div {...this.props} className={this.className}>
         {this.title}
         {this.props.children}
       </div>
@@ -164,7 +164,7 @@ export class SubSubSection extends React.Component<SubSubSectionProps, {}> {
     }
 
     return (
-      <div className={this.className}>
+      <div {...this.props} className={this.className}>
         {this.title}
         {this.props.children}
       </div>
