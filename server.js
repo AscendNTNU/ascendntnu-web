@@ -224,22 +224,93 @@ app.get('/blog/:post', function (req, res) {
     }
     var desc = postData.body.slice(0, 320)
 
-    res.send(`<!doctype html>
+    res.send(prerender(req, {
+      title: title,
+      desc: desc,
+      image: image
+    }))
+  } else {
+    res.sendFile(__dirname + '/index.html')
+  }
+})
+
+app.get('/*', function (req, res) {
+  let pieces = req.originalUrl.split(/\//)
+  switch (pieces[1]) {
+    case 'blog':
+      res.send(prerender(req, {
+        title: 'Blog',
+        desc: 'Read the Ascend NTNU blog and get the newest updates from the group.',
+      }))
+      break
+    case 'drones':
+      res.send(prerender(req, {
+        title: 'Drones',
+        desc: 'Ascend NTNU makes a new drone every year. Here you can view them all.',
+      }))
+      break
+    case 'join':
+      res.send(prerender(req, {
+        title: 'Join',
+        desc: 'Want to join our team? Send a mail or sign up for upcoming opportunities.',
+      }))
+      break
+    case 'sponsors':
+      res.send(prerender(req, {
+        title: 'Sponsors',
+        desc: 'This is the sponsor page. If you want to support Ascend NTNU we are happy to have you as sponsors.',
+      }))
+      break
+    case 'about':
+      res.send(prerender(req, {
+        title: 'About',
+      }))
+      break
+    case 'missions':
+      res.send(prerender(req, {
+        title: 'Missions',
+        desc: 'Our main purpose is to solve a missions which was created in 2014. It may be impossble to solve it today, but as tech grows we may be able to solve the mission tomorrow.',
+      }))
+      break
+    case 'team':
+      res.send(prerender(req, {
+        title: 'Our team',
+        desc: 'Our team has 28 members divided into 5 main groups. You can ream more about the groups here...',
+      }))
+      break
+    case 'contact':
+      res.send(prerender(req, {
+        title: 'Contact',
+        desc: 'Want to contact us? Feel free to send us a mail and we will contact you back.',
+      }))
+      break
+  }
+
+  res.sendFile(__dirname + '/index.html')
+})
+
+function prerender (req, data) {
+  data.title = data.title || 'Ascend NTNU - Home'
+  data.desc = data.desc || `Autonomus aerial robotics. Ascend NTNU is The Norwegian University of Science and Technology's team in the International Aerial Robotics Competition (IARC).`
+  data.image = data.image || '/images/logo/logo.png'
+  data.link = data.link || req.protocol + '://' + req.get('host') + req.originalUrl
+
+  return `<!doctype html>
 <html>
   <head>
-    <title>AscendNTNU</title>
+    <title>${data.title}</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui" />
-    <meta name="description" content="${desc}" />
+    <meta name="description" content="${data.desc}" />
     <meta name="keywords" content="Ascend, NTNU, robotics, autonomus, team, IARC, international, aerial, robotics, competition, AI" />
     <meta name="author" content="Ascend NTNU" />
     <meta property="fb:app_id" content="202744680073731" />
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="${image}" />
-    <meta property="og:title" content="Ascend NTNU - ${title}" />
-    <meta property="og:description" content="${desc}..." />
-    <meta property="og:url" content="https://ascendntnu.no/blog/${link}" />
+    <meta property="og:image" content="${data.image}" />
+    <meta property="og:title" content="Ascend NTNU - ${data.title}" />
+    <meta property="og:description" content="${data.desc}" />
+    <meta property="og:url" content="${data.link}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" />
     <link rel="shortcut icon" href="/images/logo/logo.png" />
     <link rel="stylesheet" href="/node_modules/katex/dist/katex.min.css" />
@@ -261,12 +332,5 @@ app.get('/blog/:post', function (req, res) {
     }(document, "script", "facebook-jssdk"));
     </script>
   </body>
-</html>`)
-  } else {
-    res.sendFile(__dirname + '/index.html')
-  }
-})
-
-app.get('/*', function (req, res) {
-  res.sendFile(__dirname + '/index.html')
-})
+</html>`
+}
