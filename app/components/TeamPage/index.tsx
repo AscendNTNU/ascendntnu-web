@@ -218,7 +218,7 @@ export class TeamPage extends React.Component<TeamPageProps, TeamPageState> {
       })
 
       return (
-        <SubSection key={n} className="teampage-team centered">
+        <SubSection key={n} className="teampage-team centered" data-group={group.toLowerCase()}>
           <div className="team-leaders">
             {leader}
             <div className="team-description">
