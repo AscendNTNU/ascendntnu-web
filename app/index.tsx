@@ -16,9 +16,11 @@ import MissionPage from './components/MissionPage'
 import CVPage from './components/CVPage'
 import ContactPage from './components/ContactPage'
 
-let gotoTop = () => {
+let gotoTop = (args: any) => {
   document.querySelector('body').scrollTop = 0
   document.querySelector('#app').scrollTop = 0
+  const [ first, ...rest ] = args.location.pathname.slice(1)
+  document.title = 'Ascend NTNU - ' + first.toUpperCase() + rest
 }
 
 //const browserHistory = useRouterHistory(createHistory)({ basename: '/' })
