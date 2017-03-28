@@ -290,7 +290,7 @@ app.get('/*', function (req, res) {
 })
 
 function prerender (req, data) {
-  data.title = data.title || 'Ascend NTNU - Home'
+  data.title = data.title || 'Home'
   data.desc = data.desc || `Autonomus aerial robotics. Ascend NTNU is The Norwegian University of Science and Technology's team in the International Aerial Robotics Competition (IARC).`
   data.image = data.image || '/images/logo/logo.png'
   data.link = data.link || req.protocol + '://' + req.get('host') + req.originalUrl
@@ -298,7 +298,7 @@ function prerender (req, data) {
   return `<!doctype html>
 <html>
   <head>
-    <title>${data.title}</title>
+    <title>Ascend NTNU - ${data.title}</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui" />
