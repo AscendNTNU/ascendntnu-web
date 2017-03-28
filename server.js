@@ -240,25 +240,25 @@ app.get('/*', function (req, res) {
     case 'blog':
       res.send(prerender(req, {
         title: 'Blog',
-        desc: 'Read the Ascend NTNU blog and get the newest updates from the group.',
+        desc: 'Read the Ascend NTNU blog and get the newest updates from the group.'
       }))
       break
     case 'drones':
       res.send(prerender(req, {
         title: 'Drones',
-        desc: 'Ascend NTNU makes a new drone every year. Here you can view them all.',
+        desc: 'Ascend NTNU makes a new drone every year. Here you can view them all.'
       }))
       break
     case 'join':
       res.send(prerender(req, {
         title: 'Join',
-        desc: 'Want to join our team? Send a mail or sign up for upcoming opportunities.',
+        desc: 'Want to join our team? Send a mail or sign up for upcoming opportunities.'
       }))
       break
     case 'sponsors':
       res.send(prerender(req, {
         title: 'Sponsors',
-        desc: 'This is the sponsor page. If you want to support Ascend NTNU we are happy to have you as sponsors.',
+        desc: 'This is the sponsor page. If you want to support Ascend NTNU we are happy to have you as sponsors.'
       }))
       break
     case 'about':
@@ -269,19 +269,19 @@ app.get('/*', function (req, res) {
     case 'missions':
       res.send(prerender(req, {
         title: 'Missions',
-        desc: 'Our main purpose is to solve a missions which was created in 2014. It may be impossble to solve it today, but as tech grows we may be able to solve the mission tomorrow.',
+        desc: 'Our main purpose is to solve a missions which was created in 2014. It may be impossble to solve it today, but as tech grows we may be able to solve the mission tomorrow.'
       }))
       break
     case 'team':
       res.send(prerender(req, {
         title: 'Our team',
-        desc: 'Our team has 28 members divided into 5 main groups. You can ream more about the groups here...',
+        desc: 'Our team has 28 members divided into 5 main groups. You can ream more about the groups here...'
       }))
       break
     case 'contact':
       res.send(prerender(req, {
         title: 'Contact',
-        desc: 'Want to contact us? Feel free to send us a mail and we will contact you back.',
+        desc: 'Want to contact us? Feel free to send us a mail and we will contact you back.'
       }))
       break
   }
