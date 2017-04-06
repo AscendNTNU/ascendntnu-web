@@ -69,11 +69,11 @@ app.get('/api/v1/cv/:key?/:file?', function (req, res) {
   }
 
   if (constants.access.indexOf(req.params.key) === -1) {
-    res.send(JSON.stringify({ error: 'Key do not match' }, null, 2))
+    res.send(JSON.stringify({ error: 'Key do not match any' }, null, 2))
     return false
   }
 
-  if (req.params.file && /^\d+--[a-z\-øæå]+--[a-z]+--\d\d?--[a-z0-9]+\.[a-z0-9]+$/.test(req.params.file)) {
+  if (req.params.file && /^\d+--[a-z\-øæå]+--[a-z]+--\d\d?--[a-z]+--[a-z0-9]+\.[a-z0-9]+$/.test(req.params.file)) {
     var files = fs.readdirSync(constants.pathToCV).filter(file => file === req.params.file)
 
     if (files.length) {
@@ -87,24 +87,34 @@ app.get('/api/v1/cv/:key?/:file?', function (req, res) {
 
   if (constants.pathToCV) {
     var files = fs.readdirSync(constants.pathToCV)
-      .filter(file => /^\d+--[a-z\-øæå]+--[a-z]+--\d\d?--[a-z0-9]+\.[a-z0-9]+$/.test(file))
+      .filter(file => /^\d+--[a-z\-øæå]+--[a-z]+--\d\d?--[a-z]+--[a-z0-9]+\.[a-z0-9]+$/.test(file.toLowerCase()))
       .map(postName => {
-        let info = postName.split('--')
-        let date = new Date(parseInt(info[0]))
-        let dateFormatted = `${date.getFullYear()}-${digits(date.getMonth())}-${digits(date.getDate())} ${digits(date.getHours())}:${digits(date.getMinutes())}:${digits(date.getSeconds())}`
-        let name = info[1].split('-')
-        return {
-          date: dateFormatted,
-          first_name: pascalCase(name.shift()),
-          last_name: pascalCase(name.pop()),
-          middle_name: pascalCase(name ? name.join(' ') : ''),
-          study: info[2],
-          year: parseInt(info[3]),
-          cv: postName
-        }
+      let info = postName.split(/--|\./)
+      let date = new Date(parseInt(info[0]))
+      let dateFormatted = `${date.getFullYear()}-${digits(date.getMonth())}-${digits(date.getDate())} ${digits(date.getHours())}:${digits(date.getMinutes())}:${digits(date.getSeconds())}`
+      let name = info[1].split('-')
+      let description = fs.readdirSync(constants.pathToCV)
+        .filter(file => file === `description-${info[5]}.txt`)
+        .map(desc => {
+        return fs.readFileSync(`${constants.pathToCV}/description-${info[5]}.txt`, 'utf-8')
+      }) + ''
+
+      return {
+        date: dateFormatted,
+        first_name: pascalCase(name.shift()),
+        last_name: pascalCase(name.pop()),
+        middle_name: pascalCase(name ? name.join(' ') : ''),
+        study: info[2],
+        year: parseInt(info[3]),
+        group: info[4],
+        description: description,
+        cv: postName
+      }
     })
 
     res.send(JSON.stringify({ students: files }, null, 2))
+  } else {
+    res.send('Backend issue. No path to CV specified.')
   }
 })
 
@@ -215,6 +225,8 @@ app.get('/blog/:post', function (req, res) {
     var postData = fm(fs.readFileSync(pathToPost) + '')
     var link = slugify(files[0])
     var title = postData.attributes.title
+    let d = postData.attributes.date
+    var date = `${d.getFullYear()}-${digits(d.getMonth())}-${digits(d.getDate())} ${digits(d.getHours())}:${digits(d.getMinutes())}:${digits(d.getSeconds())}`
     var image = 'https://ascendntnu.no/images/logo/logo.png'
     if (postData.attributes.image) {
       if (/^http/.test(postData.attributes.image))
@@ -227,6 +239,7 @@ app.get('/blog/:post', function (req, res) {
     res.send(prerender(req, {
       title: title,
       desc: desc,
+      date: date,
       image: image
     }))
   } else {
@@ -294,6 +307,7 @@ function prerender (req, data) {
   data.desc = data.desc || `Autonomus aerial robotics. Ascend NTNU is The Norwegian University of Science and Technology's team in the International Aerial Robotics Competition (IARC).`
   data.image = data.image || '/images/logo/logo.png'
   data.link = data.link || req.protocol + '://' + req.get('host') + req.originalUrl
+  data.date = data.date || ''
 
   return `<!doctype html>
 <html>
@@ -306,6 +320,7 @@ function prerender (req, data) {
     <meta name="keywords" content="Ascend, NTNU, robotics, autonomus, team, IARC, international, aerial, robotics, competition, AI" />
     <meta name="author" content="Ascend NTNU" />
     <meta property="fb:app_id" content="202744680073731" />
+    ${data.date ? `<meta property="og:date" content="${data.date}" />` : ''}
     <meta property="og:type" content="article" />
     <meta property="og:image" content="${data.image}" />
     <meta property="og:title" content="Ascend NTNU - ${data.title}" />
