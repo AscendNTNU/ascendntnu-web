@@ -126,7 +126,8 @@ export class BlogArticle extends React.Component<BlogArticleProps, BlogArticleSt
     })
 
     return (
-      <Section className="page-blog" title={this.state.attributes.title}>
+      <Section className="page-blog">
+        <h1 className="section-title">{this.state.attributes.title}</h1>
         <div className="blog-post-details">
           <div className="blog-post-author">
             {this.state.attributes.author}
@@ -148,7 +149,7 @@ export class BlogArticle extends React.Component<BlogArticleProps, BlogArticleSt
             {categories}
           </div>
         </div>
-        <div ref="post" dangerouslySetInnerHTML={ {__html: this.state.post} } />
+        <div className="blog-post-content" ref="post" dangerouslySetInnerHTML={ {__html: this.state.post} } />
       </Section>
     )
   }
