@@ -14,7 +14,12 @@ interface CVPageProps {
 interface CVPageState {
   students: any[],
   error?: string,
-  key?: string
+  key?: string,
+  categories?: {
+    groups?: string[],
+    years?: string[],
+    studyCodes?: string[],
+  },
 }
 
 export class CVPage extends React.Component<CVPageProps, CVPageState> {
@@ -23,7 +28,12 @@ export class CVPage extends React.Component<CVPageProps, CVPageState> {
 
     this.state = {
       students: [],
-      key: props.params.key || null
+      key: props.params.key || null,
+      categories: {
+        groups: [],
+        years: [],
+        studyCodes: [],
+      },
     }
 
     if (this.props.params && this.props.params.key) {
@@ -42,12 +52,34 @@ export class CVPage extends React.Component<CVPageProps, CVPageState> {
       if (data.error) {
         this.setState(Object.assign({}, this.state, {
           students: [],
-          error: data.error
+          error: data.error,
+          categories: {
+            groups: [],
+            years: [],
+            studyCodes: [],
+          },
         }))
       } else {
+        let groups: string[] = []
+        let years: string[] = []
+        let studyCodes: string[] = []
+
+        for (let student of data.students) {
+          if (groups.indexOf(student.group) === -1) groups.push(student.group)
+          if (years.indexOf(student.year) === -1) years.push(student.year)
+          if (studyCodes.indexOf(student.study) === -1) studyCodes.push(student.study)
+        }
+
+        console.log(groups, years, studyCodes)
+
         this.setState(Object.assign({}, this.state, {
           students: data.students,
-          error: null
+          error: null,
+          categories: {
+            groups: groups,
+            years: years,
+            studyCodes: studyCodes,
+          },
         }))
       }
     })

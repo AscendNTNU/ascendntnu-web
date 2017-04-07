@@ -1,10 +1,10 @@
-var express = require('express')
-var app = express()
-var fs = require('fs')
-var mkdirp = require('mkdirp')
-var yamljs = require('yamljs')
-var fm = require('front-matter')
-var constants = require('./constants')
+let express = require('express')
+let app = express()
+let fs = require('fs')
+let mkdirp = require('mkdirp')
+let yamljs = require('yamljs')
+let fm = require('front-matter')
+let constants = require('./constants')
 
 app.use('/images', express.static(__dirname + '/images'))
 app.use('/public/assets', express.static(__dirname + '/images/assets'))
@@ -20,7 +20,7 @@ app.get('/api/v1', function (req, res) {
 })
 
 app.get('/api/v1/posts', function (req, res) {
-  var files = fs.readdirSync('./posts')
+  let files = fs.readdirSync('./posts')
     .filter(file => /\.md$|\.markdown$/.test(file))
     .map(slugify)
 
@@ -44,11 +44,11 @@ function digits (value, places = 2) {
 }
 
 app.get('/api/v1/posts/all', function (req, res) {
-  var files = fs.readdirSync('./posts')
+  let files = fs.readdirSync('./posts')
     .filter(file => /\.md$|\.markdown$/.test(file))
     .map(postName => {
-    var pathToPost = __dirname + '/posts/' + postName
-    var element = {}
+    let pathToPost = __dirname + '/posts/' + postName
+    let element = {}
     if (fileExists(pathToPost))
       element = fm(fs.readFileSync(pathToPost) + '')
     element['file'] = postName
@@ -74,7 +74,7 @@ app.get('/api/v1/cv/:key?/:file?', function (req, res) {
   }
 
   if (req.params.file && /^\d+--[a-z\-øæå]+--[a-z]+--\d\d?--[a-z]+--[a-z0-9]+\.[a-z0-9]+$/.test(req.params.file)) {
-    var files = fs.readdirSync(constants.pathToCV).filter(file => file === req.params.file)
+    let files = fs.readdirSync(constants.pathToCV).filter(file => file === req.params.file)
 
     if (files.length) {
       res.download(__dirname + '/' + constants.pathToCV + '/' + files[0])
@@ -86,17 +86,17 @@ app.get('/api/v1/cv/:key?/:file?', function (req, res) {
   }
 
   if (constants.pathToCV) {
-    var files = fs.readdirSync(constants.pathToCV)
-      .filter(file => /^\d+--[a-z\-øæå]+--[a-z]+--\d\d?--[a-z]+--[a-z0-9]+\.[a-z0-9]+$/.test(file.toLowerCase()))
+    let files = fs.readdirSync(constants.pathToCV)
+      .filter(file => /^\d+--[a-z\-øæå]+--[a-z]+--\d\d?--[a-z]+--[a-z0-9\-]+\.[a-z0-9]+$/.test(file.toLowerCase()))
       .map(postName => {
       let info = postName.split(/--|\./)
       let date = new Date(parseInt(info[0]))
       let dateFormatted = `${date.getFullYear()}-${digits(date.getMonth())}-${digits(date.getDate())} ${digits(date.getHours())}:${digits(date.getMinutes())}:${digits(date.getSeconds())}`
-      let name = info[1].split('-')
+      let name = info[2].split('-')
       let description = fs.readdirSync(constants.pathToCV)
-        .filter(file => file === `description-${info[5]}.txt`)
+        .filter(file => file === `description--${info[6]}.txt`)
         .map(desc => {
-        return fs.readFileSync(`${constants.pathToCV}/description-${info[5]}.txt`, 'utf-8')
+        return fs.readFileSync(`${constants.pathToCV}/description--${info[6]}.txt`, 'utf-8')
       }) + ''
 
       return {
@@ -104,9 +104,9 @@ app.get('/api/v1/cv/:key?/:file?', function (req, res) {
         first_name: pascalCase(name.shift()),
         last_name: pascalCase(name.pop()),
         middle_name: pascalCase(name ? name.join(' ') : ''),
-        study: info[2],
-        year: parseInt(info[3]),
-        group: info[4],
+        study: info[3].toUpperCase(),
+        year: parseInt(info[4]),
+        group: info[5].toLowerCase(),
         description: description,
         cv: postName
       }
@@ -119,15 +119,15 @@ app.get('/api/v1/cv/:key?/:file?', function (req, res) {
 })
 
 app.get('/api/v1/posts/:post', function (req, res) {
-  var postName = req.params.post
-  var files = fs.readdirSync('./posts')
+  let postName = req.params.post
+  let files = fs.readdirSync('./posts')
     .filter(file => new RegExp(postName, 'i').test(file))
-  var pathToPost = __dirname + '/posts/' + (files[0] || '')
+  let pathToPost = __dirname + '/posts/' + (files[0] || '')
 
   res.setHeader('Content-Type', 'application/json; charset=utf-8')
 
   if (fileExists(pathToPost) && files.length) {
-    var postData = fm(fs.readFileSync(pathToPost) + '')
+    let postData = fm(fs.readFileSync(pathToPost) + '')
     postData['file'] = files[0]
     postData['link'] = slugify(files[0])
     res.send(JSON.stringify(postData, null, 2))
@@ -136,10 +136,10 @@ app.get('/api/v1/posts/:post', function (req, res) {
 })
 
 app.get('/api/v1/:section', function (req, res) {
-  var section = req.params.section
-  var validSection = /^[a-z]+$/.test(section)
+  let section = req.params.section
+  let validSection = /^[a-z]+$/.test(section)
 
-  var fileName = __dirname + '/api/v1/' + section + '.json'
+  let fileName = __dirname + '/api/v1/' + section + '.json'
 
   if (validSection && fileExists(fileName)) {
     res.setHeader('Content-Type', 'application/json; charset=utf-8')
@@ -149,13 +149,13 @@ app.get('/api/v1/:section', function (req, res) {
 })
 
 app.get('/api/v1/:section/:year', function (req, res) {
-  var year = req.params.year
-  var validYear = /^20[0-9]{2}$/.test(year)
+  let year = req.params.year
+  let validYear = /^20[0-9]{2}$/.test(year)
 
-  var section = req.params.section
-  var validSection = /^[a-z]+$/.test(section)
+  let section = req.params.section
+  let validSection = /^[a-z]+$/.test(section)
 
-  var fileName = __dirname + '/api/v1/' + year + '/' + section + '.json'
+  let fileName = __dirname + '/api/v1/' + year + '/' + section + '.json'
 
   if (validSection && validYear && fileExists(fileName)) {
     res.setHeader('Content-Type', 'application/json; charset=utf-8')
@@ -164,22 +164,22 @@ app.get('/api/v1/:section/:year', function (req, res) {
     res.sendFile(__dirname + '/api/v1/index.html')
 })
 
-var years = [2016, 2017]
-var groups = {
+let years = [2016, 2017]
+let groups = {
   'history': {},
   'sponsors': {},
   'members': {}
 }
 
-var data = []
-var fileName = ''
-var dirName = ''
-var dataFormatted = ''
+let data = []
+let fileName = ''
+let dirName = ''
+let dataFormatted = ''
 
 years.forEach(year => {
   dirName = 'api/v1/' + year
 
-  for (var group in groups) {
+  for (let group in groups) {
     data = []
     fileName = 'data/' + group + '.' + year + '.yml'
 
@@ -198,7 +198,7 @@ years.forEach(year => {
 
 dirName = 'api/v1'
 
-for (var group in groups) {
+for (let group in groups) {
   dataFormatted = JSON.stringify(groups[group], null, 2)
   fs.writeFile(dirName + '/' + group + '.json', dataFormatted, err => {
     if (err) throw err
@@ -207,7 +207,7 @@ for (var group in groups) {
 
 function fileExists (filePath) {
   try {
-    var exists = fs.statSync(filePath)
+    let exists = fs.statSync(filePath)
     return true
   } catch (err) {
     return false
@@ -215,26 +215,26 @@ function fileExists (filePath) {
 }
 
 app.get('/blog/:post', function (req, res) {
-  var post = req.params.post
+  let post = req.params.post
 
-  var files = fs.readdirSync('./posts')
+  let files = fs.readdirSync('./posts')
     .filter(file => new RegExp(post, 'i').test(file))
-  var pathToPost = __dirname + '/posts/' + (files[0] || '')
+  let pathToPost = __dirname + '/posts/' + (files[0] || '')
 
   if (fileExists(pathToPost) && files.length) {
-    var postData = fm(fs.readFileSync(pathToPost) + '')
-    var link = slugify(files[0])
-    var title = postData.attributes.title
+    let postData = fm(fs.readFileSync(pathToPost) + '')
+    let link = slugify(files[0])
+    let title = postData.attributes.title
     let d = postData.attributes.date
-    var date = `${d.getFullYear()}-${digits(d.getMonth())}-${digits(d.getDate())} ${digits(d.getHours())}:${digits(d.getMinutes())}:${digits(d.getSeconds())}`
-    var image = 'https://ascendntnu.no/images/logo/logo.png'
+    let date = `${d.getFullYear()}-${digits(d.getMonth())}-${digits(d.getDate())} ${digits(d.getHours())}:${digits(d.getMinutes())}:${digits(d.getSeconds())}`
+    let image = 'https://ascendntnu.no/images/logo/logo.png'
     if (postData.attributes.image) {
       if (/^http/.test(postData.attributes.image))
         image = postData.attributes.image
       else
         image = 'https://ascendntnu.no' + postData.attributes.image
     }
-    var desc = postData.body.slice(0, 320)
+    let desc = postData.body.slice(0, 320)
 
     res.send(prerender(req, {
       title: title,
@@ -339,7 +339,7 @@ function prerender (req, data) {
     <div id="fb-root"></div>
     <script>
     (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
+      let js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) return;
       js = d.createElement(s); js.id = id;
       js.src = "//connect.facebook.net/nb_NO/sdk.js#xfbml=1&version=v2.8&appId=202744680073731";
