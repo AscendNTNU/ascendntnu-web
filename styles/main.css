@@ -713,6 +713,48 @@ body.no-scroll {
     text-shadow: 0 1px 4px #000;
 }
 
+.dark-theme .section-title:empty,
+.dark-theme .sub-section-title:empty,
+.dark-theme .blog-post-date:empty,
+.dark-theme h1:empty,
+.dark-theme h2:empty,
+.dark-theme h3:empty,
+.dark-theme h4:empty,
+.dark-theme h5:empty,
+.dark-theme h6:empty {
+    background-color: rgba(255, 255, 255, .2);
+}
+
+.section-title:empty,
+.sub-section-title:empty,
+.blog-post-date:empty,
+h1:empty,
+h2:empty,
+h3:empty,
+h4:empty,
+h5:empty,
+h6:empty {
+    background-color: rgba(0, 0, 0, .2);
+    border-radius: 4px;
+    height: 2em;
+}
+
+.dark-theme .blog-post-date:empty {
+    width: 100px;
+}
+
+.dark-theme .blog-post-content:empty {
+    background-image: url(/images/web/paragraph-placeholder-dark.svg);
+}
+
+.blog-post-content:empty {
+    background-image: url(/images/web/paragraph-placeholder.svg);
+    background-size: 100%;
+    background-position-x: center;
+    background-repeat: repeat-y;
+    height: 50em;
+}
+
 .sub-section {
     flex: 1 0 auto;
     margin: 0 auto;
@@ -816,9 +858,23 @@ body.no-scroll {
     margin-right: 6px;
 }
 
+.app.dark-theme .blog-list-author:empty,
+.app.dark-theme .blog-post-author:empty {
+    background-color: rgba(255, 255, 255, .2);
+}
+
+.blog-list-author:empty,
+.blog-post-author:empty {
+    background-color: rgba(0, 0, 0, .2);
+    height: 1.6em;
+    border-radius: 4px;
+    width: 200px;
+    margin: 0 8px;
+}
+
 .blog-list-author:empty:after,
 .blog-post-author:empty:after {
-    content: "Ukjent forfatter, ";
+    content: "";
 }
 
 .blog-list-date,
