@@ -96,9 +96,9 @@ app.get('/api/v1/cv/:key?/:file?', function (req, res) {
       var dateFormatted = `${date.getFullYear()}-${digits(date.getMonth())}-${digits(date.getDate())} ${digits(date.getHours())}:${digits(date.getMinutes())}:${digits(date.getSeconds())}`
       var name = info[2].split('-')
       var description = fs.readdirSync(constants.pathToCV)
-        .filter(file => file === `description--${info[6]}.txt`)
-        .map(desc => {
-        return fs.readFileSync(`${constants.pathToCV}/description--${info[6]}.txt`, 'utf-8')
+        .filter(f => new RegExp(`description--${info[6]}[a-z0-9\-]*.txt`).test(f))
+        .map(descFile => {
+        return fs.readFileSync(constants.pathToCV + '/' + descFile, 'utf-8')
       }) + ''
 
       return {
