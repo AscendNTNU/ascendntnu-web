@@ -100,6 +100,7 @@ export class CVPage extends React.Component<CVPageProps, CVPageState> {
         <SubSection key={i} title={`${e.first_name} ${e.middle_name ? (e.middle_name + ' ') : ''}${e.last_name}`}>
           <div>Study: {e.study.toUpperCase()}</div>
           <div>Year: {e.year}</div>
+          <div>Description: {e.description}</div>
           <div>CV: <a href={'/api/v1/cv/' + this.props.params.key + '/' + e.cv}>Download {e.cv.split('.').pop().toUpperCase()}-file</a></div>
         </SubSection>
       ))
