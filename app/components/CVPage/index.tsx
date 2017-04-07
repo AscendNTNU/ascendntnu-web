@@ -70,8 +70,6 @@ export class CVPage extends React.Component<CVPageProps, CVPageState> {
           if (studyCodes.indexOf(student.study) === -1) studyCodes.push(student.study)
         }
 
-        console.log(groups, years, studyCodes)
-
         this.setState(Object.assign({}, this.state, {
           students: data.students,
           error: null,
