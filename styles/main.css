@@ -217,6 +217,19 @@ input[type="submit"].active,
     display: flex;
 }
 
+@media (min-width: 560px) {
+    .nav-bar .dropdown > .links {
+        flex-direction: row;
+        overflow-x: auto;
+        align-items: flex-start;
+    }
+
+    .nav-bar .dropdown > .links > .nav-element {
+        flex: 1 0 200px;
+        text-align: left;
+    }
+}
+
 @media (max-width: 560px) {
     .nav-bar {
         display: none;
