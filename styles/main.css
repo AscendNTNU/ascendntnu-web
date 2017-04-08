@@ -225,7 +225,7 @@ input[type="submit"].active,
     }
 
     .nav-bar .dropdown > .links > .nav-element {
-        flex: 1 0 200px;
+        flex: 1 0 240px;
         text-align: left;
     }
 }
