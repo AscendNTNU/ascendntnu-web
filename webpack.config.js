@@ -3,6 +3,9 @@ var webpack = require('webpack')
 
 module.exports = {
   entry: ['whatwg-fetch', './app/index.tsx'],
+  watchOptions: {
+    poll: true
+  },
   output: {
     path: path.join(__dirname, 'dist'),
     publicPath: '/dist/',
