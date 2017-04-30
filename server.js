@@ -13,7 +13,7 @@ app.use('/dist', express.static(__dirname + '/dist'))
 app.use('/styles', express.static(__dirname + '/styles'))
 app.use('/node_modules', express.static(__dirname + '/node_modules'))
 
-app.listen(constants.port || 8080)
+app.listen(process.env.PORT_OUT || constants.port || 8080)
 
 app.get('/api/v1', function (req, res) {
   res.sendFile(__dirname + '/api/v1/index.html')
