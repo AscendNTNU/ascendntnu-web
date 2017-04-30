@@ -8,3 +8,4 @@ typings/**/*.json
 *.ignorefile.*
 constants.js
 cv
+.env
