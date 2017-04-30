@@ -237,8 +237,8 @@ export class TeamPage extends React.Component<TeamPageProps, TeamPageState> {
         <Section title="The team">
           We have five groups: Control, Perception, Planning, Hardware and Admin. The board consists of the project manager, the deputy project manager, the technical leader and the group leaders. This means that we formally have a quite hierarchical stucture. However, in practice we have a very flat structure where everybody contributes within the areas they want and where attention is needed.
           <SubSection title="Members">
-            <Link to="team/2016" activeClassName="active"><button>2016</button></Link>
-            <IndexLink to="team/2017" activeClassName="active"><button className={this.props.params.year ? '' : 'active'}>2017</button></IndexLink>
+            <Link to="/team/2016" activeClassName="active"><button>2016</button></Link>
+            <IndexLink to="/team/2017" activeClassName="active"><button className={this.props.params.year ? '' : 'active'}>2017</button></IndexLink>
             {groups}
           </SubSection>
         </Section>
