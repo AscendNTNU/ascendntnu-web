@@ -73,7 +73,7 @@ app.get('/api/v1/cv/:key?/:file?', function (req, res) {
     return false
   }
 
-  if (req.params.file && /^\d+--[a-z\-øæå]+--[a-z]+--\d\d?--[a-z]+--[a-z0-9\-]+\.[a-z0-9]+$/.test(req.params.file)) {
+  if (req.params.file && /^\d+--[a-z\-øæå]+--[a-zøæå0-9]+--\d\d?--[a-z]+--[a-z0-9\-]+\.[a-z0-9]+$/.test(req.params.file)) {
     var files = fs.readdirSync(constants.pathToCV).filter(file => file === req.params.file)
 
     if (files.length) {
@@ -89,7 +89,7 @@ app.get('/api/v1/cv/:key?/:file?', function (req, res) {
 
   if (constants.pathToCV) {
     var files = fs.readdirSync(constants.pathToCV)
-      .filter(file => /^\d+--[a-z\-øæå]+--[a-z]+--\d\d?--[a-z]+--[a-z0-9\-]+\.[a-z0-9]+$/.test(file.toLowerCase()))
+      .filter(file => /^\d+--[a-z\-øæå]+--[a-zøæå0-9]+--\d\d?--[a-z]+--[a-z0-9\-]+\.[a-z0-9]+$/.test(file.toLowerCase()))
       .map(postName => {
       var info = postName.split(/--|\./)
       var date = new Date(parseInt(info[0]))
