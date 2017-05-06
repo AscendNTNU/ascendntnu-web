@@ -1015,6 +1015,69 @@ figcaption {
     background-color: #292929;
 }
 
+.table {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.table > .row,
+.table > .h-row {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.table > .row > .col,
+.table > .h-row > .h-col {
+    padding: 8px 12px;
+}
+
+.h-row {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.row:nth-child(even) {
+    background-color: #333;
+    border-radius: 4px;
+}
+
+.table .col-name { flex: 2 0 100px; }
+.table .col-study { flex: 1 0 100px; }
+.table .col-group { flex: 1 0 100px; text-transform: capitalize; }
+.table .col-desc { flex: 5 0 200px; }
+.table .col-cv { flex: 1 0 100px; }
+
+@media (max-width: 768px) {
+    .table .h-row {
+        display: none;
+    }
+
+    .table > .row {
+        flex-flow: column nowrap;
+    }
+
+    .table > .row > .col {
+        flex: 0;
+        display: flex;
+    }
+
+    .table > .row > .col:before {
+        content: attr(data-colname);
+        font-weight: bold;
+        display: inline-block;
+        flex: 0 0 90px;
+        background-color: rgba(0, 0, 0, .1);
+        margin: -8px -12px;
+        padding: 8px 12px;
+        margin-right: 12px;
+        text-align: right;
+    }
+}
+
+.prewrap {
+    white-space: pre-wrap;
+}
+
 found {
     background-color: rgba(255, 127, 0, .3);
     background-color: rgba(0, 0, 0, .8);
