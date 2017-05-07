@@ -14,6 +14,7 @@ interface CVPageProps {
 interface CVPageState {
   students: any[],
   error?: string,
+  public?: boolean,
   key?: string,
   categories?: {
     groups?: string[],
@@ -36,11 +37,7 @@ export class CVPage extends React.Component<CVPageProps, CVPageState> {
       },
     }
 
-    if (this.props.params && this.props.params.key) {
-      this.fetchStudents()
-    } else {
-      this.state.error = 'Missing key'
-    }
+    this.fetchStudents()
   }
 
   componentWillReceiveProps (nextProps: CVPageProps) {
@@ -48,44 +45,34 @@ export class CVPage extends React.Component<CVPageProps, CVPageState> {
   }
 
   private fetchStudents (props: CVPageProps = this.props): void {
-    fetch('/api/v1/cv/' + props.params.key).then((r: any) => r.json()).then((data: any) => {
-      if (data.error) {
-        this.setState(Object.assign({}, this.state, {
-          students: [],
-          error: data.error,
-          categories: {
-            groups: [],
-            years: [],
-            studyCodes: [],
-          },
-        }))
-      } else {
-        let groups: string[] = []
-        let years: string[] = []
-        let studyCodes: string[] = []
+    fetch('/api/v1/cv/' + (props.params.key || '')).then((r: any) => r.json()).then((data: any) => {
+      let groups: string[] = []
+      let years: string[] = []
+      let studyCodes: string[] = []
 
-        for (let student of data.students) {
-          if (groups.indexOf(student.group) === -1) groups.push(student.group)
-          if (years.indexOf(student.year) === -1) years.push(student.year)
-          if (studyCodes.indexOf(student.study) === -1) studyCodes.push(student.study)
-        }
-
-        this.setState(Object.assign({}, this.state, {
-          students: data.students,
-          error: null,
-          categories: {
-            groups: groups,
-            years: years,
-            studyCodes: studyCodes,
-          },
-        }))
+      for (let student of data.students) {
+        if (groups.indexOf(student.group) === -1) groups.push(student.group)
+        if (years.indexOf(student.year) === -1) years.push(student.year)
+        if (studyCodes.indexOf(student.study) === -1) studyCodes.push(student.study)
       }
+
+      this.setState(Object.assign({}, this.state, {
+        students: data.students,
+        error: data.error || null,
+        public: !props.params.key || !!data.error,
+        categories: {
+          groups: groups,
+          years: years,
+          studyCodes: studyCodes,
+        },
+      }))
     })
   }
 
   private updateKeyHandler (evt: any) {
     this.setState(Object.assign({}, this.state, {
-      key: evt.target.value
+      key: evt.target.value,
+      error: '',
     }))
   }
 
@@ -93,9 +80,11 @@ export class CVPage extends React.Component<CVPageProps, CVPageState> {
     let students: any = null
     let error: any = null
 
-    if (this.state && this.state.error) {
+    if (this.state.error) {
       error = <div style={{color: 'red', fontStyle: 'italic'}}>{this.state.error}</div>
-    } else if (this.state && this.state.students) {
+    }
+
+    if (this.state.students) {
       students = this.state.students.map((e: any, i: number) => (
         <div key={i} className="row">
           <span data-colname="Name" className="col col-name">
@@ -121,11 +110,11 @@ export class CVPage extends React.Component<CVPageProps, CVPageState> {
       <div className="page page-cv">
         <Breadcrumb routes={['CV']} />
         <Section title="CV database">
-          {error && <div>
-            <input defaultValue={this.props.params.key} onInput={this.updateKeyHandler.bind(this)} placeholder="Key ..." />
-            {this.state.key && <Link to={'/cv/' + this.state.key} className="button active">Get Access</Link>}
+          {this.state.public && <div>
+            <input defaultValue={this.props.params.key} onInput={this.updateKeyHandler.bind(this)} placeholder="Key for private profiles" />
+            {this.state.key && <Link to={'/cv/' + this.state.key} className="button active">Access private profiles</Link>}
           </div>}
-          {error}
+          {this.state.key && error}
           <div className="cv-students table">
             <div className="h-row">
               <span className="h-col col-name">Name</span>

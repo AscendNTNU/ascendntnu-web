@@ -64,10 +64,11 @@ app.get('/api/v1/cv/:key?/:file?', function (req, res) {
   res.setHeader('Content-Type', 'application/json; charset=utf-8')
 
   var public = !req.params.key || req.params.key === 'public'
+  var error = null
 
   if (!public && constants.access.indexOf(req.params.key) === -1) {
-    res.send(JSON.stringify({ error: 'Key do not match any' }, null, 2))
-    return false
+    error = 'Key do not match any'
+    public = true
   }
 
   if (req.params.file && /[a-z\-øæå]--[a-zøæå0-9]+--\d\d?--[a-z]+\.[a-z0-9]+$/.test(req.params.file.toLowerCase())) {
@@ -119,7 +120,7 @@ app.get('/api/v1/cv/:key?/:file?', function (req, res) {
       }
     })
 
-    res.send(JSON.stringify({ students: files }, null, 2))
+    res.send(JSON.stringify({ students: files, error: error }, null, 2))
   } else {
     res.send('Backend issue. No path to CV specified.')
   }
