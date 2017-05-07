@@ -63,18 +63,19 @@ app.get('/api/v1/posts/all', function (req, res) {
 app.get('/api/v1/cv/:key?/:file?', function (req, res) {
   res.setHeader('Content-Type', 'application/json; charset=utf-8')
 
-  if (!req.params.key) {
-    res.send(JSON.stringify({ error: 'Missing key' }, null, 2))
-    return false
-  }
+  var public = !req.params.key || req.params.key === 'public'
 
-  if (constants.access.indexOf(req.params.key) === -1) {
+  if (!public && constants.access.indexOf(req.params.key) === -1) {
     res.send(JSON.stringify({ error: 'Key do not match any' }, null, 2))
     return false
   }
 
-  if (req.params.file && /^\d+--[a-z\-øæå]+--[a-zøæå0-9]+--\d\d?--[a-z]+--[a-z0-9\-]+\.[a-z0-9]+$/.test(req.params.file)) {
-    var files = fs.readdirSync(constants.pathToCV).filter(file => file === req.params.file)
+  if (req.params.file && /[a-z\-øæå]--[a-zøæå0-9]+--\d\d?--[a-z]+\.[a-z0-9]+$/.test(req.params.file.toLowerCase())) {
+    var find = req.params.file.split(/\./)[0].replace(/[^a-zøæå0-9\-]+/ig, '')
+    var re = public
+      ? new RegExp('--pub--' + find)
+      : new RegExp(find)
+    var files = fs.readdirSync(constants.pathToCV).filter(file => re.test(file))
 
     if (files.length) {
       var info = files[0].split(/--|\./)
@@ -88,8 +89,11 @@ app.get('/api/v1/cv/:key?/:file?', function (req, res) {
   }
 
   if (constants.pathToCV) {
+    var re = public
+      ? /^\d+--pub--[a-z\-øæå]+--[a-zøæå0-9]+--\d\d?--[a-z]+--/
+      : /^\d+--p[ubriv]+--[a-z\-øæå]+--[a-zøæå0-9]+--\d\d?--[a-z]+--/
     var files = fs.readdirSync(constants.pathToCV)
-      .filter(file => /^\d+--[a-z\-øæå]+--[a-zøæå0-9]+--\d\d?--[a-z]+--[a-z0-9\-]+\.[a-z0-9]+$/.test(file.toLowerCase()))
+      .filter(file => re.test(file.toLowerCase()))
       .map(postName => {
       var info = postName.split(/--|\./)
       var date = new Date(parseInt(info[0]))
@@ -100,6 +104,7 @@ app.get('/api/v1/cv/:key?/:file?', function (req, res) {
         .map(descFile => {
         return fs.readFileSync(constants.pathToCV + '/' + descFile, 'utf-8')
       }) + ''
+      var cv = `${info[2]}--${info[3]}--${info[4]}--${info[5]}.${info[info.length - 1]}`
 
       return {
         date: dateFormatted,
@@ -110,7 +115,7 @@ app.get('/api/v1/cv/:key?/:file?', function (req, res) {
         year: parseInt(info[4]),
         group: info[5].toLowerCase(),
         description: description,
-        cv: postName
+        cv: cv
       }
     })
 
