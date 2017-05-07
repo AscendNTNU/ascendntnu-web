@@ -1037,8 +1037,12 @@ figcaption {
 }
 
 .row:nth-child(even) {
-    background-color: #333;
+    background-color: #ddd;
     border-radius: 4px;
+}
+
+.app.dark-theme .row:nth-child(even) {
+    background-color: #333;
 }
 
 .table .col-name { flex: 2 0 100px; }
