@@ -334,6 +334,7 @@ function prerender (req, data) {
     <meta property="og:title" content="Ascend NTNU - ${data.title}" />
     <meta property="og:description" content="${data.desc}" />
     <meta property="og:url" content="${data.link}" />
+    <meta name="google-site-verification" content="8BRTGtX6p1hMedISBUbbwoyCQKG-yAi_lfQwP6ZG0PU" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" />
     <link rel="shortcut icon" href="/images/logo/logo.png" />
     <link rel="stylesheet" href="/node_modules/katex/dist/katex.min.css" />
