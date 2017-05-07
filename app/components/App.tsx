@@ -16,7 +16,7 @@ export class App extends React.Component<AppProps, AppState> {
 
     try {
       if (!localStorage['theme'] || !localStorage['theme'].length)
-        localStorage['theme'] = 'light'
+        localStorage['theme'] = 'dark'
 
       this.state = {
         showMenu: false,
@@ -25,7 +25,7 @@ export class App extends React.Component<AppProps, AppState> {
     } catch (ex) {
       this.state = {
         showMenu: false,
-        theme: 'light',
+        theme: 'dark',
       }
     }
   }
