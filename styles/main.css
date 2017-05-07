@@ -512,7 +512,7 @@ body.no-scroll {
     cursor: ew-resize;
 }
 
-.front-splash-center > img {
+.page .front-splash-center > img {
     max-width: 180px;
     min-width: 100px;
     width: 16vw;
