@@ -10,6 +10,7 @@ app.use('/images', express.static(__dirname + '/images'))
 app.use('/public/assets', express.static(__dirname + '/images/assets'))
 app.use('/publications', express.static(__dirname + '/images/assets/publications'))
 app.use('/dist', express.static(__dirname + '/dist'))
+app.use('/sitemap.xml', express.static(__dirname + '/images/web/sitemap.xml'))
 app.use('/styles', express.static(__dirname + '/styles'))
 app.use('/node_modules', express.static(__dirname + '/node_modules'))
 
