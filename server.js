@@ -342,6 +342,30 @@ function prerender (req, data) {
     <script defer src="/node_modules/react/dist/react.js"></script>
     <script defer src="/node_modules/react-dom/dist/react-dom.js"></script>
     <script defer src="/dist/bundle.js"></script>
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org/",
+      "@type": "Organization",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Trondheim, Norway",
+        "postalCode": "7034",
+        "streetAddress": "O.S. Bragstads plass 2 A/B"
+      },
+      "description": "${data.desc}",
+      "email": "hi(at)ascendntnu.no",
+      "homepage": "https://ascendntnu.no",
+      "image": "https://ascendntnu.no${data.image}",
+      "name": "Ascend NTNU",
+      "sponsor": {
+        "@type": "Organization",
+        "name": "Kongsberg",
+        "image": "https://kongsberg.com/images/kog2017/kongsberg-logo.png",
+        "url": "https://kongsberg.com/"
+      },
+      "url": "https://ascendntnu.no"
+    }
+    </script>
   </head>
   <body>
     <div id="app" class="app-container"></div>
