@@ -5,21 +5,22 @@
   <url><priority>0.90</priority><loc>https://ascendntnu.no/join</loc><changefreq>weekly</changefreq></url>
   <url><priority>0.90</priority><loc>https://ascendntnu.no/team</loc><changefreq>monthly</changefreq></url>
   <url><priority>0.90</priority><loc>https://ascendntnu.no/contact</loc><changefreq>weekly</changefreq></url>
-  <url><priority>0.90</priority><loc>https://ascendntnu.no/blog/2015-07-07-hello-world-from-ascend</loc><changefreq>weekly</changefreq></url>
-  <url><priority>0.90</priority><loc>https://ascendntnu.no/blog/2015-10-26-an-update</loc><changefreq>weekly</changefreq></url>
-  <url><priority>0.90</priority><loc>https://ascendntnu.no/blog/2015-10-26-tech-modelling-ground-robots</loc><changefreq>weekly</changefreq></url>
-  <url><priority>0.90</priority><loc>https://ascendntnu.no/blog/2015-10-28-kongsberg</loc><changefreq>weekly</changefreq></url>
-  <url><priority>0.90</priority><loc>https://ascendntnu.no/blog/2015-10-28-your-extreme</loc><changefreq>weekly</changefreq></url>
-  <url><priority>0.90</priority><loc>https://ascendntnu.no/blog/2016-01-17-rekruttering</loc><changefreq>weekly</changefreq></url>
-  <url><priority>0.90</priority><loc>https://ascendntnu.no/blog/2016-01-18-tech-guiding-search-1</loc><changefreq>weekly</changefreq></url>
-  <url><priority>0.90</priority><loc>https://ascendntnu.no/blog/2016-01-25-tech-guiding-search-2</loc><changefreq>weekly</changefreq></url>
-  <url><priority>0.90</priority><loc>https://ascendntnu.no/blog/2016-02-08-tech-how-we-see-1</loc><changefreq>weekly</changefreq></url>
-  <url><priority>0.90</priority><loc>https://ascendntnu.no/blog/2016-02-25-the-competition</loc><changefreq>weekly</changefreq></url>
-  <url><priority>0.90</priority><loc>https://ascendntnu.no/blog/2016-08-28-retrospect-2016</loc><changefreq>weekly</changefreq></url>
-  <url><priority>0.90</priority><loc>https://ascendntnu.no/blog/2016-09-04-postmortem-2016</loc><changefreq>weekly</changefreq></url>
-  <url><priority>0.90</priority><loc>https://ascendntnu.no/blog/2017-02-14-planning-update</loc><changefreq>weekly</changefreq></url>
-  <url><priority>0.90</priority><loc>https://ascendntnu.no/blog/2017-02-20-planning-update</loc><changefreq>weekly</changefreq></url>
-  <url><priority>0.90</priority><loc>https://ascendntnu.no/blog/2017-03-10-perception-update</loc><changefreq>weekly</changefreq></url>
+  <url><priority>0.90</priority><loc>https://ascendntnu.no/blog</loc><changefreq>weekly</changefreq></url>
+  <url><priority>0.85</priority><loc>https://ascendntnu.no/blog/2015-07-07-hello-world-from-ascend</loc><changefreq>monthly</changefreq></url>
+  <url><priority>0.85</priority><loc>https://ascendntnu.no/blog/2015-10-26-an-update</loc><changefreq>monthly</changefreq></url>
+  <url><priority>0.85</priority><loc>https://ascendntnu.no/blog/2015-10-26-tech-modelling-ground-robots</loc><changefreq>monthly</changefreq></url>
+  <url><priority>0.85</priority><loc>https://ascendntnu.no/blog/2015-10-28-kongsberg</loc><changefreq>monthly</changefreq></url>
+  <url><priority>0.85</priority><loc>https://ascendntnu.no/blog/2015-10-28-your-extreme</loc><changefreq>monthly</changefreq></url>
+  <url><priority>0.85</priority><loc>https://ascendntnu.no/blog/2016-01-17-rekruttering</loc><changefreq>monthly</changefreq></url>
+  <url><priority>0.85</priority><loc>https://ascendntnu.no/blog/2016-01-18-tech-guiding-search-1</loc><changefreq>monthly</changefreq></url>
+  <url><priority>0.85</priority><loc>https://ascendntnu.no/blog/2016-01-25-tech-guiding-search-2</loc><changefreq>monthly</changefreq></url>
+  <url><priority>0.85</priority><loc>https://ascendntnu.no/blog/2016-02-08-tech-how-we-see-1</loc><changefreq>monthly</changefreq></url>
+  <url><priority>0.85</priority><loc>https://ascendntnu.no/blog/2016-02-25-the-competition</loc><changefreq>monthly</changefreq></url>
+  <url><priority>0.85</priority><loc>https://ascendntnu.no/blog/2016-08-28-retrospect-2016</loc><changefreq>monthly</changefreq></url>
+  <url><priority>0.85</priority><loc>https://ascendntnu.no/blog/2016-09-04-postmortem-2016</loc><changefreq>monthly</changefreq></url>
+  <url><priority>0.85</priority><loc>https://ascendntnu.no/blog/2017-02-14-planning-update</loc><changefreq>monthly</changefreq></url>
+  <url><priority>0.85</priority><loc>https://ascendntnu.no/blog/2017-02-20-planning-update</loc><changefreq>monthly</changefreq></url>
+  <url><priority>0.85</priority><loc>https://ascendntnu.no/blog/2017-03-10-perception-update</loc><changefreq>monthly</changefreq></url>
   <url><priority>0.80</priority><loc>https://ascendntnu.no/drones</loc><changefreq>yearly</changefreq></url>
   <url><priority>0.80</priority><loc>https://ascendntnu.no/missions</loc><changefreq>yearly</changefreq></url>
   <url><priority>0.70</priority><loc>https://ascendntnu.no/sponsors</loc><changefreq>yearly</changefreq></url>
