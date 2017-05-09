@@ -357,6 +357,11 @@ function prerender (req, data) {
       "email": "hi(at)ascendntnu.no",
       "image": "https://ascendntnu.no${data.image}",
       "name": "Ascend NTNU",
+      "memberOf": {
+        "@type": "Organization",
+        "name": "NTNU",
+        "url": "https://ntnu.no"
+      },
       "sponsor": {
         "@type": "Organization",
         "name": "Kongsberg",
