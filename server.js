@@ -355,7 +355,6 @@ function prerender (req, data) {
       },
       "description": "${data.desc}",
       "email": "hi(at)ascendntnu.no",
-      "homepage": "https://ascendntnu.no",
       "image": "https://ascendntnu.no${data.image}",
       "name": "Ascend NTNU",
       "sponsor": {
