@@ -1036,12 +1036,12 @@ figcaption {
     font-weight: bold;
 }
 
-.row:nth-child(even) {
+.table .row:nth-child(even) {
     background-color: #ddd;
     border-radius: 4px;
 }
 
-.app.dark-theme .row:nth-child(even) {
+.app.dark-theme .table .row:nth-child(even) {
     background-color: #333;
 }
 
