@@ -510,7 +510,7 @@ function createAmpArticle (data) {
   <body>
     <article>
     <h1>${data.attributes.title}</h1>
-    <amp-social-share type="facebook" data-param-url="https://ascendntnu.no/blog/${data.link}"></amp-social-share>
+    <amp-social-share type="facebook" data-param-url="https://ascendntnu.no/blog/${data.link}" data-param-app_id="202744680073731"></amp-social-share>
     <amp-social-share type="twitter" data-param-url="https://ascendntnu.no/blog/${data.link}"></amp-social-share>
     <amp-social-share type="linkedin" data-param-url="https://ascendntnu.no/blog/${data.link}"> </amp-social-share>
     <amp-social-share type="email" data-param-url="https://ascendntnu.no/blog/${data.link}"></amp-social-share>
