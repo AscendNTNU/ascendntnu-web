@@ -448,8 +448,9 @@ function createAmpArticle (data) {
     <title>${data.attributes.title}</title>
     <link rel="canonical" href="https://ascendntnu.no/blog/${data.link}" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Questrial|Roboto+Slab" />
-    <amp-img src="${data.attributes.image || '/images/ascend-logo-social.jpg'}" alt="${data.attributes.title}" width="640" height="480" layout="responsive"></amp-img>
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <script async custom-element="amp-facebook-like" src="https://cdn.ampproject.org/v0/amp-facebook-like-0.1.js"></script>
+    <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
     <script type="application/ld+json">
       {
         "@context": "http://schema.org",
@@ -470,15 +471,12 @@ function createAmpArticle (data) {
         "thumbnailUrl": "${data.attributes.image || '/images/ascend-logo-social.jpg'}"
       }
     </script>
-    <style amp-boilerplate>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <style>
       body {
         font-family: 'Open Sans', sans-serif;
         background-color: #444;
         color: #ddd;
-        -webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;
-        -moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;
-        -ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;
-        animation:-amp-start 8s steps(1,end) 0s 1 normal both
       }
       article {
         padding: 16px;
@@ -488,6 +486,7 @@ function createAmpArticle (data) {
       a {
         color: #f80;
         cursor: pointer;
+        text-decoration: none;
         border-bottom: 1px dashed #f80;
       }
       .img-float-right + img, .img-float-right + figure {
@@ -507,26 +506,15 @@ function createAmpArticle (data) {
         max-width: 100%;
         max-height: 240px;
       }
-      @-webkit-keyframes -amp-start{from{visibility:hidden;}to{visibility:visible;}}
-      @-moz-keyframes -amp-start{from{visibility:hidden;}to{visibility:visible;}}
-      @-ms-keyframes -amp-start{from{visibility:hidden;}to{visibility:visible;}}
-      @-o-keyframes -amp-start{from{visibility:hidden;}to{visibility:visible;}}
-      @keyframes -amp-start{from{visibility:hidden;}to{visibility:visible;}}
     </style>
-    <noscript>
-      <style amp-boilerplate>
-        body {
-          -webkit-animation: none;
-          -moz-animation: none;
-          -ms-animation: none;
-          animation: none;
-        }
-      </style>
-    </noscript>
   </head>
   <body>
     <article>
     <h1>${data.attributes.title}</h1>
+    <amp-social-share type="facebook" data-param-url="https://ascendntnu.no/blog/${data.link}"></amp-social-share>
+    <amp-social-share type="twitter" data-param-url="https://ascendntnu.no/blog/${data.link}"></amp-social-share>
+    <amp-social-share type="linkedin" data-param-url="https://ascendntnu.no/blog/${data.link}"> </amp-social-share>
+    <amp-social-share type="email" data-param-url="https://ascendntnu.no/blog/${data.link}"></amp-social-share>
     ${result}
     </article>
   </body>
