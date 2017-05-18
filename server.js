@@ -445,14 +445,14 @@ function createAmpArticle (data) {
     <title>${data.attributes.title}</title>
     <link rel="canonical" href="https://ascendntnu.no/blog/${data.link}" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Questrial|Roboto+Slab" />
-    <amp-img src="${data.attributes.image || '/images/ascend-logo-social.jpg'}" alt="${data.frontmatter}" width="640" height="480" layout="responsive"></amp-img>
+    <amp-img src="${data.attributes.image || '/images/ascend-logo-social.jpg'}" alt="${data.attributes.title}" width="640" height="480" layout="responsive"></amp-img>
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <script type="application/ld+json">
       {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "about": "${data.frontmatter}",
-        "articleBody": "${data.body}",
+        "about": "${data.body.slice(0, 320)}",
+        "articleBody": "${result}",
         "author": {
           "@type": "Person",
           "name": "${data.attributes.author || 'Ascend NTNU'}"
