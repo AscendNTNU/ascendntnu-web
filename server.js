@@ -4,6 +4,10 @@ var fs = require('fs')
 var mkdirp = require('mkdirp')
 var yamljs = require('yamljs')
 var fm = require('front-matter')
+var commonmark = require('commonmark')
+var reader = new commonmark.Parser()
+var writer = new commonmark.HtmlRenderer()
+
 var constants = require('./constants')
 
 app.use('/images', express.static(__dirname + '/images'))
@@ -223,6 +227,23 @@ function fileExists (filePath) {
   }
 }
 
+app.get('/blog/amp/:post', function (req, res) {
+  var post = req.params.post
+
+  var files = fs.readdirSync('./posts')
+    .filter(file => new RegExp(post, 'i').test(file))
+  var pathToPost = __dirname + '/posts/' + (files[0] || '')
+
+  if (fileExists(pathToPost) && files.length) {
+    var postData = fm(fs.readFileSync(pathToPost) + '')
+    postData.link = slugify(files[0])
+
+    res.send(createAmpArticle(postData))
+  } else {
+    res.sendFile(__dirname + '/index.html')
+  }
+})
+
 app.get('/blog/:post', function (req, res) {
   var post = req.params.post
 
@@ -249,7 +270,8 @@ app.get('/blog/:post', function (req, res) {
       title: title,
       desc: desc,
       date: date,
-      image: image
+      image: image,
+      metatags: `<link rel="amphtml" href="https://ascendntnu.no/blog/amp/${link}">`
     }))
   } else {
     res.sendFile(__dirname + '/index.html')
@@ -403,6 +425,107 @@ function prerender (req, data) {
       fjs.parentNode.insertBefore(js, fjs);
     }(document, "script", "facebook-jssdk"));
     </script>
+  </body>
+</html>`
+}
+
+function createAmpArticle (data) {
+  data.title = data.title || 'Home'
+  data.desc = data.desc || `Autonomus aerial robotics. Ascend NTNU is The Norwegian University of Science and Technology's team in the International Aerial Robotics Competition (IARC).`
+  data.image = data.image || '/images/logo/logo.png'
+  data.link = data.link || ''
+  var parsed = reader.parse(data.body)
+  var result = writer.render(parsed)
+
+  return `<!doctype html>
+<html amp lang="en">
+  <head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <title>${data.attributes.title}</title>
+    <link rel="canonical" href="https://ascendntnu.no/blog/${data.link}" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Questrial|Roboto+Slab" />
+    <amp-img src="${data.attributes.image || '/images/ascend-logo-social.jpg'}" alt="${data.frontmatter}" width="640" height="480" layout="responsive"></amp-img>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "about": "${data.frontmatter}",
+        "articleBody": "${data.body}",
+        "author": {
+          "@type": "Person",
+          "name": "${data.attributes.author || 'Ascend NTNU'}"
+        },
+        "dateCreated": "${data.attributes.date}",
+        "datePublished": "${data.attributes.date}",
+        "genre": "technology",
+        "headline": "${data.attributes.title}",
+        "image": [
+          "${data.attributes.image || '/images/ascend-logo-social.jpg'}"
+        ],
+        "thumbnailUrl": "${data.attributes.image || '/images/ascend-logo-social.jpg'}"
+      }
+    </script>
+    <style amp-boilerplate>
+      body {
+        font-family: 'Open Sans', sans-serif;
+        background-color: #444;
+        color: #ddd;
+        -webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;
+        -moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;
+        -ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;
+        animation:-amp-start 8s steps(1,end) 0s 1 normal both
+      }
+      article {
+        padding: 16px;
+        margin: auto;
+        max-width: 720px;
+      }
+      a {
+        color: #f80;
+        cursor: pointer;
+        border-bottom: 1px dashed #f80;
+      }
+      .img-float-right + img, .img-float-right + figure {
+        float: right;
+        margin: 8px 0 16px 16px;
+      }
+      .img-float-left + img, .img-float-left + figure {
+        float: left;
+        margin: 8px 16px 16px 0;
+      }
+      img, iframe {
+        display: block;
+        margin: auto;
+        clear: both;
+      }
+      img {
+        max-width: 100%;
+        max-height: 240px;
+      }
+      @-webkit-keyframes -amp-start{from{visibility:hidden;}to{visibility:visible;}}
+      @-moz-keyframes -amp-start{from{visibility:hidden;}to{visibility:visible;}}
+      @-ms-keyframes -amp-start{from{visibility:hidden;}to{visibility:visible;}}
+      @-o-keyframes -amp-start{from{visibility:hidden;}to{visibility:visible;}}
+      @keyframes -amp-start{from{visibility:hidden;}to{visibility:visible;}}
+    </style>
+    <noscript>
+      <style amp-boilerplate>
+        body {
+          -webkit-animation: none;
+          -moz-animation: none;
+          -ms-animation: none;
+          animation: none;
+        }
+      </style>
+    </noscript>
+  </head>
+  <body>
+    <article>
+    <h1>${data.attributes.title}</h1>
+    ${result}
+    </article>
   </body>
 </html>`
 }
