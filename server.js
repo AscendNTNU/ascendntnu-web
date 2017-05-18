@@ -358,13 +358,29 @@ function prerender (req, data) {
       },
       "description": "${data.desc}",
       "email": "hi(at)ascendntnu.no",
+      "foundingLocation": {
+      	"@type": "Place",
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 63.4183894,
+          "longitude": 10.401931
+        }
+      },
       "image": "https://ascendntnu.no${data.image}",
+      "logo": "https://ascendntnu.no/images/logo/logo.png",
       "name": "Ascend NTNU",
       "memberOf": {
         "@type": "Organization",
         "name": "NTNU",
         "url": "https://ntnu.no"
       },
+      "sameAs": [
+        "https://twitter.com/ascendntnu",
+        "https://instagram.com/ascendntnu",
+        "https://www.facebook.com/ascendntnu",
+        "https://github.com/ascendntnu",
+        "https://www.linkedin.com/company/ascend-ntnu"
+      ],
       "sponsor": {
         "@type": "Organization",
         "name": "Kongsberg",
