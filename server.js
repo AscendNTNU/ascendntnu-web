@@ -436,6 +436,9 @@ function createAmpArticle (data) {
   data.link = data.link || ''
   var parsed = reader.parse(data.body)
   var result = writer.render(parsed)
+  result = result
+    .replace(/<img /g, '<amp-img width="640" height="480" layout="responsive" ')
+    .replace(/<\/img>/g, '</amp-img>')
 
   return `<!doctype html>
 <html amp lang="en">
