@@ -443,6 +443,7 @@ function createAmpArticle (data) {
     .replace(/<\/video>/g, '</amp-video>')
     .replace(/<iframe /g, '<amp-iframe ')
     .replace(/<\/iframe>/g, '</amp-iframe>')
+  let iframe = /amp-iframe/.test(result)
 
   return `<!doctype html>
 <html amp lang="en">
@@ -454,6 +455,7 @@ function createAmpArticle (data) {
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Questrial|Roboto+Slab" />
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
+    ${iframe ? '<script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>' : ''}
     <script type="application/ld+json">
       {
         "@context": "http://schema.org",

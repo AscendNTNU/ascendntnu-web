@@ -72,7 +72,7 @@ Unfortunately, I skipped over a bunch of technical details in the above explanat
 
 Here's a video I recorded at our lab the other day. In an attempt to somewhat reproduce the competition at home, we have not only bought in a handful of vacuum cleaner robots, but we have also created an elaborate grid of sticky tape.
 
-<p style="text-align: center;" ><video style="margin: 0 auto;" src="/public/assets/tech-how-we-see-1/scaled.mp4" width="480" height="270" controls></video></p>
+<p><video src="/public/assets/tech-how-we-see-1/scaled.mp4" width="480" height="270" controls></video></p>
 
 This is, part, what our drone will be seeing. We think we need more cameras, but we're pretty sure we'll have one pointing downwards like this. Naturally, you have no problem working out how big the grid was, or how many tiles I walked in that video. But that's thanks to the many years of intense grid-position-estimation training you've done, right?
 
