@@ -439,6 +439,10 @@ function createAmpArticle (data) {
   result = result
     .replace(/<img /g, '<amp-img width="640" height="480" layout="responsive" ')
     .replace(/<\/img>/g, '</amp-img>')
+    .replace(/<video /g, '<amp-video ')
+    .replace(/<\/video>/g, '</amp-video>')
+    .replace(/<iframe /g, '<amp-iframe ')
+    .replace(/<\/iframe>/g, '</amp-iframe>')
 
   return `<!doctype html>
 <html amp lang="en">
