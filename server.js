@@ -601,7 +601,7 @@ function createFBInstantArticle (data) {
       ${result}
       <footer>
         <aside>Ascend NTNU</aside>
-        <small>Copyright Ascend NTNU ${new Date().getFullYear()}</small>
+        <small>© Ascend NTNU ${new Date().getFullYear()}</small>
       </footer>
     </article>
   </body>
