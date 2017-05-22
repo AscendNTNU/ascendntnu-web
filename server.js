@@ -227,6 +227,7 @@ function fileExists (filePath) {
   }
 }
 
+// AMP articles, which can be read from Google in mobile view.
 app.get('/blog/amp/:post', function (req, res) {
   var post = req.params.post
 
@@ -239,6 +240,24 @@ app.get('/blog/amp/:post', function (req, res) {
     postData.link = slugify(files[0])
 
     res.send(createAmpArticle(postData))
+  } else {
+    res.sendFile(__dirname + '/index.html')
+  }
+})
+
+// Facebook Instant article support.
+app.get('/blog/fb/:post', function (req, res) {
+  var post = req.params.post
+
+  var files = fs.readdirSync('./posts')
+    .filter(file => new RegExp(post, 'i').test(file))
+  var pathToPost = __dirname + '/posts/' + (files[0] || '')
+
+  if (fileExists(pathToPost) && files.length) {
+    var postData = fm(fs.readFileSync(pathToPost) + '')
+    postData.link = slugify(files[0])
+
+    res.send(createFBInstantArticle(postData))
   } else {
     res.sendFile(__dirname + '/index.html')
   }
