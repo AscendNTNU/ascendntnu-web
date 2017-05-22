@@ -540,7 +540,6 @@ function createFBInstantArticle (data) {
 <html lang="en" prefix="op: http://media.facebook.com/op#">
   <head>
     <meta charset="utf-8">
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
     <title>${data.attributes.title}</title>
     <link rel="canonical" href="https://ascendntnu.no/blog/${data.link}" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Questrial|Roboto+Slab" />
@@ -565,62 +564,26 @@ function createFBInstantArticle (data) {
         "thumbnailUrl": "${data.attributes.image || '/images/ascend-logo-social.jpg'}"
       }
     </script>
-    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-    <style amp-custom>
-      body {
-        font-family: 'Open Sans', sans-serif;
-        background-color: #444;
-        color: #ddd;
-      }
-      article {
-        padding: 16px;
-        margin: auto;
-        max-width: 720px;
-      }
-      a {
-        color: #f80;
-        cursor: pointer;
-        text-decoration: none;
-        border-bottom: 1px dashed #f80;
-      }
-      .img-float-right + img, .img-float-right + figure {
-        float: right;
-        margin: 8px 0 16px 16px;
-      }
-      .img-float-left + img, .img-float-left + figure {
-        float: left;
-        margin: 8px 16px 16px 0;
-      }
-      img, iframe {
-        display: block;
-        margin: auto;
-        clear: both;
-      }
-      img {
-        max-width: 100%;
-        max-height: 240px;
-      }
-    </style>
   </head>
   <body>
     <article>
-    <header>
-      <h1>${data.attributes.title}</h1>
-      <time class="op-published" datetime="${data.attributes.date}">${date}</time>
-      <address>
-        <a>${data.attributes.author}</a>
-        From Ascend NTNU.
-      </address>
-      <figure>
-        <img src="${data.attributes.image}" />
-        <figcaption>${data.attributes.title}</figcaption>
-      </figure>  
-    </header>
-    ${result}
-    <footer>
-      <aside>Ascend NTNU</aside>
-      <small>Copyright Ascend NTNU ${new Date().getFullYear()}</small>
-    </footer>
+      <header>
+        <h1>${data.attributes.title}</h1>
+        <time class="op-published" datetime="${data.attributes.date}">${date}</time>
+        <address>
+          <a>${data.attributes.author}</a>
+          From Ascend NTNU.
+        </address>
+        <figure>
+          <img src="${data.attributes.image}" />
+          <figcaption>${data.attributes.title}</figcaption>
+        </figure>  
+      </header>
+      ${result}
+      <footer>
+        <aside>Ascend NTNU</aside>
+        <small>Copyright Ascend NTNU ${new Date().getFullYear()}</small>
+      </footer>
     </article>
   </body>
 </html>`
