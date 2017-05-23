@@ -371,6 +371,7 @@ function prerender (req, data) {
     <meta name="keywords" content="Ascend, NTNU, robotics, autonomus, team, IARC, international, aerial, robotics, competition, AI" />
     <meta name="author" content="Ascend NTNU" />
     <meta property="fb:app_id" content="202744680073731" />
+    <meta property="fb:pages" content="1666025910343164" />
     ${data.date ? `<meta property="og:date" content="${data.date}" />` : ''}
     <meta property="og:type" content="article" />
     <meta property="og:image" content="${data.image}" />
