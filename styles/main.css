@@ -399,6 +399,10 @@ body.no-scroll {
     width: 100%;
 }
 
+.foot-element:nth-child(2) {
+    flex-basis: 328px;
+}
+
 .foot-element > p {
     width: 100%;
 }
@@ -442,6 +446,7 @@ body.no-scroll {
 .icon.icon-facebook-official:hover { color: #3b5998; }
 .icon.icon-github:hover { color: #fff; }
 .icon.icon-linkedin:hover { color: #0077b5; }
+.icon.icon-rss:hover { color: #ff8833; }
 
 .page {
     width: 100%;
