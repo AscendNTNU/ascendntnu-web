@@ -14,6 +14,7 @@ app.use('/images', express.static(__dirname + '/images'))
 app.use('/public/assets', express.static(__dirname + '/images/assets'))
 app.use('/publications', express.static(__dirname + '/images/assets/publications'))
 app.use('/dist', express.static(__dirname + '/dist'))
+app.use('/blog/rss', express.static(__dirname + '/api/v1/blog.rss'))
 app.use('/sitemap.xml', express.static(__dirname + '/images/web/sitemap.xml'))
 app.use('/styles', express.static(__dirname + '/styles'))
 app.use('/node_modules', express.static(__dirname + '/node_modules'))
@@ -38,6 +39,10 @@ function slugify (fileName) {
     .toLowerCase()
     //.replace(/^[0-9]{2,4}-[0-9]{1,2}-[0-9]{1,2}-/, '')
     .replace(/\.md$|\.markdown$/, '')
+}
+
+function rmMdLinks (str) {
+  return str.replace(/\]\([^\)]*\)/g, ']').replace(/!?\[([^\]]*)\]/g, '$1')
 }
 
 function pascalCase (str) {
@@ -263,6 +268,26 @@ app.get('/blog/fb/:post', function (req, res) {
   }
 })
 
+// Create Facebook Instant Articles RSS feed.
+var articles = []
+fs.readdirSync('./posts').forEach(file => {
+  var post = fm(fs.readFileSync(__dirname + '/posts/' + file) + '')
+  var content = writer.render(reader.parse(post.body))
+
+  articles.push({
+    authors: post.attributes.author.split(/\s*[,&]\s*/),
+    content: content,
+    date: post.attributes.date,
+    description: post.body.split(/\n/)[0],
+    link: slugify(file),
+    title: post.attributes.title
+  })
+})
+
+fs.writeFile('api/v1/blog.rss', createRSSFeed(articles), err => {
+  if (err) throw err
+})
+
 app.get('/blog/:post', function (req, res) {
   var post = req.params.post
 
@@ -283,7 +308,7 @@ app.get('/blog/:post', function (req, res) {
       else
         image = 'https://ascendntnu.no' + postData.attributes.image
     }
-    var desc = postData.body.slice(0, 320)
+    var desc = postData.body.split(/\n/)[0]
 
     res.send(prerender(req, {
       title: title,
@@ -481,7 +506,7 @@ function createAmpArticle (data) {
       {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "about": "${data.body.slice(0, 320)}",
+        "about": "${data.body.split(/\n/)[0]}",
         "articleBody": "${result}",
         "author": {
           "@type": "Person",
@@ -568,7 +593,7 @@ function createFBInstantArticle (data) {
       {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "about": "${data.body.slice(0, 320)}",
+        "about": "${data.body.split(/\n/)[0]}",
         "articleBody": "${result}",
         "author": {
           "@type": "Person",
@@ -607,4 +632,32 @@ function createFBInstantArticle (data) {
     </article>
   </body>
 </html>`
+}
+
+function createRSSFeed (articles) {
+  let articlesFormatted = articles.map(item => {
+    var authors = item.authors.map(author => `<author>${author}</author>`)
+
+    return `<item>
+      <title>${item.title}</title>
+      <link>ascendntnu.no/blog/${item.link}</link>
+      <content:encoded>
+        <![CDATA[${item.content}]]>
+      </content:encoded>
+      <guid>${item.link}</guid>
+      <description>${item.description}</description>
+      <pubDate>${item.date}</pubDate>
+      ${authors.join('\n      ')}
+    </item>`
+  })
+
+  return `<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Ascend NTNU Blog</title>
+    <link>https://ascendntnu.no/</link>
+    <description>Our latest tech articles</description>
+    ${articlesFormatted.join('\n    ')}
+  </channel>
+</rss>`
 }
