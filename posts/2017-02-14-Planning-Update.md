@@ -69,7 +69,7 @@ Using our value function we can calculate a reward for the ground robots resulti
 
 Now the drone can make objective decisions on which robot to work with and what action it should perform on the robot. However, this is only the first stage of the algorithm, as the drone must be able to see further into the future to solve the problem more efficiently. This will lead to reduced traveling time and less actions to herd robots out of the court. But that will have to wait until another blog post. Meanwhile, here is a taxidermied cat converted into a drone.
 
-![Cat drone](http://i.giphy.com/h5NXof7XfEYHm.gif)
+![Cat drone](/public/assets/planning-update-1/cat-drone.gif)
 
 Thanks for reading! 
 
