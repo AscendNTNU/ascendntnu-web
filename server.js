@@ -595,7 +595,8 @@ function createFBInstantArticle (data) {
   data.attributes.image = 'https://ascendntnu.no' + (data.attributes.image || '/images/logo/logo.png')
   data.link = data.link || ''
   var date = data.attributes.date.toISOString()
-  var parsed = reader.parse(data.body)
+  var ingress = rmMdLinks(data.body.split(/\n/)[0])
+  var parsed = reader.parse(data.body.split(/^[^\n]+\n/)[1])
   var result = writer.render(parsed)
     .replace(/<p><img ([^>]*)\><\/p>/g, '<figure><img $1></figure>')
     .replace(/<(\/?)h[3-6]>/g, '<$1h2>')
@@ -606,12 +607,14 @@ function createFBInstantArticle (data) {
   reTex = /<tex([^>]*)>([^<]*)<\/tex>/g
   var texSplit = result.split(/<tex|<\/tex>/g)
   var newResult = ''
+
   for (var i = 0; i < texSplit.length - 1; i += 2) {
     var parts = texSplit[i + 1].split('>')
     var meta = parts[0]
     var tex = parts[1]
     newResult += texSplit[i] + `<span${meta}>${texToAscii(tex)}</span>`
   }
+
   result = newResult + texSplit[texSplit.length - 1]
 
   return `<!doctype html>
@@ -627,7 +630,7 @@ function createFBInstantArticle (data) {
       {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "about": "${rmMdLinks(data.body.split(/\n/)[0])}",
+        "about": "${ingress}",
         "author": {
           "@type": "Person",
           "name": "${data.attributes.author.split(/\s*[,&]\s*/).join(', ') || 'Ascend NTNU'}"
@@ -647,6 +650,7 @@ function createFBInstantArticle (data) {
     <article>
       <header>
         <h1>${data.attributes.title}</h1>
+        <h2>${ingress}</h2>
         <time class="op-published" datetime="${data.attributes.date}">${date}</time>
         <address>
           <a>${data.attributes.author.split(/\s*&\s*/).join(' &#038; ')}</a>
