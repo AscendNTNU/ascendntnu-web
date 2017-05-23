@@ -1,7 +1,8 @@
 ---
 layout: post
-title:  "The International Aerial Robotics Competition"
-date:   2016-02-25 10:00:00
+image: /public/assets/180-degree-turn-cartoon.png
+title: "The International Aerial Robotics Competition"
+date: 2016-02-25 10:00:00
 categories: IARC competition
 author: Marius Maaland
 ---
