@@ -23,7 +23,7 @@ But how does one give an action or a position a value? Our solution was to assig
 The value field was made by making a 22x22 matrix, representing the 20x20 meter court with a frame around. The frame was given values equivalent to the points we get for sending a ground robot over the different lines in the competition. In essence, we put 2000 points above the green line and -1000 points outside the other lines. We then iterated through each element in the matrix and gave that element the average value of its neighbour, until the whole field converged.
 
 <figure>
-  ![Value iteration](/public/assets/planning-update-1/value-iteration.gif)
+  <img alt="Value iteration" src="/public/assets/planning-update-1/value-iteration.gif" />
   <figcaption>Value iteration of the value field, where the z-axis show the grid values.</figcaption>
 </figure>
 
@@ -57,14 +57,14 @@ And did I mention it holds for all cases?!
 Now let’s go back to our actual problem. By feeding the discrete grid values (<tex>\\vec{b}</tex>) into LSM we can estimate a continuous function (<tex>A\\vec{x}</tex>) that quite accurately represents the input. We can choose what function to approach the data with and started out with a linear function, and worked or way up to an 8th order polynomial. The following animation shows the resulting functions as the polynomial order increases from 1 to 8.
 
 <figure>
-  ![Function Estimation](/public/assets/planning-update-1/function-estimation.gif)
+  <img alt="Function Estimation" src="/public/assets/planning-update-1/function-estimation.gif" />
   <figcaption>Estimating a continuous function to the discrete value field.</figcaption>
 </figure>
 
 In essence, the Least Squares Method finds the function that minimizes the sum of the errors (squared) between the input data and the resulting function. It is therefore interesting to look at the errors between the function and the data it represents. As the figure below shows, the errors decrease and gets evenly distributed as the polynomial order of A increases.
 
 <figure>
-  ![Grid Function Error](/public/assets/planning-update-1/grid-func-error.gif)
+  <img alt="Grid Function Error" src="/public/assets/planning-update-1/grid-func-error.gif" />
   <figcaption>Errors between the continuous function and the discrete values as the function gets more complex.</figcaption>
 </figure>
 
