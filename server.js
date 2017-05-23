@@ -622,6 +622,7 @@ function createFBInstantArticle (data) {
     <link rel="canonical" href="https://ascendntnu.no/blog/${data.link}" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Questrial|Roboto+Slab" />
     <meta property="op:markup_version" content="v1.0">
+    <meta property="fb:article_style" content="Ascend Dark Theme">
     <script type="application/ld+json">
       {
         "@context": "http://schema.org",

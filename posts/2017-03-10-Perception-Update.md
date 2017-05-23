@@ -15,7 +15,7 @@ The figure shows the most basic artificial neuron with the activation function f
 Those artificial neurons are in fact, when put together in unimaginable amounts in very complex networks, the core components that can learn visual features in pictures. When inputting an RGB image in the network for which we know what the network should output, what basically happens is that the weight in each neurons is appropriately adjusted, so that they can learn to fire on pixel values such that the networks output comes close to the desired output. The desired output is often confidence values between [0,1] for each of the classes.
 
 <figure>
-  <img alt"Network Graph" src="/public/assets/perception-update-1/network-graph.jpg" />
+  <img alt="Network Graph" src="/public/assets/perception-update-1/network-graph.jpg" />
   <figcaption>A decription of a fully connected(hidden) layer.</figcaption>
 </figure>
 
@@ -40,7 +40,7 @@ Out of the pit then came the Single Shot Multibox Detection Network, which is ba
 Following the nature of a CNN, when doing convolutions on the features, the network will learn features on increasingly larger scale (in the input picture), the more deeper layer you are into the network. In the picture, the dog is detected later in the network than the cat. We have previously succeeded running a 200 classes distinguishing caffe version of the SSD network on a NVIDIA Jetson TX1 card on 6 fps. The modified SSD network will hopefully run with higher fps, as we only need 2 classes (red, green gr. r.).
 
 <figure>
-  <img alt"SSD VS. YOLO" src="/public/assets/perception-update-1/ssd-vs-yolo.jpg" />
+  <img alt="SSD VS. YOLO" src="/public/assets/perception-update-1/ssd-vs-yolo.jpg" />
   <figcaption>You Only Look Once (YOLO) network, a similar much appraised one, is shown for comparison.</figcaption>
 </figure>
 
