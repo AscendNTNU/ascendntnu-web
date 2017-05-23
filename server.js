@@ -15,7 +15,7 @@ app.use('/public/assets', express.static(__dirname + '/images/assets'))
 app.use('/publications', express.static(__dirname + '/images/assets/publications'))
 app.use('/dist', express.static(__dirname + '/dist'))
 app.use('/blog/rss', express.static(__dirname + '/api/v1/blog.rss'))
-app.use('/sitemap.xml', express.static(__dirname + '/images/web/sitemap.xml'))
+app.use('/sitemap.xml', express.static(__dirname + '/api/v1/sitemap.xml'))
 app.use('/styles', express.static(__dirname + '/styles'))
 app.use('/node_modules', express.static(__dirname + '/node_modules'))
 
@@ -285,6 +285,12 @@ fs.readdirSync('./posts').forEach(file => {
 })
 
 fs.writeFile('api/v1/blog.rss', createRSSFeed(articles), err => {
+  if (err) throw err
+})
+
+// Also generating a sitemap for Google to watch.
+var articleLinks = articles.map(article => article.link)
+fs.writeFile('api/v1/sitemap.xml', createSitemap(articleLinks), err => {
   if (err) throw err
 })
 
@@ -660,4 +666,26 @@ function createRSSFeed (articles) {
     ${articlesFormatted.join('\n    ')}
   </channel>
 </rss>`
+}
+
+function createSitemap (articles) {
+  var articlesFormatted = articles.map(item => {
+    return `<url><priority>0.85</priority><loc>https://ascendntnu.no/blog/${slugify(item)}</loc><changefreq>monthly</changefreq></url>`
+  })
+
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  <url><priority>1.00</priority><loc>https://ascendntnu.no/</loc><changefreq>weekly</changefreq><lastmod>2017-05-08T23:00:00+00:00</lastmod></url>
+  <url><priority>0.90</priority><loc>https://ascendntnu.no/about</loc><changefreq>weekly</changefreq></url>
+  <url><priority>0.90</priority><loc>https://ascendntnu.no/join</loc><changefreq>weekly</changefreq></url>
+  <url><priority>0.90</priority><loc>https://ascendntnu.no/team</loc><changefreq>monthly</changefreq></url>
+  <url><priority>0.90</priority><loc>https://ascendntnu.no/contact</loc><changefreq>weekly</changefreq></url>
+  <url><priority>0.90</priority><loc>https://ascendntnu.no/blog</loc><changefreq>weekly</changefreq></url>
+  ${articlesFormatted.join('\n  ')}
+  <url><priority>0.80</priority><loc>https://ascendntnu.no/drones</loc><changefreq>yearly</changefreq></url>
+  <url><priority>0.80</priority><loc>https://ascendntnu.no/missions</loc><changefreq>yearly</changefreq></url>
+  <url><priority>0.70</priority><loc>https://ascendntnu.no/sponsors</loc><changefreq>yearly</changefreq></url>
+</urlset>`
 }
