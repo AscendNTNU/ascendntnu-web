@@ -314,7 +314,7 @@ app.get('/blog/:post', function (req, res) {
       else
         image = 'https://ascendntnu.no' + postData.attributes.image
     }
-    var desc = rmMdLinks(postrmMdLinks(Data.body.split(/\n/)[)0])
+    var desc = rmMdLinks(postData.body.split(/\n/)[0])
 
     res.send(prerender(req, {
       title: title,
@@ -517,7 +517,7 @@ function createAmpArticle (data) {
         "articleBody": "${result}",
         "author": {
           "@type": "Person",
-          "name": "${data.attributes.author || 'Ascend NTNU'}"
+          "name": "${data.attributes.author.split(/\s*[,&]\s*/).join(', ') || 'Ascend NTNU'}"
         },
         "dateCreated": "${data.attributes.date.toISOString()}",
         "datePublished": "${data.attributes.date.toISOString()}",
@@ -579,6 +579,15 @@ function createAmpArticle (data) {
 </html>`
 }
 
+function texToAscii (tex) {
+  return tex
+    .replace(/\^\{([^\}]*)\}/g, '<sup>$1</sup>')
+    .replace(/_\{([^\}]*)\}/g, '<sub>$1</sub>')
+    .replace(/\\vec\{([^\}]*)\}/g, ' &#x20d7;$1')
+    .replace(/\\bot/g, '⅂')
+    .replace(/\\updownarrow/ig, '&#x21d5;')
+}
+
 function createFBInstantArticle (data) {
   data.title = data.title || 'Home'
   data.desc = data.desc || `Autonomus aerial robotics. Ascend NTNU is The Norwegian University of Science and Technology's team in the International Aerial Robotics Competition (IARC).`
@@ -589,9 +598,21 @@ function createFBInstantArticle (data) {
   var parsed = reader.parse(data.body)
   var result = writer.render(parsed)
     .replace(/<p><img ([^>]*)\><\/p>/g, '<figure><img $1></figure>')
-    .replace(/<\/p>/g, '')
+    .replace(/<(\/?)h[3-6]>/g, '<$1h2>')
+    .replace(/\s&\s/g, ' and ')
     .replace(/\shref=(['"])\/([a-z])/g, ' href=$1https://ascendntnu.no/$2')
     .replace(/\ssrc=(['"])\/([a-z])/g, ' src=$1https://ascendntnu.no/$2')
+
+  reTex = /<tex([^>]*)>([^<]*)<\/tex>/g
+  var texSplit = result.split(/<tex|<\/tex>/g)
+  var newResult = ''
+  for (var i = 0; i < texSplit.length - 1; i += 2) {
+    var parts = texSplit[i + 1].split('>')
+    var meta = parts[0]
+    var tex = parts[1]
+    newResult += texSplit[i] + `<span${meta}>${texToAscii(tex)}</span>`
+  }
+  result = newResult + texSplit[texSplit.length - 1]
 
   return `<!doctype html>
 <html lang="en" prefix="op: http://media.facebook.com/op#">
@@ -606,10 +627,9 @@ function createFBInstantArticle (data) {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
         "about": "${rmMdLinks(data.body.split(/\n/)[0])}",
-        "articleBody": "${result}",
         "author": {
           "@type": "Person",
-          "name": "${data.attributes.author || 'Ascend NTNU'}"
+          "name": "${data.attributes.author.split(/\s*[,&]\s*/).join(', ') || 'Ascend NTNU'}"
         },
         "dateCreated": "${date}",
         "datePublished": "${date}",
@@ -628,7 +648,7 @@ function createFBInstantArticle (data) {
         <h1>${data.attributes.title}</h1>
         <time class="op-published" datetime="${data.attributes.date}">${date}</time>
         <address>
-          <a>${data.attributes.author}</a>
+          <a>${data.attributes.author.split(/\s*&\s*/).join(' &#038; ')}</a>
           From Ascend NTNU.
         </address>
         <figure>
@@ -638,7 +658,6 @@ function createFBInstantArticle (data) {
       </header>
       ${result}
       <footer>
-        <aside>Ascend NTNU</aside>
         <small>© Ascend NTNU ${new Date().getFullYear()}</small>
       </footer>
     </article>
