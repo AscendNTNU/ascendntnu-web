@@ -6,7 +6,6 @@ date: 2017-03-10 12:00:00
 categories: perception tech update
 author: Ivar Thokle Hovden & Markus Pike
 ---
-
 In this blog post, we will make a brief overview of our use of deep learning for ground robot detection. Almost analog to deep learning is Convolutional Neural Networks (CNNs), which are the new cool members of Artificial Neural Networks (ANNs). An ANN in its most simple form is a connectionist network containing multiple interconnected artificial neurons and activation functions, typically in a feed-forward fashion. The core advantage to using CNNs for object recognition and detection opposed to using older more conventional methods such as SIFT matching, circle detection and other appearance based techniques, is that we are less prone to various lighting and illumination disturbances.
 
 The figure shows the most basic artificial neuron with the activation function f, which can be a threshold function in its most simple form.

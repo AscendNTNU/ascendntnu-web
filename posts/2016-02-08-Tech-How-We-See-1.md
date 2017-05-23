@@ -5,7 +5,6 @@ date:   2016-02-08 10:00:00
 categories: tech computer vision
 author: Simen Haugo
 ---
-
 Asking the questions that really matter, and then not answering them.
 
 How we see the world (Part 1)
