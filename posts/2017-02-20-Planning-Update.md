@@ -14,15 +14,17 @@ This sounds like a bad idea. However, the concept has proven to be surprisingly 
 
 You have an agent, which can be anything that can perform actions on an environment. These actions can then affect the environment around it, and if the change is something you consider positive, you give the agent a reward.
 
-<span class="img-float-right"></span>
-![Reward System](/public/assets/planning-update-2/reward-system.jpg)
+<figure class="img-float-right">
+  <img alt="Reward System" src="/public/assets/planning-update-2/reward-system.jpg" />
+</figure>
 
 Now all we need for an agent to perform well is a way of retaining and learning what actions, in what situation (known as states), lead to positive rewards. This is most commonly referred to as policy. A policy receives an input which describes any important aspects of the environment and outputs the best action to choose.
 
 Now that the groundwork is in place, you just need to let your agent learn. The simplest method here is to start by initializing a policy that views all actions to be equally good. After each attempt of solving the problem the agent then slightly updates its policy given the rewards it receives. Given enough time the agent will make a policy that gives good rewards.
 
-<span class="img-float-left"></span>
-![Reward System With Our Context](/public/assets/planning-update-2/reward-system-context.jpg)
+<figure class="img-float-left">
+  <img alt="Reward System With Our Context" src="/public/assets/planning-update-2/reward-system-context.jpg" />
+</figure>
 
 So let’s put this in context of our challenge. We have the agent, our drone, which can interact with the ground robots, fly somewhere around the course or just hang around and wait. Then we give positive rewards when a ground robot crosses the green line and negative rewards when it crosses the red line.
 

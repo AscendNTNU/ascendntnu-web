@@ -412,6 +412,7 @@ function prerender (req, data) {
     <meta name="google-site-verification" content="8BRTGtX6p1hMedISBUbbwoyCQKG-yAi_lfQwP6ZG0PU" />${data.metatags}
     <link rel="alternate" hreflang="en" href="https://ascendntnu.no" />
     <link rel="alternate" hreflang="no" href="https://ascendntnu.no" />
+    <link rel="alternate" type="application/rss+xml" title="Ascend NTNU RSS" href="https://ascendntnu.no/blog/rss">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" />
     <link rel="shortcut icon" href="/images/logo/logo.png" />
     <link rel="stylesheet" href="/node_modules/katex/dist/katex.min.css" />
@@ -581,11 +582,16 @@ function createAmpArticle (data) {
 function createFBInstantArticle (data) {
   data.title = data.title || 'Home'
   data.desc = data.desc || `Autonomus aerial robotics. Ascend NTNU is The Norwegian University of Science and Technology's team in the International Aerial Robotics Competition (IARC).`
-  data.image = data.image || '/images/logo/logo.png'
+  data.image = 'https://ascendntnu.no' + (data.image || '/images/logo/logo.png')
+  data.attributes.image = 'https://ascendntnu.no' + (data.attributes.image || '/images/logo/logo.png')
   data.link = data.link || ''
   var date = data.attributes.date.toISOString()
   var parsed = reader.parse(data.body)
   var result = writer.render(parsed)
+    .replace(/<p><img ([^>]*)\><\/p>/g, '<figure><img $1></figure>')
+    .replace(/<\/p>/g, '')
+    .replace(/\shref=(['"])\/([a-z])/g, ' href=$1https://ascendntnu.no/$2')
+    .replace(/\ssrc=(['"])\/([a-z])/g, ' src=$1https://ascendntnu.no/$2')
 
   return `<!doctype html>
 <html lang="en" prefix="op: http://media.facebook.com/op#">
@@ -641,7 +647,7 @@ function createFBInstantArticle (data) {
 }
 
 function createRSSFeed (articles) {
-  let articlesFormatted = articles.map(item => {
+  let articlesFormatted = articles.reverse().map(item => {
     var authors = item.authors.map(author => `<author>${author}</author>`)
 
     return `<item>
