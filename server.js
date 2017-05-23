@@ -277,7 +277,7 @@ fs.readdirSync('./posts').forEach(file => {
   articles.push({
     authors: post.attributes.author.split(/\s*[,&]\s*/),
     content: content,
-    date: post.attributes.date,
+    date: post.attributes.date.toISOString(),
     description: post.body.split(/\n/)[0],
     link: slugify(file),
     title: post.attributes.title
@@ -518,8 +518,8 @@ function createAmpArticle (data) {
           "@type": "Person",
           "name": "${data.attributes.author || 'Ascend NTNU'}"
         },
-        "dateCreated": "${data.attributes.date}",
-        "datePublished": "${data.attributes.date}",
+        "dateCreated": "${data.attributes.date.toISOString()}",
+        "datePublished": "${data.attributes.date.toISOString()}",
         "genre": "technology",
         "headline": "${data.attributes.title}",
         "image": [
@@ -583,7 +583,7 @@ function createFBInstantArticle (data) {
   data.desc = data.desc || `Autonomus aerial robotics. Ascend NTNU is The Norwegian University of Science and Technology's team in the International Aerial Robotics Competition (IARC).`
   data.image = data.image || '/images/logo/logo.png'
   data.link = data.link || ''
-  let date = new Date(data.attributes.date)
+  var date = data.attributes.date.toISOString()
   var parsed = reader.parse(data.body)
   var result = writer.render(parsed)
 
@@ -605,8 +605,8 @@ function createFBInstantArticle (data) {
           "@type": "Person",
           "name": "${data.attributes.author || 'Ascend NTNU'}"
         },
-        "dateCreated": "${data.attributes.date}",
-        "datePublished": "${data.attributes.date}",
+        "dateCreated": "${date}",
+        "datePublished": "${date}",
         "genre": "technology",
         "headline": "${data.attributes.title}",
         "image": [
@@ -652,7 +652,7 @@ function createRSSFeed (articles) {
       </content:encoded>
       <guid>${item.link}</guid>
       <description>${item.description}</description>
-      <pubDate>${item.date}</pubDate>
+      <pubDate>${new Date(item.date).toISOString()}</pubDate>
       ${authors.join('\n      ')}
     </item>`
   })
@@ -677,7 +677,7 @@ function createSitemap (articles) {
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-  <url><priority>1.00</priority><loc>https://ascendntnu.no/</loc><changefreq>weekly</changefreq><lastmod>2017-05-08T23:00:00+00:00</lastmod></url>
+  <url><priority>1.00</priority><loc>https://ascendntnu.no/</loc><changefreq>weekly</changefreq><lastmod>${new Date().toISOString()}</lastmod></url>
   <url><priority>0.90</priority><loc>https://ascendntnu.no/about</loc><changefreq>weekly</changefreq></url>
   <url><priority>0.90</priority><loc>https://ascendntnu.no/join</loc><changefreq>weekly</changefreq></url>
   <url><priority>0.90</priority><loc>https://ascendntnu.no/team</loc><changefreq>monthly</changefreq></url>
