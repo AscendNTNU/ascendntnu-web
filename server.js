@@ -278,7 +278,7 @@ fs.readdirSync('./posts').forEach(file => {
     authors: post.attributes.author.split(/\s*[,&]\s*/),
     content: content,
     date: post.attributes.date.toISOString(),
-    description: post.body.split(/\n/)[0],
+    description: rmMdLinks(post.body.split(/\n/)[0]),
     link: slugify(file),
     title: post.attributes.title
   })
@@ -314,7 +314,7 @@ app.get('/blog/:post', function (req, res) {
       else
         image = 'https://ascendntnu.no' + postData.attributes.image
     }
-    var desc = postData.body.split(/\n/)[0]
+    var desc = rmMdLinks(postrmMdLinks(Data.body.split(/\n/)[)0])
 
     res.send(prerender(req, {
       title: title,
@@ -513,7 +513,7 @@ function createAmpArticle (data) {
       {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "about": "${data.body.split(/\n/)[0]}",
+        "about": "${rmMdLinks(data.body.split(/\n/)[0])}",
         "articleBody": "${result}",
         "author": {
           "@type": "Person",
@@ -605,7 +605,7 @@ function createFBInstantArticle (data) {
       {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "about": "${data.body.split(/\n/)[0]}",
+        "about": "${rmMdLinks(data.body.split(/\n/)[0])}",
         "articleBody": "${result}",
         "author": {
           "@type": "Person",
