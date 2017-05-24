@@ -594,6 +594,7 @@ function createFBInstantArticle (data) {
   data.image = 'https://ascendntnu.no' + (data.image || '/images/logo/logo.png')
   data.attributes.image = 'https://ascendntnu.no' + (data.attributes.image || '/images/logo/logo.png')
   data.link = data.link || ''
+  var related = data.attributes.related.split(/\s*,\s*|\s+/).map(r => /^\d/.test(r) ? 'https://ascendntnu.no/blog/' + r : r) || []
   var date = data.attributes.date.toISOString()
   var ingress = rmMdLinks(data.body.split(/\n/)[0])
   var parsed = reader.parse(data.body.split(/^[^\n]+\n/)[1])
@@ -663,6 +664,7 @@ function createFBInstantArticle (data) {
       </header>
       ${result}
       <footer>
+        ${related && '<ul class="op-related-articles">' + related.map(r => `\n          <li><a href="${r}"></a></li>`).join('') + '\n        </ul>' }
         <small>© Ascend NTNU ${new Date().getFullYear()}</small>
       </footer>
     </article>
@@ -713,6 +715,7 @@ function createSitemap (articles) {
   <url><priority>0.90</priority><loc>https://ascendntnu.no/team</loc><changefreq>monthly</changefreq></url>
   <url><priority>0.90</priority><loc>https://ascendntnu.no/contact</loc><changefreq>weekly</changefreq></url>
   <url><priority>0.90</priority><loc>https://ascendntnu.no/blog</loc><changefreq>weekly</changefreq></url>
+  <url><priority>0.90</priority><loc>https://ascendntnu.no/blog/rss</loc><changefreq>weekly</changefreq></url>
   ${articlesFormatted.join('\n  ')}
   <url><priority>0.80</priority><loc>https://ascendntnu.no/drones</loc><changefreq>yearly</changefreq></url>
   <url><priority>0.80</priority><loc>https://ascendntnu.no/missions</loc><changefreq>yearly</changefreq></url>
