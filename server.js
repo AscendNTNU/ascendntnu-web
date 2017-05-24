@@ -408,7 +408,6 @@ function prerender (req, data) {
     <meta property="og:image" content="${data.image}" />
     <meta property="og:title" content="Ascend NTNU - ${data.title}" />
     <meta property="og:description" content="${data.desc}" />
-    <meta property="og:url" content="${data.link}" />
     <meta name="google-site-verification" content="8BRTGtX6p1hMedISBUbbwoyCQKG-yAi_lfQwP6ZG0PU" />${data.metatags}
     <link rel="alternate" hreflang="en" href="https://ascendntnu.no" />
     <link rel="alternate" hreflang="no" href="https://ascendntnu.no" />
