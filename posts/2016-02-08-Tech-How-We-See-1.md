@@ -4,6 +4,7 @@ image: /public/assets/tech-how-we-see-1/tileframe-4.png
 title: "Tech: How we see the world (Part 1)"
 date: 2016-02-08 10:00:00
 categories: tech computer vision
+related: 2016-02-25-the-competition
 author: Simen Haugo
 ---
 Asking the questions that really matter, and then not answering them.
