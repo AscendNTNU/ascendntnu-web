@@ -315,13 +315,17 @@ app.get('/blog/:post', function (req, res) {
         image = 'https://ascendntnu.no' + postData.attributes.image
     }
     var desc = rmMdLinks(postData.body.split(/\n/)[0])
+    var tags = postData.attributes.categories.split(/[,\s]+/)
+    var authors = postData.attributes.author.split(/\s*[,&]\s*/)
 
     res.send(prerender(req, {
       title: title,
       desc: desc,
       date: date,
       image: image,
-      metatags: `<link rel="amphtml" href="https://ascendntnu.no/blog/amp/${link}">`
+      metatags: `\n    <link rel="amphtml" href="https://ascendntnu.no/blog/amp/${link}">`
+        + tags.map(tag => `\n    <meta property="article:tag" content="${tag}" />`).join('\n    ')
+        + authors.map(author => `\n    <meta property="article:author" content="${author}" />`).join('\n    ')
     }))
   } else {
     res.sendFile(__dirname + '/index.html')
@@ -403,7 +407,7 @@ function prerender (req, data) {
     <meta name="author" content="Ascend NTNU" />
     <meta property="fb:app_id" content="202744680073731" />
     <meta property="fb:pages" content="1666025910343164" />
-    ${data.date ? `<meta property="og:date" content="${data.date}" />` : ''}
+    ${data.date ? `<meta property="${data.metatags ? 'article:published_time' : 'og:date'}" content="${data.date}" />` : ''}
     <meta property="og:type" content="article" />
     <meta property="og:image" content="${data.image}" />
     <meta property="og:title" content="Ascend NTNU - ${data.title}" />
