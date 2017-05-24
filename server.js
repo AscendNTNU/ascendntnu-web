@@ -325,7 +325,7 @@ app.get('/blog/:post', function (req, res) {
       image: image,
       metatags: `\n    <link rel="amphtml" href="https://ascendntnu.no/blog/amp/${link}">`
         + tags.map(tag => `\n    <meta property="article:tag" content="${tag}" />`).join('\n    ')
-        + authors.map(author => `\n    <meta property="article:author" content="${author}" />`).join('\n    ')
+        + authors.map(author => `\n    <meta property="author" content="${author}" />`).join('\n    ')
     }))
   } else {
     res.sendFile(__dirname + '/index.html')
