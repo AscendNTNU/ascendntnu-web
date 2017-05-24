@@ -4,6 +4,7 @@ image: /public/assets/planning-update-2/reward-system-context.jpg
 title: "Planning Update 2: Lazy planning group let’s drone do all the work"
 date: 2017-02-20 12:00:00
 categories: planning tech update
+related: 2017-02-14-planning-update, 2017-03-10-perception-update
 author: Rasmus Munter
 ---
 Planning group here, back at it! Earlier this week we went into some detail about our [first planning algorithm](/blog/2017-02-14-planning-update) using a value field. However, we are also working on a second solution using something called reinforcement learning.

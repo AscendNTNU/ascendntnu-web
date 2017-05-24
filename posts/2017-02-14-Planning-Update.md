@@ -4,6 +4,7 @@ image: /public/assets/planning-update-1/drone-take-your-dog-for-a-walk.jpg
 title: "Planning Update: How to get a drone to think"
 date: 2017-02-14 12:00:00
 categories: planning tech update
+related: 2017-02-20-planning-update
 author: Vilde Gjærum & Adrian Tofting
 ---
 The planning group is working on creating an algorithm for how to solve the mission, i.e. making the drone autonomously decide what action it should do on which ground robot. We started working together in August and spent the first semester going through the rules, getting to know the problem and finally researching and brainstorming different solutions. This semester we are mainly working on two possible solutions we’ll outline in this blog.
