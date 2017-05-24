@@ -594,7 +594,9 @@ function createFBInstantArticle (data) {
   data.image = 'https://ascendntnu.no' + (data.image || '/images/logo/logo.png')
   data.attributes.image = 'https://ascendntnu.no' + (data.attributes.image || '/images/logo/logo.png')
   data.link = data.link || ''
-  var related = data.attributes.related.split(/\s*,\s*|\s+/).map(r => /^\d/.test(r) ? 'https://ascendntnu.no/blog/' + r : r) || []
+  var related = data.attributes.related
+    ? data.attributes.related.split(/\s*,\s*|\s+/).map(r => /^\d/.test(r) ? 'https://ascendntnu.no/blog/' + r : r)
+    : []
   var date = data.attributes.date.toISOString()
   var ingress = rmMdLinks(data.body.split(/\n/)[0])
   var parsed = reader.parse(data.body.split(/^[^\n]+\n/)[1])
@@ -663,8 +665,9 @@ function createFBInstantArticle (data) {
         </figure>  
       </header>
       ${result}
-      <footer>
-        ${related && '<ul class="op-related-articles">' + related.map(r => `\n          <li><a href="${r}"></a></li>`).join('') + '\n        </ul>' }
+      <footer>${(related + '') && '\n        <ul class="op-related-articles">'
+          + related.map(r => `\n          <li><a href="${r}"></a></li>`).join('')
+          + '\n        </ul>'}
         <small>© Ascend NTNU ${new Date().getFullYear()}</small>
       </footer>
     </article>
