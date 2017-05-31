@@ -638,7 +638,7 @@ body.no-scroll {
 }
 
 .sponsors a.sponsor-adblock-link img {
-    width: 100%;
+    width: calc(100% - 32px);
     flex: 0 0 auto;
     margin: auto;
 }
