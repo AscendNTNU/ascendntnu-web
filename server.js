@@ -456,7 +456,7 @@ function prerender (req, data) {
         "https://twitter.com/ascendntnu",
         "https://instagram.com/ascendntnu",
         "https://www.facebook.com/ascendntnu",
-        "https://github.com/ascendntnu",
+        "https://www.youtube.com/channel/UC_9brAjG9aLLhhQTw2vU0qQ",
         "https://www.linkedin.com/company/ascend-ntnu"
       ],
       "sponsor": {
