@@ -67,12 +67,15 @@ export class ModelRenderer extends React.Component<ModelRendererProps, void> {
     window.addEventListener('resize', this.fitToContainerHandler)
 
     if (this.props.autospin) {
-      setInterval(() => {
-        this.updateRendering()
-      }, 100)
+      window.requestAnimationFrame(this.animationStep.bind(this))
     } else {
       this.updateRendering()
     }
+  }
+
+  animationStep (timestamp: number) {
+    this.updateRendering()
+    window.requestAnimationFrame(this.animationStep.bind(this))
   }
 
   componentWillUnmount () {
