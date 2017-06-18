@@ -10,6 +10,10 @@ var writer = new commonmark.HtmlRenderer()
 
 var constants = require('./constants')
 
+var dotenv = require('dotenv')
+dotenv.config()
+process.env = Object.assign({}, dotenv.parse(fs.readFileSync('.env.default')), process.env)
+
 app.use('/images', express.static(__dirname + '/images'))
 app.use('/public/assets', express.static(__dirname + '/images/assets'))
 app.use('/publications', express.static(__dirname + '/images/assets/publications'))
