@@ -18,6 +18,7 @@ export class ModelRenderer extends React.Component<ModelRendererProps, void> {
   public camera: any
   public scene: any
   public loader: any
+  private raf: number
 
   constructor (props: any) {
     super(props)
@@ -67,7 +68,7 @@ export class ModelRenderer extends React.Component<ModelRendererProps, void> {
     window.addEventListener('resize', this.fitToContainerHandler)
 
     if (this.props.autospin) {
-      window.requestAnimationFrame(this.animationStep.bind(this))
+      this.raf = window.requestAnimationFrame(this.animationStep.bind(this))
     } else {
       this.updateRendering()
     }
@@ -79,6 +80,7 @@ export class ModelRenderer extends React.Component<ModelRendererProps, void> {
   }
 
   componentWillUnmount () {
+    if (this.raf) window.cancelAnimationFrame(this.raf)
     window.removeEventListener('resize', this.fitToContainerHandler)
   }
 
