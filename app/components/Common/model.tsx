@@ -62,9 +62,7 @@ export class ModelRenderer extends React.Component<ModelRendererProps, void> {
     })
 
     this.renderer.setPixelRatio(window.devicePixelRatio)
-    this.renderer.setSize(this.canvas.clientWidth, this.canvas.clientHeight, false)
-    this.camera.aspect = this.canvas.clientWidth / this.canvas.clientHeight
-    this.camera.updateProjectionMatrix()
+    this.fitToContainerHandler()
     window.addEventListener('resize', this.fitToContainerHandler)
 
     if (this.props.autospin) {
@@ -84,7 +82,7 @@ export class ModelRenderer extends React.Component<ModelRendererProps, void> {
     window.removeEventListener('resize', this.fitToContainerHandler)
   }
 
-  private fitToContainerHandler (evt: any) {
+  private fitToContainerHandler (evt?: any) {
     this.renderer.setSize(this.canvas.clientWidth, this.canvas.clientHeight, false)
     this.camera.aspect = this.canvas.clientWidth / this.canvas.clientHeight
     this.camera.updateProjectionMatrix()
