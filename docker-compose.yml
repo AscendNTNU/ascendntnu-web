@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.compose
-    command: ./deploy.sh
+    command: ./deploy.sh ${PORT_IN}
     ports:
       - ${PORT_IN}:${PORT_OUT}
     volumes:
