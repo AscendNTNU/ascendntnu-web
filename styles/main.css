@@ -515,6 +515,7 @@ body.no-scroll {
     z-index: 1;
     transform: translateX(-50%) translateY(-50%);
     cursor: ew-resize;
+    touch-action: none;
 }
 
 .page .front-splash-center > img {
