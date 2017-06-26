@@ -118,7 +118,6 @@ export class Splash extends React.Component<SplashProps, SplashState> {
           y: evt.clientY
         }
       } else {
-        evt.preventDefault()
         pos = {
           x: evt.touches[0].clientX,
           y: evt.touches[0].clientY
