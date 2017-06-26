@@ -47,9 +47,11 @@ export class Splash extends React.Component<SplashProps, SplashState> {
     window.addEventListener('resize', this.fitSplashToContainerHandler)
     window.addEventListener('mousemove', this.mouseMoveHandler)
     window.addEventListener('mouseup', this.mouseUpHandler)
-    window.addEventListener('touchmove', this.mouseMoveHandler)
-    window.addEventListener('touchend', this.mouseUpHandler)
-    window.addEventListener('touchcancel', this.mouseUpHandler)
+
+    let passive: any = { passive: true }
+    window.addEventListener('touchmove', this.mouseMoveHandler, passive)
+    window.addEventListener('touchend', this.mouseUpHandler, passive)
+    window.addEventListener('touchcancel', this.mouseUpHandler, passive)
 
     this.height = document.querySelector('.front-splash').clientHeight
     this.distance = this.width < 560 ? this.height : this.width
