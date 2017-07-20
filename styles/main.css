@@ -771,6 +771,11 @@ h6:empty {
     font-size: 21px;
 }
 
+.blog-list-preview > div:first-child > p:first-child,
+.blog-post-content > p:first-child {
+    font-weight: bold;
+}
+
 .blog-list-preview h1,
 .blog-post-content h1,
 .blog-list-preview h2,
