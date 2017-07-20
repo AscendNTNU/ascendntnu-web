@@ -771,6 +771,17 @@ h6:empty {
     font-size: 21px;
 }
 
+.blog-list-preview h1,
+.blog-post-content h1,
+.blog-list-preview h2,
+.blog-post-content h2,
+.blog-list-preview h3,
+.blog-post-content h3,
+.blog-list-preview h4,
+.blog-post-content h4 {
+    font-family: 'Open Sans', sans-serif;
+}
+
 @media (max-width: 800px) {
     .blog-list-preview, .blog-post-content {
         line-height: calc(1.6);
@@ -918,9 +929,10 @@ h6:empty {
 
 figcaption {
     text-align: center;
-    font-weight: bold;
+    font-weight: normal;
     font-size: .8em;
     font-style: italic;
+    opacity: .6;
     padding: .5em 0;
 }
 
