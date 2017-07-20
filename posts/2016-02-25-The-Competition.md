@@ -1,12 +1,14 @@
 ---
 layout: post
 image: /public/assets/180-degree-turn-cartoon.png
-title: "The International Aerial Robotics Competition"
+title: "The International Aerial Robotics Competition [outdated]"
 date: 2016-02-25 10:00:00
 categories: IARC competition
 author: Marius Maaland
 ---
 Ascend NTNU was founded with the primary mission of participating in (and winning) the [International Aerial Robotics Competition (IARC)](http://aerialroboticscompetition.org/) in 2016 and onwards.
+
+*This article is outdated. You can find the new one [here](/blog/2017-07-20-the-competition).*
 
 The IARC is the longest running collegiate aerial robotics challenge in the world, whose primary goal is to “move the state-of-the-art in aerial robotics forward”. In order to succeed with this ambitious mission, the IARC poses challenges deemed “impossible” when introduced. When a team, or a number of teams, complete the challenges in a sufficient manner, the world of aerial robotics will have advanced. This goal of advancing technology is what sparked our interest in entering this competition (aside from, you know, [drones](https://www.youtube.com/watch?v=CCDIuZUfETc)!). 
 

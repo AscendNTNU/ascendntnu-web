@@ -1391,11 +1391,15 @@ blockquote:after {
 blockquote {
     margin: 32px 0;
     box-sizing: border-box;
-    padding: 0 0 0 32px;
+    padding: 0 42px 0 24px;
     border-left: 4px solid rgba(0, 0, 0, .2);
     font-style: italic;
     color: #666;
     font-weight: bold;
+}
+
+blockquote p {
+    display: inline;
 }
 
 .app.dark-theme blockquote {
