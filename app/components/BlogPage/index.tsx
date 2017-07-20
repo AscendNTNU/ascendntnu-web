@@ -268,11 +268,11 @@ export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
         })
         return (
           <div className="page-blog-list-link" key={i}>
+            <Link className="blog-list-link"
+              onClick={this.reload}
+              to={'/blog/' + post.link}
+              dangerouslySetInnerHTML={ {__html: post.attributes.title } } />
             <div className="blog-list-details">
-              <Link className="blog-list-link"
-                onClick={this.reload}
-                to={'/blog/' + post.link}
-                dangerouslySetInnerHTML={ {__html: post.attributes.title } } />
               <div className="blog-list-author" dangerouslySetInnerHTML={ {__html: post.attributes.author } } />
               <div className="blog-list-date" dangerouslySetInnerHTML={ {__html: post.attributes.dateFormatted } } />
             </div>

@@ -856,14 +856,19 @@ h6:empty {
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin-bottom: 40px;
+    margin-bottom: 100px;
 }
 
 .page-blog-list-link .blog-list-link {
     border: none;
-    font-size: 1.6em;
+    font-size: 2em;
     align-self: flex-start;
     font-weight: bold;
+    margin: 32px 0;
+}
+
+.app.dark-theme .page-blog-list-link .blog-list-link {
+    text-shadow: 0 1px 4px #000;
 }
 
 @media (max-width: 540px) {
