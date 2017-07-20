@@ -614,7 +614,7 @@ function createFBInstantArticle (data) {
     .replace(/\s&\s/g, ' and ')
     .replace(/\shref=(['"])\/([a-z])/g, ' href=$1https://ascendntnu.no/$2')
     .replace(/\ssrc=(['"])\/([a-z])/g, ' src=$1https://ascendntnu.no/$2')
-    .replace(/<figure/, '<figure data-feedback="fb:none"')
+    .replace(/<figure/g, '<figure data-feedback="fb:none"')
 
   reTex = /<tex([^>]*)>([^<]*)<\/tex>/g
   var texSplit = result.split(/<tex|<\/tex>/g)
