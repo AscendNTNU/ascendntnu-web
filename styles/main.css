@@ -370,6 +370,10 @@ body.no-scroll {
     margin: auto;
 }
 
+.page-blog .page-container {
+    max-width: 768px;
+}
+
 .foot {
     background-color: #333;
     color: #ddd;
@@ -761,6 +765,26 @@ h6:empty {
     height: 50em;
 }
 
+.blog-list-preview, .blog-post-content {
+    font-family: Roboto Slab;
+    line-height: 1.7;
+    font-size: 21px;
+}
+
+@media (max-width: 800px) {
+    .blog-list-preview, .blog-post-content {
+        line-height: calc(1.6);
+        font-size: 3.1vw;
+    }
+}
+
+@media (max-width: 512px) {
+    .blog-list-preview, .blog-post-content {
+        line-height: calc(1.5);
+        font-size: 16px;
+    }
+}
+
 .sub-section {
     flex: 1 0 auto;
     margin: 0 auto;
@@ -918,8 +942,8 @@ figcaption {
 }
 
 .blog-list-preview {
-    font-size: .8em;
     padding: 0 200px 0 30px;
+    padding: 0;
 }
 
 .blog-list-categories,
