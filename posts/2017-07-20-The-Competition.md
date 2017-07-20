@@ -8,7 +8,6 @@ author: Brage Eikanger & Marius Maaland
 ---
 Ascend NTNU is a student organization at the Norwegian University of Science and Technology. Ascend NTNU was founded with the primary mission of participating in (and winning) the International Aerial Robotics Competition in 2016 and onwards.
 
-## The International Aerial Competition
 The International Aerial Competition (IARC) is the longest running collegiate aerial robotics challenge in the world, whose primary goal is to “move the state-of-the-art in aerial robotics forward”. In order to succeed with this ambitious goal, IARC poses challenges deemed “impossible” when introduced. The missions remains the same until one or more teams completes the challenges. The first IARC was held in 1991, and now, 26 years later, 6 missions have been completed; the longest mission running for 8 years before Georgia Institute of Technology solved the mission.
 
 ## The missions
