@@ -449,7 +449,7 @@ function prerender (req, data) {
         }
       },
       "foundingDate": "2015-07-28",
-      "image": "https://ascendntnu.no${data.image}",
+      "image": "${/^http/.test(data.image) ? data.image : ('https://ascendntnu.no' + data.image)}",
       "logo": "https://ascendntnu.no/images/logo/logo.png",
       "name": "Ascend NTNU",
       "memberOf": {
