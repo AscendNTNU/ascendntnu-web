@@ -364,14 +364,14 @@ body.no-scroll {
 }
 
 .page-container {
-    max-width: 960px;
+    max-width: 768px;
     width: 100%;
     flex: 1 0 auto;
     margin: auto;
 }
 
-.page-blog .page-container {
-    max-width: 768px;
+.page-container-big {
+    max-width: 960px;
 }
 
 .foot {
@@ -765,8 +765,10 @@ h6:empty {
     height: 50em;
 }
 
-.blog-list-preview, .blog-post-content {
-    font-family: Roboto Slab;
+.blog-list-preview,
+.blog-post-content,
+.section {
+    font-family: Roboto Slab, sans-serif;
     line-height: 1.7;
     font-size: 21px;
 }
@@ -775,27 +777,23 @@ h6:empty {
 .blog-post-content > p:first-child {
     font-weight: bold;
 }
-
-.blog-list-preview h1,
-.blog-post-content h1,
-.blog-list-preview h2,
-.blog-post-content h2,
-.blog-list-preview h3,
-.blog-post-content h3,
-.blog-list-preview h4,
-.blog-post-content h4 {
+h1, h2, h3, h4,
+.team-member-name,
+.section-title,
+.sub-section-title,
+.team-title {
     font-family: 'Open Sans', sans-serif;
 }
 
 @media (max-width: 800px) {
-    .blog-list-preview, .blog-post-content {
+    .blog-list-preview, .blog-post-content, .section {
         line-height: calc(1.6);
         font-size: 3.1vw;
     }
 }
 
 @media (max-width: 512px) {
-    .blog-list-preview, .blog-post-content {
+    .blog-list-preview, .blog-post-content, .section {
         line-height: calc(1.5);
         font-size: 16px;
     }
@@ -804,14 +802,14 @@ h6:empty {
 .sub-section {
     flex: 1 0 auto;
     margin: 0 auto;
-    padding: 16px;
+    padding: 0;
     box-sizing: border-box;
 }
 
 .sub-sub-section {
     flex: 1 0 auto;
     margin: 0 auto;
-    padding: 16px;
+    padding: 0;
     box-sizing: border-box;
 }
 
