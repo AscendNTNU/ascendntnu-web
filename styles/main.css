@@ -1483,10 +1483,10 @@ code {
     margin: 0 -16px;
 }
 
-@media (min-width: 960px) {
+@media (min-width: 768px) {
     .page-container .history-viewer {
         position: relative;
-        left: calc((960px - 100vw) / 2);
+        left: calc((768px - 100vw) / 2);
     }
 }
 
