@@ -1,11 +1,14 @@
 ---
 layout: post
-title:  "The International Aerial Robotics Competition"
-date:   2016-02-25 10:00:00
+image: /public/assets/180-degree-turn-cartoon.png
+title: "The International Aerial Robotics Competition [outdated]"
+date: 2016-02-25 10:00:00
 categories: IARC competition
 author: Marius Maaland
 ---
-Ascend NTNU was founded with the primary mission of participating in (and winning) the [International Aerial Robotics Competition (IARC)](http://aerialroboticscompetition.org/) in 2016 and onwards. 
+Ascend NTNU was founded with the primary mission of participating in (and winning) the [International Aerial Robotics Competition (IARC)](http://aerialroboticscompetition.org/) in 2016 and onwards.
+
+*This article is outdated. You can find the new one [here](/blog/2017-07-20-the-competition).*
 
 The IARC is the longest running collegiate aerial robotics challenge in the world, whose primary goal is to “move the state-of-the-art in aerial robotics forward”. In order to succeed with this ambitious mission, the IARC poses challenges deemed “impossible” when introduced. When a team, or a number of teams, complete the challenges in a sufficient manner, the world of aerial robotics will have advanced. This goal of advancing technology is what sparked our interest in entering this competition (aside from, you know, [drones](https://www.youtube.com/watch?v=CCDIuZUfETc)!). 
 
@@ -18,44 +21,36 @@ An event is held in the U.S and Asia each year, but only one winner is crowned. 
 
 The current mission, the one Ascend is solving, is mission number 7, more specifically 7a. Mission 7a takes places indoors on a 20x20 meter grid arena. The square arena has two white edges, one green edge and one red edge, as shown in figure 1. In the middle of the arena, 14 ground robots [(stripped down versions of the Roomba vacuum cleaner robots)](https://media.giphy.com/media/Q7ZckMLgjmthK/giphy.gif) start driving from the middle outwards towards the edges. The ground robots move in a specific pattern:
 
-1. Every 20 seconds they rotate 180 degrees.
-2. Every 5 seconds they rotate a random amount of degrees on the interval [-20, 20].
+<code>1. Every 20 seconds they rotate 180 degrees. 
+2. Every 5 seconds they rotate a random amount of degrees on the interval [-20, 20].</code>
 
 Our drone’s mission is to “herd” or guide 10 of these ground robots over the green edge, and keep them from running over any of the other edges, as shown in figure 2. And it has to do this autonomously; we are not allowed to control its movement in any way.
 
-<div class="row">
-	<div class="col-md-6">
-		<figure>
-			<img class="img-responsive" alt="Mission start state" src="/public/assets/start-state.png">
-			<figcaption class="text-center">Figure 1. Mission start state.</figcaption>
-		</figure>
-	</div>
-	<div class="col-md-6">
-		<figure>
-			<img class="img-responsive" alt="Mission start state" src="/public/assets/end-state.png">
-			<figcaption class="text-center">Figure 2. Desired end state.</figcaption>
-		</figure>
-	</div>
+<div class="split-img-container">
+	<figure class="split-img">
+		<img class="img-responsive" alt="Mission start state" src="/public/assets/start-state.png" />
+		<figcaption class="text-center">Figure 2. Desired end state.</figcaption>
+	</figure>
+	<figure class="split-img">
+		<img class="img-responsive" alt="Desired end state" src="/public/assets/end-state.png" />
+		<figcaption class="text-center">Figure 1. Mission start state.</figcaption>
+	</figure>
 </div>
 
 So how does our drone make these vacuum cleaners go where it wants them to go? There are two methods of interaction, shown in figure 3 and 4,  respectively: 
 
-1. Tapping on top of them, making them turn 45 degrees clockwise 
-2. Bumping into them in the front, turning them 180 degrees. 
+<code>1. Tapping on top of them, making them turn 45 degrees clockwise 
+2. Bumping into them in the front, turning them 180 degrees.</code>
 
-<div class="row"  style="padding-top: 20px; padding-bottom: 20px">
-	<div class="col-md-6">
-		<figure>
-			<img class="img-responsive" alt="Mission start state" src="/public/assets/45-degree-turn-cartoon.png">
+<div class="split-img-container">
+	<figure class="split-img">
+		<img class="img-responsive" alt="Test" src="/public/assets/test.png" />
 			<figcaption class="text-center">Figure 3. Tap on a robot to change their heading by 45 degrees.</figcaption>
-		</figure>
-	</div>
-	<div class="col-md-6">
-		<figure>
-			<img class="img-responsive" alt="Mission start state" src="/public/assets/180-degree-turn-cartoon.png">
+	</figure>
+	<figure class="split-img">
+		<img class="img-responsive" alt="Desired end state" src="/public/assets/180-degree-turn-cartoon.png" />
 			<figcaption class="text-center">Figure 4. Land in front of a robot to change their heading by 180 degrees.</figcaption>
-		</figure>
-	</div>
+	</figure>
 </div>
 
 The other 4 of the robots each carry a long cylinder (up to 2 meters) on top of them, and drive around in circles acting as annoying obstacles our drone has to avoid. 

@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  ascend:
+    build:
+      context: .
+      dockerfile: Dockerfile.compose
+    command: ./deploy.sh ${PORT_IN}
+    ports:
+      - ${PORT_IN}:${PORT_OUT}
+    volumes:
+      - .:/ascend-web/:rw
+    working_dir: /ascend-web

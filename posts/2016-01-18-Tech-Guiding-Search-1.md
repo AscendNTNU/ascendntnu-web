@@ -5,7 +5,6 @@ date:   2016-01-18 10:00:00
 categories: simulation tech modelling ai
 author: Simen Haugo
 ---
-
 Guiding the search for ground robots turns out to be more difficult than anticipated.
 
 ![Mysterious simulation](/public/assets/tech-guiding-search-1/title.png)

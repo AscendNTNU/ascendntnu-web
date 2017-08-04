@@ -1,14 +1,15 @@
 ---
 layout: post
+image: /public/assets/planning-update-1/drone-take-your-dog-for-a-walk.jpg
 title: "Planning Update: How to get a drone to think"
 date: 2017-02-14 12:00:00
 categories: planning tech update
+related: 2017-02-20-planning-update
 author: Vilde Gjærum & Adrian Tofting
 ---
-
-![Flying dog](http://fpv.tv/wp-content/uploads/2015/12/Drone-take-your-dog-for-a-walk.jpg)
-
 The planning group is working on creating an algorithm for how to solve the mission, i.e. making the drone autonomously decide what action it should do on which ground robot. We started working together in August and spent the first semester going through the rules, getting to know the problem and finally researching and brainstorming different solutions. This semester we are mainly working on two possible solutions we’ll outline in this blog.
+
+![Flying dog](/public/assets/planning-update-1/drone-take-your-dog-for-a-walk.jpg)
 
 Algorithm built on a fixed reward value field
 -------------------------------------------
@@ -22,8 +23,10 @@ But how does one give an action or a position a value? Our solution was to assig
 
 The value field was made by making a 22x22 matrix, representing the 20x20 meter court with a frame around. The frame was given values equivalent to the points we get for sending a ground robot over the different lines in the competition. In essence, we put 2000 points above the green line and -1000 points outside the other lines. We then iterated through each element in the matrix and gave that element the average value of its neighbour, until the whole field converged.
 
-![Value iteration](/public/assets/planning-update-1/value-iteration.gif)
-<figcaption>Value iteration of the value field, where the z-axis show the grid values.</figcaption>
+<figure>
+  <img alt="Value iteration" src="/public/assets/planning-update-1/value-iteration.gif" />
+  <figcaption>Value iteration of the value field, where the z-axis show the grid values.</figcaption>
+</figure>
 
 This valuefield worked just fine for its purpose, so we decided this was something worth spending more time on. We wanted to represent this value field as a function for faster and more accurate computation. In addition, an accurate matrix would require a lot of storage space, whereas the function requires next to none.
 One way to do this is by Least Squares Method (LSM). In short, LSM finds the best fit for a continuous model of your choice to the discrete data you feed into it. As a simple example, look at the illustration below.
@@ -54,14 +57,17 @@ And did I mention it holds for all cases?!
 
 Now let’s go back to our actual problem. By feeding the discrete grid values (<tex>\\vec{b}</tex>) into LSM we can estimate a continuous function (<tex>A\\vec{x}</tex>) that quite accurately represents the input. We can choose what function to approach the data with and started out with a linear function, and worked or way up to an 8th order polynomial. The following animation shows the resulting functions as the polynomial order increases from 1 to 8.
 
-
-![Function Estimation](/public/assets/planning-update-1/function-estimation.gif)
-<figcaption>Estimating a continuous function to the discrete value field.</figcaption>
+<figure>
+  <img alt="Function Estimation" src="/public/assets/planning-update-1/function-estimation.gif" />
+  <figcaption>Estimating a continuous function to the discrete value field.</figcaption>
+</figure>
 
 In essence, the Least Squares Method finds the function that minimizes the sum of the errors (squared) between the input data and the resulting function. It is therefore interesting to look at the errors between the function and the data it represents. As the figure below shows, the errors decrease and gets evenly distributed as the polynomial order of A increases.
 
-![Grid Function Error](/public/assets/planning-update-1/grid-func-error.gif)
-<figcaption>Errors between the continuous function and the discrete values as the function gets more complex.</figcaption>
+<figure>
+  <img alt="Grid Function Error" src="/public/assets/planning-update-1/grid-func-error.gif" />
+  <figcaption>Errors between the continuous function and the discrete values as the function gets more complex.</figcaption>
+</figure>
 
 Using our value function we can calculate a reward for the ground robots resulting path given different actions at different time steps. Comparing these we now have a quick way of finding the best actions, which implemented looks something like this:
 
@@ -69,7 +75,7 @@ Using our value function we can calculate a reward for the ground robots resulti
 
 Now the drone can make objective decisions on which robot to work with and what action it should perform on the robot. However, this is only the first stage of the algorithm, as the drone must be able to see further into the future to solve the problem more efficiently. This will lead to reduced traveling time and less actions to herd robots out of the court. But that will have to wait until another blog post. Meanwhile, here is a taxidermied cat converted into a drone.
 
-![Cat drone](http://i.giphy.com/h5NXof7XfEYHm.gif)
+![Cat drone](/public/assets/planning-update-1/cat-drone.gif)
 
 Thanks for reading! 
 

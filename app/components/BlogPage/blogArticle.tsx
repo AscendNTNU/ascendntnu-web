@@ -19,7 +19,7 @@ interface BlogArticleState {
     categories?: string,
     author?: string,
   },
-  post: any,
+  post: any
 }
 
 export class BlogArticle extends React.Component<BlogArticleProps, BlogArticleState> {
@@ -38,7 +38,7 @@ export class BlogArticle extends React.Component<BlogArticleProps, BlogArticleSt
         categoriesList: [],
         author: '',
       },
-      post: '',
+      post: ''
     }
 
     this.parser = new Parser()
@@ -77,7 +77,7 @@ export class BlogArticle extends React.Component<BlogArticleProps, BlogArticleSt
         let parsed: any = this.parser.parse(r.body)
         let rendered: any = this.renderer.render(parsed)
         r.attributes['dateFormatted'] = this.formatDate(r.attributes.date, 'dag DD/MM/YY')
-        r.attributes['categoriesList'] = r.attributes.categories.split(" ")
+        r.attributes['categoriesList'] = r.attributes.categories.split(' ')
         this.setState({
           attributes: r.attributes,
           post: rendered
@@ -92,7 +92,7 @@ export class BlogArticle extends React.Component<BlogArticleProps, BlogArticleSt
 
     if (typeof date === 'string') {
       format = (typeof format === 'string' ? format : 'dag DD.MM.YYYY (HH:mm:SS)')
-      let dager: string[] = ['Man', 'Tirs', 'Ons', 'Tors', 'Fre', 'Lør', 'Søn']
+      let dager: string[] = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
       let d: Date = new Date(date.replace(/-/g, '/').replace(/T/g, ' ').slice(0,19))
       let formatted: string = format.replace(new RegExp('da[gy]', 'ig'), dager[d.getDay()])
 
@@ -126,7 +126,8 @@ export class BlogArticle extends React.Component<BlogArticleProps, BlogArticleSt
     })
 
     return (
-      <Section className="page-blog" title={this.state.attributes.title}>
+      <Section className="page-blog">
+        <h1 className="section-title">{this.state.attributes.title}</h1>
         <div className="blog-post-details">
           <div className="blog-post-author">
             {this.state.attributes.author}
@@ -135,10 +136,20 @@ export class BlogArticle extends React.Component<BlogArticleProps, BlogArticleSt
             {this.state.attributes.dateFormatted}
           </div>
           <div className="blog-post-categories">
+            <div className="fb-share-button"
+              data-href={`https://ascendntnu.no/blog/${this.props.post}`}
+              data-layout="button_count"
+              data-size="small"
+              data-mobile-iframe="true">
+              <a className="fb-xfbml-parse-ignore"
+                target="_blank"
+                href={encodeURIComponent(`https://www.facebook.com/sharer/sharer.php?u=https://ascendntnu.no/blog/${this.props.post}&amp;src=sdkpreparse`)}>
+              </a>
+            </div>
             {categories}
           </div>
         </div>
-        <div ref="post" dangerouslySetInnerHTML={ {__html: this.state.post} } />
+        <div className="blog-post-content" ref="post" dangerouslySetInnerHTML={ {__html: this.state.post} } />
       </Section>
     )
   }

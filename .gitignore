@@ -7,3 +7,5 @@ images/teams/20*
 typings/**/*.json
 *.ignorefile.*
 constants.js
+cv
+.env

@@ -11,12 +11,13 @@ export class Footer extends React.Component<FooterProps, {}> {
   constructor(props: any) {
     super(props);
     this.links = [
-      {href: "mailto:hi@ascendntnu.no", icon: "envelope-o", content: "hi@ascendntnu.no"},
-      {href: "https://twitter.com/ascendntnu/", icon: "twitter", content: "Twitter/@ascendntnu"},
-      {href: "https://instagram.com/ascendntnu/", icon: "instagram", content: "Instagram/@ascendntnu"},
-      {href: "https://www.facebook.com/ascendntnu", icon: "facebook-official", content: "Facebook"},
-      {href: "https://github.com/ascendntnu", icon: "github", content: "Github"},
-      {href: "https://www.linkedin.com/company/ascend-ntnu", icon: "linkedin", content: "LinkedIn"},
+      { href: "mailto:hi@ascendntnu.no", icon: "envelope-o", content: "hi@ascendntnu.no" },
+      { href: "https://twitter.com/ascendntnu/", icon: "twitter", content: "Twitter/@ascendntnu" },
+      { href: "https://instagram.com/ascendntnu/", icon: "instagram", content: "Instagram/@ascendntnu" },
+      { href: "https://www.facebook.com/ascendntnu", icon: "facebook-official", content: "Facebook" },
+      { href: "https://github.com/ascendntnu", icon: "github", content: "Github" },
+      { href: "https://www.linkedin.com/company/ascend-ntnu", icon: "linkedin", content: "LinkedIn" },
+      { href: "https://ascendntnu.no/blog/rss", icon: "rss", content: "RSS" },
     ];
   }
 

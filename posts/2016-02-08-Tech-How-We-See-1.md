@@ -1,11 +1,12 @@
 ---
 layout: post
-title:  "Tech: How we see the world (Part 1)"
-date:   2016-02-08 10:00:00
+image: /public/assets/tech-how-we-see-1/tileframe-4.png
+title: "Tech: How we see the world (Part 1)"
+date: 2016-02-08 10:00:00
 categories: tech computer vision
+related: 2016-02-25-the-competition
 author: Simen Haugo
 ---
-
 Asking the questions that really matter, and then not answering them.
 
 How we see the world (Part 1)
@@ -72,7 +73,11 @@ Unfortunately, I skipped over a bunch of technical details in the above explanat
 
 Here's a video I recorded at our lab the other day. In an attempt to somewhat reproduce the competition at home, we have not only bought in a handful of vacuum cleaner robots, but we have also created an elaborate grid of sticky tape.
 
-<p style="text-align: center;" ><video style="margin: 0 auto;" src="/public/assets/tech-how-we-see-1/scaled.mp4" width="480" height="270" controls></video></p>
+<figure>
+  <video width="480" height="270" controls>
+    <source src="/public/assets/tech-how-we-see-1/scaled.mp4" type="video/mp4" />
+  </video>
+</figure>
 
 This is, part, what our drone will be seeing. We think we need more cameras, but we're pretty sure we'll have one pointing downwards like this. Naturally, you have no problem working out how big the grid was, or how many tiles I walked in that video. But that's thanks to the many years of intense grid-position-estimation training you've done, right?
 

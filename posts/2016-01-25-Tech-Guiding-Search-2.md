@@ -5,7 +5,6 @@ date:   2016-01-25 11:00:00
 categories: simulation tech modelling ai
 author: Simen Haugo
 ---
-
 This week I continue down the rabbit hole in the search for ground robots.
 
 Well that didn't work!

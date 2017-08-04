@@ -194,7 +194,7 @@ export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
 
     if (typeof date === 'string') {
       format = (typeof format === 'string' ? format : 'dag DD.MM.YYYY (HH:mm:SS)')
-      let dager: string[] = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+      let dager: string[] = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
       let d: Date = new Date(date.replace(/-/g, '/').replace(/T/g, ' ').slice(0,19))
       let formatted: string = format.replace(new RegExp('da[gy]', 'ig'), dager[d.getDay()])
 
@@ -268,11 +268,11 @@ export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
         })
         return (
           <div className="page-blog-list-link" key={i}>
+            <Link className="blog-list-link"
+              onClick={this.reload}
+              to={'/blog/' + post.link}
+              dangerouslySetInnerHTML={ {__html: post.attributes.title } } />
             <div className="blog-list-details">
-              <Link className="blog-list-link"
-                onClick={this.reload}
-                to={'/blog/' + post.link}
-                dangerouslySetInnerHTML={ {__html: post.attributes.title } } />
               <div className="blog-list-author" dangerouslySetInnerHTML={ {__html: post.attributes.author } } />
               <div className="blog-list-date" dangerouslySetInnerHTML={ {__html: post.attributes.dateFormatted } } />
             </div>

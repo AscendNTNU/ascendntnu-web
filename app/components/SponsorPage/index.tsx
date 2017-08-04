@@ -20,7 +20,7 @@ export class SponsorPage extends React.Component<SponsorPageProps, SponsorPageSt
     super(props)
 
     this.state = {
-      year: props.params.year || 2016,
+      year: props.params.year || 2017,
     }
   }
 
@@ -57,7 +57,7 @@ export class SponsorPage extends React.Component<SponsorPageProps, SponsorPageSt
     return (
       <div className="page page-sponsors">
         <Breadcrumb routes={['sponsors']} />
-        <Section title={title} className="centered">
+        <Section title={title} className="centered page-container-big">
           <SponsorList year={this.state.year} />
         </Section>
       </div>

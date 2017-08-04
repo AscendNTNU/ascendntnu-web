@@ -32,7 +32,7 @@ export class DronePage extends React.Component<DronePageProps, DronePageState> {
           name: 'Drone 1',
           image: <div className="drone-image" style={ { backgroundImage: 'url(/images/drones/drone1-flying-minimized.jpg)' } }></div>,
           content: [
-            <span>Our first aerial robot was born last fall. Creating it, flying it and using it has been a great learning experience for the team. The drone is however quite small, and we needed an upgrade in order to carry all the desired equipment.</span>,
+            <span>Our first aerial robot was born fall of 2015. Creating it, flying it and using it has been a great learning experience for the team. The drone is however quite small, and we needed an upgrade in order to carry all the desired equipment.</span>,
           ]
         }
       },

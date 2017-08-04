@@ -277,7 +277,7 @@ export class HistoryViewer extends React.Component<HistoryViewerProps, HistoryVi
       this.historyElements = history.map((event: any, i: number) => {
         let style: any = {
           right: event.pos,
-          top: `${20 + 42 * Math.cos(event.time.getTime * this.timelineScale)}px`
+          top: `${30 + 42 * Math.cos(event.time.getTime() * this.timelineScale / 5)}px`
         }
         return (
           <div key={i}

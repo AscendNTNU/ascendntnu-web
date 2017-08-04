@@ -18,6 +18,7 @@ export class ModelRenderer extends React.Component<ModelRendererProps, void> {
   public camera: any
   public scene: any
   public loader: any
+  private raf: number
 
   constructor (props: any) {
     super(props)
@@ -61,25 +62,27 @@ export class ModelRenderer extends React.Component<ModelRendererProps, void> {
     })
 
     this.renderer.setPixelRatio(window.devicePixelRatio)
-    this.renderer.setSize(this.canvas.clientWidth, this.canvas.clientHeight, false)
-    this.camera.aspect = this.canvas.clientWidth / this.canvas.clientHeight
-    this.camera.updateProjectionMatrix()
+    this.fitToContainerHandler()
     window.addEventListener('resize', this.fitToContainerHandler)
 
     if (this.props.autospin) {
-      setInterval(() => {
-        this.updateRendering()
-      }, 100)
+      this.raf = window.requestAnimationFrame(this.animationStep.bind(this))
     } else {
       this.updateRendering()
     }
   }
 
+  animationStep (timestamp: number) {
+    this.updateRendering()
+    window.requestAnimationFrame(this.animationStep.bind(this))
+  }
+
   componentWillUnmount () {
+    if (this.raf) window.cancelAnimationFrame(this.raf)
     window.removeEventListener('resize', this.fitToContainerHandler)
   }
 
-  private fitToContainerHandler (evt: any) {
+  private fitToContainerHandler (evt?: any) {
     this.renderer.setSize(this.canvas.clientWidth, this.canvas.clientHeight, false)
     this.camera.aspect = this.canvas.clientWidth / this.canvas.clientHeight
     this.camera.updateProjectionMatrix()
