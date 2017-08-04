@@ -395,6 +395,7 @@ body.no-scroll {
 }
 
 .foot-element {
+    font-family: Roboto Slab, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -603,9 +604,9 @@ body.no-scroll {
 }
 
 .sponsors .sponsor {
-    flex: 1 1 200px;
-    max-width: 200px;
-    width: 200px;
+    flex: 1 1 240px;
+    max-width: 240px;
+    width: 240px;
     margin: 16px 16px;
 }
 
