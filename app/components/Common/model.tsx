@@ -119,7 +119,7 @@ export class ModelRenderer extends React.Component<ModelRendererProps, void> {
         })
       })
     } catch (ex) {
-      console.error('Mangler modellen(e): ' + models.join(', '))
+      console.error('Mangler modellen(e): ' + models.join(', ') + ', eller så kan THREE.js være utdatert.')
     }
   }
 
