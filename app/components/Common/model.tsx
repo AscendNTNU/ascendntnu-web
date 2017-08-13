@@ -89,34 +89,38 @@ export class ModelRenderer extends React.Component<ModelRendererProps, void> {
   }
 
   updateModels (models: string[]) {
-    models.forEach((model) => {
-      this.loader.load(model, (geometry: any) => {
-        var meshMaterial: any = null
-        if (this.props.wireframe) {
-          meshMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff, wireframe: true })
-        } else {
-          meshMaterial = new THREE.MeshStandardMaterial({
-            color: 0xff8800,
-            roughness: 0.95,
-            metalness: 0.0,
-            side: THREE.DoubleSide
-          })
-        }
-        //if (geometry.hasColors) {
-        //  meshMaterial = new THREE.MeshPhongMaterial({ opacity: geometry.alpha, vertexColors: THREE.VertexColors })
-        //}
-        geometry.translate(-360, 0, -300)
-        var mesh = new THREE.Mesh(geometry, meshMaterial)
-        mesh.position.set(0, 0, 0)
-        mesh.rotation.set(0, 0, 0)
-        let scale = .5
-        mesh.scale.set(scale, scale, scale)
-        mesh.castShadow = true
-        mesh.receiveShadow = true
-        this.scene.add(mesh)
-        this.updateRendering()
+    try {
+      models.forEach((model) => {
+        this.loader.load(model, (geometry: any) => {
+          var meshMaterial: any = null
+          if (this.props.wireframe) {
+            meshMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff, wireframe: true })
+          } else {
+            meshMaterial = new THREE.MeshStandardMaterial({
+              color: 0xff8800,
+              roughness: 0.95,
+              metalness: 0.0,
+              side: THREE.DoubleSide
+            })
+          }
+          //if (geometry.hasColors) {
+          //  meshMaterial = new THREE.MeshPhongMaterial({ opacity: geometry.alpha, vertexColors: THREE.VertexColors })
+          //}
+          geometry.translate(-360, 0, -300)
+          var mesh = new THREE.Mesh(geometry, meshMaterial)
+          mesh.position.set(0, 0, 0)
+          mesh.rotation.set(0, 0, 0)
+          let scale = .5
+          mesh.scale.set(scale, scale, scale)
+          mesh.castShadow = true
+          mesh.receiveShadow = true
+          this.scene.add(mesh)
+          this.updateRendering()
+        })
       })
-    })
+    } catch (ex) {
+      console.error('Mangler modellen(e): ' + models.join(', '))
+    }
   }
 
   updateRendering () {
