@@ -4,9 +4,20 @@ This page shows who AscendNTNU really are and what we do.
 
 ## Developers
 
-To set up the environment, follow the instructions below.
+- [Guidelines for changing code](#guidelines-for-changing-code)
+- [Setup dev environment](#set-up-the-dev-environment)
+
+### Guidelines for changing code
+
+We have some rules when changing code:
+- **Use braches!** Every time someone pushes to `dev` branch, a new website is build from ground up. `dev` branch is for staging so you can see the result on [dev.ascendntnu.no](https://dev.ascendntnu.no).
+- **Use Pull Requests.** We need to review code, and making sure things are working. Do not merge to `dev` without a PR.
+- **Test everything.** The site is made for mobile and desktop. Please test both before lauching to `dev` and creating a release (tag).
+- **Comment code.** We use [Standard JS](https://standardjs.com/).
 
 ### Set up the dev environment
+
+To set up the environment, follow the instructions below.
 
 **First step after clone:**  
 If you have `make`, run:
