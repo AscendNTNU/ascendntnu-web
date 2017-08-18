@@ -65,8 +65,8 @@ export class JoinPage extends React.Component<JoinPageProps, JoinPageState> {
             <i>Nøkkelord: Ledelse, Datasyn, Visuell databehandling, Deep Learning, Kunstig Intelligens programmering, Sensorikk. </i>
             </li>
             <li>
-              <strong>Control gruppemedlem.</strong> Control gruppen lager systemene som tar seg av bevegelsen og styringen av dronen. Det vil si å kunne holde dronen stabil i luften, samtidig som vi kontrollerer den dit vi ønsker i rommet, gjerne raskt og effektivt og uten at den kolliderer med noe på veien. Som et gruppemedlem her vil du være med å skape smarte løsninger i dronens balansesystem samtidig som du driver på med regulering, flykontrollere og optimal banekalkulering. Du vil bli kurset i slik teknologi om du ikke har erfaring med det fra før. <br />
-              <i>Nøkkelord: Reguleringsteknikk, Kalman-filter, Sensor fusion, Dynamisk Programmering, Collision Avoidance.</i>
+              <strong>Control gruppemedlem.</strong> Control har ansvar for å få dronen til å autonomt utføre høynivå kommandoer på en pålitelig og robust måte. I control vil du jobbe med systemene som skal få dronen til å fly presist og stabilt rundt i rommet uten å kollidere i hindringene på veien, gjerne raskt og effektivt! Alt skal foregå autonomt så dronen må selv finne ut hvilke handlinger den må gjøre for å klare å utføre kommandoen den får!  Som gruppemedlem får du mulighet til å jobbe på alt fra lavnivå flykontrollere som sørger for å holde dronen stabil, til høynivå ruteplanlegging og kollisjonsunngåelse som styrer dronen rundt i rommet! <br />
+              <i>Nøkkelord: Reguleringsteknikk, C/C++, ROS,  tilstandsmaskin, embedded, ruteplanlegging</i>
             </li>
             <li>
                 <strong>AI gruppemedlem.</strong><i> "Hva skal dronen gjøre, og hvorfor er det lurt?" </i>Som medlem av AI gruppen jobber du med den overordnede kunstige intelligensen (AI) til dronen. Det er gruppen sitt ansvar å  produsere en AI som kan analysere informasjonen om verden rundt seg og gjennom dette skal den kunne ta beslutninger på egen hånd og gjerne det smarteste valget. Som medlem av denne gruppen vil du være med på å tenke nyskapende mens du trener droner i simulatorer, i virkeligheten og skriver avansert programvare. Du vil bli kurset i kunstig intelligens om du ikke har erfaring med det fra før. <br />
@@ -160,7 +160,7 @@ export class JoinPage extends React.Component<JoinPageProps, JoinPageState> {
             <a className="button active" style={ { alignSelf: 'flex-start' } } href="https://docs.google.com/forms/d/e/1FAIpQLSe2ieI86nG7RXWN12PTOT08pbPO9zJoaO2Xmq0IjTLKsdGuAA/viewform">Søk her!</a>
            {/*}<h4><a href="http://ascendntnu.us14.list-manage2.com/subscribe?u=dfce303a41ce42b342c75a3ef&amp;id=002e04db12" target="_blank">Interesseliste for opptak. Søknadskjema kommer veldig snart!</a></h4>*/}
             {positions[this.state.language][0]}
-            <i>Det er kun studenter som studerer på NTNU i året 2017/2018 som kan søke. Er du usikker på om dette gjelder for deg? Spør oss på <a href="mailto:hi@ascendntnu.no">hi@ascendntnu.no</a></i>
+            <i>Det er kun studenter som studerer på NTNU i året 2017/2018 som kan søke. E   r du usikker på om dette gjelder for deg? Spør oss på <a href="mailto:hi@ascendntnu.no">hi@ascendntnu.no</a></i>
             <SubSection title="Hvorfor søke">
               <ul>
                 <li><strong>Bli en del av et miljø.</strong> I Ascend blir du en del av et målrettet og teknologifokusert prosjekt der vi jobber sammen for å nå våre mål. </li>
