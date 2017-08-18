@@ -40,6 +40,14 @@ If you are new to `typescript` and `webpack`, you should get these packages firs
 $ npm install -g typescript typings webpack # Will require admin access
 ```
 
+If you are a Ascend NTNU member, we will also give you access to content belonging to the project. If you have acces, run:
+
+```bash
+make download-images
+```
+
+There are also plenty of ways to download content from the server. Just find a way to copy the content from the `/images/assets` and `/images/teams` folder. The `make` command above is the easiest one.
+
 Now that the environment is in place, run: **(This is the most important step)**
 
 ```bash
