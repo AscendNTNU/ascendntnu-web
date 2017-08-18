@@ -1,6 +1,6 @@
 # Webpage for [AscendNTNU](http://ascendntnu.no)
 
-This page shows who AscendNTNU are and what we do.
+This page shows who AscendNTNU really are and what we do.
 
 ## Developers
 
@@ -55,7 +55,7 @@ $ npm install -g typescript typings webpack
 $ npm link typescript
 ```
 
-Most production environments likes to use environment variables. We therefore have an option for adding environment variables. You can eighter:
+Most production environments likes to use environment variables. We therefore have an option for adding environment variables. You can either:
 1. Change a env var before the server starts.
 2. Or add them to a `.env` config. Format (and defaults) are set in `.env.default`.
 
