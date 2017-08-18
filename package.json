@@ -4,10 +4,11 @@
   "description": "AscendNTNU website",
   "main": "app/index.tsx",
   "scripts": {
-    "start": "webpack -w",
+    "start": "npm-run-all build server",
+    "dev": "npm-run-all --parallel watch server",
     "build": "webpack",
     "watch": "webpack -w",
-    "dev": "concurrently --kill-others \"webpack -w\" \"node server.js\"",
+    "server": "node server.js",
     "deploy": "NODE_ENV=production webpack -p --config webpack.prod.config.js"
   },
   "repository": {
@@ -40,7 +41,6 @@
   },
   "dependencies": {
     "commonmark": "^0.26.0",
-    "concurrently": "^3.1.0",
     "dotenv": "^4.0.0",
     "es6-promise": "^4.0.5",
     "express": "~4.14.0",
@@ -49,6 +49,7 @@
     "json-loader": "^0.5.4",
     "katex": "^0.7.1",
     "mkdirp": "^0.5.1",
+    "npm-run-all": "^4.0.2",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "react-router": "^2.8.1",
