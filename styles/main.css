@@ -691,6 +691,12 @@ body.no-scroll {
     line-height: 1.6;
 }
 
+.page-join li {
+    line-height: 1.8em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
 .page-blog a,
 .page-join a,
 .page-about a,
@@ -1677,7 +1683,7 @@ code {
         min-height: 640px;
         max-height: 640px;
     }
-    
+
     .front-splash > .model-renderer {
         max-height: 640px;
     }
