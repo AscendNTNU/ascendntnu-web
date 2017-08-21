@@ -776,6 +776,10 @@ body.no-scroll {
     line-height: 1.6;
 }
 
+.key-words {
+    opacity: .5;
+}
+
 .page-join li {
     line-height: 1.8em;
     padding-top: 1em;
