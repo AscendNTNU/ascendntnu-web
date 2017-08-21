@@ -944,6 +944,13 @@ h1, h2, h3, h4,
     padding: 0;
 }
 
+.drone-title .birth {
+    font-size: .5em;
+    margin: .3em;
+    padding-bottom: .3em;
+    vertical-align: middle;
+}
+
 .drone-sub-title {
     font-size: 2em;
     font-weight: bold;

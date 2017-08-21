@@ -120,7 +120,10 @@ export class DronePage extends React.Component<DronePageProps, DronePageState> {
           <div className="drone-main">
             <div className="drone-image">{drone.image}</div>
             <div className="drone-title-container">
-              <h1 className="drone-title">{yearContent.year}</h1>
+              <h1 className="drone-title">
+                {yearContent.year}
+                {yearContent.year === 2016 ? <span className="fa fa-star birth"></span> : ''}
+              </h1>
               <h2 className="drone-sub-title">{drone.name}</h2>
             </div>
           </div>
