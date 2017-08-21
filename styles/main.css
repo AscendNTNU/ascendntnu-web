@@ -920,6 +920,7 @@ h1, h2, h3, h4,
 
 .drone-image {
     width: calc(1.618 * 200px);
+    max-width: 100%;
     height: 200px;
     display: block;
     background-size: cover;
