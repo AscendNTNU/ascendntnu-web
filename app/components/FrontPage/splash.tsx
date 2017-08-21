@@ -201,13 +201,7 @@ export class Splash extends React.Component<SplashProps, SplashState> {
       <div className="front-splash">
         <ModelRenderer models={['/images/drones/drone2.stl']} process={Date.now()} autospin={true} wireframe={true} style={{ position: 'absolute' }} />
         <div className="front-splash-left" style={styles.leftStyle}>
-          <p>
-              Autonomus aerial robotics for fun and learning.
-              Ascend NTNU is the
-              &nbsp;<a href="http://www.ntnu.edu/">Norwegian University Of Science and Technology's</a>
-              &nbsp;team in the
-              &nbsp;<a href="http://www.aerialroboticscompetition.org/">International Aerial Robotics Competition</a>.
-          </p>
+          <p>Autonomus aerial robotics for fun and learning. Ascend NTNU is the <a href="http://www.ntnu.edu/">Norwegian University Of Science and Technology's</a> team in the <a href="http://www.aerialroboticscompetition.org/">International Aerial Robotics Competition</a>.</p>
         </div>
         <div className="front-splash-center" style={styles.centerStyle}
           onMouseDown={this.mouseDownHandler.bind(this)}
