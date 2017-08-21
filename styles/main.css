@@ -370,6 +370,10 @@ body.no-scroll {
     margin: auto;
 }
 
+.page-container-big {
+    max-width: 960px;
+}
+
 .page-blog .page-container {
     max-width: 768px;
 }
@@ -462,6 +466,77 @@ body.no-scroll {
 .model-renderer {
     width: 100%;
     height: 100vh;
+}
+
+.front-announcement {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    padding: 16px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-flow: nowrap column;
+    font-size: 2vw;
+    color: #ddd;
+    background-color: rgba(0, 0, 0, .8);
+    background-color: #333;
+}
+
+.front-announcement:before {
+    content: "";
+    z-index: -1;
+    opacity: .2;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url(/images/logo/logo-ascend-below.svg);
+    background-origin: center;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-size: 90vmin;
+}
+
+.front-announcement:after {
+    content: "(Trykk hvor som helst for å lukke)";
+    position: absolute;
+    text-align: center;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+    font-size: .8em;
+}
+
+@media (max-width: 960px) {
+    .front-announcement {
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 2000px) {
+    .front-announcement {
+        font-size: 2.6em;
+    }
+}
+
+.front-announcement.hidden {
+    display: none;
+}
+
+.front-announcement-content {
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: center;
+    flex-flow: nowrap column;
 }
 
 .front-splash {
