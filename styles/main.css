@@ -932,6 +932,7 @@ h1, h2, h3, h4,
 .drone-title-container {
     flex: 1 0 auto;
     text-align: center;
+    padding-bottom: .8em;
 }
 
 .drone-title {
@@ -940,7 +941,7 @@ h1, h2, h3, h4,
     flex: 1 0 auto;
     text-align: center;
     font-family: Questrial, sans-serif;
-    margin: -.3em 0;
+    margin: -.3em .1em;
     padding: 0;
 }
 
@@ -957,8 +958,12 @@ h1, h2, h3, h4,
     flex: 1 0 auto;
     text-align: center;
     font-family: Roboto Slab, sans-serif;
-    margin: -.2em 0;
+    margin: -.2em .1em;
     padding: 0;
+}
+
+.drone-container:nth-child(odd) .drone-main {
+    flex-wrap: wrap-reverse;
 }
 
 .drone-container:nth-child(even) .drone-image {
