@@ -374,6 +374,10 @@ body.no-scroll {
     max-width: 960px;
 }
 
+.page-blog .page-container {
+    max-width: 768px;
+}
+
 .foot {
     background-color: #333;
     color: #ddd;
@@ -465,6 +469,78 @@ body.no-scroll {
     height: 100vh;
 }
 
+.front-announcement {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    padding: 16px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-flow: nowrap column;
+    font-size: 2vw;
+    color: #ddd;
+    background-color: rgba(0, 0, 0, .8);
+    background-color: #333;
+}
+
+.front-announcement:before {
+    content: "";
+    z-index: -1;
+    opacity: .2;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url(/images/logo/logo-ascend-below.svg);
+    background-origin: center;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-size: 90vmin;
+}
+
+.front-announcement:after {
+    content: "(Trykk hvor som helst for å lukke)";
+    position: absolute;
+    text-align: center;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+    font-size: .8em;
+}
+
+@media (max-width: 960px) {
+    .front-announcement {
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 1600px) {
+    .front-announcement {
+        font-size: 2em;
+    }
+}
+
+.front-announcement.hidden {
+    display: none;
+}
+
+.front-announcement-content {
+    margin-bottom: 16px;
+    display: flex;
+    max-width: 768px;
+    justify-content: center;
+    flex-flow: nowrap column;
+}
+
 .front-splash {
     display: flex;
     position: relative;
@@ -521,6 +597,15 @@ body.no-scroll {
     transform: translateX(-50%) translateY(-50%);
     cursor: ew-resize;
     touch-action: none;
+    -webkit-overflow-scrolling: touch;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    outline: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
 
 .page .front-splash-center > img {
@@ -692,6 +777,10 @@ body.no-scroll {
     line-height: 1.6;
 }
 
+.key-words {
+    opacity: .5;
+}
+
 .page-join li {
     line-height: 1.8em;
     padding-top: 1em;
@@ -809,14 +898,22 @@ h1, h2, h3, h4,
 .sub-section {
     flex: 1 0 auto;
     margin: 0 auto;
+<<<<<<< HEAD
     padding: 0;
+=======
+    padding: 16px 0;
+>>>>>>> dev
     box-sizing: border-box;
 }
 
 .sub-sub-section {
     flex: 1 0 auto;
     margin: 0 auto;
+<<<<<<< HEAD
     padding: 0;
+=======
+    padding: 16px 0;
+>>>>>>> dev
     box-sizing: border-box;
 }
 

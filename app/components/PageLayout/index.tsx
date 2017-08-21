@@ -27,7 +27,7 @@ export class SubSubTitle extends React.Component<{}, {}> {
 }
 
 export interface SectionProps {
-  title?: string,
+  titleText?: string,
   theme?: string,
   className?: string,
 }
@@ -39,36 +39,39 @@ export class Section extends React.Component<SectionProps, {}> {
   constructor(props: SectionProps) {
     super(props)
 
-    this.className = "section page-container"
+    this.className = 'section page-container'
 
     if (this.props.className)
-      this.className += " " + this.props.className
+      this.className += ' ' + this.props.className
 
     if (this.props.theme) {
-      let theme: string = ""
+      let theme: string = ''
 
       switch (this.props.theme) {
-        case "dark":
-          theme = "dark"
+        case 'dark':
+          theme = 'dark'
           break
         default:
-          theme = "light"
+          theme = 'light'
           break
       }
 
-      this.className += " " + theme
+      this.className += ' ' + theme
     }
   }
 
   render() {
-    if (this.props.title) {
+    if (this.props.titleText) {
       this.title = (
-        <Title>{this.props.title}</Title>
+        <Title>{this.props.titleText}</Title>
       )
     }
 
+    let props: SectionProps = Object.assign({}, this.props)
+    delete props.titleText
+
     return (
-      <div {...this.props} className={this.className}>
+      <div {...props} className={this.className}>
         {this.title}
         {this.props.children}
       </div>
@@ -77,7 +80,7 @@ export class Section extends React.Component<SectionProps, {}> {
 }
 
 export interface SubSectionProps {
-  title?: string,
+  titleText?: string,
   theme?: string,
   className?: string,
 }
@@ -89,34 +92,37 @@ export class SubSection extends React.Component<SubSectionProps, {}> {
   constructor(props: SectionProps) {
     super(props)
 
-    this.className = "sub-section page-container"
+    this.className = 'sub-section page-container'
 
     if (this.props.className)
-      this.className += " " + this.props.className
+      this.className += ' ' + this.props.className
 
     if (this.props.theme) {
-      let theme: string = ""
+      let theme: string = ''
 
       switch (this.props.theme) {
-        case "dark":
-          theme = "dark"
+        case 'dark':
+          theme = 'dark'
           break
         default:
-          theme = "light"
+          theme = 'light'
           break
       }
     }
   }
 
   render() {
-    if (this.props.title) {
+    if (this.props.titleText) {
       this.title = (
-        <SubTitle>{this.props.title}</SubTitle>
+        <SubTitle>{this.props.titleText}</SubTitle>
       )
     }
 
+    let props: SectionProps = Object.assign({}, this.props)
+    delete props.titleText
+
     return (
-      <div {...this.props} className={this.className}>
+      <div {...props} className={this.className}>
         {this.title}
         {this.props.children}
       </div>
@@ -125,7 +131,7 @@ export class SubSection extends React.Component<SubSectionProps, {}> {
 }
 
 export interface SubSubSectionProps {
-  title?: string,
+  titleText?: string,
   theme?: string,
   className?: string,
 }
@@ -137,34 +143,37 @@ export class SubSubSection extends React.Component<SubSubSectionProps, {}> {
   constructor(props: SectionProps) {
     super(props)
 
-    this.className = "sub-sub-section page-container"
+    this.className = 'sub-sub-section page-container'
 
     if (this.props.className)
-      this.className += " " + this.props.className
+      this.className += ' ' + this.props.className
 
     if (this.props.theme) {
-      let theme: string = ""
+      let theme: string = ''
 
       switch (this.props.theme) {
-        case "dark":
-          theme = "dark"
+        case 'dark':
+          theme = 'dark'
           break
         default:
-          theme = "light"
+          theme = 'light'
           break
       }
     }
   }
 
   render() {
-    if (this.props.title) {
+    if (this.props.titleText) {
       this.title = (
-        <SubSubTitle>{this.props.title}</SubSubTitle>
+        <SubSubTitle>{this.props.titleText}</SubSubTitle>
       )
     }
 
+    let props: SectionProps = Object.assign({}, this.props)
+    delete props.titleText
+
     return (
-      <div {...this.props} className={this.className}>
+      <div {...props} className={this.className}>
         {this.title}
         {this.props.children}
       </div>

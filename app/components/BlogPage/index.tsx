@@ -289,7 +289,7 @@ export class BlogPage extends React.Component<BlogPageProps, BlogPageState> {
       return (
         <div className="page page-blog">
           <Breadcrumb routes={['blog']} />
-          <Section title="Our blog">
+          <Section titleText="Our blog">
             <input onChange={this.search.bind(this)} placeholder="Search in articles..." title="Use * as wildcard" />
             <SubSection className="page-blog-list">
               {links}
