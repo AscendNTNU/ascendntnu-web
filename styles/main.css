@@ -898,22 +898,14 @@ h1, h2, h3, h4,
 .sub-section {
     flex: 1 0 auto;
     margin: 0 auto;
-<<<<<<< HEAD
-    padding: 0;
-=======
     padding: 16px 0;
->>>>>>> dev
     box-sizing: border-box;
 }
 
 .sub-sub-section {
     flex: 1 0 auto;
     margin: 0 auto;
-<<<<<<< HEAD
-    padding: 0;
-=======
     padding: 16px 0;
->>>>>>> dev
     box-sizing: border-box;
 }
 
