@@ -61,7 +61,7 @@ export class JoinPage extends React.Component<JoinPageProps, JoinPageState> {
               <i className="key-words">Nøkkelord: Datasyn, Visuell databehandling, Deep Learning, Kunstig Intelligens programmering, filtrering, Kalmanfilter, Sensorikk.</i>
             </li>
             <li>
-              <strong>Teknisk gruppeleder - Perception.</strong> Beskrivelse: Som teknisk gruppeleder er det ditt ansvar å holde oversikt over det tekniske arbeidet som må gjøres på gruppen din, sørge for at alle har det de trenger, sørge for at gruppen kommuniserer med de andre tekniske gruppene og at alle i Ascend er oppdatert. Du vil fordele arbeidsoppgaver samtidig som du selv blir å gjøre like mye hands-on teknisk arbeid som gruppen din. Du vil også bli kurset i ledelse om du ikke har erfaring med dette fra før. <br />
+              <strong>Teknisk gruppeleder - Perception.</strong> Som teknisk gruppeleder er det ditt ansvar å holde oversikt over det tekniske arbeidet som må gjøres på gruppen din, sørge for at alle har det de trenger, sørge for at gruppen kommuniserer med de andre tekniske gruppene og at alle i Ascend er oppdatert. Du vil fordele arbeidsoppgaver samtidig som du selv blir å gjøre like mye hands-on teknisk arbeid som gruppen din. Du vil også bli kurset i ledelse om du ikke har erfaring med dette fra før. <br />
               <i className="key-words">Nøkkelord: Ledelse, Datasyn, Visuell databehandling, Deep Learning, Kunstig Intelligens programmering, Sensorikk. </i>
             </li>
             <li>
