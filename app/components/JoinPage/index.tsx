@@ -50,50 +50,46 @@ export class JoinPage extends React.Component<JoinPageProps, JoinPageState> {
           <ul>
             <li>
                 <strong>Hardware gruppemedlem.</strong> Det er Hardware gruppen som designer og bygger selve dronene til Ascend, og her kan du jobbe med litt av hvert. Gruppen er en krysning mellom mekanisk ingeniørvitenskap, produktdesign og elektronikk. Dette involverer å kunne designe og produsere delene til dronen, designe det elektriske systemet ombord på dronen og samarbeide med de andre gruppene for å integrere sensorikk og datamaskinene vi har ombord! Her trenger vi mange forskjellige talenter. Du vil bli kurset i slik teknologi om du ikke har erfaring med det fra før. <br />
-                <i>Nøkkelord: Mekanisk design, Produktdesign, Elektrisk design, Kretskortdesign, Styrkeberegning, Materialvalg, Aerodynamikk</i>
+                <i className="key-words">Nøkkelord: Mekanisk design, Produktdesign, Elektrisk design, Kretskortdesign, Styrkeberegning, Materialvalg, Aerodynamikk</i>
             </li>
             <li>
                 <strong>Teknisk gruppeleder - Hardware.</strong> Som teknisk gruppeleder er det ditt ansvar å holde oversikt over det tekniske arbeidet som må gjøres på gruppen din, sørge for at alle har det de trenger, sørge for at gruppen kommuniserer med de andre tekniske gruppene og at alle i Ascend er oppdatert. Du vil fordele arbeidsoppgaver samtidig som du selv blir å gjøre like mye hands-on teknisk arbeid som gruppen din. Du vil også bli kurset i ledelse om du ikke har erfaring med det fra før. <br />
-                <i>Nøkkelord: Ledelse, Mekanisk design, Produktdesign, Elektrisk design, Kretskortdesign, Styrkeberegning, Materialvalg, Aerodynamikk.</i>
-            </li>
-            <li>
-              <strong>Perception gruppemedlem.</strong> Perception gruppen har som oppgave å la dronen kunne oppfatte sine omgivelser og forstå hva den ser. Vi samler inn data fra en rekke sensorer og kombinerer dette for å bygge et riktig bilde av omverdenen. Som gruppemedlem i denne gruppen vil du jobbe med å skrive kunstig intelligent programvare som klarer å tyde dataen vi får fra sensorikk på dronen. Du vil bli kurset i slik teknologi om du ikke har erfaring med det fra før. <br />
-              <i>Nøkkelord: Datasyn, Visuell databehandling, Deep Learning, Kunstig Intelligens programmering, Sensorikk.</i>
+                <i className="key-words">Nøkkelord: Ledelse, Mekanisk design, Produktdesign, Elektrisk design, Kretskortdesign, Styrkeberegning, Materialvalg, Aerodynamikk.</i>
             </li>
             <li>
               <strong>Perception gruppemedlem.</strong> Perception gruppen jobber med å få dronen til å oppfatte sine omgivelser, forstå hva den ser og hvor den er til en hver tid. Dette er en av de store utfordringene når man driver med robotikk, og hele Ascend er avhengig av at Perception leverer smarte løsninger. Dronen vår skal samle inn video fra kamera og en rekke sensorer og kombinerer dette på en smart måte for å bygge et bilde av omverdenen som dronen mener er forståelig. Som gruppemedlem i denne gruppen vil du jobbe med å skrive kunstig intelligent programvare og smarte algoritmer som klarer å ta slik kompleks rå data og transformere det til noe enkelt. En kombinasjon av deep learning, transformasjoner og statistikk er sentralt. Vi trenger også en lur måte å fjerne signalstøy fra systemene våre slik at de andre gruppene i Ascend kan få servert datasyn av høy kvalitet. Du vil bli kurset i slik teknologi om du ikke har erfaring med det fra før. <br />
-              <i>Nøkkelord: Datasyn, Visuell databehandling, Deep Learning, Kunstig Intelligens programmering, filtrering, Kalmanfilter, Sensorikk.</i>
+              <i className="key-words">Nøkkelord: Datasyn, Visuell databehandling, Deep Learning, Kunstig Intelligens programmering, filtrering, Kalmanfilter, Sensorikk.</i>
             </li>
             <li>
               <strong>Teknisk gruppeleder - Perception.</strong> Beskrivelse: Som teknisk gruppeleder er det ditt ansvar å holde oversikt over det tekniske arbeidet som må gjøres på gruppen din, sørge for at alle har det de trenger, sørge for at gruppen kommuniserer med de andre tekniske gruppene og at alle i Ascend er oppdatert. Du vil fordele arbeidsoppgaver samtidig som du selv blir å gjøre like mye hands-on teknisk arbeid som gruppen din. Du vil også bli kurset i ledelse om du ikke har erfaring med dette fra før. <br />
-              <i>Nøkkelord: Ledelse, Datasyn, Visuell databehandling, Deep Learning, Kunstig Intelligens programmering, Sensorikk. </i>
+              <i className="key-words">Nøkkelord: Ledelse, Datasyn, Visuell databehandling, Deep Learning, Kunstig Intelligens programmering, Sensorikk. </i>
             </li>
             <li>
               <strong>Control gruppemedlem.</strong> Control har ansvaret for å få dronen til å utføre kommandoer autonomt og på en pålitelig og robust måte. I control vil du jobbe med systemene som skal få dronen til å fly presist og stabilt rundt i rommet uten å kollidere i hindringene på veien, gjerne raskt og effektivt! Alt skal foregå autonomt så dronen må selv finne ut hvilke handlinger den må gjøre for å klare å utføre kommandoen den får tilsendt! Som gruppemedlem får du mulighet til å jobbe på alt fra lavnivå flykontrollere som sørger for å holde dronen stabil, til høynivå ruteplanlegging og kollisjonsunngåelse som sørger for at dronen kan styre rundt i rommet og gjennomføre prestisjefulle manøvre. <br />
-              <i>Nøkkelord: Reguleringsteknikk, C/C++, ROS,  tilstandsmaskin, embedded, ruteplanlegging</i>
+              <i className="key-words">Nøkkelord: Reguleringsteknikk, C/C++, ROS,  tilstandsmaskin, embedded, ruteplanlegging</i>
             </li>
             <li>
                 <strong>AI gruppemedlem.</strong><i> "Hva skal dronen gjøre, og hvorfor er det lurt?" </i>Som medlem av AI gruppen jobber du med den overordnede kunstige intelligensen (AI) til dronen. Det er gruppen sitt ansvar å  produsere en AI som kan analysere informasjonen om verden rundt seg og gjennom dette skal den kunne ta beslutninger på egen hånd og gjerne det smarteste valget. Som medlem av denne gruppen vil du være med på å tenke nyskapende mens du trener droner i simulatorer, i virkeligheten og skriver avansert programvare. Du vil bli kurset i kunstig intelligens om du ikke har erfaring med det fra før. <br />
-                <i>Nøkkelord: Kunstig Intelligens Programmering, Maskinlæring, Deep Learning, Reinforcement Learning, Algoritmer og Datastrukturer, Statistikk. </i>
+                <i className="key-words">Nøkkelord: Kunstig Intelligens Programmering, Maskinlæring, Deep Learning, Reinforcement Learning, Algoritmer og Datastrukturer, Statistikk. </i>
             </li>
           </ul>
           <h3>Kommunikasjon</h3>
           <ul>
               <li>
                   <strong>Sponsorkontakt.</strong> Har du lyst til å være Ascend NTNU sin representant i næringslivet? Vi i Ascend er helt avhengig av våre sponsorer for å kunne gjøre det arbeidet vi gjør. Som sponsorkontakt i Ascend har du som hovedoppgave å skape mest mulig verdiskapning for våre sponsorer. Du vil jobbe med å finne nye sponsorer, forhandle kontrakter og oppretholde god kommunikasjon med våre eksisternede sponsorer. Du vil også jobbe tett sammen med hele kommunikasjonsgruppen for å videreutvikle Ascends "image" utad og spesielt event manageren vår for å planlegge og organisere sponsoraktiviteter.<br />
-                  <i>Nøkkelord: Presentasjonteknikk, Gode Forhandlingsevner, Utadvent, Organisert</i>
+                  <i className="key-words">Nøkkelord: Presentasjonteknikk, Gode Forhandlingsevner, Utadvent, Organisert</i>
               </li>
             <li>
               <strong>Grafisk designer.</strong> Bli med på å forme hele Ascend NTNU sitt "image" utad. Som grafisk designer vil du lage alt fra markeds materiell til profileringartikler og du vil skape en ordentlig grafisk utforming i alt vi gjør. Du vil jobbe tett sammen med hele kommunikasjons gruppen, blant annet ved å bidra til vår blog, lage vårt aller første magasin og bidra til utformingen av stand. Det er et pluss om du vil hjelpe til med videoer, 3D visualisering eller motion design, men det er ikke et krav. <br />
-              <i>Nøkkelord: Design, t-skjorter, genser, jakker, visittkort, medaljer, roll-ups, flyers, postere, webdesign, magasin design, redaktør, video, motion design, 3D visualisering. </i>
+              <i className="key-words">Nøkkelord: Design, t-skjorter, genser, jakker, visittkort, medaljer, roll-ups, flyers, postere, webdesign, magasin design, redaktør, video, motion design, 3D visualisering. </i>
             </li>
             <li>
               <strong>Event Manager.</strong> Som Event Manager får du muligheten til å arrangere events som ikke bare når ut til alle studentene på NTNU, men i tillegg både til presse og næringsliv i hele Norge. Du får ansvaret for å arrangere ulike stands og fremføringer på ulike arrangementer, både internt på NTNU og utad mot næringslivet. Du vil også få ansvaret for organiseringen av våre opptaksperioder i tillegg til å arrangere egne arrangementer som for eksempel robotikk dag og live-demo/unveiling. Som Event Manager vil du jobbe tett sammen med hele kommunikasjons gruppen, spesielt vår sponsorkontakt for å fremme Ascend til potensielle nye medlemmer og sponsorer. Du vil også være med på å planlegge den årlige turen vår til USA. <br />
-              <i>Nøkkelord: Presentasjonteknikk, Organisert, Standutforming, Arrangementplanlegging, Organisering av stands.</i>
+              <i className="key-words">Nøkkelord: Presentasjonteknikk, Organisert, Standutforming, Arrangementplanlegging, Organisering av stands.</i>
             </li>
             <li>
             <strong>Webutvikler.</strong> Har du lyst å utvikle en full-stack, skalerbar og grafisk imponerende webside? Som webutvikler vil du ha ansvar for å videreutvikle vår hjemmeside ascendntnu.no. Det blir også din oppgave å vise frem hvem vi er, våre mål og hvilke utfordringer vi møter på en interaktiv og spennende måte, kanskje ved å lage en liten spill app? Du vil jobbe tett sammen med hele kommunikasjons gruppen for å videreutvikle Ascends "image" utad. Du kan også ta på deg ansvaret med system administrasjon, det vil si at du blant annet får bygge og vedlikeholde våre byggservere og sørge for at alt går så automatisk og knirkefritt som mulig. Du vil bli kurset i webutvikling (og noe sysadmin) om du ikke har erfaring med det fra før. <br />
-            <i>Nøkkelord: Webutvikling, full-stack (backend og frontend), grafisk design, react, typescript, app utvikling. Sysadmin, continous integration, github hooks, server managment</i>
+            <i className="key-words">Nøkkelord: Webutvikling, full-stack (backend og frontend), grafisk design, react, typescript, app utvikling. Sysadmin, continous integration, github hooks, server managment</i>
             </li>
 
           </ul>
