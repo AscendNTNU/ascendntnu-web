@@ -261,9 +261,9 @@ export class JoinPage extends React.Component<JoinPageProps, JoinPageState> {
     return (
       <div className="page page-join">
         <Breadcrumb routes={['join']} />
-        <div style={ { textAlign: 'right', marginTop: '-1.8em' } } className="page-container">
+        {/*<div style={ { textAlign: 'right', marginTop: '-1.8em' } } className="page-container">
           <Link className="button" to={`/join${languageURL}`}>{languageNames[nextLanguage]}</Link>
-        </div>
+        </div>*/}
         {contents[this.state.language][0]}
         {about[this.state.language]}
       </div>
