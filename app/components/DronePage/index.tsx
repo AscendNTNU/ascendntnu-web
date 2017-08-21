@@ -137,7 +137,7 @@ export class DronePage extends React.Component<DronePageProps, DronePageState> {
     return (
       <div className="page page-drone">
         <Breadcrumb routes={['drone']} />
-        <Section title="Drones">
+        <Section titleText="Drones">
           <SubSection className="row">
             {drones}
           </SubSection>
