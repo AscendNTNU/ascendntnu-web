@@ -66,7 +66,7 @@ export class DronePage extends React.Component<DronePageProps, DronePageState> {
       })
 
       return (
-        <SubSection key={i} title={drone.name} className="drone-container">
+        <SubSection key={i} titleText={drone.name} className="drone-container">
           {this.state.droneImages[i] || null}
           {content}
         </SubSection>

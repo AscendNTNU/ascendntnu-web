@@ -27,7 +27,7 @@ export class SubSubTitle extends React.Component<{}, {}> {
 }
 
 export interface SectionProps {
-  title?: string,
+  titleText?: string,
   theme?: string,
   className?: string,
 }
@@ -61,9 +61,9 @@ export class Section extends React.Component<SectionProps, {}> {
   }
 
   render() {
-    if (this.props.title) {
+    if (this.props.titleText) {
       this.title = (
-        <Title>{this.props.title}</Title>
+        <Title>{this.props.titleText}</Title>
       )
     }
 
@@ -77,7 +77,7 @@ export class Section extends React.Component<SectionProps, {}> {
 }
 
 export interface SubSectionProps {
-  title?: string,
+  titleText?: string,
   theme?: string,
   className?: string,
 }
@@ -109,9 +109,9 @@ export class SubSection extends React.Component<SubSectionProps, {}> {
   }
 
   render() {
-    if (this.props.title) {
+    if (this.props.titleText) {
       this.title = (
-        <SubTitle>{this.props.title}</SubTitle>
+        <SubTitle>{this.props.titleText}</SubTitle>
       )
     }
 
@@ -125,7 +125,7 @@ export class SubSection extends React.Component<SubSectionProps, {}> {
 }
 
 export interface SubSubSectionProps {
-  title?: string,
+  titleText?: string,
   theme?: string,
   className?: string,
 }
@@ -157,9 +157,9 @@ export class SubSubSection extends React.Component<SubSubSectionProps, {}> {
   }
 
   render() {
-    if (this.props.title) {
+    if (this.props.titleText) {
       this.title = (
-        <SubSubTitle>{this.props.title}</SubSubTitle>
+        <SubSubTitle>{this.props.titleText}</SubSubTitle>
       )
     }
 
