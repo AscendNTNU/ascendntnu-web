@@ -150,6 +150,7 @@ export class Splash extends React.Component<SplashProps, SplashState> {
         y: evt.clientY - (this.height - this.state.pos)
       }
     } else {
+      evt.preventDefault()
       pos = {
         x: evt.touches[0].clientX - this.state.pos,
         y: evt.touches[0].clientY - (this.height - this.state.pos)
