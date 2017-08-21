@@ -913,13 +913,49 @@ h1, h2, h3, h4,
     flex: 0 1 420px;
 }
 
+.drone-main {
+    display: flex;
+    flex-flow: wrap row;
+}
+
 .drone-image {
-    width: 100%;
+    width: calc(1.618 * 200px);
+    height: 200px;
     display: block;
-    padding-bottom: calc(100% / 1.618);
     background-size: cover;
     background-position: center center;
     margin: auto;
+    box-shadow: 0 0 8px -2px #000;
+    border-radius: 4px;
+}
+
+.drone-title-container {
+    flex: 1 0 auto;
+    text-align: center;
+}
+
+.drone-title {
+    font-size: 6em;
+    font-weight: bold;
+    flex: 1 0 auto;
+    text-align: center;
+    font-family: Questrial, sans-serif;
+    margin: -.3em 0;
+    padding: 0;
+}
+
+.drone-sub-title {
+    font-size: 2em;
+    font-weight: bold;
+    flex: 1 0 auto;
+    text-align: center;
+    font-family: Roboto Slab, sans-serif;
+    margin: -.2em 0;
+    padding: 0;
+}
+
+.drone-container:nth-child(even) .drone-image {
+    order: 1;
 }
 
 .drone-model {
