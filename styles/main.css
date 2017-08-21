@@ -522,9 +522,9 @@ body.no-scroll {
     }
 }
 
-@media (min-width: 2000px) {
+@media (min-width: 1600px) {
     .front-announcement {
-        font-size: 2.6em;
+        font-size: 2em;
     }
 }
 
@@ -535,6 +535,7 @@ body.no-scroll {
 .front-announcement-content {
     margin-bottom: 16px;
     display: flex;
+    max-width: 768px;
     justify-content: center;
     flex-flow: nowrap column;
 }
