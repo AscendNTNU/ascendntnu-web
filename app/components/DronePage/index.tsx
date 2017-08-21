@@ -109,8 +109,8 @@ export class DronePage extends React.Component<DronePageProps, DronePageState> {
       }
 
       let image: JSX.Element
-      if (typeof drone.image === "JSX.Element") {
-        image = drone.image
+      if (typeof drone.image === "string") {
+        image = <img src={drone.image} />
       } else {
         image = drone.image
       }
