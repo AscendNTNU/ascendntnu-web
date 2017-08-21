@@ -810,14 +810,14 @@ h6:empty {
 .sub-section {
     flex: 1 0 auto;
     margin: 0 auto;
-    padding: 16px;
+    padding: 16px 0;
     box-sizing: border-box;
 }
 
 .sub-sub-section {
     flex: 1 0 auto;
     margin: 0 auto;
-    padding: 16px;
+    padding: 16px 0;
     box-sizing: border-box;
 }
 

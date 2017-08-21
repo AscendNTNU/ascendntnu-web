@@ -73,7 +73,7 @@ export class JoinPage extends React.Component<JoinPageProps, JoinPageState> {
                 <i>Nøkkelord: Kunstig Intelligens Programmering, Maskinlæring, Deep Learning, Reinforcement Learning, Algoritmer og Datastrukturer, Statistikk. </i>
             </li>
           </ul>
-          <h4>Kommunikasjon</h4>
+          <h3>Kommunikasjon</h3>
           <ul>
               <li>
                   <strong>Sponsorkontakt.</strong> Har du lyst til å være Ascend NTNU sin representant i næringslivet? Vi i Ascend er helt avhengig av våre sponsorer for å kunne gjøre det arbeidet vi gjør. Som sponsorkontakt i Ascend har du som hovedoppgave å skape mest mulig verdiskapning for våre sponsorer. Du vil jobbe med å finne nye sponsorer, forhandle kontrakter og oppretholde god kommunikasjon med våre eksisternede sponsorer. Du vil også jobbe tett sammen med hele kommunikasjonsgruppen for å videreutvikle Ascends "image" utad og spesielt event manageren vår for å planlegge og organisere sponsoraktiviteter.<br />
