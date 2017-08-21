@@ -153,6 +153,7 @@ export class JoinPage extends React.Component<JoinPageProps, JoinPageState> {
       ],
       'no': [
         <Section titleText="Nå nye høyder - Søk Ascend!" key="1">
+            <img src="/images/teams/2017/ascend-group-2017.jpg" style={ { width: "100%", height: "auto", maxHeight: "100%" } } />
             <p style={{fontSize: '1.4em'}}><b>Søknadsfrist 1. september kl. 23:59</b></p>
             <p style={{fontSize: '1.4em', marginTop:"0px"}}><a href="https://www.facebook.com/events/675218906021421">Bli med på infomøte 31. August 16:15 i EL3</a></p>
             <p>Ønsker du å være med på å drive med cutting-edge droneteknologi i en ambisiøs og teknologi-fokusert studentorganisasjon?</p>
@@ -260,9 +261,9 @@ export class JoinPage extends React.Component<JoinPageProps, JoinPageState> {
     return (
       <div className="page page-join">
         <Breadcrumb routes={['join']} />
-        <div style={ { textAlign: 'right', marginTop: '-1.8em' } } className="page-container">
+        {/*<div style={ { textAlign: 'right', marginTop: '-1.8em' } } className="page-container">
           <Link className="button" to={`/join${languageURL}`}>{languageNames[nextLanguage]}</Link>
-        </div>
+        </div>*/}
         {contents[this.state.language][0]}
         {about[this.state.language]}
       </div>

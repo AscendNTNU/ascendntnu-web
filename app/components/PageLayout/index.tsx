@@ -39,24 +39,24 @@ export class Section extends React.Component<SectionProps, {}> {
   constructor(props: SectionProps) {
     super(props)
 
-    this.className = "section page-container"
+    this.className = 'section page-container'
 
     if (this.props.className)
-      this.className += " " + this.props.className
+      this.className += ' ' + this.props.className
 
     if (this.props.theme) {
-      let theme: string = ""
+      let theme: string = ''
 
       switch (this.props.theme) {
-        case "dark":
-          theme = "dark"
+        case 'dark':
+          theme = 'dark'
           break
         default:
-          theme = "light"
+          theme = 'light'
           break
       }
 
-      this.className += " " + theme
+      this.className += ' ' + theme
     }
   }
 
@@ -67,8 +67,11 @@ export class Section extends React.Component<SectionProps, {}> {
       )
     }
 
+    let props: SectionProps = Object.assign({}, this.props)
+    delete props.titleText
+
     return (
-      <div {...this.props} className={this.className}>
+      <div {...props} className={this.className}>
         {this.title}
         {this.props.children}
       </div>
@@ -89,20 +92,20 @@ export class SubSection extends React.Component<SubSectionProps, {}> {
   constructor(props: SectionProps) {
     super(props)
 
-    this.className = "sub-section page-container"
+    this.className = 'sub-section page-container'
 
     if (this.props.className)
-      this.className += " " + this.props.className
+      this.className += ' ' + this.props.className
 
     if (this.props.theme) {
-      let theme: string = ""
+      let theme: string = ''
 
       switch (this.props.theme) {
-        case "dark":
-          theme = "dark"
+        case 'dark':
+          theme = 'dark'
           break
         default:
-          theme = "light"
+          theme = 'light'
           break
       }
     }
@@ -115,8 +118,11 @@ export class SubSection extends React.Component<SubSectionProps, {}> {
       )
     }
 
+    let props: SectionProps = Object.assign({}, this.props)
+    delete props.titleText
+
     return (
-      <div {...this.props} className={this.className}>
+      <div {...props} className={this.className}>
         {this.title}
         {this.props.children}
       </div>
@@ -137,20 +143,20 @@ export class SubSubSection extends React.Component<SubSubSectionProps, {}> {
   constructor(props: SectionProps) {
     super(props)
 
-    this.className = "sub-sub-section page-container"
+    this.className = 'sub-sub-section page-container'
 
     if (this.props.className)
-      this.className += " " + this.props.className
+      this.className += ' ' + this.props.className
 
     if (this.props.theme) {
-      let theme: string = ""
+      let theme: string = ''
 
       switch (this.props.theme) {
-        case "dark":
-          theme = "dark"
+        case 'dark':
+          theme = 'dark'
           break
         default:
-          theme = "light"
+          theme = 'light'
           break
       }
     }
@@ -163,8 +169,11 @@ export class SubSubSection extends React.Component<SubSubSectionProps, {}> {
       )
     }
 
+    let props: SectionProps = Object.assign({}, this.props)
+    delete props.titleText
+
     return (
-      <div {...this.props} className={this.className}>
+      <div {...props} className={this.className}>
         {this.title}
         {this.props.children}
       </div>

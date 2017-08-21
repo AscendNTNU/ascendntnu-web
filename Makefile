@@ -26,6 +26,9 @@ upload-images:
 upload-image:
 	@scp -r ./images/assets/${folder}/${file} ascend@dev.ascendntnu.no:/home/ascend/ascendntnu-web/images/assets/${folder}
 
+upload:
+	@scp -r ./${folder}/${file} ascend@dev.ascendntnu.no:/home/ascend/ascendntnu-web/${folder}
+
 download-images:
 	@mkdir -p ./images/assets
 	@scp -r ascend@dev.ascendntnu.no:/home/ascend/ascendntnu-web/images/assets/* ./images/assets
