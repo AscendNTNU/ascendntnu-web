@@ -80,7 +80,7 @@ export class JoinPage extends React.Component<JoinPageProps, JoinPageState> {
                   <i className="key-words">Nøkkelord: Presentasjonteknikk, Gode Forhandlingsevner, Utadvent, Organisert</i>
               </li>
             <li>
-              <strong>Grafisk designer.</strong> Bli med på å forme hele Ascend NTNU sitt "image" utad. Som grafisk designer vil du lage alt fra markeds materiell til profileringartikler og du vil skape en ordentlig grafisk utforming i alt vi gjør. Du vil jobbe tett sammen med hele kommunikasjons gruppen, blant annet ved å bidra til vår blog, lage vårt aller første magasin og bidra til utformingen av stand. Det er et pluss om du vil hjelpe til med videoer, 3D visualisering eller motion design, men det er ikke et krav. <br />
+              <strong>Grafisk designer.</strong> Bli med på å forme hele Ascend NTNU sitt "image" utad. Som grafisk designer vil du lage alt fra markedsmateriell til profileringartikler og du vil skape en ordentlig grafisk utforming i alt vi gjør. Du vil jobbe tett sammen med hele kommunikasjons gruppen, blant annet ved å bidra til vår blog, lage vårt aller første magasin og bidra til utformingen av stand. Det er et pluss om du vil hjelpe til med videoer, 3D visualisering eller motion design, men det er ikke et krav. <br />
               <i className="key-words">Nøkkelord: Design, t-skjorter, genser, jakker, visittkort, medaljer, roll-ups, flyers, postere, webdesign, magasin design, redaktør, video, motion design, 3D visualisering. </i>
             </li>
             <li>
