@@ -53,7 +53,8 @@ function pascalCase (str) {
   return str.split(' ').map(word => word.slice(0, 1).toUpperCase() + word.slice(1).toLowerCase()).join(' ')
 }
 
-function digits (value, places = 2) {
+function digits (value, places) {
+  places = typeof places === 'number' ? places : 2
   return (Array(places).join('0') + value).slice(-places)
 }
 
@@ -504,7 +505,7 @@ function createAmpArticle (data) {
     .replace(/<\/video>/g, '</amp-video>')
     .replace(/<iframe /g, '<amp-iframe ')
     .replace(/<\/iframe>/g, '</amp-iframe>')
-  let iframe = /amp-iframe/.test(result)
+  var iframe = /amp-iframe/.test(result)
 
   return `<!doctype html>
 <html amp lang="en">
@@ -685,7 +686,7 @@ function createFBInstantArticle (data) {
 }
 
 function createRSSFeed (articles) {
-  let articlesFormatted = articles.reverse().map(item => {
+  var articlesFormatted = articles.reverse().map(item => {
     var authors = item.authors.map(author => `<author>${author}</author>`)
 
     return `<item>
