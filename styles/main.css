@@ -781,10 +781,15 @@ body.no-scroll {
     opacity: .5;
 }
 
-.page-join li {
+.page-join > li {
     line-height: 1.8em;
     padding-top: 1em;
     padding-bottom: 1em;
+}
+
+.anchor-list > li {
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 .page-blog a,
