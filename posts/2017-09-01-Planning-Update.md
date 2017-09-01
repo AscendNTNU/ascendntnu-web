@@ -1,7 +1,7 @@
 ---
 layout: post
 image: /public/assets/planning-update-3/prob-distribution-showoff.png
-title: "Hello World, from the AI group!"
+title: "Hello World from the AI group!"
 date: 2017-09-01 13:00:00
 categories: planning AI
 author: Rasmus Munter
