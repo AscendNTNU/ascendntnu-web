@@ -20,8 +20,8 @@
 
 - name: Simen Haugo
   background: Cybernetics and Robotics
-  role: Group leader Planning
-  group: Board, Planning, Leader
+  role: Group leader AI
+  group: Board, AI, Leader
   image: "/images/teams/2016/simen.jpg"
 
 - name: Martin Sollie
@@ -49,23 +49,23 @@
   group: Admin, Marketing
   image: "/images/teams/2016/emilie.jpg"
 
-##Team members Planning## 
+##Team members AI## 
 - name: Mikkel Antonsen
   background: Computer Science
-  role: Planning engineer
-  group: Planning
+  role: AI engineer
+  group: AI
   image: "/images/teams/2016/mikkel.jpg"
 
 - name: Alexander Bakke
   background: Computer Science
-  role: Planning engineer
-  group: Planning
+  role: AI engineer
+  group: AI
   image: "/images/teams/2016/alexander.jpg"
 
 - name: Nils Inge Rugsveen
   background: Computer Science
-  role: Planning engineer
-  group: Planning
+  role: AI engineer
+  group: AI
   image: "/images/teams/2016/nils.jpg"
 
 ##Team members Control##

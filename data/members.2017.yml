@@ -134,39 +134,39 @@
   image: "/images/teams/2017/simen-h-2017.jpg"
   mail: "simen.haugo[at]ascendntnu.no"
 
-## Team Planning ##
+## Team AI ##
 - name: Magnus Reiersen
   background: Computer Science
-  role: Planning Leader
-  group: Planning, Leader
+  role: AI Leader
+  group: AI, Leader
   image: "/images/teams/2017/magnus-r-2017.jpg"
   mail: "magnus.reiersen[at]ascendntnu.no"
 
 - name: Adrian Tofting
   background: Engineering and ICT
-  role: Planning Member
-  group: Planning
+  role: AI Member
+  group: AI
   image: "/images/teams/2017/adrian-t-2017.jpg"
   mail: "adrian.tofting[at]ascendntnu.no"
 
 - name: Alexander Danielsen-Haces
   background: Cybernetics and Robotics
-  role: Planning Member
-  group: Planning
+  role: AI Member
+  group: AI
   image: "/images/teams/2017/alexander-dh-2017.jpg"
   mail: "alexander.danielsen[at]ascendntnu.no"
 
 - name: Rasmus Munter
   background: Applied Mathematics
-  role: Planning Member
-  group: Planning
+  role: AI Member
+  group: AI
   image: "/images/teams/2017/rasmus-m-2017.jpg"
   mail: "rasmus.munter[at]ascendntnu.no"
 
 - name: Vilde Gjærum
   background: Cybernetics and Robotics
-  role: Planning Member
-  group: Planning
+  role: AI Member
+  group: AI
   image: "/images/teams/2017/vilde-g-2017.jpg"
   mail: "vilde.gjaerum[at]ascendntnu.no"
 

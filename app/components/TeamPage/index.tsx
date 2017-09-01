@@ -35,8 +35,8 @@ export class TeamPage extends React.Component<TeamPageProps, TeamPageState> {
 
     let year = 2017
     this.groupings = {
-      '2016': new RegExp('Admin|Control|Perception|Planning', 'i'),
-      '2017': new RegExp('Admin|Control|Perception|Planning|Hardware', 'i'),
+      '2016': new RegExp('Admin|Control|Perception|AI', 'i'),
+      '2017': new RegExp('Admin|Control|Perception|AI|Hardware', 'i'),
     }
     this.groupTexts = {
       'Admin': 'Admin is the group responsible for the whole team. We plan the future of Ascend and try to make the whole team visible on NTNU.',
@@ -122,7 +122,7 @@ export class TeamPage extends React.Component<TeamPageProps, TeamPageState> {
           return a.name > b.name ? 1 : -1
         }),
         groups: groups.sort((a: any, b: any) => {
-          return a > b ? 1 : -1
+          return a.toLowerCase() > b.toLowerCase() ? 1 : -1
         }),
       })
     })
@@ -235,7 +235,7 @@ export class TeamPage extends React.Component<TeamPageProps, TeamPageState> {
       <div className="page page-team">
         <Breadcrumb routes={['team']} />
         <Section titleText="The team" className="page-container-big">
-          We have five groups: Control, Perception, Planning, Hardware and Admin. The board consists of the project manager, the deputy project manager, the technical leader and the group leaders. This means that we formally have a quite hierarchical stucture. However, in practice we have a very flat structure where everybody contributes within the areas they want and where attention is needed.
+          We have five groups: Control, Perception, AI, Hardware and Admin. The board consists of the project manager, the deputy project manager, the technical leader and the group leaders. This means that we formally have a quite hierarchical stucture. However, in practice we have a very flat structure where everybody contributes within the areas they want and where attention is needed.
           <SubSection titleText="Members" className="page-container-big">
             <Link to="/team/2016" activeClassName="active"><button>2016</button></Link>
             <IndexLink to="/team/2017" activeClassName="active"><button className={this.props.params.year ? '' : 'active'}>2017</button></IndexLink>
