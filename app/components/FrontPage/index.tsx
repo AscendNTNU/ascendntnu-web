@@ -18,6 +18,7 @@ export class FrontPage extends React.Component<{}, FrontPageState> {
         <Announcement titleText="Vi har nå opptak!">
           <p>Vil du være med på et omfattende droneprosjekt? Bli med i Ascend NTNU for å utvikle en dronen som skal løse en "umulig" oppgave i verdensklasse.</p>
           <Link to="join">Gå til join-siden vår for mer informasjon.</Link>
+          <p style={ { color: 'red' } }><b>Frist 1. September kl. 23:59!</b></p>
           <p>Du kan også vinne en av to minidroner om du deltar i <a href="http://flappy.ascendntnu.no" target="_blank">konkurransen vår</a>. Desto flere poeng - jo større sjanse! 1. plassen vil såklart også få en minidrone.</p>
         </Announcement>
         <Splash />
