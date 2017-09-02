@@ -117,6 +117,7 @@ export class JoinPage extends React.Component<JoinPageProps, JoinPageState> {
             <i className="key-words">Nøkkelord: Webutvikling, full-stack (backend og frontend), grafisk design, react, typescript, app utvikling. Sysadmin, continous integration, github hooks, server managment</i>
           </p>
         </SubSection>,
+
         <SubSection titleText="Stillinger" key="2">
           <SubSubSection titleText="Prosjektleder/Nestleder">
             <p>Prosjektleder er styrets leder og jobber med å videreutvikle Ascend i ønsket retning basert på Ascends visjoner og mål. Prosjektleder jobber tett opp mot alle Ascends undergrupper og koordinerer mye av arbeidet som skjer mellom gruppene. Sammen med kommunikasjonsgruppen jobber prosjektleder for å fremme Ascends omdømme, planlegge opptak, og jobbe med sponsorer. Arbeidsoppgavene man har vil variere fra uke til uke og gir muligheter til å jobbe med de fleste aspekter i prosjektet. Faste oppgaver inkluderer å lede styremøter og allmøter, og ansvar for samarbeid med hovedsponsor.</p>
@@ -176,54 +177,52 @@ export class JoinPage extends React.Component<JoinPageProps, JoinPageState> {
       ],
       'no': [
         <Section titleText="Nå nye høyder - Søk Ascend!" key="1">
-            <img src="/images/teams/2017/ascend-group-2017.jpg" style={ { width: "100%", height: "auto", maxHeight: "100%" } } />
-            <p style={{fontSize: '1.4em'}}><b>Søknadsfrist 1. september kl. 23:59</b></p>
-            <p style={{fontSize: '1.4em', marginTop:"0px"}}><a href="https://www.facebook.com/events/675218906021421">Bli med på infomøte 31. August 16:15 i <del>EL3</del>S4</a></p>
-            <p>Ønsker du å være med på å drive med cutting-edge droneteknologi i en ambisiøs og teknologi-fokusert studentorganisasjon?</p>
-            <p>Tidligere erfaring er ikke et krav for å bli med i Ascend. Det viktigste er å ha en interesse for det vi jobber med, og en interesse for å lære.</p>
-            <a className="button active" style={ { alignSelf: 'flex-start' } } href="https://docs.google.com/forms/d/e/1FAIpQLSe2ieI86nG7RXWN12PTOT08pbPO9zJoaO2Xmq0IjTLKsdGuAA/viewform">Søk her!</a>
-           {/*}<h4><a href="http://ascendntnu.us14.list-manage2.com/subscribe?u=dfce303a41ce42b342c75a3ef&amp;id=002e04db12" target="_blank">Interesseliste for opptak. Søknadskjema kommer veldig snart!</a></h4>*/}
-            {positions[this.state.language][0]}
-            <i>Det er kun studenter som studerer på NTNU i året 2017/2018 som kan søke. Er du usikker på om dette gjelder for deg? Spør oss på <a href="mailto:hi@ascendntnu.no">hi@ascendntnu.no</a></i>
-            <SubSection titleText="Hvorfor søke">
-              <ul>
-                <li><strong>Bli en del av et miljø.</strong> I Ascend blir du en del av et målrettet og teknologifokusert prosjekt der vi jobber sammen for å nå våre mål. </li>
-                <li><strong>Fra teori til praksis.</strong> I Ascend tar man noen av de mest avanserte konseptene man lærer på NTNU fra lærebøkene til virkeligheten.</li>
-                <li><strong>Kombiner med graden din.</strong> Flere av medlemmene våre skriver prosjekt/master-oppgave relatert til Ascend. I tillegg finnes det en åpning for å drive med Ascend i Eksperter i Team.</li>
-                <li><strong>Prosjekt/organisasjons-erfaring.</strong> I Ascend er du med på å føre et teknisk prosjekt fra start til slutt - dette gir mye verdifull erfaring og kompetanse på veien.</li>
-                <li><strong>Cutting edge.</strong> Bli en del av en organisasjon som må ta i bruk og utvikle teknologi som er state of the art innenfor autonom robotikk. </li>
-                <li><strong>Kreativ, fleksibel og innovativ kultur</strong> Vi ønsker å holde en flytende arbeidskultur i Ascend slik at ditt bidrag til organisasjonen kan også involvere oppgaver utenfor stillingsbeskrivelsen som vil bli inspirert av dine interesser og erfaringer!</li>
-              </ul>
-            </SubSection>
-            <SubSection titleText="Konkurransen">
-              <p>
-                International Aerial robotics competition (IARC) er en årlig konkurranse som avholdes i USA og Kina med mål om å presse grensene for hva man får til med autonome droner. Dette gjør de ved å presentere meningsfulle og nyttige oppdrag som er umulige å løse på det tidspunktet de lanseres. Ideen er at når den oppførselen som etterspørres til slutt demonstres i konkurransen, vil konkurransen ha bidratt til en meningsfull utvikling innenfor autonom robotikk. En utvikling som fortrinnsvis er til fordel for verden.
-              </p>
-              <p><a href="https://ascendntnu.no/blog/2017-07-20-the-competition" role="button">Les mer om konkurransen og om oppdraget vi skal løse her.</a></p>
-            </SubSection>
-          </Section>,
-          <Section titleText="Nå nye høyder - Søk Ascend!" key="2">
-            <p>Ønsker du å være med på å drive med cutting-edge droneteknologi i en ambisiøs og teknologi-fokusert studentorganisasjon?</p>
-            <p>Tidligere erfaring er ikke et krav for å bli med i Ascend. Det viktigste er å ha en interesse for det vi jobber med, og en interesse for å lære.</p>
-            <p>Ascend NTNU har hovedopptak på høsten hvert år for å ta inn nye medlemmer.</p>
-            <p><strong>Ny mulighet vil annonseres til høsten. Hvis du vil bli oppdatert om denne - skriv deg opp på linken under!</strong></p>
-            <a className="button active" style={ { alignSelf: 'flex-start' } } href="http://ascendntnu.us14.list-manage2.com/subscribe?u=dfce303a41ce42b342c75a3ef&amp;id=002e04db12" target="_blank">Interesseliste for opptak</a>
-            <SubSection titleText="Hvorfor søke">
-              <ul>
-                <li><strong>Bli en del av et miljø.</strong> I Ascend blir du en del av et målrettet teknologifokusert prosjekt der vi jobber sammen for å nå våre mål. </li>
-                <li><strong>Fra teori til praksis.</strong> I Ascend tar man noen av de mest avanserte konseptene man lærer på NTNU fra lærebøkene til virkeligheten.</li>
-                <li><strong>Kombiner med graden din.</strong> Flere av medlemmene våre skriver prosjekt/master-oppgave relatert til Ascend. I tillegg finnes det en åpning for å drive med Ascend i Eksperter i Team.</li>
-                <li><strong>Prosjekt/organisasjons-erfaring.</strong> I Ascend er du med på å føre et teknisk prosjekt fra start til slutt - dette gir mye verdifull erfaring og kompetanse på veien.</li>
-                <li><strong>Cutting edge.</strong> Bli en del av en organisasjon som må ta i bruk og utvikle teknologi som er state of the art innenfor autonom robotikk. </li>
-              </ul>
-            </SubSection>
-            <SubSection titleText="Konkurransen">
-              <p>
-                International Aerial robotics competition (IARC) er en årlig konkurranse som avholdes i USA og Kina med mål om å presse grensene for hva man får til med autonome droner. Dette gjør de ved å presentere meningsfulle og nyttige oppdrag som er umulige å løse på det tidspunktet de lanseres. Ideen er at når den oppførselen som etterspørres til slutt demonstres i konkurransen, vil konkurransen ha bidratt til en meningsfull utvikling innenfor autonom robotikk. En utvikling som fortrinnsvis er til fordel for verden.
-              </p>
-              <p><a href="https://ascendntnu.no/blog/2017-07-20-the-competition" role="button">Les mer om konkurransen og om oppdraget vi skal løse her.</a></p>
-            </SubSection>
-          </Section>
+          <img src="/images/teams/2017/ascend-group-2017.jpg" style={ { width: "100%", height: "auto", maxHeight: "100%" } } />
+          <p style={{fontSize: '1.4em'}}><b>Søknadsfrist 1. september kl. 23:59</b></p>
+          <p style={{fontSize: '1.4em', marginTop:"0px"}}><a href="https://www.facebook.com/events/675218906021421">Bli med på infomøte 31. August 16:15 i <del>EL3</del>S4</a></p>
+          <p>Ønsker du å være med på å drive med cutting-edge droneteknologi i en ambisiøs og teknologi-fokusert studentorganisasjon?</p>
+          <p>Tidligere erfaring er ikke et krav for å bli med i Ascend. Det viktigste er å ha en interesse for det vi jobber med, og en interesse for å lære.</p>
+          <a className="button active" style={ { alignSelf: 'flex-start' } } href="https://docs.google.com/forms/d/e/1FAIpQLSe2ieI86nG7RXWN12PTOT08pbPO9zJoaO2Xmq0IjTLKsdGuAA/viewform">Søk her!</a>
+          {/*}<h4><a href="http://ascendntnu.us14.list-manage2.com/subscribe?u=dfce303a41ce42b342c75a3ef&amp;id=002e04db12" target="_blank">Interesseliste for opptak. Søknadskjema kommer veldig snart!</a></h4>*/}
+          {positions[this.state.language][0]}
+          <i>Det er kun studenter som studerer på NTNU i året 2017/2018 som kan søke. Er du usikker på om dette gjelder for deg? Spør oss på <a href="mailto:hi@ascendntnu.no">hi@ascendntnu.no</a></i>
+          <SubSection titleText="Hvorfor søke">
+            <ul>
+              <li><strong>Bli en del av et miljø.</strong> I Ascend blir du en del av et målrettet og teknologifokusert prosjekt der vi jobber sammen for å nå våre mål. </li>
+              <li><strong>Fra teori til praksis.</strong> I Ascend tar man noen av de mest avanserte konseptene man lærer på NTNU fra lærebøkene til virkeligheten.</li>
+              <li><strong>Kombiner med graden din.</strong> Flere av medlemmene våre skriver prosjekt/master-oppgave relatert til Ascend. I tillegg finnes det en åpning for å drive med Ascend i Eksperter i Team.</li>
+              <li><strong>Prosjekt/organisasjons-erfaring.</strong> I Ascend er du med på å føre et teknisk prosjekt fra start til slutt - dette gir mye verdifull erfaring og kompetanse på veien.</li>
+              <li><strong>Cutting edge.</strong> Bli en del av en organisasjon som må ta i bruk og utvikle teknologi som er state of the art innenfor autonom robotikk. </li>
+              <li><strong>Kreativ, fleksibel og innovativ kultur</strong> Vi ønsker å holde en flytende arbeidskultur i Ascend slik at ditt bidrag til organisasjonen kan også involvere oppgaver utenfor stillingsbeskrivelsen som vil bli inspirert av dine interesser og erfaringer!</li>
+            </ul>
+          </SubSection>
+          <SubSection titleText="Konkurransen">
+            <p>International Aerial robotics competition (IARC) er en årlig konkurranse som avholdes i USA og Kina med mål om å presse grensene for hva man får til med autonome droner. Dette gjør de ved å presentere meningsfulle og nyttige oppdrag som er umulige å løse på det tidspunktet de lanseres. Ideen er at når den oppførselen som etterspørres til slutt demonstres i konkurransen, vil konkurransen ha bidratt til en meningsfull utvikling innenfor autonom robotikk. En utvikling som fortrinnsvis er til fordel for verden.</p>
+            <p><a href="https://ascendntnu.no/blog/2017-07-20-the-competition" role="button">Les mer om konkurransen og om oppdraget vi skal løse her.</a></p>
+          </SubSection>
+        </Section>,
+
+        <Section titleText="Nå nye høyder - Søk Ascend!" key="2">
+          <img src="/images/teams/2017/ascend-group-2017.jpg" style={ { width: "100%", height: "auto", maxHeight: "100%" } } />
+          <p>Ønsker du å være med på å drive med cutting-edge droneteknologi i en ambisiøs og teknologi-fokusert studentorganisasjon?</p>
+          <p>Tidligere erfaring er ikke et krav for å bli med i Ascend. Det viktigste er å ha en interesse for det vi jobber med, og en interesse for å lære.</p>
+          <p>Ascend NTNU har hovedopptak på høsten hvert år for å ta inn nye medlemmer.</p>
+          <p><strong>Ny mulighet vil annonseres til våren og høsten neste år. Hvis du vil bli oppdatert om denne - skriv deg opp på linken under!</strong></p>
+          <a className="button active" style={ { alignSelf: 'flex-start' } } href="http://ascendntnu.us14.list-manage2.com/subscribe?u=dfce303a41ce42b342c75a3ef&amp;id=002e04db12" target="_blank">Interesseliste for opptak</a>
+          <SubSection titleText="Hvorfor søke">
+            <ul>
+              <li><strong>Bli en del av et miljø.</strong> I Ascend blir du en del av et målrettet teknologifokusert prosjekt der vi jobber sammen for å nå våre mål. </li>
+              <li><strong>Fra teori til praksis.</strong> I Ascend tar man noen av de mest avanserte konseptene man lærer på NTNU fra lærebøkene til virkeligheten.</li>
+              <li><strong>Kombiner med graden din.</strong> Flere av medlemmene våre skriver prosjekt/master-oppgave relatert til Ascend. I tillegg finnes det en åpning for å drive med Ascend i Eksperter i Team.</li>
+              <li><strong>Prosjekt/organisasjons-erfaring.</strong> I Ascend er du med på å føre et teknisk prosjekt fra start til slutt - dette gir mye verdifull erfaring og kompetanse på veien.</li>
+              <li><strong>Cutting edge.</strong> Bli en del av en organisasjon som må ta i bruk og utvikle teknologi som er state of the art innenfor autonom robotikk. </li>
+            </ul>
+          </SubSection>
+          <SubSection titleText="Konkurransen">
+            <p>International Aerial robotics competition (IARC) er en årlig konkurranse som avholdes i USA og Kina med mål om å presse grensene for hva man får til med autonome droner. Dette gjør de ved å presentere meningsfulle og nyttige oppdrag som er umulige å løse på det tidspunktet de lanseres. Ideen er at når den oppførselen som etterspørres til slutt demonstres i konkurransen, vil konkurransen ha bidratt til en meningsfull utvikling innenfor autonom robotikk. En utvikling som fortrinnsvis er til fordel for verden.</p>
+            <p><a href="https://ascendntnu.no/blog/2017-07-20-the-competition" role="button">Les mer om konkurransen og om oppdraget vi skal løse her.</a></p>
+          </SubSection>
+        </Section>
       ]
     }
 
@@ -234,7 +233,6 @@ export class JoinPage extends React.Component<JoinPageProps, JoinPageState> {
       'no': (
         <Section titleText="Om oss">
           <p>Ascend er en studentorganisasjon som skal representere NTNU i <a href="http://www.aerialroboticscompetition.org/">The International Aerial Robotics Competition</a>. Vi ønsker å skape et miljø hvor studenter kan drive med autonome droner, og ha den årlige konkurransen som et felles mål. Vi ser på Ascend som en arena for å videreutvikle tekniske ferdigheter så vel som ferdigheter innenfor prosjektstyring og andre administrative oppgaver.</p>
-
           <SubSection titleText="Hvordan vi jobber">
             <ul>
               <li><strong>Flat og åpen struktur.</strong> Ascend NTNU har troen på at en flat og åpen struktur egner seg best for både trivsel og resultat. Vårt mål er å være en organisasjon der alle har anledning til å bli hørt og bidra på de områdene de ønsker.</li>
@@ -242,7 +240,6 @@ export class JoinPage extends React.Component<JoinPageProps, JoinPageState> {
               <li><strong>Learning by doing.</strong> Ingen i Ascend sitter på fullstendige løsninger til utfordringene vi møter. Vi er derimot åpne for å lære nye konsepter og teknologier. Vår idé er at veien til målet går gjennom prøving og feiling, nye kunnskaper og gode rådgivere.</li>
             </ul>
           </SubSection>
-
           <SubSection titleText="Våre samarbeidsplattformer">
             <ul>
               <li><strong>Slack: </strong> <a href="https://slack.com/">Slack</a> er en chatte-web-app for team. Med Slack får vi enkel, åpen og oversiktlig kommunikasjon - hvor alle får muligheten til å følge med og bidra på de områdene de ønsker. På grunn av Slack er det nesten ingen epost innad i teamet.</li>
@@ -251,15 +248,12 @@ export class JoinPage extends React.Component<JoinPageProps, JoinPageState> {
               <li><strong>Confluence: </strong>Vi bruker <a href="https://www.atlassian.com/software/confluence">Confluence</a> for å ta vare på og dele kompetansen vi har i organisasjonen. Gjennom å legge ting inn i wikiene lærer organisasjonen stadig mer, til tross for at medlemmer kommer og går.</li>
             </ul>
           </SubSection>
-
           <SubSection titleText="Vårt tilholdssted">
             <p>Til daglig holder vi til i Institutt for Teknisk Kybernetikk sin lab på taket av blokk A i El-bygget på Gløshaugen, kjent som taklabben. Vi har både arbeidsstasjoner og drone-nett på plass. På den måten blir veien fra utvikling til testing kort. </p>
           </SubSection>
-
           <SubSection titleText="Hvem vi jobber med">
             <p>Vi har god kontakt med Institutt for Teknisk Kybernetikk (ITK), Institutt for Datateknikk og Informasjonsvitenskap (IDI), Forsvarets Forskningsinstitutt (FFI), Kongsberg Gruppen og oppstartselskapet Staaker. Gjennom instituttene får vi tilgang til diverse labber, utstyr og kompetanse. I tillegg skriver flere av våre medlemmer prosjekt/master knyttet til Ascend for IDI og ITK. En oversikt over våre sponsorer finner du nederst på hovedsiden vår.</p>
           </SubSection>
-
           <SubSection titleText="Spørsmål?">
             <p>Hvis det er noe du lurer på, send en mail til <a href="mailto:hi@ascendntnu.no">hi@ascendntnu.no</a>.</p>
           </SubSection>
@@ -287,7 +281,7 @@ export class JoinPage extends React.Component<JoinPageProps, JoinPageState> {
         {/*<div style={ { textAlign: 'right', marginTop: '-1.8em' } } className="page-container">
           <Link className="button" to={`/join${languageURL}`}>{languageNames[nextLanguage]}</Link>
         </div>*/}
-        {contents[this.state.language][0]}
+        {contents[this.state.language][1]}
         {about[this.state.language]}
       </div>
     )
