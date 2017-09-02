@@ -15,11 +15,11 @@ export class FrontPage extends React.Component<{}, FrontPageState> {
   render () {
     return (
       <div className="page page-front">
-        <Announcement titleText="Vi har nå opptak!">
+        {/*<Announcement titleText="Vi har nå opptak!">
           <p>Vil du være med på et omfattende droneprosjekt? Bli med i Ascend NTNU for å utvikle en dronen som skal løse en "umulig" oppgave i verdensklasse.</p>
           <Link to="join">Gå til join-siden vår for mer informasjon.</Link>
           <p style={ { color: 'red' } }><b>Frist 1. September kl. 23:59!</b></p>
-        </Announcement>
+        </Announcement>*/}
         <Splash />
         {/*<Section titleText="History of Ascend NTNU" className="centered" />
         <HistoryViewer />*/}
