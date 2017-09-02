@@ -20,6 +20,7 @@ export class JoinPage extends React.Component<JoinPageProps, JoinPageState> {
   constructor (props: any) {
     super(props)
 
+    // This is for avoiding showing mails on GitHub in plaintext.
     this.emails = [
       'brage.eikanger',
       'vebjorn.isaksen',
