@@ -4,6 +4,7 @@ image: /public/assets/planning-update-3/prob-distribution-showoff.png
 title: "Hello World from the AI group!"
 date: 2017-09-01 13:00:00
 categories: planning AI
+related: 2017-02-14-planning-update, 2017-02-20-planning-update
 author: Rasmus Munter
 ---
 Ascend NTNU is now busy preparing for another year working towards solving mission 7a. Despite a great trip to Atlanta, seeing many interesting solutions and us bringing back a prize for the most innovative drone, once again no one has managed to solve the mission. This summer will mark the 5th attempt at the mission, tying for the second longest running mission in the International Aerial Robotics Competition’s 25 year history. 
