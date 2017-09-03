@@ -328,8 +328,9 @@ app.get('/blog/:post', function (req, res) {
       desc: desc,
       date: date,
       image: image,
-      metatags: `\n    <link rel="amphtml" href="https://ascendntnu.no/blog/amp/${link}">`
+      metatags: `\n    <link rel="amphtml" href="https://ascendntnu.no/blog/amp/${link}" />`
         + tags.map(tag => `\n    <meta property="article:tag" content="${tag}" />`).join('\n    ')
+        + `<meta property="og:url" content="https://ascendntnu.no/blog/fb/${link}" />`
         // + authors.map(author => `\n    <meta property="article:author" content="${author}" />`).join('\n    ')
     }))
   } else {
