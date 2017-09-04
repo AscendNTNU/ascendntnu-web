@@ -91,7 +91,7 @@ It is highly recommend using `docker-compose`, as the code below is hackish and 
 Eighter start your own containers without `make`, or use `make`:
 
 ```bash
-$ make docker-baseimage # To initialise a base image. Setting up the environment. It is only needed once.
+$ make docker-baseimage # To initialize a base image. Setting up the environment. It is only needed once.
 $ make docker-image # Create a new image which extends the baseimage. This one is way faster.
 $ make docker-container # To create a dev-container. It will find the old and replace if nessesary.
 $ make docker-container-prod # To create a production container. It will find the old  production and replace if nessesary.
