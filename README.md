@@ -6,6 +6,8 @@ This page shows who AscendNTNU really are and what we do.
 
 - [Guidelines for changing code](#guidelines-for-changing-code)
 - [Setup dev environment](#set-up-the-dev-environment)
+- [Deploy, Production](#deploy-production)
+- [Run in Docker (Because it only works)](#run-in-docker-because-it-only-works)
 
 ### Guidelines for changing code
 
