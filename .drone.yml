@@ -6,6 +6,6 @@ pipeline:
       event: push
       branch: dev
     commands:
-      - ls -lah
+      - cp -R /ascend-web/node_modules .
       - cp constants-example.js constants.js
       - ./test-server.sh
