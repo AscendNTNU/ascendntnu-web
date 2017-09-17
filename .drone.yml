@@ -6,4 +6,5 @@ pipeline:
       branch: dev
     commands:
       - npm install --silent --depth=0
+      - cp constants-example.js constants.js
       - ./test-server.sh
