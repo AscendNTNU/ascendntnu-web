@@ -1,10 +1,11 @@
 pipeline:
   backend:
-    image: registry.ascendntnu.no/aascend-web-baseimage:latest
+    image: registry.ascendntnu.no/ascend-web-baseimage:latest
     pull: true
     when:
       event: push
       branch: dev
     commands:
+      - ls -lah
       - cp constants-example.js constants.js
       - ./test-server.sh
