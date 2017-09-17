@@ -23,7 +23,10 @@ app.use('/sitemap.xml', express.static(__dirname + '/api/v1/sitemap.xml'))
 app.use('/styles', express.static(__dirname + '/styles'))
 app.use('/node_modules', express.static(__dirname + '/node_modules'))
 
-app.listen(process.env.PORT_OUT || constants.port || 8080)
+var port = process.env.PORT_OUT || constants.port || 8080
+var listener = app.listen(port, function () {
+  console.log('Listening on http://localhost:' + listener.address().port)
+})
 
 app.get('/api/v1', function (req, res) {
   res.sendFile(__dirname + '/api/v1/index.html')
