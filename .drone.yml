@@ -1,10 +1,9 @@
 pipeline:
   backend:
-    image: ascend/ascend-web-baseimage
+    image: registry.ascendntnu.no/ascend-web-baseimage
     when:
       event: push
       branch: dev
     commands:
-      - npm install --silent --depth=0
       - cp constants-example.js constants.js
       - ./test-server.sh
