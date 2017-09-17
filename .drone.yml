@@ -1,6 +1,6 @@
 pipeline:
   backend:
-    image: Dockerfile
+    image: ascend/ascend-web-baseimage
     when:
       event: push
       branch: dev
