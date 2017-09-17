@@ -82,7 +82,7 @@ Most production environments likes to use environment variables. We therefore ha
 
 ### Run in Docker (Because it only works)
 
-If you have `docker-compose`, you only need one command:
+If you have `docker-compose` (which should follow the docker installation), you only need one command:
 
 ```bash
 $ docker-compose up # Run in background mode by adding -d (detach).
@@ -90,7 +90,7 @@ $ docker-compose up # Run in background mode by adding -d (detach).
 
 It is highly recommend using `docker-compose`, as the code below is hackish and you should have a lot of docker knowledge already.
 
-Eighter start your own containers without `make`, or use `make`:
+Either start your own containers without `make`, or use `make`:
 
 ```bash
 $ make docker-baseimage # To initialize a base image. Setting up the environment. It is only needed once.
