@@ -1,0 +1,8 @@
+pipeline:
+  backend:
+    image: Dockerfile
+    when:
+      event: push
+      branch: dev
+    commands:
+      - ./test-server.sh
