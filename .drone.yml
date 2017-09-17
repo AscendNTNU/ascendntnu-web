@@ -5,4 +5,5 @@ pipeline:
       event: push
       branch: dev
     commands:
+      - npm install --silent --depth=0
       - ./test-server.sh
