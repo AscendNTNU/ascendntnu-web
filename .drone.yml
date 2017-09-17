@@ -1,6 +1,7 @@
 pipeline:
   backend:
-    image: registry.ascendntnu.no/ascend-web-baseimage
+    image: registry.ascendntnu.no/ascend-web-baseimage:latest
+    pull: true
     when:
       event: push
       branch: dev
