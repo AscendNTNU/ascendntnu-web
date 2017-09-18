@@ -1,5 +1,7 @@
 # Webpage for [AscendNTNU](http://ascendntnu.no)
 
+[![Build Status](https://drone.ascendntnu.no/api/badges/AscendNTNU/ascendntnu-web/status.svg)](https://drone.ascendntnu.no/AscendNTNU/ascendntnu-web)
+
 This page shows who AscendNTNU really are and what we do.
 
 ## Developers
