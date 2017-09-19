@@ -10,7 +10,9 @@ import { Breadcrumb } from '../Common/breadcrumb'
 import { BlogArticle } from './blogArticle'
 
 export interface BlogPageProps {
-  params: any
+  params: any & {
+    tags: string
+  }
 }
 
 export interface BlogPageState {

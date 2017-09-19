@@ -7,7 +7,7 @@ import { SponsorList } from '../Common/sponsorlist'
 
 export interface SponsorPageProps {
   params?: any & {
-    year?: number
+    year?: number,
   }
 }
 
@@ -16,7 +16,7 @@ export interface SponsorPageState {
 }
 
 export class SponsorPage extends React.Component<SponsorPageProps, SponsorPageState> {
-  constructor (props: any) {
+  constructor (props: SponsorPageProps) {
     super(props)
 
     this.state = {
