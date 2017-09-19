@@ -9,3 +9,14 @@ pipeline:
       - cp -R /ascend-web/node_modules .
       - cp constants-example.js constants.js
       - ./test-server.sh
+  frontend:
+    image: registry.ascendntnu.no/ascend-web-baseimage:latest
+    pull: true
+    when:
+      event: push
+      branch:
+        include: [ dev, feature/* ]
+    commands:
+      - cp -R /ascend-web/node_modules .
+      - cp constants-example.js constants.js
+      - webpack
