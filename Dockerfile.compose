@@ -2,6 +2,7 @@ FROM node:6
 
 RUN apt-get update
 RUN apt-get install vim -y
+RUN npm i -g typescript typings webpack --silent --depth=0
 
 ENV APP_DIR /ascend-web
 
@@ -9,7 +10,6 @@ RUN mkdir -p $APP_DIR
 WORKDIR $APP_DIR
 ADD package.json ./
 RUN npm install --depth=0 --quiet
-RUN npm i -g typescript typings webpack --silent
 
 VOLUME $APP_DIR
 EXPOSE 8080
