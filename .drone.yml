@@ -25,9 +25,9 @@ pipeline:
     host: ascendntnu.no
     user: root
     key: ${SSH_KEY}
-    secrets: [ ssh_key, test ]
+    secrets: [ ssh_key ]
     when:
       event: tag
-      branch: test
+      branch: [ dev, test ]
     script:
       - /home/ascend/.webhooks/webhook.sh deployprod ${DRONE_TAG}
