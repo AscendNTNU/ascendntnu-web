@@ -34,4 +34,4 @@ pipeline:
       - echo ${TEST}
       - echo $${TEST}
       - pwd
-      - ls -lah
+      - ls -niklash
