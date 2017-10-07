@@ -30,8 +30,4 @@ pipeline:
       event: push
       branch: dev
     script:
-      - echo $TEST
-      - echo ${TEST}
-      - echo $${TEST}
-      - pwd
-      - ls -niklash
+      - echo ${DRONE_TAG}
