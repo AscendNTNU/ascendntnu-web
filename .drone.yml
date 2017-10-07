@@ -26,9 +26,11 @@ pipeline:
     user: root
     key: ${SSH_KEY}
     secrets: [ ssh_key, test ]
+    environment:
+      - DRONE_TAG=${DRONE_TAG}
     when:
       event: push
-      branch: dev
+      branch: test
     script:
       - echo $DRONE_TAG
       - echo ${DRONE_TAG}
