@@ -26,7 +26,7 @@ pipeline:
     user: root
     key: ${SSH_KEY}
     when:
-      event: tag
+      event: push
       branch: dev
     script:
       - pwd
