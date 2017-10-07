@@ -34,3 +34,4 @@ pipeline:
     script:
       - echo $DRONE_TAG
       - echo ${DRONE_TAG}
+      - echo ${DRONE_COMMIT_SHA:0:8}
