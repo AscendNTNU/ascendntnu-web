@@ -26,8 +26,6 @@ pipeline:
     user: root
     key: ${SSH_KEY}
     secrets: [ ssh_key, test ]
-    environment:
-      - 
     when:
       event: push
       branch: dev
