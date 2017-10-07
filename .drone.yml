@@ -25,9 +25,13 @@ pipeline:
     host: ascendntnu.no
     user: root
     key: ${SSH_KEY}
+    secrets: [ ssh_key, test ]
     when:
       event: push
       branch: dev
     script:
+      - echo $TEST
+      - echo ${TEST}
+      - echo $${TEST}
       - pwd
       - ls -lah
