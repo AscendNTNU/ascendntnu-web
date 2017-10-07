@@ -26,12 +26,8 @@ pipeline:
     user: root
     key: ${SSH_KEY}
     secrets: [ ssh_key, test ]
-    environment:
-      - DRONE_TAG=${DRONE_TAG}
     when:
-      event: push
+      event: tag
       branch: test
     script:
-      - echo $DRONE_TAG
-      - echo ${DRONE_TAG}
-      - echo ${DRONE_COMMIT_SHA:0:8}
+      - /home/ascend/.webhooks/webhook.sh deployprod ${DRONE_TAG}
