@@ -20,7 +20,7 @@ export class SponsorPage extends React.Component<SponsorPageProps, SponsorPageSt
     super(props)
 
     this.state = {
-      year: props.params.year || 2017,
+      year: props.params.year || 2018,
     }
   }
 
@@ -33,7 +33,7 @@ export class SponsorPage extends React.Component<SponsorPageProps, SponsorPageSt
   }
 
   componentWillReceiveProps (nextProps: any) {
-    let nextYear: number = parseInt(nextProps.params.year) || 2017
+    let nextYear: number = parseInt(nextProps.params.year) || 2018
     let year: number = parseInt(this.props.params.year) || this.state.year
 
     if (nextYear != year) {
@@ -50,6 +50,7 @@ export class SponsorPage extends React.Component<SponsorPageProps, SponsorPageSt
       <span>Our sponsors <select className="select-sponsor select" onChange={this.changeYear.bind(this)} defaultValue={this.state.year + ''}>
         <option value="2016">2016</option>
         <option value="2017">2017</option>
+        <option value="2018">2018</option>
       </select>
       </span>
     )
