@@ -37,11 +37,10 @@ export class TeamPage extends React.Component<TeamPageProps, TeamPageState> {
     this.groupings = {
       '2016': new RegExp('Admin|Control|Perception|AI', 'i'),
       '2017': new RegExp('Admin|Control|Perception|AI|Hardware', 'i'),
-      '2018': new RegExp('Admin|Communication|Control|Perception|AI|Hardware', 'i'),
+      '2018': new RegExp('Admin|Control|Perception|AI|Hardware', 'i'),
     }
     this.groupTexts = {
       'Admin': 'Admin is the group responsible for the whole team. We plan the future of Ascend and try to make the whole team visible on NTNU.',
-      'Communication' : 'The coolest group in town. Communication makes Ascend look great.',
       'Control': 'The control group takes care of all the physical aspects of the drone. Bridging the gap between commands and actions.',
       'Perception': 'State estimation of the drone and beyond. The perception group converts sensor input to meaningful information about the drone and its environment.',
       'Planning': 'Finding the optimal behaviour to solve the mission at hand. The Planning group takes the latest AI research from theory to practice.',
