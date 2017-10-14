@@ -190,7 +190,7 @@ app.get('/api/v1/:section/:year', function (req, res) {
     res.sendFile(__dirname + '/api/v1/index.html')
 })
 
-var years = [2016, 2017]
+var years = [2016, 2017, 2018]
 var groups = {
   'history': {},
   'sponsors': {},
