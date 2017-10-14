@@ -69,7 +69,7 @@ export class TeamPage extends React.Component<TeamPageProps, TeamPageState> {
    * @memberOf TeamPage
    */
   componentWillReceiveProps (nextProps: any) {
-    let nextYear: number = parseInt(nextProps.params.year) || 2017
+    let nextYear: number = parseInt(nextProps.params.year) || 2018
     let year: number = parseInt(this.props.params.year) || this.state.year
 
     if (nextYear != year) {
@@ -106,27 +106,28 @@ export class TeamPage extends React.Component<TeamPageProps, TeamPageState> {
    * @memberOf TeamPage
    */
   public getMembers (year: number) {
-    fetch("/api/v1/members/" + year).then(r => r.json()).then(r => {
-      let groups: string[] = []
-      r.forEach((m: any, i: number) => {
-        let g = m.group.split(/, ?/)
-        for (let i: number = 0; i < g.length; i++) {
-          if (groups.indexOf(g[i]) === -1)
-            groups.push(g[i])
-        }
+      fetch("/api/v1/members/" + year).then(r => r.json()).then(r => {
+          let groups: string[] = []
+          r.forEach((m: any, i: number) => {
+              let g = m.group.split(/, ?/)
+              for (let i: number = 0; i < g.length; i++) {
+                  if (groups.indexOf(g[i]) === -1)
+                      groups.push(g[i])
+              }
+          })
+
+          this.setState({
+              year: year,
+              grouping: this.groupings[year],
+              members: r.sort((a: any, b: any) => {
+                  return a.name > b.name ? 1 : -1
+              }),
+              groups: groups.sort((a: any, b: any) => {
+                  return a.toLowerCase() > b.toLowerCase() ? 1 : -1
+              }),
+          })
       })
 
-      this.setState({
-        year: year,
-        grouping: this.groupings[year],
-        members: r.sort((a: any, b: any) => {
-          return a.name > b.name ? 1 : -1
-        }),
-        groups: groups.sort((a: any, b: any) => {
-          return a.toLowerCase() > b.toLowerCase() ? 1 : -1
-        }),
-      })
-    })
   }
 
   /**
@@ -146,6 +147,29 @@ export class TeamPage extends React.Component<TeamPageProps, TeamPageState> {
   }
 
   render () {
+
+      /**
+       * Creating team photo on top
+        */
+      let team_photo: any = "";
+      if (this.state.year == 2017) {
+          team_photo = (
+              <div className="section page-container">
+                  <h1>Team 2017</h1>
+                  <p>Team picture of team 2017</p>
+                  <img src="/images/teams/2017/ascend-group-2017.jpg" style={ { width: "100%", height: "auto", maxHeight: "100%" } } />
+              </div>
+          );
+      }
+      else if (this.state.year == 2018) {
+          team_photo = (
+              <div className="section page-container">
+                  <h1>Team 2018</h1>
+                  <p>Individual photos of the members of team 2018 will be taken shortly, and will posted right after that</p>
+                  <img src="/images/teams/2018/ascend-group-2018.jpg" style={ { width: "100%", height: "auto", maxHeight: "100%" } } />
+              </div>
+          );
+      }
 
 
       /**
@@ -234,15 +258,10 @@ export class TeamPage extends React.Component<TeamPageProps, TeamPageState> {
             )
           })
 
-    if (this.state.year == 2018) {
-      groups = (
-          <div className="section page-container">
-            <h1>Team 2018</h1>
-            <p>Individual photos of the members of team 2018 will be taken shortly, and will posted right after that</p>
-            <img src="/images/teams/2018/ascend-group-2018.jpg" style={ { width: "100%", height: "auto", maxHeight: "100%" } } />
-          </div>
-      );
-    }
+      if (this.state.year == 2018) {
+          groups = "";
+      }
+
 
     return (
       <div className="page page-team">
@@ -253,6 +272,7 @@ export class TeamPage extends React.Component<TeamPageProps, TeamPageState> {
             <Link to="/team/2016" activeClassName="active"><button>2016</button></Link>
             <Link to="/team/2017" activeClassName="active"><button>2017</button></Link>
             <IndexLink to="/team/2018" activeClassName="active"><button className={this.props.params.year ? '' : 'active'}>2018</button></IndexLink>
+            {team_photo}
             {groups}
           </SubSection>
         </Section>
