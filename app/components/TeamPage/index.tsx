@@ -20,7 +20,7 @@ export interface TeamPageState {
 }
 
 /**
- * This is the page for showing team members.
+ * This is the page for showing team members
  * 
  * @export
  * @class TeamPage
@@ -33,10 +33,11 @@ export class TeamPage extends React.Component<TeamPageProps, TeamPageState> {
   constructor(props: any){
     super(props)
 
-    let year = 2017
+    let year = 2018
     this.groupings = {
       '2016': new RegExp('Admin|Control|Perception|AI', 'i'),
       '2017': new RegExp('Admin|Control|Perception|AI|Hardware', 'i'),
+      '2018': new RegExp('Admin|Control|Perception|AI|Hardware', 'i'),
     }
     this.groupTexts = {
       'Admin': 'Admin is the group responsible for the whole team. We plan the future of Ascend and try to make the whole team visible on NTNU.',
@@ -146,90 +147,102 @@ export class TeamPage extends React.Component<TeamPageProps, TeamPageState> {
 
   render () {
 
-    /**
-     * Creating the groups to an array of elements.
-     */
-    let groups: any = this.state.groups
-      .filter((group: any) => this.state.grouping.test(group))
-      .map((group: any, n: number) => {
 
       /**
-       * Adding leader(s) to an own list on each group.
+       * Creating the groups to an array of elements.
        */
-      let leader: any = this.state.members
-        .filter((m: any) => {
-          return m.group.indexOf(group) !== -1 && m.group.indexOf('Leader') !== -1
-        })
-        .map((m: any, i: number) => {
-        let mail: any;
+      let groups: any = this.state.groups
+          .filter((group: any) => this.state.grouping.test(group))
+          .map((group: any, n: number) => {
 
-        if (m.mail && m.mail.length) {
-          mail = (
-            <div className="team-member-mail">
-              <a href={'mailto:' + m.mail} onMouseOver={this.transformMailAddress}>
-                <i className="fa fa-envelope" aria-hidden="true"></i>
-              </a>
-            </div>
-          )
-        }
+            /**
+             * Adding leader(s) to an own list on each group.
+             */
+            let leader: any = this.state.members
+                .filter((m: any) => {
+                  return m.group.indexOf(group) !== -1 && m.group.indexOf('Leader') !== -1
+                })
+                .map((m: any, i: number) => {
+                  let mail: any;
 
-        return (
-          <div key={i} className="team-member team-leader">
-            <div className="team-member-image">
-              <img src={m.image} />
-              {mail}
-            </div>
-            <div className="team-member-name">{m.name}</div>
-            <div className="team-member-role">{m.role}</div>
+                  if (m.mail && m.mail.length) {
+                    mail = (
+                        <div className="team-member-mail">
+                          <a href={'mailto:' + m.mail} onMouseOver={this.transformMailAddress}>
+                            <i className="fa fa-envelope" aria-hidden="true"></i>
+                          </a>
+                        </div>
+                    )
+                  }
+
+                  return (
+                      <div key={i} className="team-member team-leader">
+                        <div className="team-member-image">
+                          <img src={m.image}/>
+                          {mail}
+                        </div>
+                        <div className="team-member-name">{m.name}</div>
+                        <div className="team-member-role">{m.role}</div>
+                      </div>
+                  )
+                })
+
+            /**
+             * Adding the rest of the members which is not a leader.
+             */
+            let members: any = this.state.members
+                .filter((m: any) => {
+                  return m.group.indexOf(group) !== -1 && m.group.indexOf('Leader') == -1
+                })
+                .map((m: any, i: number) => {
+                  let mail: any;
+
+                  if (m.mail && m.mail.length) {
+                    mail = (
+                        <div className="team-member-mail">
+                          <a href={'mailto:' + m.mail} onMouseOver={this.transformMailAddress}>
+                            <i className="fa fa-envelope" aria-hidden="true"></i>
+                          </a>
+                        </div>
+                    )
+                  }
+
+                  return (
+                      <div key={i} className="team-member">
+                        <div className="team-member-image">
+                          <img src={m.image}/>
+                          {mail}
+                        </div>
+                        <div className="team-member-name">{m.name}</div>
+                        <div className="team-member-role">{m.role}</div>
+                      </div>
+                  )
+                })
+
+            return (
+                <SubSection key={n} className="teampage-team centered page-container-big"
+                            data-group={group.toLowerCase()}>
+                  <div className="team-leaders">
+                    {leader}
+                    <div className="team-description">
+                      <div className="team-title">{group}</div>
+                      <div className="team-text">{this.groupTexts[group]}</div>
+                    </div>
+                  </div>
+                  <div className="team-members">{members}</div>
+                </SubSection>
+            )
+          })
+
+    if (this.state.year == 2018) {
+      groups = (
+          <div className="section page-container">
+            <h1>Team 2018</h1>
+            <p>Individual photos of the members of team 2018 will be taken shortly, and will posted right after that</p>
+            <img src="/images/teams/2018/ascend-group-2018.jpg" style={ { width: "100%", height: "auto", maxHeight: "100%" } } />
           </div>
-        )
-      })
-
-      /**
-       * Adding the rest of the members which is not a leader.
-       */
-      let members: any = this.state.members
-      .filter((m: any) => {
-        return m.group.indexOf(group) !== -1 && m.group.indexOf('Leader') == -1
-      })
-      .map((m: any, i: number) => {
-        let mail: any;
-
-        if (m.mail && m.mail.length) {
-          mail = (
-            <div className="team-member-mail">
-              <a href={'mailto:' + m.mail} onMouseOver={this.transformMailAddress}>
-                <i className="fa fa-envelope" aria-hidden="true"></i>
-              </a>
-            </div>
-          )
-        }
-
-        return (
-          <div key={i} className="team-member">
-            <div className="team-member-image">
-              <img src={m.image} />
-              {mail}
-            </div>
-            <div className="team-member-name">{m.name}</div>
-            <div className="team-member-role">{m.role}</div>
-          </div>
-        )
-      })
-
-      return (
-        <SubSection key={n} className="teampage-team centered page-container-big" data-group={group.toLowerCase()}>
-          <div className="team-leaders">
-            {leader}
-            <div className="team-description">
-              <div className="team-title">{group}</div>
-              <div className="team-text">{this.groupTexts[group]}</div>
-            </div>
-          </div>
-          <div className="team-members">{members}</div>
-        </SubSection>
-      )
-    })
+      );
+    }
 
     return (
       <div className="page page-team">
@@ -238,7 +251,8 @@ export class TeamPage extends React.Component<TeamPageProps, TeamPageState> {
           We have five groups: Control, Perception, AI, Hardware and Admin. The board consists of the project manager, the deputy project manager, the technical leader and the group leaders. This means that we formally have a quite hierarchical stucture. However, in practice we have a very flat structure where everybody contributes within the areas they want and where attention is needed.
           <SubSection titleText="Members" className="page-container-big">
             <Link to="/team/2016" activeClassName="active"><button>2016</button></Link>
-            <IndexLink to="/team/2017" activeClassName="active"><button className={this.props.params.year ? '' : 'active'}>2017</button></IndexLink>
+            <Link to="/team/2017" activeClassName="active"><button>2017</button></Link>
+            <IndexLink to="/team/2018" activeClassName="active"><button className={this.props.params.year ? '' : 'active'}>2018</button></IndexLink>
             {groups}
           </SubSection>
         </Section>
