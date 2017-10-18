@@ -281,8 +281,8 @@ export class TeamPage extends React.Component<TeamPageProps, TeamPageState> {
             <Link to="/team/2016" activeClassName="active"><button>2016</button></Link>
             <Link to="/team/2017" activeClassName="active"><button>2017</button></Link>
             <IndexLink to="/team/2018" activeClassName="active"><button className={this.props.params.year ? '' : 'active'}>2018</button></IndexLink>
-            {groups}
             {team_photo}
+            {groups}
           </SubSection>
         </Section>
       </div>

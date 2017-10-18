@@ -26,6 +26,9 @@ upload-images:
 upload-image:
 	@scp -r ./images/assets/${folder}/${file} ascend@dev.ascendntnu.no:/home/ascend/ascendntnu-web/images/assets/${folder}
 
+#To upload a folder, just specify folder
+#Example usage file: make upload folder=testfolder file=testfile.txt
+#Example usage folder= make upload folder=testfolder
 upload:
 	@scp -r ./${folder}/${file} ascend@dev.ascendntnu.no:/home/ascend/ascendntnu-web/${folder}
 
