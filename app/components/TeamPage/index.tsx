@@ -162,25 +162,11 @@ export class TeamPage extends React.Component<TeamPageProps, TeamPageState> {
       /**
        * Creating team photo on top
         */
-      let team_photo: any = "";
-      if (this.state.year == 2017) {
-          team_photo = (
-              <div className="section page-container">
-                  <div className="team-title">Team 2017</div>
-                  <p>Team picture of team 2017</p>
-                  <img src="/images/teams/2017/ascend-group-2017.jpg" style={ { width: "100%", height: "auto", maxHeight: "100%" } } />
-              </div>
-          );
-      }
-      else if (this.state.year == 2018) {
-          team_photo = (
-              <div className="section page-container">
-                  <div className="team-title">Team 2018</div>
-                  <p>Individual photos of the members of team 2018 will be taken shortly, and will posted right after that</p>
-                  <img src="/images/teams/2018/ascend-group-2018.jpg" style={ { width: "100%", height: "auto", maxHeight: "100%" } } />
-              </div>
-          );
-      }
+      let team_photo: any = (
+        <div className="section page-container">
+          <img src={"/images/teams/" + this.state.year + "/ascend-group-" + this.state.year + ".jpg"} style={ { width: "100%", height: "auto", maxHeight: "100%" } } />
+        </div>
+      );
 
       /**
        * Creating the groups to an array of elements.
@@ -268,20 +254,26 @@ export class TeamPage extends React.Component<TeamPageProps, TeamPageState> {
               )
           })
 
-
-
-
-
     return (
       <div className="page page-team">
-        <Breadcrumb routes={['team']} />
-        <Section titleText="The team" className="page-container-big">
-          We have five groups: Control, Perception, AI, Hardware and Admin. The board consists of the project manager, the deputy project manager, the technical leader and the group leaders. This means that we formally have a quite hierarchical stucture. However, in practice we have a very flat structure where everybody contributes within the areas they want and where attention is needed.
-          <SubSection titleText="Members" className="page-container-big">
-            <Link to="/team/2016" activeClassName="active"><button>2016</button></Link>
-            <Link to="/team/2017" activeClassName="active"><button>2017</button></Link>
-            <IndexLink to="/team/2018" activeClassName="active"><button className={this.props.params.year ? '' : 'active'}>2018</button></IndexLink>
+        <Section className="page-container-big">
+          <SubSection className="page-container-big">
+              <div className="team-page-header">
+                <div>
+                  <h1>The Team</h1>
+                </div>
+                <div>
+                  <Link to="/team/2016" activeClassName="active"><button>2016</button></Link>
+                  <Link to="/team/2017" activeClassName="active"><button>2017</button></Link>
+                  <IndexLink to="/team/2018" activeClassName="active"><button className={this.props.params.year ? '' : 'active'}>2018</button></IndexLink>
+                </div>
+              </div>
+          </SubSection>
+          <SubSection className="page-container-big">
             {team_photo}
+          </SubSection>
+          <SubSection titleText="Groups" className="page-container-big">
+            We have five groups: Control, Perception, AI, Hardware and Admin. The board consists of the project manager, the deputy project manager, the technical leader and the group leaders. This means that we formally have a quite hierarchical stucture. However, in practice we have a very flat structure where everybody contributes within the areas they want and where attention is needed.
             {groups}
           </SubSection>
         </Section>
