@@ -1370,6 +1370,12 @@ found {
     justify-content: center;
 }
 
+.team-year-selection {
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: space-around;
+}
+
 .team-leaders {
     width: 100%;
     padding: 0 0 0 calc(50% - 272px);

@@ -101,7 +101,6 @@ export class MissionPage extends React.Component<MissionPageProps, {}> {
 
     return (
       <div className="page page-mission">
-        <Breadcrumb routes={['missions']} />
         <Section titleText="Who are we">
           <p>Ascend NTNU is a student organization at the Norwegian University of Science and Technology. Ascend NTNU was founded with the primary mission of participating in (and winning) the International Aerial Robotics Competition in 2016 and onwards.</p>
           <SubSection titleText="The International Aerial Competition">

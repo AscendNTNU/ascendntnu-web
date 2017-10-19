@@ -57,7 +57,6 @@ export class SponsorPage extends React.Component<SponsorPageProps, SponsorPageSt
 
     return (
       <div className="page page-sponsors">
-        <Breadcrumb routes={['sponsors']} />
         <Section titleText={title} className="centered page-container-big">
           <SponsorList year={this.state.year} />
         </Section>

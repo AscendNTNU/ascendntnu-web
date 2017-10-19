@@ -108,7 +108,6 @@ export class CVPage extends React.Component<CVPageProps, CVPageState> {
 
     return (
       <div className="page page-cv">
-        <Breadcrumb routes={['CV']} />
         <Section titleText="CV database">
           {this.state.public && <div>
             <input defaultValue={this.props.params.key} onInput={this.updateKeyHandler.bind(this)} placeholder="Key for private profiles" />
