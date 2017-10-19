@@ -258,10 +258,16 @@ export class TeamPage extends React.Component<TeamPageProps, TeamPageState> {
       <div className="page page-team">
         <Section className="page-container-big">
           <SubSection className="page-container-big">
-              <h1>The Team</h1>
-              <Link to="/team/2016" activeClassName="active"><button>2016</button></Link>
-              <Link to="/team/2017" activeClassName="active"><button>2017</button></Link>
-              <IndexLink to="/team/2018" activeClassName="active"><button className={this.props.params.year ? '' : 'active'}>2018</button></IndexLink>
+              <div className="team-page-header">
+                <div>
+                  <h1>The Team</h1>
+                </div>
+                <div>
+                  <Link to="/team/2016" activeClassName="active"><button>2016</button></Link>
+                  <Link to="/team/2017" activeClassName="active"><button>2017</button></Link>
+                  <IndexLink to="/team/2018" activeClassName="active"><button className={this.props.params.year ? '' : 'active'}>2018</button></IndexLink>
+                </div>
+              </div>
           </SubSection>
           <SubSection className="page-container-big">
             {team_photo}

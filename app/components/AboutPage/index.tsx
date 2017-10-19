@@ -12,6 +12,7 @@ export class AboutPage extends React.Component<AboutPageProps, {}> {
   render () {
     return (
       <div className="page page-about">
+        <Breadcrumb routes={['about']} />
         <Section titleText="About Us">
           <SubSection titleText="Ascend NTNU - one of Norways most innovative student projects!">
             <p>Ascend NTNU is one of the few aerial robotics teams at <a href="http://www.ntnu.edu/">NTNU</a>. We are working towards becoming the best performing team at the <a href="http://www.aerialroboticscompetition.org/">International Aerial Robotics Competition</a>, American venue. We aim high, work hard and create new and innovative solutions to some of the most challenging problems in cybernetics and autonomy as of today.</p>

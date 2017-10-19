@@ -9,6 +9,7 @@ export class ContactPage extends React.Component<{}, {}> {
   render () {
     return (
       <div className="page page-about">
+        <Breadcrumb routes={['about']} />
         <ContactInfo />
       </div>
     )

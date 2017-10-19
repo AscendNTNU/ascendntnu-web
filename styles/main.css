@@ -1342,6 +1342,21 @@ found {
     font-style: italic;
 }
 
+.team-page-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media (max-width: 560px) {
+    .team-page-header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
 .teampage-team {
     display: flex;
     flex-flow: wrap row;

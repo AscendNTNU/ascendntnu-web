@@ -1,6 +1,7 @@
 import * as React from 'react'
 
 import { Section, SubSection, SubSubSection } from '../PageLayout'
+import { Link, IndexLink } from 'react-router'
 import { Breadcrumb } from '../Common/breadcrumb'
 
 export interface MissionPageProps {}
@@ -101,6 +102,17 @@ export class MissionPage extends React.Component<MissionPageProps, {}> {
 
     return (
       <div className="page page-mission">
+        <Breadcrumb routes={['mission']} />
+        {/*<SubSection className="page-container-big">
+         <h1>Missions</h1>
+         <Link to="/team/2016" activeClassName="active"><button>1</button></Link>
+         <Link to="/team/2017" activeClassName="active"><button>2</button></Link>
+         <Link to="/team/2016" activeClassName="active"><button>3</button></Link>
+         <Link to="/team/2017" activeClassName="active"><button>4</button></Link>
+         <Link to="/team/2016" activeClassName="active"><button>5</button></Link>
+         <Link to="/team/2017" activeClassName="active"><button>6</button></Link>
+         <Link to="/team/2018" activeClassName="active"><button className="active">7</button></Link>
+         </SubSection>*/}
         <Section titleText="Who are we">
           <p>Ascend NTNU is a student organization at the Norwegian University of Science and Technology. Ascend NTNU was founded with the primary mission of participating in (and winning) the International Aerial Robotics Competition in 2016 and onwards.</p>
           <SubSection titleText="The International Aerial Competition">
