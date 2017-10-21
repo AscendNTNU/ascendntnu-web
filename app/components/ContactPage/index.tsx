@@ -87,7 +87,7 @@ export class FormalInfo extends React.Component<{}, {}> {
     return (
       <SubSection titleText="Formal information about Ascend NTNU">
         <p>We are registered in <a href="http://www.brreg.no/english/">The Brønnøysund Register Centre</a>. See <a href="http://w2.brreg.no/enhet/sok/detalj.jsp?orgnr=915737641">our listing here</a>.</p>
-        <p><strong>Organisational number:</strong> <a href="tel:915737641">915 737 641</a></p>
+        <p><strong>Organisational number:</strong> <a href="tel:915737641">995 21 772</a></p>
       </SubSection>
     )
   }
