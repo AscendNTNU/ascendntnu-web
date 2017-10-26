@@ -1802,6 +1802,12 @@ code {
     flex: 0 0 auto;
 }
 
+.responsive-image {
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+}
+
 .page-container.flex.no-grow {
     min-height: calc(12px + 32px + 1.3em);
 }
