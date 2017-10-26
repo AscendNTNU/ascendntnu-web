@@ -165,7 +165,7 @@ export class TeamPage extends React.Component<TeamPageProps, TeamPageState> {
       let team_photo: any = (
         <div className="section page-container">
 
-          <img src={"/images/teams/" + this.state.year + "/ascend-group-" + this.state.year + ".jpg"} style={ { width: "inherit", maxWidth: "100%", height: "inherit", maxHeight: "100%" } } className="responsive-image" />
+          <img src={"/images/teams/" + this.state.year + "/ascend-group-" + this.state.year + ".jpg"} style={ { width: "inherit", maxWidth: "100%", height: "inherit !important", maxHeight: "100%" } } className="responsive-image" />
         </div>
       );
 
