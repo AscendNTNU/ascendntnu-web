@@ -17,7 +17,7 @@ export class MissionPage extends React.Component<MissionPageProps, {}> {
         titles: ['Mission 7', 'Why is this a challenge?'],
         contents: [
           (
-          <div>
+          <div id="mission-7">
             <p>Mission 7 is split into two parts, a and b. Part b will begin when enough teams have completed part a. Here we will give a brief overview of the mission, for a complete version of the rules see <a href="http://www.aerialroboticscompetition.org/rules.php">the official rules</a>.</p>
             <div className="split-img-container">
               <figure className="split-img">
@@ -94,7 +94,7 @@ export class MissionPage extends React.Component<MissionPageProps, {}> {
         titles: ['Mission 6'],
         contents: [
           (
-            <div>
+            <div id="mission-6">
               <p>Mission 6 continued where Mission 5 ended but increased the difficultly by requiring the autonomous robots to interact with their environment. The robots had to locate an opening in a building, enter when a surveillance camera was not looking, navigate crowded hallways, avoid or disable security systems, interpret signage in Arabic, and finally reach a particular room without bumping any walls or landing. From there, the robot had to locate a particular paper inbox containing a flash drive. It had to then retrieve that flash drive, replace it with an identical blank flash drive, and exit the building within a short time span. This mission saw the first dual-venue competition, with simultaneous events occurring in both the United States and China. After three years, a team from Tsinghua University repeatedly demonstrated the entirety of the mission.</p>
             </div>
           )
@@ -104,7 +104,7 @@ export class MissionPage extends React.Component<MissionPageProps, {}> {
         titles: ['Mission 5'],
         contents: [
           (
-            <div>
+            <div id="mission-5">
               <p>
                 The fifth mission picked up where the fourth mission left off by demonstrating the fully autonomous aerial robotic behaviors necessary to rapidly negotiate the confined internal spaces of a structure. This was a logical next step since the previous mission required a vehicle to enter a building. The nuclear reactor complex explosion scenario of the fourth mission was used as the backdrop for the fifth mission. The fifth mission required a fully autonomous aerial vehicle (presupposed to have been launched from a "mothership" just outside the structure as demonstrated during the fourth mission) to penetrate a structure and negotiate a more complex interior space containing hallways, small rooms, obstacles, and dead ends, in order to search for a designated target without the aid of global-positioning navigational aids. Finally, the aerial robot had to relay pictures of the nuclear control panel to a monitoring station some distance from the structure.</p>
             </div>
@@ -115,7 +115,7 @@ export class MissionPage extends React.Component<MissionPageProps, {}> {
         titles: ['Mission 4'],
         contents: [
           (
-            <div>
+            <div id="mission-4">
               <p>This mission involved flying to an abandoned village from a distance of 3 kilometers and identifying a particular structure based on a symbol on the building. Once the structure has been identified, a sensor probe had to be sent into the structure to perform reconnaissance and return video of a particular item of interest. Access to the structure was be through open portals (doors, windows, other openings) that had to be identified by the aerial robots. The total number of portals was not known beforehand. Operation within the structure was required in order to access the desired target. The robot had to relay clear images of the desired target back 3 kilometers to the judges. After seven years of steady progression, a team from the Georgia Institute of Technology completed the entire mission.</p>
             </div>
           )
@@ -125,7 +125,7 @@ export class MissionPage extends React.Component<MissionPageProps, {}> {
         titles: ['Mission 3'],
         contents: [
           (
-            <div>
+            <div id="mission-3">
               <p>The third mission began in 1998. It was a search and rescue mission requiring fully autonomous robots to take off, fly to a disaster area, search for survivors and the dead amid raging fires, broken water mains, clouds of toxic gas, and rubble from destroyed buildings. The scenario was recreated at the U.S. Department of Energy's Hazardous Material Management and Emergency Response (HAMMER) training facility where these hazards could be recreated. Because of the realism of the scenario, animatrons were used instead of human actors to simulate survivors that were incapable of extracting themselves from the disaster area. An aerial robot from Germany's Technische Universität Berlin was able to detect and avoid all of the obstacles (many of which could have destroyed the robot itself), identify all the dead on the ground and the survivors (distinguishing between the two based on movement), and relay pictures of the survivors along with their locations back to first responders who would attempt a rescue.</p>
             </div>
           )
@@ -135,7 +135,7 @@ export class MissionPage extends React.Component<MissionPageProps, {}> {
         titles: ['Mission 2'],
         contents: [
           (
-            <div>
+            <div id="mission-2">
               <p>The competition mission was then toughened and made a bit less abstract by requiring teams to search for a toxic waste dump, map the location of partially buried, randomly oriented, toxic waste drums, identify the contents of each drum from the hazard labels found somewhere on the outside of each drum, and bring a sample back from one of the drums; all without any human intervention whatsoever. In 1996, a team from the Massachusetts Institute of Technology and Boston University, with backing from Draper Labs, created a small fully autonomous flying robot that repeatedly and correctly mapped the location of all five of the toxic waste drums, and correctly identified the contents of two from the air, thereby completing approximately seventy five percent of the mission. The following year, an aerial robot developed by a team from Carnegie Mellon University completed the entire mission.</p>
             </div>
           )
@@ -145,7 +145,7 @@ export class MissionPage extends React.Component<MissionPageProps, {}> {
         titles: ['Mission 1'],
         contents: [
           (
-            <div>
+            <div id="mission-6">
               <p>The initial mission started in 1991 with the goal of moving a metallic disc from one side of an arena to another with a completely autonomous flying robot. This was seen by many as almost impossible for a fully autonomous flying robot. The college teams continued to improve their entries over the next two years. During that time, the competition saw its first autonomous takeoff, flight, and landing by a team from the Georgia Institute of Technology. Three years later, in 1995, a team from Stanford University was able to acquire a single disk and move it from one side of the arena to the other in a fully-autonomous flight half a decade earlier than some pundits had predicted.</p>
             </div>
           )
@@ -153,6 +153,7 @@ export class MissionPage extends React.Component<MissionPageProps, {}> {
       }
     ]
   }
+
 
   render () {
     let missions: any = this.missions.map((e: any, i: number) => {
@@ -166,13 +167,7 @@ export class MissionPage extends React.Component<MissionPageProps, {}> {
         <Breadcrumb routes={['mission']} />
         <SubSection className="page-container-big">
          <h1>Missions</h1>
-           <Link to="/missions/1" activeClassName="active"><button>7</button></Link>
-           <Link to="/missions/2" activeClassName="active"><button>6</button></Link>
-           <Link to="/missions/3" activeClassName="active"><button>5</button></Link>
-           <Link to="/missions/4" activeClassName="active"><button>4</button></Link>
-           <Link to="/missions/5" activeClassName="active"><button>3</button></Link>
-           <Link to="/missions/6" activeClassName="active"><button>2</button></Link>
-           <Link to="/missions/7" activeClassName="active"><button>1</button></Link>
+
          </SubSection>
         <Section titleText="Who are we">
           <p>Ascend NTNU is a student organization at the Norwegian University of Science and Technology. Ascend NTNU was founded with the primary mission of participating in (and winning) the International Aerial Robotics Competition in 2016 and onwards.</p>

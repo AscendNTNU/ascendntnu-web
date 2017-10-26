@@ -34,10 +34,9 @@
     "url": "https://github.com/AscendNTNU/ascendntnu-web/issues"
   },
   "devDependencies": {
-    "webpack-dev-server": "^1.16.1",
+    "source-map-loader": "^0.1.5",
     "typescript": "^2.0.3",
-    "typings": "^1.4.0",
-    "source-map-loader": "^0.1.5"
+    "webpack-dev-server": "^1.16.1"
   },
   "dependencies": {
     "commonmark": "^0.26.0",
