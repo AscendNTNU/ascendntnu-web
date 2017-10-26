@@ -20,3 +20,14 @@ pipeline:
       - cp -R /ascend-web/node_modules .
       - cp constants-example.js constants.js
       - webpack
+  deploy:
+    image: appleboy/drone-ssh
+    host: ascendntnu.no
+    user: root
+    key: ${SSH_KEY}
+    secrets: [ ssh_key ]
+    when:
+      event: tag
+      branch: [ dev, test ]
+    script:
+      - /home/ascend/.webhooks/webhook.sh deployprod ${DRONE_TAG}

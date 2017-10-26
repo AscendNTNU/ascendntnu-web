@@ -12,6 +12,5 @@ ADD package.json ./
 RUN npm install --depth=0 --quiet
 
 VOLUME $APP_DIR
-EXPOSE 8080
 
-#CMD ["pm2", "start", "server.js", "--no-daemon"]
+CMD ["pm2", "start", "server.js", "--no-daemon"]

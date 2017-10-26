@@ -1,7 +1,7 @@
 version: '2'
 
 services:
-  ascend:
+  dev:
     build:
       context: .
       dockerfile: Dockerfile.compose
