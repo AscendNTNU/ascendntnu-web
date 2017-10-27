@@ -1334,6 +1334,13 @@ found {
     clear: both;
 }
 
+.page .fullscale-image {
+    width: 0;
+    min-width: 100%;
+    max-width: 100%;
+    max-height: none;
+}
+
 .page img:after {
     content: attr(alt);
     display: block;
