@@ -10,3 +10,9 @@
   logo: /public/assets/norbit.svg
   logo_dark: /public/assets/norbit_hvit.svg
   short_text: NORBIT is an international, knowledge-based group that continuously designs, develops and manufactures high technology products, systems and solutions to meet their customers´ changing needs.
+
+- name: FLIR
+  link: http://www.flir.eu/home/
+  logo: /public/assets/flir_dark.png
+  logo_dark: /public/assets/flir.png
+  short_text: FLIR UAV is an international, knowledge-based group that develop, build and sell the worlds most advanced Personal Reconnaissance System.
