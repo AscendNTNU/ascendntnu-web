@@ -1,0 +1,289 @@
+## Admin ##
+- name: Simen Sandbu
+  background: Mechanical Engineering
+  role: Project Manager
+  group: Admin, Board, Admin, Leader
+  image: "/images/teams/2018/simen-s-2018.png"
+  mail: simen.sandbu[at]ascendntnu.no
+
+- name: Erling Solberg
+  background: Electrical Engineering
+  role: Deputy Project Manager
+  group: Board, Admin
+  image: "/images/teams/2018/erling-s-2018.png"
+  mail: erling.solberg[at]ascendntnu.no
+
+- name: Magnus Reiersen
+  background: Computer Science
+  role: Chief Engineer
+  group: Admin, Board
+  image: "/images/teams/2018/magnus-r-2018.png"
+  mail: magnus.reiersen[at]ascendntnu.no
+
+- name: Kevin Kaldvansvik
+  background: Cybernetics and Robotics
+  role: Deputy Chief Engineer
+  group: Admin, Board
+  image: "/images/teams/2018/kevin-k-2018.png"
+  mail: kevin.kaldvansvik[at]ascendntnu.no
+
+- name: Truls Olsen
+  background: Cybernetics and Robotics
+  role: Head of Economics
+  group: Admin, Board
+  image: "/images/teams/2018/ascend-placeholder.png"
+  mail: truls.olsen[at]ascendntnu.no
+
+- name: Kim Aksel Tahuil Borgen
+  background: Computer Science
+  role: Head of Marketing
+  group: Admin, Board
+  image: "/images/teams/2018/kim-b-2018.png"
+  mail: kim.borgen[at]ascendntnu.no
+
+## Coaches ##
+- name: Christian Wilhelmsen
+  background: Mechanical Engineering
+  role: Hardware Coach
+  group: Coach
+  image: "/images/teams/2017/christian-w-2017.jpg"
+  mail: christian.wilhelmsen[at]ascendntnu.no
+  
+- name: Simen Haugo
+  background: Cybernetics and Robotics
+  role: Perception Coach
+  group: Coach
+  image: "/images/teams/2017/simen-h-2017.jpg"
+  mail: simen.haugo[at]ascendntnu.no
+  
+- name: Håkon Flatval
+  background: Computer Science
+  role: Perception Coach
+  group: Coach
+  image: "/images/teams/2017/hakon-f-2017.jpg"
+  mail: hakon.flatval[at]ascendntnu.no
+  
+- name: Martin Lysvand Sollie
+  background: Cybernetics and Robotics
+  role: Control Coach
+  group: Coach
+  image: "/images/teams/2017/martin-s-2017.jpg"
+  mail: martin.sollie[at]ascendntnu.no
+
+- name: Matias Christensen
+  background: Computer Science
+  role: Coach
+  group: Coach
+  image: "/images/teams/2017/matias-c-2017.jpg"
+  mail: matias.christensen[at]ascendntnu.no
+
+## Marketing ##
+- name: Kim Aksel Tahuil Borgen
+  background: Computer Science
+  role: Head of Marketing
+  group: Marketing, Leader
+  image: "/images/teams/2018/kim-b-2018.png"
+  mail: kim.borgen[at]ascendntnu.no
+
+- name: Anders Mølster Hopland
+  background: Computer Science
+  role: Web Developer
+  group: Marketing
+  image: "/images/teams/2018/anders-h-2018.png"
+  mail: anders.hopland[at]ascendntnu.no
+  
+- name: Helene Åsvang
+  background: Economics and Administrations
+  role: Sponsor Contact
+  group: Marketing
+  image: "/images/teams/2018/helene-aa-2018.png"
+  mail: helene.aasvang[at]ascendntnu.no
+    
+- name: Kristine Stray
+  background: Materials Science
+  role: Graphical Designer
+  group: Marketing
+  image: "/images/teams/2018/kristine-s-2018.png"
+  mail: kristine.stray[at]ascendntnu.no
+    
+- name: Sara Edvardsen
+  background: Electrical Engineering
+  role: Event Manager
+  group: Marketing
+  image: "/images/teams/2018/sara-e-2018.png"
+  mail: sara.edvardsen[at]ascendntnu.no
+
+
+## Control ##
+- name: Håvard Skåra Mellbye
+  background: Cybernetics and Robotics
+  role: Control Leader
+  group: Control, Leader
+  image: "/images/teams/2018/haavard-s-2018.png"
+  mail: havard.mellbye[at]ascendntnu.no
+
+- name: Rendell Cale
+  background: Cybernetics and Robotics
+  role: Control Member
+  group: Control
+  image: "/images/teams/2018/ascend-placeholder.png"
+  mail: rendellc[at]ascendntnu.no
+
+- name: Oskar Østby
+  background: Cybernetics and Robotics
+  role: Control Member
+  group: Control
+  image: "/images/teams/2018/oskar-oe-2018.png"
+  mail: oskar.oestby[at]ascendntnu.no
+
+- name: Atussa Koushan
+  background: Cybernetics and Robotics
+  role: Control Member
+  group: Control
+  image: "/images/teams/2018/atussa-k-2018.png"
+  mail: atussa.koushan[at]ascendntnu.no
+
+- name: Chris André Brombach
+  background: Cybernetics and Robotics
+  role: Control Member»
+  group: Control
+  image: "/images/teams/2018/chris-b-2018.png"
+  mail: chris.brombach[at]ascendntnu.no
+
+- name: Andrea Gjestvang
+  background: Cybernetics and Robotics
+  role: Control Member
+  group: Control
+  image: "/images/teams/2018/ascend-placeholder.png"
+  mail: «andrea.gjestvang[at]ascendntnu.no»
+
+## Perception ##
+- name: Ulrich Isachsen
+  background: Computer Science
+  role: Perception Leader
+  group: Perception, Leader
+  image: "/images/teams/2018/ulrich-i-2018.png"
+  mail: ulrich.isachsen[at]ascendntnu.no
+
+- name: Kevin Meyer
+  background: Cybernetics and Robotics
+  role: Perception Member
+  group: Perception
+  image: "/images/teams/2018/kevin-m-2018.png"
+  mail: kevin.meyer[at]ascendntnu.no
+  
+- name: Snorre Børtenes
+  background: Computer Science
+  role: Perception Member
+  group: Perception
+  image: "/images/teams/2018/snorre-b-2018.png"
+  mail: snorre.bortnes[at]ascendntnu.no
+
+- name: Andrea Marie Festøy
+  background: Engineering and ICT
+  role: Perception Member
+  group: Perception
+  image: "/images/teams/2018/andrea-f-2018.png"
+  mail: ndrea.marie.festoy@[at]scendntnu.no
+
+- name: Ivar Thokle Hovden
+  background: Cybernetics and Robotics
+  role: Perception Member
+  group: Perception
+  image: "/images/teams/2018/ivar-h-2018.png"
+  mail: ivar.thokle.hovden[at]ascendntnu.no
+
+- name: Emil Martens
+  background: Cybernetics and Robotics
+  role: Perception Member
+  group: Perception
+  image: "/images/teams/2018/emil-m-2018.png"
+  mail: emil.martens[at]ascendntnu.no
+
+- name: Erling Rørvik
+  background: Computer Science
+  role: Perception Member
+  group: Perception
+  image: "/images/teams/2018/erling-r-2018.png"
+  mail: erling.rorvik[at]ascendntnu.no
+
+- name: Marvin Reza
+  background: Computer Science
+  role: Perception Member
+  group: Perception
+  image: "/images/teams/2018/marvin-r-2018.png"
+  mail: marvin.reza[at]ascendntnu.no
+  
+
+## AI ##
+- name: Rasmus Munter
+  background: Applied Mathematics
+  role: AI Leader
+  group: AI, Leader
+  image: "/images/teams/2018/rasmus-m-2018.png"
+  mail: rasmus.munter[at]ascendntnu.no
+
+- name: Niklas Molnes Hole
+  background: Computer Science
+  role: AI Member
+  group: AI
+  image: "/images/teams/2018/niklas-h-2018.png"
+  mail: niklas.hole[at]ascendntnu.no
+
+- name: Adrian Tofting
+  background: Engineering and ICT
+  role: AI Member
+  group: AI
+  image: "/images/teams/2018/adrian-t-2018.png"
+  mail: adrian.tofting[at]ascendntnu.no
+
+- name: Alexander Danielsen-Haces
+  background: Cybernetics and Robotics
+  role: AI Member
+  group: AI
+  image: "/images/teams/2018/alexander-dh-2018.png"
+  mail: alexander.danielsen[at]ascendntnu.no
+
+- name: Nadia Wangberg
+  background: Cybernetics and Robotics
+  role: AI Member
+  group: AI
+  image: "/images/teams/2018/nadia-w-2018.png"
+  mail: nadia.wangberg[at]ascendntnu.no
+
+
+## Hardware ##
+- name: Filip Grevle Lolland
+  background: Mechanical Engineering
+  role: Hardware Leader
+  group: Hardware, Leader
+  image: "/images/teams/2018/filip-l-2018.png"
+  mail: filip.lolland[at]ascendntnu.no
+  
+- name: Stian Ismar
+  background: Mechanical Engineering
+  role: Hardware Member
+  group: Hardware
+  image: "/images/teams/2018/stian-i-2018.png"
+  mail: stian.ismar[at]ascendntnu.no
+  
+- name: Hans Theodor Johnsen
+  background: Electrical Engineering
+  role: Hardware Member
+  group: Hardware
+  image: "/images/teams/2018/hans-tj-2018.png"
+  mail: hans.theodor.johnsen[at]ascendntnu.no
+
+- name: «Johannes Wågen»
+  background: Electrical Engineering
+  role: Hardware Member
+  group: Hardware
+  image: "/images/teams/2018/johannes-w-2018.png"
+  mail: johannes.wagen[at]ascendntnu.no
+
+- name: Edvard Grødem
+  background: Cybernetics and Robotics
+  role: Hardware Member
+  group: Hardware
+  image: "/images/teams/2018/edvard-g-2018.png"
+  mail: edvard.grodem@ascendntnu.no

@@ -28,7 +28,7 @@ upload-image:
 
 #To upload a folder, just specify folder
 #Example usage file: make upload folder=testfolder file=testfile.txt
-#Example usage folder= make upload folder=testfolder
+#Example usage folder make upload folder=testfolder
 upload:
 	@scp -r ./${folder}/${file} ascend@dev.ascendntnu.no:/home/ascend/ascendntnu-web/${folder}
 

@@ -1380,6 +1380,7 @@ found {
 .teampage-team[data-group='perception'] { background-image: url(/images/teams/current-logoes/perception-white.svg); }
 .teampage-team[data-group='planning'] { background-image: url(/images/teams/current-logoes/planning-white.svg); }
 .teampage-team[data-group='ai'] { background-image: url(/images/teams/current-logoes/ai-white.svg); }
+.teampage-team[data-group='marketing'] { background-image: url(/images/teams/current-logoes/marketing-white.svg); }
 
 .app.dark-theme .teampage-team[data-group='admin'] { background-image: url(/images/teams/current-logoes/admin.svg); }
 .app.dark-theme .teampage-team[data-group='control'] { background-image: url(/images/teams/current-logoes/control.svg); }
@@ -1387,6 +1388,7 @@ found {
 .app.dark-theme .teampage-team[data-group='perception'] { background-image: url(/images/teams/current-logoes/perception.svg); }
 .app.dark-theme .teampage-team[data-group='planning'] { background-image: url(/images/teams/current-logoes/planning.svg); }
 .app.dark-theme .teampage-team[data-group='ai'] { background-image: url(/images/teams/current-logoes/ai.svg); }
+.app.dark-theme .teampage-team[data-group='marketing'] { background-image: url(/images/teams/current-logoes/marketing.svg); }
 
 .team-leaders, .team-members {
     display: flex;
