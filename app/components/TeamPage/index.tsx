@@ -40,8 +40,8 @@ export class TeamPage extends React.Component<TeamPageProps, TeamPageState> {
       '2018': new RegExp('Board|Coach|Marketing|Control|Perception|AI|Hardware', 'i'),
     }
     this.groupTexts = {
-      'Admin': 'Admin is the group responsible for the whole team. We plan the future of Ascend.',
-      'Board': 'Board is the group responsible for the whole team. We plan the future of Ascend.',
+      'Admin': 'The board is responsible for the whole team. They make sure organization is moving forward and plan the future of Ascend.',
+      'Board': 'The board is responsible for the whole team. They make sure organization is moving forward and plan the future of Ascend.',
       'Marketing' : 'Marketing is the group responsible for making Ascend visible on campus and spreading Ascends vision to the world.',
       'Coach' : 'Former Ascend NTNU members eager to share their knowledge with the team.',
       'Control': 'The control group takes care of all the physical aspects of the drone. Bridging the gap between commands and actions.',
