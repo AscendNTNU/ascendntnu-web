@@ -1375,6 +1375,7 @@ found {
 }
 
 .teampage-team[data-group='admin'] { background-image: url(/images/teams/current-logoes/admin-white.svg); }
+.teampage-team[data-group='board'] { background-image: url(/images/teams/current-logoes/admin-white.svg); }
 .teampage-team[data-group='control'] { background-image: url(/images/teams/current-logoes/control-white.svg); }
 .teampage-team[data-group='hardware'] { background-image: url(/images/teams/current-logoes/hardware-white.svg); }
 .teampage-team[data-group='perception'] { background-image: url(/images/teams/current-logoes/perception-white.svg); }
@@ -1383,6 +1384,7 @@ found {
 .teampage-team[data-group='marketing'] { background-image: url(/images/teams/current-logoes/marketing-white.svg); }
 
 .app.dark-theme .teampage-team[data-group='admin'] { background-image: url(/images/teams/current-logoes/admin.svg); }
+.app.dark-theme .teampage-team[data-group='board'] { background-image: url(/images/teams/current-logoes/admin.svg); }
 .app.dark-theme .teampage-team[data-group='control'] { background-image: url(/images/teams/current-logoes/control.svg); }
 .app.dark-theme .teampage-team[data-group='hardware'] { background-image: url(/images/teams/current-logoes/hardware.svg); }
 .app.dark-theme .teampage-team[data-group='perception'] { background-image: url(/images/teams/current-logoes/perception.svg); }

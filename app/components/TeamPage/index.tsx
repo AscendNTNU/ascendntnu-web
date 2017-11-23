@@ -37,11 +37,12 @@ export class TeamPage extends React.Component<TeamPageProps, TeamPageState> {
     this.groupings = {
       '2016': new RegExp('Admin|Control|Perception|AI', 'i'),
       '2017': new RegExp('Admin|Control|Perception|AI|Hardware', 'i'),
-      '2018': new RegExp('Admin|Coach|Marketing|Control|Perception|AI|Hardware', 'i'),
+      '2018': new RegExp('Board|Coach|Marketing|Control|Perception|AI|Hardware', 'i'),
     }
     this.groupTexts = {
       'Admin': 'Admin is the group responsible for the whole team. We plan the future of Ascend.',
-      'Marketing' : 'Marketing is the group responsible for making Ascend visible on campus.',
+      'Board': 'Board is the group responsible for the whole team. We plan the future of Ascend.',
+      'Marketing' : 'Marketing is the group responsible for making Ascend visible on campus and spreading Ascends vision to the world.',
       'Coach' : 'Former Ascend NTNU members eager to share their knowledge with the team.',
       'Control': 'The control group takes care of all the physical aspects of the drone. Bridging the gap between commands and actions.',
       'Perception': 'State estimation of the drone and beyond. The perception group converts sensor input to meaningful information about the drone and its environment.',
@@ -127,8 +128,14 @@ export class TeamPage extends React.Component<TeamPageProps, TeamPageState> {
                       return a.name > b.name ? 1 : -1
                   }),
                   groups: groups.sort((a: any, b: any) => {
+                      if (a.toLowerCase() == "board") {
+                        return -1
+                      }
+                      if (a.toLowerCase() == "coach") {
+                        return 1
+                      }
                       return a.toLowerCase() > b.toLowerCase() ? 1 : -1
-                  }),
+                  })
               })
           }
           else {

@@ -119,7 +119,7 @@
   background: Cybernetics and Robotics
   role: Control Leader
   group: Control, Leader
-  image: "/images/teams/2018/haavard-s-2018.png"
+  image: "/images/teams/2018/haavard-m-2018.png"
   mail: havard.mellbye[at]ascendntnu.no
 
 - name: Rendell Cale
@@ -274,7 +274,7 @@
   image: "/images/teams/2018/hans-tj-2018.png"
   mail: hans.theodor.johnsen[at]ascendntnu.no
 
-- name: «Johannes Wågen»
+- name: Johannes Wågen
   background: Electrical Engineering
   role: Hardware Member
   group: Hardware
