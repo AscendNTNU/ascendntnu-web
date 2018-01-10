@@ -7,5 +7,6 @@ images/teams/20*
 typings/**/*.json
 *.ignorefile.*
 constants.js
+.DS_Store
 cv
 .env
