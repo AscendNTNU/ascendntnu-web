@@ -41,8 +41,8 @@ export class DronePage extends React.Component<DronePageProps, DronePageState> {
 
     this.drones = [
       {
-        name: 'Drone 1.0',
-        version: 'v1.0',
+        name: 'Drone 2.0',
+        version: 'v2.0',
         model: {
           name: 'Drone 2',
           parts: ['/images/drones/drone2.stl', '/images/drones/propell.stl'],
@@ -71,7 +71,7 @@ export class DronePage extends React.Component<DronePageProps, DronePageState> {
         image: <div className="drone-image" style={ { backgroundImage: 'url(/images/drones/drone4-minimized.jpg)' } }></div>,
         content: [
           <span>Our third quadcopter was designed as a physically robust platform for testing new control software. The small size and low weight means that we can test new control strategies, including landing on ground robots, with less risk of damage to equipment.</span>,
-          <span>It has a Pixhawk flight controller, an Odroid XU4 onboard computer running Ubuntu Server with ROS, and is used with an Optitrack tracking system. The custom made frame made of carbon fiber and 3D-printed parts allows compact placement of the hardware and even weight distribution, and well balanced motors from T-Motor minimize vibrations and yields high efficiency.</span>,
+          <span>It has a Pixhawk flight controller and an Odroid XU4 onboard computer running Ubuntu Server with ROS. The custom made frame made of carbon fiber and 3D-printed parts allows compact placement of the hardware and even weight distribution, and well balanced motors from T-Motor minimize vibrations and yields high efficiency.</span>,
         ],
         testDrone: {
           name: 'Drone 1.1',
