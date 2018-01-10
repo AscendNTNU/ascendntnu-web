@@ -67,7 +67,7 @@ export class DronePage extends React.Component<DronePageProps, DronePageState> {
       },
       {
         name: 'Valkyrie',
-        version: 'v2.0',
+        version: 'v3.0',
         image: <div className="drone-image" style={ { backgroundImage: 'url(/images/drones/drone4-minimized.jpg)' } }></div>,
         content: [
           <span>Our third quadcopter was designed as a physically robust platform for testing new control software. The small size and low weight means that we can test new control strategies, including landing on ground robots, with less risk of damage to equipment.</span>,
