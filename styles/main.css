@@ -1215,6 +1215,10 @@ figcaption {
     background-color: #292929;
 }
 
+.cv-students {
+    font-size: 1rem;
+}
+
 .table {
     display: flex;
     flex-flow: column nowrap;
