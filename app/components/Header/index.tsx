@@ -39,11 +39,11 @@ export class Header extends React.Component<HeaderProps, HeaderState> {
             <i className={"fa fa-" + (this.props.toggle ? "times" : "bars")}></i>
           </div>
           <nav className="nav-bar">
-            <IndexLink onClick={this.props.toggleMenuHandler} className="nav-element" activeClassName="active" to="/">Home</IndexLink>
-            <Link onClick={this.props.toggleMenuHandler} className="nav-element" activeClassName="active" to="/blog">Blog</Link>
-            <Link onClick={this.props.toggleMenuHandler} className="nav-element" activeClassName="active" to="/drones">Drones</Link>
-            <Link onClick={this.props.toggleMenuHandler} className="nav-element" activeClassName="active" to="/join">Join Us</Link>
-            <Link onClick={this.props.toggleMenuHandler} className="nav-element" activeClassName="active" to="/team">Team</Link>
+            <IndexLink onClick={() => {this.props.toggleMenuHandler; this.state.hoverAbout = false}} className="nav-element" activeClassName="active" to="/">Home</IndexLink>
+            <Link onClick={() => {this.props.toggleMenuHandler; this.state.hoverAbout = false}} className="nav-element" activeClassName="active" to="/blog">Blog</Link>
+            <Link onClick={() => {this.props.toggleMenuHandler; this.state.hoverAbout = false}} className="nav-element" activeClassName="active" to="/drones">Drones</Link>
+            <Link onClick={() => {this.props.toggleMenuHandler; this.state.hoverAbout = false}} className="nav-element" activeClassName="active" to="/join">Join Us</Link>
+            <Link onClick={() => {this.props.toggleMenuHandler; this.state.hoverAbout = false}} className="nav-element" activeClassName="active" to="/team">Team</Link>
             <div className={`nav-element dropdown ${this.state.hoverAbout ? 'show' : ''}`}
               onClick={() => {this.setState({ hoverAbout: !this.state.hoverAbout })}}>
               <div className="toggle-menu">
