@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
-
-import Header from './Header'
-import Footer from './Footer'
-import { ToTopButton } from './PageLayout'
+import Header from './components/Header'
+import Footer from './components/Footer'
+import { ToTopButton } from './components/PageLayout'
 
 export class App extends Component {
   constructor(props) {
