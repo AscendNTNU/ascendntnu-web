@@ -23,10 +23,10 @@ export class BlogPage extends Component {
     this.showAllPosts = true
     this.renderedTex = false
 
-    if (this.props.params && this.props.params.post) {
+    if (this.props.match.params && this.props.match.params.post) {
     } else {
-      if (this.props.params && this.props.params.tags)
-        this.state.tagValues = this.props.params.tags.split(',')
+      if (this.props.match.params && this.props.match.params.tags)
+        this.state.tagValues = this.props.match.params.tags.split(',')
       this.fetchPosts('/api/v1/posts/all')
     }
   }
@@ -78,9 +78,9 @@ export class BlogPage extends Component {
   }
 
   componentWillReceiveProps (nextProps) {
-    if (this.props.params !== nextProps.params && nextProps.params.tags) {
+    if (this.props.match.params !== nextProps.match.params && nextProps.match.params.tags) {
       this.setState(Object.assign({}, this.state, {
-        tagValues: nextProps.params.tags.split(',')
+        tagValues: nextProps.match.params.tags.split(',')
       }))
     }
   }
@@ -161,7 +161,7 @@ export class BlogPage extends Component {
   }
 
   reload () {
-    if (this.props.params && this.props.params.post) {
+    if (this.props.match.params && this.props.match.params.post) {
     } else {
       this.fetchPosts('/api/v1/posts/all')
     }
@@ -217,19 +217,19 @@ export class BlogPage extends Component {
   }
 
   render () {
-    if (this.showAllPosts && !this.props.params.post) {
+    if (this.showAllPosts && !this.props.match.params.post) {
       this.reload()
       this.showAllPosts = false
-    } else if (!this.showAllPosts && this.props.params.post) {
+    } else if (!this.showAllPosts && this.props.match.params.post) {
       this.reload()
       this.showAllPosts = true
     }
 
-    if (this.props.params && this.props.params.post) {
+    if (this.props.match.params && this.props.match.params.post) {
       return (
         <div className="page page-blog">
-          <Breadcrumb routes={['blog', this.props.params.post]} />
-          <BlogArticle post={this.props.params.post} />
+          <Breadcrumb routes={['blog', this.props.match.params.post]} />
+          <BlogArticle post={this.props.match.params.post} />
         </div>
       )
     } else {

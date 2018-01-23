@@ -9,7 +9,7 @@ export class SponsorPage extends Component {
     super(props)
 
     this.state = {
-      year: props.params.year || 2018,
+      year: props.match.params.year || 2018,
     }
   }
 

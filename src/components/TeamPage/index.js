@@ -34,8 +34,8 @@ export class TeamPage extends Component {
       'Hardware': 'The hardware group is responsible for the design of the drone. Material choice, strength calculations, electrical, aerodynamics, propulsion and production.',
     }
 
-    if (props.params && props.params.year)
-      year = props.params.year
+    if (props.match.params && props.match.params.year)
+      year = props.match.params.year
 
     this.state = {
       year: year,
@@ -48,15 +48,15 @@ export class TeamPage extends Component {
   }
 
   /**
-   * Changing year if props.params has changed. This is to avoid a new route.
+   * Changing year if props.match.params has changed. This is to avoid a new route.
    * 
    * @param {*} nextProps
    * 
    * @memberOf TeamPage
    */
   componentWillReceiveProps (nextProps) {
-    let nextYear = parseInt(nextProps.params.year, 10) || 2018
-    let year = parseInt(this.props.params.year, 10) || this.state.year
+    let nextYear = parseInt(nextProps.match.params.year, 10) || 2018
+    let year = parseInt(this.props.match.params.year, 10) || this.state.year
 
     if (nextYear !== year) {
       year = nextYear
@@ -258,7 +258,7 @@ export class TeamPage extends Component {
                 <div>
                   <NavLink to="/team/2016" activeClassName="active"><button>2016</button></NavLink>
                   <NavLink to="/team/2017" activeClassName="active"><button>2017</button></NavLink>
-                  <NavLink exact to="/team/2018" activeClassName="active"><button className={this.props.params.year ? '' : 'active'}>2018</button></NavLink>
+                  <NavLink to="/team/2018" activeClassName="active"><button className={this.props.match.isExact ? 'active' : ''}>2018</button></NavLink>
                 </div>
               </div>
           </SubSection>
