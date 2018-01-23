@@ -1,28 +1,28 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter, Route } from 'react-router-dom';
-import registerServiceWorker from './registerServiceWorker';
-import './index.css';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { BrowserRouter, Route } from 'react-router-dom'
+import registerServiceWorker from './registerServiceWorker'
+import './index.css'
 
-import App from './App';
+import App from './App'
 
-import FrontPage from './components/FrontPage';
-import BlogPage from './components/BlogPage';
-import DronePage from './components/DronePage';
-import TeamPage from './components/TeamPage';
-import JoinPage from './components/JoinPage';
-import AboutPage from './components/AboutPage';
-import SponsorPage from './components/SponsorPage';
-import MissionPage from './components/MissionPage';
-import CVPage from './components/CVPage';
-import ContactPage from './components/ContactPage';
+import FrontPage from './components/FrontPage'
+import BlogPage from './components/BlogPage'
+import DronePage from './components/DronePage'
+import TeamPage from './components/TeamPage'
+import JoinPage from './components/JoinPage'
+import AboutPage from './components/AboutPage'
+import SponsorPage from './components/SponsorPage'
+import MissionPage from './components/MissionPage'
+import CVPage from './components/CVPage'
+import ContactPage from './components/ContactPage'
 
 let gotoTop = (args) => {
-  document.querySelector('body').scrollTop = 0;
-  document.querySelector('#app').scrollTop = 0;
+  document.querySelector('body').scrollTop = 0
+  document.querySelector('#app').scrollTop = 0
 
-  const [ first, ...rest ] = args.location.pathname.slice(1) || 'home';
-  document.title = 'Ascend NTNU - ' + first.toUpperCase() + rest;
+  const [ first, ...rest ] = args.location.pathname.slice(1) || 'home'
+  document.title = 'Ascend NTNU - ' + first.toUpperCase() + rest
 }
 
 ReactDOM.render(
@@ -45,5 +45,5 @@ ReactDOM.render(
     </Route>
   </BrowserRouter>,
   document.querySelector('#app')
-);
-registerServiceWorker();
+)
+registerServiceWorker()
