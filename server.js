@@ -12,15 +12,17 @@ var constants = require('./constants')
 
 var dotenv = require('dotenv')
 dotenv.config()
-process.env = Object.assign({}, dotenv.parse(fs.readFileSync('.env.default')), process.env)
 
-app.use('/images', express.static(__dirname + '/images'))
-app.use('/public/assets', express.static(__dirname + '/images/assets'))
-app.use('/publications', express.static(__dirname + '/images/assets/publications'))
-app.use('/dist', express.static(__dirname + '/dist'))
+if (fileExists('.env.local')) {
+  Object.assign(process.env, dotenv.parse(fs.readFileSync('.env.local')))
+}
+
+app.use('/', express.static(__dirname + '/build'))
+app.use('/images', express.static(__dirname + '/build/images'))
+app.use('/public/assets', express.static(__dirname + '/build/images/assets'))
+app.use('/publications', express.static(__dirname + '/build/images/assets/publications'))
 app.use('/blog/rss', express.static(__dirname + '/api/v1/blog.rss'))
 app.use('/sitemap.xml', express.static(__dirname + '/api/v1/sitemap.xml'))
-app.use('/styles', express.static(__dirname + '/styles'))
 app.use('/node_modules', express.static(__dirname + '/node_modules'))
 
 var port = process.env.PORT_OUT || constants.port || 8080
@@ -254,7 +256,7 @@ app.get('/blog/amp/:post', function (req, res) {
 
     res.send(createAmpArticle(postData))
   } else {
-    res.sendFile(__dirname + '/index.html')
+    res.sendFile(__dirname + '/build/index.html')
   }
 })
 
@@ -272,7 +274,7 @@ app.get('/blog/fb/:post', function (req, res) {
 
     res.send(createFBInstantArticle(postData))
   } else {
-    res.sendFile(__dirname + '/index.html')
+    res.sendFile(__dirname + '/build/index.html')
   }
 })
 
@@ -337,7 +339,7 @@ app.get('/blog/:post', function (req, res) {
         // + authors.map(author => `\n    <meta property="article:author" content="${author}" />`).join('\n    ')
     }))
   } else {
-    res.sendFile(__dirname + '/index.html')
+    res.sendFile(__dirname + '/build/index.html')
   }
 })
 
@@ -393,7 +395,7 @@ app.get('/*', function (req, res) {
       break
   }
 
-  res.sendFile(__dirname + '/index.html')
+  res.sendFile(__dirname + '/build/index.html')
 })
 
 function prerender (req, data) {
