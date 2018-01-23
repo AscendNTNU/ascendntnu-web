@@ -1,13 +1,21 @@
-version: '2'
+version: '3'
 
 services:
+  server:
+    image: node:6
+    command: node server.js
+    ports:
+      - ${DOCKER_PORT:-8080}:${SERVER_PORT:-8080}
+    volumes:
+      - .:/srv/ascend
+    working_dir: /srv/ascend
   dev:
     build:
       context: .
       dockerfile: Dockerfile.compose
-    command: ./deploy.sh ${PORT_IN}
+    command: ./deploy.sh ${SERVER_PORT:-8080}
     ports:
-      - ${PORT_IN}:${PORT_OUT}
+      - ${DOCKER_PORT:-8080}:${SERVER_PORT:-8080}
     volumes:
       - .:/ascend-web/:rw
     working_dir: /ascend-web
