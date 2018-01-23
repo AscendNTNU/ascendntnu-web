@@ -24,7 +24,7 @@ export class AboutPage extends Component {
               <li>Navigation in a sterile environment with no external navigation aids such as GPS or SLAM.</li>
               <li>Interaction between competing autonomous air vehicles (mission 7b).</li>
             </ul>
-            <iframe src="https://player.vimeo.com/video/103487384" className="about-mission-video" allowFullScreen></iframe>
+            <iframe title="Mission" src="https://player.vimeo.com/video/103487384" className="about-mission-video" allowFullScreen></iframe>
             <p><i className="small">"The International Aerial Robotics Competition is the longest running collegiate aerial robotics challenge in the world. Entering the third decade of advancing the state of the art in autonomous aerial robotic behavior, the competition continues to tackle challenges that are currently impossible for any flying robots owned by government or industry."</i> - <a href="http://www.aerialroboticscompetition.org/">www.aerialroboticscompetition.org</a></p>
           </SubSection>
         </Section>

@@ -79,7 +79,9 @@ export class BlogPage extends Component {
 
   componentWillReceiveProps (nextProps) {
     if (this.props.params !== nextProps.params && nextProps.params.tags) {
-      this.state.tagValues = nextProps.params.tags.split(',')
+      this.setState(Object.assign({}, this.state, {
+        tagValues: nextProps.params.tags.split(',')
+      }))
     }
   }
 
@@ -150,9 +152,9 @@ export class BlogPage extends Component {
 
   search (evt) {
     let value = evt.target.value
-    value = value.replace(/^[^a-zøæå0-9 \-]|[^a-zøæå0-9 \-*]+/gi, '')
+    value = value.replace(/^[^a-zøæå0-9 -]|[^a-zøæå0-9 \-*]+/gi, '')
     value = value.replace(/^\*+/gi, '')
-    value = value.replace(/\*/gi, '[a-zøæå0-9 \-]')
+    value = value.replace(/\*/gi, '[a-zøæå0-9 -]')
     this.setState({
       searchValue: value
     })
@@ -260,7 +262,7 @@ export class BlogPage extends Component {
               <div className="blog-list-date" dangerouslySetInnerHTML={ {__html: post.attributes.dateFormatted } } />
             </div>
             <div className="blog-list-preview">
-              <div ref={`post-${i}`} dangerouslySetInnerHTML={ {__html: this.state.viewMode && this.state.viewMode == 'small' ? post.renderedFirstChild : post.renderedBody } } />
+              <div ref={`post-${i}`} dangerouslySetInnerHTML={ {__html: this.state.viewMode && this.state.viewMode === 'small' ? post.renderedFirstChild : post.renderedBody } } />
             </div>
             <div className="blog-list-categories">
               {categories}

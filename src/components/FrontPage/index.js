@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 
 import Splash from './splash'
-import Announcement from './announcement'
+//import Announcement from './announcement'
 import SponsorList from '../Common/sponsorlist'
-import { HistoryViewer } from '../Common/historyViewer'
-import { Section, SubSection } from '../PageLayout'
+//import { HistoryViewer } from '../Common/historyViewer'
+import { Section } from '../PageLayout'
 
 export class FrontPage extends Component {
 

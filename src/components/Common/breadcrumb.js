@@ -2,10 +2,6 @@ import React, { Component } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 
 export class Breadcrumb extends Component {
-  constructor(props) {
-    super(props)
-  }
-
   render() {
     let links = []
     let last = null

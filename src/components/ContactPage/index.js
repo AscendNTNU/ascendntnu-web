@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 
 import { Section, SubSection } from '../PageLayout'
 import { Breadcrumb } from '../Common/breadcrumb'
-import { HistoryViewer } from '../Common/historyViewer'
+//import { HistoryViewer } from '../Common/historyViewer'
 
 export class ContactPage extends Component {
   render () {

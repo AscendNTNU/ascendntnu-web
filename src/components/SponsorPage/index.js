@@ -22,10 +22,10 @@ export class SponsorPage extends Component {
   }
 
   componentWillReceiveProps (nextProps) {
-    let nextYear = parseInt(nextProps.params.year) || 2018
-    let year = parseInt(this.props.params.year) || this.state.year
+    let nextYear = parseInt(nextProps.params.year, 10) || 2018
+    let year = parseInt(this.props.params.year, 10) || this.state.year
 
-    if (nextYear != year) {
+    if (nextYear !== year) {
       year = nextYear
 
       this.setState({

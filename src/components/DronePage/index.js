@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import { Section, SubSection } from '../PageLayout'
 import { Breadcrumb } from '../Common/breadcrumb'
-import { ModelRenderer } from '../Common/model'
+//import { ModelRenderer } from '../Common/model'
 
 export class DronePage extends Component {
   constructor () {
@@ -71,9 +71,9 @@ export class DronePage extends Component {
 
   render () {
     let drones = this.years.map((yearContent, i) => {
-      let year = yearContent.year
+      //let year = yearContent.year
       let drone = yearContent.drone
-      let testDrone = drone.testDrone
+      //let testDrone = drone.testDrone
 
       let content = null
       if (drone.content) {
@@ -87,12 +87,12 @@ export class DronePage extends Component {
         })
       }
 
-      let image = null
-      if (typeof drone.image === "string") {
-        image = <img src={drone.image} />
-      } else {
-        image = drone.image
-      }
+      //let image = null
+      //if (typeof drone.image === "string") {
+      //  image = <img src={drone.image} />
+      //} else {
+      //  image = drone.image
+      //}
 
       return (
         <SubSection key={i} className="drone-container">

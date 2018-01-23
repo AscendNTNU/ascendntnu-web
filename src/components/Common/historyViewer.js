@@ -88,6 +88,7 @@ export class HistoryViewer extends Component {
             })
           })
           break
+          default: break
         }
 
         this.setState(Object.assign({}, this.state, {
@@ -192,7 +193,7 @@ export class HistoryViewer extends Component {
   dateParser (date) {
     let dateParsed = date.split(/[TZ\-:]/)
     let d = []
-    for (let i in dateParsed) d.push(parseInt(dateParsed[i]))
+    for (let i in dateParsed) d.push(parseInt(dateParsed[i], 10))
     let time = new Date(d[0], d[1] - 1, d[2], d[3], d[4], d[5])
     let dateFormatted = `${d[2]}. ${this.mnd[d[1] - 1]}. ${d[0]}`
     return { dateFormatted, dateParsed, time }
@@ -318,7 +319,7 @@ export class HistoryViewer extends Component {
             {
               this.state.selectedEvent && this.state.selectedEvent.image && (
                 <div className="history-event-view-image">
-                  <img src={this.state.selectedEvent.image} />
+                  <img src={this.state.selectedEvent.image} alt="History" />
                 </div>
               )
             }

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 
 import { Section, SubSection, SubSubSection } from '../PageLayout'
 import { Breadcrumb } from '../Common/breadcrumb'
@@ -166,7 +165,7 @@ export class JoinPage extends Component {
       ],
       'no': [
         <Section titleText="Nå nye høyder - Søk Ascend!" key="1">
-          <img src="/images/teams/2017/ascend-group-2017.jpg" className="fullscale-image" />
+          <img src="/images/teams/2017/ascend-group-2017.jpg" alt="Group 2017" className="fullscale-image" />
           <p style={{fontSize: '1.4em'}}><b>Søknadsfrist 1. september kl. 23:59</b></p>
           <p style={{fontSize: '1.4em', marginTop:"0px"}}><a href="https://www.facebook.com/events/675218906021421">Bli med på infomøte 31. August 16:15 i <del>EL3</del>S4</a></p>
           <p>Ønsker du å være med på å drive med cutting-edge droneteknologi i en ambisiøs og teknologi-fokusert studentorganisasjon?</p>
@@ -192,12 +191,12 @@ export class JoinPage extends Component {
         </Section>,
 
         <Section titleText="Nå nye høyder - Søk Ascend!" key="2">
-          <img src="/images/teams/2017/ascend-group-2017.jpg" className="fullscale-image" />
+          <img src="/images/teams/2017/ascend-group-2017.jpg" alt="Group 2017" className="fullscale-image" />
           <p>Ønsker du å være med på å drive med cutting-edge droneteknologi i en ambisiøs og teknologi-fokusert studentorganisasjon?</p>
           <p>Tidligere erfaring er ikke et krav for å bli med i Ascend. Det viktigste er å ha en interesse for det vi jobber med, og en interesse for å lære.</p>
           <p>Ascend NTNU har hovedopptak på høsten hvert år for å ta inn nye medlemmer.</p>
           <p><strong>Ny mulighet vil annonseres til våren og høsten neste år. Hvis du vil bli oppdatert om denne - skriv deg opp på linken under!</strong></p>
-          <a className="button active" style={ { alignSelf: 'flex-start' } } href="http://ascendntnu.us14.list-manage2.com/subscribe?u=dfce303a41ce42b342c75a3ef&amp;id=002e04db12" target="_blank">Interesseliste for opptak</a>
+          <a className="button active" style={ { alignSelf: 'flex-start' } } href="http://ascendntnu.us14.list-manage2.com/subscribe?u=dfce303a41ce42b342c75a3ef&amp;id=002e04db12" target="_blank" rel="noopener noreferrer">Interesseliste for opptak</a>
           <SubSection titleText="Hvorfor søke">
             <ul>
               <li><strong>Bli en del av et miljø.</strong> I Ascend blir du en del av et målrettet teknologifokusert prosjekt der vi jobber sammen for å nå våre mål. </li>
@@ -250,19 +249,19 @@ export class JoinPage extends Component {
       )
     }
 
-    let nextLanguage = 'no'
-    switch (this.state.language) {
-      case 'no': nextLanguage = 'en'; break
-      case 'en': nextLanguage = 'no'; break
-    }
+    //let nextLanguage = 'no'
+    //switch (this.state.language) {
+    //  case 'no': nextLanguage = 'en'; break
+    //  default: nextLanguage = 'no'; break
+    //}
 
-    let languageURL = '/' + nextLanguage
-    if (nextLanguage === 'no') languageURL = ''
+    //let languageURL = '/' + nextLanguage
+    //if (nextLanguage === 'no') languageURL = ''
 
-    let languageNames = {
-      'en': 'English',
-      'no': 'Norsk'
-    }
+    //let languageNames = {
+    //  'en': 'English',
+    //  'no': 'Norsk'
+    //}
 
     return (
       <div className="page page-join">

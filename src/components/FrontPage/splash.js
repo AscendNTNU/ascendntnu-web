@@ -71,7 +71,7 @@ export class Splash extends Component {
           pos: this.width / 2
         }))
       } else {
-        if (this.state.smallScreen !== this.width < 560) {
+        if (this.state.smallScreen !== (this.width < 560)) {
           this.setState(Object.assign({}, this.state, {
             smallScreen: this.width < 560,
             pos: Math.max(
@@ -189,7 +189,7 @@ export class Splash extends Component {
         <div className="front-splash-center" style={styles.centerStyle}
           onMouseDown={this.mouseDownHandler.bind(this)}
           onTouchStart={this.mouseDownHandler.bind(this)}>
-          <img src={`/images/logo/logo-ascend-below-shadow${this.svgAnimate ? '-animation' : ''}.svg`} draggable={false} />
+          <img src={`/images/logo/logo-ascend-below-shadow${this.svgAnimate ? '-animation' : ''}.svg`} draggable={false} alt="Logo" />
         </div>
         <div className="front-splash-right" style={styles.rightStyle}>
           <ModelRenderer models={['/images/drones/drone2.stl']} process={Date.now()} autospin={true} style={{ position: 'absolute' }} />

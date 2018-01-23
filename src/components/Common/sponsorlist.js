@@ -18,7 +18,7 @@ export class SponsorList extends Component {
     let nextYear = nextProps.year || 2018
     let year = this.props.year || this.state.year
 
-    if (nextYear != year) {
+    if (nextYear !== year) {
       year = nextYear
       this.getSponsors(year)
     }
@@ -38,8 +38,8 @@ export class SponsorList extends Component {
       return (
         <div key={i} className="sponsor">
           <a href={sponsor.link} className="sponsor-adblock-link">
-            <img src={sponsor.logo} title={sponsor.name} />
-            {sponsor.logo_dark ? <img src={sponsor.logo_dark} title={sponsor.name} /> : null}
+            <img src={sponsor.logo} alt={sponsor.name} title={sponsor.name} />
+            {sponsor.logo_dark ? <img src={sponsor.logo_dark} alt={sponsor.name} title={sponsor.name} /> : null}
           </a>
           <div className="sponsor-adblock-text">
             {sponsor.short_text}

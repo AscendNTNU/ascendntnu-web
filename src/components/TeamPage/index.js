@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import { polyfill } from 'es6-promise'
 import { Section, SubSection } from '../PageLayout'
-import { Breadcrumb } from '../Common/breadcrumb'
 
 polyfill()
 
@@ -56,18 +55,18 @@ export class TeamPage extends Component {
    * @memberOf TeamPage
    */
   componentWillReceiveProps (nextProps) {
-    let nextYear = parseInt(nextProps.params.year) || 2018
-    let year = parseInt(this.props.params.year) || this.state.year
+    let nextYear = parseInt(nextProps.params.year, 10) || 2018
+    let year = parseInt(this.props.params.year, 10) || this.state.year
 
-    if (nextYear != year) {
+    if (nextYear !== year) {
       year = nextYear
 
-      this.state = {
-        year: year,
+      this.setState(Object.assign({}, this.state, {
+        year,
         grouping: this.groupings[year],
         members: this.state.members,
         groups: this.state.groups,
-      }
+      }))
 
       this.getMembers(year)
     }
@@ -82,7 +81,7 @@ export class TeamPage extends Component {
    * @memberOf TeamPage
    */
   changeTeam(evt) {
-    this.getMembers(parseInt(evt.target.dataset.year))
+    this.getMembers(parseInt(evt.target.dataset.year, 10))
   }
 
   /**
@@ -112,10 +111,10 @@ export class TeamPage extends Component {
                       return a.name > b.name ? 1 : -1
                   }),
                   groups: groups.sort((a, b) => {
-                      if (a.toLowerCase() == "board") {
+                      if (a.toLowerCase() === "board") {
                         return -1
                       }
-                      if (a.toLowerCase() == "coach") {
+                      if (a.toLowerCase() === "coach") {
                         return 1
                       }
                       return a.toLowerCase() > b.toLowerCase() ? 1 : -1
@@ -158,7 +157,7 @@ export class TeamPage extends Component {
       let team_photo = (
         <div className="section page-container">
 
-          <img src={"/images/teams/" + this.state.year + "/ascend-group-" + this.state.year + ".jpg"} className="responsive-image fullscale-image" />
+          <img src={'/images/teams/' + this.state.year + '/ascend-group-' + this.state.year + '.jpg'} alt="Team" className="responsive-image fullscale-image" />
         </div>
       );
 
@@ -192,7 +191,7 @@ export class TeamPage extends Component {
                       return (
                           <div key={i} className="team-member team-leader">
                               <div className="team-member-image">
-                                  <img src={m.image}/>
+                                  <img src={m.image} alt={m.name} />
                                   {mail}
                               </div>
                               <div className="team-member-name">{m.name}</div>
@@ -206,7 +205,7 @@ export class TeamPage extends Component {
                */
               let members = this.state.members
                   .filter((m) => {
-                      return m.group.indexOf(group) !== -1 && m.group.indexOf('Leader') == -1
+                      return m.group.indexOf(group) !== -1 && m.group.indexOf('Leader') === -1
                   })
                   .map((m, i) => {
                       let mail;
@@ -224,7 +223,7 @@ export class TeamPage extends Component {
                       return (
                           <div key={i} className="team-member">
                               <div className="team-member-image">
-                                  <img src={m.image}/>
+                                  <img src={m.image} alt={m.name} />
                                   {mail}
                               </div>
                               <div className="team-member-name">{m.name}</div>

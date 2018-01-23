@@ -13,7 +13,7 @@ export class Header extends Component {
 
   hideMenu () {
     if (this.props.toggle)
-      this.props.toggleMenuHandler
+      this.props.toggleMenuHandler()
   }
 
   toggleMenuHandler (evt) {
@@ -29,7 +29,7 @@ export class Header extends Component {
         <div className="head-content page-container">
           <NavLink exact onClick={this.hideMenu} to="/">
             <div className="logo-title">
-              <img className="logo-img" src="/images/logo/logo.png" />
+              <img className="logo-img" alt="Logo" src="/images/logo/logo.png" />
               <div className="logo-title-text">
                 asc<span className="logo-title-e">e</span>nd
               </div>

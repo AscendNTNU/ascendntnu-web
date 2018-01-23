@@ -16,7 +16,7 @@ export class Announcement extends Component {
   render () {
     let link = null
     if (typeof this.props.link === 'string') {
-      link = <a href={this.props.link} />
+      link = <a href={this.props.link}> </a>
     } else {
       link = this.props.link
     }

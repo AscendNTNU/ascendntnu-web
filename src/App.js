@@ -37,7 +37,7 @@ export class App extends Component {
 
   changeTheme (evt) {
     try {
-      localStorage['theme'] = localStorage['theme'] == 'dark' ? 'light' : 'dark'
+      localStorage['theme'] = localStorage['theme'] === 'dark' ? 'light' : 'dark'
       this.setState({
         showMenu: this.state.showMenu,
         theme: localStorage['theme']
@@ -45,7 +45,7 @@ export class App extends Component {
     } catch (ex) {
       this.setState({
         showMenu: this.state.showMenu,
-        theme: this.state.theme == 'dark' ? 'light' : 'dark'
+        theme: this.state.theme === 'dark' ? 'light' : 'dark'
       })
     }
   }

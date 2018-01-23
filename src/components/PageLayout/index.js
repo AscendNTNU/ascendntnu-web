@@ -80,14 +80,14 @@ export class SubSection extends Component {
       this.className += ' ' + this.props.className
 
     if (this.props.theme) {
-      let theme = ''
+      //let theme = ''
 
       switch (this.props.theme) {
         case 'dark':
-          theme = 'dark'
+          //theme = 'dark'
           break
         default:
-          theme = 'light'
+          //theme = 'light'
           break
       }
     }
@@ -122,14 +122,14 @@ export class SubSubSection extends Component {
       this.className += ' ' + this.props.className
 
     if (this.props.theme) {
-      let theme = ''
+      //let theme = ''
 
       switch (this.props.theme) {
         case 'dark':
-          theme = 'dark'
+          //theme = 'dark'
           break
         default:
-          theme = 'light'
+          //theme = 'light'
           break
       }
     }

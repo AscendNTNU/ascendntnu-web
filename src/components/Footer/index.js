@@ -27,7 +27,7 @@ export class Footer extends Component {
       <div className="foot">
         <div className="foot-content page-container">
           <div className="foot-element">
-            <a className="link foot-image" href="http://kongsberg.com" target="_blank">
+            <a className="link foot-image" href="http://kongsberg.com" target="_blank" rel="noopener noreferrer">
               <img src="/images/sponsors/kongsberg_dark_bg.svg" alt="Kongsberg logo" />
             </a>
           </div>
@@ -45,7 +45,7 @@ export class Footer extends Component {
           </div>
           <div className="foot-element">
             <p>Autonomus aerial robotics. Ascend NTNU is The Norwegian University of Science and Technology's team in the International Aerial Robotics Competition (IARC).</p>
-            <div onClick={this.props.changeTheme.bind(this)} className="styled-link">Change to {this.props.theme == 'dark' ? 'light' : 'dark'} theme</div>
+            <div onClick={this.props.changeTheme.bind(this)} className="styled-link">Change to {this.props.theme === 'dark' ? 'light' : 'dark'} theme</div>
           </div>
         </div>
       </div>

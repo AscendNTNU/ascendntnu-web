@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 
@@ -28,22 +28,20 @@ let gotoTop = (args) => {
 ReactDOM.render(
   <BrowserRouter>
     <Route path="/" component={App}>
-      <Switch>
-        <Route exact component={FrontPage} onEnter={gotoTop} />
-        <Route path="/about" component={AboutPage} onEnter={gotoTop} />
-        <Route path="/blog" component={BlogPage} onEnter={gotoTop} />
-        <Route path="/blog/tags(/:tags)" component={BlogPage} />
-        <Route path="/blog/:post" component={BlogPage} />
-        <Route path="/contact" component={ContactPage} onEnter={gotoTop} />
-        <Route path="/cv(/:key)" component={CVPage} onEnter={gotoTop} />
-        <Route path="/drones" component={DronePage} onEnter={gotoTop} />
-        <Route path="/join(/:language)" component={JoinPage} onEnter={gotoTop} />
-        <Route path="/missions" component={MissionPage} onEnter={gotoTop} />
-        <Route path="/sponsors" component={SponsorPage} onEnter={gotoTop} />
-        <Route path="/sponsors/:year" component={SponsorPage} />
-        <Route path="/team" component={TeamPage} onEnter={gotoTop} />
-        <Route path="/team/:year" component={TeamPage} />
-      </Switch>
+      <Route exact component={FrontPage} onEnter={gotoTop} />
+      <Route path="/about" component={AboutPage} onEnter={gotoTop} />
+      <Route path="/blog" component={BlogPage} onEnter={gotoTop} />
+      <Route path="/blog/tags(/:tags)" component={BlogPage} />
+      <Route path="/blog/:post" component={BlogPage} />
+      <Route path="/contact" component={ContactPage} onEnter={gotoTop} />
+      <Route path="/cv(/:key)" component={CVPage} onEnter={gotoTop} />
+      <Route path="/drones" component={DronePage} onEnter={gotoTop} />
+      <Route path="/join(/:language)" component={JoinPage} onEnter={gotoTop} />
+      <Route path="/missions" component={MissionPage} onEnter={gotoTop} />
+      <Route path="/sponsors" component={SponsorPage} onEnter={gotoTop} />
+      <Route path="/sponsors/:year" component={SponsorPage} />
+      <Route path="/team" component={TeamPage} onEnter={gotoTop} />
+      <Route path="/team/:year" component={TeamPage} />
     </Route>
   </BrowserRouter>,
   document.querySelector('#app')

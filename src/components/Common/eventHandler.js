@@ -24,7 +24,7 @@ export class AddHover extends Component {
         touch: isTouch,
       }))
     } else {
-      if (this.state.touch == isTouch) {
+      if (this.state.touch === isTouch) {
         this.setState(Object.assign({}, this.state, {
           hover: false,
           touch: isTouch,
