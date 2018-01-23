@@ -17,13 +17,14 @@ export class JoinPage extends Component {
     ].map((e) => `${e}@`)
 
     this.state = {
-      language: props.params.language || 'no'
+      language: props.match.params.language || 'no'
     }
+    console.log(this.state)
   }
 
   componentWillReceiveProps (nextProps) {
     this.setState(Object.assign({}, this.state, {
-      language: nextProps.params.language || 'no'
+      language: nextProps.match.params.language || 'no'
     }))
   }
 

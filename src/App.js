@@ -80,12 +80,12 @@ export class App extends Component {
             <Route exact path="/" component={FrontPage} onEnter={this.gotoTop} />
             <Route path="/about" component={AboutPage} onEnter={this.gotoTop} />
             <Route path="/blog" component={BlogPage} onEnter={this.gotoTop} />
-            <Route path="/blog/tags(/:tags)" component={BlogPage} />
+            <Route path="/blog/tags/:tags?" component={BlogPage} />
             <Route path="/blog/:post" component={BlogPage} />
             <Route path="/contact" component={ContactPage} onEnter={this.gotoTop} />
-            <Route path="/cv(/:key)" component={CVPage} onEnter={this.gotoTop} />
+            <Route path="/cv/:key?" component={CVPage} onEnter={this.gotoTop} />
             <Route path="/drones" component={DronePage} onEnter={this.gotoTop} />
-            <Route path="/join(/:language)" component={JoinPage} onEnter={this.gotoTop} />
+            <Route path="/join/:language?" component={JoinPage} onEnter={this.gotoTop} />
             <Route path="/missions" component={MissionPage} onEnter={this.gotoTop} />
             <Route path="/sponsors" component={SponsorPage} onEnter={this.gotoTop} />
             <Route path="/sponsors/:year" component={SponsorPage} />
