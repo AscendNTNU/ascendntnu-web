@@ -4,6 +4,8 @@ services:
   server:
     image: node:6
     command: node server.js
+    environment:
+      - SERVER_PORT
     ports:
       - ${DOCKER_PORT:-8080}:${SERVER_PORT:-8080}
     volumes:
