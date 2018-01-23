@@ -19,7 +19,6 @@ export class JoinPage extends Component {
     this.state = {
       language: props.match.params.language || 'no'
     }
-    console.log(this.state)
   }
 
   componentWillReceiveProps (nextProps) {
