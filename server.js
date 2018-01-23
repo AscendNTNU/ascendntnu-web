@@ -8,13 +8,16 @@ var commonmark = require('commonmark')
 var reader = new commonmark.Parser()
 var writer = new commonmark.HtmlRenderer()
 
-var constants = require('./constants')
-
 var dotenv = require('dotenv')
 dotenv.config()
 
 if (fileExists('.env.local')) {
   Object.assign(process.env, dotenv.parse(fs.readFileSync('.env.local')))
+}
+
+var constants = {
+  access: process.env.ACCESS || '',
+  pathToCV: process.env.PATH_TO_CV || './cv'
 }
 
 app.use('/', express.static(__dirname + '/build'))
