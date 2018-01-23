@@ -2,7 +2,7 @@ var path = require('path')
 var webpack = require('webpack')
 
 module.exports = {
-  entry: ['whatwg-fetch', './app/index.tsx'],
+  entry: ['whatwg-fetch', './src/index.js'],
   output: {
     path: path.join(__dirname, 'dist'),
     publicPath: '/dist/',
@@ -10,7 +10,7 @@ module.exports = {
   },
   devtool: "source-map",
   resolve: {
-    extensions: ["", ".webpack.js", ".web.js", ".ts", ".tsx", ".js"]
+    extensions: [".webpack.js", ".web.js", ".ts", ".tsx", ".js"]
   },
   plugins: [
     new webpack.optimize.DedupePlugin(),
@@ -29,7 +29,7 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.tsx?$/,
+        test: /\.js?$/,
         loader: 'ts-loader',
         exclude: path.join(__dirname, 'node_modules')
       },

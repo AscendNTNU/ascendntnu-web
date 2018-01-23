@@ -2,7 +2,7 @@ var path = require('path')
 var webpack = require('webpack')
 
 module.exports = {
-  entry: ['whatwg-fetch', './app/index.tsx'],
+  entry: ['whatwg-fetch', './src/index.js'],
   watchOptions: {
     poll: true
   },
@@ -13,12 +13,12 @@ module.exports = {
   },
   devtool: 'source-map',
   resolve: {
-    extensions: ['', '.webpack.js', '.web.js', '.ts', '.tsx', '.js']
+    extensions: ['.webpack.js', '.web.js', '.ts', '.tsx', '.js']
   },
   module: {
     loaders: [
       {
-        test: /\.tsx?$/,
+        test: /\.js?$/,
         exclude: /node_modules/,
         loader: 'ts-loader'
       },
@@ -27,9 +27,10 @@ module.exports = {
         loader: 'json'
       }
     ],
-    preLoaders: [
+    rules: [
       {
         test: /\.js$/,
+        enforce: "pre",
         loader: 'source-map-loader'
       }
     ]
