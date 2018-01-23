@@ -7,13 +7,7 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
-
-    "start-old": "npm-run-all build-old server",
-    "build-old": "webpack",
-    "dev": "npm-run-all --parallel watch server",
-    "watch": "webpack -w",
-    "server": "node server.js",
-    "deploy": "NODE_ENV=production webpack -p --config webpack.prod.config.js"
+    "server": "node server.js"
   },
   "repository": {
     "type": "git",
