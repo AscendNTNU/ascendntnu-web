@@ -4,6 +4,7 @@ import { HtmlRenderer, Parser } from 'commonmark'
 import * as Katex from 'katex'
 import { polyfill } from 'es6-promise'
 import { Section } from '../PageLayout'
+import { API_URL } from '../../constants'
 
 polyfill()
 
@@ -26,7 +27,7 @@ export class BlogArticle extends Component {
     this.parser = new Parser()
     this.renderer = new HtmlRenderer()
 
-    this.fetchPost(`/api/v1/posts/${this.props.post}`)
+    this.fetchPost(`${API_URL}/posts/${this.props.post}`)
   }
 
   componentDidUpdate (prevProp, prevState) {
@@ -48,12 +49,12 @@ export class BlogArticle extends Component {
 
   componentWillReceiveProps (nextProps) {
     if (nextProps.post !== this.props.post) {
-      this.fetchPost(`/api/v1/posts/${nextProps.post}`)
+      this.fetchPost(`${API_URL}/posts/${nextProps.post}`)
     }
   }
 
   fetchPost (url) {
-    fetch(url)
+    fetch(url, { mode: 'cors' })
       .then(r => r.json())
       .then(r => {
         let parsed = this.parser.parse(r.body)

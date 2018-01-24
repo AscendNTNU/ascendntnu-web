@@ -1,5 +1,6 @@
 var express = require('express')
 var app = express()
+var cors = require('cors')
 var fs = require('fs')
 var mkdirp = require('mkdirp')
 var yamljs = require('yamljs')
@@ -20,7 +21,10 @@ var constants = {
   pathToCV: process.env.PATH_TO_CV || './cv'
 }
 
-app.use('/', express.static(__dirname + '/build'))
+if (process.env.NODE_ENV !== 'production') {
+  app.use(cors())
+}
+
 app.use('/images', express.static(__dirname + '/build/images'))
 app.use('/public/assets', express.static(__dirname + '/build/images/assets'))
 app.use('/publications', express.static(__dirname + '/build/images/assets/publications'))
@@ -345,6 +349,8 @@ app.get('/blog/:post', function (req, res) {
     res.sendFile(__dirname + '/build/index.html')
   }
 })
+
+app.use('/', express.static(__dirname + '/build'))
 
 app.get('/*', function (req, res) {
   var pieces = req.originalUrl.split(/\//)

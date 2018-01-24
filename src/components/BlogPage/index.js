@@ -6,6 +6,7 @@ import { polyfill } from 'es6-promise'
 import { Section, SubSection } from '../PageLayout'
 import { Breadcrumb } from '../Common/breadcrumb'
 import { BlogArticle } from './blogArticle'
+import { API_URL } from '../../constants'
 
 polyfill()
 
@@ -27,7 +28,7 @@ export class BlogPage extends Component {
     } else {
       if (this.props.match.params && this.props.match.params.tags)
         this.state.tagValues = this.props.match.params.tags.split(',')
-      this.fetchPosts('/api/v1/posts/all')
+      this.fetchPosts(`${API_URL}/posts/all`)
     }
   }
 
@@ -57,12 +58,12 @@ export class BlogPage extends Component {
   }
 
   fetchPosts (url) {
-    fetch(url)
+    fetch(url, { mode: 'cors' })
       .then(r => r.json())
       .then(r => {
         r = r.map((p) => {
           p.attributes['dateFormatted'] = this.formatDate(p.attributes.date, 'dag DD/MM/YY')
-          p.attributes['categoriesList'] = p.attributes.categories.split(" ")
+          p.attributes['categoriesList'] = p.attributes.categories.split(' ')
           p['parsedBody'] = this.parser.parse(p.body)
           p['renderedFirstChild'] = this.renderer.render(p.parsedBody._firstChild)
           p['renderedBody'] = this.renderer.render(p.parsedBody)
@@ -163,7 +164,7 @@ export class BlogPage extends Component {
   reload () {
     if (this.props.match.params && this.props.match.params.post) {
     } else {
-      this.fetchPosts('/api/v1/posts/all')
+      this.fetchPosts(`${API_URL}/posts/all`)
     }
   }
 
