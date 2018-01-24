@@ -58,7 +58,9 @@ export class BlogPage extends Component {
   }
 
   fetchPosts (url) {
-    fetch(url, { mode: 'cors' })
+    let setup = process.env.NODE_ENV === 'production' ? {} : { mode: 'cors' }
+
+    fetch(url, setup)
       .then(r => r.json())
       .then(r => {
         r = r.map((p) => {

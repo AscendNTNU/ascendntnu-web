@@ -54,7 +54,9 @@ export class BlogArticle extends Component {
   }
 
   fetchPost (url) {
-    fetch(url, { mode: 'cors' })
+    let setup = process.env.NODE_ENV === 'production' ? {} : { mode: 'cors' }
+
+    fetch(url, setup)
       .then(r => r.json())
       .then(r => {
         let parsed = this.parser.parse(r.body)
