@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import { polyfill } from 'es6-promise'
 import { Section, SubSection } from '../PageLayout'
+import { API_URL } from '../../constants'
 
 polyfill()
 
@@ -92,7 +93,9 @@ export class TeamPage extends Component {
    * @memberOf TeamPage
    */
   getMembers (year) {
-      fetch("/api/v1/members/" + year).then(r => r.json()).then(r => {
+    let setup = process.env.NODE_ENV === 'production' ? {} : { mode: 'cors' }
+
+      fetch(`${API_URL}/members/${year}`, setup).then(r => r.json()).then(r => {
           if (r !== null) {
               let groups = []
               r.forEach((m, i) => {

@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-
 import { Section } from '../PageLayout'
 import { Breadcrumb } from '../Common/breadcrumb'
+import { API_URL } from '../../constants'
 
 export class CVPage extends Component {
   constructor (props) {
@@ -26,7 +26,9 @@ export class CVPage extends Component {
   }
 
   fetchStudents (props = this.props) {
-    fetch('/api/v1/cv/' + (props.params.key || '')).then((r) => r.json()).then((data) => {
+    let setup = process.env.NODE_ENV === 'production' ? {} : { mode: 'cors' }
+
+    fetch(`${API_URL}/cv/${(props.params.key || '')}`, setup).then((r) => r.json()).then((data) => {
       let groups = []
       let years = []
       let studyCodes = []

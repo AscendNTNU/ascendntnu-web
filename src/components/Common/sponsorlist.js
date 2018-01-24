@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { polyfill } from 'es6-promise'
+import { API_URL } from '../../constants'
+
 polyfill()
 
 export class SponsorList extends Component {
@@ -25,7 +27,9 @@ export class SponsorList extends Component {
   }
 
   getSponsors (year) {
-    fetch("/api/v1/sponsors/" + year).then(r => r.json()).then(r => {
+    let setup = process.env.NODE_ENV === 'production' ? {} : { mode: 'cors' }
+
+    fetch(`${API_URL}/sponsors/${year}`, setup).then(r => r.json()).then(r => {
       this.setState({
         year: year,
         sponsors: r,

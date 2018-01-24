@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { polyfill } from 'es6-promise'
 import { BlogArticle } from '../BlogPage/blogArticle'
+import { API_URL } from '../../constants'
 
 polyfill()
 
@@ -240,7 +241,9 @@ export class HistoryViewer extends Component {
   }
 
   getHistory (year) {
-    fetch('/api/v1/history/' + (year || '')).then(r => r.json()).then(r => {
+    let setup = process.env.NODE_ENV === 'production' ? {} : { mode: 'cors' }
+
+    fetch(`${API_URL}/history/${(year || '')}`, setup).then(r => r.json()).then(r => {
 
       let history = []
       for (let year in r) {
