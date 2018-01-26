@@ -1,6 +1,7 @@
 version: '3'
 
 services:
+
   server:
     image: node:6
     command: node server.js
