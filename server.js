@@ -393,7 +393,7 @@ app.get('/*', function (req, res) {
     case 'team':
       res.send(prerender(req, {
         title: 'Team',
-        desc: 'Our team has 28 members divided into 5 main groups. You can ream more about the groups here...'
+        desc: 'Our team has 28 members divided into 5 main groups. You can read more about the groups here...'
       }))
       break
     case 'contact':
