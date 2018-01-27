@@ -28,6 +28,14 @@ services:
       - .:/srv/ascend
     working_dir: /srv/ascend
 
+  build:
+    image: node:6
+    user: "1000:1000"
+    command: npm run build
+    volumes:
+      - .:/srv/ascend
+    working_dir: /srv/ascend
+
   db:
     image: postgres
 
