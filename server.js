@@ -387,7 +387,7 @@ app.get('/*', function (req, res) {
     case 'missions':
       res.send(prerender(req, {
         title: 'Missions',
-        desc: 'Our main purpose is to solve a missions which was created in 2014. It may be impossble to solve it today, but as tech grows we may be able to solve the mission tomorrow.'
+        desc: 'Our main purpose is to solve a mission which was created in 2014. It may be impossble to solve it today, but as tech grows we may be able to solve the mission tomorrow.'
       }))
       break
     case 'team':
