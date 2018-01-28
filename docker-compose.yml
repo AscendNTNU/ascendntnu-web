@@ -45,7 +45,5 @@ services:
     depends_on:
       - db
     ports:
-      - ${API_PORT:-8000}:${API_PORT:-8000}
+      - ${API_PORT:-8000}:8000
     tty: true
-
-
