@@ -23,7 +23,7 @@ services:
     ports:
       - ${DOCKER_DEV_PORT:-8081}:${SERVER_DEV_PORT:-8081}
     depends_on:
-      - server
+      - api
     volumes:
       - .:/srv/ascend
     working_dir: /srv/ascend
@@ -45,5 +45,5 @@ services:
     depends_on:
       - db
     ports:
-      - ${API_PORT:-8000}:8000
+      - ${DOCKER_API_PORT:-8082}:8000
     tty: true
