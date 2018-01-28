@@ -7,7 +7,7 @@ services:
     command: node server.js
     environment:
       - SERVER_PORT
-      - NODE_ENV=${NODE_ENV-development}
+      - NODE_ENV
     ports:
       - ${DOCKER_PORT:-8080}:${SERVER_PORT:-8080}
     volumes:
@@ -19,9 +19,9 @@ services:
     command: npm start
     environment:
       - SERVER_PORT
-      - NODE_ENV=${NODE_ENV-development}
+      - NODE_ENV
     ports:
-      - ${DOCKER_DEV_PORT:-8081}:${SERVER_DEV_PORT:-8081}
+      - ${DOCKER_DEV_PORT:-8081}:${PORT:-8081}
     depends_on:
       - api
     volumes:
