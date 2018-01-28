@@ -170,7 +170,7 @@ export class JoinPage extends Component {
           <p style={{fontSize: '1.4em', marginTop:"0px"}}><a href="https://www.facebook.com/events/675218906021421">Bli med på infomøte 31. August 16:15 i <del>EL3</del>S4</a></p>
           <p>Ønsker du å være med på å drive med cutting-edge droneteknologi i en ambisiøs og teknologi-fokusert studentorganisasjon?</p>
           <p>Tidligere erfaring er ikke et krav for å bli med i Ascend. Det viktigste er å ha en interesse for det vi jobber med, og en interesse for å lære.</p>
-          <a className="button active" style={ { alignSelf: 'flex-start' } } href="https://docs.google.com/forms/d/e/1FAIpQLSe2ieI86nG7RXWN12PTOT08pbPO9zJoaO2Xmq0IjTLKsdGuAA/viewform">Søk her!</a><h4><a href="http://ascendntnu.us14.list-manage2.com/subscribe?u=dfce303a41ce42b342c75a3ef&amp;id=002e04db12" target="_blank">Interesseliste for opptak. Søknadskjema kommer veldig snart!</a></h4>*/}
+          <a className="button active" style={ { alignSelf: 'flex-start' } } href="https://docs.google.com/forms/d/e/1FAIpQLSe2ieI86nG7RXWN12PTOT08pbPO9zJoaO2Xmq0IjTLKsdGuAA/viewform">Søk her!</a><h4><a href="http://ascendntnu.us14.list-manage2.com/subscribe?u=dfce303a41ce42b342c75a3ef&amp;id=002e04db12" target="_blank" rel="noopener noreferrer">Interesseliste for opptak. Søknadskjema kommer veldig snart!</a></h4>*/}
           {positions[this.state.language][0]}
           <i>Det er kun studenter som studerer på NTNU i året 2017/2018 som kan søke. Er du usikker på om dette gjelder for deg? Spør oss på <a href="mailto:hi@ascendntnu.no">hi@ascendntnu.no</a></i>
           <SubSection titleText="Hvorfor søke">

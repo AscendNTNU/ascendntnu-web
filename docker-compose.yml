@@ -14,16 +14,38 @@ services:
       - .:/srv/ascend
     working_dir: /srv/ascend
 
+  dev:
+    image: node:6
+    command: npm start
+    environment:
+      - SERVER_PORT
+      - NODE_ENV=${NODE_ENV-development}
+    ports:
+      - ${DOCKER_DEV_PORT:-8081}:${SERVER_DEV_PORT:-8081}
+    depends_on:
+      - server
+    volumes:
+      - .:/srv/ascend
+    working_dir: /srv/ascend
+
+  build:
+    image: node:6
+    user: "1000:1000"
+    command: npm run build
+    volumes:
+      - .:/srv/ascend
+    working_dir: /srv/ascend
+
   db:
     image: postgres
 
-  web:
-    build: ./apiv2
-    volumes:
-      - .:/code
-    ports:
-      - "8000:8000"
+  api:
+    image: registry.ascendntnu.no/web-api:2.0
+    command: python manage.py runserver 0.0.0.0:8000
     depends_on:
       - db
+    ports:
+      - ${API_PORT:-8000}:${API_PORT:-8000}
     tty: true
+
 
