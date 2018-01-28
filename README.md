@@ -59,10 +59,10 @@ If you have `docker-compose` (which should follow the docker installation), you 
 
 ```bash
 # Run development on localhost:8081
-$ docker-compose up dev
+$ docker-compose up dev # This also starts the API at localhost:8082
 
-# Run server-only on localhost:8080
-$ docker-compose up server # Run in background mode by adding -d (detach).
+# Run API on localhost:8082
+$ docker-compose up api # Run in background mode by adding -d (detach).
 ```
 
 Read more about `docker-compose` on the Internet if you want to learn more neat commands.
