@@ -478,6 +478,14 @@ function prerender (req, data) {
       "url": "https://ascendntnu.no"
     }
     </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113307510-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-113307510-1');
+    </script>
   </head>
   <body>
     <div id="app" class="app-container"></div>
