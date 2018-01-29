@@ -1,33 +1,49 @@
 pipeline:
+
   backend:
-    image: registry.ascendntnu.no/ascend-web-baseimage:latest
+    image: node:6
     pull: true
     when:
+      event: push
+    commands:
+      - yarn
+      - ./test-server.sh
+
+  frontend:
+    image: node:6
+    pull: true
+    when:
+      event: push
+    commands:
+      - yarn
+      - npm run build
+
+  deploy-dev:
+    image: drillster/drone-rsync
+    hosts: [ ascendntnu.no ]
+    key: ${RSYNC_KEY}
+    secrets: [ rsync_key ]
+    when:
+      status: success
       event: push
       branch: dev
-    commands:
-      - cp -R /ascend-web/node_modules .
-      - cp constants-example.js constants.js
-      - ./test-server.sh
-  frontend:
-    image: registry.ascendntnu.no/ascend-web-baseimage:latest
-    pull: true
-    when:
-      event: push
-      branch:
-        include: [ dev, feature/* ]
-    commands:
-      - cp -R /ascend-web/node_modules .
-      - cp constants-example.js constants.js
-      - webpack
-  deploy:
-    image: appleboy/drone-ssh
-    host: ascendntnu.no
-    user: root
-    key: ${SSH_KEY}
-    secrets: [ ssh_key ]
-    when:
-      event: tag
-      branch: [ dev, test ]
     script:
-      - /home/ascend/.webhooks/webhook.sh deployprod ${DRONE_TAG}
+      - cd /home/ascend/ascendntnu-web
+      - docker-compose run build
+      - source .env.development.local
+      - DOCKER_PORT=$DOCKER_PORT docker-compose up --no-deps --force-recreate -d server
+
+  deploy-prod:
+    image: drillster/drone-rsync
+    hosts: [ ascendntnu.no ]
+    key: ${RSYNC_KEY}
+    secrets: [ rsync_key ]
+    when:
+      status: success
+      event: tag
+      branch: dev
+    script:
+      - cd /home/ascend/ascendntnu-web
+      - docker-compose run build
+      - source .env.production.local
+      - DOCKER_PORT=$DOCKER_PORT docker-compose up --no-deps --force-recreate -d server
