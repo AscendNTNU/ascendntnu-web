@@ -23,6 +23,7 @@ pipeline:
     hosts: [ ascendntnu.no ]
     key: ${RSYNC_KEY}
     secrets: [ rsync_key ]
+    target: /home/ascend/ascendntnu-web
     when:
       status: success
       event: push
@@ -38,12 +39,13 @@ pipeline:
     hosts: [ ascendntnu.no ]
     key: ${RSYNC_KEY}
     secrets: [ rsync_key ]
+    target: /home/ascend/ascendntnu-web-prod
     when:
       status: success
       event: tag
       branch: dev
     script:
-      - cd /home/ascend/ascendntnu-web
+      - cd /home/ascend/ascendntnu-web-prod
       - docker-compose run build
       - source .env.production.local
       - DOCKER_PORT=$DOCKER_PORT docker-compose up --no-deps --force-recreate -d server
