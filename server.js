@@ -1,5 +1,6 @@
 var express = require('express')
 var app = express()
+var cors = require('cors')
 var fs = require('fs')
 var mkdirp = require('mkdirp')
 var yamljs = require('yamljs')
@@ -8,22 +9,30 @@ var commonmark = require('commonmark')
 var reader = new commonmark.Parser()
 var writer = new commonmark.HtmlRenderer()
 
-var constants = require('./constants')
-
 var dotenv = require('dotenv')
 dotenv.config()
-process.env = Object.assign({}, dotenv.parse(fs.readFileSync('.env.default')), process.env)
 
-app.use('/images', express.static(__dirname + '/images'))
-app.use('/public/assets', express.static(__dirname + '/images/assets'))
-app.use('/publications', express.static(__dirname + '/images/assets/publications'))
-app.use('/dist', express.static(__dirname + '/dist'))
+if (fileExists('.env.local')) {
+  Object.assign(process.env, dotenv.parse(fs.readFileSync('.env.local')))
+}
+
+var constants = {
+  access: process.env.ACCESS || '',
+  pathToCV: process.env.PATH_TO_CV || './cv'
+}
+
+if (process.env.NODE_ENV !== 'production') {
+  app.use(cors())
+}
+
+app.use('/images', express.static(__dirname + '/build/images'))
+app.use('/public/assets', express.static(__dirname + '/build/images/assets'))
+app.use('/publications', express.static(__dirname + '/build/images/assets/publications'))
 app.use('/blog/rss', express.static(__dirname + '/api/v1/blog.rss'))
 app.use('/sitemap.xml', express.static(__dirname + '/api/v1/sitemap.xml'))
-app.use('/styles', express.static(__dirname + '/styles'))
 app.use('/node_modules', express.static(__dirname + '/node_modules'))
 
-var port = process.env.PORT_OUT || constants.port || 8080
+var port = process.env.SERVER_PORT || 8080
 var listener = app.listen(port, function () {
   console.log('Listening on http://localhost:' + listener.address().port)
 })
@@ -254,7 +263,7 @@ app.get('/blog/amp/:post', function (req, res) {
 
     res.send(createAmpArticle(postData))
   } else {
-    res.sendFile(__dirname + '/index.html')
+    res.sendFile(__dirname + '/build/index.html')
   }
 })
 
@@ -272,7 +281,7 @@ app.get('/blog/fb/:post', function (req, res) {
 
     res.send(createFBInstantArticle(postData))
   } else {
-    res.sendFile(__dirname + '/index.html')
+    res.sendFile(__dirname + '/build/index.html')
   }
 })
 
@@ -337,9 +346,11 @@ app.get('/blog/:post', function (req, res) {
         // + authors.map(author => `\n    <meta property="article:author" content="${author}" />`).join('\n    ')
     }))
   } else {
-    res.sendFile(__dirname + '/index.html')
+    res.sendFile(__dirname + '/build/index.html')
   }
 })
+
+app.use('/', express.static(__dirname + '/build'))
 
 app.get('/*', function (req, res) {
   var pieces = req.originalUrl.split(/\//)
@@ -376,13 +387,13 @@ app.get('/*', function (req, res) {
     case 'missions':
       res.send(prerender(req, {
         title: 'Missions',
-        desc: 'Our main purpose is to solve a missions which was created in 2014. It may be impossble to solve it today, but as tech grows we may be able to solve the mission tomorrow.'
+        desc: 'Our main purpose is to solve a mission which was created in 2014. It may be impossble to solve it today, but as tech grows we may be able to solve the mission tomorrow.'
       }))
       break
     case 'team':
       res.send(prerender(req, {
         title: 'Team',
-        desc: 'Our team has 28 members divided into 5 main groups. You can ream more about the groups here...'
+        desc: 'Our team has 28 members divided into 5 main groups. You can read more about the groups here...'
       }))
       break
     case 'contact':
@@ -393,7 +404,7 @@ app.get('/*', function (req, res) {
       break
   }
 
-  res.sendFile(__dirname + '/index.html')
+  res.sendFile(__dirname + '/build/index.html')
 })
 
 function prerender (req, data) {

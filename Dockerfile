@@ -1,13 +1,8 @@
-FROM ascend/ascend-web-baseimage
+FROM node:6
 
-RUN apt-get update
+WORKDIR /srv/ascend
+ADD package.json yarn.lock ./
+RUN yarn
 
-WORKDIR /ascend-web
-ADD package.json ./
-RUN npm install --silent
-
-COPY . ./
-RUN webpack
-EXPOSE 8080
-
-CMD ["pm2", "start", "server.js", "--no-daemon"]
+COPY . .
+RUN npm run build

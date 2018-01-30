@@ -1,0 +1,6 @@
+Django>= 1.11, < 2.0
+psycopg2
+djangorestframework
+markdown
+django-filter
+django-pagedown

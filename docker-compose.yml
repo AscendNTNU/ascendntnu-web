@@ -1,13 +1,49 @@
-version: '2'
+version: '3'
 
 services:
-  dev:
-    build:
-      context: .
-      dockerfile: Dockerfile.compose
-    command: ./deploy.sh ${PORT_IN}
+
+  server:
+    image: node:6
+    command: node server.js
+    environment:
+      - SERVER_PORT
+      - NODE_ENV
     ports:
-      - ${PORT_IN}:${PORT_OUT}
+      - ${DOCKER_PORT:-8080}:${SERVER_PORT:-8080}
     volumes:
-      - .:/ascend-web/:rw
-    working_dir: /ascend-web
+      - .:/srv/ascend
+    working_dir: /srv/ascend
+
+  dev:
+    image: node:6
+    command: npm start
+    environment:
+      - SERVER_PORT
+      - NODE_ENV
+    ports:
+      - ${DOCKER_DEV_PORT:-8081}:${PORT:-8081}
+    depends_on:
+      - api
+    volumes:
+      - .:/srv/ascend
+    working_dir: /srv/ascend
+
+  build:
+    image: node:6
+    user: "1000:1000"
+    command: npm run build
+    volumes:
+      - .:/srv/ascend
+    working_dir: /srv/ascend
+
+  db:
+    image: postgres
+
+  api:
+    image: registry.ascendntnu.no/web-api:2.0
+    command: python manage.py runserver 0.0.0.0:8000
+    depends_on:
+      - db
+    ports:
+      - ${DOCKER_API_PORT:-8082}:8000
+    tty: true
