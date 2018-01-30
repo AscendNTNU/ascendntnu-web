@@ -30,7 +30,7 @@ pipeline:
       branch: dev
     script:
       - cd /home/ascend/ascendntnu-web
-      - docker-compose run build
+      - DOCKER_USER= docker-compose run build
       - source .env.development.local
       - DOCKER_PORT=$DOCKER_PORT docker-compose up --no-deps --force-recreate -d server
 
@@ -46,6 +46,6 @@ pipeline:
       branch: dev
     script:
       - cd /home/ascend/ascendntnu-web-prod
-      - docker-compose run build
+      - DOCKER_USER= docker-compose run build
       - source .env.production.local
       - DOCKER_PORT=$DOCKER_PORT docker-compose up --no-deps --force-recreate -d server
