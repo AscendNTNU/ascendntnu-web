@@ -96,42 +96,42 @@ export class TeamPage extends Component {
     let setup = process.env.NODE_ENV === 'production' ? {} : { mode: 'cors' }
 
       fetch(`${API_URL}/members/${year}`, setup).then(r => r.json()).then(r => {
-          if (r !== null) {
-              let groups = []
-              r.forEach((m, i) => {
-                  let g = m.group.split(/, ?/)
-                  for (let i = 0; i < g.length; i++) {
-                      if (groups.indexOf(g[i]) === -1)
-                          groups.push(g[i])
-                  }
-              })
+        if (r !== null) {
+          let groups = []
+          r.forEach((m, i) => {
+            let g = m.group.split(/, ?/)
+            for (let i = 0; i < g.length; i++) {
+              if (groups.indexOf(g[i]) === -1)
+                groups.push(g[i])
+            }
+          })
 
 
-              this.setState({
-                  year: year,
-                  grouping: this.groupings[year],
-                  members: r.sort((a, b) => {
-                      return a.name > b.name ? 1 : -1
-                  }),
-                  groups: groups.sort((a, b) => {
-                      if (a.toLowerCase() === "board") {
-                        return -1
-                      }
-                      if (a.toLowerCase() === "coach") {
-                        return 1
-                      }
-                      return a.toLowerCase() > b.toLowerCase() ? 1 : -1
-                  })
-              })
-          }
-          else {
-              this.setState({
-                  year: year,
-                  grouping: this.groupings[year],
-                  members: [],
-                  groups: [],
-              })
-          }
+          this.setState({
+            year: year,
+            grouping: this.groupings[year],
+            members: r.sort((a, b) => {
+              return a.name > b.name ? 1 : -1
+            }),
+            groups: groups.sort((a, b) => {
+              if (a.toLowerCase() === "board") {
+                return -1
+              }
+              if (a.toLowerCase() === "coach") {
+                return 1
+              }
+              return a.toLowerCase() > b.toLowerCase() ? 1 : -1
+            })
+          })
+        }
+        else {
+          this.setState({
+            year: year,
+            grouping: this.groupings[year],
+            members: [],
+            groups: [],
+          })
+        }
       })
 
   }
@@ -154,101 +154,101 @@ export class TeamPage extends Component {
 
   render () {
 
-      /**
-       * Creating team photo on top
-        */
-      let team_photo = (
-        <div className="section page-container">
+    /**
+     * Creating team photo on top
+      */
+    let team_photo = (
+      <div className="section page-container">
 
-          <img src={'/images/teams/' + this.state.year + '/ascend-group-' + this.state.year + '.jpg'} alt="Team" className="responsive-image fullscale-image" />
-        </div>
-      );
+        <img src={'/images/teams/' + this.state.year + '/ascend-group-' + this.state.year + '.jpg'} alt="Team" className="responsive-image fullscale-image" />
+      </div>
+    );
 
-      /**
-       * Creating the groups to an array of elements.
-       */
-      let groups = this.state.groups
-          .filter((group) => this.state.grouping.test(group))
-          .map((group, n) => {
+    /**
+     * Creating the groups to an array of elements.
+     */
+    let groups = this.state.groups
+      .filter((group) => this.state.grouping.test(group))
+      .map((group, n) => {
 
-              /**
-               * Adding leader(s) to an own list on each group.
-               */
-              let leader = this.state.members
-                  .filter((m) => {
-                      return m.group.indexOf(group) !== -1 && m.group.indexOf('Leader') !== -1
-                  })
-                  .map((m, i) => {
-                      let mail;
-
-                      if (m.mail && m.mail.length) {
-                          mail = (
-                              <div className="team-member-mail">
-                                  <a href={'mailto:' + m.mail} onMouseOver={this.transformMailAddress}>
-                                      <i className="fa fa-envelope" aria-hidden="true"></i>
-                                  </a>
-                              </div>
-                          )
-                      }
-
-                      return (
-                          <div key={i} className="team-member team-leader">
-                              <div className="team-member-image">
-                                  <img src={m.image} alt={m.name} />
-                                  {mail}
-                              </div>
-                              <div className="team-member-name">{m.name}</div>
-                              <div className="team-member-role">{m.role}</div>
-                          </div>
-                      )
-                  })
-
-              /**
-               * Adding the rest of the members which is not a leader.
-               */
-              let members = this.state.members
-                  .filter((m) => {
-                      return m.group.indexOf(group) !== -1 && m.group.indexOf('Leader') === -1
-                  })
-                  .map((m, i) => {
-                      let mail;
-
-                      if (m.mail && m.mail.length) {
-                          mail = (
-                              <div className="team-member-mail">
-                                  <a href={'mailto:' + m.mail} onMouseOver={this.transformMailAddress}>
-                                      <i className="fa fa-envelope" aria-hidden="true"></i>
-                                  </a>
-                              </div>
-                          )
-                      }
-
-                      return (
-                          <div key={i} className="team-member">
-                              <div className="team-member-image">
-                                  <img src={m.image} alt={m.name} />
-                                  {mail}
-                              </div>
-                              <div className="team-member-name">{m.name}</div>
-                              <div className="team-member-role">{m.role}</div>
-                          </div>
-                      )
-                  })
-
-              return (
-                  <SubSection key={n} className="teampage-team centered page-container-big"
-                              data-group={group.toLowerCase()}>
-                      <div className="team-leaders">
-                          {leader}
-                          <div className="team-description">
-                              <div className="team-title">{group}</div>
-                              <div className="team-text">{this.groupTexts[group]}</div>
-                          </div>
-                      </div>
-                      <div className="team-members">{members}</div>
-                  </SubSection>
-              )
+        /**
+         * Adding leader(s) to an own list on each group.
+         */
+        let leader = this.state.members
+          .filter((m) => {
+              return m.group.indexOf(group) !== -1 && m.group.indexOf('Leader') !== -1
           })
+          .map((m, i) => {
+            let mail;
+
+            if (m.mail && m.mail.length) {
+              mail = (
+                <div className="team-member-mail">
+                  <a href={'mailto:' + m.mail} onMouseOver={this.transformMailAddress}>
+                    <i className="fa fa-envelope" aria-hidden="true"></i>
+                  </a>
+                </div>
+              )
+            }
+
+            return (
+              <div key={i} className="team-member team-leader">
+                <div className="team-member-image">
+                  <img src={m.image} alt={m.name} />
+                  {mail}
+                </div>
+                <div className="team-member-name">{m.name}</div>
+                <div className="team-member-role">{m.role}</div>
+              </div>
+            )
+          })
+
+      /**
+       * Adding the rest of the members which is not a leader.
+       */
+      let members = this.state.members
+        .filter((m) => {
+          return m.group.indexOf(group) !== -1 && m.group.indexOf('Leader') === -1
+        })
+        .map((m, i) => {
+          let mail;
+
+          if (m.mail && m.mail.length) {
+            mail = (
+              <div className="team-member-mail">
+                <a href={'mailto:' + m.mail} onMouseOver={this.transformMailAddress}>
+                  <i className="fa fa-envelope" aria-hidden="true"></i>
+                </a>
+              </div>
+            )
+          }
+
+          return (
+            <div key={i} className="team-member">
+              <div className="team-member-image">
+                <img src={m.image} alt={m.name} />
+                {mail}
+              </div>
+              <div className="team-member-name">{m.name}</div>
+              <div className="team-member-role">{m.role}</div>
+            </div>
+          )
+        })
+
+      return (
+        <SubSection key={n} className="teampage-team centered page-container-big"
+                    data-group={group.toLowerCase()}>
+          <div className="team-leaders">
+            {leader}
+            <div className="team-description">
+              <div className="team-title">{group}</div>
+              <div className="team-text">{this.groupTexts[group]}</div>
+            </div>
+          </div>
+          <div className="team-members">{members}</div>
+        </SubSection>
+        )
+      })
 
     return (
       <div className="page page-team">
