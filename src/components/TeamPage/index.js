@@ -120,14 +120,12 @@ export class TeamPage extends Component {
               if (a.toLowerCase() === "coach") {
                 return 1
               }
-
               if (b.toLowerCase() === "board") {
                   return 1
               }
               if (b.toLowerCase() === "coach") {
                   return -1
               }
-
 
               return a.toLowerCase() > b.toLowerCase() ? 1 : -1
             })
