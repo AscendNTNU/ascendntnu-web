@@ -87,10 +87,8 @@ export class App extends Component {
             <Route path="/drones" component={DronePage} onEnter={this.gotoTop} />
             <Route path="/join/:language?" component={JoinPage} onEnter={this.gotoTop} />
             <Route path="/missions" component={MissionPage} onEnter={this.gotoTop} />
-            <Route path="/sponsors" component={SponsorPage} onEnter={this.gotoTop} />
-            <Route path="/sponsors/:year" component={SponsorPage} />
-            <Route path="/team" component={TeamPage} onEnter={this.gotoTop} />
-            <Route path="/team/:year" component={TeamPage} />
+            <Route path="/sponsors/:year?" component={SponsorPage} onEnter={this.gotoTop} />
+            <Route path="/team/:year?" component={TeamPage} onEnter={this.gotoTop} />
           </Switch>
           <ToTopButton />
           <Footer changeTheme={this.changeTheme.bind(this)} theme={this.state.theme} />
