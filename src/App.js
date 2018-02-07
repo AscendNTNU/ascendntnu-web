@@ -1,19 +1,21 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 
-import Header from './components/Header'
-import Footer from './components/Footer'
-import { ToTopButton } from './components/PageLayout'
-import FrontPage from './components/FrontPage'
-import BlogPage from './components/BlogPage'
-import DronePage from './components/DronePage'
-import TeamPage from './components/TeamPage'
-import JoinPage from './components/JoinPage'
-import AboutPage from './components/AboutPage'
-import SponsorPage from './components/SponsorPage'
-import MissionPage from './components/MissionPage'
-import CVPage from './components/CVPage'
-import ContactPage from './components/ContactPage'
+import {
+  Header,
+  Footer,
+  ToTopButton,
+  FrontPage,
+  BlogPage,
+  DronePage,
+  TeamPage,
+  JoinPage,
+  AboutPage,
+  SponsorPage,
+  MissionPage,
+  CVPage,
+  ContactPage,
+} from './components'
 
 export class App extends Component {
   constructor(props) {
