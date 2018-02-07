@@ -5,7 +5,7 @@ import { API_URL } from '../../constants'
 polyfill()
 
 export class SponsorList extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
 
     this.state = {
@@ -16,7 +16,7 @@ export class SponsorList extends Component {
     this.getSponsors(this.state.year)
   }
 
-  componentWillReceiveProps (nextProps) {
+  componentWillReceiveProps(nextProps) {
     let nextYear = nextProps.year || 2018
     let year = this.props.year || this.state.year
 
@@ -26,15 +26,17 @@ export class SponsorList extends Component {
     }
   }
 
-  getSponsors (year) {
+  getSponsors(year) {
     let setup = process.env.NODE_ENV === 'production' ? {} : { mode: 'cors' }
 
-    fetch(`${API_URL}/sponsors/${year}`, setup).then(r => r.json()).then(r => {
-      this.setState({
-        year: year,
-        sponsors: r,
+    fetch(`${API_URL}/sponsors/${year}`, setup)
+      .then(r => r.json())
+      .then(r => {
+        this.setState({
+          year: year,
+          sponsors: r,
+        })
       })
-    })
   }
 
   render() {
@@ -43,20 +45,20 @@ export class SponsorList extends Component {
         <div key={i} className="sponsor">
           <a href={sponsor.link} className="sponsor-adblock-link">
             <img src={sponsor.logo} alt={sponsor.name} title={sponsor.name} />
-            {sponsor.logo_dark ? <img src={sponsor.logo_dark} alt={sponsor.name} title={sponsor.name} /> : null}
+            {sponsor.logo_dark ? (
+              <img
+                src={sponsor.logo_dark}
+                alt={sponsor.name}
+                title={sponsor.name}
+              />
+            ) : null}
           </a>
-          <div className="sponsor-adblock-text">
-            {sponsor.short_text}
-          </div>
+          <div className="sponsor-adblock-text">{sponsor.short_text}</div>
         </div>
       )
     })
 
-    return (
-      <div className="sponsors">
-        {sponsors}
-      </div>
-    )
+    return <div className="sponsors">{sponsors}</div>
   }
 }
 

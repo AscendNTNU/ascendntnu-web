@@ -10,15 +10,21 @@ export class Breadcrumb extends Component {
       let build = ''
       links = this.props.routes.slice(0, -1).map((b, i) => {
         build += '/' + b
-        return (<Link key={i} to={build}>{b}</Link>)
+        return (
+          <Link key={i} to={build}>
+            {b}
+          </Link>
+        )
       })
-      last = (<span>{this.props.routes.slice(-1)[0]}</span>)
+      last = <span>{this.props.routes.slice(-1)[0]}</span>
     }
 
     return (
       <div className="page-container flex no-grow">
         <div className="breadcrumb-container">
-          <NavLink exact to="/">Home</NavLink>
+          <NavLink exact to="/">
+            Home
+          </NavLink>
           {links}
           {last}
         </div>
