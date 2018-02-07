@@ -37,12 +37,15 @@ services:
 
   db:
     image: postgres
+    tty: true
 
   api:
     image: registry.ascendntnu.no/web-api:2.0
-    command: python manage.py runserver 0.0.0.0:8000
+    command: python3 manage.py runserver 0.0.0.0:8000
     depends_on:
       - db
     ports:
       - ${DOCKER_API_PORT:-8082}:8000
+    entrypoint: /code/docker-setup.sh
     tty: true
+
