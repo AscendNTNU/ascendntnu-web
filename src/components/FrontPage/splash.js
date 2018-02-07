@@ -79,7 +79,7 @@ export class Splash extends Component {
           })
         )
       } else {
-        if (this.state.smallScreen !== this.width < 560) {
+        if (this.state.smallScreen !== (this.width < 560)) {
           this.setState(
             Object.assign({}, this.state, {
               smallScreen: this.width < 560,
