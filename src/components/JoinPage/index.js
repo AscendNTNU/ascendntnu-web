@@ -129,14 +129,14 @@ export class JoinPage extends Component {
           <SubSubSection titleText="Teknisk Leder og Nestleder">
             <p>Som teknisk leder eller nestleder har du det overordnede ansvaret for all teknisk arbeid i Ascend. Dette innebærer å planlegge, organisere og samkjøre det tekniske arbeidet sammen med gruppelederne. Det er det din oppgave å lede det tekniske arbeidet slik at alle de tekniske gruppene jobber mot samme mål. Du må ha en god innsikt i hele systemet som utvikles slik at arbeidet kan legges til rette for å unngå potensielle tekniske problemer og integreres på en best mulig måte. Teknisk leder og nestleder jobber tett med alle de tekniske gruppelederene og gruppemedlemmene, og bistår med det tekniske der det til enhver tid er størt behov. Jobben vil gi deg en innsikt og erfaring i en rekke forskjellige ingeniørdisipliner, og gi deg et helhetsbilde som få andre har. Du skal også sørge for god flyt mellom det tekniske og det administrative. </p>
             <p>Teknisk leder og nestleder vil jobbe tett sammen og fordele arbeidsoppgaver mellom seg.</p>
-            <p>Som nestleder vil du også ha ansvaret for innkjøp, vedlikehold og oppbevaring av teknisk utstyr. Du vil ha ansvaret for prosjektplanleggingen på verktøy som confluence og jira og i tilleg ansvaret for å planlegge, kordinere og dokumentere testing av systemer.
+            <p>Som nestleder vil du også ha ansvaret for innkjøp, vedlikehold og oppbevaring av teknisk utstyr. Du vil ha ansvaret for prosjektplanleggingen på verktøy som confluence og jira og i tilleg ansvaret for å planlegge, kordinere og dokumentere testing av systemer.</p>
             <p><b>Vi ser etter</b></p>
             <ul>
               <li>Du som har gode sammarbeidsevner og et engasjement rundt ledelse.</li>
               <li>Du som har stor teknisk interesse for robotikk og gjerne erfaring fra c++ eller ROS (Robot Operating System).</li>
               <li>Du som liker å jobbe med store kompliserte systemer.</li>
               <li>Du som er strukturert, ryddig og organisert.</li>
-              <li>Du som er utadvent og komfortabel med å være en synlig skikkelse i Ascend både innad og utad.
+              <li>Du som er utadvent og komfortabel med å være en synlig skikkelse i Ascend både innad og utad.</li>
             </ul>
             <p>Har du spørsmål om denne stillingen kan du kontakte Kevin Kaldvansvik på <a href={ `mailto:${this.emails[4]}ascendntnu.no` }>{ this.emails[4] }ascendntnu.no</a>.</p>
           </SubSubSection>
@@ -149,12 +149,12 @@ export class JoinPage extends Component {
               <li>Du som har gode kommunikasjonsevner og interesse for ledelse </li>
               <li>Du som er løsningsorientert, kreativ, ambisiøs, samarbeidsvillig, målrettet og resultatdrevet</li>
             </ul>
-            <p>Har du spørsmål om denne stillingen kan du kontakte Kim Borgen på <a href={ `mailto:${this.somemails[2]}ascendntnu.no` }>{ this.emails[2] }ascendntnu.no</a>.</p>
+            <p>Har du spørsmål om denne stillingen kan du kontakte Kim Borgen på <a href={ `mailto:${this.emails[2]}ascendntnu.no` }>{ this.emails[2] }ascendntnu.no</a>.</p>
           </SubSubSection>
           <SubSubSection titleText="Økonomiansvarlig">
             <p>Som økonomiansvarlig har du kontroll på organisasjonens ressursbruk. Ascend opererer som I likhet med andre organisasjoner innenfor visse økonomiske rammer, og en pålitelig samt forutsigbar flyt av ressurser kan dermed hjelpe resten av teamet å oppnå sitt fulle potensial.</p>
             <p>Din oppgave vil hovedsaklig være å forsikre at styret har oversiktlig regnskap, kontobalanse og budsjetter tilgjengelig i forbindelse med avgjørelser for både teknisk og organisatorisk drift. I tillegg vil du ha ansvar for å holde oversikt over interne utlegg, inventar og likviditet, og sørge for at innkommende fakturaer blir betalt til rett tid. Du vil også ha ansvaret for vår interne kiosk.</p>
-            <p>Som økonomiansvarlig vil du også samarbeide mye med sponsoransvarlig og resten av marked og kommunikasjons gruppen.
+            <p>Som økonomiansvarlig vil du også samarbeide mye med sponsoransvarlig og resten av marked og kommunikasjons gruppen.</p>
             <p><b>Vi ser etter</b></p>
             <ul>
               <li>Du som har interesse for økonomi, regnskapsføring og budsjettplanlegging.</li>
@@ -211,13 +211,13 @@ export class JoinPage extends Component {
           <p style={{fontSize: '1.4em'}}><b>Søknadsfrist 15. april kl. 23:59</b></p>
           <p>Ønsker du å være med på å drive med cutting-edge droneteknologi i en ambisiøs og teknologi-fokusert studentorganisasjon?</p>
           <p>Tidligere erfaring er ikke et krav for å bli med i Ascend. Det viktigste er å ha en interesse for det vi jobber med, og en interesse for å lære.</p>
-          <a className="button active" style={ { alignSelf: 'flex-start', display: 'none' } } href="https://docs.google.com/forms/d/e/1FAIpQLSe2ieI86nG7RXWN12PTOT08pbPO9zJoaO2Xmq0IjTLKsdGuAA/viewform">Søk her!</a><h4><a href="http://ascendntnu.us14.list-manage2.com/subscribe?u=dfce303a41ce42b342c75a3ef&amp;id=002e04db12" target="_blank" rel="noopener noreferrer">Interesseliste for opptak. Søknadskjema kommer veldig snart!</a></h4>*/}
+          <a className="button active" style={ { alignSelf: 'flex-start', display: 'none' } } href="https://docs.google.com/forms/d/e/1FAIpQLSe2ieI86nG7RXWN12PTOT08pbPO9zJoaO2Xmq0IjTLKsdGuAA/viewform">Søk her!</a><h4><a href="http://ascendntnu.us14.list-manage2.com/subscribe?u=dfce303a41ce42b342c75a3ef&amp;id=002e04db12" target="_blank" rel="noopener noreferrer">Interesseliste for opptak. Søknadskjema kommer veldig snart!</a></h4>
           {positions[this.state.language][1]}
           <i>Det er kun studenter som studerer på NTNU i året 2017/2018 som kan søke. Er du usikker på om dette gjelder for deg? Spør oss på <a href="mailto:hi@ascendntnu.no">hi@ascendntnu.no</a></i>
           <SubSection titleText="Hvorfor søke">
             <ul>
               <li><strong>Bli en del av et miljø.</strong> I Ascend blir du en del av et målrettet og teknologifokusert prosjekt der vi jobber sammen for å nå våre mål. </li>
-              <li><strong>Fra teori til praksis.</strong> I Ascend tar man noen av de mest avanserte konseptene man lærer på NTNU fra lærebøkene til virkeligheten.</li>
+              <li><strong>Fra teori til praksis.</strong> I Ascend tar man noen av de mest avanserte konseptene man lærer på NTNU fra lærebøkene ut til virkeligheten.</li>
               <li><strong>Kombiner med graden din.</strong> Flere av medlemmene våre skriver prosjekt/master-oppgave relatert til Ascend. I tillegg finnes det en åpning for å drive med Ascend i Eksperter i Team.</li>
               <li><strong>Prosjekt/organisasjons-erfaring.</strong> I Ascend er du med på å føre et teknisk prosjekt fra start til slutt - dette gir mye verdifull erfaring og kompetanse på veien.</li>
               <li><strong>Cutting edge.</strong> Bli en del av en organisasjon som må ta i bruk og utvikle teknologi som er state of the art innenfor autonom robotikk. </li>
