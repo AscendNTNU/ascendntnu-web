@@ -32,7 +32,7 @@ pipeline:
       - cd /home/ascend/ascendntnu-web
       - DOCKER_USER= docker-compose run build
       - source .env.development.local
-      - DOCKER_PORT=$DOCKER_PORT docker-compose up --no-deps --force-recreate -d
+      - DOCKER_PORT=$DOCKER_PORT docker-compose up --no-deps --force-recreate -d server api db
 
   deploy-prod:
     image: drillster/drone-rsync
