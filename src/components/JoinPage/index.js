@@ -9,11 +9,15 @@ export class JoinPage extends Component {
 
     // This is for avoiding showing mails on GitHub in plaintext.
     this.emails = [
-      'brage.eikanger',
-      'vebjorn.isaksen',
-      'emilie.udnaes',
-      'simon.blindheim',
-      'matias.christensen',
+      'simen.sandbu',
+      'erling.solberg',
+      'kim.borgen',
+      'truls.olsen',
+      'kevin.kaldvansvik',
+      'hi',
+      'hi',
+      'hi',
+      'hi'
     ].map((e) => `${e}@`)
 
     this.state = {
@@ -106,55 +110,93 @@ export class JoinPage extends Component {
           </p>
         </SubSection>,
 
-        <SubSection titleText="Stillinger" key="2">
-          <SubSubSection titleText="Prosjektleder/Nestleder">
-            <p>Prosjektleder er styrets leder og jobber med å videreutvikle Ascend i ønsket retning basert på Ascends visjoner og mål. Prosjektleder jobber tett opp mot alle Ascends undergrupper og koordinerer mye av arbeidet som skjer mellom gruppene. Sammen med kommunikasjonsgruppen jobber prosjektleder for å fremme Ascends omdømme, planlegge opptak, og jobbe med sponsorer. Arbeidsoppgavene man har vil variere fra uke til uke og gir muligheter til å jobbe med de fleste aspekter i prosjektet. Faste oppgaver inkluderer å lede styremøter og allmøter, og ansvar for samarbeid med hovedsponsor.</p>
-            <p>Som nestleder har man mange spennende oppgaver. Først og fremst er man hovedansvarlig for rekruttering av nytt styre, nye gruppemedlemmer, gruppeledere og arbeid med masteroppgaver. Man skal også bistå prosjektleder med planlegging, oppfølging og målsetting. Videre holder man medarbeidersamtaler for å sikre at alle gruppemedlemmene blir hørt, samt at man er en tillitsperson for gruppemedlemmene.</p>
+        <SubSection titleText="Stillinger" key="2"> 
+
+          <h2>Styret:</h2>
+          <SubSubSection titleText="Prosjektleder og Nestleder">
+            <p>Prosjektleder er styrets leder og jobber med å videreutvikle Ascend i ønsket retning basert på Ascends visjoner og mål. Som prosjektleder legger man i stor grad føringer for hvordan hele organisasjonen skal drives og hvordan arbeidet skal gjennomføres. Stillingen krever at man er proaktiv og ser forbedringsområder samt legger til rette for god arbeidskultur. Prosjektleder jobber tett opp mot alle Ascends undergrupper og koordinerer mye av arbeidet som skjer mellom gruppene på et overordnet plan. Sammen med kommunikasjonsgruppen jobber prosjektleder for å fremme Ascends omdømme og jobbe med sponsorer. Arbeidsoppgavene man har vil variere fra uke til uke og gir muligheter til å jobbe med de fleste aspekter i prosjektet. Faste oppgaver inkluderer å lede styremøter og allmøter, og ansvar for samarbeid med hovedsponsor.</p>
+            <p>Som nestleder har man mange spennende oppgaver. Først og fremst er man hovedansvarlig for rekruttering av nytt styre, nye gruppemedlemmer og gruppeledere. Man skal også bistå prosjektleder med planlegging, oppfølging og målsetting. Videre blir du en tillitsperson for gruppemedlemmene og sosialt ansvarlig.</p>
             <p>Prosjektleder og nestleder jobber tett sammen og fordeler arbeidsoppgaver mellom seg. Dette samarbeidet gir en stor fleksibilitet når det kommer til arbeidsoppgaver, og lar begge to tilpasse ansvarsområder slik at man kan jobbe med det man har størst interesse for.</p>
             <p><b>Vi ser etter</b></p>
             <ul>
               <li>Deg som ønsker å jobbe tett med hele organisasjonen og liker varierte arbeidsoppgaver</li>
-              <li>Deg som vil jobbe med eksterne aktører, sponsorer og andre samarbeidspartnere.</li>
+              <li>Deg som vil jobbe med eksterne aktører, sponsorler og andre samarbeidspartnere.</li>
               <li>Deg som vil finne gode løsninger i samarbeid med andre og tar utfordringer på strak arm. </li>
               <li>Deg som har god struktur og oversikt, og liker å jobbe med organisasjonen som en helhet.</li>
             </ul>
-            <p>Har du spørsmål om denne stillingen kan du kontakte Brage Eikanger (Prosjektleder) på <a href={ `mailto:${this.emails[0]}ascendntnu.no` }>{ this.emails[0] }ascendntnu.no</a>, eller Vebjørn Isaksen (Nestleder) på <a href={ `mailto:${this.emails[1]}ascendntnu.no` }>{ this.emails[1] }ascendntnu.no</a>.</p>
+            <p>Har du spørsmål om denne stillingen kan du kontakte Simen Sandbu (Prosjektleder) på <a href={ `mailto:${this.emails[0]}ascendntnu.no` }>{ this.emails[0] }ascendntnu.no</a>, eller Erling Solberg (Nestleder) på <a href={ `mailto:${this.emails[1]}ascendntnu.no` }>{ this.emails[1] }ascendntnu.no</a>.</p>
           </SubSubSection>
-          <SubSubSection titleText="Teknisk Leder">
-            <p>Som teknisk leder har du det overordnede ansvaret for all teknisk arbeid i Ascend. Dette innebærer å planlegge, organisere og samkjøre det tekniske arbeidet sammen med gruppelederne. Som teknisk leder er det din oppgave å lede det tekniske arbeidet slik at alle de tekniske gruppene jobber mot samme mål. Du må ha en god innsikt i hele systemet som utvikler slik at arbeidet kan legges til rette for å unngå potensielle tekniske problemer og integreres på en best mulig måte. Teknisk leder jobber tett med alle de tekniske gruppelederene og gruppemedlemmene, og bistår med det tekniske der det til enhver tid er størt behov. Jobben vil gi deg en innsikt og erfaring i en rekke forskjellige ingeniørdisipliner, og gi deg et helhetsbilde som få andre har.</p>
-            <p>Teknisk leder fungerer som representant for det tekniske inn mot styret og admin gruppen. Jobben innebærer derfor også å jobbe sammen med de administrative stillingene. Oppgaver som å planlegge innkjøp av teknisk utstyr sammen med økonomiansvarlig og bistå med formidlingen av det tekniske arbeidet sammen med kommunikasjonslederen.</p>
+          <SubSubSection titleText="Teknisk Leder og Nestleder">
+            <p>Som teknisk leder eller nestleder har du det overordnede ansvaret for all teknisk arbeid i Ascend. Dette innebærer å planlegge, organisere og samkjøre det tekniske arbeidet sammen med gruppelederne. Det er det din oppgave å lede det tekniske arbeidet slik at alle de tekniske gruppene jobber mot samme mål. Du må ha en god innsikt i hele systemet som utvikles slik at arbeidet kan legges til rette for å unngå potensielle tekniske problemer og integreres på en best mulig måte. Teknisk leder og nestleder jobber tett med alle de tekniske gruppelederene og gruppemedlemmene, og bistår med det tekniske der det til enhver tid er størt behov. Jobben vil gi deg en innsikt og erfaring i en rekke forskjellige ingeniørdisipliner, og gi deg et helhetsbilde som få andre har. Du skal også sørge for god flyt mellom det tekniske og det administrative. </p>
+            <p>Teknisk leder og nestleder vil jobbe tett sammen og fordele arbeidsoppgaver mellom seg.</p>
+            <p>Som nestleder vil du også ha ansvaret for innkjøp, vedlikehold og oppbevaring av teknisk utstyr. Du vil ha ansvaret for prosjektplanleggingen på verktøy som confluence og jira og i tilleg ansvaret for å planlegge, kordinere og dokumentere testing av systemer.</p>
             <p><b>Vi ser etter</b></p>
             <ul>
-              <li>Du som har gode lederegenskaper.</li>
-              <li>Du som har stor teknisk interesse for robotikk.</li>
+              <li>Du som har gode sammarbeidsevner og et engasjement rundt ledelse.</li>
+              <li>Du som har stor teknisk interesse for robotikk og gjerne erfaring fra c++ eller ROS (Robot Operating System).</li>
               <li>Du som liker å jobbe med store kompliserte systemer.</li>
               <li>Du som er strukturert, ryddig og organisert.</li>
+              <li>Du som er utadvent og komfortabel med å være en synlig skikkelse i Ascend både innad og utad.</li>
             </ul>
-            <p>Har du spørsmål om denne stillingen kan du kontakte Matias Christensen på <a href={ `mailto:${this.emails[4]}ascendntnu.no` }>{ this.emails[4] }ascendntnu.no</a>.</p>
+            <p>Har du spørsmål om denne stillingen kan du kontakte Kevin Kaldvansvik på <a href={ `mailto:${this.emails[4]}ascendntnu.no` }>{ this.emails[4] }ascendntnu.no</a>.</p>
           </SubSubSection>
-          <SubSubSection titleText="Kommunikasjonsleder">
-            <p>For å lykkes med dette ambisiøse prosjektet er Ascend avhengig av gode samarbeid, både med industri og utdanningsinstitusjoner. Som markedsansvarlig vil du sørge for finansieringen og samarbeidene som bringer Ascend nærmere sine mål. Dette innebærer å oppnå avtaler med nye spennende sponsorer, samt å pleie relasjonene til våre eksisterende samarbeidspartnere. Det innebærer også håndtering av presse og skriving av pressemeldinger. Dette vil du bli kurset i hvis du ikke har erfaring med det fra før. Kommunikasjonsleder har ansvaret for at facebooksiden og internettsiden er vedlikeholdt og oppdatert jevnlig. Dette innebærer å være kreativ og ha gode kommunikasjonsevner.</p>
-            <p>Enda viktigere enn sponsorer og industrisamarbeid, er dyktige og engasjerte studenter. Ascend har som mål å bli en vedvarende studentorganisajon som er godt kjent på NTNU Gløshaugen. Som kommunikasjonsleder har du all friheten til å finne måter å nå ut til studentene på, med konkrete og målbare resultater. Som en relativt nyoppstarta organisasjon (2015) vil du ha betydelig innvirkning på merkevarebyggingen til Ascend. Dette innebærer å skape en kultur utad som inspirer studenter til å drive med forskning og innovasjon på autonome droner.</p>
+          <SubSubSection titleText="Marked og kommunikasjons leder">
+          <p>For å lykkes med dette ambisiøse prosjektet er Ascend avhengig av god markedsføring og kommunikasjon med både bedrifter, organisasjoner og studenter. Du vil som marked og kommunikasjonsleder bestemme hvordan Ascend skal fremstå utad. Du vil planlegge, utføre og teste markedsføringsstrategier både fysisk i Trondheim og online på vår Facebook, Instagram, Snapchat og nettside. Du vil lede marked og kommunikasjonsgruppen og bistå dem med hjelp når det trengs. Du vil måtte håndtere presse og skrive pressemeldinger. Dine arbeidsoppgaver vil være veldig variert og du vil jobbe tett sammen med både styret og din egen gruppe for å ta Ascend til nye høyder. </p>
             <p><b>Vi ser etter</b></p>
             <ul>
-              <li>Du som har interesse for markedsføring både i sosiale og fysiske medier.</li>
+              <li>Du som har stor interesse for markedsføring både i sosiale og fysiske medier.</li>
               <li>Du som er interessert i å skape og pleie relasjoner til samarbeidspartnere og presse.</li>
-              <li>Du som har erfaring med grafikk og/eller web-utvikling (et stort pluss - men ikke et krav).</li>
+              <li>Du som har gode kommunikasjonsevner og interesse for ledelse </li>
               <li>Du som er løsningsorientert, kreativ, ambisiøs, samarbeidsvillig, målrettet og resultatdrevet</li>
             </ul>
-            <p>Har du spørsmål om denne stillingen kan du kontakte Emilie Udnæs på <a href={ `mailto:${this.emails[2]}ascendntnu.no` }>{ this.emails[2] }ascendntnu.no</a>.</p>
+            <p>Har du spørsmål om denne stillingen kan du kontakte Kim Borgen på <a href={ `mailto:${this.emails[2]}ascendntnu.no` }>{ this.emails[2] }ascendntnu.no</a>.</p>
           </SubSubSection>
           <SubSubSection titleText="Økonomiansvarlig">
             <p>Som økonomiansvarlig har du kontroll på organisasjonens ressursbruk. Ascend opererer som I likhet med andre organisasjoner innenfor visse økonomiske rammer, og en pålitelig samt forutsigbar flyt av ressurser kan dermed hjelpe resten av teamet å oppnå sitt fulle potensial.</p>
-            <p>Din oppgave vil hovedsaklig være å forsikre at styret har oversiktlig regnskap, kontobalanse og budsjetter tilgjengelig i forbindelse med avgjørelser for både teknisk og organisatorisk drift. I tillegg vil du ha ansvar for å holde oversikt over interne utlegg, inventar og likviditet, og selvfølgelig sørge for at innkommende fakturaer blir betalt til rett tid.</p>
+            <p>Din oppgave vil hovedsaklig være å forsikre at styret har oversiktlig regnskap, kontobalanse og budsjetter tilgjengelig i forbindelse med avgjørelser for både teknisk og organisatorisk drift. I tillegg vil du ha ansvar for å holde oversikt over interne utlegg, inventar og likviditet, og sørge for at innkommende fakturaer blir betalt til rett tid. Du vil også ha ansvaret for vår interne kiosk.</p>
+            <p>Som økonomiansvarlig vil du også samarbeide mye med sponsoransvarlig og resten av marked og kommunikasjons gruppen.</p>
             <p><b>Vi ser etter</b></p>
             <ul>
               <li>Du som har interesse for økonomi, regnskapsføring og budsjettplanlegging.</li>
               <li>Du som har kunnskap om, eller interesse for å lære om føring av økonomi i organisasjoner.</li>
               <li>Du som har ryddige og oversiktlige arbeidsmetoder.</li>
             </ul>
-            <p>Har du spørsmål om denne stillingen kan du kontakte Simon Blindheim på <a href={ `mailto:${this.emails[3]}ascendntnu.no` }>{ this.emails[3] }ascendntnu.no</a>.</p>
+            <p>Har du spørsmål om denne stillingen kan du kontakte Truls Olsen på <a href={ `mailto:${this.emails[3]}ascendntnu.no` }>{ this.emails[3] }ascendntnu.no</a>.</p>
           </SubSubSection>
+          <h2>Gruppeledere: </h2>
+          <p>Som gruppeleder vil du lede en teknisk gruppe på 4-6 personer, ha ansvaret for å planlegge arbeid og sørge for at arbeid blir gjennomført. Du vil også jobbe tett sammen med tekniske ledere og andre gruppeledere.</p>
+          <SubSubSection titleText="Gruppeleder i Perception (datasyn)">
+            <p>I perception gruppen jobber vi med moderne og avanserte algoritmer innen datasyn og visuell databehandling. Her kan du få mulighet til å prøve deg på cutting edge "deep learning" og visuell databehandling.
+            Ellers handler det rett og slett om å være kreativ med å finne løsninger som kan tolke inputdata fra kameraer, lidar, andre sensorer og prosessere den slik at dronen kan tolke miljøet den befinner seg i.
+            Som gruppeleder vil du være ansvarlig for å holde gruppen din motivert og kreativ, ha oversikt på det tekniske arbeidet i din gruppe og ha god kontakt med andre tekniske gruppeledere. </p>
+            <i className="key-words">Stikkord: Datasyn, Visuell databehandling, Deep Learning, Kunstig Intelligens programmering, filtrering, Kalmanfilter,Sensorikk, Visuell odometri</i>
+            <p>Har du spørsmål om denne stillingen kan du kontakte Ulrich Isacsen på <a href={ `mailto:${this.emails[5]}ascendntnu.no` }>{ this.emails[5] }ascendntnu.no</a>.</p>
+          </SubSubSection>
+          <SubSubSection titleText="Gruppeleder i Control">
+            <p>Som gruppeleder i Control blir det din oppgave å lede gruppen gjennom utviklingen av avanserte systemer for styring av dronen. 
+                Control jobber med alt fra reguleringssytemene som får dronen til å være stabil gjennom avanserte
+                manøvre, til høynivå veiplanlegging (path planning) og hindringsunngåelse (obstacle avoidance). Systemene må være
+                robuste og håndtere feil underveis på en trygg og forutsigbar måte. Å være teknisk gruppeleder i Control er en fantastisk mulighet til å lære mer om praktisk systemutvikling, teamarbeid og gruppeledese! </p>
+
+            <i>Stikkord: Reguleringsteknikk, systemutvikling, C/C++, ROS, Navigasjon, Path Planning, Obstacle Avoidance, Tilstandsmaskiner, Git </i>
+            <p>Har du spørsmål om denne stillingen kan du kontakte Håvard Mellbye på <a href={ `mailto:${this.emails[6]}ascendntnu.no` }>{ this.emails[6] }ascendntnu.no</a>.</p>
+          </SubSubSection>
+          <SubSubSection titleText="Gruppeleder i Hardware">
+            <p>Hardware gruppen i Ascend bygger og designer dronene til Ascend. Som leder for denne gruppen vil du ha hovedansvar for det mekaniske og elektriske systemet til dronene. Dette innebærer at du får innsikt i alt fra CFD og styrkeanalyser til kretskortdesign og produksjon, i tillegg til å designe dronen selv. Som leder må du koordinere med de andre tekniske gruppelederne i Ascend for å integrere sensorikk og datamaskiner ombord. Det er en fordel om du har tidligere erfaring med RC-utstyr eller stor interesse for det. </p>
+            <i>Stikkord: CAD, 3D-print, Styrke og CFD analyser, Krets design, droneflyving, dronebygging og produsering av diverse komponenter.</i>
+            <p>Har du spørsmål om denne stillingen kan du kontakte Filip Lolland på <a href={ `mailto:${this.emails[7]}ascendntnu.no` }>{ this.emails[7] }ascendntnu.no</a>.</p>
+          </SubSubSection>
+          
+          <SubSubSection titleText="Gruppeleder i Artificial Intelligence (AI)">
+            <p>"Hva skal dronen gjøre, og hvorfor er det lurt?" I AI gruppen jobber du med den overordnede kunstige intelligensen (AI) til dronen. Det er gruppen sitt ansvar å  produsere en AI som kan analysere informasjonen om verden rundt seg og gjennom dette skal den kunne ta beslutninger på egen hånd og gjerne det smarteste valget.  
+            AI er et stort og viktig fagfelt for tiden og som leder i AI gruppen for du være med på hele prosessen fra research i  "state of the art" teknologi til implementering og testing av algoritmen i praksis. Her får du mulighet til å jobbe med et bredt spekter av AI algoritmer samt få erfaring i å ta noe veldig teoretisk og få det til å funke i den virkelige verden. 
+            Som gruppeleder får du også mye erfaring i samarbeid og utfordringene som kommer med samkjøring av store mengder kode utviklet av over 20 programmere samt god innsikt i hva de andre gruppene i Ascend NTNU jobber med. </p>
+            <i>Stikkord: Kunstig Intelligens Programmering, Maskinlæring, Deep Learning, Reinforcement Learning, Algoritmer og Datastrukturer, Statistikk. </i>
+            <p>Har du spørsmål om denne stillingen kan du kontakte Rasmus Munter på <a href={ `mailto:${this.emails[8]}ascendntnu.no` }>{ this.emails[8] }ascendntnu.no</a>.</p>
+          </SubSubSection>
+          
+          
+          
         </SubSection>
       ]
     }
@@ -166,17 +208,16 @@ export class JoinPage extends Component {
       'no': [
         <Section titleText="Nå nye høyder - Søk Ascend!" key="1">
           <img src="/images/teams/2017/ascend-group-2017.jpg" alt="Group 2017" className="fullscale-image" />
-          <p style={{fontSize: '1.4em'}}><b>Søknadsfrist 1. september kl. 23:59</b></p>
-          <p style={{fontSize: '1.4em', marginTop:"0px"}}><a href="https://www.facebook.com/events/675218906021421">Bli med på infomøte 31. August 16:15 i <del>EL3</del>S4</a></p>
+          <p style={{fontSize: '1.4em'}}><b>Søknadsfrist 15. april kl. 23:59</b></p>
           <p>Ønsker du å være med på å drive med cutting-edge droneteknologi i en ambisiøs og teknologi-fokusert studentorganisasjon?</p>
           <p>Tidligere erfaring er ikke et krav for å bli med i Ascend. Det viktigste er å ha en interesse for det vi jobber med, og en interesse for å lære.</p>
-          <a className="button active" style={ { alignSelf: 'flex-start' } } href="https://docs.google.com/forms/d/e/1FAIpQLSe2ieI86nG7RXWN12PTOT08pbPO9zJoaO2Xmq0IjTLKsdGuAA/viewform">Søk her!</a><h4><a href="http://ascendntnu.us14.list-manage2.com/subscribe?u=dfce303a41ce42b342c75a3ef&amp;id=002e04db12" target="_blank" rel="noopener noreferrer">Interesseliste for opptak. Søknadskjema kommer veldig snart!</a></h4>*/}
-          {positions[this.state.language][0]}
+          <a className="button active" style={ { alignSelf: 'flex-start', display: 'none' } } href="https://docs.google.com/forms/d/e/1FAIpQLSe2ieI86nG7RXWN12PTOT08pbPO9zJoaO2Xmq0IjTLKsdGuAA/viewform">Søk her!</a><h4><a href="http://ascendntnu.us14.list-manage2.com/subscribe?u=dfce303a41ce42b342c75a3ef&amp;id=002e04db12" target="_blank" rel="noopener noreferrer">Interesseliste for opptak. Søknadskjema kommer veldig snart!</a></h4>
+          {positions[this.state.language][1]}
           <i>Det er kun studenter som studerer på NTNU i året 2017/2018 som kan søke. Er du usikker på om dette gjelder for deg? Spør oss på <a href="mailto:hi@ascendntnu.no">hi@ascendntnu.no</a></i>
           <SubSection titleText="Hvorfor søke">
             <ul>
               <li><strong>Bli en del av et miljø.</strong> I Ascend blir du en del av et målrettet og teknologifokusert prosjekt der vi jobber sammen for å nå våre mål. </li>
-              <li><strong>Fra teori til praksis.</strong> I Ascend tar man noen av de mest avanserte konseptene man lærer på NTNU fra lærebøkene til virkeligheten.</li>
+              <li><strong>Fra teori til praksis.</strong> I Ascend tar man noen av de mest avanserte konseptene man lærer på NTNU fra lærebøkene ut til virkeligheten.</li>
               <li><strong>Kombiner med graden din.</strong> Flere av medlemmene våre skriver prosjekt/master-oppgave relatert til Ascend. I tillegg finnes det en åpning for å drive med Ascend i Eksperter i Team.</li>
               <li><strong>Prosjekt/organisasjons-erfaring.</strong> I Ascend er du med på å føre et teknisk prosjekt fra start til slutt - dette gir mye verdifull erfaring og kompetanse på veien.</li>
               <li><strong>Cutting edge.</strong> Bli en del av en organisasjon som må ta i bruk og utvikle teknologi som er state of the art innenfor autonom robotikk. </li>
@@ -268,7 +309,7 @@ export class JoinPage extends Component {
         {/*<div style={ { textAlign: 'right', marginTop: '-1.8em' } } className="page-container">
           <Link className="button" to={`/join${languageURL}`}>{languageNames[nextLanguage]}</Link>
         </div>*/}
-        {contents[this.state.language][1]}
+        {contents[this.state.language][0]}
         {about[this.state.language]}
       </div>
     )
