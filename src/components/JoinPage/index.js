@@ -226,7 +226,7 @@ export class JoinPage extends Component {
           <SubSection titleText='Hvorfor søke'>
             <ul>
               <li><strong>Bli en del av et miljø.</strong> I Ascend blir du en del av et målrettet og teknologifokusert prosjekt der vi jobber sammen for å nå våre mål. </li>
-              <li><strong>Fra teori til praksis.</strong> I Ascend tar man noen av de mest avanserte konseptene man lærer på NTNU fra lærebøkene til virkeligheten.</li>
+              <li><strong>Fra teori til praksis.</strong> I Ascend tar man noen av de mest avanserte konseptene man lærer på NTNU fra lærebøkene ut til virkeligheten.</li>
               <li><strong>Kombiner med graden din.</strong> Flere av medlemmene våre skriver prosjekt/master-oppgave relatert til Ascend. I tillegg finnes det en åpning for å drive med Ascend i Eksperter i Team.</li>
               <li><strong>Prosjekt/organisasjons-erfaring.</strong> I Ascend er du med på å føre et teknisk prosjekt fra start til slutt - dette gir mye verdifull erfaring og kompetanse på veien.</li>
               <li><strong>Cutting edge.</strong> Bli en del av en organisasjon som må ta i bruk og utvikle teknologi som er state of the art innenfor autonom robotikk. </li>
