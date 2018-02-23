@@ -17,3 +17,8 @@
   logo_dark: /public/assets/flir.png
   short_text: FLIR UAS is an international, knowledge-based group that develop and build the worlds most advanced Personal Reconnaissance System.
 
+- name: Falk Nordic
+  link: https://www.falknordic.no
+  logo: /public/assets/falk_dark.png
+  logo_dark: /public/assets/falk.png
+  short_text: Falk Nordic is a leading advertising and profiling company in Norway with many years experience in the business.
