@@ -488,7 +488,7 @@ function prerender(req, data) {
     <title>Ascend NTNU - ${data.title}</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="${data.desc}" />
     <meta name="keywords" content="Ascend, NTNU, robotics, autonomus, team, IARC, international, aerial, robotics, competition, AI" />
     <meta name="author" content="Ascend NTNU" />
@@ -515,10 +515,8 @@ function prerender(req, data) {
     <link rel="apple-touch-icon" href="/images/logo/ascend-logo-social.jpg" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" />
     <link rel="stylesheet" href="/node_modules/katex/dist/katex.min.css" />
-    <link rel="stylesheet" href="/styles/main.css" />
-    <script defer src="/node_modules/react/dist/react.js"></script>
-    <script defer src="/node_modules/react-dom/dist/react-dom.js"></script>
-    <script defer src="/dist/bundle.js"></script>
+    <link rel="stylesheet" href="/static/css/main.css" />
+    <script defer src="/static/js/main.js"></script>
     <script type="application/ld+json">
     {
       "@context": "http://schema.org/",
