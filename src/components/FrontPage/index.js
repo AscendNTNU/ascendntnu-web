@@ -7,8 +7,7 @@ import SponsorList from '../Common/sponsorlist'
 import { Section } from '../PageLayout'
 
 export class FrontPage extends Component {
-
-  render () {
+  render() {
     return (
       <div className="page page-front">
         {/*<Announcement titleText="Vi har nå opptak!">

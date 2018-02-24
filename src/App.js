@@ -42,58 +42,89 @@ export class App extends Component {
   toggleMenu() {
     this.setState({
       showMenu: !this.state.showMenu,
-      theme: this.state.theme
+      theme: this.state.theme,
     })
 
-    if (this.state.showMenu)
-      document.body.classList.remove('no-scroll')
-    else
-      document.body.classList.add('no-scroll')
+    if (this.state.showMenu) document.body.classList.remove('no-scroll')
+    else document.body.classList.add('no-scroll')
   }
 
-  changeTheme (evt) {
+  changeTheme(evt) {
     try {
-      localStorage['theme'] = localStorage['theme'] === 'dark' ? 'light' : 'dark'
+      localStorage['theme'] =
+        localStorage['theme'] === 'dark' ? 'light' : 'dark'
       this.setState({
         showMenu: this.state.showMenu,
-        theme: localStorage['theme']
+        theme: localStorage['theme'],
       })
     } catch (ex) {
       this.setState({
         showMenu: this.state.showMenu,
-        theme: this.state.theme === 'dark' ? 'light' : 'dark'
+        theme: this.state.theme === 'dark' ? 'light' : 'dark',
       })
     }
   }
 
-  gotoTop (args) {
+  gotoTop(args) {
     document.querySelector('body').scrollTop = 0
     document.querySelector('#app').scrollTop = 0
-  
-    const [ first, ...rest ] = args.location.pathname.slice(1) || 'home'
+
+    const [first, ...rest] = args.location.pathname.slice(1) || 'home'
     document.title = 'Ascend NTNU - ' + first.toUpperCase() + rest
   }
 
-  render () {
+  render() {
     return (
-      <div className={'app' + (this.state.showMenu ? ' menu-visible' : '') + (this.state.theme === 'dark' ? ' dark-theme' : '')}>
-          <Header toggleMenuHandler={this.toggleMenu.bind(this)} toggle={this.state.showMenu} />
-          <Switch>
-            <Route exact path="/" component={FrontPage} onEnter={this.gotoTop} />
-            <Route path="/about" component={AboutPage} onEnter={this.gotoTop} />
-            <Route path="/blog" component={BlogPage} onEnter={this.gotoTop} />
-            <Route path="/blog/tags/:tags?" component={BlogPage} />
-            <Route path="/blog/:post" component={BlogPage} />
-            <Route path="/contact" component={ContactPage} onEnter={this.gotoTop} />
-            <Route path="/cv/:key?" component={CVPage} onEnter={this.gotoTop} />
-            <Route path="/drones" component={DronePage} onEnter={this.gotoTop} />
-            <Route path="/join/:language?" component={JoinPage} onEnter={this.gotoTop} />
-            <Route path="/missions" component={MissionPage} onEnter={this.gotoTop} />
-            <Route path="/sponsors/:year?" component={SponsorPage} onEnter={this.gotoTop} />
-            <Route path="/team/:year?" component={TeamPage} onEnter={this.gotoTop} />
-          </Switch>
-          <ToTopButton />
-          <Footer changeTheme={this.changeTheme.bind(this)} theme={this.state.theme} />
+      <div
+        className={
+          'app' +
+          (this.state.showMenu ? ' menu-visible' : '') +
+          (this.state.theme === 'dark' ? ' dark-theme' : '')
+        }
+      >
+        <Header
+          toggleMenuHandler={this.toggleMenu.bind(this)}
+          toggle={this.state.showMenu}
+        />
+        <Switch>
+          <Route exact path="/" component={FrontPage} onEnter={this.gotoTop} />
+          <Route path="/about" component={AboutPage} onEnter={this.gotoTop} />
+          <Route path="/blog" component={BlogPage} onEnter={this.gotoTop} />
+          <Route path="/blog/tags/:tags?" component={BlogPage} />
+          <Route path="/blog/:post" component={BlogPage} />
+          <Route
+            path="/contact"
+            component={ContactPage}
+            onEnter={this.gotoTop}
+          />
+          <Route path="/cv/:key?" component={CVPage} onEnter={this.gotoTop} />
+          <Route path="/drones" component={DronePage} onEnter={this.gotoTop} />
+          <Route
+            path="/join/:language?"
+            component={JoinPage}
+            onEnter={this.gotoTop}
+          />
+          <Route
+            path="/missions"
+            component={MissionPage}
+            onEnter={this.gotoTop}
+          />
+          <Route
+            path="/sponsors/:year?"
+            component={SponsorPage}
+            onEnter={this.gotoTop}
+          />
+          <Route
+            path="/team/:year?"
+            component={TeamPage}
+            onEnter={this.gotoTop}
+          />
+        </Switch>
+        <ToTopButton />
+        <Footer
+          changeTheme={this.changeTheme.bind(this)}
+          theme={this.state.theme}
+        />
       </div>
     )
   }
