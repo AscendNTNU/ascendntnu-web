@@ -40,7 +40,7 @@
     "cors": "^2.8.4",
     "css-loader": "0.28.7",
     "dotenv": "^4.0.0",
-    "dotenv-expand": "^4.0.1",
+    "dotenv-expand": "^4.2.0",
     "es6-promise": "^4.2.4",
     "eslint": "4.10.0",
     "eslint-config-react-app": "^2.1.0",
