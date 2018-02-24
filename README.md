@@ -1,6 +1,8 @@
 # Webpage for [AscendNTNU](http://ascendntnu.no)
 
 [![Build Status](https://drone.ascendntnu.no/api/badges/AscendNTNU/ascendntnu-web/status.svg)](https://drone.ascendntnu.no/AscendNTNU/ascendntnu-web)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+
 
 This is the webpage for Ascend NTNU.
 
