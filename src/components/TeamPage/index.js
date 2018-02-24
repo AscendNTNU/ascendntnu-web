@@ -35,8 +35,9 @@ export class TeamPage extends Component {
       'Hardware': 'The hardware group is responsible for the design of the drone. Material choice, strength calculations, electrical, aerodynamics, propulsion and production.',
     }
 
-    if (props.match.params && props.match.params.year)
+    if (props.match.params && props.match.params.year) {
       year = props.match.params.year
+    }
 
     this.state = {
       year: year,
@@ -81,7 +82,7 @@ export class TeamPage extends Component {
    * 
    * @memberOf TeamPage
    */
-  changeTeam(evt) {
+  changeTeam (evt) {
     this.getMembers(parseInt(evt.target.dataset.year, 10))
   }
 
@@ -95,52 +96,51 @@ export class TeamPage extends Component {
   getMembers (year) {
     let setup = process.env.NODE_ENV === 'production' ? {} : { mode: 'cors' }
 
-      fetch(`${API_URL}/members/${year}`, setup).then(r => r.json()).then(r => {
-        if (r !== null) {
-          let groups = []
-          r.forEach((m, i) => {
-            let g = m.group.split(/, ?/)
-            for (let i = 0; i < g.length; i++) {
-              if (groups.indexOf(g[i]) === -1)
-                groups.push(g[i])
+    fetch(`${API_URL}/members/${year}`, setup).then(r => r.json()).then(r => {
+      if (r !== null) {
+        let groups = []
+        r.forEach((m, i) => {
+          let g = m.group.split(/, ?/)
+          for (let i = 0; i < g.length; i++) {
+            if (groups.indexOf(g[i]) === -1)
+              groups.push(g[i])
+          }
+        })
+
+
+        this.setState({
+          year: year,
+          grouping: this.groupings[year],
+          members: r.sort((a, b) => {
+            return a.name > b.name ? 1 : -1
+          }),
+          groups: groups.sort((a, b) => {
+            if (a.toLowerCase() === "board") {
+              return -1
             }
-          })
-
-
-          this.setState({
-            year: year,
-            grouping: this.groupings[year],
-            members: r.sort((a, b) => {
-              return a.name > b.name ? 1 : -1
-            }),
-            groups: groups.sort((a, b) => {
-              if (a.toLowerCase() === "board") {
-                return -1
-              }
-              if (a.toLowerCase() === "coach") {
+            if (a.toLowerCase() === "coach") {
+              return 1
+            }
+            if (b.toLowerCase() === "board") {
                 return 1
-              }
-              if (b.toLowerCase() === "board") {
-                  return 1
-              }
-              if (b.toLowerCase() === "coach") {
-                  return -1
-              }
+            }
+            if (b.toLowerCase() === "coach") {
+                return -1
+            }
 
-              return a.toLowerCase() > b.toLowerCase() ? 1 : -1
-            })
+            return a.toLowerCase() > b.toLowerCase() ? 1 : -1
           })
-        }
-        else {
-          this.setState({
-            year: year,
-            grouping: this.groupings[year],
-            members: [],
-            groups: [],
-          })
-        }
-      })
-
+        })
+      }
+      else {
+        this.setState({
+          year: year,
+          grouping: this.groupings[year],
+          members: [],
+          groups: [],
+        })
+      }
+    })
   }
 
   /**
@@ -268,7 +268,7 @@ export class TeamPage extends Component {
                 <div>
                   <NavLink to="/team/2016" activeClassName="active"><button>2016</button></NavLink>
                   <NavLink to="/team/2017" activeClassName="active"><button>2017</button></NavLink>
-                  <NavLink to="/team/2018" activeClassName="active"><button className={this.props.match.isExact ? 'active' : ''}>2018</button></NavLink>
+                  <NavLink to="/team/2018" activeClassName="active"><button className={!this.props.match.params.year ? 'active' : '' }>2018</button></NavLink>
                 </div>
               </div>
           </SubSection>
