@@ -22,10 +22,10 @@ export class JoinPage extends Component {
       'kim.borgen',
       'truls.olsen',
       'kevin.kaldvansvik',
-      'ulrich.isachsen@ascendntnu.no',
-      'havard.mellbye@ascendntnu.no',
-      'filip.lolland@ascendntnu.no',
-      'rasmus.munter@ascendntnu.no'
+      'ulrich.isachsen',
+      'havard.mellbye',
+      'filip.lolland',
+      'rasmus.munter'
     ].map((e) => `${e}@`)
 
     this.state = {
