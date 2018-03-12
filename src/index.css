@@ -175,6 +175,19 @@ input[type="submit"].active,
     box-sizing: border-box;
 }
 
+.yellow-background {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    background-color: #f80;
+    margin: 0;
+    padding: 0;
+    text-shadow: none;
+    color: #eee;
+
+}
+
 .nav-bar .dropdown .toggle-menu {
     display: inline-block;
     padding: 0;

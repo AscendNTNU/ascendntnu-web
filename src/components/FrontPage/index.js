@@ -18,6 +18,11 @@ export class FrontPage extends Component {
         <Splash />
         {/*<Section titleText="History of Ascend NTNU" className="centered" />
         <HistoryViewer />*/}
+        <a href="join">
+          <div className="yellow-background">
+            <h1>Join the board, apply before April 15th</h1>
+          </div>
+        </a>
         <Section titleText="Our sponsors" className="centered">
           <SponsorList />
         </Section>
