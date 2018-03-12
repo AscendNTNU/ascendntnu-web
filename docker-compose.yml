@@ -15,7 +15,7 @@ services:
     working_dir: /srv/ascend
 
   dev:
-    image: node:6
+    build: .
     command: npm start
     environment:
       - NODE_ENV
@@ -40,7 +40,7 @@ services:
     tty: true
 
   api:
-    image: registry.ascendntnu.no/web-api:2.0
+    build: apiv2
     command: python3 manage.py runserver 0.0.0.0:8000
     depends_on:
       - db
