@@ -9,7 +9,7 @@ from django.db.models.functions import Greatest
 class MemberList(generics.ListCreateAPIView):
     queryset = Member.objects.all()
     serializer_class = MemberSerializer
-    http_method_names = ['get']
+    http_method_names = ['get', 'post']
 
 
 class SponsorList(generics.ListCreateAPIView):
@@ -19,13 +19,13 @@ class SponsorList(generics.ListCreateAPIView):
 
 class HistoryList(generics.ListCreateAPIView):
     serializer_class = HistorySerializer
-    http_method_names = ['get']
+    http_method_names = ['get', 'post']
     queryset = History.objects.all()
 
 
 class MemberListWithYear(generics.ListCreateAPIView):
     serializer_class = MemberSerializer
-    http_method_names = ['get']
+    http_method_names = ['get', 'post']
 
     def get_queryset(self):
 
