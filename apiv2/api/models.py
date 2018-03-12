@@ -37,7 +37,7 @@ class Member(models.Model):
     group = models.CharField(max_length=100)
     image = models.CharField(max_length=100)
     mail = models.CharField(max_length=100)
-    active_member = models.BooleanField()
+    active_member = models.BooleanField(default=True)
     search_vector = SearchVectorField(null=True)
 
     objects = MemberManager()

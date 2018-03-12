@@ -15,17 +15,18 @@ class MemberList(generics.ListCreateAPIView):
 class SponsorList(generics.ListCreateAPIView):
     queryset = Sponsor.objects.all()
     serializer_class = SponsorSerializer
+    http_method_names = ['get']
 
 
 class HistoryList(generics.ListCreateAPIView):
     serializer_class = HistorySerializer
-    http_method_names = ['get', 'post']
+    http_method_names = ['get']
     queryset = History.objects.all()
 
 
 class MemberListWithYear(generics.ListCreateAPIView):
     serializer_class = MemberSerializer
-    http_method_names = ['get', 'post']
+    http_method_names = ['get']
 
     def get_queryset(self):
 

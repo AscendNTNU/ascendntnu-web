@@ -5,7 +5,7 @@ from rest_framework import serializers
 class MemberSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Member
-        fields = ('name', 'background', 'role', 'group', 'image', 'mail')
+        fields = ('year', 'name', 'background', 'role', 'group', 'image', 'mail')
 
 
 class SponsorSerializer(serializers.HyperlinkedModelSerializer):
