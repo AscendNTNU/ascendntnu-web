@@ -71,7 +71,6 @@ export class App extends Component {
 
     //const [first, ...rest] = args.location.pathname.slice(1) || 'home'
     //document.title = 'Ascend NTNU - ' + first.toUpperCase() + rest
-    console.log("Changing")
   }
 
   render() {
@@ -91,7 +90,6 @@ export class App extends Component {
           <Route exact path="/" 
             render={(props) => {
               this.gotoTop()
-              console.log("testing")
               return <FrontPage {...props}/>
             }} 
           />
@@ -99,7 +97,6 @@ export class App extends Component {
             path="/about" 
             render={(props) => {
               this.gotoTop()
-              console.log("testing")
               return <AboutPage {...props}/>
             }} 
           />
@@ -107,7 +104,6 @@ export class App extends Component {
             path="/blog" 
             render={(props) => {
               this.gotoTop()
-              console.log("testing")
               return <BlogPage {...props}/>
             }} 
           />
@@ -115,7 +111,6 @@ export class App extends Component {
             path="/blog/tags/:tags?" 
             render={(props) => {
               this.gotoTop()
-              console.log("testing")
               return <BlogPage {...props}/>
             }} 
           />
@@ -123,7 +118,6 @@ export class App extends Component {
             path="/blog/:post" 
             render={(props) => {
               this.gotoTop()
-              console.log("testing")
               return <BlogPage {...props}/>
             }}
           />
@@ -131,7 +125,6 @@ export class App extends Component {
             path="/contact"
             render={(props) => {
               this.gotoTop()
-              console.log("testing")
               return <ContactPage {...props}/>
             }}
           />
@@ -139,7 +132,6 @@ export class App extends Component {
             path="/cv/:key?" 
             render={(props) => {
               this.gotoTop()
-              console.log("testing")
               return <CVPage {...props}/>
             }} 
           />
@@ -147,7 +139,6 @@ export class App extends Component {
             path="/drones"
             render={(props) => {
               this.gotoTop()
-              console.log("testing")
               return <DronePage {...props}/>
             }} 
           />
@@ -156,7 +147,6 @@ export class App extends Component {
             //component={JoinPage}
             render={(props) => {
               this.gotoTop()
-              console.log("testing")
               return <JoinPage {...props}/>
             }}
           />
@@ -164,7 +154,6 @@ export class App extends Component {
             path="/missions"
             render={(props) => {
               this.gotoTop()
-              console.log("testing")
               return <MissionPage {...props}/>
             }}
           />
@@ -172,7 +161,6 @@ export class App extends Component {
             path="/sponsors/:year?"
             render={(props) => {
               this.gotoTop()
-              console.log("testing")
               return <SponsorPage {...props}/>
             }}
           />
@@ -180,7 +168,6 @@ export class App extends Component {
             path="/team/:year?"
             render={(props) => {
               this.gotoTop()
-              console.log("testing")
               return <TeamPage {...props}/>
             }}
           />
