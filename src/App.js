@@ -69,8 +69,9 @@ export class App extends Component {
     document.querySelector('body').scrollTop = 0
     document.querySelector('#app').scrollTop = 0
 
-    const [first, ...rest] = args.location.pathname.slice(1) || 'home'
-    document.title = 'Ascend NTNU - ' + first.toUpperCase() + rest
+    //const [first, ...rest] = args.location.pathname.slice(1) || 'home'
+    //document.title = 'Ascend NTNU - ' + first.toUpperCase() + rest
+    console.log("Changing")
   }
 
   render() {
@@ -87,37 +88,101 @@ export class App extends Component {
           toggle={this.state.showMenu}
         />
         <Switch>
-          <Route exact path="/" component={FrontPage} onEnter={this.gotoTop} />
-          <Route path="/about" component={AboutPage} onEnter={this.gotoTop} />
-          <Route path="/blog" component={BlogPage} onEnter={this.gotoTop} />
-          <Route path="/blog/tags/:tags?" component={BlogPage} />
-          <Route path="/blog/:post" component={BlogPage} />
+          <Route exact path="/" 
+            render={(props) => {
+              this.gotoTop()
+              console.log("testing")
+              return <FrontPage {...props}/>
+            }} 
+          />
+          <Route 
+            path="/about" 
+            render={(props) => {
+              this.gotoTop()
+              console.log("testing")
+              return <AboutPage {...props}/>
+            }} 
+          />
+          <Route 
+            path="/blog" 
+            render={(props) => {
+              this.gotoTop()
+              console.log("testing")
+              return <BlogPage {...props}/>
+            }} 
+          />
+          <Route 
+            path="/blog/tags/:tags?" 
+            render={(props) => {
+              this.gotoTop()
+              console.log("testing")
+              return <BlogPage {...props}/>
+            }} 
+          />
+          <Route 
+            path="/blog/:post" 
+            render={(props) => {
+              this.gotoTop()
+              console.log("testing")
+              return <BlogPage {...props}/>
+            }}
+          />
           <Route
             path="/contact"
-            component={ContactPage}
-            onEnter={this.gotoTop}
+            render={(props) => {
+              this.gotoTop()
+              console.log("testing")
+              return <ContactPage {...props}/>
+            }}
           />
-          <Route path="/cv/:key?" component={CVPage} onEnter={this.gotoTop} />
-          <Route path="/drones" component={DronePage} onEnter={this.gotoTop} />
+          <Route 
+            path="/cv/:key?" 
+            render={(props) => {
+              this.gotoTop()
+              console.log("testing")
+              return <CVPage {...props}/>
+            }} 
+          />
+          <Route 
+            path="/drones"
+            render={(props) => {
+              this.gotoTop()
+              console.log("testing")
+              return <DronePage {...props}/>
+            }} 
+          />
           <Route
             path="/join/:language?"
-            component={JoinPage}
-            onEnter={this.gotoTop}
+            //component={JoinPage}
+            render={(props) => {
+              this.gotoTop()
+              console.log("testing")
+              return <JoinPage {...props}/>
+            }}
           />
           <Route
             path="/missions"
-            component={MissionPage}
-            onEnter={this.gotoTop}
+            render={(props) => {
+              this.gotoTop()
+              console.log("testing")
+              return <MissionPage {...props}/>
+            }}
           />
           <Route
             path="/sponsors/:year?"
-            component={SponsorPage}
-            onEnter={this.gotoTop}
+            render={(props) => {
+              this.gotoTop()
+              console.log("testing")
+              return <SponsorPage {...props}/>
+            }}
           />
           <Route
             path="/team/:year?"
-            component={TeamPage}
-            onEnter={this.gotoTop}
+            render={(props) => {
+              this.gotoTop()
+              console.log("testing")
+              return <TeamPage {...props}/>
+            }}
           />
         </Switch>
         <ToTopButton />
