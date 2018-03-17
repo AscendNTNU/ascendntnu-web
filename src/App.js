@@ -74,8 +74,9 @@ export class App extends Component {
   }
 
   // Switches page and goes to top on the new page
-  switchPage(props, Component) {
+  switchPage(props, Component, title = '') {
     this.gotoTop()
+    document.title = 'Ascend NTNU' + (title ? ' - ' + title : '');
     return <Component {...props} />
   }
 
@@ -98,47 +99,47 @@ export class App extends Component {
           />
           <Route 
             path="/about" 
-            render={(props) => this.switchPage(props, AboutPage)} 
+            render={(props) => this.switchPage(props, AboutPage, 'About us')} 
           />
           <Route 
             path="/blog" 
-            render={(props) => this.switchPage(props, BlogPage)} 
+            render={(props) => this.switchPage(props, BlogPage, 'Blog')} 
           />
           <Route 
             path="/blog/tags/:tags?" 
-            render={(props) => this.switchPage(props, BlogPage)} 
+            render={(props) => this.switchPage(props, BlogPage, 'Blog')} 
           />
           <Route 
             path="/blog/:post" 
-            render={(props) => this.switchPage(props, BlogPage)}
+            render={(props) => this.switchPage(props, BlogPage, 'Blog')}
           />
           <Route
             path="/contact"
-            render={(props) => this.switchPage(props, ContactPage)}
+            render={(props) => this.switchPage(props, ContactPage, 'Contact us')}
           />
           <Route 
             path="/cv/:key?" 
-            render={(props) => this.switchPage(props, CVPage)} 
+            render={(props) => this.switchPage(props, CVPage, 'CV')} 
           />
           <Route 
             path="/drones"
-            render={(props) => this.switchPage(props, DronePage)} 
+            render={(props) => this.switchPage(props, DronePage, 'Drones')} 
           />
           <Route
             path="/join/:language?"
-            render={(props) => this.switchPage(props, JoinPage)}
+            render={(props) => this.switchPage(props, JoinPage, 'Join us')}
           />
           <Route
             path="/missions"
-            render={(props) => this.switchPage(props, MissionPage)}
+            render={(props) => this.switchPage(props, MissionPage, 'Missions')}
           />
           <Route
             path="/sponsors/:year?"
-            render={(props) => this.switchPage(props, SponsorPage)}
+            render={(props) => this.switchPage(props, SponsorPage, 'Sponsors')}
           />
           <Route
             path="/team/:year?"
-            render={(props) => this.switchPage(props, TeamPage)}
+            render={(props) => this.switchPage(props, TeamPage, 'Team')}
           />
         </Switch>
         <ToTopButton />
