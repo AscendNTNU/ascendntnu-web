@@ -68,9 +68,6 @@ export class App extends Component {
   gotoTop(args) {
     document.querySelector('body').scrollTop = 0
     document.querySelector('#app').scrollTop = 0
-
-    //const [first, ...rest] = args.location.pathname.slice(1) || 'home'
-    //document.title = 'Ascend NTNU - ' + first.toUpperCase() + rest
   }
 
   // Switches page and goes to top on the new page
