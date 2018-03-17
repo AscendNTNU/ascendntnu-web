@@ -6,6 +6,8 @@ import SponsorList from '../Common/sponsorlist'
 //import { HistoryViewer } from '../Common/historyViewer'
 import { Section } from '../PageLayout'
 
+import { Link } from 'react-router-dom'
+
 export class FrontPage extends Component {
   render() {
     return (
@@ -18,11 +20,11 @@ export class FrontPage extends Component {
         <Splash />
         {/*<Section titleText="History of Ascend NTNU" className="centered" />
         <HistoryViewer />*/}
-        <a href="join">
+        <Link to="/join">
           <div className="yellow-background">
             <h1>Join the board, apply before April 15th</h1>
           </div>
-        </a>
+        </Link>
         <Section titleText="Our sponsors" className="centered">
           <SponsorList />
         </Section>
