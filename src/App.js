@@ -126,7 +126,6 @@ export class App extends Component {
           />
           <Route
             path="/join/:language?"
-            //component={JoinPage}
             render={(props) => this.switchPage(props, JoinPage)}
           />
           <Route
