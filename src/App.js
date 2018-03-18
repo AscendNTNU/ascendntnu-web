@@ -73,6 +73,12 @@ export class App extends Component {
     //document.title = 'Ascend NTNU - ' + first.toUpperCase() + rest
   }
 
+  // Switches page and goes to top on the new page
+  switchPage(props, Component) {
+    this.gotoTop()
+    return <Component {...props} />
+  }
+
   render() {
     return (
       <div
@@ -89,86 +95,74 @@ export class App extends Component {
         <Switch>
           <Route exact path="/" 
             render={(props) => {
-              this.gotoTop()
-              return <FrontPage {...props}/>
+              return this.switchPage(props, FrontPage)
             }} 
           />
           <Route 
             path="/about" 
             render={(props) => {
-              this.gotoTop()
-              return <AboutPage {...props}/>
+              return this.switchPage(props, AboutPage)
             }} 
           />
           <Route 
             path="/blog" 
             render={(props) => {
-              this.gotoTop()
-              return <BlogPage {...props}/>
+              return this.switchPage(props, BlogPage)
             }} 
           />
           <Route 
             path="/blog/tags/:tags?" 
             render={(props) => {
-              this.gotoTop()
-              return <BlogPage {...props}/>
+              return this.switchPage(props, BlogPage)
             }} 
           />
           <Route 
             path="/blog/:post" 
             render={(props) => {
-              this.gotoTop()
-              return <BlogPage {...props}/>
+              return this.switchPage(props, BlogPage)
             }}
           />
           <Route
             path="/contact"
             render={(props) => {
-              this.gotoTop()
-              return <ContactPage {...props}/>
+              return this.switchPage(props, ContactPage)
             }}
           />
           <Route 
             path="/cv/:key?" 
             render={(props) => {
-              this.gotoTop()
-              return <CVPage {...props}/>
+              return this.switchPage(props, CVPage)
             }} 
           />
           <Route 
             path="/drones"
             render={(props) => {
-              this.gotoTop()
-              return <DronePage {...props}/>
+              return this.switchPage(props, DronePage)
             }} 
           />
           <Route
             path="/join/:language?"
             //component={JoinPage}
             render={(props) => {
-              this.gotoTop()
-              return <JoinPage {...props}/>
+              return this.switchPage(props, JoinPage)
             }}
           />
           <Route
             path="/missions"
             render={(props) => {
-              this.gotoTop()
-              return <MissionPage {...props}/>
+              return this.switchPage(props, MissionPage)
             }}
           />
           <Route
             path="/sponsors/:year?"
             render={(props) => {
-              this.gotoTop()
-              return <SponsorPage {...props}/>
+              return this.switchPage(props, SponsorPage)
             }}
           />
           <Route
             path="/team/:year?"
             render={(props) => {
-              this.gotoTop()
-              return <TeamPage {...props}/>
+              return this.switchPage(props, TeamPage)
             }}
           />
         </Switch>
