@@ -18,7 +18,7 @@ if (fileExists('.env.local')) {
 
 var constants = {
   access: process.env.ACCESS || '',
-  pathToCV: process.env.PATH_TO_CV || './cv'
+  pathToCV: process.env.PATH_TO_CV || './cv',
 }
 
 if (process.env.NODE_ENV !== 'production') {
@@ -27,7 +27,10 @@ if (process.env.NODE_ENV !== 'production') {
 
 app.use('/images', express.static(__dirname + '/build/images'))
 app.use('/public/assets', express.static(__dirname + '/build/images/assets'))
-app.use('/publications', express.static(__dirname + '/build/images/assets/publications'))
+app.use(
+  '/publications',
+  express.static(__dirname + '/build/images/assets/publications')
+)
 app.use('/blog/rss', express.static(__dirname + '/api/v1/blog.rss'))
 app.use('/sitemap.xml', express.static(__dirname + '/api/v1/sitemap.xml'))
 app.use('/node_modules', express.static(__dirname + '/node_modules'))
@@ -37,12 +40,13 @@ var listener = app.listen(port, function () {
   console.log('Listening on http://localhost:' + listener.address().port)
 })
 
-app.get('/api/v1', function (req, res) {
+app.get('/api/v1', function(req, res) {
   res.sendFile(__dirname + '/api/v1/index.html')
 })
 
-app.get('/api/v1/posts', function (req, res) {
-  var files = fs.readdirSync('./posts')
+app.get('/api/v1/posts', function(req, res) {
+  var files = fs
+    .readdirSync('./posts')
     .filter(file => /\.md$|\.markdown$/.test(file))
     .map(slugify)
 
@@ -50,44 +54,49 @@ app.get('/api/v1/posts', function (req, res) {
   res.send(JSON.stringify(files, null, 2))
 })
 
-function slugify (fileName) {
-  return fileName
-    .toLowerCase()
-    //.replace(/^[0-9]{2,4}-[0-9]{1,2}-[0-9]{1,2}-/, '')
-    .replace(/\.md$|\.markdown$/, '')
+function slugify(fileName) {
+  return (
+    fileName
+      .toLowerCase()
+      //.replace(/^[0-9]{2,4}-[0-9]{1,2}-[0-9]{1,2}-/, '')
+      .replace(/\.md$|\.markdown$/, '')
+  )
 }
 
-function rmMdLinks (str) {
+function rmMdLinks(str) {
   return str.replace(/\]\([^\)]*\)/g, ']').replace(/!?\[([^\]]*)\]/g, '$1')
 }
 
-function pascalCase (str) {
-  return str.split(' ').map(word => word.slice(0, 1).toUpperCase() + word.slice(1).toLowerCase()).join(' ')
+function pascalCase(str) {
+  return str
+    .split(' ')
+    .map(word => word.slice(0, 1).toUpperCase() + word.slice(1).toLowerCase())
+    .join(' ')
 }
 
-function digits (value, places) {
+function digits(value, places) {
   places = typeof places === 'number' ? places : 2
   return (Array(places).join('0') + value).slice(-places)
 }
 
-app.get('/api/v1/posts/all', function (req, res) {
-  var files = fs.readdirSync('./posts')
+app.get('/api/v1/posts/all', function(req, res) {
+  var files = fs
+    .readdirSync('./posts')
     .filter(file => /\.md$|\.markdown$/.test(file))
     .map(postName => {
-    var pathToPost = __dirname + '/posts/' + postName
-    var element = {}
-    if (fileExists(pathToPost))
-      element = fm(fs.readFileSync(pathToPost) + '')
-    element['file'] = postName
-    element['link'] = slugify(postName)
-    return element
-  })
+      var pathToPost = __dirname + '/posts/' + postName
+      var element = {}
+      if (fileExists(pathToPost)) element = fm(fs.readFileSync(pathToPost) + '')
+      element['file'] = postName
+      element['link'] = slugify(postName)
+      return element
+    })
 
   res.setHeader('Content-Type', 'application/json; charset=utf-8')
   res.send(JSON.stringify(files, null, 2))
 })
 
-app.get('/api/v1/cv/:key?/:file?', function (req, res) {
+app.get('/api/v1/cv/:key?/:file?', function(req, res) {
   res.setHeader('Content-Type', 'application/json; charset=utf-8')
 
   var public = !req.params.key || req.params.key === 'public'
@@ -98,17 +107,25 @@ app.get('/api/v1/cv/:key?/:file?', function (req, res) {
     public = true
   }
 
-  if (req.params.file && /[a-z\-øæå]--[a-zøæå0-9]+--\d\d?--[a-z]+\.[a-z0-9]+$/.test(req.params.file.toLowerCase())) {
-    var find = req.params.file.split(/\./)[0].replace(/[^a-zøæå0-9\-]+/ig, '')
-    var re = public
-      ? new RegExp('--pub--' + find)
-      : new RegExp(find)
+  if (
+    req.params.file &&
+    /[a-z\-øæå]--[a-zøæå0-9]+--\d\d?--[a-z]+\.[a-z0-9]+$/.test(
+      req.params.file.toLowerCase()
+    )
+  ) {
+    var find = req.params.file.split(/\./)[0].replace(/[^a-zøæå0-9\-]+/gi, '')
+    var re = public ? new RegExp('--pub--' + find) : new RegExp(find)
     var files = fs.readdirSync(constants.pathToCV).filter(file => re.test(file))
 
     if (files.length) {
       var info = files[0].split(/--|\./)
-      var newName = `${info[2]}--${info[3]}--${info[4]}--${info[5]}.${info[info.length - 1]}`
-      res.download(__dirname + '/' + constants.pathToCV + '/' + files[0], newName)
+      var newName = `${info[2]}--${info[3]}--${info[4]}--${info[5]}.${
+        info[info.length - 1]
+      }`
+      res.download(
+        __dirname + '/' + constants.pathToCV + '/' + files[0],
+        newName
+      )
     } else {
       res.send('Could not find file.')
     }
@@ -120,32 +137,46 @@ app.get('/api/v1/cv/:key?/:file?', function (req, res) {
     var re = public
       ? /^\d+--pub--[a-z\-øæå]+--[a-zøæå0-9]+--\d\d?--[a-z]+--/
       : /^\d+--p[ubriv]+--[a-z\-øæå]+--[a-zøæå0-9]+--\d\d?--[a-z]+--/
-    var files = fs.readdirSync(constants.pathToCV)
+    var files = fs
+      .readdirSync(constants.pathToCV)
       .filter(file => re.test(file.toLowerCase()))
       .map(postName => {
-      var info = postName.split(/--|\./)
-      var date = new Date(parseInt(info[0]))
-      var dateFormatted = `${date.getFullYear()}-${digits(date.getMonth())}-${digits(date.getDate())} ${digits(date.getHours())}:${digits(date.getMinutes())}:${digits(date.getSeconds())}`
-      var name = info[2].split('-')
-      var description = fs.readdirSync(constants.pathToCV)
-        .filter(f => new RegExp(`description--${info[6]}[a-z0-9\-]*.txt`).test(f))
-        .map(descFile => {
-        return fs.readFileSync(constants.pathToCV + '/' + descFile, 'utf-8')
-      }) + ''
-      var cv = `${info[2]}--${info[3]}--${info[4]}--${info[5]}.${info[info.length - 1]}`
+        var info = postName.split(/--|\./)
+        var date = new Date(parseInt(info[0]))
+        var dateFormatted = `${date.getFullYear()}-${digits(
+          date.getMonth()
+        )}-${digits(date.getDate())} ${digits(date.getHours())}:${digits(
+          date.getMinutes()
+        )}:${digits(date.getSeconds())}`
+        var name = info[2].split('-')
+        var description =
+          fs
+            .readdirSync(constants.pathToCV)
+            .filter(f =>
+              new RegExp(`description--${info[6]}[a-z0-9\-]*.txt`).test(f)
+            )
+            .map(descFile => {
+              return fs.readFileSync(
+                constants.pathToCV + '/' + descFile,
+                'utf-8'
+              )
+            }) + ''
+        var cv = `${info[2]}--${info[3]}--${info[4]}--${info[5]}.${
+          info[info.length - 1]
+        }`
 
-      return {
-        date: dateFormatted,
-        first_name: pascalCase(name.shift()),
-        last_name: pascalCase(name.pop()),
-        middle_name: pascalCase(name ? name.join(' ') : ''),
-        study: info[3].toUpperCase(),
-        year: parseInt(info[4]),
-        group: info[5].toLowerCase(),
-        description: description,
-        cv: cv
-      }
-    })
+        return {
+          date: dateFormatted,
+          first_name: pascalCase(name.shift()),
+          last_name: pascalCase(name.pop()),
+          middle_name: pascalCase(name ? name.join(' ') : ''),
+          study: info[3].toUpperCase(),
+          year: parseInt(info[4]),
+          group: info[5].toLowerCase(),
+          description: description,
+          cv: cv,
+        }
+      })
 
     res.send(JSON.stringify({ students: files, error: error }, null, 2))
   } else {
@@ -153,9 +184,10 @@ app.get('/api/v1/cv/:key?/:file?', function (req, res) {
   }
 })
 
-app.get('/api/v1/posts/:post', function (req, res) {
+app.get('/api/v1/posts/:post', function(req, res) {
   var postName = req.params.post
-  var files = fs.readdirSync('./posts')
+  var files = fs
+    .readdirSync('./posts')
     .filter(file => new RegExp(postName, 'i').test(file))
   var pathToPost = __dirname + '/posts/' + (files[0] || '')
 
@@ -166,11 +198,10 @@ app.get('/api/v1/posts/:post', function (req, res) {
     postData['file'] = files[0]
     postData['link'] = slugify(files[0])
     res.send(JSON.stringify(postData, null, 2))
-  } else
-    res.send('Could not find post.')
+  } else res.send('Could not find post.')
 })
 
-app.get('/api/v1/:section', function (req, res) {
+app.get('/api/v1/:section', function(req, res) {
   var section = req.params.section
   var validSection = /^[a-z]+$/.test(section)
 
@@ -179,11 +210,10 @@ app.get('/api/v1/:section', function (req, res) {
   if (validSection && fileExists(fileName)) {
     res.setHeader('Content-Type', 'application/json; charset=utf-8')
     res.sendFile(fileName)
-  } else
-    res.sendFile(__dirname + '/api/v1/index.html')
+  } else res.sendFile(__dirname + '/api/v1/index.html')
 })
 
-app.get('/api/v1/:section/:year', function (req, res) {
+app.get('/api/v1/:section/:year', function(req, res) {
   var year = req.params.year
   var validYear = /^20[0-9]{2}$/.test(year)
 
@@ -195,15 +225,14 @@ app.get('/api/v1/:section/:year', function (req, res) {
   if (validSection && validYear && fileExists(fileName)) {
     res.setHeader('Content-Type', 'application/json; charset=utf-8')
     res.sendFile(fileName)
-  } else
-    res.sendFile(__dirname + '/api/v1/index.html')
+  } else res.sendFile(__dirname + '/api/v1/index.html')
 })
 
 var years = [2016, 2017, 2018]
 var groups = {
-  'history': {},
-  'sponsors': {},
-  'members': {}
+  history: {},
+  sponsors: {},
+  members: {},
 }
 
 var data = []
@@ -218,8 +247,7 @@ years.forEach(year => {
     data = []
     fileName = 'data/' + group + '.' + year + '.yml'
 
-    if (fileExists(fileName))
-      data = yamljs.load(fileName)
+    if (fileExists(fileName)) data = yamljs.load(fileName)
 
     dataFormatted = JSON.stringify(data, null, 2)
     mkdirp.sync(dirName)
@@ -240,7 +268,7 @@ for (var group in groups) {
   })
 }
 
-function fileExists (filePath) {
+function fileExists(filePath) {
   try {
     var exists = fs.statSync(filePath)
     return true
@@ -250,10 +278,11 @@ function fileExists (filePath) {
 }
 
 // AMP articles, which can be read from Google in mobile view.
-app.get('/blog/amp/:post', function (req, res) {
+app.get('/blog/amp/:post', function(req, res) {
   var post = req.params.post
 
-  var files = fs.readdirSync('./posts')
+  var files = fs
+    .readdirSync('./posts')
     .filter(file => new RegExp(post, 'i').test(file))
   var pathToPost = __dirname + '/posts/' + (files[0] || '')
 
@@ -268,10 +297,11 @@ app.get('/blog/amp/:post', function (req, res) {
 })
 
 // Facebook Instant article support.
-app.get('/blog/fb/:post', function (req, res) {
+app.get('/blog/fb/:post', function(req, res) {
   var post = req.params.post
 
-  var files = fs.readdirSync('./posts')
+  var files = fs
+    .readdirSync('./posts')
     .filter(file => new RegExp(post, 'i').test(file))
   var pathToPost = __dirname + '/posts/' + (files[0] || '')
 
@@ -297,7 +327,7 @@ fs.readdirSync('./posts').forEach(file => {
     date: post.attributes.date.toISOString(),
     description: rmMdLinks(post.body.split(/\n/)[0]),
     link: slugify(file),
-    title: post.attributes.title
+    title: post.attributes.title,
   })
 })
 
@@ -311,10 +341,11 @@ fs.writeFile('api/v1/sitemap.xml', createSitemap(articleLinks), err => {
   if (err) throw err
 })
 
-app.get('/blog/:post', function (req, res) {
+app.get('/blog/:post', function(req, res) {
   var post = req.params.post
 
-  var files = fs.readdirSync('./posts')
+  var files = fs
+    .readdirSync('./posts')
     .filter(file => new RegExp(post, 'i').test(file))
   var pathToPost = __dirname + '/posts/' + (files[0] || '')
 
@@ -323,28 +354,38 @@ app.get('/blog/:post', function (req, res) {
     var link = slugify(files[0])
     var title = postData.attributes.title
     var d = postData.attributes.date
-    var date = `${d.getFullYear()}-${digits(d.getMonth())}-${digits(d.getDate())} ${digits(d.getHours())}:${digits(d.getMinutes())}:${digits(d.getSeconds())}`
+    var date = `${d.getFullYear()}-${digits(d.getMonth())}-${digits(
+      d.getDate()
+    )} ${digits(d.getHours())}:${digits(d.getMinutes())}:${digits(
+      d.getSeconds()
+    )}`
     var image = 'https://ascendntnu.no/images/logo/logo.png'
     if (postData.attributes.image) {
       if (/^http/.test(postData.attributes.image))
         image = postData.attributes.image
-      else
-        image = 'https://ascendntnu.no' + postData.attributes.image
+      else image = 'https://ascendntnu.no' + postData.attributes.image
     }
     var desc = rmMdLinks(postData.body.split(/\n/)[0])
     var tags = postData.attributes.categories.split(/[,\s]+/)
     var authors = postData.attributes.author.split(/\s*[,&]\s*/)
 
-    res.send(prerender(req, {
-      title: title,
-      desc: desc,
-      date: date,
-      image: image,
-      metatags: `\n    <link rel="amphtml" href="https://ascendntnu.no/blog/amp/${link}" />`
-        + tags.map(tag => `\n    <meta property="article:tag" content="${tag}" />`).join('\n    ')
-        + `<meta property="og:url" content="https://ascendntnu.no/blog/${link}" />`
+    res.send(
+      prerender(req, {
+        title: title,
+        desc: desc,
+        date: date,
+        image: image,
+        metatags:
+          `\n    <link rel="amphtml" href="https://ascendntnu.no/blog/amp/${link}" />` +
+          tags
+            .map(
+              tag => `\n    <meta property="article:tag" content="${tag}" />`
+            )
+            .join('\n    ') +
+          `<meta property="og:url" content="https://ascendntnu.no/blog/${link}" />`,
         // + authors.map(author => `\n    <meta property="article:author" content="${author}" />`).join('\n    ')
-    }))
+      })
+    )
   } else {
     res.sendFile(__dirname + '/build/index.html')
   }
@@ -352,66 +393,92 @@ app.get('/blog/:post', function (req, res) {
 
 app.use('/', express.static(__dirname + '/build'))
 
-app.get('/*', function (req, res) {
+app.get('/*', function(req, res) {
   var pieces = req.originalUrl.split(/\//)
   switch (pieces[1]) {
     case 'blog':
-      res.send(prerender(req, {
-        title: 'Blog',
-        desc: 'Read the Ascend NTNU blog and get the newest updates from the group.'
-      }))
+      res.send(
+        prerender(req, {
+          title: 'Blog',
+          desc:
+            'Read the Ascend NTNU blog and get the newest updates from the group.',
+        })
+      )
       break
     case 'drones':
-      res.send(prerender(req, {
-        title: 'Drones',
-        desc: 'Ascend NTNU makes a new drone every year. Here you can view them all.'
-      }))
+      res.send(
+        prerender(req, {
+          title: 'Drones',
+          desc:
+            'Ascend NTNU makes a new drone every year. Here you can view them all.',
+        })
+      )
       break
     case 'join':
-      res.send(prerender(req, {
-        title: 'Join',
-        desc: 'Want to join our team? Send a mail or sign up for upcoming opportunities.'
-      }))
+      res.send(
+        prerender(req, {
+          title: 'Join',
+          desc:
+            'Want to join our team? Send a mail or sign up for upcoming opportunities.',
+        })
+      )
       break
     case 'sponsors':
-      res.send(prerender(req, {
-        title: 'Sponsors',
-        desc: 'This is the sponsor page. If you want to support Ascend NTNU we are happy to have you as sponsors.'
-      }))
+      res.send(
+        prerender(req, {
+          title: 'Sponsors',
+          desc:
+            'This is the sponsor page. If you want to support Ascend NTNU we are happy to have you as sponsors.',
+        })
+      )
       break
     case 'about':
-      res.send(prerender(req, {
-        title: 'About',
-      }))
+      res.send(
+        prerender(req, {
+          title: 'About',
+        })
+      )
       break
     case 'missions':
-      res.send(prerender(req, {
-        title: 'Missions',
-        desc: 'Our main purpose is to solve a mission which was created in 2014. It may be impossble to solve it today, but as tech grows we may be able to solve the mission tomorrow.'
-      }))
+      res.send(
+        prerender(req, {
+          title: 'Missions',
+          desc:
+            'Our main purpose is to solve a mission which was created in 2014. It may be impossble to solve it today, but as tech grows we may be able to solve the mission tomorrow.',
+        })
+      )
       break
     case 'team':
-      res.send(prerender(req, {
-        title: 'Team',
-        desc: 'Our team has 28 members divided into 5 main groups. You can read more about the groups here...'
-      }))
+      res.send(
+        prerender(req, {
+          title: 'Team',
+          desc:
+            'Our team has 28 members divided into 5 main groups. You can read more about the groups here...',
+        })
+      )
       break
     case 'contact':
-      res.send(prerender(req, {
-        title: 'Contact',
-        desc: 'Want to contact us? Feel free to send us a mail and we will contact you back.'
-      }))
+      res.send(
+        prerender(req, {
+          title: 'Contact',
+          desc:
+            'Want to contact us? Feel free to send us a mail and we will contact you back.',
+        })
+      )
       break
   }
 
   res.sendFile(__dirname + '/build/index.html')
 })
 
-function prerender (req, data) {
+function prerender(req, data) {
   data.title = data.title || 'Home'
-  data.desc = data.desc || `Autonomus aerial robotics. Ascend NTNU is The Norwegian University of Science and Technology's team in the International Aerial Robotics Competition (IARC).`
+  data.desc =
+    data.desc ||
+    `Autonomus aerial robotics. Ascend NTNU is The Norwegian University of Science and Technology's team in the International Aerial Robotics Competition (IARC).`
   data.image = data.image || '/images/logo/logo.png'
-  data.link = data.link || req.protocol + '://' + req.get('host') + req.originalUrl
+  data.link =
+    data.link || req.protocol + '://' + req.get('host') + req.originalUrl
   data.date = data.date || ''
   data.metatags = data.metatags || ''
 
@@ -421,18 +488,26 @@ function prerender (req, data) {
     <title>Ascend NTNU - ${data.title}</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="${data.desc}" />
     <meta name="keywords" content="Ascend, NTNU, robotics, autonomus, team, IARC, international, aerial, robotics, competition, AI" />
     <meta name="author" content="Ascend NTNU" />
     <meta property="fb:app_id" content="202744680073731" />
     <meta property="fb:pages" content="1666025910343164" />
-    ${data.date ? `<meta property="${data.metatags ? 'article:published_time' : 'og:date'}" content="${data.date}" />` : ''}
+    ${
+      data.date
+        ? `<meta property="${
+            data.metatags ? 'article:published_time' : 'og:date'
+          }" content="${data.date}" />`
+        : ''
+    }
     <meta property="og:type" content="article" />
     <meta property="og:image" content="${data.image}" />
     <meta property="og:title" content="Ascend NTNU - ${data.title}" />
     <meta property="og:description" content="${data.desc}" />
-    <meta name="google-site-verification" content="8BRTGtX6p1hMedISBUbbwoyCQKG-yAi_lfQwP6ZG0PU" />${data.metatags}
+    <meta name="google-site-verification" content="8BRTGtX6p1hMedISBUbbwoyCQKG-yAi_lfQwP6ZG0PU" />${
+      data.metatags
+    }
     <link rel="alternate" hreflang="en" href="https://ascendntnu.no" />
     <link rel="alternate" hreflang="no" href="https://ascendntnu.no" />
     <link rel="alternate" type="application/rss+xml" title="Ascend NTNU RSS" href="https://ascendntnu.no/blog/rss">
@@ -440,10 +515,8 @@ function prerender (req, data) {
     <link rel="apple-touch-icon" href="/images/logo/ascend-logo-social.jpg" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" />
     <link rel="stylesheet" href="/node_modules/katex/dist/katex.min.css" />
-    <link rel="stylesheet" href="/styles/main.css" />
-    <script defer src="/node_modules/react/dist/react.js"></script>
-    <script defer src="/node_modules/react-dom/dist/react-dom.js"></script>
-    <script defer src="/dist/bundle.js"></script>
+    <link rel="stylesheet" href="/static/css/main.css" />
+    <script defer src="/static/js/main.js"></script>
     <script type="application/ld+json">
     {
       "@context": "http://schema.org/",
@@ -465,7 +538,11 @@ function prerender (req, data) {
         }
       },
       "foundingDate": "2015-07-28",
-      "image": "${/^http/.test(data.image) ? data.image : ('https://ascendntnu.no' + data.image)}",
+      "image": "${
+        /^http/.test(data.image)
+          ? data.image
+          : 'https://ascendntnu.no' + data.image
+      }",
       "logo": "https://ascendntnu.no/images/logo/logo.png",
       "name": "Ascend NTNU",
       "memberOf": {
@@ -514,9 +591,11 @@ function prerender (req, data) {
 </html>`
 }
 
-function createAmpArticle (data) {
+function createAmpArticle(data) {
   data.title = data.title || 'Home'
-  data.desc = data.desc || `Autonomus aerial robotics. Ascend NTNU is The Norwegian University of Science and Technology's team in the International Aerial Robotics Competition (IARC).`
+  data.desc =
+    data.desc ||
+    `Autonomus aerial robotics. Ascend NTNU is The Norwegian University of Science and Technology's team in the International Aerial Robotics Competition (IARC).`
   data.image = data.image || '/images/logo/logo.png'
   data.link = data.link || ''
   var parsed = reader.parse(data.body)
@@ -540,7 +619,11 @@ function createAmpArticle (data) {
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Questrial|Roboto+Slab" />
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
-    ${iframe ? '<script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>' : ''}
+    ${
+      iframe
+        ? '<script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>'
+        : ''
+    }
     <script type="application/ld+json">
       {
         "@context": "http://schema.org",
@@ -549,7 +632,8 @@ function createAmpArticle (data) {
         "articleBody": "${result}",
         "author": {
           "@type": "Person",
-          "name": "${data.attributes.author.split(/\s*[,&]\s*/).join(', ') || 'Ascend NTNU'}"
+          "name": "${data.attributes.author.split(/\s*[,&]\s*/).join(', ') ||
+            'Ascend NTNU'}"
         },
         "dateCreated": "${data.attributes.date.toISOString()}",
         "datePublished": "${data.attributes.date.toISOString()}",
@@ -558,7 +642,8 @@ function createAmpArticle (data) {
         "image": [
           "${data.attributes.image || '/images/ascend-logo-social.jpg'}"
         ],
-        "thumbnailUrl": "${data.attributes.image || '/images/ascend-logo-social.jpg'}"
+        "thumbnailUrl": "${data.attributes.image ||
+          '/images/ascend-logo-social.jpg'}"
       }
     </script>
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
@@ -601,38 +686,52 @@ function createAmpArticle (data) {
   <body>
     <article>
     <h1>${data.attributes.title}</h1>
-    <amp-social-share type="facebook" data-param-url="https://ascendntnu.no/blog/${data.link}" data-param-app_id="202744680073731"></amp-social-share>
-    <amp-social-share type="twitter" data-param-url="https://ascendntnu.no/blog/${data.link}"></amp-social-share>
-    <amp-social-share type="linkedin" data-param-url="https://ascendntnu.no/blog/${data.link}"> </amp-social-share>
-    <amp-social-share type="email" data-param-url="https://ascendntnu.no/blog/${data.link}"></amp-social-share>
+    <amp-social-share type="facebook" data-param-url="https://ascendntnu.no/blog/${
+      data.link
+    }" data-param-app_id="202744680073731"></amp-social-share>
+    <amp-social-share type="twitter" data-param-url="https://ascendntnu.no/blog/${
+      data.link
+    }"></amp-social-share>
+    <amp-social-share type="linkedin" data-param-url="https://ascendntnu.no/blog/${
+      data.link
+    }"> </amp-social-share>
+    <amp-social-share type="email" data-param-url="https://ascendntnu.no/blog/${
+      data.link
+    }"></amp-social-share>
     ${result}
     </article>
   </body>
 </html>`
 }
 
-function texToAscii (tex) {
+function texToAscii(tex) {
   return tex
     .replace(/\^\{([^\}]*)\}/g, '<sup>$1</sup>')
     .replace(/_\{([^\}]*)\}/g, '<sub>$1</sub>')
     .replace(/\\vec\{([^\}]*)\}/g, ' &#x20d7;$1')
     .replace(/\\bot/g, '⅂')
-    .replace(/\\updownarrow/ig, '&#x21d5;')
+    .replace(/\\updownarrow/gi, '&#x21d5;')
 }
 
-function createFBInstantArticle (data) {
+function createFBInstantArticle(data) {
   data.title = data.title || 'Home'
-  data.desc = data.desc || `Autonomus aerial robotics. Ascend NTNU is The Norwegian University of Science and Technology's team in the International Aerial Robotics Competition (IARC).`
+  data.desc =
+    data.desc ||
+    `Autonomus aerial robotics. Ascend NTNU is The Norwegian University of Science and Technology's team in the International Aerial Robotics Competition (IARC).`
   data.image = 'https://ascendntnu.no' + (data.image || '/images/logo/logo.png')
-  data.attributes.image = 'https://ascendntnu.no' + (data.attributes.image || '/images/logo/logo.png')
+  data.attributes.image =
+    'https://ascendntnu.no' + (data.attributes.image || '/images/logo/logo.png')
   data.link = data.link || ''
   var related = data.attributes.related
-    ? data.attributes.related.split(/\s*,\s*|\s+/).map(r => /^\d/.test(r) ? 'https://ascendntnu.no/blog/' + r : r)
+    ? data.attributes.related
+        .split(/\s*,\s*|\s+/)
+        .map(r => (/^\d/.test(r) ? 'https://ascendntnu.no/blog/' + r : r))
     : []
   var date = data.attributes.date.toISOString()
   var ingress = rmMdLinks(data.body.split(/\n/)[0])
   var parsed = reader.parse(data.body.split(/^[^\n]+\n/)[1])
-  var result = writer.render(parsed)
+  var result = writer
+    .render(parsed)
     .replace(/<p><img ([^>]*)\><\/p>/g, '<figure><img $1></figure>')
     .replace(/<(\/?)h[3-6]>/g, '<$1h2>')
     .replace(/\s&\s/g, ' and ')
@@ -669,7 +768,8 @@ function createFBInstantArticle (data) {
         "about": "${ingress}",
         "author": {
           "@type": "Person",
-          "name": "${data.attributes.author.split(/\s*[,&]\s*/).join(', ') || 'Ascend NTNU'}"
+          "name": "${data.attributes.author.split(/\s*[,&]\s*/).join(', ') ||
+            'Ascend NTNU'}"
         },
         "dateCreated": "${date}",
         "datePublished": "${date}",
@@ -678,7 +778,8 @@ function createFBInstantArticle (data) {
         "image": [
           "${data.attributes.image || '/images/ascend-logo-social.jpg'}"
         ],
-        "thumbnailUrl": "${data.attributes.image || '/images/ascend-logo-social.jpg'}"
+        "thumbnailUrl": "${data.attributes.image ||
+          '/images/ascend-logo-social.jpg'}"
       }
     </script>
   </head>
@@ -687,7 +788,9 @@ function createFBInstantArticle (data) {
       <header>
         <h1>${data.attributes.title}</h1>
         <h2>${ingress}</h2>
-        <time class="op-published" datetime="${data.attributes.date}">${date}</time>
+        <time class="op-published" datetime="${
+          data.attributes.date
+        }">${date}</time>
         <address>
           <a>${data.attributes.author.split(/\s*&\s*/).join(' &#038; ')}</a>
           From Ascend NTNU.
@@ -698,9 +801,12 @@ function createFBInstantArticle (data) {
         </figure>  
       </header>
       ${result}
-      <footer>${(related + '') && '\n        <ul class="op-related-articles">'
-          + related.map(r => `\n          <li><a href="${r}"></a></li>`).join('')
-          + '\n        </ul>'}
+      <footer>${related + '' &&
+        '\n        <ul class="op-related-articles">' +
+          related
+            .map(r => `\n          <li><a href="${r}"></a></li>`)
+            .join('') +
+          '\n        </ul>'}
         <small>© Ascend NTNU ${new Date().getFullYear()}</small>
       </footer>
     </article>
@@ -708,7 +814,7 @@ function createFBInstantArticle (data) {
 </html>`
 }
 
-function createRSSFeed (articles) {
+function createRSSFeed(articles) {
   var articlesFormatted = articles.reverse().map(item => {
     var authors = item.authors.map(author => `<author>${author}</author>`)
 
@@ -736,9 +842,11 @@ function createRSSFeed (articles) {
 </rss>`
 }
 
-function createSitemap (articles) {
+function createSitemap(articles) {
   var articlesFormatted = articles.map(item => {
-    return `<url><priority>0.85</priority><loc>https://ascendntnu.no/blog/${slugify(item)}</loc><changefreq>monthly</changefreq></url>`
+    return `<url><priority>0.85</priority><loc>https://ascendntnu.no/blog/${slugify(
+      item
+    )}</loc><changefreq>monthly</changefreq></url>`
   })
 
   return `<?xml version="1.0" encoding="UTF-8"?>
