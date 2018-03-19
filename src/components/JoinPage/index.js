@@ -455,9 +455,10 @@ export class JoinPage extends Component {
               display: 'none'
             }
           }
-          href = 'https://docs.google.com/forms/d/e/1FAIpQLSe2ieI86nG7RXWN12PTOT08pbPO9zJoaO2Xmq0IjTLKsdGuAA/viewform' > Søk her! < /a><h4><a href='http:/ / ascendntnu.us14.list - manage2.com / subscribe ? u = dfce303a41ce42b342c75a3ef & amp;id = 002e04 db12 ' target='
+          href = 'https://docs.google.com/forms/d/e/1FAIpQLSe_T7CzNUmQ9gk5o2gsMgiUoj5f1eiTAtFAleV7hjfBagDiAw/viewform' > Søk her! < /a>
+          <h4><a href='https://docs.google.com/forms/d/e/1FAIpQLSe_T7CzNUmQ9gk5o2gsMgiUoj5f1eiTAtFAleV7hjfBagDiAw/viewform' target='
           _blank ' rel='
-          noopener noreferrer '>Interesseliste for opptak. Søknadskjema kommer snart!</a></h4> {
+          noopener noreferrer '>Trykk her for å søke</a></h4> {
           positions[this.state.language][1]
         } <
         i > Det er kun studenter som studerer på NTNU i året 2017 / 2018 som kan søke.Er du usikker på om dette gjelder
