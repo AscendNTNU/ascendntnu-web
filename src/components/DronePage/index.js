@@ -89,7 +89,7 @@ export class DronePage extends Component {
             ground robots, with less risk of damage to equipment.
           </span>,
           <span>
-            It has a Pixhawk flight controller and an Odroid XU4 onboard
+            It has a Pixhawk flight controller and an Intel NUC onboard
             computer running Ubuntu Server with ROS. The custom made frame made
             of carbon fiber and 3D-printed parts allows compact placement of the
             hardware and even weight distribution, and well balanced motors from
