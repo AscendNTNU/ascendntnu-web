@@ -5,10 +5,10 @@ from django.contrib.auth.models import User
 from datetime import datetime
 
 SPONSOR_TYPES = (
-    ('main', 'Main'),
-    ('gold', 'Gold'),
-    ('silver', 'Silver'),
-    ('bronze', 'Bronze')
+    ('main', 'main'),
+    ('gold', 'gold'),
+    ('silver', 'silver'),
+    ('bronze', 'bronze')
 )
 
 
@@ -36,7 +36,7 @@ class Member(models.Model):
     role = models.CharField(max_length=50)
     group = models.CharField(max_length=100)
     image = models.CharField(max_length=100)
-    mail = models.CharField(max_length=100)
+    mail = models.CharField(max_length=100, blank=True, null=True)
     active_member = models.BooleanField(default=True)
     search_vector = SearchVectorField(null=True)
 
@@ -58,7 +58,7 @@ class Member(models.Model):
 class Sponsor(models.Model):
     name = models.CharField(max_length=50)
     year = models.IntegerField()
-    type = models.CharField(max_length=50, choices=SPONSOR_TYPES)
+    type = models.CharField(max_length=50, choices=SPONSOR_TYPES, null=True)
     link = models.CharField(max_length=100)
     logo = models.CharField(max_length=100)
     logo_dark = models.CharField(max_length=100)
