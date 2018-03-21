@@ -245,7 +245,7 @@ export class JoinPage extends Component {
         key = '2' >
         <
         p > Bli med i styret og bestem fremtiden til Ascend, eller lag teknologi som verden
-         ikke har sett maken til som teknisk gruppeleder. < /p> <
+         ikke har sett maken til som teknisk gruppeleder. Under ligger stillingene som det er mulig å søke på i denne omgang.< /p> <
         ul className = 'anchor-list' >
         <
         li onClick = {
@@ -559,7 +559,7 @@ export class JoinPage extends Component {
           href = 'https://docs.google.com/forms/d/e/1FAIpQLSe_T7CzNUmQ9gk5o2gsMgiUoj5f1eiTAtFAleV7hjfBagDiAw/viewform' > Søk her! < /a>
           <h4><a href='https://docs.google.com/forms/d/e/1FAIpQLSe_T7CzNUmQ9gk5o2gsMgiUoj5f1eiTAtFAleV7hjfBagDiAw/viewform' target='
           _blank ' rel='
-          noopener noreferrer '>Trykk her for å søke</a></h4> {
+          noopener noreferrer '>Trykk her for å legge inn søknad som gruppeleder eller styremedlem</a></h4> {
           positions[this.state.language][1]
         } <
         i > Det er kun studenter som studerer på NTNU i året 2017 / 2018 som kan søke. Er du usikker på om dette gjelder

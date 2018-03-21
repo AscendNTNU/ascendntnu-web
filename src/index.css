@@ -181,8 +181,8 @@ input[type="submit"].active,
     align-items: center;
     justify-content: center;
     background-color: #f80;
-    margin: 0;
-    padding: 0;
+    border: 30px;
+    padding: 10px;
     text-shadow: none;
     color: #eee;
 
