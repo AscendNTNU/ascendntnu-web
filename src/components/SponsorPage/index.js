@@ -5,7 +5,7 @@ import { Breadcrumb } from '../Common/breadcrumb'
 import { SponsorList } from '../Common/sponsorlist'
 
 export class SponsorPage extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
 
     this.state = {
@@ -13,7 +13,7 @@ export class SponsorPage extends Component {
     }
   }
 
-  changeYear (evt) {
+  changeYear(evt) {
     let year = evt.target.value
     //browserHistory.push('/sponsors/' + year)
     this.setState({
@@ -21,7 +21,7 @@ export class SponsorPage extends Component {
     })
   }
 
-  componentWillReceiveProps (nextProps) {
+  componentWillReceiveProps(nextProps) {
     let nextYear = parseInt(nextProps.params.year, 10) || 2018
     let year = parseInt(this.props.params.year, 10) || this.state.year
 
@@ -34,13 +34,19 @@ export class SponsorPage extends Component {
     }
   }
 
-  render () {
+  render() {
     let title = (
-      <span>Our sponsors <select className="select-sponsor select" onChange={this.changeYear.bind(this)} defaultValue={this.state.year + ''}>
-        <option value="2016">2016</option>
-        <option value="2017">2017</option>
-        <option value="2018">2018</option>
-      </select>
+      <span>
+        Our sponsors{' '}
+        <select
+          className="select-sponsor select"
+          onChange={this.changeYear.bind(this)}
+          defaultValue={this.state.year + ''}
+        >
+          <option value="2016">2016</option>
+          <option value="2017">2017</option>
+          <option value="2018">2018</option>
+        </select>
       </span>
     )
 
