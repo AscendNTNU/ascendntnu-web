@@ -22,7 +22,7 @@ export class FrontPage extends Component {
         <HistoryViewer />*/}
         <Link to="/join">
           <div className="yellow-background">
-            <h1>We are currently recruiting new board members and team leaders, apply before April 15th!</h1>
+            <h1>We are currently recruiting new board members and team leaders, apply by April 15th!</h1>
           </div>
         </Link>
         <Section titleText="Our sponsors" className="centered">
