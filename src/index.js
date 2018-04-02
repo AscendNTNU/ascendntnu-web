@@ -7,7 +7,7 @@ import './index.css'
 
 import App from './App'
 
-ReactGA.initialize("UA-116354267-1")
+ReactGA.initialize("UA-113307510-1")
 ReactGA.pageview(window.location.pathname + window.location.search);
 
 ReactDOM.render(
