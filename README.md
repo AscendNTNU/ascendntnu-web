@@ -63,13 +63,17 @@ If you have `docker-compose` (which should follow the docker installation), you 
 
 ```bash
 # Run server on localhost:8080 (port set by DOCKER_PORT)
+$ docker-compose run build # To build in production used by server
 $ docker-compose up server
 
 # Run development on localhost:8081 (port set by DOCKER_DEV_PORT)
 $ docker-compose up dev # This also starts the API at localhost:8082
 
 # Run API on localhost:8082 (port set by DOCKER_API_PORT)
+$ docker-compose run api python manage.py createsuperuser # Create a super user
 $ docker-compose up api # Run in background mode by adding -d (detach).
+
+# Use .env.local and .env.production.local files to control the ports.
 ```
 
 Read more about `docker-compose` on the Internet if you want to learn more neat commands.
