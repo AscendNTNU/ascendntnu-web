@@ -6,7 +6,7 @@ import { polyfill } from 'es6-promise'
 import { Section, SubSection } from '../PageLayout'
 import { Breadcrumb } from '../Common/breadcrumb'
 import { BlogArticle } from './blogArticle'
-import { API_URL } from '../../constants'
+//import { API_URL } from '../../constants'
 
 polyfill()
 
