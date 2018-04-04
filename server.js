@@ -35,8 +35,8 @@ app.use('/blog/rss', express.static(__dirname + '/api/v1/blog.rss'))
 app.use('/sitemap.xml', express.static(__dirname + '/api/v1/sitemap.xml'))
 app.use('/node_modules', express.static(__dirname + '/node_modules'))
 
-var port = process.env.SERVER_PORT || 8080
-var listener = app.listen(port, function() {
+var port = process.env.SERVER_PORT || 80
+var listener = app.listen(port, function () {
   console.log('Listening on http://localhost:' + listener.address().port)
 })
 

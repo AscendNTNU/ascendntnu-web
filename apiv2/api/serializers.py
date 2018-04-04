@@ -5,19 +5,19 @@ from rest_framework import serializers
 class MemberSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Member
-        fields = ('name', 'background', 'role', 'group', 'image', 'mail')
+        fields = ('name', 'background', 'role', 'group', 'image', 'mail', 'year')
 
 
 class SponsorSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Sponsor
-        fields = ('name', 'type', 'link', 'logo', 'logo_dark', 'short_text')
+        fields = ('name', 'type', 'link', 'logo', 'logo_dark', 'short_text', 'year')
 
 
 class HistorySerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = History
-        fields = ('date', 'title', 'content', 'image', 'tags', 'categories')
+        fields = ('date', 'title', 'content', 'post', 'tags', 'categories')
 
 
 class BlogPostSerializer(serializers.HyperlinkedModelSerializer):

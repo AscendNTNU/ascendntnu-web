@@ -109,8 +109,9 @@ export class TeamPage extends Component {
    */
   getMembers(year) {
     let setup = process.env.NODE_ENV === 'production' ? {} : { mode: 'cors' }
+    console.log(year)
 
-    fetch(`${API_URL}/members/${year}`, setup)
+    fetch(`${API_URL}/members/${year}/`, setup)
       .then(r => r.json())
       .then(r => {
         if (r !== null) {

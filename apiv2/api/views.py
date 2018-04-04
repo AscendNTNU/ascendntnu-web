@@ -15,20 +15,19 @@ class MemberList(generics.ListCreateAPIView):
 class SponsorList(generics.ListCreateAPIView):
     queryset = Sponsor.objects.all()
     serializer_class = SponsorSerializer
+    http_method_names = ['get']
 
 
 class HistoryList(generics.ListCreateAPIView):
+    queryset = History.objects.all()
     serializer_class = HistorySerializer
     http_method_names = ['get']
-    queryset = History.objects.all()
-
 
 class MemberListWithYear(generics.ListCreateAPIView):
     serializer_class = MemberSerializer
     http_method_names = ['get']
 
     def get_queryset(self):
-
         return Member.objects.filter(year=self.kwargs['year'])
 
 
@@ -37,7 +36,7 @@ class SponsorListWithYear(generics.ListCreateAPIView):
     http_method_names = ['get']
 
     def get_queryset(self):
-        return Member.objects.filter(year=self.kwargs['year'])
+        return Sponsor.objects.filter(year=self.kwargs['year'])
 
 
 class HistoryListWithYear(generics.ListCreateAPIView):
@@ -45,7 +44,7 @@ class HistoryListWithYear(generics.ListCreateAPIView):
     http_method_names = ['get']
 
     def get_queryset(self):
-        return History.objects.filter(date__year=self.kwargs['year'])
+        return History.objects.all()
 
 
 class BlogListView(generics.ListCreateAPIView):
