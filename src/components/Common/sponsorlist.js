@@ -29,7 +29,7 @@ export class SponsorList extends Component {
   getSponsors(year) {
     let setup = process.env.NODE_ENV === 'production' ? {} : { mode: 'cors' }
 
-    fetch(`${API_URL}/sponsors/${year}`, setup)
+    fetch(`${API_URL}/sponsors/${year}/`, setup)
       .then(r => r.json())
       .then(r => {
         this.setState({

@@ -28,7 +28,7 @@ export class BlogPage extends Component {
     } else {
       if (this.props.match.params && this.props.match.params.tags)
         this.state.tagValues = this.props.match.params.tags.split(',')
-      this.fetchPosts(`${API_URL}/posts/all`)
+      this.fetchPosts(`api/v1/posts/all`)
     }
   }
 
@@ -180,7 +180,7 @@ export class BlogPage extends Component {
   reload() {
     if (this.props.match.params && this.props.match.params.post) {
     } else {
-      this.fetchPosts(`${API_URL}/posts/all`)
+      this.fetchPosts(`api/v1/posts/all`)
     }
   }
 

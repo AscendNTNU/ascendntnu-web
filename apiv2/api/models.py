@@ -61,16 +61,15 @@ class Sponsor(models.Model):
     type = models.CharField(max_length=50, choices=SPONSOR_TYPES, null=True)
     link = models.CharField(max_length=100)
     logo = models.CharField(max_length=100)
-    logo_dark = models.CharField(max_length=100)
+    logo_dark = models.CharField(max_length=100, blank=True, null=True)
     short_text = models.TextField()
-    sign_year = models.DateField()
 
 
 class History(models.Model):
-    date = models.DateField()
+    date = models.CharField(max_length=50)
     title = models.CharField(max_length=50)
     content = models.TextField()
-    image = models.CharField(max_length=150)
+    post = models.CharField(max_length=150, blank=True, null=True)
     tags = models.CharField(max_length=150)
     categories = models.CharField(max_length=50)
 
@@ -78,7 +77,7 @@ class History(models.Model):
 class BlogPost(models.Model):
     layout = models.CharField(max_length=50, default='post')
     title = models.CharField(max_length=50)
-    date = models.DateTimeField(default=datetime.now)
+    date = models.CharField(max_length=50)
     categories = models.CharField(max_length=100)
     author = models.CharField(max_length=50)
     blog_content = models.CharField(max_length=400)
