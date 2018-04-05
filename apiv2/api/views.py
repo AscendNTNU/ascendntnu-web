@@ -1,5 +1,5 @@
 from rest_framework import generics
-from django.db.models import F
+from django.db.models import *
 from .models import *
 from .serializers import *
 from django.contrib.postgres.search import SearchQuery, SearchRank, SearchVector, TrigramSimilarity

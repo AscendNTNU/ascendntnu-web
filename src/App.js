@@ -17,6 +17,8 @@ import {
   ContactPage,
 } from './components'
 
+console.log(process)
+
 export class App extends Component {
   constructor(props) {
     super(props)
@@ -99,7 +101,7 @@ export class App extends Component {
             render={(props) => this.switchPage(props, AboutPage, 'About us')} 
           />
           <Route 
-            path="/blog" 
+            exact path="/blog" 
             render={(props) => this.switchPage(props, BlogPage, 'Blog')} 
           />
           <Route 
