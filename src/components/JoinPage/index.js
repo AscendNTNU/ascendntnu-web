@@ -548,8 +548,9 @@ export class JoinPage extends Component {
           p > Tidligere erfaring er ikke et krav
           for å bli med i Ascend. Det viktigste er å ha en interesse
           for det vi jobber med, og en interesse
-          for å lære. < /p> <
-          a className = 'button active'
+          for å lære. < /p> 
+          <p>Om du ønsker mer informasjon om hva stillingene går ut på, kom på infomøte onsdag 11 april klokken 13.15 i S2</p>
+          <a className = 'button active'
           style = {
             {
               alignSelf: 'flex-start',

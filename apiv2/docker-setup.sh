@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Not functioning properly at the moment, will be used at a later time
+# Collect staticfiles
+# echo "Collecting staticfiles"
+# python manage.py collectstatic
+
 # Apply database migrations
 echo "Apply database migrations"
 python manage.py makemigrations --no-input
@@ -15,3 +20,4 @@ python manage.py loaddata data.json
 # Apply database migrations
 echo "Starting server"
 python manage.py runserver 0.0.0.0:8000
+
