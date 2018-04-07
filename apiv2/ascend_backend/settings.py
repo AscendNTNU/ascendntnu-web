@@ -26,20 +26,9 @@ SECRET_KEY = '*nao88%=q))6pu0+^lg)2ms8$_h$0#_zrhpx-0bgy7&iq=6u!5'
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    '.ascendntnu.no',
-    '.www.ascendntnu.no',
     'ascendntnu.no',
-    'www.ascendntnu.no',
-    '.dev.ascendntnu.no',
-    '.www.dev.ascendntnu.no'
     'dev.ascendntnu.no',
-    'www.dev.ascendntnu.no'
-    'localhost:8081',
-    'localhost:8091',
     'localhost',
-    '.localhost',
-    '127.0.0.1:8081',
-    '127.0.0.1:8091',
     '127.0.0.1'
 ]
 
