@@ -4,3 +4,5 @@ djangorestframework
 markdown
 django-filter
 django-pagedown
+django-cors-headers
+whitenoise
