@@ -28,7 +28,7 @@ export class BlogPage extends Component {
     } else {
       if (this.props.match.params && this.props.match.params.tags)
         this.state.tagValues = this.props.match.params.tags.split(',')
-      this.fetchPosts(`${API_URL}/posts/all`)
+      this.fetchPosts()
     }
   }
 
@@ -58,8 +58,16 @@ export class BlogPage extends Component {
     }
   }
 
-  fetchPosts(url) {
+  fetchPosts() {
     let setup = process.env.NODE_ENV === 'production' ? {} : { mode: 'cors' }
+
+    let postsURL = 'posts/all'
+    if (/v2/.test(API_URL)) {
+      postsURL = 'blog/'
+    }
+
+    let url = `${API_URL}/${postsURL}`
+    url = 'api/v1/posts/all'
 
     fetch(url, setup)
       .then(r => r.json())
@@ -180,7 +188,7 @@ export class BlogPage extends Component {
   reload() {
     if (this.props.match.params && this.props.match.params.post) {
     } else {
-      this.fetchPosts(`${API_URL}/posts/all`)
+      this.fetchPosts()
     }
   }
 

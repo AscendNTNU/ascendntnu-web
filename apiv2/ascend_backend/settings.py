@@ -25,7 +25,11 @@ SECRET_KEY = '*nao88%=q))6pu0+^lg)2ms8$_h$0#_zrhpx-0bgy7&iq=6u!5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'dev.ascendntnu.no',
+    'ascendntnu.no',
+    'localhost'
+]
 
 
 # Application definition
@@ -34,6 +38,7 @@ INSTALLED_APPS = [
     'api',
     'rest_framework',
     'pagedown',
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -46,6 +51,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -87,6 +93,13 @@ DATABASES = {
     }
 }
 
+# Allowed origin for cors request
+CORS_ORIGIN_WHITELIST = (
+    '127.0.0.1:8080',
+    '127.0.0.1:8081', 
+    '127.0.0.1:8082',
+    '127.0.0.1:8090'
+)
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -124,4 +137,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/apiv2/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'apiv2/static'),
+)

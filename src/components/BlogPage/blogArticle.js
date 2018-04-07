@@ -27,7 +27,7 @@ export class BlogArticle extends Component {
     this.parser = new Parser()
     this.renderer = new HtmlRenderer()
 
-    this.fetchPost(`${API_URL}/posts/${this.props.post}`)
+    this.fetchPost(this.props.post)
   }
 
   componentDidUpdate(prevProp, prevState) {
@@ -50,12 +50,17 @@ export class BlogArticle extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.post !== this.props.post) {
-      this.fetchPost(`${API_URL}/posts/${nextProps.post}`)
+      this.fetchPost(nextProps.post)
     }
   }
 
-  fetchPost(url) {
+  fetchPost(post) {
     let setup = process.env.NODE_ENV === 'production' ? {} : { mode: 'cors' }
+
+    let url = `${API_URL}/posts/${post}`
+    if (/v2/.test(API_URL)) {
+      url = `/api/v1/posts/${post}`
+    }
 
     fetch(url, setup)
       .then(r => r.json())
