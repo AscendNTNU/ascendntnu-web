@@ -16,7 +16,7 @@ export class FrontPage extends Component {
           <p>Vil du være med på et omfattende droneprosjekt? Bli med i Ascend NTNU for å utvikle en dronen som skal løse en "umulig" oppgave i verdensklasse.</p>
           <Link to="join">Gå til join-siden vår for mer informasjon.</Link>
           <p style={ { color: 'red' } }><b>Frist 15. april kl. 23:59!</b></p>
-          <p style={ { color: 'yellow' } }><b>Infomøte 11. april klokken 13.15 i S2</b></p>
+          <p style={ { color: 'yellow' } }><b>Infomøte 11. april klokken 14:30 i S2</b></p>
         </Announcement>}
         <Splash />
         {/*<Section titleText="History of Ascend NTNU" className="centered" />
