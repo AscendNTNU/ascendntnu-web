@@ -28,7 +28,7 @@ services:
     working_dir: /srv/ascend
 
   build:
-    image: registry.ascendntnu.no/test-frontend:1.0
+    build: .
     user: ${DOCKER_USER-1000}:${DOCKER_USER-1000}
     command: npm run build
     volumes:
