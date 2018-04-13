@@ -31,20 +31,24 @@ export class FrontPage extends Component {
           <p style={ { color: 'red' } }><b>Frist 15. april kl. 23:59!</b></p>
           <p style={ { color: 'yellow' } }><b>Infomøte 11. april klokken 14:30 i S2</b></p>
         </Announcement>}
-        {/*<Splash />*/}
+        <Splash />
         
         {/*<Section titleText="History of Ascend NTNU" className="centered" />
         <HistoryViewer />*/}
-        <YouTube style={youtubeStyle}
-          videoId="qr6UwZnJUYc"
-          opts={opts}
-          onReady={this._onReady}
-        />
         <Link to="/join">
           <div className="yellow-background">
             <h1>We are currently recruiting new board members and team leaders, apply by April 15th!</h1>
           </div>
         </Link>
+        <Section titleText="Promovideo" className="centered">
+        <YouTube style={youtubeStyle}
+          videoId="qr6UwZnJUYc"
+          opts={opts}
+          onReady={this._onReady}
+        />
+        </Section>
+        
+        
         <Section titleText="Our sponsors" className="centered">
           <SponsorList />
         </Section>

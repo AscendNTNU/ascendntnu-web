@@ -1984,6 +1984,6 @@ code {
 .page-front iframe {
     width: 100%;
     height: calc((100vw) * 315 / 560);
-    max-width: calc(1000px);
-    max-height: calc((1000px) * 315 / 560);
+    max-width: calc(768px);
+    max-height: calc((768px) * 315 / 560);
 }
