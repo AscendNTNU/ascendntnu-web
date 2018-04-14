@@ -18,11 +18,6 @@ export class FrontPage extends Component {
       }
     }
 
-    const youtubeStyle = {
-      width: '100%',
-      height: 800
-    }
-
     return (
       <div className="page-front page">
         {<Announcement titleText="Vi har nå opptak!">
@@ -41,7 +36,7 @@ export class FrontPage extends Component {
           </div>
         </Link>
         <Section titleText="Promovideo" className="centered">
-        <YouTube style={youtubeStyle}
+        <YouTube 
           videoId="qr6UwZnJUYc"
           opts={opts}
           onReady={this._onReady}
