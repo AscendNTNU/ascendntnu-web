@@ -7,10 +7,9 @@ import {
   SubSection,
   SubSubSection
 } from '../PageLayout'
-import {
-  Breadcrumb
-} from '../Common/breadcrumb'
+import { Breadcrumb } from '../Common/breadcrumb'
 
+import YouTube from 'react-youtube'
 export class JoinPage extends Component {
   constructor (props) {
     super(props)
@@ -49,6 +48,14 @@ export class JoinPage extends Component {
   }
 
   render () {
+    const opts = {
+      height: 150,
+      width: 200,
+      playerVars: { // https://developers.google.com/youtube/player_parameters
+        autoplay: 0
+      }
+    }
+
     let positions = {
       'en': [ <div />
       ],
@@ -401,7 +408,11 @@ export class JoinPage extends Component {
           for å bli med i Ascend. Det viktigste er å ha en interesse
           for det vi jobber med, og en interesse
           for å lære. </p>
-        <iframe width='560' height='315' src='https://www.youtube.com/embed/qr6UwZnJUYc' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen />
+          <YouTube 
+            videoId="qr6UwZnJUYc"
+            opts={opts}
+            onReady={this._onReady}
+          />
         <p>Som styremedlem eller gruppeleder i Team 2019 vil du få bryne deg på et helt nytt oppdrag. Denne sommeren er siste gang Mission 7 vil bli arrangert, og IARC har annonsert Mission 8! Les mer om dette spennende oppdraget i vår blogpost <a href='https://ascendntnu.no/blog/2018-04-14-mission-8'>om Mission 8.</a></p>
         <a className='button active'
           style={{
