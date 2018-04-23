@@ -7,7 +7,6 @@ import SponsorList from '../Common/sponsorlist'
 import { Section } from '../PageLayout'
 
 import { Link } from 'react-router-dom'
-import YouTube from 'react-youtube'
 export class FrontPage extends Component {
   render() {
     const opts = {
@@ -20,28 +19,21 @@ export class FrontPage extends Component {
 
     return (
       <div className="page-front page">
-        {<Announcement titleText="Vi har nå opptak!">
+        {/*{<Announcement titleText="Vi har nå opptak!">
           <p>Vil du være med på et omfattende droneprosjekt? Bli med i Ascend NTNU for å utvikle en dronen som skal løse en "umulig" oppgave i verdensklasse.</p>
           <Link to="join">Gå til join-siden vår for mer informasjon.</Link>
           <p style={ { color: 'red' } }><b>Frist 15. april kl. 23:59!</b></p>
           <p style={ { color: 'yellow' } }><b>Infomøte 11. april klokken 14:30 i S2</b></p>
-        </Announcement>}
+        </Announcement>}*/}
         <Splash />
         
         {/*<Section titleText="History of Ascend NTNU" className="centered" />
-        <HistoryViewer />*/}
+        <HistoryViewer />
         <Link to="/join">
           <div className="yellow-background">
             <h1>We are currently recruiting new board members and team leaders, apply by April 15th!</h1>
           </div>
-        </Link>
-        <Section titleText="Promovideo" className="centered">
-        <YouTube 
-          videoId="qr6UwZnJUYc"
-          opts={opts}
-          onReady={this._onReady}
-        />
-        </Section>
+        </Link>*/}
         
         
         <Section titleText="Our sponsors" className="centered">
