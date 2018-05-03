@@ -40,7 +40,7 @@ services:
     tty: true
 
   api:
-    image: ascendntnu/apiv2:2.0
+    build: apiv2/
     command: ./docker-setup.sh
     depends_on:
       - db

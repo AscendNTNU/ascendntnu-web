@@ -74,6 +74,11 @@ class History(models.Model):
     categories = models.CharField(max_length=50)
 
 
+class Quote(models.Model):
+    date = models.DateField(default=datetime.now)
+    author = models.CharField(max_length=50)
+    quote = models.TextField()
+
 class BlogPost(models.Model):
     layout = models.CharField(max_length=50, default='post')
     title = models.CharField(max_length=50)
