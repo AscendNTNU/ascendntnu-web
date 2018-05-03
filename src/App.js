@@ -17,6 +17,8 @@ import {
   ContactPage,
 } from './components'
 
+import QuotePage from './components'
+
 console.log(process)
 
 export class App extends Component {
@@ -127,6 +129,10 @@ export class App extends Component {
           <Route
             path="/join/:language?"
             render={(props) => this.switchPage(props, JoinPage, 'Join us')}
+          />
+          <Route
+            path="/quotes/"
+            render={(props) => this.switchPage(props, QuotePage, 'Quotes')}
           />
           <Route
             path="/missions"
