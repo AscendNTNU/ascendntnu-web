@@ -28,7 +28,7 @@ services:
     working_dir: /srv/ascend
 
   build:
-    image: ascendntnu/server:2.0
+    build: .
     user: ${DOCKER_USER-1000}:${DOCKER_USER-1000}
     command: npm run build
     volumes:
