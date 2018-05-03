@@ -17,6 +17,11 @@ class SponsorList(generics.ListCreateAPIView):
     serializer_class = SponsorSerializer
     http_method_names = ['get']
 
+class QuoteList(generics.ListCreateAPIView):
+    queryset = Quote.objects.all()
+    serializer_class = QuoteSerializer
+    http_method_names = ['get', 'post']
+
 
 class HistoryList(generics.ListCreateAPIView):
     queryset = History.objects.all()

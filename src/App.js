@@ -17,6 +17,7 @@ import {
   ContactPage,
 } from './components'
 
+import QuotePage from './components/QuotePage'
 console.log(process)
 
 export class App extends Component {
@@ -105,6 +106,66 @@ export class App extends Component {
             render={(props) => this.switchPage(props, BlogPage, 'Blog')} 
           />
           <Route 
+            path="/about" 
+            render={(props) => this.switchPage(props, AboutPage, 'About us')} 
+          />
+          <Route 
+            exact path="/blog" 
+            render={(props) => this.switchPage(props, BlogPage, 'Blog')} 
+          />
+          <Route 
+            path="/blog/tags/:tags?" 
+            render={(props) => this.switchPage(props, BlogPage, 'Blog')} 
+          />
+          <Route 
+            path="/blog/:post" 
+            path="/about" 
+            render={(props) => this.switchPage(props, AboutPage, 'About us')} 
+          />
+          <Route 
+            exact path="/blog" 
+            render={(props) => this.switchPage(props, BlogPage, 'Blog')} 
+          />
+          <Route 
+            path="/blog/tags/:tags?" 
+            render={(props) => this.switchPage(props, BlogPage, 'Blog')} 
+          />
+          <Route 
+            path="/blog/:post" 
+            path="/about" 
+            render={(props) => this.switchPage(props, AboutPage, 'About us')} 
+          />
+          <Route 
+            exact path="/blog" 
+            render={(props) => this.switchPage(props, BlogPage, 'Blog')} 
+          />
+          <Route 
+            path="/blog/tags/:tags?" 
+            render={(props) => this.switchPage(props, BlogPage, 'Blog')} 
+          />
+          <Route 
+            path="/blog/:post" 
+            path="/about" 
+            render={(props) => this.switchPage(props, AboutPage, 'About us')} 
+          />
+          <Route 
+            exact path="/blog" 
+            render={(props) => this.switchPage(props, BlogPage, 'Blog')} 
+          />
+          <Route 
+            path="/blog/tags/:tags?" 
+            render={(props) => this.switchPage(props, BlogPage, 'Blog')} 
+          />
+          <Route 
+            path="/blog/:post" 
+            path="/about" 
+            render={(props) => this.switchPage(props, AboutPage, 'About us')} 
+          />
+          <Route 
+            exact path="/blog" 
+            render={(props) => this.switchPage(props, BlogPage, 'Blog')} 
+          />
+          <Route 
             path="/blog/tags/:tags?" 
             render={(props) => this.switchPage(props, BlogPage, 'Blog')} 
           />
@@ -127,6 +188,10 @@ export class App extends Component {
           <Route
             path="/join/:language?"
             render={(props) => this.switchPage(props, JoinPage, 'Join us')}
+          />
+          <Route
+            path="/quotes"
+            render={(props) => this.switchPage(props, QuotePage, 'Quotes')}
           />
           <Route
             path="/missions"
