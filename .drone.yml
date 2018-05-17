@@ -6,7 +6,7 @@ pipeline:
     when:
       event: push
     commands:
-      - yarn
+      - yarn --ignore-engines
       - ./test-server.sh
 
   frontend:
@@ -15,7 +15,7 @@ pipeline:
     when:
       event: push
     commands:
-      - yarn
+      - yarn --ignore-engines
       - npm run build
 
   deploy-dev:
