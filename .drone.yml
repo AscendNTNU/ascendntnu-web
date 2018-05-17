@@ -16,7 +16,7 @@ pipeline:
       event: push
     commands:
       - yarn --ignore-engines
-      - npm run build
+      - yarn --ignore-engines run build
 
   deploy-dev:
     image: drillster/drone-rsync
