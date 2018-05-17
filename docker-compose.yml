@@ -15,7 +15,7 @@ services:
     working_dir: /srv/ascend
 
   dev:
-    build: .
+    image: ascendntnu/server:2.01
     command: npm start
     environment:
       - NODE_ENV
@@ -28,7 +28,7 @@ services:
     working_dir: /srv/ascend
 
   build:
-    build: .
+    image: ascendntnu/server:2.01
     user: ${DOCKER_USER-1000}:${DOCKER_USER-1000}
     command: npm run build
     volumes:
@@ -40,7 +40,7 @@ services:
     tty: true
 
   api:
-    build: apiv2
+    image: ascendntnu/apiv2:2.01
     command: ./docker-setup.sh
     depends_on:
       - db
