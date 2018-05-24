@@ -3,7 +3,7 @@ version: '3'
 services:
 
   server:
-    image: node:6
+    image: node:9
     command: node server.js
     environment:
       - SERVER_PORT

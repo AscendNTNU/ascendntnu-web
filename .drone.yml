@@ -1,7 +1,7 @@
 pipeline:
 
   backend:
-    image: node:6
+    image: node:9
     pull: true
     when:
       event: push
@@ -10,7 +10,7 @@ pipeline:
       - ./test-server.sh
 
   frontend:
-    image: node:6
+    image: node:9
     pull: true
     when:
       event: push
