@@ -6,7 +6,7 @@ pipeline:
     when:
       event: push
     commands:
-      - yarn --ignore-engines
+      - yarn
       - ./test-server.sh
 
   frontend:
@@ -15,8 +15,8 @@ pipeline:
     when:
       event: push
     commands:
-      - yarn --ignore-engines
-      - yarn --ignore-engines run build
+      - yarn
+      - npm run build
 
   deploy-dev:
     image: drillster/drone-rsync

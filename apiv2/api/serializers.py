@@ -20,6 +20,11 @@ class HistorySerializer(serializers.HyperlinkedModelSerializer):
         fields = ('date', 'title', 'content', 'post', 'tags', 'categories')
 
 
+class QuoteSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Quote
+        fields = ('date', 'author', 'quote')
+
 class BlogPostSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = BlogPost

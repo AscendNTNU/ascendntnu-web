@@ -1841,6 +1841,24 @@ code {
     min-height: calc(12px + 32px + 1.3em);
 }
 
+.quote-center {
+    display: flex;
+    justify-content: center;
+}
+
+.quote-author-and-date {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.quote-section > h3 {
+    justify-content: center;
+}
+
+.italic-quote {
+    font-style: italic;
+}
+
 @media (max-height: 484px) {
     .front-splash-right {
         left: 72.6px;
