@@ -1,22 +1,22 @@
 pipeline:
 
-#  backend:
-#    image: node:6
-#    pull: true
-#    when:
-#      event: push
-#    commands:
-#      - yarn
-#      - ./test-server.sh
-#
-#  frontend:
-#    image: node:6
-#    pull: true
-#    when:
-#      event: push
-#    commands:
-#      - yarn
-#      - npm run build
+  backend:
+    image: node:9
+    pull: true
+    when:
+      event: push
+    commands:
+      - yarn
+      - ./test-server.sh
+
+  frontend:
+    image: node:9
+    pull: true
+    when:
+      event: push
+    commands:
+      - yarn
+      - npm run build
 
   deploy-dev:
     image: drillster/drone-rsync

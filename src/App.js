@@ -118,9 +118,12 @@ export class App extends Component {
             render={(props) => this.switchPage(props, BlogPage, 'Blog')} 
           />
           <Route 
-            path="/blog/:post" 
-            path="/about" 
-            render={(props) => this.switchPage(props, AboutPage, 'About us')} 
+            exact path="/blog" 
+            render={(props) => this.switchPage(props, BlogPage, 'Blog')} 
+          />
+          <Route 
+            path="/blog/tags/:tags?" 
+            render={(props) => this.switchPage(props, BlogPage, 'Blog')} 
           />
           <Route 
             exact path="/blog" 
@@ -131,35 +134,12 @@ export class App extends Component {
             render={(props) => this.switchPage(props, BlogPage, 'Blog')} 
           />
           <Route 
-            path="/blog/:post" 
-            path="/about" 
-            render={(props) => this.switchPage(props, AboutPage, 'About us')} 
-          />
-          <Route 
             exact path="/blog" 
             render={(props) => this.switchPage(props, BlogPage, 'Blog')} 
           />
           <Route 
             path="/blog/tags/:tags?" 
             render={(props) => this.switchPage(props, BlogPage, 'Blog')} 
-          />
-          <Route 
-            path="/blog/:post" 
-            path="/about" 
-            render={(props) => this.switchPage(props, AboutPage, 'About us')} 
-          />
-          <Route 
-            exact path="/blog" 
-            render={(props) => this.switchPage(props, BlogPage, 'Blog')} 
-          />
-          <Route 
-            path="/blog/tags/:tags?" 
-            render={(props) => this.switchPage(props, BlogPage, 'Blog')} 
-          />
-          <Route 
-            path="/blog/:post" 
-            path="/about" 
-            render={(props) => this.switchPage(props, AboutPage, 'About us')} 
           />
           <Route 
             exact path="/blog" 

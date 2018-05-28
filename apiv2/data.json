@@ -1403,6 +1403,19 @@
     }
 },
 {
+    "model": "api.sponsor",
+    "pk": 133,
+    "fields": {
+        "name": "Siemens",
+        "year": 2018,
+        "type": null,
+        "link": "https://www.siemens.com",
+        "logo": "/public/assets/siemens.png",
+        "logo_dark": "/public/assets/siemens.png",
+        "short_text": "Siemens is an international knowledge based group designing high tech solutions for industry, energy, cities and healthcare."
+    }
+},
+{
     "model": "api.history",
     "pk": 7,
     "fields": {
