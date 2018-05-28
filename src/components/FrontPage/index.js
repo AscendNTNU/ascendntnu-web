@@ -6,17 +6,20 @@ import SponsorList from '../Common/sponsorlist'
 //import { HistoryViewer } from '../Common/historyViewer'
 import { Section } from '../PageLayout'
 
+import YouTube from 'react-youtube';
+
+
 //import { Link } from 'react-router-dom'
 export class FrontPage extends Component {
   render() {
-    /* Used for youtube player
+    //Used for youtube player
     const opts = {
       height: 150,
       width: 200,
       playerVars: { // https://developers.google.com/youtube/player_parameters
         autoplay: 0
       }
-    }*/
+    }
 
     return (
       <div className="page-front page">
@@ -27,16 +30,13 @@ export class FrontPage extends Component {
           <p style={ { color: 'yellow' } }><b>Infomøte 11. april klokken 14:30 i S2</b></p>
         </Announcement>}*/}
         <Splash />
-        
-        {/*<Section titleText="History of Ascend NTNU" className="centered" />
-        <HistoryViewer />
-        <Link to="/join">
-          <div className="yellow-background">
-            <h1>We are currently recruiting new board members and team leaders, apply by April 15th!</h1>
-          </div>
-        </Link>*/}
-        
-        
+        <Section titleText="Autonomous flying" className="centered">
+        <YouTube
+          videoId="C4gX9FauXCs"
+          opts={opts}
+          onReady={this._onReady}
+        />
+        </Section> 
         <Section titleText="Our sponsors" className="centered">
           <SponsorList />
         </Section>
