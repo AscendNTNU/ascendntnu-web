@@ -70,6 +70,62 @@ export class DronePage extends Component {
           ],
         },
       },
+
+      {
+        name: 'Valkyrie',
+        version: 'v3.0',
+        image: (
+          <div
+            className="drone-image"
+            style={{
+              backgroundImage: 'url(/images/drones/drone4-minimized.jpg)',
+            }}
+          />
+        ),
+        content: [
+          <span>
+            Our third quadcopter was designed as a physically robust platform
+            for testing new control software. The small size and low weight
+            means that we can test new control strategies, including landing on
+            ground robots, with less risk of damage to equipment.
+          </span>,
+          <span>
+            It has a Pixhawk flight controller and an Intel NUC onboard
+            computer running Ubuntu Server with ROS. The custom made frame made
+            of carbon fiber and 3D-printed parts allows compact placement of the
+            hardware and even weight distribution, and well balanced motors from
+            T-Motor minimize vibrations and yields high efficiency.
+          </span>,
+        ],
+        testDrone: {
+          name: 'Drone 1.1',
+          version: 'v1.1',
+          image: (
+            <div
+              className="drone-image"
+              style={{
+                backgroundImage: 'url(/images/drones/drone3-minimized.jpg)',
+              }}
+            />
+          ),
+          content: [
+            <span>
+              Our third quadcopter was designed as a physically robust platform
+              for testing new control software. The small size and low weight
+              means that we can test new control strategies, including landing
+              on ground robots, with less risk of damage to equipment.
+            </span>,
+            <span>
+              It has a Pixhawk flight controller, an Odroid XU4 onboard computer
+              running Ubuntu Server with ROS, and is used with an Optitrack
+              tracking system. The custom made frame made of carbon fiber and
+              3D-printed parts allows compact placement of the hardware and even
+              weight distribution, and well balanced motors from T-Motor
+              minimize vibrations and yields high efficiency.
+            </span>,
+          ],
+        },
+      },
       {
         name: 'Valkyrie',
         version: 'v3.0',
@@ -135,6 +191,10 @@ export class DronePage extends Component {
       {
         year: 2017,
         drone: this.drones[1],
+      },
+      {
+        year: 2018,
+        drone: this.drones[2],
       },
     ]
 
