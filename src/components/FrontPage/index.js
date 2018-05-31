@@ -30,9 +30,9 @@ export class FrontPage extends Component {
           <p style={ { color: 'yellow' } }><b>Infomøte 11. april klokken 14:30 i S2</b></p>
         </Announcement>}*/}
         <Splash />
-        <Section titleText="Autonomous flying" className="centered">
+        <Section titleText="Promotional video" className="centered">
         <YouTube
-          videoId="C4gX9FauXCs"
+          videoId="qr6UwZnJUYc"
           opts={opts}
           onReady={this._onReady}
         />
