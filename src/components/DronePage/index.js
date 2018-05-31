@@ -139,7 +139,7 @@ export class DronePage extends Component {
         ),
         content: [
           <span>
-            This year´s drone is a new and improved version of last year´s drone. 
+            This years drone is a new and improved version of last year´s drone. 
             It got more computing power and sensors than the previous one. The 
             structure of the drone is made out of carbon fibre and 3d printed parts. 
             This makes it modular, which allows easy testing of multiple technologies. 
