@@ -31,11 +31,11 @@ export class FrontPage extends Component {
         </Announcement>}*/}
         <Splash />
         <Section titleText="Promotional video" className="centered">
-        <YouTube
-          videoId="qr6UwZnJUYc"
-          opts={opts}
-          onReady={this._onReady}
-        />
+          <YouTube
+            videoId="qr6UwZnJUYc"
+            opts={opts}
+            onReady={this._onReady}
+          />
         </Section> 
         <Section titleText="Our sponsors" className="centered">
           <SponsorList />
