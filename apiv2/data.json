@@ -1,0 +1,1479 @@
+[
+{
+    "model": "api.member",
+    "pk": 228,
+    "fields": {
+        "year": 2016,
+        "name": "Johan Hatleskog",
+        "background": "Cybernetics and Robotics",
+        "role": "Project manager",
+        "group": "Board, Admin, Project, Leader",
+        "image": "/images/teams/2016/johan.jpg",
+        "mail": null,
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 229,
+    "fields": {
+        "year": 2016,
+        "name": "Tobias Stene Hansteen",
+        "background": "Cybernetics and Robotics",
+        "role": "Technical leader",
+        "group": "Board, Admin",
+        "image": "/images/teams/2016/tobias.jpg",
+        "mail": null,
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 230,
+    "fields": {
+        "year": 2016,
+        "name": "Marius Maaland",
+        "background": "Computer Science",
+        "role": "Deputy project manager",
+        "group": "Board, Admin",
+        "image": "/images/teams/2016/marius.jpg",
+        "mail": null,
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 231,
+    "fields": {
+        "year": 2016,
+        "name": "Simen Haugo",
+        "background": "Cybernetics and Robotics",
+        "role": "Group leader AI",
+        "group": "Board, AI, Leader",
+        "image": "/images/teams/2016/simen.jpg",
+        "mail": null,
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 232,
+    "fields": {
+        "year": 2016,
+        "name": "Martin Sollie",
+        "background": "Cybernetics and Robotics",
+        "role": "Group leader Control",
+        "group": "Board, Leader, Control",
+        "image": "/images/teams/2016/martin.jpg",
+        "mail": null,
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 233,
+    "fields": {
+        "year": 2016,
+        "name": "Matias Christensen",
+        "background": "Computer Science",
+        "role": "Group leader Perception",
+        "group": "Board, Leader, Perception",
+        "image": "/images/teams/2016/matias.jpg",
+        "mail": null,
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 234,
+    "fields": {
+        "year": 2016,
+        "name": "Ann Therese Kjenes",
+        "background": "Economics and Business Administration",
+        "role": "Business manager",
+        "group": "Admin, Business",
+        "image": "/images/teams/2016/ann-therese.jpg",
+        "mail": null,
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 235,
+    "fields": {
+        "year": 2016,
+        "name": "Emilie Udn\u00e6s",
+        "background": "Electrical Engineering",
+        "role": "Marketing manager",
+        "group": "Admin, Marketing",
+        "image": "/images/teams/2016/emilie.jpg",
+        "mail": null,
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 236,
+    "fields": {
+        "year": 2016,
+        "name": "Mikkel Antonsen",
+        "background": "Computer Science",
+        "role": "AI engineer",
+        "group": "AI",
+        "image": "/images/teams/2016/mikkel.jpg",
+        "mail": null,
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 237,
+    "fields": {
+        "year": 2016,
+        "name": "Alexander Bakke",
+        "background": "Computer Science",
+        "role": "AI engineer",
+        "group": "AI",
+        "image": "/images/teams/2016/alexander.jpg",
+        "mail": null,
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 238,
+    "fields": {
+        "year": 2016,
+        "name": "Nils Inge Rugsveen",
+        "background": "Computer Science",
+        "role": "AI engineer",
+        "group": "AI",
+        "image": "/images/teams/2016/nils.jpg",
+        "mail": null,
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 239,
+    "fields": {
+        "year": 2016,
+        "name": "Christian Wilhelmsen",
+        "background": "Mechanical Engineering",
+        "role": "Mechanical engineer",
+        "group": "Control",
+        "image": "/images/teams/2016/christian.jpg",
+        "mail": null,
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 240,
+    "fields": {
+        "year": 2016,
+        "name": "Brage Eikanger",
+        "background": "Cybernetics and Robotics",
+        "role": "Control engineer",
+        "group": "Control",
+        "image": "/images/teams/2016/brage.jpg",
+        "mail": null,
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 241,
+    "fields": {
+        "year": 2016,
+        "name": "Stein-Inge Torset \u00d8ien",
+        "background": "Cybernetics and Robotics",
+        "role": "Control engineer",
+        "group": "Perception",
+        "image": "/images/teams/2016/stein-inge.jpg",
+        "mail": null,
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 242,
+    "fields": {
+        "year": 2016,
+        "name": "Thomas Rostrup Andersen",
+        "background": "Cybernetics and Robotics",
+        "role": "Perception engineer",
+        "group": "Perception",
+        "image": "/images/teams/2016/thomas.jpg",
+        "mail": null,
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 243,
+    "fields": {
+        "year": 2016,
+        "name": "H\u00e5kon Flatval",
+        "background": "Computer Science",
+        "role": "Perception engineer",
+        "group": "Perception",
+        "image": "/images/teams/2016/hakon.jpg",
+        "mail": null,
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 244,
+    "fields": {
+        "year": 2017,
+        "name": "Brage Eikanger",
+        "background": "Cybernetics and Robotics",
+        "role": "Project Manager",
+        "group": "Project, Board, Admin, Leader",
+        "image": "/images/teams/2017/brage-e-2017.jpg",
+        "mail": "brage.eikanger[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 245,
+    "fields": {
+        "year": 2017,
+        "name": "Erling Solberg",
+        "background": "Electrical Engineering",
+        "role": "Sponsor Manager",
+        "group": "Marketing, Admin",
+        "image": "/images/teams/2017/erling-s-2017.jpg",
+        "mail": "erling.solberg[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 246,
+    "fields": {
+        "year": 2017,
+        "name": "Emilie Udn\u00e6s",
+        "background": "Electrical Engineering",
+        "role": "Communication Leader",
+        "group": "Marketing, Board, Admin",
+        "image": "/images/teams/2017/emilie-u-2017.jpg",
+        "mail": "emilie.udnaes[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 247,
+    "fields": {
+        "year": 2017,
+        "name": "Matias Christensen",
+        "background": "Computer Science",
+        "role": "Chief Engineer",
+        "group": "Board, Admin",
+        "image": "/images/teams/2017/matias-c-2017.jpg",
+        "mail": "matias.christensen[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 248,
+    "fields": {
+        "year": 2017,
+        "name": "Niklas Molnes Hole",
+        "background": "Computer Science",
+        "role": "Web Developer",
+        "group": "Marketing, Admin",
+        "image": "/images/teams/2017/niklas-mh-2017.jpg",
+        "mail": "niklas.hole[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 249,
+    "fields": {
+        "year": 2017,
+        "name": "Simon Blindheim",
+        "background": "Cybernetics and Robotics",
+        "role": "Head of Economics",
+        "group": "Board, Admin",
+        "image": "/images/teams/2017/simon-b-2017.jpg",
+        "mail": "simon.blindheim[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 250,
+    "fields": {
+        "year": 2017,
+        "name": "Vebj\u00f8rn Isaksen",
+        "background": "Cybernetics and Robotics",
+        "role": "Deputy Project Manager",
+        "group": "Marketing, Board, Admin",
+        "image": "/images/teams/2017/vebjorn-i-2017.jpg",
+        "mail": "vebjorn.isaksen[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 251,
+    "fields": {
+        "year": 2017,
+        "name": "Martin Sollie",
+        "background": "Cybernetics and Robotics",
+        "role": "Control Leader",
+        "group": "Control, Leader",
+        "image": "/images/teams/2017/martin-s-2017.jpg",
+        "mail": "martin.sollie[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 252,
+    "fields": {
+        "year": 2017,
+        "name": "Amine Othmane",
+        "background": "Cybernetics and Robotics",
+        "role": "Control Member",
+        "group": "Control",
+        "image": "/images/teams/2017/amine-o-2017.jpg",
+        "mail": "amine.othmane[at]hotmail.fr",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 253,
+    "fields": {
+        "year": 2017,
+        "name": "Fredrik Opeide",
+        "background": "Cybernetics and Robotics",
+        "role": "Control Member",
+        "group": "Control",
+        "image": "/images/teams/2017/fredrik-o-2017.jpg",
+        "mail": "fredrik.opeide[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 254,
+    "fields": {
+        "year": 2017,
+        "name": "H\u00e5vard Sk\u00e5ra Mellbye",
+        "background": "Cybernetics and Robotics",
+        "role": "Control Member",
+        "group": "Control",
+        "image": "/images/teams/2017/havard-sm-2017.jpg",
+        "mail": "havard.mellbye[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 255,
+    "fields": {
+        "year": 2017,
+        "name": "Roy Angelsen",
+        "background": "Cybernetics and Robotics",
+        "role": "Control Member",
+        "group": "Control",
+        "image": "/images/teams/2017/roy-a-2017.jpg",
+        "mail": "roy.angelsen[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 256,
+    "fields": {
+        "year": 2017,
+        "name": "H\u00e5kon Flatval",
+        "background": "Computer Science",
+        "role": "Perception Leader",
+        "group": "Perception, Leader",
+        "image": "/images/teams/2017/hakon-f-2017.jpg",
+        "mail": "hakon.flatval[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 257,
+    "fields": {
+        "year": 2017,
+        "name": "Ivar Thokle Hovden",
+        "background": "Computer Science",
+        "role": "Perception Member",
+        "group": "Perception, Board",
+        "image": "/images/teams/2017/ivar-th-2017.jpg",
+        "mail": "ivar.thokle.hovden[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 258,
+    "fields": {
+        "year": 2017,
+        "name": "Erlend Eriksen",
+        "background": "Cybernetics and Robotics",
+        "role": "Perception Member",
+        "group": "Perception",
+        "image": "/images/teams/2017/erlend-e-2017.jpg",
+        "mail": "erlend.eriksen[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 259,
+    "fields": {
+        "year": 2017,
+        "name": "Johan Wind",
+        "background": "Applied Physics and Mathematics",
+        "role": "Perception Member",
+        "group": "Perception",
+        "image": "/images/teams/2017/johan-w-2017.jpg",
+        "mail": "johan.wind[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 260,
+    "fields": {
+        "year": 2017,
+        "name": "Markus Pike",
+        "background": "Computer Science",
+        "role": "Perception Member",
+        "group": "Perception",
+        "image": "/images/teams/2017/markus-p-2017.jpg",
+        "mail": "markus.pike[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 261,
+    "fields": {
+        "year": 2017,
+        "name": "Rune Nordmo",
+        "background": "Cybernetics and Robotics",
+        "role": "Perception Member",
+        "group": "Perception",
+        "image": "/images/teams/2017/rune-n-2017.jpg",
+        "mail": "rune.nordmo[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 262,
+    "fields": {
+        "year": 2017,
+        "name": "Simen Haugo",
+        "background": "Cybernetics and Robotics",
+        "role": "Perception Member",
+        "group": "Perception",
+        "image": "/images/teams/2017/simen-h-2017.jpg",
+        "mail": "simen.haugo[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 263,
+    "fields": {
+        "year": 2017,
+        "name": "Magnus Reiersen",
+        "background": "Computer Science",
+        "role": "AI Leader",
+        "group": "AI, Leader",
+        "image": "/images/teams/2017/magnus-r-2017.jpg",
+        "mail": "magnus.reiersen[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 264,
+    "fields": {
+        "year": 2017,
+        "name": "Adrian Tofting",
+        "background": "Engineering and ICT",
+        "role": "AI Member",
+        "group": "AI",
+        "image": "/images/teams/2017/adrian-t-2017.jpg",
+        "mail": "adrian.tofting[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 265,
+    "fields": {
+        "year": 2017,
+        "name": "Alexander Danielsen-Haces",
+        "background": "Cybernetics and Robotics",
+        "role": "AI Member",
+        "group": "AI",
+        "image": "/images/teams/2017/alexander-dh-2017.jpg",
+        "mail": "alexander.danielsen[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 266,
+    "fields": {
+        "year": 2017,
+        "name": "Rasmus Munter",
+        "background": "Applied Mathematics",
+        "role": "AI Member",
+        "group": "AI",
+        "image": "/images/teams/2017/rasmus-m-2017.jpg",
+        "mail": "rasmus.munter[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 267,
+    "fields": {
+        "year": 2017,
+        "name": "Vilde Gj\u00e6rum",
+        "background": "Cybernetics and Robotics",
+        "role": "AI Member",
+        "group": "AI",
+        "image": "/images/teams/2017/vilde-g-2017.jpg",
+        "mail": "vilde.gjaerum[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 268,
+    "fields": {
+        "year": 2017,
+        "name": "Christian Wilhelmsen",
+        "background": "Mechanical Engineering",
+        "role": "Hardware Leader",
+        "group": "Hardware, Leader",
+        "image": "/images/teams/2017/christian-w-2017.jpg",
+        "mail": "christian.wilhelmsen[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 269,
+    "fields": {
+        "year": 2017,
+        "name": "Hans Theodor Johnsen",
+        "background": "Electrical Engineering",
+        "role": "Hardware Member",
+        "group": "Hardware",
+        "image": "/images/teams/2017/hans-tj-2017.jpg",
+        "mail": "hans.theodor.johnsen[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 270,
+    "fields": {
+        "year": 2017,
+        "name": "Patrick Sj\u00e5stad Langseth",
+        "background": "Mechanical Engineering",
+        "role": "Hardware Member",
+        "group": "Hardware",
+        "image": "/images/teams/2017/patrick-sl-2017.jpg",
+        "mail": "patrick.langseth[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 271,
+    "fields": {
+        "year": 2017,
+        "name": "Per Kristian P\u00f6cher",
+        "background": "Cybernetics and Robotics",
+        "role": "Hardware Member",
+        "group": "Hardware",
+        "image": "/images/teams/2017/per-kp-2017.jpg",
+        "mail": "per.kristian.pocher[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 272,
+    "fields": {
+        "year": 2018,
+        "name": "Simen Sandbu",
+        "background": "Mechanical Engineering",
+        "role": "Project Manager",
+        "group": "Admin, Board, Admin, Leader",
+        "image": "/images/teams/2018/simen-s-2018.png",
+        "mail": "simen.sandbu[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 273,
+    "fields": {
+        "year": 2018,
+        "name": "Erling Solberg",
+        "background": "Electrical Engineering",
+        "role": "Deputy Project Manager",
+        "group": "Board, Admin",
+        "image": "/images/teams/2018/erling-s-2018.png",
+        "mail": "erling.solberg[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 274,
+    "fields": {
+        "year": 2018,
+        "name": "Magnus Reiersen",
+        "background": "Computer Science",
+        "role": "Chief Engineer",
+        "group": "Admin, Board",
+        "image": "/images/teams/2018/magnus-r-2018.png",
+        "mail": "magnus.reiersen[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 275,
+    "fields": {
+        "year": 2018,
+        "name": "Kevin Kaldvansvik",
+        "background": "Cybernetics and Robotics",
+        "role": "Chief Engineer",
+        "group": "Admin, Board",
+        "image": "/images/teams/2018/kevin-k-2018.png",
+        "mail": "kevin.kaldvansvik[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 276,
+    "fields": {
+        "year": 2018,
+        "name": "Truls Olsen",
+        "background": "Cybernetics and Robotics",
+        "role": "Head of Economics",
+        "group": "Admin, Board",
+        "image": "/images/teams/2018/truls-o-2018.png",
+        "mail": "truls.olsen[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 277,
+    "fields": {
+        "year": 2018,
+        "name": "Kim Aksel Tahuil Borgen",
+        "background": "Computer Science",
+        "role": "Head of Marketing",
+        "group": "Admin, Board",
+        "image": "/images/teams/2018/kim-b-2018.png",
+        "mail": "kim.borgen[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 278,
+    "fields": {
+        "year": 2018,
+        "name": "Christian Wilhelmsen",
+        "background": "Mechanical Engineering",
+        "role": "Hardware Coach",
+        "group": "Coach",
+        "image": "/images/teams/2017/christian-w-2017.jpg",
+        "mail": "christian.wilhelmsen[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 279,
+    "fields": {
+        "year": 2018,
+        "name": "Simen Haugo",
+        "background": "Cybernetics and Robotics",
+        "role": "Perception Coach",
+        "group": "Coach",
+        "image": "/images/teams/2017/simen-h-2017.jpg",
+        "mail": "simen.haugo[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 280,
+    "fields": {
+        "year": 2018,
+        "name": "H\u00e5kon Flatval",
+        "background": "Computer Science",
+        "role": "Perception Coach",
+        "group": "Coach",
+        "image": "/images/teams/2017/hakon-f-2017.jpg",
+        "mail": "hakon.flatval[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 281,
+    "fields": {
+        "year": 2018,
+        "name": "Martin Lysvand Sollie",
+        "background": "Cybernetics and Robotics",
+        "role": "Control Coach",
+        "group": "Coach",
+        "image": "/images/teams/2017/martin-s-2017.jpg",
+        "mail": "martin.sollie[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 282,
+    "fields": {
+        "year": 2018,
+        "name": "Matias Christensen",
+        "background": "Computer Science",
+        "role": "Coach",
+        "group": "Coach",
+        "image": "/images/teams/2017/matias-c-2017.jpg",
+        "mail": "matias.christensen[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 283,
+    "fields": {
+        "year": 2018,
+        "name": "Kim Aksel Tahuil Borgen",
+        "background": "Computer Science",
+        "role": "Head of Marketing",
+        "group": "Marketing, Leader",
+        "image": "/images/teams/2018/kim-b-2018.png",
+        "mail": "kim.borgen[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 284,
+    "fields": {
+        "year": 2018,
+        "name": "Anders M\u00f8lster Hopland",
+        "background": "Computer Science",
+        "role": "Web Developer",
+        "group": "Marketing",
+        "image": "/images/teams/2018/anders-h-2018.png",
+        "mail": "anders.hopland[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 285,
+    "fields": {
+        "year": 2018,
+        "name": "Helene \u00c5svang",
+        "background": "Economics and Administrations",
+        "role": "Sponsor Contact",
+        "group": "Marketing",
+        "image": "/images/teams/2018/helene-aa-2018.png",
+        "mail": "helene.aasvang[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 286,
+    "fields": {
+        "year": 2018,
+        "name": "Kristine Stray",
+        "background": "Materials Science",
+        "role": "Graphical Designer",
+        "group": "Marketing",
+        "image": "/images/teams/2018/kristine-s-2018.png",
+        "mail": "kristine.stray[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 287,
+    "fields": {
+        "year": 2018,
+        "name": "Sara Edvardsen",
+        "background": "Electrical Engineering",
+        "role": "Event Manager",
+        "group": "Marketing",
+        "image": "/images/teams/2018/sara-e-2018.png",
+        "mail": "sara.edvardsen[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 288,
+    "fields": {
+        "year": 2018,
+        "name": "H\u00e5vard Sk\u00e5ra Mellbye",
+        "background": "Cybernetics and Robotics",
+        "role": "Control Leader",
+        "group": "Control, Leader",
+        "image": "/images/teams/2018/haavard-m-2018.png",
+        "mail": "havard.mellbye[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 289,
+    "fields": {
+        "year": 2018,
+        "name": "Rendell Cale",
+        "background": "Cybernetics and Robotics",
+        "role": "Control Member",
+        "group": "Control",
+        "image": "/images/teams/2018/rendell-c-2018.png",
+        "mail": "rendellc[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 290,
+    "fields": {
+        "year": 2018,
+        "name": "Oskar \u00d8stby",
+        "background": "Cybernetics and Robotics",
+        "role": "Control Member",
+        "group": "Control",
+        "image": "/images/teams/2018/oskar-oe-2018.png",
+        "mail": "oskar.oestby[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 291,
+    "fields": {
+        "year": 2018,
+        "name": "Atussa Koushan",
+        "background": "Cybernetics and Robotics",
+        "role": "Control Member",
+        "group": "Control",
+        "image": "/images/teams/2018/atussa-k-2018.png",
+        "mail": "atussa.koushan[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 292,
+    "fields": {
+        "year": 2018,
+        "name": "Chris Andr\u00e9 Brombach",
+        "background": "Cybernetics and Robotics",
+        "role": "Control Member\u00bb",
+        "group": "Control",
+        "image": "/images/teams/2018/chris-b-2018.png",
+        "mail": "chris.brombach[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 293,
+    "fields": {
+        "year": 2018,
+        "name": "Andrea Gjestvang",
+        "background": "Cybernetics and Robotics",
+        "role": "Control Member",
+        "group": "Control",
+        "image": "/images/teams/2018/andrea-g-2018.png",
+        "mail": "\u00abandrea.gjestvang[at]ascendntnu.no\u00bb",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 294,
+    "fields": {
+        "year": 2018,
+        "name": "Ulrich Isachsen",
+        "background": "Computer Science",
+        "role": "Perception Leader",
+        "group": "Perception, Leader",
+        "image": "/images/teams/2018/ulrich-i-2018.png",
+        "mail": "ulrich.isachsen[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 295,
+    "fields": {
+        "year": 2018,
+        "name": "Kevin Meyer",
+        "background": "Cybernetics and Robotics",
+        "role": "Perception Member",
+        "group": "Perception",
+        "image": "/images/teams/2018/kevin-m-2018.png",
+        "mail": "kevin.meyer[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 296,
+    "fields": {
+        "year": 2018,
+        "name": "Snorre B\u00f8rtenes",
+        "background": "Computer Science",
+        "role": "Perception Member",
+        "group": "Perception",
+        "image": "/images/teams/2018/snorre-b-2018.png",
+        "mail": "snorre.bortnes[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 297,
+    "fields": {
+        "year": 2018,
+        "name": "Andrea Marie Fest\u00f8y",
+        "background": "Engineering and ICT",
+        "role": "Perception Member",
+        "group": "Perception",
+        "image": "/images/teams/2018/andrea-f-2018.png",
+        "mail": "ndrea.marie.festoy@[at]scendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 298,
+    "fields": {
+        "year": 2018,
+        "name": "Ivar Thokle Hovden",
+        "background": "Cybernetics and Robotics",
+        "role": "Perception Member",
+        "group": "Perception",
+        "image": "/images/teams/2018/ivar-h-2018.png",
+        "mail": "ivar.thokle.hovden[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 299,
+    "fields": {
+        "year": 2018,
+        "name": "Emil Martens",
+        "background": "Cybernetics and Robotics",
+        "role": "Perception Member",
+        "group": "Perception",
+        "image": "/images/teams/2018/emil-m-2018.png",
+        "mail": "emil.martens[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 300,
+    "fields": {
+        "year": 2018,
+        "name": "Erling R\u00f8rvik",
+        "background": "Computer Science",
+        "role": "Perception Member",
+        "group": "Perception",
+        "image": "/images/teams/2018/erling-r-2018.png",
+        "mail": "erling.rorvik[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 301,
+    "fields": {
+        "year": 2018,
+        "name": "Marvin Reza",
+        "background": "Computer Science",
+        "role": "Perception Member",
+        "group": "Perception",
+        "image": "/images/teams/2018/marvin-r-2018.png",
+        "mail": "marvin.reza[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 302,
+    "fields": {
+        "year": 2018,
+        "name": "Rasmus Munter",
+        "background": "Applied Mathematics",
+        "role": "AI Leader",
+        "group": "AI, Leader",
+        "image": "/images/teams/2018/rasmus-m-2018.png",
+        "mail": "rasmus.munter[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 303,
+    "fields": {
+        "year": 2018,
+        "name": "Niklas Molnes Hole",
+        "background": "Computer Science",
+        "role": "AI Member",
+        "group": "AI",
+        "image": "/images/teams/2018/niklas-h-2018.png",
+        "mail": "niklas.hole[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 304,
+    "fields": {
+        "year": 2018,
+        "name": "Adrian Tofting",
+        "background": "Engineering and ICT",
+        "role": "AI Member",
+        "group": "AI",
+        "image": "/images/teams/2018/adrian-t-2018.png",
+        "mail": "adrian.tofting[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 305,
+    "fields": {
+        "year": 2018,
+        "name": "Alexander Danielsen-Haces",
+        "background": "Cybernetics and Robotics",
+        "role": "AI Member",
+        "group": "AI",
+        "image": "/images/teams/2018/alexander-dh-2018.png",
+        "mail": "alexander.danielsen[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 306,
+    "fields": {
+        "year": 2018,
+        "name": "Nadia Wangberg",
+        "background": "Cybernetics and Robotics",
+        "role": "AI Member",
+        "group": "AI",
+        "image": "/images/teams/2018/nadia-w-2018.png",
+        "mail": "nadia.wangberg[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 307,
+    "fields": {
+        "year": 2018,
+        "name": "Filip Grevle Lolland",
+        "background": "Mechanical Engineering",
+        "role": "Hardware Leader",
+        "group": "Hardware, Leader",
+        "image": "/images/teams/2018/filip-l-2018.png",
+        "mail": "filip.lolland[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 308,
+    "fields": {
+        "year": 2018,
+        "name": "Stian Ismar",
+        "background": "Mechanical Engineering",
+        "role": "Hardware Member",
+        "group": "Hardware",
+        "image": "/images/teams/2018/stian-i-2018.png",
+        "mail": "stian.ismar[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 309,
+    "fields": {
+        "year": 2018,
+        "name": "Hans Theodor Johnsen",
+        "background": "Electrical Engineering",
+        "role": "Hardware Member",
+        "group": "Hardware",
+        "image": "/images/teams/2018/hans-tj-2018.png",
+        "mail": "hans.theodor.johnsen[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 310,
+    "fields": {
+        "year": 2018,
+        "name": "Johannes W\u00e5gen",
+        "background": "Electrical Engineering",
+        "role": "Hardware Member",
+        "group": "Hardware",
+        "image": "/images/teams/2018/johannes-w-2018.png",
+        "mail": "johannes.wagen[at]ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.member",
+    "pk": 311,
+    "fields": {
+        "year": 2018,
+        "name": "Edvard Gr\u00f8dem",
+        "background": "Cybernetics and Robotics",
+        "role": "Hardware Member",
+        "group": "Hardware",
+        "image": "/images/teams/2018/edvard-g-2018.png",
+        "mail": "edvard.grodem@ascendntnu.no",
+        "active_member": true,
+        "search_vector": null
+    }
+},
+{
+    "model": "api.sponsor",
+    "pk": 122,
+    "fields": {
+        "name": "Kongsberg",
+        "year": 2016,
+        "type": "main",
+        "link": "http://kongsberg.com/",
+        "logo": "/public/assets/kongsberg.svg",
+        "logo_dark": "/public/assets/kongsberg_dark_bg.svg",
+        "short_text": "Our main sponsor Kongsberg is an international, knowledge-based group that supplies high-technology systems and solutions to customers engaged in the oil and gas industry, the merchant marine, and the defence and aerospace industries."
+    }
+},
+{
+    "model": "api.sponsor",
+    "pk": 123,
+    "fields": {
+        "name": "Elefun",
+        "year": 2016,
+        "type": "regular",
+        "link": "http://elefun.no/rc/multikopter.aspx",
+        "logo": "/public/assets/sponsor-elefun.png",
+        "logo_dark": null,
+        "short_text": "Elefun is a Norwegian web shop selling a plethora of great drones, multicopters and FPV-systems."
+    }
+},
+{
+    "model": "api.sponsor",
+    "pk": 124,
+    "fields": {
+        "name": "3D Robotics",
+        "year": 2016,
+        "type": "regular",
+        "link": "https://3drobotics.com/",
+        "logo": "/public/assets/sponsor-3dr.png",
+        "logo_dark": null,
+        "short_text": "3D Robotics are the makers of Pixhawk - the worlds leading autopilot system for UAVs. Our drones are powered by their hardware."
+    }
+},
+{
+    "model": "api.sponsor",
+    "pk": 125,
+    "fields": {
+        "name": "L\u00f8ten RC-shop",
+        "year": 2016,
+        "type": "regular",
+        "link": "http://www.rc-shop.no/",
+        "logo": "/public/assets/loten.jpeg",
+        "logo_dark": null,
+        "short_text": "Through their web-shop, L\u00f8ten RC-shop supplies RC-communities in Norway with top-quality gear."
+    }
+},
+{
+    "model": "api.sponsor",
+    "pk": 126,
+    "fields": {
+        "name": "Fiken",
+        "year": 2016,
+        "type": "regular",
+        "link": "https://fiken.no/",
+        "logo": "/public/assets/fiken.png",
+        "logo_dark": null,
+        "short_text": "Fiken makes accounting easy, even for aerial robotics teams. Their web application finally makes accounting user-friendly."
+    }
+},
+{
+    "model": "api.sponsor",
+    "pk": 127,
+    "fields": {
+        "name": "Kongsberg",
+        "year": 2017,
+        "type": "main",
+        "link": "http://kongsberg.com/",
+        "logo": "/public/assets/kongsberg.svg",
+        "logo_dark": "/public/assets/kongsberg_dark_bg.svg",
+        "short_text": "Our main sponsor Kongsberg is an international, knowledge-based group that supplies high-technology systems and solutions to customers engaged in the oil and gas industry, the merchant marine, and the defence and aerospace industries."
+    }
+},
+{
+    "model": "api.sponsor",
+    "pk": 128,
+    "fields": {
+        "name": "NORBIT",
+        "year": 2017,
+        "type": "regular",
+        "link": "https://norbit.com/",
+        "logo": "/public/assets/norbit.svg",
+        "logo_dark": "/public/assets/norbit_hvit.svg",
+        "short_text": "NORBIT is an international, knowledge-based group that continuously designs, develops and manufactures high technology products, systems and solutions to meet their customers\u00b4 changing needs."
+    }
+},
+{
+    "model": "api.sponsor",
+    "pk": 129,
+    "fields": {
+        "name": "Kongsberg",
+        "year": 2018,
+        "type": "main",
+        "link": "http://kongsberg.com/",
+        "logo": "/public/assets/kongsberg.svg",
+        "logo_dark": "/public/assets/kongsberg_dark_bg.svg",
+        "short_text": "Our main sponsor Kongsberg is an international, knowledge-based group that supplies high-technology systems and solutions to customers engaged in the oil and gas industry, the merchant marine, and the defence and aerospace industries."
+    }
+},
+{
+    "model": "api.sponsor",
+    "pk": 130,
+    "fields": {
+        "name": "NORBIT",
+        "year": 2018,
+        "type": "regular",
+        "link": "https://norbit.com/",
+        "logo": "/public/assets/norbit.svg",
+        "logo_dark": "/public/assets/norbit_hvit.svg",
+        "short_text": "NORBIT is an international, knowledge-based group that continuously designs, develops and manufactures high technology products, systems and solutions to meet their customers\u00b4 changing needs."
+    }
+},
+{
+    "model": "api.sponsor",
+    "pk": 131,
+    "fields": {
+        "name": "FLIR UAS",
+        "year": 2018,
+        "type": "regular",
+        "link": "http://www.flir-uas.com",
+        "logo": "/public/assets/flir_dark.png",
+        "logo_dark": "/public/assets/flir.png",
+        "short_text": "FLIR UAS is an international, knowledge-based group that develop and build the worlds most advanced Personal Reconnaissance System."
+    }
+},
+{
+    "model": "api.sponsor",
+    "pk": 132,
+    "fields": {
+        "name": "Falk Nordic",
+        "year": 2018,
+        "type": "regular",
+        "link": "https://www.falknordic.no",
+        "logo": "/public/assets/falk_dark.png",
+        "logo_dark": "/public/assets/falk.png",
+        "short_text": "Falk Nordic is a leading advertising and profiling company in Norway with many years experience in the business."
+    }
+},
+{
+    "model": "api.sponsor",
+    "pk": 133,
+    "fields": {
+        "name": "Siemens",
+        "year": 2018,
+        "type": "regular",
+        "link": "https://www.siemens.com",
+        "logo": "/public/assets/siemens.png",
+        "logo_dark": "/public/assets/siemens.png",
+        "short_text": "Siemens is an international knowledge based group designing high tech solutions for industry, energy, cities and healthcare."
+    }
+},
+{
+    "model": "api.sponsor",
+    "pk": 134,
+    "fields": {
+        "name": "Equinor",
+        "year": 2018,
+        "type": "gold",
+        "link": "https://www.equinor.com/",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Equinor.svg/920px-Equinor.svg.png",
+        "logo_dark": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Equinor.svg/920px-Equinor.svg.png",
+        "short_text": "Equinor is an international knowledge based energy company pushing the boundaries of imagination and technology, solving challenges in the oil and gas industry."
+    }
+},
+{
+    "model": "api.history",
+    "pk": 7,
+    "fields": {
+        "date": "2017-01-29T13:00:00.000Z",
+        "title": "Unveiling of new website!",
+        "content": "At the sunday meeting the 29th of Jan. 2017 the new website was <a target=\"_blank\" href=\"https://github.com/AscendNTNU/ascendntnu-web/releases/tag/v1.0\">released</a>.",
+        "post": null,
+        "tags": "website release",
+        "categories": "important"
+    }
+},
+{
+    "model": "api.history",
+    "pk": 8,
+    "fields": {
+        "date": "2015-07-28T13:00:00.000Z",
+        "title": "Ascend NTNU founded",
+        "content": "This is the date where 6 members agreed upon creating the Ascend NTNU foundation.",
+        "post": null,
+        "tags": "founded",
+        "categories": "important"
+    }
+},
+{
+    "model": "api.history",
+    "pk": 9,
+    "fields": {
+        "date": "2015-07-07T13:00:00.000Z",
+        "title": "First blog post",
+        "content": "Ascend starts to blog.",
+        "post": "2015-07-07-hello-world-from-ascend",
+        "tags": "iarc competition",
+        "categories": "important"
+    }
+},
+{
+    "model": "api.history",
+    "pk": 10,
+    "fields": {
+        "date": "2016-08-01T13:00:00.000Z",
+        "title": "First competition",
+        "content": "First time Ascend NTNU competes in the competition.",
+        "post": "2016-02-25-The-Competition.md",
+        "tags": "iarc competition",
+        "categories": "important"
+    }
+}
+]

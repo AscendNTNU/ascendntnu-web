@@ -6,7 +6,15 @@ import SponsorList from '../Common/sponsorlist'
 //import { HistoryViewer } from '../Common/historyViewer'
 import { Section } from '../PageLayout'
 
+//import { Link } from 'react-router-dom'
 export class FrontPage extends Component {
+    /*const opts = {
+      height: 150,
+      width: 200,
+      playerVars: { // https://developers.google.com/youtube/player_parameters
+        autoplay: 0
+      }
+    }*/
 
   render () {
     return (

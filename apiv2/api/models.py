@@ -5,10 +5,11 @@ from django.contrib.auth.models import User
 from datetime import datetime
 
 SPONSOR_TYPES = (
-    ('main', 'Main'),
-    ('gold', 'Gold'),
-    ('silver', 'Silver'),
-    ('bronze', 'Bronze')
+    ('main', 'main'),
+    ('gold', 'gold'),
+    ('silver', 'silver'),
+    ('bronze', 'bronze'),
+    ('regular', 'regular')
 )
 
 
