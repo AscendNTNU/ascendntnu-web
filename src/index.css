@@ -714,6 +714,71 @@ body.no-scroll {
     margin: 8px auto;
 }
 
+.sponsors .main a.sponsor-adblock-link img {
+    margin: 16px;
+}
+
+.sponsors .main {
+    max-width: 100%;
+    width: 100%;
+    flex-basis: 100%;
+}
+
+.sponsors .main .sponsor-adblock-text {
+    max-width: 600px;
+    width: 100%;
+    margin: 16px auto;
+}
+
+.sponsors .main img {
+    max-width: 300px;
+}
+
+.sponsors .gold a.sponsor-adblock-link img {
+    margin: 16px;
+}
+
+.sponsors .gold {
+    max-width: 85%;
+    width: 85%;
+    flex-basis: 100%;
+}
+
+.sponsors .gold .sponsor-adblock-text {
+    max-width: 500px;
+    width: 100%;
+    margin: 16px auto;
+}
+
+.sponsors .gold img {
+    max-width: 250px;
+}
+
+.sponsors .regular a.sponsor-adblock-link {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sponsors a.sponsor-adblock-link img {
+    width: calc(100% - 32px);
+    flex: 0 0 auto;
+    margin: auto;
+}
+
+.dark-theme .sponsors a.sponsor-adblock-link img:last-child,
+.sponsors a.sponsor-adblock-link img:first-child {
+    display: inline-block;
+}
+
+.dark-theme .sponsors a.sponsor-adblock-link img,
+.sponsors .sponsor-adblock-link img:last-child {
+    display: none;
+    /*opacity: .5;*/
+}
+
+/*
 .sponsors .sponsor:first-child a.sponsor-adblock-link img {
     margin: 16px;
 }
@@ -756,8 +821,9 @@ body.no-scroll {
 .sponsors .sponsor-adblock-link img:last-child {
     display: none;
     /*opacity: .5;*/
-    /*filter: contrast(0%) brightness(0%);*/
+    /*filter: contrast(0%) brightness(0%);
 }
+*/
 
 .sponsors a.sponsor-adblock-link:hover img {
     opacity: 1;

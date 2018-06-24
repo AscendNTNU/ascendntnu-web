@@ -1,24 +1,35 @@
+
+
+- name: NORBIT
+  type: regular
+  link: https://norbit.com/
+  logo: /public/assets/norbit.svg
+  logo_dark: /public/assets/norbit_hvit.svg
+  short_text: NORBIT is an international, knowledge-based group that continuously designs, develops and manufactures high technology products, systems and solutions to meet their customers´ changing needs.
+
 - name: Kongsberg
   type: main
   link: http://kongsberg.com/
   logo: /public/assets/kongsberg.svg
   logo_dark: /public/assets/kongsberg_dark_bg.svg
   short_text: Our main sponsor Kongsberg is an international, knowledge-based group that supplies high-technology systems and solutions to customers engaged in the oil and gas industry, the merchant marine, and the defence and aerospace industries.
-
-- name: NORBIT
-  link: https://norbit.com/
-  logo: /public/assets/norbit.svg
-  logo_dark: /public/assets/norbit_hvit.svg
-  short_text: NORBIT is an international, knowledge-based group that continuously designs, develops and manufactures high technology products, systems and solutions to meet their customers´ changing needs.
-
 - name: FLIR UAS
+  type: regular
   link: http://www.flir-uas.com
   logo: /public/assets/flir_dark.png
   logo_dark: /public/assets/flir.png
   short_text: FLIR UAS is an international, knowledge-based group that develop and build the worlds most advanced Personal Reconnaissance System.
 
 - name: Falk Nordic
+  type: regular
   link: https://www.falknordic.no
   logo: /public/assets/falk_dark.png
   logo_dark: /public/assets/falk.png
+  short_text: Falk Nordic is a leading advertising and profiling company in Norway with many years experience in the business.
+
+- name: Equinor
+  type: gold
+  link: https://www.equinor.com
+  logo: https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Equinor.svg/719px-Equinor.svg.png
+  logo_dark: https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Equinor.svg/719px-Equinor.svg.png
   short_text: Falk Nordic is a leading advertising and profiling company in Norway with many years experience in the business.

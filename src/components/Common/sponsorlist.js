@@ -34,7 +34,22 @@ export class SponsorList extends Component {
       .then(r => {
         this.setState({
           year: year,
-          sponsors: r,
+          sponsors: r.sort((a, b) => {
+            if (a.type.toLowerCase() === "main") {
+              return -1
+            }
+            else if (b.type.toLowerCase() === "main") {
+              return 1
+            }
+            else if (a.type.toLowerCase() === "gold") {
+              return -1
+            }
+            else if (b.type.toLowerCase() === "gold") {
+              return 1
+            }
+
+            return 1
+          }),
         })
       })
   }
@@ -42,7 +57,7 @@ export class SponsorList extends Component {
   render() {
     let sponsors = this.state.sponsors.map((sponsor, i) => {
       return (
-        <div key={i} className="sponsor">
+        <div key={i} className={"sponsor "+  sponsor.type}>
           <a href={sponsor.link} className="sponsor-adblock-link">
             <img src={sponsor.logo} alt={sponsor.name} title={sponsor.name} />
             {sponsor.logo_dark ? (

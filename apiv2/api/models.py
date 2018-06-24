@@ -8,6 +8,8 @@ SPONSOR_TYPES = (
     ('main', 'main'),
     ('gold', 'gold'),
     ('silver', 'silver'),
+    ('bronze', 'bronze'),
+    ('regular', 'regular')
     ('bronze', 'bronze')
 )
 
