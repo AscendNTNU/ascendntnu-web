@@ -1,19 +1,18 @@
 import React, { Component } from 'react'
 
 export class Announcement extends Component {
-
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
       hidden: false,
     }
   }
 
-  removeAnnouncement (evt) {
+  removeAnnouncement(evt) {
     this.setState(Object.assign({}, this.state, { hidden: true }))
   }
 
-  render () {
+  render() {
     let link = null
     if (typeof this.props.link === 'string') {
       link = <a href={this.props.link}> </a>
@@ -22,9 +21,14 @@ export class Announcement extends Component {
     }
 
     return (
-      <div className={ `front-announcement ${this.state.hidden ? 'hidden' : ''}` } onClick={this.removeAnnouncement.bind(this)}>
+      <div
+        className={`front-announcement ${this.state.hidden ? 'hidden' : ''}`}
+        onClick={this.removeAnnouncement.bind(this)}
+      >
         <h1>{this.props.titleText}</h1>
-        <div className="front-announcement-content page-container-big">{this.props.children}</div>
+        <div className="front-announcement-content page-container-big">
+          {this.props.children}
+        </div>
         {link}
       </div>
     )

@@ -175,6 +175,19 @@ input[type="submit"].active,
     box-sizing: border-box;
 }
 
+.yellow-background {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    background-color: #f80;
+    border: 30px;
+    padding: 10px;
+    text-shadow: none;
+    color: #eee;
+
+}
+
 .nav-bar .dropdown .toggle-menu {
     display: inline-block;
     padding: 0;
@@ -1894,6 +1907,24 @@ code {
     min-height: calc(12px + 32px + 1.3em);
 }
 
+.quote-center {
+    display: flex;
+    justify-content: center;
+}
+
+.quote-author-and-date {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.quote-section > h3 {
+    justify-content: center;
+}
+
+.italic-quote {
+    font-style: italic;
+}
+
 @media (max-height: 484px) {
     .front-splash-right {
         left: 72.6px;
@@ -2032,4 +2063,11 @@ code {
     .front-splash-right {
         flex-basis: 160px;
     }
+}
+
+.page-front iframe {
+    width: 100%;
+    height: calc((100vw) * 315 / 560);
+    max-width: calc(768px);
+    max-height: calc((768px) * 315 / 560);
 }

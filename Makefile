@@ -20,23 +20,23 @@ init:
 	@cp constants-example.js constants.js
 
 upload-images:
-	@scp -r ./public/images/assets/* ascend@dev.ascendntnu.no:/home/ascend/ascendntnu-web/images/assets
-	@scp -r ./public/images/teams/20* ascend@dev.ascendntnu.no:/home/ascend/ascendntnu-web/images/teams
+	@rsync -r ./public/images/assets/* ascend@dev.ascendntnu.no:/home/ascend/ascendntnu-web/images/assets
+	@rsync -r ./public/images/teams/20* ascend@dev.ascendntnu.no:/home/ascend/ascendntnu-web/images/teams
 
 upload-image:
-	@scp -r ./public/images/assets/${folder}/${file} ascend@dev.ascendntnu.no:/home/ascend/ascendntnu-web/images/assets/${folder}
+	@rsync -r ./public/images/assets/${folder}/${file} ascend@dev.ascendntnu.no:/home/ascend/ascendntnu-web/images/assets/${folder}
 
 #To upload a folder, just specify folder
 #Example usage file: make upload folder=testfolder file=testfile.txt
 #Example usage folder make upload folder=testfolder
 upload:
-	@scp -r ./${folder}/${file} ascend@dev.ascendntnu.no:/home/ascend/ascendntnu-web/${folder}
+	@rsync -r ./${folder}/${file} ascend@dev.ascendntnu.no:/home/ascend/ascendntnu-web/${folder}
 
 download-images:
 	@mkdir -p ./public/images/assets
-	@scp -r ascend@dev.ascendntnu.no:/home/ascend/ascendntnu-web/images/assets/* ./public/images/assets
+	@rsync -r ascend@dev.ascendntnu.no:/home/ascend/ascendntnu-web/images/assets/* ./public/images/assets
 	@mkdir -p ./public/images/teams
-	@scp -r ascend@dev.ascendntnu.no:/home/ascend/ascendntnu-web/images/teams/20* ./public/images/teams
+	@rsync -r ascend@dev.ascendntnu.no:/home/ascend/ascendntnu-web/images/teams/20* ./public/images/teams
 
 docker-baseimage:
 	@echo Building a docker image...

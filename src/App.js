@@ -1,19 +1,24 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 
-import Header from './components/Header'
-import Footer from './components/Footer'
-import { ToTopButton } from './components/PageLayout'
-import FrontPage from './components/FrontPage'
-import BlogPage from './components/BlogPage'
-import DronePage from './components/DronePage'
-import TeamPage from './components/TeamPage'
-import JoinPage from './components/JoinPage'
-import AboutPage from './components/AboutPage'
-import SponsorPage from './components/SponsorPage'
-import MissionPage from './components/MissionPage'
-import CVPage from './components/CVPage'
-import ContactPage from './components/ContactPage'
+import {
+  Header,
+  Footer,
+  ToTopButton,
+  FrontPage,
+  BlogPage,
+  DronePage,
+  TeamPage,
+  JoinPage,
+  AboutPage,
+  SponsorPage,
+  MissionPage,
+  CVPage,
+  ContactPage,
+} from './components'
+
+import QuotePage from './components/QuotePage'
+console.log(process)
 
 export class App extends Component {
   constructor(props) {
@@ -40,60 +45,152 @@ export class App extends Component {
   toggleMenu() {
     this.setState({
       showMenu: !this.state.showMenu,
-      theme: this.state.theme
+      theme: this.state.theme,
     })
 
-    if (this.state.showMenu)
-      document.body.classList.remove('no-scroll')
-    else
-      document.body.classList.add('no-scroll')
+    if (this.state.showMenu) document.body.classList.remove('no-scroll')
+    else document.body.classList.add('no-scroll')
   }
 
-  changeTheme (evt) {
+  changeTheme(evt) {
     try {
-      localStorage['theme'] = localStorage['theme'] === 'dark' ? 'light' : 'dark'
+      localStorage['theme'] =
+        localStorage['theme'] === 'dark' ? 'light' : 'dark'
       this.setState({
         showMenu: this.state.showMenu,
-        theme: localStorage['theme']
+        theme: localStorage['theme'],
       })
     } catch (ex) {
       this.setState({
         showMenu: this.state.showMenu,
-        theme: this.state.theme === 'dark' ? 'light' : 'dark'
+        theme: this.state.theme === 'dark' ? 'light' : 'dark',
       })
     }
   }
 
-  gotoTop (args) {
+  gotoTop(args) {
     document.querySelector('body').scrollTop = 0
     document.querySelector('#app').scrollTop = 0
-  
-    const [ first, ...rest ] = args.location.pathname.slice(1) || 'home'
-    document.title = 'Ascend NTNU - ' + first.toUpperCase() + rest
   }
 
-  render () {
+  // Switches page and goes to top on the new page
+  switchPage(props, Component, title = '') {
+    this.gotoTop()
+    document.title = 'Ascend NTNU' + (title ? ' - ' + title : '');
+    return <Component {...props} />
+  }
+
+  render() {
     return (
-      <div className={'app' + (this.state.showMenu ? ' menu-visible' : '') + (this.state.theme === 'dark' ? ' dark-theme' : '')}>
-          <Header toggleMenuHandler={this.toggleMenu.bind(this)} toggle={this.state.showMenu} />
-          <Switch>
-            <Route exact path="/" component={FrontPage} onEnter={this.gotoTop} />
-            <Route path="/about" component={AboutPage} onEnter={this.gotoTop} />
-            <Route path="/blog" component={BlogPage} onEnter={this.gotoTop} />
-            <Route path="/blog/tags/:tags?" component={BlogPage} />
-            <Route path="/blog/:post" component={BlogPage} />
-            <Route path="/contact" component={ContactPage} onEnter={this.gotoTop} />
-            <Route path="/cv/:key?" component={CVPage} onEnter={this.gotoTop} />
-            <Route path="/drones" component={DronePage} onEnter={this.gotoTop} />
-            <Route path="/join/:language?" component={JoinPage} onEnter={this.gotoTop} />
-            <Route path="/missions" component={MissionPage} onEnter={this.gotoTop} />
-            <Route path="/sponsors" component={SponsorPage} onEnter={this.gotoTop} />
-            <Route path="/sponsors/:year" component={SponsorPage} />
-            <Route path="/team" component={TeamPage} onEnter={this.gotoTop} />
-            <Route path="/team/:year" component={TeamPage} />
-          </Switch>
-          <ToTopButton />
-          <Footer changeTheme={this.changeTheme.bind(this)} theme={this.state.theme} />
+      <div
+        className={
+          'app' +
+          (this.state.showMenu ? ' menu-visible' : '') +
+          (this.state.theme === 'dark' ? ' dark-theme' : '')
+        }
+      >
+        <Header
+          toggleMenuHandler={this.toggleMenu.bind(this)}
+          toggle={this.state.showMenu}
+        />
+        <Switch>
+          <Route exact path="/" 
+            render={(props) => this.switchPage(props, FrontPage)} 
+          />
+          <Route 
+            path="/about" 
+            render={(props) => this.switchPage(props, AboutPage, 'About us')} 
+          />
+          <Route 
+            exact path="/blog" 
+            render={(props) => this.switchPage(props, BlogPage, 'Blog')} 
+          />
+          <Route 
+            path="/about" 
+            render={(props) => this.switchPage(props, AboutPage, 'About us')} 
+          />
+          <Route 
+            exact path="/blog" 
+            render={(props) => this.switchPage(props, BlogPage, 'Blog')} 
+          />
+          <Route 
+            path="/blog/tags/:tags?" 
+            render={(props) => this.switchPage(props, BlogPage, 'Blog')} 
+          />
+          <Route 
+            exact path="/blog" 
+            render={(props) => this.switchPage(props, BlogPage, 'Blog')} 
+          />
+          <Route 
+            path="/blog/tags/:tags?" 
+            render={(props) => this.switchPage(props, BlogPage, 'Blog')} 
+          />
+          <Route 
+            exact path="/blog" 
+            render={(props) => this.switchPage(props, BlogPage, 'Blog')} 
+          />
+          <Route 
+            path="/blog/tags/:tags?" 
+            render={(props) => this.switchPage(props, BlogPage, 'Blog')} 
+          />
+          <Route 
+            exact path="/blog" 
+            render={(props) => this.switchPage(props, BlogPage, 'Blog')} 
+          />
+          <Route 
+            path="/blog/tags/:tags?" 
+            render={(props) => this.switchPage(props, BlogPage, 'Blog')} 
+          />
+          <Route 
+            exact path="/blog" 
+            render={(props) => this.switchPage(props, BlogPage, 'Blog')} 
+          />
+          <Route 
+            path="/blog/tags/:tags?" 
+            render={(props) => this.switchPage(props, BlogPage, 'Blog')} 
+          />
+          <Route 
+            path="/blog/:post" 
+            render={(props) => this.switchPage(props, BlogPage, 'Blog')}
+          />
+          <Route
+            path="/contact"
+            render={(props) => this.switchPage(props, ContactPage, 'Contact us')}
+          />
+          <Route 
+            path="/cv/:key?" 
+            render={(props) => this.switchPage(props, CVPage, 'CV')} 
+          />
+          <Route 
+            path="/drones"
+            render={(props) => this.switchPage(props, DronePage, 'Drones')} 
+          />
+          <Route
+            path="/join/:language?"
+            render={(props) => this.switchPage(props, JoinPage, 'Join us')}
+          />
+          <Route
+            path="/quotes"
+            render={(props) => this.switchPage(props, QuotePage, 'Quotes')}
+          />
+          <Route
+            path="/missions"
+            render={(props) => this.switchPage(props, MissionPage, 'Missions')}
+          />
+          <Route
+            path="/sponsors/:year?"
+            render={(props) => this.switchPage(props, SponsorPage, 'Sponsors')}
+          />
+          <Route
+            path="/team/:year?"
+            render={(props) => this.switchPage(props, TeamPage, 'Team')}
+          />
+        </Switch>
+        <ToTopButton />
+        <Footer
+          changeTheme={this.changeTheme.bind(this)}
+          theme={this.state.theme}
+        />
       </div>
     )
   }

@@ -3,7 +3,7 @@ version: '3'
 services:
 
   server:
-    image: node:6
+    image: node:9
     command: node server.js
     environment:
       - SERVER_PORT
@@ -30,13 +30,14 @@ services:
   build:
     image: ascendntnu/server:2.1
     user: ${DOCKER_USER-1000}:${DOCKER_USER-1000}
-    command: npm run build
+    command: bash -c "npm install && npm run build"
     volumes:
       - .:/srv/ascend
     working_dir: /srv/ascend
 
   db:
     image: postgres
+    tty: true
 
   api:
     image: ascendntnu/apiv2:2.1
@@ -46,3 +47,5 @@ services:
     ports:
       - ${DOCKER_API_PORT:-8082}:8000
     tty: true
+    volumes:
+      - ./apiv2:/code:rw

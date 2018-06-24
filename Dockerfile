@@ -1,8 +1,8 @@
-FROM node:6
+FROM node:9
 
 WORKDIR /srv/ascend
-ADD package.json yarn.lock ./
-RUN yarn
+ADD . .
+RUN npm install
 
-COPY . .
+# COPY . .
 RUN npm run build

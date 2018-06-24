@@ -10,6 +10,7 @@ SPONSOR_TYPES = (
     ('silver', 'silver'),
     ('bronze', 'bronze'),
     ('regular', 'regular')
+    ('bronze', 'bronze')
 )
 
 
@@ -37,8 +38,8 @@ class Member(models.Model):
     role = models.CharField(max_length=50)
     group = models.CharField(max_length=100)
     image = models.CharField(max_length=100)
-    mail = models.CharField(max_length=100)
-    active_member = models.BooleanField()
+    mail = models.CharField(max_length=100, blank=True, null=True)
+    active_member = models.BooleanField(default=True)
     search_vector = SearchVectorField(null=True)
 
     objects = MemberManager()
@@ -59,27 +60,31 @@ class Member(models.Model):
 class Sponsor(models.Model):
     name = models.CharField(max_length=50)
     year = models.IntegerField()
-    type = models.CharField(max_length=50, choices=SPONSOR_TYPES)
+    type = models.CharField(max_length=50, choices=SPONSOR_TYPES, null=True)
     link = models.CharField(max_length=100)
     logo = models.CharField(max_length=100)
-    logo_dark = models.CharField(max_length=100)
+    logo_dark = models.CharField(max_length=100, blank=True, null=True)
     short_text = models.TextField()
-    sign_year = models.DateField()
 
 
 class History(models.Model):
-    date = models.DateField()
+    date = models.CharField(max_length=50)
     title = models.CharField(max_length=50)
     content = models.TextField()
-    image = models.CharField(max_length=150)
+    post = models.CharField(max_length=150, blank=True, null=True)
     tags = models.CharField(max_length=150)
     categories = models.CharField(max_length=50)
 
 
+class Quote(models.Model):
+    date = models.DateField(default=datetime.now)
+    author = models.CharField(max_length=50)
+    quote = models.TextField()
+
 class BlogPost(models.Model):
     layout = models.CharField(max_length=50, default='post')
     title = models.CharField(max_length=50)
-    date = models.DateTimeField(default=datetime.now)
+    date = models.CharField(max_length=50)
     categories = models.CharField(max_length=100)
     author = models.CharField(max_length=50)
     blog_content = models.CharField(max_length=400)

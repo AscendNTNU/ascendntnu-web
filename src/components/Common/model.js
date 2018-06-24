@@ -3,10 +3,15 @@ import * as THREE from 'three'
 import * as THREESTLLoader from 'three-stl-loader'
 
 export class ModelRenderer extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.scene = new THREE.Scene()
-    this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000)
+    this.camera = new THREE.PerspectiveCamera(
+      75,
+      window.innerWidth / window.innerHeight,
+      1,
+      10000
+    )
     this.camera.position.x = 0
     this.camera.position.y = 200
     this.camera.position.z = 0
@@ -14,12 +19,15 @@ export class ModelRenderer extends Component {
     let geometry = new THREE.BoxGeometry(10, 10, 10)
     let material = new THREE.MeshNormalMaterial()
     if (this.props.wireframe) {
-      material = new THREE.MeshBasicMaterial({ color: 0xffffff, wireframe: true })
+      material = new THREE.MeshBasicMaterial({
+        color: 0xffffff,
+        wireframe: true,
+      })
     } else {
       material = new THREE.MeshStandardMaterial({
         color: 0xff8800,
         roughness: 0.95,
-        metalness: 0.0
+        metalness: 0.0,
       })
     }
     let mesh = new THREE.Mesh(geometry, material)
@@ -38,10 +46,10 @@ export class ModelRenderer extends Component {
     this.fitToContainerHandler = this.fitToContainerHandler.bind(this)
   }
 
-  componentDidMount () {
+  componentDidMount() {
     this.renderer = new THREE.WebGLRenderer({
       canvas: this.canvas,
-      alpha: true
+      alpha: true,
     })
 
     this.renderer.setPixelRatio(window.devicePixelRatio)
@@ -55,35 +63,42 @@ export class ModelRenderer extends Component {
     }
   }
 
-  animationStep (timestamp) {
+  animationStep(timestamp) {
     this.updateRendering()
     window.requestAnimationFrame(this.animationStep.bind(this))
   }
 
-  componentWillUnmount () {
+  componentWillUnmount() {
     if (this.raf) window.cancelAnimationFrame(this.raf)
     window.removeEventListener('resize', this.fitToContainerHandler)
   }
 
-  fitToContainerHandler (evt) {
-    this.renderer.setSize(this.canvas.clientWidth, this.canvas.clientHeight, false)
+  fitToContainerHandler(evt) {
+    this.renderer.setSize(
+      this.canvas.clientWidth,
+      this.canvas.clientHeight,
+      false
+    )
     this.camera.aspect = this.canvas.clientWidth / this.canvas.clientHeight
     this.camera.updateProjectionMatrix()
   }
 
-  updateModels (models) {
+  updateModels(models) {
     try {
-      models.forEach((model) => {
-        this.loader.load(model, (geometry) => {
+      models.forEach(model => {
+        this.loader.load(model, geometry => {
           var meshMaterial = null
           if (this.props.wireframe) {
-            meshMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff, wireframe: true })
+            meshMaterial = new THREE.MeshBasicMaterial({
+              color: 0xffffff,
+              wireframe: true,
+            })
           } else {
             meshMaterial = new THREE.MeshStandardMaterial({
               color: 0xff8800,
               roughness: 0.95,
               metalness: 0.0,
-              side: THREE.DoubleSide
+              side: THREE.DoubleSide,
             })
           }
           //if (geometry.hasColors) {
@@ -93,7 +108,7 @@ export class ModelRenderer extends Component {
           var mesh = new THREE.Mesh(geometry, meshMaterial)
           mesh.position.set(0, 0, 0)
           mesh.rotation.set(0, 0, 0)
-          let scale = .5
+          let scale = 0.5
           mesh.scale.set(scale, scale, scale)
           mesh.castShadow = true
           mesh.receiveShadow = true
@@ -102,13 +117,19 @@ export class ModelRenderer extends Component {
         })
       })
     } catch (ex) {
-      console.error('Mangler modellen(e): ' + models.join(', ') + ', eller så kan THREE.js være utdatert.')
+      console.error(
+        'Mangler modellen(e): ' +
+          models.join(', ') +
+          ', eller så kan THREE.js være utdatert.'
+      )
     }
   }
 
-  updateRendering () {
+  updateRendering() {
     if (typeof this.props.process === 'number') {
-      let process = this.props.autospin ? Date.now() : (this.props.process || Date.now())
+      let process = this.props.autospin
+        ? Date.now()
+        : this.props.process || Date.now()
       this.camera.position.x = 200 * Math.sin(process / 4000)
       this.camera.position.z = 200 * Math.cos(process / 4000)
       this.camera.position.y = 200 * Math.cos(process / 5000)
@@ -123,7 +144,15 @@ export class ModelRenderer extends Component {
     this.renderer.setClearColor(0, 0)
   }
 
-  render () {
-    return <canvas className="model-renderer" ref={(c) => {this.canvas = c}} style={this.props.style} />
+  render() {
+    return (
+      <canvas
+        className="model-renderer"
+        ref={c => {
+          this.canvas = c
+        }}
+        style={this.props.style}
+      />
+    )
   }
 }
