@@ -34,9 +34,9 @@ upload:
 
 download-images:
 	@mkdir -p ./public/images/assets
-	@rsync -r ascend@dev.ascendntnu.no:/home/ascend/ascendntnu-web/images/assets/* ./public/images/assets
+	@rsync -r ascend@ascendntnu.no:/home/ascend/ascendntnu-web/images/assets/* ./public/images/assets
 	@mkdir -p ./public/images/teams
-	@rsync -r ascend@dev.ascendntnu.no:/home/ascend/ascendntnu-web/images/teams/20* ./public/images/teams
+	@rsync -r ascend@ascendntnu.no:/home/ascend/ascendntnu-web/images/teams/20* ./public/images/teams
 
 docker-baseimage:
 	@echo Building a docker image...
