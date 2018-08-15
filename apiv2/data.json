@@ -1278,11 +1278,7 @@
     "fields": {
         "name": "Elefun",
         "year": 2016,
-<<<<<<< HEAD
         "type": "regular",
-=======
-        "type": null,
->>>>>>> f38730231340c8ea177eeb72de4d90876e787659
         "link": "http://elefun.no/rc/multikopter.aspx",
         "logo": "/public/assets/sponsor-elefun.png",
         "logo_dark": null,
@@ -1295,11 +1291,7 @@
     "fields": {
         "name": "3D Robotics",
         "year": 2016,
-<<<<<<< HEAD
         "type": "regular",
-=======
-        "type": null,
->>>>>>> f38730231340c8ea177eeb72de4d90876e787659
         "link": "https://3drobotics.com/",
         "logo": "/public/assets/sponsor-3dr.png",
         "logo_dark": null,
@@ -1312,11 +1304,7 @@
     "fields": {
         "name": "L\u00f8ten RC-shop",
         "year": 2016,
-<<<<<<< HEAD
         "type": "regular",
-=======
-        "type": null,
->>>>>>> f38730231340c8ea177eeb72de4d90876e787659
         "link": "http://www.rc-shop.no/",
         "logo": "/public/assets/loten.jpeg",
         "logo_dark": null,
@@ -1329,11 +1317,7 @@
     "fields": {
         "name": "Fiken",
         "year": 2016,
-<<<<<<< HEAD
         "type": "regular",
-=======
-        "type": null,
->>>>>>> f38730231340c8ea177eeb72de4d90876e787659
         "link": "https://fiken.no/",
         "logo": "/public/assets/fiken.png",
         "logo_dark": null,
@@ -1359,11 +1343,7 @@
     "fields": {
         "name": "NORBIT",
         "year": 2017,
-<<<<<<< HEAD
         "type": "regular",
-=======
-        "type": null,
->>>>>>> f38730231340c8ea177eeb72de4d90876e787659
         "link": "https://norbit.com/",
         "logo": "/public/assets/norbit.svg",
         "logo_dark": "/public/assets/norbit_hvit.svg",
@@ -1389,11 +1369,7 @@
     "fields": {
         "name": "NORBIT",
         "year": 2018,
-<<<<<<< HEAD
         "type": "regular",
-=======
-        "type": null,
->>>>>>> f38730231340c8ea177eeb72de4d90876e787659
         "link": "https://norbit.com/",
         "logo": "/public/assets/norbit.svg",
         "logo_dark": "/public/assets/norbit_hvit.svg",
@@ -1406,11 +1382,7 @@
     "fields": {
         "name": "FLIR UAS",
         "year": 2018,
-<<<<<<< HEAD
         "type": "regular",
-=======
-        "type": null,
->>>>>>> f38730231340c8ea177eeb72de4d90876e787659
         "link": "http://www.flir-uas.com",
         "logo": "/public/assets/flir_dark.png",
         "logo_dark": "/public/assets/flir.png",
@@ -1423,11 +1395,7 @@
     "fields": {
         "name": "Falk Nordic",
         "year": 2018,
-<<<<<<< HEAD
         "type": "regular",
-=======
-        "type": null,
->>>>>>> f38730231340c8ea177eeb72de4d90876e787659
         "link": "https://www.falknordic.no",
         "logo": "/public/assets/falk_dark.png",
         "logo_dark": "/public/assets/falk.png",
@@ -1440,11 +1408,7 @@
     "fields": {
         "name": "Siemens",
         "year": 2018,
-<<<<<<< HEAD
         "type": "regular",
-=======
-        "type": null,
->>>>>>> f38730231340c8ea177eeb72de4d90876e787659
         "link": "https://www.siemens.com",
         "logo": "/public/assets/siemens.png",
         "logo_dark": "/public/assets/siemens.png",
@@ -1452,7 +1416,6 @@
     }
 },
 {
-<<<<<<< HEAD
     "model": "api.sponsor",
     "pk": 134,
     "fields": {
@@ -1466,8 +1429,32 @@
     }
 },
 {
-=======
->>>>>>> f38730231340c8ea177eeb72de4d90876e787659
+    "model": "api.sponsor",
+    "pk": 135,
+    "fields": {
+        "name": "Prototal",
+        "year": 2018,
+        "type": "Regular",
+        "link": "http://www.prototal-norge.no/",
+        "logo": "public/assets/Prototal_white.ai",
+        "logo_dark": "public/assets/Prototal_white.ai",
+        "short_text": "Prototal is a norwegian company making models, prototypes and low volume production combining different methods and materials"
+    }
+},
+{
+    "model": "api.sponsor",
+    "pk": 136,
+    "fields": {
+        "name": "Elefun",
+        "year": 2018,
+        "type": "Regular",
+        "link": "https://www.elefun.no/rc/hobby.aspx",
+        "logo": "public/assets/elefun.png",
+        "logo_dark": "public/assets/elefun.png",
+        "short_text": "Elefun is a Norwegian web shop selling a plethora of great drones, multicopters and FPV-systems."
+    }
+},
+{
     "model": "api.history",
     "pk": 7,
     "fields": {
