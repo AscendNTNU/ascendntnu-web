@@ -9,7 +9,6 @@ import {
   BlogPage,
   DronePage,
   TeamPage,
-  JoinPage,
   AboutPage,
   SponsorPage,
   MissionPage,
