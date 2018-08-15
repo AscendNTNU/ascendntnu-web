@@ -73,14 +73,6 @@ export class Header extends Component {
               onClick={this.toggleMenuHandler}
               className="nav-element"
               activeClassName="active"
-              to="/join"
-            >
-              Join Us
-            </NavLink>
-            <NavLink
-              onClick={this.toggleMenuHandler}
-              className="nav-element"
-              activeClassName="active"
               to="/team"
             >
               Team

@@ -165,10 +165,7 @@ export class App extends Component {
             path="/drones"
             render={(props) => this.switchPage(props, DronePage, 'Drones')} 
           />
-          <Route
-            path="/join/:language?"
-            render={(props) => this.switchPage(props, JoinPage, 'Join us')}
-          />
+
           <Route
             path="/quotes"
             render={(props) => this.switchPage(props, QuotePage, 'Quotes')}
