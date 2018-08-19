@@ -14,6 +14,7 @@ import {
   MissionPage,
   CVPage,
   ContactPage,
+  JoinPage,
 } from './components'
 
 import QuotePage from './components/QuotePage'
@@ -109,40 +110,12 @@ export class App extends Component {
             render={(props) => this.switchPage(props, AboutPage, 'About us')} 
           />
           <Route 
-            exact path="/blog" 
-            render={(props) => this.switchPage(props, BlogPage, 'Blog')} 
+            path="/join" 
+            render={(props) => this.switchPage(props, JoinPage, 'Join')} 
           />
           <Route 
-            path="/blog/tags/:tags?" 
-            render={(props) => this.switchPage(props, BlogPage, 'Blog')} 
-          />
-          <Route 
-            exact path="/blog" 
-            render={(props) => this.switchPage(props, BlogPage, 'Blog')} 
-          />
-          <Route 
-            path="/blog/tags/:tags?" 
-            render={(props) => this.switchPage(props, BlogPage, 'Blog')} 
-          />
-          <Route 
-            exact path="/blog" 
-            render={(props) => this.switchPage(props, BlogPage, 'Blog')} 
-          />
-          <Route 
-            path="/blog/tags/:tags?" 
-            render={(props) => this.switchPage(props, BlogPage, 'Blog')} 
-          />
-          <Route 
-            exact path="/blog" 
-            render={(props) => this.switchPage(props, BlogPage, 'Blog')} 
-          />
-          <Route 
-            path="/blog/tags/:tags?" 
-            render={(props) => this.switchPage(props, BlogPage, 'Blog')} 
-          />
-          <Route 
-            exact path="/blog" 
-            render={(props) => this.switchPage(props, BlogPage, 'Blog')} 
+            path="/join/:language" 
+            render={(props) => this.switchPage(props, JoinPage, 'Join')} 
           />
           <Route 
             path="/blog/tags/:tags?" 

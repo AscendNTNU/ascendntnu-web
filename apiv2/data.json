@@ -1369,7 +1369,7 @@
     "fields": {
         "name": "NORBIT",
         "year": 2018,
-        "type": "regular",
+        "type": "silver",
         "link": "https://norbit.com/",
         "logo": "/public/assets/norbit.svg",
         "logo_dark": "/public/assets/norbit_hvit.svg",
@@ -1382,7 +1382,7 @@
     "fields": {
         "name": "FLIR UAS",
         "year": 2018,
-        "type": "regular",
+        "type": "silver",
         "link": "http://www.flir-uas.com",
         "logo": "/public/assets/flir_dark.png",
         "logo_dark": "/public/assets/flir.png",
@@ -1436,8 +1436,8 @@
         "year": 2018,
         "type": "Regular",
         "link": "http://www.prototal-norge.no/",
-        "logo": "public/assets/Prototal_white.ai",
-        "logo_dark": "public/assets/Prototal_white.ai",
+        "logo": "https://image.ibb.co/nvf93K/Prototal_white.png",
+        "logo_dark": "https://image.ibb.co/nvf93K/Prototal_white.png",
         "short_text": "Prototal is a norwegian company making models, prototypes and low volume production combining different methods and materials"
     }
 },
