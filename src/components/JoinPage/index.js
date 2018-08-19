@@ -220,7 +220,7 @@ export class JoinPage extends Component {
 
       <Section titleText='Reach new heights - Join Ascend NTNU'
         key='1' >
-        <img src='/images/teams/2017/ascend-group-2017.jpg'
+        <img src='https://preview.ibb.co/kuE9OK/ascend111.jpg'
           alt='Group 2017'
           className='fullscale-image' />
         <p style={{
@@ -262,7 +262,7 @@ export class JoinPage extends Component {
       'no': [ 
       <Section titleText='Nå nye høyder - Søk Ascend!'
         key='1' >
-        <img src='/images/teams/2017/ascend-group-2017.jpg'
+        <img src='https://preview.ibb.co/kuE9OK/ascend111.jpg'
           alt='Group 2017'
           className='fullscale-image' />
         <p style={{
@@ -319,7 +319,7 @@ export class JoinPage extends Component {
 
         <Section titleText='Nå nye høyder - Søk Ascend!'
           key='2' >
-          <img src='/images/teams/2017/ascend-group-2017.jpg'
+          <img src='https://preview.ibb.co/kuE9OK/ascend111.jpg'
             alt='Group 2017'
             className='fullscale-image' />
             <p> Hvert år utvikler og bygger Ascend NTNU en autonom drone fra bunnen av og deltar i The International 
