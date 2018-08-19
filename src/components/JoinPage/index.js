@@ -5,7 +5,6 @@ import React, {
 import {
   Section,
   SubSection,
-  SubSubSection
 } from '../PageLayout'
 import { Breadcrumb } from '../Common/breadcrumb'
 
@@ -47,6 +46,18 @@ export class JoinPage extends Component {
     }
   }
 
+  setLanguage () {
+    let newLanguage = 'no'
+    switch (this.state.language) {
+      case 'no': newLanguage = 'en'; break
+      default: newLanguage = 'no'; break
+    }
+
+    this.setState({
+      language: newLanguage
+    })
+  }
+
   render () {
     const opts = {
       height: 150,
@@ -57,23 +68,91 @@ export class JoinPage extends Component {
     }
 
     let positions = {
-      'en': [ <div />
+      'en': [
+
+      <Section titleText='Positions'
+        key='2' >
+        
+        <ul className='anchor-list' >
+          <li onClick={
+          () => this.setAnchor('hardware-groupmember')
+        } > <a > Hardware gruppemedlem </a></li >
+          <li onClick={
+          () => this.setAnchor('perception-groupmember')
+        } > <a > Perception gruppemedlem </a></li >
+          <li onClick={
+          () => this.setAnchor('control-groupmember')
+        } > <a > Control gruppemedlem </a></li >
+          <li onClick={
+          () => this.setAnchor('ai-groupmember')
+        } > <a > AI gruppemedlem </a></li >
+          <li onClick={
+          () => this.setAnchor('sponsocontact')
+        } > <a > Sponsorkontakt </a></li >
+          <li onClick={
+          () => this.setAnchor('graphical-designer')
+        } > <a > Grafisk designer </a></li >
+          <li onClick={
+          () => this.setAnchor('event-manager')
+        } > <a > Event Manager </a></li >
+          <li onClick={
+          () => this.setAnchor('webdeveloper')
+        } > <a > Webutvikler </a></li >
+        </ul> 
+        <SubSection titleText="Sponsorcontact" id="sponsorcontact">
+          <p>
+          Do you want to be Ascend NTNU's representative in business? We in Ascend are entirely dependent on our sponsors in order to do the work we do. As a sponsor contact in Ascend, value creation for our sponsors will be your main task. You will work to find new sponsors, maintain communication with our existing sponsors, and in addition prepare contracts and sponsorship packages. This is a golden opportunity to make connections with contacts in the industy! In addition, you will work with the entire marketing team to further develop Ascend's image, and you will cooperate closely with our event manager to plan and organize sponsorship activities.          </p>
+        </SubSection>
+        <SubSection titleText="Graphical designer" if="graphical-designer">
+          <p>
+          Participate in shaping the entire Ascend NTNU's image outward! As a graphic designer, your work tasks will be very varied, including video production, design of promotional materials and profile items, and you will be responsible for Ascend's graphic design. You will also collaborate with the rest of the marketing team, including by contributing to the design of stand, blog posts and posts on social media. In addition, you will also have the opportunity to design Ascend's competition uniform that will be used during the competition in the United States! It's a plus if you also want to work with 3D visualization or motion design, but it's not a requirement.          </p>
+        </SubSection>
+        <SubSection titleText="Event manager" id="event-manager">
+          <p>
+          As Event Manager you will have the opportunity to arrange events that not only reach all NTNU students, but also to the press and business community throughout Norway. You will be responsible for arranging stands and performances at various events, both internally at NTNU and outside the business community. In addition, you will have the opportunity to arrange events organized by Ascend, such as our own Robotics Day, live demonstration of drone flight or unveiling of our new drones. The entire marketing team will collaborate on several different levels, and as Event Manager you will especially work closely with our sponsorship contact to promote Ascend's image to potential new members and sponsors. Besides, you help us plan our annual trip to the United States!          
+          </p>
+        </SubSection>
+        <SubSection titleText="Webdeveloper" id="webdeveloper">
+          <p>
+          Do you want to develop a full-stack, scalable and graphically impressive web page? As a web developer you will be responsible for further developing and maintaining our website. It will also be your task to show who we are, our goals and the challenges we face in an interactive and exciting way - perhaps by creating an app or game? You will work closely with the rest of the marketing team to further develop Ascend's image. You will also have the opportunity to be in charge of system administration, that is, you can build and maintain our servers, and ensure that everything goes as automatically and smoothly as possible. You will be taught the necessary in web development (and some sysadmin) if you do not have experience with this from the beginning.
+          </p>
+        </SubSection>
+        <SubSection titleText="Hardware groupmember" id="hardware-groupmember">
+          <p>
+          The hardware group is responsible for all the physical aspects of the drone. This involves designing the drone all the way from scratch. The drones are first drawn in CAD and the parts are manufactured in carbon fiber and 3d print. It is very important that the drone is light weight, but at the same time strong enough to withstand several collisions. Not least, the drones must look good.
+          There is also a lot of electronics needed to make a drone that can sense the environment and react to them. There will be a need for development of everything from PDBs that will withstand over 100 amps to custom designed sensor systems as well as powerful computers.
+          </p>
+        </SubSection>
+        <SubSection titleText="AI groupmember" id="ai-groupmember">
+          <p>
+          The AI Group's task is to define how the drones should behave, both individually and together. In the AI group you work with the overall artificial intelligence (AI) for the drone. It is the group's responsibility to produce an AI that can analyze the information about its surroundings and through this make the best and smartest decisions on its own. Here you get the opportunity to work with a wide range of AI algorithms as well as gain experience in taking something very theoretically and transferring it to the real world. AI is a major and important field of study and you will be able to participate in the entire process of research in state of the art techniques for implementing and testing the algorithm in both self-written simulations and in practice. We need you who like to program, are creative, want to solve team problems, are motivated and want to learn a lot new!
+          AI needs both a new group leader and new team members. As a group leader you will lead a technical group of 4-6 people, be responsible for planning work and making sure that the work is done. You will work closely with technical managers and other group leaders, and thus get a good insight into the overall work Ascend NTNU does. As a group leader, you get a lot of experience in collaboration and the challenges that come with co-ordination of code developed by several programmers.
+          </p>
+        </SubSection>
+        <SubSection titleText="Control groupmember" id="control-groupmember">
+          <p>
+          As a member of the control group you will work closely with the other technical groups. Our task is to make sure the drones fly steadily, actively avoiding collisions, and find their way to their goal. This year we start work from scratch, which gives you as a control member a good opportunity to solve the challenges you want. This year we want to look into the possibility of using a mathematical model of the drones to improve performance, and it may be necessary to make changes to the flight controller. If you as an applicant have experience or interest in embedded and real time programming, this will be positive. We initially look for kyb students, but all students interested in the subject area are encouraged to apply. What we look for most of all is motivation and willingness to learn along the way.        
+          </p>  
+        </SubSection>
+        <SubSection titleText="Perception groupmember" id="perception-groupmember">
+          <p>
+          The Perception team is the link between the drones and the world around them. That is acquiring input from different sensors and process the raw data into reliable information about the environment. To accomplish Mission 8 of IARC, the Perception team needs to deliver an accurate and reliable position and orientation of all four drones, build a system for effective and intuitive interaction with our drones, track the position of the hostile drones and a lot more. The members of the team need to be curious and willing to work on new and unsolved problems. Coding experience (Python / C++) is preferable.
+          </p>
+        </SubSection>
+        </Section>
       ],
-      'no': [ <SubSection titleText='Stillinger'
-        key='1' >
+      'no': [ 
+      
+      <Section titleText='Stillinger'
+        key='2' >
+        
         <ul className='anchor-list' >
           <li onClick={
           () => this.setAnchor('hardware-gruppemedlem')
         } > <a > Hardware gruppemedlem </a></li >
           <li onClick={
-          () => this.setAnchor('teknisk-gruppeleder-hardware')
-        } > <a > Teknisk gruppeleder - Hardware </a></li >
-          <li onClick={
           () => this.setAnchor('perception-gruppemedlem')
         } > <a > Perception gruppemedlem </a></li >
-          <li onClick={
-          () => this.setAnchor('teknisk-gruppeleder-perception')
-        } > <a > Teknisk gruppeleder - Perception </a></li >
           <li onClick={
           () => this.setAnchor('control-gruppemedlem')
         } > <a > Control gruppemedlem </a></li >
@@ -92,337 +171,120 @@ export class JoinPage extends Component {
           <li onClick={
           () => this.setAnchor('webutvikler')
         } > <a > Webutvikler </a></li >
-        </ul> <h3 > Hardware gruppemedlem </h3> <p id='hardware-gruppemedlem' >
-        Det er Hardware gruppen som designer og bygger selve dronene til Ascend, og her kan du
-         jobbe med litt av hvert.Gruppen er en krysning mellom mekanisk ingeniørvitenskap,
-         produktdesign og elektronikk. Dette involverer å kunne designe og produsere delene til
-         dronen, designe det elektriske systemet ombord på dronen og samarbeide med de andre
-         gruppene
-        for å integrere sensorikk og datamaskinene vi har ombord!Her trenger vi mange forskjellige
-        talenter.Du vil bli kurset i slik teknologi om du ikke har erfaring med det fra før. <br />
-          <i className='key-words' > Nøkkelord: Mekanisk design, Produktdesign, Elektrisk design,
-        Kretskortdesign, Styrkeberegning, Materialvalg, Aerodynamikk </i> </p > <h3 > Teknisk gruppeleder - Hardware </h3> <p id='teknisk-gruppeleder-hardware' >
-        Som teknisk gruppeleder er det ditt ansvar å holde oversikt over det tekniske arbeidet som må
-        gjøres på gruppen din, sørge
-        for at alle har det de trenger, sørge
-        for at gruppen kommuniserer med de andre tekniske gruppene og at alle i Ascend er oppdatert.
-        Du vil fordele arbeidsoppgaver samtidig som du selv blir å gjøre like mye hands - on teknisk
-        arbeid som gruppen din. Du vil også bli kurset i ledelse om du ikke har erfaring med det
-        fra før. <br />
-          <i className='key-words' > Nøkkelord: Ledelse, Mekanisk design, Produktdesign, Elektrisk design, Kretskortdesign, Styrkeberegning, Materialvalg, Aerodynamikk. </i> </p > <h3 > Perception gruppemedlem </h3> <p id='perception-gruppemedlem' >
-        Perception gruppen jobber med å få dronen til å oppfatte sine omgivelser, forstå hva den ser
-        og hvor den er til en hver tid. Dette er en av de store utfordringene når man driver med
-        robotikk, og hele Ascend er avhengig av at Perception leverer smarte løsninger. Dronen vår
-        skal samle inn video fra kamera og en rekke sensorer og kombinerer dette på en smart måte
-        for å bygge et bilde av omverdenen som dronen mener er forståelig. Som gruppemedlem i denne
-         gruppen vil du jobbe med å skrive kunstig intelligent programvare og smarte algoritmer
-         som klarer å ta slik kompleks rå data og transformere det til noe enkelt. En kombinasjon av
-         deep learning, transformasjoner og statistikk er sentralt. Vi trenger også en lur måte
-         å fjerne signalstøy fra systemene våre slik at de andre gruppene i Ascend kan få servert
-          datasyn av høy kvalitet.Du vil bli kurset i slik teknologi om du ikke har erfaring med
-          det fra før. <br />
-            <i className='key-words' > Nøkkelord: Datasyn, Visuell databehandling, Deep Learning,
-        Kunstig Intelligens programmering, filtrering, Kalmanfilter, Sensorikk. </i> </p > <h3 > Teknisk gruppeleder - Perception </h3> <p id='teknisk-gruppeleder-perception' >
-        Som teknisk gruppeleder er det ditt ansvar å holde oversikt over det tekniske arbeidet
-        som må gjøres på gruppen din, sørge for at alle har det de trenger, sørge
-        for at gruppen kommuniserer med de andre tekniske gruppene og at alle i Ascend er
-        oppdatert. Du vil fordele arbeidsoppgaver samtidig som du selv blir å gjøre like mye hands
-         - on teknisk arbeid som gruppen din. Du vil også bli kurset i ledelse om du ikke har
-         erfaring med dette fra før. <br />
-          <i className='key-words' > Nøkkelord: Ledelse, Datasyn, Visuell databehandling,
-        Deep Learning, Kunstig Intelligens programmering, Sensorikk. </i> </p > <h3 > Control gruppemedlem </h3> <p id='control-gruppemedlem' >
-        Control har ansvaret
-        for å få dronen til å utføre kommandoer autonomt og på en pålitelig og robust måte. I control
-         vil du jobbe med systemene som skal få dronen til å fly presist og stabilt rundt i rommet
-         uten å kollidere i hindringene på veien, gjerne raskt og effektivt!Alt skal foregå autonomt
-         så dronen må selv finne ut hvilke handlinger den må gjøre
-        for å klare å utføre kommandoen den får tilsendt!Som gruppemedlem får du mulighet til
-         å jobbe på alt fra lavnivå flykontrollere som sørger
-        for å holde dronen stabil, til høynivå ruteplanlegging og kollisjonsunngåelse som sørger
-        for at dronen kan styre rundt i rommet og gjennomføre prestisjefulle manøvre. <br />
-          <i className='key-words' > Nøkkelord: Reguleringsteknikk, C / C++, ROS, tilstandsmaskin,
-        embedded, ruteplanlegging </i> </p > <p id='ai-gruppemedlem' >
-          <h3 > AI gruppemedlem </h3><i> "Hva skal dronen gjøre, og hvorfor er det lurt?" </i > Som
-        medlem av AI gruppen jobber du med den overordnede kunstige intelligensen(AI) til dronen.
-        Det er gruppen sitt ansvar å produsere en AI som kan analysere informasjonen om verden
-        rundt seg og gjennom dette skal den kunne ta beslutninger på egen hånd og gjerne det
-        smarteste valget.Som medlem av denne gruppen vil du være med på å tenke nyskapende mens
-        du trener droner i simulatorer, i virkeligheten og skriver avansert programvare. Du vil
-        bli kurset i kunstig intelligens om du ikke har erfaring med det fra før. <br />
-          <i className='key-words' > Nøkkelord: Kunstig Intelligens Programmering, Maskinlæring,
-        Deep Learning, Reinforcement Learning, Algoritmer og Datastrukturer, Statistikk. </i> </p > <h3 > Sponsorkontakt </h3> <p id='sponsorkontakt' >
-        Har du lyst til å være Ascend NTNU sin representant i næringslivet ? Vi i Ascend er helt
-        avhengig av våre sponsorer for å kunne gjøre det arbeidet vi gjør. Som sponsorkontakt i
-        Ascend har du som hovedoppgave å skape mest mulig verdiskapning for våre sponsorer. Du
-        vil jobbe med å finne nye sponsorer, forhandle kontrakter og oppretholde god kommunikasjon
-         med våre eksisternede sponsorer. Du vil også jobbe tett sammen med hele kommunikasjonsgruppen
-        for å videreutvikle Ascends "image"
-        utad og spesielt event manageren vår
-        for å planlegge og organisere sponsoraktiviteter. <br />
-          <i className='key-words' > Nøkkelord : Presentasjonteknikk, Gode Forhandlingsevner, Utadvent,
-        Organisert </i> </p > <h3 > Grafisk designer </h3> <p id='grafisk-designer' >
-        Bli med på å forme hele Ascend NTNU sitt "image"
-        utad. Som grafisk designer vil du lage alt fra markedsmateriell til profileringartikler og du
-        vil skape en ordentlig grafisk utforming i alt vi gjør. Du vil jobbe tett sammen med hele
-        kommunikasjons gruppen, blant annet ved å bidra til vår blog, lage vårt aller første magasin
-        og bidra til utformingen av stand. Det er et pluss om du vil hjelpe til med videoer, 3 D
-        visualisering eller motion design, men det er ikke et krav. <br />
-          <i className='key-words' > Nøkkelord: Design, t - skjorter, genser, jakker, visittkort,
-        medaljer, roll - ups, flyers, postere, webdesign, magasin design, redaktør, video, motion
-        design, 3 D visualisering. </i> </p > <h3 > Event Manager </h3> <p id='event-manager' >
-        Som Event Manager får du muligheten til å arrangere events som ikke bare når ut til alle
-        studentene på NTNU, men i tillegg både til presse og næringsliv i hele Norge. Du får ansvaret
-        for å arrangere ulike stands og fremføringer på ulike arrangementer, både internt på NTNU og
-        utad mot næringslivet. Du vil også få ansvaret for organiseringen av våre opptaksperioder i
-        tillegg til å arrangere egne arrangementer som for eksempel robotikk dag og live - demo /
-        unveiling. Som Event Manager vil du jobbe tett sammen med hele kommunikasjons gruppen, spesielt
-         vår sponsorkontakt for å fremme Ascend til potensielle nye medlemmer og sponsorer. Du vil
-         også være med på å planlegge den årlige turen vår til USA. <br />
-          <i className='key-words' > Nøkkelord: Presentasjonteknikk, Organisert, Standutforming, Arrangementplanlegging, Organisering av stands. </i> </p > <h3 > Webutvikler </h3> <p id='webutvikler' >
-        Har du lyst å utvikle en full - stack, skalerbar og grafisk imponerende webside? Som webutvikler
-        vil du ha ansvar for å videreutvikle vår hjemmeside ascendntnu.no. Det blir også din oppgave
-         å vise frem hvem vi er, våre mål og hvilke utfordringer vi møter på en interaktiv og spennende
-         måte, kanskje ved å lage en liten spill app ? Du vil jobbe tett sammen med hele kommunikasjons gruppen
-        for å videreutvikle Ascends "image"
-        utad. Du kan også ta på deg ansvaret med system administrasjon, det vil si at du blant annet
-        får bygge og vedlikeholde våre byggservere og sørge
-        for at alt går så automatisk og knirkefritt som mulig. Du vil bli kurset i
-        webutvikling (og noe sysadmin) om du ikke har erfaring med det fra før. <br />
-            <i className='key-words' > Nøkkelord : Webutvikling, full - stack(backend og frontend),
-        grafisk design, react, typescript, app utvikling. Sysadmin, continous integration,
-        github hooks, server managment </i> </p > </SubSection>,
-
-        <SubSection titleText='Stillinger'
-          key='2' >
-          <p > Bli med i styret og bestem fremtiden til Ascend, eller lag teknologi som verden
-         ikke har sett maken til som teknisk gruppeleder. Under ligger stillingene som det er mulig å søke på i denne omgang.</p> <ul className='anchor-list' >
-           <li onClick={
-          () => this.setAnchor('Prosjektleder og Nestleder')
-        } > <a > Prosjektleder og Nestleder </a></li >
-           <li onClick={
-          () => this.setAnchor('Teknisk Leder og Nestleder')
-        } > <a > Teknisk Leder og Nestleder </a></li >
-           <li onClick={
-          () => this.setAnchor('Marked- og kommunikasjonsleder')
-        } > <a > Marked- og kommunikasjonsleder </a></li >
-           <li onClick={
-          () => this.setAnchor('Økonomiansvarlig')
-        } > <a > Økonomiansvarlig </a></li >
-           <li onClick={
-          () => this.setAnchor('Gruppeleder i Perception')
-        } > <a > Gruppeleder i Perception </a></li >
-           <li onClick={
-          () => this.setAnchor('Gruppeleder i Control')
-        } > <a > Gruppeleder i Control </a></li >
-           <li onClick={
-          () => this.setAnchor('Gruppeleder i Hardware')
-        } > <a > Gruppeleder i Hardware </a></li >
-           <li onClick={
-          () => this.setAnchor('Gruppeleder i Artificial Intelligence (AI)')
-        } > <a > Gruppeleder i Artificial Intelligence(AI) </a></li >
-         </ul>
-
-          <SubSubSection titleText='Prosjektleder og Nestleder'
-            id='Prosjektleder og Nestleder' >
-            <p > Prosjektleder er styrets leder og jobber med å videreutvikle Ascend i ønsket retning
-        basert på Ascends visjoner og mål. Som prosjektleder legger man i stor grad føringer
-        for hvordan hele organisasjonen skal drives og hvordan arbeidet skal gjennomføres.
-        Stillingen krever at man er proaktiv og ser forbedringsområder samt legger til rette
-        for god arbeidskultur. Prosjektleder jobber tett opp mot alle Ascends undergrupper
-        og koordinerer mye av arbeidet som skjer mellom gruppene på et overordnet plan.
-        Sammen med marked og kommunikasjonsgruppen jobber prosjektleder
-        for å fremme Ascends omdømme og jobbe med sponsorer. Arbeidsoppgavene man har vil
-        variere fra uke til uke og gir muligheter til å jobbe med de fleste aspekter i prosjektet.
-        Faste oppgaver inkluderer å lede styremøter og allmøter, og ansvar
-        for samarbeid med hovedsponsor. </p> <p > Som nestleder har man mange spennende oppgaver. Først og fremst er man hovedansvarlig
-        for rekruttering av nytt styre, nye gruppemedlemmer og gruppeledere. Man skal også bistå
-        prosjektleder med planlegging, oppfølging og målsetting. Videre blir du en tillitsperson
-        for gruppemedlemmene og sosialt ansvarlig. </p> <p > Prosjektleder og nestleder jobber tett sammen og fordeler arbeidsoppgaver mellom seg.
-        Dette samarbeidet gir en stor fleksibilitet når det kommer til arbeidsoppgaver, og lar
-        begge to tilpasse ansvarsområder slik at man kan jobbe med det man har størst interesse
-        for. </p> <p > <b > Vi ser etter </b></p >
-            <ul >
-              <li > Deg som ønsker å jobbe tett med hele organisasjonen og liker varierte arbeidsoppgaver </li> <li > Deg som vil jobbe med eksterne aktører, sponsorer og andre samarbeidspartnere. </li> <li > Deg som vil finne gode løsninger i samarbeid med andre og tar utfordringer på strak arm. </li> <li > Deg som har god struktur og oversikt, og liker å jobbe med organisasjonen som en helhet. </li> </ul > <p > Har du spørsmål om denne stillingen kan du kontakte Simen Sandbu(Prosjektleder) på <a href={
-          `mailto:${this.emails[0]}ascendntnu.no`
-        } > {
-          this.emails[0]
-        }
-        ascendntnu.no </a>, eller Erling Solberg (Nestleder) på <a href={`mailto:${this.emails[1]}ascendntnu.no`}>{ this.emails[1] }ascendntnu.no</a > . </p> </SubSubSection > <SubSubSection titleText='Teknisk Leder og Nestleder'
-          id='Teknisk Leder og Nestleder' >
-          <p > Som teknisk leder eller nestleder har du det overordnede ansvaret
-        for all teknisk arbeid i Ascend. Dette innebærer å planlegge, organisere og samkjøre
-        det tekniske arbeidet sammen med gruppelederne. Det er din oppgave å lede det
-        tekniske arbeidet slik at alle de tekniske gruppene jobber mot samme mål. Du må ha
-        en god innsikt i hele systemet som utvikles slik at arbeidet kan legges til rette
-        for å unngå potensielle tekniske problemer og integreres på en best mulig måte.
-        Teknisk leder og nestleder jobber tett med alle de tekniske gruppelederene og gruppemedlemmene,
-         og bistår med det tekniske der det til enhver tid er størt behov. Jobben vil gi deg en
-         innsikt og erfaring i en rekke forskjellige ingeniørdisipliner, og gi deg et helhetsbilde
-         som få andre har. Du skal også sørge
-        for god flyt mellom det tekniske og det administrative. </p> <p > Teknisk leder og nestleder vil jobbe tett sammen og fordele arbeidsoppgaver mellom seg. </p> <p > Som nestleder vil du også ha ansvaret
-        for innkjøp, vedlikehold og oppbevaring av teknisk utstyr. Du vil ha ansvaret
-        for prosjektplanleggingen på verktøy som confluence og jira og i tilleg ansvaret
-        for å planlegge, kordinere og dokumentere testing av systemer. </p> <p > <b > Vi ser etter </b></p >
-          <ul >
-            <li > Du som har gode sammarbeidsevner og et engasjement rundt ledelse. </li> <li > Du som har stor teknisk interesse
-        for robotikk og gjerne erfaring fra c++eller ROS(Robot Operating System). </li> <li > Du som liker å jobbe med store kompliserte systemer. </li> <li > Du som er strukturert, ryddig og organisert. </li> <li > Du som er utadvent og komfortabel med å være en synlig skikkelse i Ascend både innad
-        og utad. </li> </ul > <p > Har du spørsmål knyttet til disse stillingene kan du kontakte Kevin Kaldvansvik
-        på <a href={
-          `mailto:${this.emails[4]}ascendntnu.no`
-        } > {
-          this.emails[4]
-        }
-        ascendntnu.no </a>.</p >
-
-        </SubSubSection> <SubSubSection titleText='Marked- og kommunikasjonsleder'
-          id='Marked- og kommunikasjonsleder' >
-          <p > For å lykkes med dette ambisiøse prosjektet er Ascend avhengig av god markedsføring
-         og kommunikasjon med både bedrifter, organisasjoner og studenter. Du vil
-         som marked og kommunikasjonsleder bestemme hvordan Ascend skal fremstå utad. Du vil
-         planlegge, utføre og teste markedsføringsstrategier både fysisk i Trondheim og online på
-         vår Facebook, Instagram, Snapchat og nettside. Du vil lede marked og kommunikasjonsgruppen
-         og bistå dem med hjelp når det trengs. Du vil måtte håndtere presse og skrive pressemeldinger.
-         Dine arbeidsoppgaver vil være veldig variert og du vil jobbe tett sammen med både styret
-         og din egen gruppe
-        for å ta Ascend til nye høyder. </p> <p > <b > Vi ser etter </b></p >
-          <ul >
-            <li > Du som har stor interesse
-        for markedsføring både i sosiale og fysiske medier. </li> <li > Du som er interessert i å skape og pleie relasjoner til samarbeidspartnere og presse. </li> <li > Du som har gode kommunikasjonsevner og interesse
-        for ledelse </li> <li > Du som er løsningsorientert, kreativ, ambisiøs, samarbeidsvillig, målrettet og resultatdrevet </li> </ul > <p > Har du spørsmål om denne stillingen kan du kontakte Kim Borgen på <a href={
-          `mailto:${this.emails[2]}ascendntnu.no`
-        } > {
-          this.emails[2]
-        }
-        ascendntnu.no </a>.</p >
-        </SubSubSection> <SubSubSection titleText='Økonomiansvarlig'
-          id='Økonomiansvarlig' >
-          <p > Som økonomiansvarlig har du kontroll på organisasjonens ressursbruk. Ascend opererer som i likhet med
-        andre organisasjoner innenfor visse økonomiske rammer, og en pålitelig samt forutsigbar flyt av ressurser kan dermed
-        hjelpe resten av teamet å oppnå sitt fulle potensial. </p> <p > Din oppgave vil hovedsaklig bestå av å forsikre at styret har oversiktlig regnskap, kontobalanse og
-        budsjetter tilgjengelig i forbindelse med avgjørelser
-        for både teknisk og organisatorisk drift. I tillegg vil du ha ansvar
-        for å holde oversikt over interne utlegg, inventar og likviditet, og sørge
-        for at innkommende fakturaer blir betalt til rett tid. Du vil også ha ansvaret
-        for vår interne kiosk. </p> <p > Som økonomiansvarlig vil du også samarbeide mye med sponsoransvarlig og resten av marked og kommunikasjons gruppen. </p> <p > <b > Vi ser etter </b></p >
-          <ul >
-            <li > Du som har interesse
-        for økonomi, regnskapsføring og budsjettplanlegging. </li> <li > Du som har kunnskap om, eller interesse
-        for å lære om føring av økonomi i organisasjoner. </li> <li > Du som har ryddige og oversiktlige arbeidsmetoder. </li> </ul > <p > Har du spørsmål om denne stillingen kan du kontakte Truls Olsen på <a href={
-          `mailto:${this.emails[3]}ascendntnu.no`
-        } > {
-          this.emails[3]
-        }
-        ascendntnu.no </a>.</p >
-        </SubSubSection> <h3 > Tekniske gruppeledere : </h3> <p > Som gruppeleder vil du lede en teknisk gruppe på 4 - 6 personer, ha ansvaret
-        for å planlegge arbeid og sørge
-        for at arbeid blir gjennomført. Du vil også jobbe tett sammen med tekniske ledere og andre gruppeledere. </p> <SubSubSection titleText='Gruppeleder i Perception'
-          id='Gruppeleder i Perception' >
-          <p > I perception gruppen jobber vi med moderne og avanserte algoritmer innen datasyn og visuell databehandling.
-        Her kan du få mulighet til å prøve deg på cutting edge "deep learning"
-        og visuell databehandling.
-        Ellers handler det rett og slett om å være kreativ med å finne løsninger som kan tolke inputdata fra
-        kameraer, lidar, andre sensorer og prosessere den slik at dronen kan tolke miljøet den befinner seg i.
-        Som gruppeleder vil du være ansvarlig
-        for å holde gruppen din motivert og kreativ, ha oversikt på det tekniske arbeidet i din
-        gruppe og ha god kontakt med andre tekniske gruppeledere. </p> <i className='key-words' > Stikkord: Datasyn, Visuell databehandling, Deep Learning,
-         Kunstig Intelligens programmering, filtrering, Kalmanfilter, Sensorikk, Visuell odometri </i> <p > Har du spørsmål om denne stillingen kan du kontakte Ulrich Isacsen på <a href={
-          `mailto:${this.emails[5]}ascendntnu.no`
-        } > {
-          this.emails[5]
-        }
-        ascendntnu.no </a>.</p >
-        </SubSubSection> <SubSubSection titleText='Gruppeleder i Control'
-          id='Gruppeleder i Control' >
-          <p > Som gruppeleder i Control blir det din oppgave å lede gruppen gjennom utviklingen av avanserte systemer
-        for styring av dronen.
-        Control jobber med alt fra reguleringssytemene som får dronen til å være stabil gjennom avanserte
-        manøvre, til høynivå veiplanlegging(path planning) og hindringsunngåelse(obstacle avoidance). Systemene må være
-        robuste og håndtere feil underveis på en trygg og forutsigbar måte. Å være teknisk gruppeleder i Control er en fantastisk mulighet til å lære mer om praktisk systemutvikling, teamarbeid og gruppeledese! </p>
-
-          <i className='key-words' > Stikkord: Reguleringsteknikk, systemutvikling, C / C++, ROS, Navigasjon, Path Planning, Obstacle Avoidance, Tilstandsmaskiner, Git </i> <p > Har du spørsmål om denne stillingen kan du kontakte Håvard Mellbye på <a href={
-          `mailto:${this.emails[6]}ascendntnu.no`
-        } > {
-          this.emails[6]
-        }
-        ascendntnu.no </a>.</p >
-        </SubSubSection> <SubSubSection titleText='Gruppeleder i Hardware'
-          id='Gruppeleder i Hardware' >
-          <p > Hardware-gruppen i Ascend bygger og designer dronene til Ascend. Som leder
-        for denne gruppen vil du ha hovedansvar
-        for det mekaniske og elektriske systemet til dronene. Dette innebærer at du
-        får innsikt i alt fra CFD og styrkeanalyser til kretskortdesign og produksjon, i
-        tillegg til å designe dronen selv. Som leder må du koordinere med de andre tekniske
-        gruppelederne i Ascend
-        for å integrere sensorikk og datamaskiner ombord. Det er en fordel om du har tidligere
-        erfaring med RC - utstyr eller stor interesse
-        for det. </p> <i className='key-words' > Stikkord: CAD, 3 D - print, Styrke og CFD analyser, Krets
-        design, droneflyving, dronebygging og produsering av diverse komponenter. </i> <p > Har du spørsmål om denne stillingen kan du kontakte Filip Lolland på <a href={
-          `mailto:${this.emails[7]}ascendntnu.no`
-        } > {
-          this.emails[7]
-        }
-        ascendntnu.no </a>.</p >
-        </SubSubSection>
-
-          <SubSubSection titleText='Gruppeleder i Artificial Intelligence (AI)'
-            id='Gruppeleder i Artificial Intelligence (AI)' >
-            <p > "Hva skal dronen gjøre, og hvorfor er det lurt?"
-        I AI gruppen jobber du med den overordnede kunstige intelligensen(AI) til dronen.
-        Det er gruppen sitt ansvar å produsere en AI som kan analysere informasjonen om
-        verden rundt seg og gjennom dette skal den kunne ta beslutninger på egen hånd og
-         gjerne det smarteste valget.
-        AI er et stort og viktig fagfelt
-        for tiden og som leder i AI gruppen
-        for du være med på hele prosessen fra research i "state of the art"
-        teknologi til implementering og testing av algoritmen i praksis. Her får du mulighet
-        til å jobbe med et bredt spekter av AI algoritmer samt få erfaring i å ta noe veldig
-        teoretisk og få det til å funke i den virkelige verden.
-        Som gruppeleder får du også mye erfaring i samarbeid og utfordringene som kommer med
-        samkjøring av store mengder kode utviklet av over 20 programmere samt god innsikt i
-        hva de andre gruppene i Ascend NTNU jobber med. </p> <i className='key-words' > Stikkord: Kunstig Intelligens Programmering, Maskinlæring,
-        Deep Learning, Reinforcement Learning, Algoritmer og Datastrukturer, Statistikk. </i> <p > Har du spørsmål om denne stillingen kan du kontakte Rasmus Munter på <a href={
-          `mailto:${this.emails[8]}ascendntnu.no`
-        } > {
-          this.emails[8]
-        }
-        ascendntnu.no </a>.</p >
-          </SubSubSection>
-
+        </ul> 
+        <SubSection titleText="Sponsorkontakt" id="sponsorkontakt">
+          <p>
+          Har du lyst til å være Ascend NTNU sin representant i næringslivet? Vi i Ascend er helt avhengige av våre sponsorer for å kunne gjøre det arbeidet vi gjør. Som sponsorkontakt i Ascend vil verdiskapning for våre sponsorer være din hovedoppgave. Du vil jobbe med å finne nye sponsorer, opprettholde kommunikasjon med våre eksisterende sponsorer, og i tillegg utarbeide kontrakter og sponsorpakker. Dette er en gylden mulighet til å knytte kontakter i næringslivet! Dessuten kommer du til å jobbe sammen med hele markedsføringsgruppen for å videreutvikle Ascends "image", samt at du vil samarbeide tett med event manageren vår for å planlegge og organisere sponsoraktiviteter. 
+          </p>
         </SubSection>
+        <SubSection titleText="Grafisk ansvarlig" if="grafisk-designer">
+          <p>
+          Bli med på å forme hele Ascend NTNU sitt "image" utad! Som grafisk ansvarlig vil dine arbeidsoppgaver være svært varierte, og blant annet inkludere videoproduksjon, design av markedsmateriell og profileringsartikler, samt at du vil ha ansvaret for Ascends grafiske utforming. Du vil også samarbeide med resten av markedsføringsgruppen, blant annet ved å bidra til utforming av stand, blogginnlegg og innlegg på sosiale medier. I tillegg vil du også få muligheten til å designe Ascends konkurranseuniform som vil brukes under konkurransen i USA! Det er et pluss om du også vil arbeide med 3D visualisering eller motion design, men det er ikke et krav.
+          </p>
+        </SubSection>
+        <SubSection titleText="Event manager" id="event-manager">
+          <p>
+          As Event Manager you will have the opportunity to arrange events that not only reach all NTNU students, but also to the press and business community throughout Norway. You will be responsible for arranging stands and performances at various events, both internally at NTNU and outside the business community. In addition, you will have the opportunity to arrange events organized by Ascend, such as our own Robotics Day, live demonstration of drone flight or unveiling of our new drones. The entire marketing team will collaborate on several different levels, and as Event Manager you will especially work closely with our sponsorship contact to promote Ascend's image to potential new members and sponsors. Besides, you help us plan our annual trip to the United States!
+          </p>
+        </SubSection>
+        <SubSection titleText="Webutvikler" id="webutvikler">
+          <p>
+          Har du lyst å utvikle en full-stack, skalerbar og grafisk imponerende webside? Som webutvikler vil du ha ansvar for å videreutvikle og vedlikeholde hjemmesiden vår. Det blir også din oppgave å vise frem hvem vi er, våre mål og hvilke utfordringer vi møter på en interaktiv og spennende måte - kanskje ved å lage en app eller et spill? Du vil jobbe tett sammen med resten av markedsføringsgruppen for å videreutvikle Ascends "image" utad. Du vil også få muligheten til å ha ansvar for systemadministrasjon, det vil si at du blant annet får bygge og vedlikeholde våre byggservere og sørge for at alt går så automatisk og knirkefritt som mulig. Du vil bli kurset i webutvikling (og noe sysadmin) om du ikke har erfaring med dette fra før av.          </p>
+        </SubSection>
+        <SubSection titleText="Hardware gruppemedlem" id="hardware-gruppemedlem">
+          <p>
+            Hardwaregruppen er ansvarlig for alt det fysiske på dronen. Dette innebærer å designe dronen helt fra bunnen av. Dronen tegnes først opp i CAD og delene produseres i karbonfiber og 3d-print. Det er svært viktig at dronen er lett, men samtidig sterk nok til å tåle flere kollisjoner. Ikke minst må dronen se bra ut.
+            Det er også mye elektronikk som må til for å lage en drone som kan sanse omgivelsene og reagere på dem. Det vil være behov for utvikling av alt fra PDB'er som skal tåle over 100 amper til spesialdesignede sensorsystemer samt kraftige datamaskiner.
+          </p>
+        </SubSection>
+        <SubSection titleText="AI gruppemedlem" id="ai-gruppemedlem">
+          <p>
+          AI gruppa sin oppgave er å definere hvordan dronene skal oppføre seg, både individuelt og sammen. I AI gruppen jobber du med den overordnede kunstige intelligensen (AI) til dronen. Det er gruppen sitt ansvar å produsere en AI som kan analysere informasjonen om verden rundt seg og gjennom dette ta de beste og smarteste avgjørelsene på egen hånd. Her får du muligheten til å jobbe med et bredt spekter av AI algoritmer samt få erfaring i å ta noe veldig teoretisk og overføre det til den virkelige verden. AI er et stort og viktig fagfelt og du vil få mulighet til å være med på hele prosessen fra research i "state of the art" teknikker til implementering og testing av algoritmen både i selvskrevne simuleringer og i praksis. Vi trenger deg som liker å programmere, er kreativ, vil løse problemer i team, er motivert og ønsker å lære masse nytt!
+          AI trenger både gruppeleder og nye guppemedlemmer.  Som gruppeleder vil du lede en teknisk gruppe på 4-6 personer, ha ansvaret for å planlegge arbeid og sørge for at arbeidet blir utført. Du vil og jobbe tett sammen med tekniske ledere og andre gruppeledere, og slik få god innsikt i det helhetlige arbeidet Ascend NTNU gjør. Som gruppeleder får du mye erfaring i samarbeid og utfordringene som kommer med samkjøring av kode utviklet av flere programmere.
+          </p>
+        </SubSection>
+        <SubSection titleText="Control gruppemedlem" id="control-gruppemedlem">
+          <p>
+          Som medlem av control-gruppa vil du jobbe tett med de øvrige tekniske gruppene. Vår oppgave er å sørge for at dronene flyr stabilt, aktivt unngår kollisjoner, og finner frem til målet sitt. I år starter vi arbeidet fra scratch, som gir deg som control-medlem god mulighet til å løse utfordringene som du selv ønsker. I år ønsker vi å se på muligheten til å bruke en matematisk modell av dronene for å forbedre ytelsen, og det vil da kunne være nødvendig å gjøre endringer i flight-controlleren. Dersom du som søker har erfaring eller interesse innenfor embedded og sanntidsprogrammering vil dette være positivt.  Vi ser i utgangspunktet etter kyb-studenter, men alle studenter med interesse for fagfeltet oppfordres til å søke. Det vi ser etter mest av alt er motivasjon og vilje til å lære underveis.          </p>
+        </SubSection>
+        <SubSection titleText="Perception gruppemedlem" id="perception-gruppemedlem">
+          <p>
+          Perception-teamet er koblingen mellom drone og verden rundt dem. Det handler om å skaffe informasjon fra forskjellige sensorer og bearbeide rådataene i pålitelig informasjon om miljøet. For å klare Mission 8 i IARC må Perception-teamet levere en nøyaktig og pålitelig posisjon og orientering av alle fire droner, bygge et system for effektiv og intuitiv samhandling med våre droner, spore stillingen til de fiendtlige dronene og mye mer. Medlemmene av teamet må være nysgjerrige og villige til å jobbe med nye og uløste problemer. Koding erfaring (Python / C ++) er å foretrekke.          </p>
+        </SubSection>
+        </Section>
       ]
     }
 
     let contents = {
-      'en': [ <div />
-      ],
-      'no': [ <Section titleText='Nå nye høyder - Søk Ascend!'
+      'en': [
+
+      <Section titleText='Reach new heights - Join Ascend NTNU'
         key='1' >
         <img src='/images/teams/2017/ascend-group-2017.jpg'
           alt='Group 2017'
           className='fullscale-image' />
         <p style={{
           fontSize: '1.4em'
-        }} > <b > Søknadsfrist søndag 15. april kl. 23:59 </b></p >
-        <p > Ønsker du å være med på å drive med cutting-edge droneteknologi i en ambisiøs
-           og teknologifokusert studentorganisasjon? </p> <p > Tidligere erfaring er ikke et krav
-          for å bli med i Ascend. Det viktigste er å ha en interesse
-          for det vi jobber med, og en interesse
-          for å lære. </p>
+        }} > <b > Application deadline sunday september 2nd, 2018</b></p >
+        <p > 
+        Ascend NTNU develops an autonomous drone and competes in the International Aerial Robotics Competition every year, the worlds largest and oldest engineering competition for autonomous aerial robotics. Ascend NTNU is searching for new members for team 2019, which will get the opportunity to develop, build and compete with a high tech drone. Underneath is a description of the different positions you can apply for. No previous knowledge is neccesary, the most important factor we are looking for are motivation and dedication<br/>
+        </p>
           <YouTube 
             videoId="qr6UwZnJUYc"
             opts={opts}
             onReady={this._onReady}
           />
-        <p>Som styremedlem eller gruppeleder i Team 2019 vil du få bryne deg på et helt nytt oppdrag. Denne sommeren er siste gang Mission 7 vil bli arrangert, og IARC har annonsert Mission 8! Les mer om dette spennende oppdraget i vår blogpost <a href='https://ascendntnu.no/blog/2018-04-14-mission-8'>om Mission 8.</a></p>
         <a className='button active'
           style={{
             alignSelf: 'flex-start',
             display: 'none'
           }}
-          href='https://docs.google.com/forms/d/e/1FAIpQLSe_T7CzNUmQ9gk5o2gsMgiUoj5f1eiTAtFAleV7hjfBagDiAw/viewform' > Søk her! </a>
-        <h4><a href='https://docs.google.com/forms/d/e/1FAIpQLSe_T7CzNUmQ9gk5o2gsMgiUoj5f1eiTAtFAleV7hjfBagDiAw/viewform' target='
+          href='https://docs.google.com/forms/d/e/1FAIpQLSdgvQ1jVRs8iJmglmyGoaWiigi1E-Q8AdNjzrBWqwz0D9ukCA/viewform' > Søk her! </a>
+        <h4><a href='https://docs.google.com/forms/d/e/1FAIpQLSdgvQ1jVRs8iJmglmyGoaWiigi1E-Q8AdNjzrBWqwz0D9ukCA/viewform' target='
           _blank ' rel='
-          noopener noreferrer '>Trykk her for å legge inn søknad som gruppeleder eller styremedlem</a></h4> {
+          noopener noreferrer '>Click here to apply for a position at team 2019</a></h4> {
+          positions[this.state.language][1]
+        } <i > Its only students studying at NTNU at the school year 2018-2019 which is eligible to join, if you are wondering if you are eligible to join, dont hesitate to ask at: <a href='mailto:hi@ascendntnu.no' > hi @ascendntnu.no </a></i >
+        <SubSection titleText='Why should you apply?' >
+          <ul >
+            <li > <strong > Be a part of an environment. </strong> In Ascend, you  </li >
+            <li > <strong > From theory to real life. </strong> In Ascend, you take some of the toughest concepts from NTNU and use them in real life applications.</li >
+            
+            <li > <strong > Cutting edge. </strong> Be a part of an organization that develops state of the art robotics solutions. </li >
+          </ul> </SubSection > <SubSection titleText='The competition' >
+            <p > International Aerial robotics competition(IARC) is a yearly competition which is held in 
+       USA and China with the objective to push the limits
+      of what is possible with autonomous drones. This is being done with presenting tasks that are impossible 
+      to accomplish when they are being released. The idea is that when the behaviour is shown in the competition,
+      the competition will have presented technology which is useful for the world.</p>
+          </SubSection> </Section >,
+      ],
+      'no': [ 
+      <Section titleText='Nå nye høyder - Søk Ascend!'
+        key='1' >
+        <img src='/images/teams/2017/ascend-group-2017.jpg'
+          alt='Group 2017'
+          className='fullscale-image' />
+        <p style={{
+          fontSize: '1.4em'
+        }} > <b > Søknadsfrist søndag 2 september 2018</b></p >
+        <p > 
+        Hvert år utvikler og bygger Ascend NTNU en autonom drone fra bunnen av og deltar i The International Aerial Robtics Competition, verdens eldste og vanskeligste ingeniørkonkurranse for autonom luftrobotikk. Ascend NTNU tar nå opp nye medlemmer til Team 19, som i løpet av ett år får muligheten til å være med å utvikle, bygge og konkurrere med en høyteknologisk drone i USA. I år skrur vi også opp vanskelighetsgraden og skal bygge intet mindre enn 4 droner, med fokus på autonome svermer. Under kan du lese mer om de ulike undergruppene i Ascend NTNU som tar opp nye medlemmer. Husk at ingen forkunnskaper er påkrevd i noen av gruppene, det vi i første omgang ser etter er motivasjon og vilje til å lære. <br />        
+        </p>
+          <YouTube 
+            videoId="qr6UwZnJUYc"
+            opts={opts}
+            onReady={this._onReady}
+          />
+        <a className='button active'
+          style={{
+            alignSelf: 'flex-start',
+            display: 'none'
+          }}
+          href='https://docs.google.com/forms/d/e/1FAIpQLSdgvQ1jVRs8iJmglmyGoaWiigi1E-Q8AdNjzrBWqwz0D9ukCA/viewform' > Søk her! </a>
+        <h4><a href='https://docs.google.com/forms/d/e/1FAIpQLSdgvQ1jVRs8iJmglmyGoaWiigi1E-Q8AdNjzrBWqwz0D9ukCA/viewform' target='
+          _blank ' rel='
+          noopener noreferrer '>Trykk her for å legge inn søknad som gruppemedlem</a></h4> {
           positions[this.state.language][1]
         } <i > Det er kun studenter som studerer på NTNU i året 2017 / 2018 som kan søke. Er du usikker på om dette gjelder
       for deg ? Spør oss på <a href='mailto:hi@ascendntnu.no' > hi @ascendntnu.no </a></i >
@@ -460,12 +322,14 @@ export class JoinPage extends Component {
           <img src='/images/teams/2017/ascend-group-2017.jpg'
             alt='Group 2017'
             className='fullscale-image' />
-          <p > Ønsker du å være med på å drive med cutting-edge droneteknologi i en ambisiøs
-      og teknologi - fokusert studentorganisasjon ? </p> <p > Tidligere erfaring er ikke et krav
-      for å bli med i Ascend. Det viktigste er å ha en interesse
-      for det vi jobber med,
-      og en interesse
-      for å lære. </p> <p > Ascend NTNU har hovedopptak på høsten hvert år
+            <p> Hvert år utvikler og bygger Ascend NTNU en autonom drone fra bunnen av og deltar i The International 
+            Aerial Robtics Competition, verdens eldste og vanskeligste ingeniørkonkurranse for autonom luftrobotikk. 
+            Ascend NTNU tar nå opp nye medlemmer til Team 19, som i løpet av ett år får muligheten til å være med å 
+            utvikle, bygge og konkurrere med en høyteknologisk drone i USA. I år skrur vi også opp vanskelighetsgraden 
+            og skal bygge intet mindre enn 4 droner, med fokus på autonome svermer. Under kan du lese mer om de ulike 
+            undergruppene i Ascend NTNU som tar opp nye medlemmer. Husk at ingen forkunnskaper er påkrevd i noen av gruppene, 
+            det vi i første omgang ser etter er motivasjon og vilje til å lære.</p>
+      <p > Ascend NTNU har hovedopptak på høsten hvert år
       for å ta inn nye medlemmer. </p> <p > <strong > Ny mulighet vil annonseres til våren og høsten neste år. Hvis du vil bli
       oppdatert om denne - skriv deg opp på linken under! </strong></p >
           <a className='button active'
@@ -539,31 +403,32 @@ export class JoinPage extends Component {
     )
     }
 
-  // let nextLanguage = 'no'
-  // switch (this.state.language) {
-  //  case 'no': nextLanguage = 'en'; break
-  //  default: nextLanguage = 'no'; break
-  // }
+    let nextLanguage = 'no'
+    switch (this.state.language) {
+      case 'no': nextLanguage = 'en'; break
+      default: nextLanguage = 'no'; break
+    }
 
-  // let languageURL = '/' + nextLanguage
-  // if (nextLanguage === 'no') languageURL = ''
-
-  // let languageNames = {
-  //  'en': 'English',
-  //  'no': 'Norsk'
-  // }
+    let languageNames = {
+    'en': 'English',
+    'no': 'Norsk'
+    }
 
     return (<div className='page page-join' >
       <Breadcrumb routes={
         ['join']
       }
       /> {
-      /* <div style={ { textAlign: 'right', marginTop: '-1.8em' } } className="page-container">
-                <Link className="button" to={`/join${languageURL}`}>{languageNames[nextLanguage]}</Link>
-              </div> */
+      <div style={ { textAlign: 'right', marginTop: '-1.8em' } } className="page-container">
+        <button className="button"  onClick={this.setLanguage.bind(this)}>{languageNames[nextLanguage]}</button>
+      </div> 
     } {
       contents[this.state.language][0]
-    } {
+    } 
+    {
+      positions[this.state.language][0]
+    }
+    {
       about[this.state.language]
     } </div>
     )
