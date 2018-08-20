@@ -76,28 +76,31 @@ export class JoinPage extends Component {
         <ul className='anchor-list' >
           <li onClick={
           () => this.setAnchor('hardware-groupmember')
-        } > <a > Hardware gruppemedlem </a></li >
+        } > <a > Hardware groupmember </a></li >
           <li onClick={
           () => this.setAnchor('perception-groupmember')
-        } > <a > Perception gruppemedlem </a></li >
+        } > <a > Perception groupmember </a></li >
           <li onClick={
           () => this.setAnchor('control-groupmember')
-        } > <a > Control gruppemedlem </a></li >
+        } > <a > Control groupmember </a></li >
           <li onClick={
           () => this.setAnchor('ai-groupmember')
-        } > <a > AI gruppemedlem </a></li >
+        } > <a > AI groupleader </a></li >
+          <li onClick={
+          () => this.setAnchor('ai-groupmember')
+        } > <a > AI groupmember </a></li >
           <li onClick={
           () => this.setAnchor('sponsocontact')
-        } > <a > Sponsorkontakt </a></li >
+        } > <a > Sponsorcontact </a></li >
           <li onClick={
           () => this.setAnchor('graphical-designer')
-        } > <a > Grafisk designer </a></li >
+        } > <a > Graphical designer </a></li >
           <li onClick={
           () => this.setAnchor('event-manager')
         } > <a > Event Manager </a></li >
           <li onClick={
           () => this.setAnchor('webdeveloper')
-        } > <a > Webutvikler </a></li >
+        } > <a > Webdeveloper </a></li >
         </ul> 
         <SubSection titleText="Sponsorcontact" id="sponsorcontact">
           <p>
@@ -123,7 +126,7 @@ export class JoinPage extends Component {
           There is also a lot of electronics needed to make a drone that can sense the environment and react to them. There will be a need for development of everything from PDBs that will withstand over 100 amps to custom designed sensor systems as well as powerful computers.
           </p>
         </SubSection>
-        <SubSection titleText="AI groupmember" id="ai-groupmember">
+        <SubSection titleText="AI groupleader and groupmember" id="ai-groupmember">
           <p>
           The AI Group's task is to define how the drones should behave, both individually and together. In the AI group you work with the overall artificial intelligence (AI) for the drone. It is the group's responsibility to produce an AI that can analyze the information about its surroundings and through this make the best and smartest decisions on its own. Here you get the opportunity to work with a wide range of AI algorithms as well as gain experience in taking something very theoretically and transferring it to the real world. AI is a major and important field of study and you will be able to participate in the entire process of research in state of the art techniques for implementing and testing the algorithm in both self-written simulations and in practice. We need you who like to program, are creative, want to solve team problems, are motivated and want to learn a lot new!
           AI needs both a new group leader and new team members. As a group leader you will lead a technical group of 4-6 people, be responsible for planning work and making sure that the work is done. You will work closely with technical managers and other group leaders, and thus get a good insight into the overall work Ascend NTNU does. As a group leader, you get a lot of experience in collaboration and the challenges that come with co-ordination of code developed by several programmers.
@@ -158,13 +161,16 @@ export class JoinPage extends Component {
         } > <a > Control gruppemedlem </a></li >
           <li onClick={
           () => this.setAnchor('ai-gruppemedlem')
+        } > <a > AI gruppeleder </a></li >
+          <li onClick={
+          () => this.setAnchor('ai-gruppemedlem')
         } > <a > AI gruppemedlem </a></li >
           <li onClick={
           () => this.setAnchor('sponsorkontakt')
         } > <a > Sponsorkontakt </a></li >
           <li onClick={
           () => this.setAnchor('grafisk-designer')
-        } > <a > Grafisk designer </a></li >
+        } > <a > Grafisk ansvarlig </a></li >
           <li onClick={
           () => this.setAnchor('event-manager')
         } > <a > Event Manager </a></li >
@@ -197,7 +203,7 @@ export class JoinPage extends Component {
             Det er også mye elektronikk som må til for å lage en drone som kan sanse omgivelsene og reagere på dem. Det vil være behov for utvikling av alt fra PDB'er som skal tåle over 100 amper til spesialdesignede sensorsystemer samt kraftige datamaskiner.
           </p>
         </SubSection>
-        <SubSection titleText="AI gruppemedlem" id="ai-gruppemedlem">
+        <SubSection titleText="AI gruppemedlem og gruppeleder" id="ai-gruppemedlem">
           <p>
           AI gruppa sin oppgave er å definere hvordan dronene skal oppføre seg, både individuelt og sammen. I AI gruppen jobber du med den overordnede kunstige intelligensen (AI) til dronen. Det er gruppen sitt ansvar å produsere en AI som kan analysere informasjonen om verden rundt seg og gjennom dette ta de beste og smarteste avgjørelsene på egen hånd. Her får du muligheten til å jobbe med et bredt spekter av AI algoritmer samt få erfaring i å ta noe veldig teoretisk og overføre det til den virkelige verden. AI er et stort og viktig fagfelt og du vil få mulighet til å være med på hele prosessen fra research i "state of the art" teknikker til implementering og testing av algoritmen både i selvskrevne simuleringer og i praksis. Vi trenger deg som liker å programmere, er kreativ, vil løse problemer i team, er motivert og ønsker å lære masse nytt!
           AI trenger både gruppeleder og nye guppemedlemmer.  Som gruppeleder vil du lede en teknisk gruppe på 4-6 personer, ha ansvaret for å planlegge arbeid og sørge for at arbeidet blir utført. Du vil og jobbe tett sammen med tekniske ledere og andre gruppeledere, og slik få god innsikt i det helhetlige arbeidet Ascend NTNU gjør. Som gruppeleder får du mye erfaring i samarbeid og utfordringene som kommer med samkjøring av kode utviklet av flere programmere.
@@ -221,7 +227,7 @@ export class JoinPage extends Component {
       <Section titleText='Reach new heights - Join Ascend NTNU'
         key='1' >
         <img src='https://preview.ibb.co/kuE9OK/ascend111.jpg'
-          alt='Group 2017'
+          alt='Group 2018'
           className='fullscale-image' />
         <p style={{
           fontSize: '1.4em'
@@ -263,11 +269,11 @@ export class JoinPage extends Component {
       <Section titleText='Nå nye høyder - Søk Ascend!'
         key='1' >
         <img src='https://preview.ibb.co/kuE9OK/ascend111.jpg'
-          alt='Group 2017'
+          alt='Group 2018'
           className='fullscale-image' />
         <p style={{
           fontSize: '1.4em'
-        }} > <b > Søknadsfrist søndag 2 september 2018</b></p >
+        }} > <b > Søknadsfrist søndag 2. september 2018</b></p >
         <p > 
         Hvert år utvikler og bygger Ascend NTNU en autonom drone fra bunnen av og deltar i The International Aerial Robtics Competition, verdens eldste og vanskeligste ingeniørkonkurranse for autonom luftrobotikk. Ascend NTNU tar nå opp nye medlemmer til Team 19, som i løpet av ett år får muligheten til å være med å utvikle, bygge og konkurrere med en høyteknologisk drone i USA. I år skrur vi også opp vanskelighetsgraden og skal bygge intet mindre enn 4 droner, med fokus på autonome svermer. Under kan du lese mer om de ulike undergruppene i Ascend NTNU som tar opp nye medlemmer. Husk at ingen forkunnskaper er påkrevd i noen av gruppene, det vi i første omgang ser etter er motivasjon og vilje til å lære. <br />        
         </p>
@@ -286,7 +292,7 @@ export class JoinPage extends Component {
           _blank ' rel='
           noopener noreferrer '>Trykk her for å legge inn søknad som gruppemedlem</a></h4> {
           positions[this.state.language][1]
-        } <i > Det er kun studenter som studerer på NTNU i året 2017 / 2018 som kan søke. Er du usikker på om dette gjelder
+        } <i > Det er kun studenter som studerer på NTNU i året 2018/2019 som kan søke. Er du usikker på om dette gjelder
       for deg ? Spør oss på <a href='mailto:hi@ascendntnu.no' > hi @ascendntnu.no </a></i >
         <SubSection titleText='Hvorfor søke' >
           <ul >
@@ -320,7 +326,7 @@ export class JoinPage extends Component {
         <Section titleText='Nå nye høyder - Søk Ascend!'
           key='2' >
           <img src='https://preview.ibb.co/kuE9OK/ascend111.jpg'
-            alt='Group 2017'
+            alt='Group 2018'
             className='fullscale-image' />
             <p> Hvert år utvikler og bygger Ascend NTNU en autonom drone fra bunnen av og deltar i The International 
             Aerial Robtics Competition, verdens eldste og vanskeligste ingeniørkonkurranse for autonom luftrobotikk. 
