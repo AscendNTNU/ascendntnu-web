@@ -306,10 +306,19 @@ export class JoinPage extends Component {
         } <i > Its only students studying at NTNU at the school year 2018-2019 which is eligible to join, if you are wondering if you are eligible to join, dont hesitate to ask at: <a href='mailto:hi@ascendntnu.no' > hi @ascendntnu.no </a></i >
         <SubSection titleText='Why should you apply?' >
           <ul >
-            <li > <strong > Be a part of an environment. </strong> In Ascend, you  </li >
-            <li > <strong > From theory to real life. </strong> In Ascend, you take some of the toughest concepts from NTNU and use them in real life applications.</li >
-            
-            <li > <strong > Cutting edge. </strong> Be a part of an organization that develops state of the art robotics solutions. </li >
+
+            <li > <strong > Be a part of an environment. </strong>
+              By being a part of Ascend you become a part of a goal oriented and technology focused project where we work together to reach our goals.</li>
+            <li > <strong > From theory to the real world. </strong> 
+            In Ascend you take some of the most advanced topics you learn on NTNU from the courses out in real life. </li >
+            <li > <strong > Combine it with your studies. </strong> 
+              Several of our members write project/maaster thesis in related to their work in Ascend. There is also an oppurtunity to do "Eksperter i Team" with Ascend. </li>
+            <li > <strong > Project / Organization experience </strong> 
+              In Ascend you are being a part of leading a technical project from start to finish - This gives lots of valuable experience. </li >
+            <li > <strong > Cutting edge. </strong> 
+              Be a part of an organization which needs to use and develop state of the art technology within the field of autonomous robotics. </li >
+            <li > <strong > Creative, flexible and innovative culture </strong>
+              We wish to have an everchanging work culture in Ascend so your contribution to the organization can also involve tasks outside your job description that will be inspired by your interests and experiences! </li >
           </ul> </SubSection > <SubSection titleText='The competition' >
             <p > International Aerial robotics competition(IARC) is a yearly competition which is held in 
        USA and China with the objective to push the limits
@@ -372,7 +381,7 @@ export class JoinPage extends Component {
       den oppførselen som etterspørres til slutt demonstres i konkurransen,
       vil konkurransen ha bidratt til en meningsfull utvikling innenfor autonom robotikk.
       En utvikling som fortrinnsvis er til fordel
-      for verden. </p> <p > <a href='https://ascendntnu.no/blog/2017-07-20-the-competition'
+      for verden. </p> <p > <a href='https://ascendntnu.no/blog/2018-04-14-mission-8'
         role='button' > Les mer om konkurransen og om oppdraget vi skal løse her. </a></p >
           </SubSection> </Section >,
 
@@ -419,7 +428,7 @@ export class JoinPage extends Component {
        oppførselen som etterspørres til slutt demonstres i konkurransen,
       vil konkurransen ha bidratt til en meningsfull utvikling innenfor autonom robotikk.
       En utvikling som fortrinnsvis er til fordel
-      for verden. </p> <p > <a href='https://ascendntnu.no/blog/2017-07-20-the-competition'
+      for verden. </p> <p > <a href='https://ascendntnu.no/blog/2018-04-14-mission-8'
         role='button' > Les mer om konkurransen og om oppdraget vi skal løse her. </a></p >
         </SubSection> </Section >
       ]
