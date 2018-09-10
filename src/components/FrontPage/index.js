@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 
 import Splash from './splash'
-import Announcement from './announcement'
+//import Announcement from './announcement'
 import SponsorList from '../Common/sponsorlist'
 //import { HistoryViewer } from '../Common/historyViewer'
 import { Section } from '../PageLayout'
 import YouTube from 'react-youtube' 
-import { Link } from 'react-router-dom'
+//import { Link } from 'react-router-dom'
 
 
 //import { Link } from 'react-router-dom'
