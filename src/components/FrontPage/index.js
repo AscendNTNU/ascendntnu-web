@@ -24,12 +24,6 @@ export class FrontPage extends Component {
 
     return (
       <div className="page-front page">
-        {<Announcement titleText="Vi har nå opptak!">
-          <p>Vil du være med på et omfattende droneprosjekt? Bli med i Ascend NTNU for å utvikle en drone som skal løse en "umulig" oppgave i verdensklasse.</p>
-          <Link to="join">Gå til join-siden vår for mer informasjon.</Link>
-          <p style={ { color: 'yellow' } }><b>Kom på infomøte 28. august 12:15-14:15 på FRAM!</b></p>
-          <p style={ { color: 'red' } }><b>Frist 2. September kl. 23:59!</b></p>
-        </Announcement>}
         <Splash />
         <Section titleText="Promotional video" className="centered">
           <YouTube
