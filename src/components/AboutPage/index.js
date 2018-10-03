@@ -29,7 +29,6 @@ export class AboutPage extends Component {
               for a new competition in 2017.
             </p>
           </SubSection>
-          <HistoryViewer />
           <SubSection titleText="Our team and mission">
             <p>
               We are currently <Link to="/team">28 students</Link> at NTNU
