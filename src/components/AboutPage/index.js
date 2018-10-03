@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 
 import { Section, SubSection } from '../PageLayout'
 import { Breadcrumb } from '../Common/breadcrumb'
-import { HistoryViewer } from '../Common/historyViewer'
 import { ContactInfo } from '../ContactPage'
 
 export class AboutPage extends Component {
