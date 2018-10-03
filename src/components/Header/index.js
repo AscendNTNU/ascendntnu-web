@@ -101,14 +101,14 @@ export class Header extends Component {
                   }`}
                 />
               </div>
-              <div className="toggle-menu-small-screen">
+              {/*<div className="toggle-menu-small-screen">
                 More{' '}
                 <i
                   className={`fa fa-caret-${
                     this.state.hoverAbout ? 'up' : 'down'
                   }`}
                 />
-              </div>
+              </div>*/}
               <div className="links">
                 <NavLink
                   onClick={this.props.toggleMenuHandler}
