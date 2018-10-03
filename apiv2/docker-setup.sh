@@ -7,17 +7,17 @@
 
 # Apply database migrations
 echo "Apply database migrations"
-python manage.py makemigrations --no-input
+python3 manage.py makemigrations --no-input
 
 # Start server
 echo "Syncing database"
-python manage.py migrate --run-syncdb
+python3 manage.py migrate --run-syncdb
 
 # Add data to database
 echo "Adding data to database"
-python manage.py loaddata data.json
+python3 manage.py loaddata data.json
 
 # Apply database migrations
 echo "Starting server"
-python manage.py runserver 0.0.0.0:8000
+python3 manage.py runserver 0.0.0.0:8000
 
