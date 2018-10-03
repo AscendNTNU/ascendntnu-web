@@ -1,13 +1,13 @@
 pipeline:
 
-  backend:
-    image: node:9
-    pull: true
-    when:
-      event: push
-    commands:
-      - yarn
-      - ./test-server.sh
+  #backend:
+  #  image: node:9
+  #  pull: true
+  #  when:
+  #    event: push
+  #  commands:
+  #    - yarn
+  #    - ./test-server.sh
 
   frontend:
     image: node:9
