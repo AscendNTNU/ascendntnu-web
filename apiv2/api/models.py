@@ -48,6 +48,8 @@ class Member(models.Model):
         indexes = [
             GinIndex(fields=['search_vector'])
         ]
+        verbose_name = "Member"
+        verbose_name_plural = 'Members'
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
@@ -56,6 +58,8 @@ class Member(models.Model):
             instance.search_vector = instance.document
             instance.save(update_fields=['search_vector'])
 
+    def __str__(self): # For showing name in admin interface
+        return self.name
 
 class Sponsor(models.Model):
     name = models.CharField(max_length=50)
@@ -66,6 +70,8 @@ class Sponsor(models.Model):
     logo_dark = models.CharField(max_length=100, blank=True, null=True)
     short_text = models.TextField()
 
+    def __str__(self): # For showing name in admin interface
+        return self.name + " - " + str(self.year)
 
 class History(models.Model):
     date = models.CharField(max_length=50)
@@ -75,11 +81,16 @@ class History(models.Model):
     tags = models.CharField(max_length=150)
     categories = models.CharField(max_length=50)
 
+    def __str__(self): # For showing name in admin interface
+        return self.title
 
 class Quote(models.Model):
     date = models.DateField(default=datetime.now)
     author = models.CharField(max_length=50)
     quote = models.TextField()
+
+    def __str__(self): # For showing name in admin interface
+        return self.quote
 
 class BlogPost(models.Model):
     layout = models.CharField(max_length=50, default='post')
@@ -105,4 +116,6 @@ class BlogPost(models.Model):
             instance.search_vector = instance.document
             instance.save(update_fields=['search_vector'])
 
+    def __str__(self): # For showing name in admin interface
+        return self.title
 
