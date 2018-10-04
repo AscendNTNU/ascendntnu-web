@@ -15,7 +15,7 @@ services:
     working_dir: /srv/ascend
 
   dev:
-    image: ascendntnu/server:2.1
+    build: .
     command: npm start
     environment:
       - NODE_ENV
@@ -28,7 +28,7 @@ services:
     working_dir: /srv/ascend
 
   build:
-    image: minimized-server:1.03
+    build: .
     user: ${DOCKER_USER-1000}:${DOCKER_USER-1000}
     command: sh -c "npm run build"
     volumes:
@@ -49,3 +49,4 @@ services:
     tty: true
     volumes:
       - ./apiv2:/code:rw
+      - ./apiv2:/usr/src/app
