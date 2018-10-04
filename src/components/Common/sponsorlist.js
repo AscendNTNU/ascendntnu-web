@@ -47,6 +47,24 @@ export class SponsorList extends Component {
             else if (b.type.toLowerCase() === "gold") {
               return 1
             }
+            else if (a.type.toLowerCase() === "silver") {
+              return -1
+            }
+            else if (b.type.toLowerCase() === "silver") {
+              return 1
+            }
+            else if (a.type.toLowerCase() === "bronze") {
+              return -1
+            }
+            else if (b.type.toLowerCase() === "bronze") {
+              return 1
+            }
+            else if (a.type.toLowerCase() === "regular") {
+              return -1
+            }
+            else if (b.type.toLowerCase() === "regular") {
+              return 1
+            }
 
             return 1
           }),

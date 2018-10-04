@@ -14,7 +14,7 @@ SPONSOR_TYPES = (
 )
 
 
-class MemberManager(models.Manager):
+class BlogPostManager(models.Manager):
     def with_documents(self):
         vector = SearchVector('title', weight='A') + \
                  SearchVector('categories', weight='C') + \
@@ -23,7 +23,7 @@ class MemberManager(models.Manager):
         return self.get_queryset().annotate(document=vector)
 
 
-class BlogPostManager(models.Manager):
+class MemberManager(models.Manager):
     def with_documents(self):
         vector = SearchVector('name', weight='A') + \
                  SearchVector('background', weight='B') + \

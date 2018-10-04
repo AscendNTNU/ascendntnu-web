@@ -16,7 +16,6 @@ services:
 
   dev:
     build: .
-    command: npm start
     environment:
       - NODE_ENV
     ports:

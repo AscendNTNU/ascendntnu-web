@@ -231,6 +231,10 @@ input[type="submit"].active,
 }
 
 @media (max-width: 560px) {
+    .nav-bar .dropdown .links {
+        display: flex;
+    }
+
     .nav-bar {
         display: none;
         flex-direction: column;
@@ -258,18 +262,16 @@ input[type="submit"].active,
 
     .nav-bar .dropdown > .links,
     .app.dark-theme .nav-bar .dropdown > .links {
-        background: rgba(0, 0, 0, .1);
+        /*background: rgba(0, 0, 0, .1);*/
     }
 
     .nav-bar .dropdown > .links {
         position: static;
-        margin: 0;
-        font-size: .8em;
-        margin: 13px -8px;
+        margin: -18px -8px 13px;
     }
 
     .nav-bar .dropdown.show:before {
-        content: "";
+        content: unset;
     }
 
     .toggle-menu,

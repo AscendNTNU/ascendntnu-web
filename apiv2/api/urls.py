@@ -14,5 +14,5 @@ urlpatterns = [
     url(r'^members/$', views.MemberList.as_view(), name='member_list'),
     url(r'^sponsors/$', views.SponsorList.as_view(), name='sponsor_list'),
     url(r'^history/$', views.HistoryList.as_view(), name='history_list'),
-    url(r'^blog/$', views.BlogListView, name='blogpost_list')
+    url(r'^blog/$', views.BlogListView.as_view(), name='blogpost_list')
 ]

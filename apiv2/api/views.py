@@ -57,7 +57,7 @@ class BlogListView(generics.ListCreateAPIView):
     http_method_names = ['get']
 
     def get_queryset(self):
-        return BlogPost.objects.all().order_by('-date')
+        return BlogPost.objects.all()
 
 
 '''class BlogSearchView(generics.ListCreateAPIView):

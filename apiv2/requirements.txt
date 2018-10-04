@@ -1,4 +1,4 @@
-Django>= 1.11, < 2.0
+Django
 psycopg2
 djangorestframework
 markdown
