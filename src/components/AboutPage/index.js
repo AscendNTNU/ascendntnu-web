@@ -9,7 +9,6 @@ export class AboutPage extends Component {
   render() {
     return (
       <div className="page page-about">
-        <Breadcrumb routes={['about']} />
         <Section titleText="About Us">
           <SubSection titleText="Ascend NTNU - one of Norways most innovative student projects!">
             <p>
@@ -18,7 +17,8 @@ export class AboutPage extends Component {
               becoming the best performing team at the{' '}
               <a href="http://www.aerialroboticscompetition.org/">
                 International Aerial Robotics Competition
-              </a>, American venue. We aim high, work hard and create new and
+              </a>
+              , American venue. We aim high, work hard and create new and
               innovative solutions to some of the most challenging problems in
               cybernetics and autonomy as of today.
             </p>
@@ -35,7 +35,8 @@ export class AboutPage extends Component {
               cybernetics, working together to solve{' '}
               <a href="http://www.aerialroboticscompetition.org/rules.php">
                 Mission 7a
-              </a>. The mission consists of 3 new major challenges:
+              </a>
+              . The mission consists of 3 new major challenges:
             </p>
             <ul>
               <li>Interaction between aerial robot and moving objects</li>

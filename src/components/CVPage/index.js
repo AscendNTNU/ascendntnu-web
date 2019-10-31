@@ -107,7 +107,8 @@ export class CVPage extends Component {
                 {e.cv
                   .split('.')
                   .pop()
-                  .toUpperCase()}-file
+                  .toUpperCase()}
+                -file
               </a>
             </span>
           </span>
@@ -117,7 +118,6 @@ export class CVPage extends Component {
 
     return (
       <div className="page page-cv">
-        <Breadcrumb routes={['CV']} />
         <Section titleText="CV database">
           {this.state.public && (
             <div>

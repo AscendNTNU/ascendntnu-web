@@ -513,7 +513,7 @@ function prerender(req, data) {
     <link rel="alternate" type="application/rss+xml" title="Ascend NTNU RSS" href="https://ascendntnu.no/blog/rss">
     <link rel="shortcut icon" href="/images/logo/logo.png" />
     <link rel="apple-touch-icon" href="/images/logo/ascend-logo-social.jpg" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="/node_modules/katex/dist/katex.min.css" />
     <link rel="stylesheet" href="/static/css/main.css" />
     <script defer src="/static/js/main.js"></script>

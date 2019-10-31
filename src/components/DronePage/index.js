@@ -5,263 +5,337 @@ import { Breadcrumb } from '../Common/breadcrumb'
 //import { ModelRenderer } from '../Common/model'
 
 export class DronePage extends Component {
-  constructor() {
-    super()
-
-    this.drones = [
-      {
-        name: 'Drone 2.0',
-        version: 'v2.0',
-        model: {
-          name: 'Drone 2',
-          parts: ['/images/drones/drone2.stl', '/images/drones/propell.stl'],
-        },
-        imageCollection: [],
-        image: (
-          <div
-            className="drone-image"
-            style={{
-              backgroundImage: 'url(/images/drones/drone2-minimized.jpg)',
-            }}
-          />
-        ),
-        //image: <div className="drone-model"><ModelRenderer models={['/images/drones/drone2.stl', '/images/drones/propell.stl']} process={[-80, 160, 160]} /></div>,
-        content: [
-          <span>
-            Our second aerial robot is custom designed using carbon fiber and
-            3D-printed parts. It was build for the 2016 IARC and designed with
-            Mission 7 in mind, and it is able to carry all the equipment we need
-            to herd the target robots across the green line.
-          </span>,
-          <span>
-            The <b>sensors</b> it has for navigation, ground robot detection and
-            collision avoidance is five cameras, one laser rangefinder, one 2D
-            laser scanner, and an inertial measurement unit.
-          </span>,
-          <span>
-            The <b>data processing</b> is done using an on-board Intel NUC, in
-            addition to an external computer communicating using WiFi. The
-            flight controller is a Pixhawk connected to the NUC.
-          </span>,
-          <span>
-            Our <b>software</b> can recognize the lines and corners of the grid,
-            detect target robots and decide when and how to interact with them.
-          </span>,
-        ],
-        testDrone: {
-          name: 'Drone 0.0.1',
-          version: 'v0.0.1',
-          image: (
-            <div
-              className="drone-image"
-              style={{
-                backgroundImage:
-                  'url(/images/drones/drone1-flying-minimized.jpg)',
-              }}
-            />
-          ),
-          content: [
-            <span>
-              Our first aerial robot was born fall of 2015. Creating it, flying
-              it and using it has been a great learning experience for the team.
-              The drone is however quite small, and we needed an upgrade in
-              order to carry all the desired equipment.
-            </span>,
-          ],
-        },
-      },
-
-      {
-        name: 'Valkyrie',
-        version: 'v3.0',
-        image: (
-          <div
-            className="drone-image"
-            style={{
-              backgroundImage: 'url(/images/drones/drone4-minimized.jpg)',
-            }}
-          />
-        ),
-        content: [
-          <span>
-            Our third quadcopter was designed as a physically robust platform
-            for testing new control software. The small size and low weight
-            means that we can test new control strategies, including landing on
-            ground robots, with less risk of damage to equipment.
-          </span>,
-          <span>
-            It has a Pixhawk flight controller and an Intel NUC onboard
-            computer running Ubuntu Server with ROS. The custom made frame made
-            of carbon fiber and 3D-printed parts allows compact placement of the
-            hardware and even weight distribution, and well balanced motors from
-            T-Motor minimize vibrations and yields high efficiency.
-          </span>,
-        ],
-        testDrone: {
-          name: 'Drone 1.1',
-          version: 'v1.1',
-          image: (
-            <div
-              className="drone-image"
-              style={{
-                backgroundImage: 'url(/images/drones/drone3-minimized.jpg)',
-              }}
-            />
-          ),
-          content: [
-            <span>
-              Our third quadcopter was designed as a physically robust platform
-              for testing new control software. The small size and low weight
-              means that we can test new control strategies, including landing
-              on ground robots, with less risk of damage to equipment.
-            </span>,
-            <span>
-              It has a Pixhawk flight controller, an Odroid XU4 onboard computer
-              running Ubuntu Server with ROS, and is used with an Optitrack
-              tracking system. The custom made frame made of carbon fiber and
-              3D-printed parts allows compact placement of the hardware and even
-              weight distribution, and well balanced motors from T-Motor
-              minimize vibrations and yields high efficiency.
-            </span>,
-          ],
-        },
-      },
-      {
-        name: 'Mist',
-        version: 'v3.0',
-        image: (
-          <div
-            className="drone-image"
-            style={{
-              backgroundImage: 'url(/images/drones/mist-without-case.png)',
-            }}
-          />
-        ),
-        content: [
-          <span>
-            This years drone is a new and improved version of last year´s drone. 
-            It got more computing power and sensors than the previous one. The 
-            structure of the drone is made out of carbon fibre and 3d printed parts. 
-            This makes it modular, which allows easy testing of multiple technologies. 
-          </span>,
-          <span>
-            The drone feature two Nvidia TX2s, which run the operating system based on 
-            ROS. The landing gear has multiple sensors for detection of height, 
-            landing and physical contact with ground robots. The new and lighter cameras 
-            is isolated from the frame to minimize vibrations.
-          </span>,
-        ],
-        testDrone: {
-          name: 'Drone 1.1',
-          version: 'v1.1',
-          image: (
-            <div
-              className="drone-image"
-              style={{
-                backgroundImage: 'url(/images/drones/drone3-minimized.jpg)',
-              }}
-            />
-          ),
-          content: [
-            <span>
-              Our third quadcopter was designed as a physically robust platform
-              for testing new control software. The small size and low weight
-              means that we can test new control strategies, including landing
-              on ground robots, with less risk of damage to equipment.
-            </span>,
-            <span>
-              It has a Pixhawk flight controller, an Odroid XU4 onboard computer
-              running Ubuntu Server with ROS, and is used with an Optitrack
-              tracking system. The custom made frame made of carbon fiber and
-              3D-printed parts allows compact placement of the hardware and even
-              weight distribution, and well balanced motors from T-Motor
-              minimize vibrations and yields high efficiency.
-            </span>,
-            <span>
-              The drone has new landing sensors for 
-            </span>,
-          ],
-        },
-      },
-    ]
-
-    this.years = [
-      {
-        year: 2016,
-        drone: this.drones[0],
-      },
-      {
-        year: 2017,
-        drone: this.drones[1],
-      },
-      {
-        year: 2018,
-        drone: this.drones[2],
-      },
-    ]
-
-    this.years = this.years.reverse()
-  }
-
   render() {
-    let drones = this.years.map((yearContent, i) => {
-      //let year = yearContent.year
-      let drone = yearContent.drone
-      //let testDrone = drone.testDrone
-
-      let content = null
-      if (drone.content) {
-        content = drone.content.map((e, n) => (
-          <p className="drone-text" key={n}>
-            {e}
-          </p>
-        ))
-      }
-
-      let images = null
-      if (drone.imageCollection) {
-        images = drone.imageCollection.map((e, n) => {
-          return <div className="drone-gallery-image">{e}</div>
-        })
-      }
-
-      //let image = null
-      //if (typeof drone.image === "string") {
-      //  image = <img src={drone.image} />
-      //} else {
-      //  image = drone.image
-      //}
-
-      return (
-        <SubSection key={i} className="drone-container">
-          <div className="drone-main">
-            <div className="drone-image">{drone.image}</div>
-            <div className="drone-title-container">
-              <h1 className="drone-title">
-                {yearContent.year}
-                {yearContent.year === 2016 ? (
-                  <span className="fa fa-star birth" />
-                ) : (
-                  ''
-                )}
-              </h1>
-              <h2 className="drone-sub-title">{drone.name}</h2>
-            </div>
-          </div>
-          <div className="drone-more">
-            <div className="drone-content">{content}</div>
-            <div className="drone-gallery">{images}</div>
-          </div>
-        </SubSection>
-      )
-    })
-
     return (
       <div className="page page-drone">
-        <Breadcrumb routes={['drone']} />
-        <Section titleText="Drones">
-          <SubSection className="row">{drones}</SubSection>
-        </Section>
+        <div id="home">
+          <slider>
+            <slide></slide>
+            <slide></slide>
+            <slide></slide>
+            <slide></slide>
+          </slider>
+        </div>
+
+        <div class="padding">
+          <div id="nxt">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-6">
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <a href="Index.html">
+                    <img src="/images/assets/2019_new.png" />
+                  </a>
+                </div>
+                <div class="col-sm-6 text-center">
+                  <h1>INKY, BLINKY, PINKY & CLYDE</h1>
+                  <center>
+                    <h2>2019</h2>
+                  </center>
+                  <hr />
+                  <p class="lead">
+                    This year we for the first time had a drone swarm! We built
+                    four drones and named them after Pacman. The drones
+                    prominently feature carbon fiber ducts around the
+                    propellers, which ensures human-safe operation and provides
+                    an increase in lift. Other parts of the frame are
+                    constructed using carbon fiber and 3d printed parts to
+                    ensure strength and light weight. Each drone is equipped
+                    with an Nvidia Jetson TX2 computer. These provide ample
+                    computing power to handle data from the stereo cameras and
+                    other sensors. The systems are built on the framework of ROS
+                    (Robot Operating Systems), allowing for a modular structure
+                    of the software stack from the sensors to the control
+                    systems.
+                  </p>
+
+                  <p class="lead">
+                    The drones localize themselves on the field using
+                    SLAM-systems with data from the stereo cameras, while
+                    simultaneously detecting QR-code segments and human poses
+                    for gesture recognition. The player on the field can
+                    communicate with the drones through a microphone and speech
+                    recognition, with the drones being able to perform complex
+                    tasks from simple commands. Upon executing the commands,
+                    obstacle avoidance systems ensure that the drones don't
+                    collide with the environment or the player on the field.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="inner">
+          <div class="padding">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-6">
+                  <br />
+                  <br />
+                  <br />
+                  <center>
+                    <h1>MIST</h1>
+                  </center>
+                  <center>
+                    <h2>2018</h2>
+                  </center>
+                  <hr />
+                  <center>
+                    <p>
+                      This years drone is a new and improved version of last
+                      year´s drone. It got more computing power and sensors than
+                      the previous one. The structure of the drone is made out
+                      of carbon fibre and 3d printed parts. This makes it
+                      modular, which allows easy testing of multiple
+                      technologies.
+                    </p>
+
+                    <p>
+                      The drone feature two Nvidia TX2s, which run the operating
+                      system based on ROS. The landing gear has multiple sensors
+                      for detection of height, landing and physical contact with
+                      ground robots. The new and lighter cameras is isolated
+                      from the frame to minimize vibrations.
+                    </p>
+                  </center>
+                </div>
+                <div class="col-sm-6">
+                  <br />
+                  <br />
+                  <br />
+                  <a href="alphapilot.html">
+                    <img src="/images/assets/mist_2.png" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="padding">
+          <div id="nxt">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-6">
+                  <a href="Index.html">
+                    <img src="/images/assets/VALKYRIE (2).png" />
+                  </a>
+                </div>
+                <div class="col-sm-6 text-center">
+                  <h1>Valkyrie</h1>
+                  <center>
+                    <h2>2017</h2>
+                  </center>
+                  <hr />
+                  <p class="lead">
+                    Our third quadcopter was designed as a physically robust
+                    platform for testing new control software. The small size
+                    and low weight means that we can test new control
+                    strategies, including landing on ground robots, with less
+                    risk of damage to equipment.
+                  </p>
+
+                  <p class="lead">
+                    It has a Pixhawk flight controller and an Intel NUC onboard
+                    computer running Ubuntu Server with ROS. The custom made
+                    frame made of carbon fiber and 3D-printed parts allows
+                    compact placement of the hardware and even weight
+                    distribution, and well balanced motors from T-Motor minimize
+                    vibrations and yields high efficiency.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="inner">
+          <div class="padding">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-6">
+                  <center>
+                    <h1>Drone 2.0</h1>
+                  </center>
+                  <center>
+                    <h2>2016</h2>
+                  </center>
+                  <hr />
+                  <p>
+                    Our second aerial robot is custom designed using carbon
+                    fiber and 3D-printed parts. It was build for the 2016 IARC
+                    and designed with Mission 7 in mind, and it is able to carry
+                    all the equipment we need to herd the target robots across
+                    the green line. The sensors it has for navigation, ground
+                    robot detection and collision avoidance is five cameras, one
+                    laser rangefinder, one 2D laser scanner, and an inertial
+                    measurement unit.
+                  </p>
+
+                  <p>
+                    The data processing is done using an on-board Intel NUC, in
+                    addition to an external computer communicating using WiFi.
+                    The flight controller is a Pixhawk connected to the NUC. Our
+                    software can recognize the lines and corners of the grid,
+                    detect target robots and decide when and how to interact
+                    with them.
+                  </p>
+                </div>
+                <div class="col-sm-6">
+                  <br />
+                  <br />
+                  <br />
+                  <a href="alphapilot.html">
+                    <img src="/images/assets/drone2_0.png" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
+        html,body {
+          height: 100%;
+          width: 100%;
+          background-color: #333333;
+        } 
+        
+        #home{
+          background: url(images/Ciruit.png) no-repeat center center fixed;
+          display: table;
+          height: 100%;
+          position: relative;
+          width: 100%;
+          background-size: cover;
+        }
+        
+        .padding{
+          padding: 0px 0;
+        }
+        .padding img {
+          width: 100%;
+          padding-bottom: 130px;
+          height: 670px;
+        }
+        
+        .col-sm-6 {
+          margin-top: 120px; 
+        }
+        
+        #fixed {
+          background: url(images/Ciruit.png) no-repeat center center fixed;
+          display: table;
+          height: 60%;
+          position: relative;
+          width: 100%;
+          background-size: cover;
+        }
+        
+        .inner{
+          background-color: #37373b;
+        }
+        
+        h2, h3, h4 {
+          color: #FFF;
+          text-align: center;
+        }
+        
+        h1 {
+          color: #D7572D;
+        }
+        
+        p {
+          color: #FFF;
+          font-size: 20px;
+        }
+
+        slider {
+          display: block;
+          width: 100%;
+          height: calc(100vh - 64px);
+          background-color: #1f1f1f;
+          overflow: hidden;
+         }
+         
+         slider > * {
+          position: absolute;
+          display: block;
+          width: 100%;
+          height: 100%;
+          background: #1f1f1f;
+          animation: slide 12s infinite;
+          overflow: hidden;
+         }
+         
+         slide:nth-child(1){
+          left: 0%;
+          animation-delay: -1s;
+          background-image: url(/images/assets/squad.png);
+          background-size: cover;
+          background-position: center;
+         }
+         
+         slide:nth-child(2){
+          animation-delay: 2s;
+          background-image: url(/images/assets/mist_2.png);
+          background-size: cover;
+          background-position: center;
+          left: 100%;
+         }
+         
+         slide:nth-child(3){
+          animation-delay: 5s;
+          background-image: url(/images/assets/VALKYRIE.png);
+          background-size: cover;
+          background-position: center;
+          left: 100%;
+         }
+         
+         slide:nth-child(4){
+          animation-delay: 8s;
+          background-image: url(/images/assets/drone2_0.png);
+          background-size: cover;
+          background-position: center;
+          left: 100%;
+         }
+         
+         slide p {
+          font-family: Comfortaa;
+          font-size: 70px;
+          display: inline-block;
+          margin: 675px;
+          color: #fff;
+         }
+         
+         @keyframes slide {
+          0% { left: 100%; width: 100%; }
+          5% { left: 0%; }
+          25% { left: 0%; }
+          30% { left: -100%; width: 100%; }
+          40% { left: -100%; width: 0%; }
+          100% { left: 100%; width: 0%; }
+         }
+         
+         @media (max-width: 768px) {
+           .slider {
+             width: 50%;
+              height: 50%;
+           
+           }
+         }
+        
+        `,
+          }}
+        />
       </div>
     )
   }

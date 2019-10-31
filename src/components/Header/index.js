@@ -85,65 +85,22 @@ export class Header extends Component {
             >
               Team
             </NavLink>
-            <div
-              className={`nav-element dropdown ${
-                this.state.hoverAbout ? 'show' : ''
-              }`}
-              onClick={() => {
-                this.setState({ hoverAbout: !this.state.hoverAbout })
-              }}
+            <NavLink
+              onClick={this.props.toggleMenuHandler}
+              className="nav-element"
+              activeClassName="active"
+              to="/missions"
             >
-              <div className="toggle-menu">
-                More{' '}
-                <i
-                  className={`fa fa-${
-                    this.state.hoverAbout ? 'caret-up' : 'caret-down'
-                  }`}
-                />
-              </div>
-              {/*<div className="toggle-menu-small-screen">
-                More{' '}
-                <i
-                  className={`fa fa-caret-${
-                    this.state.hoverAbout ? 'up' : 'down'
-                  }`}
-                />
-              </div>*/}
-              <div className="links">
-                <NavLink
-                  onClick={this.props.toggleMenuHandler}
-                  className="nav-element"
-                  activeClassName="active"
-                  to="/sponsors"
-                >
-                  Sponsors
-                </NavLink>
-                <NavLink
-                  onClick={this.props.toggleMenuHandler}
-                  className="nav-element"
-                  activeClassName="active"
-                  to="/missions"
-                >
-                  Missions
-                </NavLink>
-                <NavLink
-                  onClick={this.props.toggleMenuHandler}
-                  className="nav-element"
-                  activeClassName="active"
-                  to="/about"
-                >
-                  About
-                </NavLink>
-                <NavLink
-                  onClick={this.props.toggleMenuHandler}
-                  className="nav-element"
-                  activeClassName="active"
-                  to="/contact"
-                >
-                  Contact
-                </NavLink>
-              </div>
-            </div>
+              Missions
+            </NavLink>
+            <NavLink
+              onClick={this.props.toggleMenuHandler}
+              className="nav-element"
+              activeClassName="active"
+              to="/contact"
+            >
+              Contact
+            </NavLink>
           </nav>
         </div>
       </div>

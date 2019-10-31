@@ -18,7 +18,8 @@ export class MissionPage extends Component {
               overview of the mission, for a complete version of the rules see{' '}
               <a href="http://www.aerialroboticscompetition.org/rules.php">
                 the official rules
-              </a>.
+              </a>
+              .
             </p>
             <div className="split-img-container">
               <figure className="split-img">
@@ -215,7 +216,8 @@ export class MissionPage extends Component {
                 Read more about TDOPTW in our previous members'{' '}
                 <a href="https://brage.bibsys.no/xmlui/handle/11250/2407635">
                   master thesis
-                </a>.
+                </a>
+                .
               </p>
               <p>
                 Another way of characterising the complexity of the task and
@@ -244,15 +246,17 @@ export class MissionPage extends Component {
                 perception group's{' '}
                 <a href="https://ascendntnu.no/blog/2017-03-10-perception-update">
                   blog
-                </a>. Our planning group have been working hard on the drones
-                AI; to read about their approach you can check out{' '}
+                </a>
+                . Our planning group have been working hard on the drones AI; to
+                read about their approach you can check out{' '}
                 <a href="https://ascendntnu.no/blog/2017-02-14-planning-update">
                   part 1
                 </a>{' '}
                 and{' '}
                 <a href="https://ascendntnu.no/blog/2017-02-20-planning-update">
                   part 2
-                </a>.
+                </a>
+                .
               </p>
             </SubSubSection>
             <SubSubSection titleText="Competing with other drones">
@@ -429,7 +433,6 @@ export class MissionPage extends Component {
 
     return (
       <div className="page page-mission">
-        <Breadcrumb routes={['mission']} />
         <SubSection className="page-container-big">
           <h1>Missions</h1>
         </SubSection>

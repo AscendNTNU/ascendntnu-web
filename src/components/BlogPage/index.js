@@ -67,7 +67,7 @@ export class BlogPage extends Component {
     }
 
     let url = `${API_URL}/${postsURL}`
-    url = 'api/v1/posts/all'
+    //url = 'api/v1/posts/all'
 
     fetch(url, setup)
       .then(r => r.json())
@@ -278,7 +278,6 @@ export class BlogPage extends Component {
     if (this.props.match.params && this.props.match.params.post) {
       return (
         <div className="page page-blog">
-          <Breadcrumb routes={['blog', this.props.match.params.post]} />
           <BlogArticle post={this.props.match.params.post} />
         </div>
       )
@@ -357,7 +356,6 @@ export class BlogPage extends Component {
 
       return (
         <div className="page page-blog">
-          <Breadcrumb routes={['blog']} />
           <Section titleText="Our blog">
             <input
               onChange={this.search.bind(this)}
