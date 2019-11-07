@@ -7,6 +7,7 @@ import SponsorList from '../Common/sponsorlist'
 import { Section } from '../PageLayout'
 import YouTube from 'react-youtube'
 //import { Link } from 'react-router-dom'
+import { ASSETS_URL } from '../../constants'
 
 //import { Link } from 'react-router-dom'
 export class FrontPage extends Component {
@@ -33,7 +34,11 @@ export class FrontPage extends Component {
                   <a href="Index.html">
                     <br />
                     <br />
-                    <img src="images/assets/ascend-no-background.png" />
+                    <img
+                      src={
+                        ASSETS_URL + '/images/assets/ascend-no-background.png'
+                      }
+                    />
                   </a>
                 </div>
                 <div class="col-sm-6">
@@ -77,7 +82,9 @@ export class FrontPage extends Component {
                   <br />
                   <a href="https://www.kongsberg.com/who-we-are">
                     <img
-                      src="/images/assets/kongsberg-white-text.png"
+                      src={
+                        ASSETS_URL + '/images/assets/kongsberg-white-text.png'
+                      }
                       class="img-responsive"
                     />
                   </a>
@@ -99,7 +106,10 @@ export class FrontPage extends Component {
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                   <a href="https://www.equinor.com/en.html">
                     <img
-                      src="/images/assets/Equinor_PRIMARY_logo_RGB_RED.png"
+                      src={
+                        ASSETS_URL +
+                        '/images/assets/Equinor_PRIMARY_logo_RGB_RED.png'
+                      }
                       class="img-responsive"
                     />
                   </a>
@@ -160,7 +170,12 @@ export class FrontPage extends Component {
                   <br />
                   <br />
                   <a href="">
-                    <img src="images/teams/current-logoes/2020/Alphapilot_logo.svg" />
+                    <img
+                      src={
+                        ASSETS_URL +
+                        '/images/teams/current-logoes/2020/Alphapilot_logo.svg'
+                      }
+                    />
                   </a>
                 </div>
               </div>

@@ -1,6 +1,6 @@
 ---
 layout: post
-image: /public/assets/planning-update-3/prob-distribution-showoff.png
+image: /images/assets/planning-update-3/prob-distribution-showoff.png
 title: 'Hello World from the AI group!'
 date: 2017-09-01 13:00:00
 categories: planning AI
@@ -20,7 +20,7 @@ There are two factors that make this challenging. The first is the 10 minute tim
 The other factor is the random movement of the robots. Every 5 seconds they each change their bearing by any angle in the range from -20 to 20. This might not sound like much but it quickly compounds into chaos. Below is a simulation a thousand different paths one robot can take.
 
 <figure>
-  <img alt="Probability distribution" src="/public/assets/planning-update-3/prob-distribution.gif" />
+  <img alt="Probability distribution" src="/images/assets/planning-update-3/prob-distribution.gif" />
   <figcaption>Probability distribution</figcaption>
 </figure>
 
@@ -29,7 +29,7 @@ Keep in mind that this simulated with only one robot. Once one adds the possibil
 From a more theoretical standpoint we can address a few more issues. One way of looking at this is by referring to the task classification system introduced in Russell and Norvig (2009) [1]. The left side of the table are properties that make the task easier, while the right side makes the task harder. Below is the table for mission 7a showing why it’s difficult from a theoretical viewpoint.
 
 <figure>
-  <img alt="AI Classification System" src="/public/assets/planning-update-3/ai-classification-system.png" />
+  <img alt="AI Classification System" src="/images/assets/planning-update-3/ai-classification-system.png" />
   <figcaption>AI Classification System</figcaption>
 </figure>
 

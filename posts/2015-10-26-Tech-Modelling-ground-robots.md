@@ -9,7 +9,7 @@ author: Simen Haugo
 
 An accurate probabilistic model of the ground robots is a step towards bulletproofing a robust state estimator.
 
-![Motion capture system](/public/assets/lumaVolumeLarge.jpg)
+![Motion capture system](/images/assets/lumaVolumeLarge.jpg)
 
 <p class="text-muted centered">
 	Typical motion capture installation - Optitrack.
@@ -45,7 +45,7 @@ My favorite approach, if I don't know where to begin on a problem, is to visuali
 
 <div class="row">
 	<div class="col-md-4">
-		<img class="img-responsive" alt="Simulation" src="/public/assets/simulation-1.gif">
+		<img class="img-responsive" alt="Simulation" src="/images/assets/simulation-1.gif">
 	</div>
 	<div class="col-md-8">
 	<p>
@@ -56,7 +56,7 @@ My favorite approach, if I don't know where to begin on a problem, is to visuali
 
 <div class="row">
 	<div class="col-md-4">
-		<img class="img-responsive" alt="Simulation" src="/public/assets/simulation-2.gif">
+		<img class="img-responsive" alt="Simulation" src="/images/assets/simulation-2.gif">
 	</div>
 	<div class="col-md-8">
 	<p>
@@ -67,7 +67,7 @@ My favorite approach, if I don't know where to begin on a problem, is to visuali
 
 <div class="row">
 	<div class="col-md-4">
-		<img class="img-responsive" alt="Simulation" src="/public/assets/simulation-3.gif">
+		<img class="img-responsive" alt="Simulation" src="/images/assets/simulation-3.gif">
 	</div>
 	<div class="col-md-8">
 	<p>

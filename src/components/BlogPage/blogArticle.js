@@ -4,7 +4,7 @@ import { HtmlRenderer, Parser } from 'commonmark'
 import * as Katex from 'katex'
 import { polyfill } from 'es6-promise'
 import { Section } from '../PageLayout'
-import { API_URL } from '../../constants'
+import { API_URL, ASSETS_URL } from 'constants'
 
 polyfill()
 
@@ -123,6 +123,7 @@ export class BlogArticle extends Component {
             new RegExp(`(^|\\W)S{${i},}($|\\W)`, 'g'),
             `$1${this.digits(d.getSeconds(), i)}$2`
           )
+          .replace(new RegExp(`/images/`, 'g'), ASSETS_URL + `/images/`)
       }
 
       return formatted

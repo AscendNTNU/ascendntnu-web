@@ -1,6 +1,6 @@
 ---
 layout: post
-image: /public/assets/tech-how-we-see-1/tileframe-4.png
+image: /images/assets/tech-how-we-see-1/tileframe-4.png
 title: 'Tech: How we see the world (Part 1)'
 date: 2016-02-08 10:00:00
 categories: tech computer vision
@@ -45,27 +45,27 @@ There's also the problem of recognizing the roomba robots. But we haven't really
 
 The arena, as you know, has a grid of 1x1 meter tiles. On each side of the arena is a strip of thick tape, colored either red, white or green. What we want to do is to estimate which tile we are within at any point in time.
 
-![The arena](/public/assets/tech-how-we-see-1/world-frame.png)
+![The arena](/images/assets/tech-how-we-see-1/world-frame.png)
 
 To do this, we have attached a camera that can see below the drone. On the video feed we run some clever algorithms that extract sets of lines. After we have found those lines, we essentially need to solve a _"triangulation"_ problem.
 
-![What we see](/public/assets/tech-how-we-see-1/tileframe.png)
+![What we see](/images/assets/tech-how-we-see-1/tileframe.png)
 
 Suppose that the camera sees the white region, in particular, atleast one of the line intersections.
 
-![Picking out lines](/public/assets/tech-how-we-see-1/tileframe-2.png)
+![Picking out lines](/images/assets/tech-how-we-see-1/tileframe-2.png)
 
 Our vision algorithm picks out the lines that it sees. We know how these lines are configured in the real world, because they are located on a regular grid.
 
 As we see them, the lines are just projected onto the camera lens, so we need to do some math to find the corresponding lines on the real arena. The way we do this is by placing an _"virtual camera"_, with the same orientation and height as the drone, into an _"virtual arena"_.
 
-![Projection](/public/assets/tech-how-we-see-1/projection.png)
+![Projection](/images/assets/tech-how-we-see-1/projection.png)
 
 We then use a very simple camera model, where a plane is located in front of the virtual camera, seperated by a distance equal to the lens' focal length. The image that we see on our screen is formed by "splatting" the geometry in front of the camera onto the plane.
 
 We then invert the equation that maps lines from the flat plane onto the camera lens, to determine where the lines we see originated from. This is done by solving the equation for a line-plane intersection. For any point in the image, we can draw a line originating from the center of the camera, intersecting the image plane at a known point, and the arena floor at an almost unknown point --- we know that the height is zero at the floor.
 
-![Final answer](/public/assets/tech-how-we-see-1/tileframe-4.png)
+![Final answer](/images/assets/tech-how-we-see-1/tileframe-4.png)
 
 Solving for the unknown point, from the point on the image plane that we know from the lens parameters and the height above ground, and the line direction that we know from the drone orientation, we compute how far away we are from the pair of lines.
 
@@ -77,7 +77,7 @@ Here's a video I recorded at our lab the other day. In an attempt to somewhat re
 
 <figure>
   <video width="480" height="270" controls>
-    <source src="/public/assets/tech-how-we-see-1/scaled.mp4" type="video/mp4" />
+    <source src="/images/assets/tech-how-we-see-1/scaled.mp4" type="video/mp4" />
   </video>
 </figure>
 

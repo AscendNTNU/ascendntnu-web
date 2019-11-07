@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import { polyfill } from 'es6-promise'
 import { Section, SubSection } from '../PageLayout'
-import { API_URL } from '../../constants'
-const CDN_URL = 'https://ascend-webassets.fra1.cdn.digitaloceanspaces.com'
+import { API_URL, ASSETS_URL } from '../../constants'
 
 polyfill()
 
@@ -182,7 +181,7 @@ export class TeamPage extends Component {
       <div className="section page-container">
         <img
           src={
-            CDN_URL +
+            ASSETS_URL +
             '/images/teams/' +
             this.state.year +
             '/ascend-group-' +
@@ -219,7 +218,7 @@ export class TeamPage extends Component {
       const leaderElement = hasLeader ? (
         <div className="team-member team-leader">
           <div className="team-member-image">
-            <img src={CDN_URL + leader.image} alt={leader.name} />
+            <img src={ASSETS_URL + leader.image} alt={leader.name} />
             {mail}
           </div>
           <div className="team-member-name">{leader.name}</div>
@@ -248,7 +247,7 @@ export class TeamPage extends Component {
         return (
           <div key={i} className="team-member">
             <div className="team-member-image">
-              <img src={CDN_URL + member.image} alt={member.name} />
+              <img src={ASSETS_URL + member.image} alt={member.name} />
               {mail}
             </div>
             <div className="team-member-name">{member.name}</div>

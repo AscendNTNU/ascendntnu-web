@@ -13,19 +13,6 @@ export class JoinPage extends Component {
   constructor (props) {
     super(props)
 
-    // This is for avoiding showing mails on GitHub in plaintext.
-    this.emails = [
-      'simen.sandbu',
-      'erling.solberg',
-      'kim.borgen',
-      'truls.olsen',
-      'kevin.kaldvansvik',
-      'ulrich.isachsen',
-      'havard.mellbye',
-      'filip.lolland',
-      'rasmus.munter'
-    ].map((e) => `${e}@`)
-
     this.state = {
       language: props.match.params.language || 'en'
     }

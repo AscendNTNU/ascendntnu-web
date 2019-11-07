@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 import { Section, SubSection, SubSubSection } from '../PageLayout'
 import { Breadcrumb } from '../Common/breadcrumb'
+import { ASSETS_URL } from '../../constants'
 
 export class MissionPage extends Component {
   constructor(props) {
@@ -468,7 +469,7 @@ export class MissionPage extends Component {
             <div class="container">
               <div class="row">
                 <div class="col-sm-6">
-                  <img src="images/assets/iarc.png" />
+                  <img src={ASSETS_URL + '/images/assets/iarc.png'} />
                 </div>
                 <div class="col-sm-6 text-center">
                   <h1>THE INTERNATIONAL AERIAL COMPETITION</h1>
@@ -601,7 +602,7 @@ export class MissionPage extends Component {
                   <br />
                   <br />
                   <a href="/images/assets/mission8rules_1.0.pdf">
-                    <img src="images/assets/m8.png" />
+                    <img src={ASSETS_URL + '/images/assets/m8.png'} />
                   </a>
                 </div>
                 <div class="col-sm-6">
@@ -730,9 +731,14 @@ export class MissionPage extends Component {
                   <br />
                   <br />
                   <br />
-                  <img src="/images/assets/start-state.png" />
+                  <img src={ASSETS_URL + '/images/assets/start-state.png'} />
                   <div class="drone_IMG">
-                    <img src="/images/assets/180-degree-turn-cartoon.png" />
+                    <img
+                      src={
+                        ASSETS_URL +
+                        '/images/assets/180-degree-turn-cartoon.png'
+                      }
+                    />
                   </div>
                   <br />
                   <br />

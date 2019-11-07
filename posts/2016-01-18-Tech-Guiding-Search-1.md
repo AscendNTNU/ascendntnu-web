@@ -9,7 +9,7 @@ author: Simen Haugo
 
 Guiding the search for ground robots turns out to be more difficult than anticipated.
 
-![Mysterious simulation](/public/assets/tech-guiding-search-1/title.png)
+![Mysterious simulation](/images/assets/tech-guiding-search-1/title.png)
 
 Last time - which admittedly is a long time ago, so I don't blame you for not remembering - I talked about modelling and simulating the ground robots. I talked about how this was big deal, because our drone has bad eyesight and can't actually see the whole arena all the time.
 
@@ -25,7 +25,7 @@ After playing around with our super-cool simulator of the mission for some time,
 
 The following idea approached me in much the same way ideas tend to do - in the shower - and told me: "Hey, you should really use Gaussians". For those of you who are rusty with their statistics, a Gaussian you find in the wild usually looks something like this:
 
-![Gaussian 2D surface](/public/assets/tech-guiding-search-1/gaussian.png)
+![Gaussian 2D surface](/images/assets/tech-guiding-search-1/gaussian.png)
 
 Gaussians often come knocking on your door when you deal with random systems, and are associated with what statisticians call "the normal distribution". Remarkably, alot of randomness that we can observe in nature tend to follow this distribution. For that reason it is usually a good guess for a distribution, if you have no idea which one is best for your problem.
 
@@ -35,7 +35,7 @@ Whenever the camera sees a ground robot, I would take note of where we saw it an
 
 Every 5 seconds, the robots will turn a small, random angle. Over time, these turns accumulate and make up a "random walk", causing the robot to stray from its path. To accomodate that fact, I wanted my estimates to become "less tight" over time. And that is where our revered mathematician Herr Gauss comes in. Instead of estimating a single point along the path, I would place a Gauss surface on it, with a center that moves back and forth. That would allow me to incorporate uncertainty into the estimate by widening the Gaussian over time.
 
-![Tracking attempt 1](/public/assets/tech-guiding-search-1/tracking-1.gif)
+![Tracking attempt 1](/images/assets/tech-guiding-search-1/tracking-1.gif)
 
 <p class="text-muted centered">
     Brighter color indicates higher belief, while a dim color indicates low belief.
@@ -49,7 +49,7 @@ Once we lose sight of the robot, the uncertainty grows again. It will continue g
 
 The above animation may lead you to believe that this actually works pretty well. Unfortunately, when you add 9 more robots into the mix, things turn ugly, fast. In the animation below, a particular interaction between the three robots occurs.
 
-![Tracking attempt 2](/public/assets/tech-guiding-search-1/tracking-2.gif)
+![Tracking attempt 2](/images/assets/tech-guiding-search-1/tracking-2.gif)
 
 One of them collides with a tower robot, causing our path estimate to be completely off. When it comes back prematurely, we think we are seeing the robot on the left again, because it happened to have more overlap in its belief with what we are seeing. This triggers a phenomenom I've named Belief-Thieving, where one robot "steals" from another robot's probability density field, leading us to lose track of the left-side robot.
 

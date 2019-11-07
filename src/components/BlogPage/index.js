@@ -6,7 +6,7 @@ import { polyfill } from 'es6-promise'
 import { Section, SubSection } from '../PageLayout'
 import { Breadcrumb } from '../Common/breadcrumb'
 import { BlogArticle } from './blogArticle'
-import { API_URL } from '../../constants'
+import { API_URL, ASSETS_URL } from '../../constants'
 
 polyfill()
 
@@ -241,6 +241,7 @@ export class BlogPage extends Component {
             new RegExp(`(^|\\W)S{${i},}($|\\W)`, 'g'),
             `$1${this.digits(d.getSeconds(), i)}$2`
           )
+          .replace(new RegExp(`/images/`, 'g'), ASSETS_URL + `/images/`)
       }
 
       return formatted

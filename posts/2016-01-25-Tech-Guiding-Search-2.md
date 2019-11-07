@@ -17,19 +17,19 @@ Now, truth be told, we are a research organization. Therein lies the fact that w
 
 This time, we'll take a step back of about two months and thirty days, when we published our first tech post on this subject. You could try and dig into your memory and remember what it was about, but thankfully, you don't have to, since I will do that for you.
 
-![Many simulations (1)](/public/assets/tech-guiding-search-2/simulation-1.gif)
+![Many simulations (1)](/images/assets/tech-guiding-search-2/simulation-1.gif)
 
 The first thing I did to try to understand the stochastic nature of our problem was to run many simulations at the same time, and draw them all in a ghostly blue shade on top of the true simulation in yellow.
 
 I now realize that this might just be what we need. [What if](https://what-if.xkcd.com/), instead of looking at where everyone should be, I look at where everyone _could_ be. I could run many simulation "universes" in parallel, and compute the most likely spots to find robots by counting the number of universes that have a robot in a given spot. A high count would indicate high confidence in the estimate, while a low count means that only in a handful of universes did a robot ever get there.
 
-![Many simulations (2)](/public/assets/tech-guiding-search-2/simulation-3.gif)
+![Many simulations (2)](/images/assets/tech-guiding-search-2/simulation-3.gif)
 
 The last .gif from the prior post showed that the universes spread rapidly, and turned into a bland soup of indistinguishable robots. At that point, each cell is as likely to contain a robot as any other cell, so that's obviously not helpful. To fix that, we'll need to make good use of any observations that we get. Not only if we see a ground robot, thus strengthening our belief in those universes, but also that we don't, thus invalidating other universes.
 
 I'll spare you the tiring implementation details, since it's not that interesting. Suffice to say, developing this algorithm required abounding amounts of bookkeeping, green tea and danish rye bread with smoked salmon. The result of which looking like this:
 
-![Tracking](/public/assets/tech-guiding-search-2/tracking-1.gif)
+![Tracking](/images/assets/tech-guiding-search-2/tracking-1.gif)
 
 Even the most seasoned of aficionados in statistics might be unable to fully appreciate everything that is happening in this animation. So for the sake of reaching a collective understanding, I would like you to focus on the white robot in the lower-left. You know, the one that collides with the blue one? (You may want to wait until the gif restarts)
 
@@ -39,11 +39,11 @@ Naturally, we don't know for sure which outcome we got, even if one is more like
 
 At this point, you might be as interested as I was, in how well this actually works. But first, let me show you a graph I made, just for you.
 
-![Detections (1)](/public/assets/tech-guiding-search-2/detections-1.png)
+![Detections (1)](/images/assets/tech-guiding-search-2/detections-1.png)
 
 This graph shows the number of cells where we correctly estimated a robot's whereabouts, over a timespan of two minutes. Ideally, this number should be close to ten, which was the number of ground robots on the arena. After two minutes the number of detections hovered at about 2-4. The drone stood still in the middle while this was recorded, so you might ask how it looks if our drone is actually moving around.
 
-![Detections (2)](/public/assets/tech-guiding-search-2/detections-2.png)
+![Detections (2)](/images/assets/tech-guiding-search-2/detections-2.png)
 
 Interestingly, if we make the drone fly around in a circular pattern, the graph looks like this. Statistically speaking, this seems to imply that we are more likely to detect robots in the middle. Atleast in the beginning.
 

@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import { Section, SubSection } from '../PageLayout'
 import { Breadcrumb } from '../Common/breadcrumb'
 //import { ModelRenderer } from '../Common/model'
+import { ASSETS_URL } from '../../constants'
 
 export class DronePage extends Component {
   render() {
@@ -30,7 +31,7 @@ export class DronePage extends Component {
                   <br />
                   <br />
                   <a href="Index.html">
-                    <img src="/images/assets/2019_new.png" />
+                    <img src={ASSETS_URL + '/images/assets/2019_new.png'} />
                   </a>
                 </div>
                 <div class="col-sm-6 text-center">
@@ -111,7 +112,7 @@ export class DronePage extends Component {
                   <br />
                   <br />
                   <a href="alphapilot.html">
-                    <img src="/images/assets/mist_2.png" />
+                    <img src={ASSETS_URL + '/images/assets/mist_2.png'} />
                   </a>
                 </div>
               </div>
@@ -125,7 +126,7 @@ export class DronePage extends Component {
               <div class="row">
                 <div class="col-sm-6">
                   <a href="Index.html">
-                    <img src="/images/assets/VALKYRIE (2).png" />
+                    <img src={ASSETS_URL + '/images/assets/VALKYRIE (2).png'} />
                   </a>
                 </div>
                 <div class="col-sm-6 text-center">
@@ -193,7 +194,7 @@ export class DronePage extends Component {
                   <br />
                   <br />
                   <a href="alphapilot.html">
-                    <img src="/images/assets/drone2_0.png" />
+                    <img src={ASSETS_URL + '/images/assets/drone2_0.png'} />
                   </a>
                 </div>
               </div>
@@ -210,7 +211,7 @@ export class DronePage extends Component {
         } 
         
         #home{
-          background: url(images/Ciruit.png) no-repeat center center fixed;
+          background: url(${ASSETS_URL}/images/Ciruit.png) no-repeat center center fixed;
           display: table;
           height: 100%;
           position: relative;
@@ -232,7 +233,7 @@ export class DronePage extends Component {
         }
         
         #fixed {
-          background: url(images/Ciruit.png) no-repeat center center fixed;
+          background: url(${ASSETS_URL}/images/Ciruit.png) no-repeat center center fixed;
           display: table;
           height: 60%;
           position: relative;
@@ -279,14 +280,14 @@ export class DronePage extends Component {
          slide:nth-child(1){
           left: 0%;
           animation-delay: -1s;
-          background-image: url(/images/assets/squad.png);
+          background-image: url(${ASSETS_URL}/images/assets/squad.png);
           background-size: cover;
           background-position: center;
          }
          
          slide:nth-child(2){
           animation-delay: 2s;
-          background-image: url(/images/assets/mist_2.png);
+          background-image: url(${ASSETS_URL}/images/assets/mist_2.png);
           background-size: cover;
           background-position: center;
           left: 100%;
@@ -294,7 +295,7 @@ export class DronePage extends Component {
          
          slide:nth-child(3){
           animation-delay: 5s;
-          background-image: url(/images/assets/VALKYRIE.png);
+          background-image: url(${ASSETS_URL}/images/assets/VALKYRIE.png);
           background-size: cover;
           background-position: center;
           left: 100%;
@@ -302,7 +303,7 @@ export class DronePage extends Component {
          
          slide:nth-child(4){
           animation-delay: 8s;
-          background-image: url(/images/assets/drone2_0.png);
+          background-image: url(${ASSETS_URL}/images/assets/drone2_0.png);
           background-size: cover;
           background-position: center;
           left: 100%;

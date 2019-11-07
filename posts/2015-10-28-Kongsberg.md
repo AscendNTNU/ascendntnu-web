@@ -10,7 +10,7 @@ author: Johan Hatleskog
 
 We are very pleased to announce that Kongsberg is now the main sponsor of our team.
 
-![Kongsberg logo](/public/assets/kongsberg.svg)
+![Kongsberg logo](/images/assets/kongsberg.svg)
 
 Kongsberg is an international, knowledge-based group that supplies high-technology systems and solutions to customers engaged in the oil and gas industry, the merchant marine, and the defence and aerospace industries.
 
