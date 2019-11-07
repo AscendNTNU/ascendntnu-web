@@ -1258,6 +1258,7 @@ figcaption {
   display: flex;
   flex-flow: row wrap;
   margin: 0 20px;
+  padding: 10px;
 }
 
 .blog-post-categories {
@@ -1522,31 +1523,6 @@ found {
   background-repeat: no-repeat;
 }
 
-.teampage-team[data-group='admin'] {
-  background-image: url(/images/teams/current-logoes/admin-white.svg);
-}
-.teampage-team[data-group='board'] {
-  background-image: url(/images/teams/current-logoes/admin-white.svg);
-}
-.teampage-team[data-group='control'] {
-  background-image: url(/images/teams/current-logoes/control-white.svg);
-}
-.teampage-team[data-group='hardware'] {
-  background-image: url(/images/teams/current-logoes/hardware-white.svg);
-}
-.teampage-team[data-group='perception'] {
-  background-image: url(/images/teams/current-logoes/perception-white.svg);
-}
-.teampage-team[data-group='planning'] {
-  background-image: url(/images/teams/current-logoes/planning-white.svg);
-}
-.teampage-team[data-group='ai'] {
-  background-image: url(/images/teams/current-logoes/ai-white.svg);
-}
-.teampage-team[data-group='marketing'] {
-  background-image: url(/images/teams/current-logoes/marketing-white.svg);
-}
-
 .app.dark-theme .teampage-team[data-group='admin'] {
   background-image: url(/images/teams/current-logoes/admin.svg);
 }
@@ -1626,6 +1602,8 @@ found {
   position: relative;
   box-shadow: 0 0 8px -2px #000;
   border-radius: 4px;
+  object-fit: cover;
+  height: 150px;
   overflow: hidden;
 }
 
@@ -2201,7 +2179,7 @@ footer {
 }
 
 .padding {
-  padding: 27px 0;
+  padding: 35px 0;
 }
 .padding img {
   width: 100%;
@@ -2215,7 +2193,6 @@ footer {
   max-height: 300px;
   min-height: 100px;
   position: relative;
-  width: 100%;
   background-size: cover;
 }
 
@@ -2309,6 +2286,14 @@ p {
   margin: 15px;
 }
 
-[data-group='coach'] > .team-leaders {
-  padding:  0;
+.teampage-team.no-leader > .team-leaders {
+  padding: 0px;
+}
+
+.team-member .team-member-image {
+  height: 180px;
+}
+.team-member .team-member-image > img {
+  height: 100%;
+  object-fit: cover;
 }

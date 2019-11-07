@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 import { polyfill } from 'es6-promise'
 import { Section, SubSection } from '../PageLayout'
 import { API_URL } from '../../constants'
+const CDN_URL = 'https://ascend-webassets.fra1.cdn.digitaloceanspaces.com'
 
 polyfill()
 
@@ -17,45 +18,16 @@ export class TeamPage extends Component {
   constructor(props) {
     super(props)
 
-    let year = 2018
-    this.groupings = {
-      '2016': new RegExp('Admin|Control|Perception|AI', 'i'),
-      '2017': new RegExp('Admin|Control|Perception|AI|Hardware', 'i'),
-      '2018': new RegExp(
-        'Board|Coach|Marketing|Control|Perception|AI|Hardware',
-        'i'
-      ),
-    }
-    this.groupTexts = {
-      Admin:
-        'The board is responsible for the whole team. They make sure organization is moving forward and plan the future of Ascend.',
-      Board:
-        'The board is responsible for the whole team. They make sure organization is moving forward and plan the future of Ascend.',
-      Marketing:
-        'Marketing is the group responsible for making Ascend visible on campus and spreading Ascends vision to the world.',
-      Coach:
-        'Former Ascend NTNU members eager to share their knowledge with the team.',
-      Control:
-        'The control group takes care of all the physical aspects of the drone. Bridging the gap between commands and actions.',
-      Perception:
-        'State estimation of the drone and beyond. The perception group converts sensor input to meaningful information about the drone and its environment.',
-      Planning:
-        'Finding the optimal behaviour to solve the mission at hand. The Planning group takes the latest AI research from theory to practice.',
-      AI:
-        'Finding the optimal behaviour to solve the mission at hand. The AI group takes the latest AI research from theory to practice.',
-      Hardware:
-        'The hardware group is responsible for the design of the drone. Material choice, strength calculations, electrical, aerodynamics, propulsion and production.',
-    }
-
+    let year = 2020
     if (props.match.params && props.match.params.year) {
       year = props.match.params.year
     }
 
     this.state = {
-      year: year,
-      grouping: this.groupings[year],
-      members: [],
+      year,
+      memberCount: 0,
       groups: [],
+      memberTitles: {},
     }
 
     this.getMembers(year)
@@ -74,16 +46,7 @@ export class TeamPage extends Component {
 
     if (nextYear !== year) {
       year = nextYear
-
-      this.setState(
-        Object.assign({}, this.state, {
-          year,
-          grouping: this.groupings[year],
-          members: this.state.members,
-          groups: this.state.groups,
-        })
-      )
-
+      this.setState({ year })
       this.getMembers(year)
     }
   }
@@ -109,51 +72,79 @@ export class TeamPage extends Component {
    */
   getMembers(year) {
     let setup = process.env.NODE_ENV === 'production' ? {} : { mode: 'cors' }
-    console.log(year)
 
-    fetch(`${API_URL}/members/${year}/`, setup)
+    fetch(`https://api.ascendntnu.no/titles?title-year_contains=${year}`, setup)
+      .then(r => r.json())
+      .then(titles => {
+        const memberTitles = {}
+        for (let title of titles) {
+          for (let member of title.members) {
+            memberTitles[member.id] = title['title-year'].split('-')[0]
+          }
+        }
+        this.setState({ memberTitles })
+      })
+    fetch(`https://api.ascendntnu.no/teams?name-year_contains=${year}`, setup)
       .then(r => r.json())
       .then(r => {
-        if (r !== null) {
-          let groups = []
-          r.forEach((m, i) => {
-            let g = m.group.split(/, ?/)
-            for (let i = 0; i < g.length; i++) {
-              if (groups.indexOf(g[i]) === -1) groups.push(g[i])
+        const uniqueMembers = new Set()
+        const groups = r
+          .map(group => {
+            const groupName = group['name-year'].split('-')[0]
+            const leader = !!group.leader
+              ? {
+                  id: group.leader.id,
+                  name: group.leader.name,
+                  image: group.leader.image,
+                  mail: group.leader.mail || '',
+                  background: group.leader.background,
+                }
+              : null
+            if (groupName.toLowerCase() !== 'coach' && leader)
+              uniqueMembers.add(leader.id)
+            const members = group.members
+              .filter(member => (leader ? member.id !== leader.id : true))
+              .map(({ id, name, image, mail = '', background }) => {
+                if (groupName.toLowerCase() !== 'coach') uniqueMembers.add(id)
+                return {
+                  id,
+                  name,
+                  image,
+                  mail,
+                  background,
+                }
+              })
+              .sort((a, b) => (a.name > b.name ? 1 : -1))
+            return {
+              name: groupName,
+              logo:
+                'https://api.ascendntnu.no' + (group.logo || { url: '' }).url,
+              description: group.description,
+              members,
+              leader,
             }
           })
+          .sort((a, b) => {
+            if (a.name.toLowerCase() === 'board') {
+              return -1
+            }
+            if (a.name.toLowerCase() === 'coach') {
+              return 1
+            }
+            if (b.name.toLowerCase() === 'board') {
+              return 1
+            }
+            if (b.name.toLowerCase() === 'coach') {
+              return -1
+            }
 
-          this.setState({
-            year: year,
-            grouping: this.groupings[year],
-            members: r.sort((a, b) => {
-              return a.name > b.name ? 1 : -1
-            }),
-            groups: groups.sort((a, b) => {
-              if (a.toLowerCase() === 'board') {
-                return -1
-              }
-              if (a.toLowerCase() === 'coach') {
-                return 1
-              }
-              if (b.toLowerCase() === 'board') {
-                return 1
-              }
-              if (b.toLowerCase() === 'coach') {
-                return -1
-              }
-
-              return a.toLowerCase() > b.toLowerCase() ? 1 : -1
-            }),
+            return a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1
           })
-        } else {
-          this.setState({
-            year: year,
-            grouping: this.groupings[year],
-            members: [],
-            groups: [],
-          })
-        }
+        this.setState({
+          year,
+          groups,
+          memberCount: uniqueMembers.size,
+        })
       })
   }
 
@@ -173,14 +164,25 @@ export class TeamPage extends Component {
       evt.target.href = evt.target.href.replace(/\[at\]/g, '@')
   }
 
+  getRole = (group, member, isLeader = false) => {
+    if (member.id in this.state.memberTitles) {
+      return this.state.memberTitles[member.id]
+    }
+    if (isLeader) {
+      return `${group.name} Leader`
+    }
+    return `${group.name} Member`
+  }
+
   render() {
     /**
      * Creating team photo on top
      */
-    let team_photo = (
+    let teamPhoto = (
       <div className="section page-container">
         <img
           src={
+            CDN_URL +
             '/images/teams/' +
             this.state.year +
             '/ascend-group-' +
@@ -196,100 +198,87 @@ export class TeamPage extends Component {
     /**
      * Creating the groups to an array of elements.
      */
-    let groups = this.state.groups
-      .filter(group => this.state.grouping.test(group))
-      .map((group, n) => {
-        /**
-         * Adding leader(s) to an own list on each group.
-         */
-        let leader = this.state.members
-          .filter(m => {
-            return (
-              m.group.indexOf(group) !== -1 && m.group.indexOf('Leader') !== -1
-            )
-          })
-          .map((m, i) => {
-            let mail
+    let groups = this.state.groups.map((group, n) => {
+      const hasLeader = !!group.leader
+      let leader = hasLeader ? group.leader : {}
+      let mail = ''
 
-            if (m.mail && m.mail.length) {
-              mail = (
-                <div className="team-member-mail">
-                  <a
-                    href={'mailto:' + m.mail}
-                    onMouseOver={this.transformMailAddress}
-                  >
-                    <i className="fa fa-envelope" aria-hidden="true" />
-                  </a>
-                </div>
-              )
-            }
+      if (hasLeader && leader.mail && leader.mail.length) {
+        mail = (
+          <div className="team-member-mail">
+            <a
+              href={'mailto:' + leader.mail}
+              onMouseOver={this.transformMailAddress}
+            >
+              <i className="fa fa-envelope" aria-hidden="true" />
+            </a>
+          </div>
+        )
+      }
 
-            return (
-              <div key={i} className="team-member team-leader">
-                <div className="team-member-image">
-                  <img src={m.image} alt={m.name} />
-                  {mail}
-                </div>
-                <div className="team-member-name">{m.name}</div>
-                <div className="team-member-role">{m.role}</div>
-              </div>
-            )
-          })
+      const leaderElement = hasLeader ? (
+        <div className="team-member team-leader">
+          <div className="team-member-image">
+            <img src={CDN_URL + leader.image} alt={leader.name} />
+            {mail}
+          </div>
+          <div className="team-member-name">{leader.name}</div>
+          <div className="team-member-role">
+            {this.getRole(group, leader, true)}
+          </div>
+        </div>
+      ) : null
 
-        /**
-         * Adding the rest of the members which is not a leader.
-         */
-        let members = this.state.members
-          .filter(m => {
-            return (
-              m.group.indexOf(group) !== -1 && m.group.indexOf('Leader') === -1
-            )
-          })
-          .map((m, i) => {
-            let mail
+      const memberElementList = group.members.map((member, i) => {
+        let mail = ''
 
-            if (m.mail && m.mail.length) {
-              mail = (
-                <div className="team-member-mail">
-                  <a
-                    href={'mailto:' + m.mail}
-                    onMouseOver={this.transformMailAddress}
-                  >
-                    <i className="fa fa-envelope" aria-hidden="true" />
-                  </a>
-                </div>
-              )
-            }
-
-            return (
-              <div key={i} className="team-member">
-                <div className="team-member-image">
-                  <img src={m.image} alt={m.name} />
-                  {mail}
-                </div>
-                <div className="team-member-name">{m.name}</div>
-                <div className="team-member-role">{m.role}</div>
-              </div>
-            )
-          })
+        if (member.mail && member.mail.length) {
+          mail = (
+            <div className="team-member-mail">
+              <a
+                href={'mailto:' + member.mail}
+                onMouseOver={this.transformMailAddress}
+              >
+                <i className="fa fa-envelope" aria-hidden="true" />
+              </a>
+            </div>
+          )
+        }
 
         return (
-          <SubSection
-            key={n}
-            className="teampage-team centered page-container-big"
-            data-group={group.toLowerCase()}
-          >
-            <div className="team-leaders">
-              {leader}
-              <div className="team-description">
-                <div className="team-title">{group}</div>
-                <div className="team-text">{this.groupTexts[group]}</div>
-              </div>
+          <div key={i} className="team-member">
+            <div className="team-member-image">
+              <img src={CDN_URL + member.image} alt={member.name} />
+              {mail}
             </div>
-            <div className="team-members">{members}</div>
-          </SubSection>
+            <div className="team-member-name">{member.name}</div>
+            <div className="team-member-role">
+              {this.getRole(group, member)}
+            </div>
+          </div>
         )
       })
+
+      return (
+        <SubSection
+          key={n}
+          className={`teampage-team centered page-container-big${
+            hasLeader ? ' has-leader' : ' no-leader'
+          }`}
+          style={{ backgroundImage: `url(${group.logo})` }}
+          data-group={group.name.toLowerCase()}
+        >
+          <div className="team-leaders">
+            {leaderElement}
+            <div className="team-description">
+              <div className="team-title">{group.name}</div>
+              <div className="team-text">{group.description}</div>
+            </div>
+          </div>
+          <div className="team-members">{memberElementList}</div>
+        </SubSection>
+      )
+    })
 
     return (
       <div className="page page-team">
@@ -307,23 +296,26 @@ export class TeamPage extends Component {
                   <button>2017</button>
                 </NavLink>
                 <NavLink to="/team/2018" activeClassName="active">
+                  <button>2018</button>
+                </NavLink>
+                <NavLink to="/team/2019" activeClassName="active">
+                  <button>2019</button>
+                </NavLink>
+                <NavLink to="/team/2020" activeClassName="active">
                   <button
                     className={!this.props.match.params.year ? 'active' : ''}
                   >
-                    2018
+                    2020
                   </button>
                 </NavLink>
               </div>
             </div>
           </SubSection>
-          <SubSection className="page-container-big">{team_photo}</SubSection>
+          <SubSection className="page-container-big">{teamPhoto}</SubSection>
           <SubSection titleText="Groups" className="page-container-big">
-            We have five groups: Control, Perception, AI, Hardware and Admin.
-            The board consists of the project manager, the deputy project
-            manager, the technical leader and the group leaders. This means that
-            we formally have a quite hierarchical stucture. However, in practice
-            we have a very flat structure where everybody contributes within the
-            areas they want and where attention is needed.
+            {this.state.year == 2020
+              ? `We currently are ${this.state.memberCount} students at NTNU, working together, to solve mission 9. Our team consists of seven groups: The board, AI, Control, Hardware, Marketing, Perception and AlphaPilot.`
+              : ''}
             {groups}
           </SubSection>
         </Section>

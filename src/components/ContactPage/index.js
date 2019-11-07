@@ -91,7 +91,6 @@ export class ContactInfo extends Component {
               <div class="service-title">You can find us her</div>
             </h2>
             <div class="service-desc">
-              <center>Postal address</center>
               Ascend NTNU, Gløshaugen O.S. Bragstads plass 2 A/B, 7034 Trondheim
               Norway
             </div>

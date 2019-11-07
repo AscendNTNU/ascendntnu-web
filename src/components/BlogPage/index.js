@@ -339,6 +339,7 @@ export class BlogPage extends Component {
                 />
               </div>
               <div className="blog-list-preview">
+                <hr />
                 <div
                   ref={`post-${i}`}
                   dangerouslySetInnerHTML={{

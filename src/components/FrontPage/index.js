@@ -37,6 +37,9 @@ export class FrontPage extends Component {
                   </a>
                 </div>
                 <div class="col-sm-6">
+                  <br />
+                  <br />
+                  <br />
                   <h1>Who are we?</h1>
                   <hr />
                   <p class="lead">

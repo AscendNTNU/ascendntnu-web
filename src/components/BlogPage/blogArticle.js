@@ -166,15 +166,16 @@ export class BlogArticle extends Component {
                 className="fb-xfbml-parse-ignore"
                 target="_blank"
                 href={encodeURIComponent(
-                  `https://www.facebook.com/sharer/sharer.php?u=https://ascendntnu.no/blog/${
-                    this.props.post
-                  }&amp;src=sdkpreparse`
+                  `https://www.facebook.com/sharer/sharer.php?u=https://ascendntnu.no/blog/${this.props.post}&amp;src=sdkpreparse`
                 )}
-              > </a>
+              >
+                {' '}
+              </a>
             </div>
             {categories}
           </div>
         </div>
+        <hr />
         <div
           className="blog-post-content"
           ref="post"
