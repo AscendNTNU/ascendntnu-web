@@ -132,6 +132,9 @@ export class DronePage extends Component {
                   </a>
                 </div>
                 <div class="col-sm-6 text-center">
+                  <br />
+                  <br />
+                  <br />
                   <h1>Valkyrie</h1>
                   <center>
                     <h2>2017</h2>
@@ -226,7 +229,7 @@ export class DronePage extends Component {
         }
         .padding img {
           width: 100%;
-          padding-bottom: 120px;
+          padding-bottom: 70px;
           height: 670px;
         }
         
