@@ -231,7 +231,7 @@ export class DronePage extends Component {
         }
         
         .col-sm-6 {
-          margin-top: 120px; 
+          margin-top: 80px; 
         }
         
         #fixed {
