@@ -131,13 +131,13 @@ export class FrontPage extends Component {
           <div
             id="fixed"
             style={{
-              background: `url('${ASSETS_URL}/images/assets/Ciruit_background.png') no-repeat center
-    center fixed;
-    height: 100vh;
-  max-height: 300px;
-  min-height: 100px;
-  position: relative;
-  background-size: cover;`,
+              background: `url('${ASSETS_URL}/images/assets/Ciruit_background.png') no-repeat center`,
+              center: `fixed`,
+              height: `100vh`,
+              maxheight: `300px`,
+              minheight: `100px`,
+              position: `relative`,
+              backgroundsize: `cover`,
             }}
           >
             <br />
@@ -184,7 +184,7 @@ export class FrontPage extends Component {
                     <img
                       src={
                         ASSETS_URL +
-                        '/images/teams/current-logoes/2020/Alphapilot_logo.svg'
+                        '/images/teams/logoes/2020/Alphapilot-logo.svg'
                       }
                     />
                   </a>

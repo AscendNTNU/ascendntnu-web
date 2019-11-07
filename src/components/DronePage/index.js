@@ -226,7 +226,7 @@ export class DronePage extends Component {
         }
         .padding img {
           width: 100%;
-          padding-bottom: 130px;
+          padding-bottom: 120px;
           height: 670px;
         }
         

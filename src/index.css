@@ -2210,14 +2210,6 @@ p {
   box-sizing: border-box;
 }
 
-.inner-width {
-  width: 100%;
-  margin: auto;
-  height: 100%;
-  padding: 0 20px;
-  overflow: hidden;
-  background: url('/images/assets/Ciruit.png');
-}
 .section-title {
   text-align: center;
   color: #fff;

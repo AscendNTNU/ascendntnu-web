@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import { ASSETS_URL } from '../../constants'
 
 import { Section, SubSection } from '../PageLayout'
 import { Breadcrumb } from '../Common/breadcrumb'
@@ -16,11 +17,22 @@ export class ContactPage extends Component {
 }
 
 export default ContactPage
+//import { Link } from 'react-router-dom'
 
 export class ContactInfo extends Component {
   render() {
     return (
-      <div class="inner-width">
+      <div
+        class="inner-width"
+        style={{
+          background: 'url(${ASSETS_URL}/images/Ciruit.png)',
+          width: '100%',
+          margin: 'auto',
+          height: '100%',
+          padding: '0 20px',
+          overflow: 'hidden',
+        }}
+      >
         <h1 class="section-title">More about us</h1>
         <div class="border"></div>
         <div class="services-container">
