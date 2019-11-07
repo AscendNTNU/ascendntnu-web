@@ -132,7 +132,12 @@ export class FrontPage extends Component {
             id="fixed"
             style={{
               background: `url('${ASSETS_URL}/images/assets/Ciruit_background.png') no-repeat center
-    center fixed`,
+    center fixed;
+    height: 100vh;
+  max-height: 300px;
+  min-height: 100px;
+  position: relative;
+  background-size: cover;`,
             }}
           >
             <br />

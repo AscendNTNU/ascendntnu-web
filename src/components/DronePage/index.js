@@ -71,6 +71,8 @@ export class DronePage extends Component {
               </div>
             </div>
           </div>
+          <br />
+          <br />
         </div>
 
         <div class="inner">

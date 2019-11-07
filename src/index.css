@@ -2186,16 +2186,6 @@ footer {
   height: 100%;
 }
 
-#fixed {
-  background: url('/images/assets/Ciruit_background.png') no-repeat center
-    center fixed;
-  height: 100vh;
-  max-height: 300px;
-  min-height: 100px;
-  position: relative;
-  background-size: cover;
-}
-
 h3,
 h4 {
   color: #fff;
