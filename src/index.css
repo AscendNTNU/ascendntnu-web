@@ -2281,8 +2281,9 @@ p {
 .service-desc {
   font-size: 14px;
 }
-.fb-like {
+div.fb-like {
   margin: 30px;
+  display: inline-block;
 }
 
 .teampage-team.no-leader > .team-leaders {
