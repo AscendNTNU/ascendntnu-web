@@ -78,7 +78,10 @@ export class DronePage extends Component {
         <div class="inner">
           <div class="padding">
             <div class="container">
-              <div class="row">
+              <div
+                class="row"
+                style={{ display: 'flex', flexWrap: 'wrap-reverse' }}
+              >
                 <div class="col-sm-6">
                   <br />
                   <br />
@@ -125,7 +128,10 @@ export class DronePage extends Component {
         <div class="padding">
           <div id="nxt">
             <div class="container">
-              <div class="row">
+              <div
+                class="row"
+                style={{ display: 'flex', flexWrap: 'wrap-reverse' }}
+              >
                 <div class="col-sm-6">
                   <a href="Index.html">
                     <img src={ASSETS_URL + '/images/assets/VALKYRIE (2).png'} />
