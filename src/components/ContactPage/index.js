@@ -25,12 +25,7 @@ export class ContactInfo extends Component {
       <div
         class="inner-width"
         style={{
-          background: 'url(${ASSETS_URL}/images/Ciruit.png)',
-          width: '100%',
-          margin: 'auto',
-          height: '100%',
-          padding: '0 20px',
-          overflow: 'hidden',
+          backgroundImage: `url('${ASSETS_URL}/images/assets/Ciruit.png')`,
         }}
       >
         <h1 class="section-title">More about us</h1>

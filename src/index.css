@@ -2192,6 +2192,8 @@ footer {
   min-height: 100px;
   position: relative;
   background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
 }
 
 h3,
@@ -2224,7 +2226,6 @@ p {
   height: 100%;
   padding: 0 20px;
   overflow: hidden;
-  background: url('/images/assets/Ciruit.png');
 }
 .section-title {
   text-align: center;
@@ -2281,7 +2282,7 @@ p {
   font-size: 14px;
 }
 .fb-like {
-  margin: 15px;
+  margin: 22px;
 }
 
 .teampage-team.no-leader > .team-leaders {
