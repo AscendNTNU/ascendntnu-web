@@ -448,11 +448,6 @@ body.no-scroll {
   margin-top: 12px;
 }
 
-.ibpc img {
-  position: relative;
-  top: 150px;
-}
-
 .foot-image > img {
   width: 100%;
   max-width: 140px;

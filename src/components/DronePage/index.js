@@ -27,11 +27,13 @@ export class DronePage extends Component {
               >
                 <div class="col-sm-6">
                   <br />
-                  <div class="ibpc">
-                    <a href="Index.html">
-                      <img src={ASSETS_URL + '/images/assets/2019_new.png'} />
-                    </a>
-                  </div>
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <a href="Index.html">
+                    <img src={ASSETS_URL + '/images/assets/2019_new.png'} />
+                  </a>
                 </div>
                 <div class="col-sm-6 text-center">
                   <h1>INKY, BLINKY, PINKY & CLYDE</h1>
