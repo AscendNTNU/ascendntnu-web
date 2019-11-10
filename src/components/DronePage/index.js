@@ -141,7 +141,6 @@ export class DronePage extends Component {
                   <br />
                   <br />
                   <br />
-                  <br />
                   <h1>Valkyrie</h1>
                   <center>
                     <h2>2017</h2>
