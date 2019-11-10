@@ -40,7 +40,7 @@ export class TeamPage extends Component {
    * @memberOf TeamPage
    */
   componentWillReceiveProps(nextProps) {
-    let nextYear = parseInt(nextProps.match.params.year, 10) || 2018
+    let nextYear = parseInt(nextProps.match.params.year, 10) || 2020
     let year = parseInt(this.props.match.params.year, 10) || this.state.year
 
     if (nextYear !== year) {
