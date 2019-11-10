@@ -58,9 +58,6 @@ export class Footer extends Component {
           <div className="col-sm-4">
             <h3>Project manager</h3>
             <h4>Jo Aleksander Johansen</h4>
-            <h4>
-              <a href="tel: +47 906 11 317">+47 906 11 317</a>
-            </h4>
             <br />
             <h4>
               <a href="mailto: jo.johansen@ascendntnu.no subject=subject text">

@@ -83,9 +83,6 @@ export class DronePage extends Component {
             <div class="container">
               <div class="row">
                 <div class="col-sm-6">
-                  <br />
-                  <br />
-                  <br />
                   <center>
                     <h1>MIST</h1>
                   </center>
@@ -113,12 +110,11 @@ export class DronePage extends Component {
                   </center>
                 </div>
                 <div class="col-sm-6">
-                  <br />
-                  <br />
-                  <br />
-                  <a href="alphapilot.html">
-                    <img src={ASSETS_URL + '/images/assets/mist_2.png'} />
-                  </a>
+                  <div class="mist">
+                    <a href="alphapilot.html">
+                      <img src={ASSETS_URL + '/images/assets/mist_2.png'} />
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -133,6 +129,9 @@ export class DronePage extends Component {
                 style={{ display: 'flex', flexWrap: 'wrap-reverse' }}
               >
                 <div class="col-sm-6">
+                  <br />
+                  <br />
+                  <br />
                   <a href="Index.html">
                     <img src={ASSETS_URL + '/images/assets/VALKYRIE (2).png'} />
                   </a>
@@ -234,7 +233,7 @@ export class DronePage extends Component {
         .padding img {
           width: 100%;
           padding-bottom: 70px;
-          height: 670px;
+          height: 590px;
         }
         
         .col-sm-6 {
