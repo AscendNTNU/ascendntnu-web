@@ -129,7 +129,6 @@ export class DronePage extends Component {
                 <div class="col-sm-6">
                   <br />
                   <br />
-                  <br />
                   <a href="Index.html">
                     <img src={ASSETS_URL + '/images/assets/VALKYRIE (2).png'} />
                   </a>
