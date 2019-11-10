@@ -163,11 +163,11 @@ export class FrontPage extends Component {
                   <p>
                     This year we are out for revenge. Our 3 person team has
                     expanded to 7 talented members with previous experience in
-                    Ascend, autonomous race cars and competitive programming.Our
-                    goals for the next month are to physically test our control
-                    systems and visual odometry on our test drone, and to have
-                    our whole pipeline, from detection to control, running
-                    together in the simulator.
+                    Ascend, autonomous race cars and competitive programming.
+                    Our goals for the next month are to physically test our
+                    control systems and visual odometry on our test drone, and
+                    to have our whole pipeline, from detection to control,
+                    running together in the simulator.
                   </p>
                 </div>
                 <div class="col-sm-6">
