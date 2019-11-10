@@ -140,6 +140,7 @@ export class DronePage extends Component {
                 <div class="col-sm-6 text-center">
                   <br />
                   <br />
+                  <br />
                   <h1>Valkyrie</h1>
                   <center>
                     <h2>2017</h2>
