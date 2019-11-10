@@ -76,7 +76,7 @@ export class ContactInfo extends Component {
               </div>
             </a>
             <h2>
-              <div class="service-title">Alpha Pilot Manager</div>
+              <div class="service-title">AlphaPilot Manager</div>
             </h2>
             <div class="service-desc">
               <h4>
@@ -95,7 +95,7 @@ export class ContactInfo extends Component {
               </div>
             </a>
             <h2>
-              <div class="service-title">You can find us her</div>
+              <div class="service-title">You can find us here</div>
             </h2>
             <div class="service-desc">
               Ascend NTNU, Gløshaugen O.S. Bragstads plass 2 A/B, 7034 Trondheim
