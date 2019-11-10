@@ -57,11 +57,11 @@ export class ContactInfo extends Component {
               </div>
             </a>
             <h2>
-              <div class="service-title">Marketing Manager</div>
+              <div class="service-title">Head of Marketing</div>
             </h2>
             <div class="service-desc">
               <h4>
-                <center>Inger-louise Pleym Fjellgaard </center>
+                <center>Inger-Lovise Pleym Fjellgaard </center>
               </h4>
               <br />
               Marketing is the group responsible for making Ascend visible on
@@ -104,11 +104,7 @@ export class ContactInfo extends Component {
           </div>
 
           <div class="service-box">
-            <a
-              herf="
-              src={ASSETS_URL + '/images/assets/Nyhetsbrev_finalfinal.pdf'}
-              "
-            >
+            <a herf={ASSETS_URL + '/images/assets/Nyhetsbrev_finalfinal.pdf'}>
               <div class="service-icon">
                 <i class="fas fa-newspaper"></i>
               </div>
