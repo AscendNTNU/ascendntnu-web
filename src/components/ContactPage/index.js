@@ -105,8 +105,9 @@ export class ContactInfo extends Component {
 
           <div class="service-box">
             <a
-              herf=" "
+              herf="
               src={ASSETS_URL + '/images/assets/Nyhetsbrev_finalfinal.pdf'}
+              "
             >
               <div class="service-icon">
                 <i class="fas fa-newspaper"></i>
