@@ -76,11 +76,11 @@ export class ContactInfo extends Component {
               </div>
             </a>
             <h2>
-              <div class="service-title">AlphaPilot Manager</div>
+              <div class="service-title">AlphaPilot Leader</div>
             </h2>
             <div class="service-desc">
               <h4>
-                <center>Paul Frivold</center>
+                <center>Paul Erik Frivold</center>
               </h4>
               <br />
               The Alpha Pilot team aims to develop and create Scandinavia’s
