@@ -84,7 +84,7 @@ export class DronePage extends Component {
               <div class="row">
                 <div class="col-sm-6">
                   <center>
-                    <h1>MIST</h1>
+                    <h1>MIST </h1>
                   </center>
                   <center>
                     <h2>2018</h2>
