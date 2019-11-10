@@ -42,7 +42,7 @@ export class ContactInfo extends Component {
             </h2>
             <div class="service-desc">
               <h4>
-                <center>Jo Aleksander</center>
+                <center>Jo Aleksander Johansen</center>
               </h4>
               <br />
               The board is responsible for the whole team. They make sure
