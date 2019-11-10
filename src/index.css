@@ -448,8 +448,9 @@ body.no-scroll {
   margin-top: 12px;
 }
 
-.mist img {
-  height: 100%;
+.ibpc img {
+  position: relative;
+  top: 150px;
 }
 
 .foot-image > img {
