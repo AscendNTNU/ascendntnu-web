@@ -104,7 +104,7 @@ export class ContactInfo extends Component {
           </div>
 
           <div class="service-box">
-            <a herf="/images/assets/Nyhetsbrev_finalfinal.pdf">
+            <a src="https://ascend-webassets.fra1.cdn.digitaloceanspaces.com/images/assets/Nyhetsbrev_finalfinal.pdf">
               <div class="service-icon">
                 <i class="fas fa-newspaper"></i>
               </div>
