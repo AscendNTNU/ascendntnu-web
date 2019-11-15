@@ -66,7 +66,7 @@ export class BlogPage extends Component {
       postsURL = 'blog/'
     }
 
-    let url = `${API_URL}/articles? _sort=published:DESC`
+    let url = `${API_URL}/articles?_sort=published:DESC`
 
     fetch(url, setup)
       .then(r => r.json())
