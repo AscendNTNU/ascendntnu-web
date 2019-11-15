@@ -53,50 +53,59 @@ export class Footer extends Component {
     })
 
     return (
-      <div className="foot">
-        <div className="foot-content page-container">
-          <div className="foot-element">
+      <footer className="container-fluid text-center">
+        <div className="row">
+          <div className="col-sm-4">
+            <h3>Project manager</h3>
+
+            <h4>Jo Aleksander Johansen</h4>
+            <br />
+            <h4>
+              <a href="mailto: jo.johansen@ascendntnu.no subject=subject text">
+                jo.johansen@ascendntnu.no
+              </a>
+            </h4>
+          </div>
+          <div className="col-sm-4">
+            <h3>Follow us on</h3>
             <a
-              className="link foot-image"
-              href="http://kongsberg.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+              href="https://www.facebook.com/ascendntnu/"
+              className="fa fa-facebook"
+            ></a>
+            <a
+              href="https://github.com/AscendNTNU"
+              className="fa fa-github"
+            ></a>
+            <a
+              href="https://www.instagram.com/ascendntnu/"
+              className="fa fa-instagram"
+            ></a>
+            <a
+              href="https://www.linkedin.com/company/ascend-ntnu"
+              className="fa fa-linkedin"
+            ></a>
+          </div>
+          <div className="col-sm-4">
+            <a href="">
               <img
-                src="/images/sponsors/kongsberg_dark_bg.svg"
-                alt="Kongsberg logo"
+                src="/images/logo/ascend-no-background.png"
+                className="icon_social_media"
               />
             </a>
           </div>
-          <div className="foot-element">
-            {links}
-            <div
-              className="fb-like"
-              data-href="https://www.facebook.com/ascendntnu/?fref=ts"
-              data-width="100"
-              data-layout="standard"
-              data-action="like"
-              data-size="small"
-              data-colorscheme="dark"
-              data-show-faces="false"
-              data-share="true"
-            />
-          </div>
-          <div className="foot-element">
-            <p>
-              Autonomus aerial robotics. Ascend NTNU is The Norwegian University
-              of Science and Technology's team in the International Aerial
-              Robotics Competition (IARC).
-            </p>
-            <div
-              onClick={this.props.changeTheme.bind(this)}
-              className="styled-link"
-            >
-              Change to {this.props.theme === 'dark' ? 'light' : 'dark'} theme
-            </div>
-          </div>
         </div>
-      </div>
+        <div
+          className="fb-like"
+          data-href="https://www.facebook.com/ascendntnu/?fref=ts"
+          data-width="100"
+          data-layout="standard"
+          data-action="like"
+          data-size="small"
+          data-colorscheme="dark"
+          data-show-faces="false"
+          data-share="true"
+        />
+      </footer>
     )
   }
 }

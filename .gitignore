@@ -12,6 +12,8 @@ cv
 
 # production
 /build
+/images
+temp*
 
 # misc
 .DS_Store

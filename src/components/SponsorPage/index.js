@@ -52,7 +52,6 @@ export class SponsorPage extends Component {
 
     return (
       <div className="page page-sponsors">
-        <Breadcrumb routes={['sponsors']} />
         <Section titleText={title} className="centered page-container-big">
           <SponsorList year={this.state.year} />
         </Section>

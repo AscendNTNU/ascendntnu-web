@@ -6,7 +6,7 @@ import { polyfill } from 'es6-promise'
 import { Section, SubSection } from '../PageLayout'
 import { Breadcrumb } from '../Common/breadcrumb'
 import { BlogArticle } from './blogArticle'
-import { API_URL } from '../../constants'
+import { API_URL, ASSETS_URL } from '../../constants'
 
 polyfill()
 
@@ -67,7 +67,7 @@ export class BlogPage extends Component {
     }
 
     let url = `${API_URL}/${postsURL}`
-    url = 'api/v1/posts/all'
+    //url = 'api/v1/posts/all'
 
     fetch(url, setup)
       .then(r => r.json())
@@ -241,6 +241,7 @@ export class BlogPage extends Component {
             new RegExp(`(^|\\W)S{${i},}($|\\W)`, 'g'),
             `$1${this.digits(d.getSeconds(), i)}$2`
           )
+          .replace(new RegExp(`/images/`, 'g'), ASSETS_URL + `/images/`)
       }
 
       return formatted
@@ -278,7 +279,6 @@ export class BlogPage extends Component {
     if (this.props.match.params && this.props.match.params.post) {
       return (
         <div className="page page-blog">
-          <Breadcrumb routes={['blog', this.props.match.params.post]} />
           <BlogArticle post={this.props.match.params.post} />
         </div>
       )
@@ -340,6 +340,7 @@ export class BlogPage extends Component {
                 />
               </div>
               <div className="blog-list-preview">
+                <hr />
                 <div
                   ref={`post-${i}`}
                   dangerouslySetInnerHTML={{
@@ -357,7 +358,6 @@ export class BlogPage extends Component {
 
       return (
         <div className="page page-blog">
-          <Breadcrumb routes={['blog']} />
           <Section titleText="Our blog">
             <input
               onChange={this.search.bind(this)}

@@ -1,13 +1,15 @@
 ---
 layout: post
-title:  "Tech: Modelling ground robots"
-date:   2015-10-26 12:00:00
+title: 'Tech: Modelling ground robots'
+date: 2015-10-26 12:00:00
 categories: simulation tech modelling ai
 author: Simen Haugo
 ---
+
+
 An accurate probabilistic model of the ground robots is a step towards bulletproofing a robust state estimator.
 
-![Motion capture system](/public/assets/lumaVolumeLarge.jpg)
+![Motion capture system](/images/assets/lumaVolumeLarge.jpg)
 
 <p class="text-muted centered">
 	Typical motion capture installation - Optitrack.
@@ -21,8 +23,8 @@ Since our drone might spend a considerable amount of time being close to the flo
 
 Much like in Missile Command - which was much better than that other alien shooting game - we need the ability to predict where a given ground robot might be ahead of time. Using this prediction we can
 
-* Know the likelyhood of a certain robot being close to leaving
-* Spend less time searching for the location of a certain robot
+- Know the likelyhood of a certain robot being close to leaving
+- Spend less time searching for the location of a certain robot
 
 ## Under Great Uncertainty
 
@@ -43,7 +45,7 @@ My favorite approach, if I don't know where to begin on a problem, is to visuali
 
 <div class="row">
 	<div class="col-md-4">
-		<img class="img-responsive" alt="Simulation" src="/public/assets/simulation-1.gif">
+		<img class="img-responsive" alt="Simulation" src="/images/assets/simulation-1.gif">
 	</div>
 	<div class="col-md-8">
 	<p>
@@ -54,7 +56,7 @@ My favorite approach, if I don't know where to begin on a problem, is to visuali
 
 <div class="row">
 	<div class="col-md-4">
-		<img class="img-responsive" alt="Simulation" src="/public/assets/simulation-2.gif">
+		<img class="img-responsive" alt="Simulation" src="/images/assets/simulation-2.gif">
 	</div>
 	<div class="col-md-8">
 	<p>
@@ -65,7 +67,7 @@ My favorite approach, if I don't know where to begin on a problem, is to visuali
 
 <div class="row">
 	<div class="col-md-4">
-		<img class="img-responsive" alt="Simulation" src="/public/assets/simulation-3.gif">
+		<img class="img-responsive" alt="Simulation" src="/images/assets/simulation-3.gif">
 	</div>
 	<div class="col-md-8">
 	<p>
@@ -81,4 +83,3 @@ So that was kind of useful. Already, we can intuitively see that the statistical
 Now, obviously, this simulation is a simplification of the real process. We have not considered that a drone will be flying around and turning robots towards a desired direction, nor have we considered the four obstacle robots that run in a circular path along the floor. Both of these will change the statistical properties, and also the model that we end up using.
 
 Until next time...
-

@@ -4,7 +4,7 @@ import { HtmlRenderer, Parser } from 'commonmark'
 import * as Katex from 'katex'
 import { polyfill } from 'es6-promise'
 import { Section } from '../PageLayout'
-import { API_URL } from '../../constants'
+import { API_URL, ASSETS_URL } from 'constants'
 
 polyfill()
 
@@ -123,6 +123,7 @@ export class BlogArticle extends Component {
             new RegExp(`(^|\\W)S{${i},}($|\\W)`, 'g'),
             `$1${this.digits(d.getSeconds(), i)}$2`
           )
+          .replace(new RegExp(`/images/`, 'g'), ASSETS_URL + `/images/`)
       }
 
       return formatted
@@ -166,15 +167,16 @@ export class BlogArticle extends Component {
                 className="fb-xfbml-parse-ignore"
                 target="_blank"
                 href={encodeURIComponent(
-                  `https://www.facebook.com/sharer/sharer.php?u=https://ascendntnu.no/blog/${
-                    this.props.post
-                  }&amp;src=sdkpreparse`
+                  `https://www.facebook.com/sharer/sharer.php?u=https://ascendntnu.no/blog/${this.props.post}&amp;src=sdkpreparse`
                 )}
-              > </a>
+              >
+                {' '}
+              </a>
             </div>
             {categories}
           </div>
         </div>
+        <hr />
         <div
           className="blog-post-content"
           ref="post"
