@@ -92,7 +92,7 @@ export class BlogPage extends Component {
           return p
         })
         this.setState({
-          posts: r.sort((a, b) => (a.file > b.file ? -1 : 1)),
+          posts: r,
         })
       })
       .catch(err => console.error('Could not fetch file from: ' + url))
