@@ -72,7 +72,7 @@ export class TeamPage extends Component {
   getMembers(year) {
     let setup = process.env.NODE_ENV === 'production' ? {} : { mode: 'cors' }
 
-    fetch(`https://api.ascendntnu.no/titles?title-year_contains=${year}`, setup)
+    fetch(`${API_URL}/titles?title-year_contains=${year}`, setup)
       .then(r => r.json())
       .then(titles => {
         const memberTitles = {}
@@ -83,7 +83,7 @@ export class TeamPage extends Component {
         }
         this.setState({ memberTitles })
       })
-    fetch(`https://api.ascendntnu.no/teams?name-year_contains=${year}`, setup)
+    fetch(`${API_URL}/teams?name-year_contains=${year}`, setup)
       .then(r => r.json())
       .then(r => {
         const uniqueMembers = new Set()
@@ -116,8 +116,7 @@ export class TeamPage extends Component {
               .sort((a, b) => (a.name > b.name ? 1 : -1))
             return {
               name: groupName,
-              logo:
-                'https://api.ascendntnu.no' + (group.logo || { url: '' }).url,
+              logo: API_URL + (group.logo || { url: '' }).url,
               description: group.description,
               members,
               leader,

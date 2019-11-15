@@ -4,7 +4,7 @@ import { HtmlRenderer, Parser } from 'commonmark'
 import * as Katex from 'katex'
 import { polyfill } from 'es6-promise'
 import { Section } from '../PageLayout'
-import { API_URL, ASSETS_URL } from 'constants'
+import { API_URL, ASSETS_URL } from '../../constants'
 
 polyfill()
 
@@ -57,23 +57,25 @@ export class BlogArticle extends Component {
   fetchPost(post) {
     let setup = process.env.NODE_ENV === 'production' ? {} : { mode: 'cors' }
 
-    let url = `${API_URL}/posts/${post}`
-    if (/v2/.test(API_URL)) {
-      url = `/api/v1/posts/${post}`
-    }
+    let url = `${API_URL}/articles?slug=${post}`
 
     fetch(url, setup)
       .then(r => r.json())
-      .then(r => {
-        let parsed = this.parser.parse(r.body)
+      .then(rr => {
+        const r = rr[0]
+        console.log(r)
+        let parsed = this.parser.parse(r.content)
         let rendered = this.renderer.render(parsed)
-        r.attributes['dateFormatted'] = this.formatDate(
-          r.attributes.date,
+        const attributes = {}
+        attributes['dateFormatted'] = this.formatDate(
+          r.published,
           'dag DD/MM/YY'
         )
-        r.attributes['categoriesList'] = r.attributes.categories.split(' ')
+        attributes['categoriesList'] = (r.tags || []).map(tag => tag.name)
+        attributes['author'] = (r.authors || []).map(a => a.name).join(', ')
+        attributes['title'] = r.title
         this.setState({
-          attributes: r.attributes,
+          attributes,
           post: rendered,
         })
       })

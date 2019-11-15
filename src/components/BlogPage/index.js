@@ -66,25 +66,29 @@ export class BlogPage extends Component {
       postsURL = 'blog/'
     }
 
-    let url = `${API_URL}/${postsURL}`
-    //url = 'api/v1/posts/all'
+    let url = `${API_URL}/articles`
 
     fetch(url, setup)
       .then(r => r.json())
       .then(r => {
         r = r.map(p => {
-          p.attributes['dateFormatted'] = this.formatDate(
-            p.attributes.date,
+          const attributes = {}
+          attributes['dateFormatted'] = this.formatDate(
+            p.published,
             'dag DD/MM/YY'
           )
-          p.attributes['categoriesList'] = p.attributes.categories.split(' ')
-          p['parsedBody'] = this.parser.parse(p.body)
+          attributes['categoriesList'] = (p.tags || []).map(tag => tag.name)
+          attributes['author'] = (p.authors || []).map(a => a.name).join(', ')
+          attributes['title'] = p.title
+          p['link'] = p.slug
+          attributes['image'] = p.image
+          p.attributes = attributes
+          p['parsedBody'] = this.parser.parse(p.content)
           p['renderedFirstChild'] = this.renderer.render(
             p.parsedBody._firstChild
           )
           p['renderedBody'] = this.renderer.render(p.parsedBody)
           p['renderedBodySearch'] = p['renderedBody']
-
           return p
         })
         this.setState({
