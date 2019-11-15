@@ -68,6 +68,10 @@ export class DronePage extends Component {
                     obstacle avoidance systems ensure that the drones don't
                     collide with the environment or the player on the field.
                   </p>
+                  <br />
+                  <br />
+                  <br />
+                  <br />
                 </div>
               </div>
             </div>
