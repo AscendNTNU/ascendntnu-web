@@ -88,7 +88,7 @@ export class DronePage extends Component {
                     <h2>2018</h2>
                   </center>
                   <hr />
-                  <center>
+                  <left>
                     <p>
                       This years drone is a new and improved version of last
                       year´s drone. It got more computing power and sensors than
@@ -105,7 +105,7 @@ export class DronePage extends Component {
                       ground robots. The new and lighter cameras is isolated
                       from the frame to minimize vibrations.
                     </p>
-                  </center>
+                  </left>
                 </div>
                 <div class="col-sm-6">
                   <div class="mist">
@@ -231,6 +231,7 @@ export class DronePage extends Component {
           width: 100%;
           padding-bottom: 70px;
           height: 590px;
+          margin-top: 45px; 
         }
         
         .col-sm-6 {
