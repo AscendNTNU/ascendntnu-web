@@ -79,7 +79,7 @@ export class Splash extends Component {
           })
         )
       } else {
-        if (this.state.smallScreen !== (this.width < 560)) {
+        if (this.state.smallScreen !== this.width < 560) {
           this.setState(
             Object.assign({}, this.state, {
               smallScreen: this.width < 560,
@@ -191,7 +191,7 @@ export class Splash extends Component {
         position: this.state.smallScreen ? 'static' : 'absolute',
         left: this.state.smallScreen
           ? '50%'
-          : Math.min(this.width, 100 * this.state.pos / this.width) + '%',
+          : Math.min(this.width, (100 * this.state.pos) / this.width) + '%',
       },
       rightStyle: {
         flexGrow: this.state.smallScreen ? growLeft : growRight,
@@ -209,14 +209,15 @@ export class Splash extends Component {
         />
         <div className="front-splash-left" style={styles.leftStyle}>
           <p>
-            Autonomus aerial robotics for fun and learning. Ascend NTNU is the{' '}
+            Autonomous aerial robotics for learning. Ascend NTNU is the{' '}
             <a href="http://www.ntnu.edu/">
               Norwegian University Of Science and Technology's
             </a>{' '}
             team in the{' '}
             <a href="http://www.aerialroboticscompetition.org/">
               International Aerial Robotics Competition
-            </a>.
+            </a>
+            .
           </p>
         </div>
         <div

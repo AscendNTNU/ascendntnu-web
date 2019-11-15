@@ -149,7 +149,7 @@ export class FrontPage extends Component {
                   <br />
                   <br />
                   <br />
-                  <h2>Alpha Pilot</h2>
+                  <h2>AlphaPilot</h2>
                   <hr />
                   <p>
                     The AlphaPilot group was started in February 2019 as Ascends
@@ -161,13 +161,14 @@ export class FrontPage extends Component {
                   </p>
 
                   <p>
-                    This year we are out for revenge. Our 3 person team has
-                    expanded to 7 talented members with previous experience in
-                    Ascend, autonomous race cars and competitive programming.Our
-                    goals for the next month are to physically test our control
-                    systems and visual odometry on our test drone, and to have
-                    our whole pipeline, from detection to control, running
-                    together in the simulator.
+                    This year we are out for revenge. Our team, which previously
+                    consisted of three members, has expanded to include seven
+                    talented members with backgrounds in autonomous racing,
+                    competitive programming and previous experience in Ascend.
+                    Our goals for the next month are to physically test our
+                    control systems and visual odometry on our test drone, and
+                    to have our whole pipeline, from detection to control,
+                    running together in the simulator.
                   </p>
                 </div>
                 <div class="col-sm-6">

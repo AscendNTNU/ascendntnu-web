@@ -31,8 +31,6 @@ export class DronePage extends Component {
                   <br />
                   <br />
                   <br />
-                  <br />
-                  <br />
                   <a href="Index.html">
                     <img src={ASSETS_URL + '/images/assets/2019_new.png'} />
                   </a>
@@ -70,6 +68,10 @@ export class DronePage extends Component {
                     obstacle avoidance systems ensure that the drones don't
                     collide with the environment or the player on the field.
                   </p>
+                  <br />
+                  <br />
+                  <br />
+                  <br />
                 </div>
               </div>
             </div>
@@ -83,17 +85,14 @@ export class DronePage extends Component {
             <div class="container">
               <div class="row">
                 <div class="col-sm-6">
-                  <br />
-                  <br />
-                  <br />
                   <center>
-                    <h1>MIST</h1>
+                    <h1>MIST </h1>
                   </center>
                   <center>
                     <h2>2018</h2>
                   </center>
                   <hr />
-                  <center>
+                  <left>
                     <p>
                       This years drone is a new and improved version of last
                       year´s drone. It got more computing power and sensors than
@@ -110,15 +109,14 @@ export class DronePage extends Component {
                       ground robots. The new and lighter cameras is isolated
                       from the frame to minimize vibrations.
                     </p>
-                  </center>
+                  </left>
                 </div>
                 <div class="col-sm-6">
-                  <br />
-                  <br />
-                  <br />
-                  <a href="alphapilot.html">
-                    <img src={ASSETS_URL + '/images/assets/mist_2.png'} />
-                  </a>
+                  <div class="mist">
+                    <a href="alphapilot.html">
+                      <img src={ASSETS_URL + '/images/assets/mist_2.png'} />
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -133,12 +131,13 @@ export class DronePage extends Component {
                 style={{ display: 'flex', flexWrap: 'wrap-reverse' }}
               >
                 <div class="col-sm-6">
+                  <br />
+                  <br />
                   <a href="Index.html">
                     <img src={ASSETS_URL + '/images/assets/VALKYRIE (2).png'} />
                   </a>
                 </div>
                 <div class="col-sm-6 text-center">
-                  <br />
                   <br />
                   <h1>Valkyrie</h1>
                   <center>
@@ -235,7 +234,8 @@ export class DronePage extends Component {
         .padding img {
           width: 100%;
           padding-bottom: 70px;
-          height: 670px;
+          height: 590px;
+          margin-top: 45px; 
         }
         
         .col-sm-6 {

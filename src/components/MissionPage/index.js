@@ -581,6 +581,8 @@ export class MissionPage extends Component {
                       </p>
                     )}
                   </center>
+                  <br />
+                  <br />
                 </div>
               </div>
             </div>

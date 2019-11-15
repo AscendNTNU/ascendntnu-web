@@ -2245,6 +2245,10 @@ p {
   justify-content: center;
 }
 
+.lead {
+  text-align: left;
+}
+
 .service-box {
   max-width: 33.33%;
   padding: 10px;

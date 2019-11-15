@@ -42,7 +42,7 @@ export class ContactInfo extends Component {
             </h2>
             <div class="service-desc">
               <h4>
-                <center>Aleksander Jo</center>
+                <center>Jo Aleksander Johansen</center>
               </h4>
               <br />
               The board is responsible for the whole team. They make sure
@@ -57,11 +57,11 @@ export class ContactInfo extends Component {
               </div>
             </a>
             <h2>
-              <div class="service-title">Marketing Manager</div>
+              <div class="service-title">Head of Marketing</div>
             </h2>
             <div class="service-desc">
               <h4>
-                <center>Inger-louise Pleym Fjellgaard </center>
+                <center>Inger-Lovise Pleym Fjellgaard </center>
               </h4>
               <br />
               Marketing is the group responsible for making Ascend visible on
@@ -76,11 +76,11 @@ export class ContactInfo extends Component {
               </div>
             </a>
             <h2>
-              <div class="service-title">Alpha Pilot Manager</div>
+              <div class="service-title">AlphaPilot Leader</div>
             </h2>
             <div class="service-desc">
               <h4>
-                <center>Paul Frivold</center>
+                <center>Paul Erik Frivold</center>
               </h4>
               <br />
               The Alpha Pilot team aims to develop and create Scandinavia’s
@@ -95,7 +95,7 @@ export class ContactInfo extends Component {
               </div>
             </a>
             <h2>
-              <div class="service-title">You can find us her</div>
+              <div class="service-title">You can find us here</div>
             </h2>
             <div class="service-desc">
               Ascend NTNU, Gløshaugen O.S. Bragstads plass 2 A/B, 7034 Trondheim
@@ -104,7 +104,7 @@ export class ContactInfo extends Component {
           </div>
 
           <div class="service-box">
-            <a href="/images/assets/Nyhetsbrev_finalfinal.pdf">
+            <a href={ASSETS_URL + '/images/assets/Nyhetsbrev_finalfinal.pdf'}>
               <div class="service-icon">
                 <i class="fas fa-newspaper"></i>
               </div>
