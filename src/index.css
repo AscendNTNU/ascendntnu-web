@@ -284,6 +284,10 @@ input[type='submit'].active,
     content: unset;
   }
 
+  .services-container .service-box > a {
+    border: none;
+  }
+
   .toggle-menu,
   .nav-bar .dropdown .toggle-menu-small-screen {
     display: inline-block;
@@ -2300,4 +2304,8 @@ div.fb-like {
 .team-member .team-member-image > img {
   height: 100%;
   object-fit: cover;
+}
+
+.services-container .service-box > a {
+  border: none;
 }
