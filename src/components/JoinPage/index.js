@@ -27,10 +27,10 @@ export class JoinPage extends Component {
   setAnchor(anchor) {
     let top = document.getElementById(anchor).offsetTop - 150
     document.querySelector('body').scrollTop = top
+    document.querySelector('#app').scrollTop = top
     console.log(this.refs)
     if (anchor in this.refs) {
       scrollToComponent(this.refs[anchor], { offset: -70, align: 'top' })
-      document.querySelector('#app').scrollTop = top
     }
   }
 
