@@ -57,7 +57,6 @@ export class Footer extends Component {
         <div className="row">
           <div className="col-sm-4">
             <h3>Project manager</h3>
-
             <h4>Jo Aleksander Johansen</h4>
             <br />
             <h4>
