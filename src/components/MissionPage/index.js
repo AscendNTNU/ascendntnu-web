@@ -892,12 +892,17 @@ export class MissionPage extends Component {
               color: orange;
               font-family: "Times New Roman", Times, serif;
             }
+
+            @font-face {
+              font-family: digital;
+              src: url(digital.ttf);
+            }            
             
             #show {
               padding-top: 40px;
               color: #DE5021;
               font-weight: lighter;
-              font-family: "Times New Roman", Times, serif;
+              font-family: digital, serif;
               text-align: center;
               word-spacing: 15px;
               font-size: 60px;
