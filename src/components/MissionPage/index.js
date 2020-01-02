@@ -603,9 +603,12 @@ export class MissionPage extends Component {
                   <br />
                   <br />
                   <br />
-                  <a href="/images/assets/mission8rules_1.0.pdf">
-                    <img src={ASSETS_URL + '/images/assets/m8.png'} />
-                  </a>
+                  <br />
+                  <br />
+                  <br />
+                  <div class="m8_IMG">
+                    <img src={ASSETS_URL + '/images/assets/mission_8.png'} />
+                  </div>
                 </div>
                 <div class="col-sm-6">
                   <br />
@@ -642,6 +645,8 @@ export class MissionPage extends Component {
                       Here are the rules of Mission 8
                     </a>
                   </p>
+                  <br />
+                  <br />
                   <br />
                   <br />
                 </div>
@@ -761,6 +766,10 @@ export class MissionPage extends Component {
             .drone_IMG {
               height: 400px;
             }
+
+            .m8_IMG {
+              height: 500px;
+            }
     
             .navbar {
               background-color: #252222;
@@ -797,10 +806,7 @@ export class MissionPage extends Component {
               text-align: center;
               vertical-align: middle;
             }
-            
-            .padding{
-              padding: 0px 0;
-            }
+      
             .padding img {
               width: 100%;
               margin-bottom: 100px;
@@ -819,31 +825,7 @@ export class MissionPage extends Component {
               width: 100%;
               background-size: cover;
             }
-            
-            footer{
-              width: 100%;
-              background-color: #252222;
-              padding: 5% 5% 5% 5%;
-              color: #FFF;
-            }
-            
-            
-            .fa{
-              padding: 15px;
-              font-size: 35px;
-              color: #FFF;
-            }
-            
-            
-            .fa:hover{
-              color: #F3BA37;
-              text-decoration: none;
-            }
-            
-            .icon{
-              max-width: 200px;
-            }
-            
+                    
             @media (max-width: 768px) {
               .landing-text h1 {
                 font-size: 300%;
