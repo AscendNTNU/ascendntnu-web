@@ -147,8 +147,6 @@ export class FrontPage extends Component {
                   <br />
                   <br />
                   <br />
-                  <br />
-                  <br />
                   <h2>AlphaPilot</h2>
                   <hr />
                   <p>
