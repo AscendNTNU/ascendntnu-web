@@ -363,11 +363,15 @@ export class BlogPage extends Component {
       return (
         <div className="page page-blog">
           <Section titleText="Our blog">
-            <input
-              onChange={this.search.bind(this)}
-              placeholder="Search in articles..."
-              title="Use * as wildcard"
-            />
+            <hr></hr>
+            <center>
+              <br></br>
+              <input
+                onChange={this.search.bind(this)}
+                placeholder="       Search in articles..."
+                title="Use * as wildcard"
+              />{' '}
+            </center>
             <SubSection className="page-blog-list">{links}</SubSection>
           </Section>
         </div>
