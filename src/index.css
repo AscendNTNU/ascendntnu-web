@@ -1347,13 +1347,12 @@ figcaption {
 
 .dark-theme .page-blog input,
 .dark-theme .page-cv input {
-  background-color: #333;
-  color: #ddd;
+  background-color: #292929;
 }
 
 .dark-theme .page-blog input:focus,
 .dark-theme .page-cv input:focus {
-  background-color: #292929;
+  background-color: #969593;
 }
 
 .cv-students {
@@ -2315,5 +2314,9 @@ div.fb-like {
 }*/
 
 .page.page-join {
+  background-color: #333333;
+}
+
+.page.page-blog {
   background-color: #333333;
 }
