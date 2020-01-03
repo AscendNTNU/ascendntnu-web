@@ -2308,3 +2308,12 @@ div.fb-like {
 .services-container .service-box > a {
   border: none;
 }
+
+/*#event-manager.sub-section {
+  background-color: #37373b;
+  width: 100%;
+}*/
+
+.page.page-join {
+  background-color: #333333;
+}
