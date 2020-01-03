@@ -31,15 +31,11 @@ export class FrontPage extends Component {
             <div class="container">
               <div class="row">
                 <div class="col-sm-6">
-                  <a href="Index.html">
-                    <br />
-                    <br />
-                    <img
-                      src={
-                        ASSETS_URL + '/images/assets/ascend-no-background.png'
-                      }
-                    />
-                  </a>
+                  <br />
+                  <br />
+                  <img
+                    src={ASSETS_URL + '/images/assets/ascend-no-background.png'}
+                  />
                 </div>
                 <div class="col-sm-6">
                   <br />
