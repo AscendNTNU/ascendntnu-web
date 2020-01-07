@@ -270,6 +270,7 @@ export class TeamPage extends Component {
             {leaderElement}
             <div className="team-description">
               <div className="team-title">{group.name}</div>
+              <hr></hr>
               <div className="team-text">{group.description}</div>
             </div>
           </div>

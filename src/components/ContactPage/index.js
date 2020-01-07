@@ -110,7 +110,7 @@ export class ContactInfo extends Component {
               </div>
             </a>
             <h2>
-              <div class="service-title">Our newspaper</div>
+              <div class="service-title">Our newsletter</div>
             </h2>
             <div class="service-desc">
               Read our new newspaper and find out more about our team leaders
