@@ -1490,6 +1490,7 @@ found {
   min-width: 100%;
   max-width: 100%;
   max-height: none;
+  border-radius: 10%;
 }
 
 .page img:after {
@@ -1590,7 +1591,7 @@ found {
 }
 
 .team-member {
-  width: 120px;
+  width: 200px;
   margin: 8px;
 }
 
@@ -1602,10 +1603,8 @@ found {
   font-size: 0;
   width: 100%;
   position: relative;
-  box-shadow: 0 0 8px -2px #000;
-  border-radius: 4px;
+  border-radius: 60%;
   object-fit: cover;
-  height: 150px;
   overflow: hidden;
 }
 
@@ -1651,7 +1650,7 @@ found {
   font-size: 1.2rem;
   text-shadow: 0 0 3px #000;
   transition-property: color top;
-  transition-duration: 0.2s;
+  transition-duration: 0.4s;
   transition-timing-function: ease-in-out;
 }
 
@@ -1667,6 +1666,9 @@ found {
 .team-title {
   font-size: 6em;
   font-weight: bold;
+  color: #d7572d;
+  text-align: left;
+  margin-left: 20px;
 }
 
 .team-description {
@@ -1689,11 +1691,13 @@ found {
 
 @media (min-width: 987px) {
   .team-title {
-    font-size: 6rem;
+    font-size: 5rem;
   }
 
   .team-text {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
+    text-align: left;
+    margin-left: 20px;
   }
 }
 
@@ -2297,11 +2301,13 @@ div.fb-like {
 }
 
 .team-member .team-member-image {
-  height: 180px;
+  height: 220px;
+  object-fit: cover;
 }
 .team-member .team-member-image > img {
-  height: 100%;
   object-fit: cover;
+  height: 100%;
+  object-position: top;
 }
 
 .services-container .service-box > a {
@@ -2323,4 +2329,10 @@ div.fb-like {
 
 .page.page-team {
   background-color: #333333;
+}
+
+.team-page,
+button:hover {
+  background-color: rgba(255, 127, 0, 0.7);
+  transition-duration: 0.5s;
 }

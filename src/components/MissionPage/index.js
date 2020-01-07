@@ -3,6 +3,10 @@ import React, { Component } from 'react'
 import { Section, SubSection, SubSubSection } from '../PageLayout'
 import { Breadcrumb } from '../Common/breadcrumb'
 import { ASSETS_URL } from '../../constants'
+;<link
+  href="https://fonts.googleapis.com/css?family=Nova+Mono"
+  rel="stylesheet"
+></link>
 
 export class MissionPage extends Component {
   constructor(props) {
@@ -465,47 +469,44 @@ export class MissionPage extends Component {
     return (
       <div className="page page-mission">
         <div class="padding">
-          <div id="nxt">
-            <div class="container">
-              <div class="row">
-                <div class="col-sm-6">
-                  <img src={ASSETS_URL + '/images/assets/iarc.png'} />
-                </div>
-                <div class="col-sm-6 text-center">
-                  <h1>THE INTERNATIONAL AERIAL COMPETITION</h1>
-                  <center>
-                    <h2>IARC</h2>
-                  </center>
-                  <hr />
-                  <p class="lead">
-                    The International Aerial Competition (IARC) is the longest
-                    running collegiate aerial robotics challenge in the world,
-                    whose primary goal is to “move the state-of-the-art in
-                    aerial robotics forward”. In order to succeed with this
-                    ambitious goal, IARC poses challenges deemed “impossible”
-                    when introduced. The longest mission running was mission 6,
-                    and was running for 8 years before Georgia Institute of
-                    Technology solved the mission. The misson was as followed:
-                  </p>
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6">
+                <img src={ASSETS_URL + '/images/assets/iarc.png'} />
+              </div>
+              <div class="col-sm-6 text-center">
+                <h1>THE INTERNATIONAL AERIAL COMPETITION</h1>
+                <center>
+                  <h2>IARC</h2>
+                </center>
+                <hr />
+                <p class="lead">
+                  The International Aerial Competition (IARC) is the longest
+                  running collegiate aerial robotics challenge in the world,
+                  whose primary goal is to “move the state-of-the-art in aerial
+                  robotics forward”. In order to succeed with this ambitious
+                  goal, IARC poses challenges deemed “impossible” when
+                  introduced. The longest mission running was mission 6, and was
+                  running for 8 years before Georgia Institute of Technology
+                  solved the mission. The misson was as followed:
+                </p>
 
-                  <div class="para">
-                    <p class="lead">
-                      <i>
-                        "The robots had to locate an opening in a building,
-                        enter when a surveillance camera was not looking,
-                        navigate crowded hallways, avoid or disable security
-                        systems, interpret signage in Arabic, and finally reach
-                        a particular room without bumping any walls or landing.
-                        From there, the robot had to locate a particular paper
-                        inbox containing a flash drive. It had to then retrieve
-                        that flash drive, replace it with an identical blank
-                        flash drive, and exit the building within a short time
-                        span."
-                      </i>
-                    </p>
-                    <br />
-                    <br />
-                  </div>
+                <div class="para">
+                  <p class="lead">
+                    <i>
+                      "The robots had to locate an opening in a building, enter
+                      when a surveillance camera was not looking, navigate
+                      crowded hallways, avoid or disable security systems,
+                      interpret signage in Arabic, and finally reach a
+                      particular room without bumping any walls or landing. From
+                      there, the robot had to locate a particular paper inbox
+                      containing a flash drive. It had to then retrieve that
+                      flash drive, replace it with an identical blank flash
+                      drive, and exit the building within a short time span."
+                    </i>
+                  </p>
+                  <br />
+                  <br />
                 </div>
               </div>
             </div>
@@ -874,17 +875,13 @@ export class MissionPage extends Component {
               color: orange;
               font-family: "Times New Roman", Times, serif;
             }
-
-            @font-face {
-              font-family: digital;
-              src: url(digital.ttf);
-            }            
+   
             
             #show {
               padding-top: 40px;
               color: #DE5021;
               font-weight: lighter;
-              font-family: digital, serif;
+              font-family: Nova Mono, serif;
               text-align: center;
               word-spacing: 15px;
               font-size: 60px;

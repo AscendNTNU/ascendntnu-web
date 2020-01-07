@@ -327,20 +327,18 @@ export class JoinPage extends Component {
           ></p>
           <SubSection titleText=" Application for team 2021 will start soon, stay tuned on our social media for more information">
             <hr />
-            <center>
-              <p>
-                Ascend NTNU develops an autonomous drone and competes in the
-                International Aerial Robotics Competition every year, the worlds
-                largest and oldest engineering competition for autonomous aerial
-                robotics. Ascend NTNU is searching for new members for team
-                2019, which will get the opportunity to develop, build and
-                compete with a high tech drone. Underneath is a description of
-                the different positions you can apply for. No previous knowledge
-                is neccesary, the most important factor we are looking for are
-                motivation and dedication
-                <br />
-              </p>
-            </center>
+            <p>
+              Ascend NTNU develops an autonomous drone and competes in the
+              International Aerial Robotics Competition every year, the worlds
+              largest and oldest engineering competition for autonomous aerial
+              robotics. Ascend NTNU is searching for new members for team 2019,
+              which will get the opportunity to develop, build and compete with
+              a high tech drone. Underneath is a description of the different
+              positions you can apply for. No previous knowledge is neccesary,
+              the most important factor we are looking for are motivation and
+              dedication
+              <br />
+            </p>
           </SubSection>
           <br />
           <YouTube videoId="qr6UwZnJUYc" opts={opts} onReady={this._onReady} />
