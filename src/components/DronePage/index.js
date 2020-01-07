@@ -31,9 +31,8 @@ export class DronePage extends Component {
                   <br />
                   <br />
                   <br />
-                  <a href="Index.html">
-                    <img src={ASSETS_URL + '/images/assets/2019_new.png'} />
-                  </a>
+
+                  <img src={ASSETS_URL + '/images/assets/2019_new.png'} />
                 </div>
                 <div class="col-sm-6 text-center">
                   <h1>INKY, BLINKY, PINKY & CLYDE</h1>
@@ -42,19 +41,18 @@ export class DronePage extends Component {
                   </center>
                   <hr />
                   <p class="lead">
-                    This year we for the first time had a drone swarm! We built
-                    four drones and named them after Pacman. The drones
-                    prominently feature carbon fiber ducts around the
-                    propellers, which ensures human-safe operation and provides
-                    an increase in lift. Other parts of the frame are
-                    constructed using carbon fiber and 3d printed parts to
-                    ensure strength and light weight. Each drone is equipped
-                    with an Nvidia Jetson TX2 computer. These provide ample
-                    computing power to handle data from the stereo cameras and
-                    other sensors. The systems are built on the framework of ROS
-                    (Robot Operating Systems), allowing for a modular structure
-                    of the software stack from the sensors to the control
-                    systems.
+                    To solve IARC Mission 8, Ascend has for the first time
+                    developed a swarm of four drones. The drones prominently
+                    feature carbon fiber ducts around the propellers, which
+                    ensures human-safe operation and provides an increase in
+                    lift. Other parts of the frame are constructed using carbon
+                    fiber and 3d printed parts to ensure strength and light
+                    weight. Each drone is equipped with an Nvidia Jetson TX2
+                    computer. These provide ample computing power to handle data
+                    from the stereo cameras and other sensors. The systems are
+                    built on the framework of ROS (Robot Operating Systems),
+                    allowing for a modular structure of the software stack from
+                    the sensors to the control systems.
                   </p>
 
                   <p class="lead">
@@ -94,28 +92,27 @@ export class DronePage extends Component {
                   <hr />
                   <left>
                     <p>
-                      This years drone is a new and improved version of last
-                      year´s drone. It got more computing power and sensors than
-                      the previous one. The structure of the drone is made out
-                      of carbon fibre and 3d printed parts. This makes it
-                      modular, which allows easy testing of multiple
-                      technologies.
+                      Mist was Ascend NTNUs final Mission 7 drone, and was an
+                      improved version of the previous drones. The structure is
+                      made out of carbon fiber, with 3D printed parts making for
+                      a modular design and allowing easy testing of multiple
+                      technologies. One of the key improvements is the landing
+                      gear, which integrates sensors for height, landing and
+                      physical contact with the ground robots.
                     </p>
 
                     <p>
-                      The drone feature two Nvidia TX2s, which run the operating
-                      system based on ROS. The landing gear has multiple sensors
-                      for detection of height, landing and physical contact with
-                      ground robots. The new and lighter cameras is isolated
-                      from the frame to minimize vibrations.
+                      The drone features two Jetson Nvidia TX2 computers running
+                      systems communicating through ROS. Images from the
+                      vibration-isolated cameras are fed into a neural network
+                      to detect ground robots, and the AI systems determine the
+                      strategy the drone should execute to solve the mission.
                     </p>
                   </left>
                 </div>
                 <div class="col-sm-6">
                   <div class="mist">
-                    <a href="alphapilot.html">
-                      <img src={ASSETS_URL + '/images/assets/mist_2.png'} />
-                    </a>
+                    <img src={ASSETS_URL + '/images/assets/mist_2.png'} />
                   </div>
                 </div>
               </div>
@@ -133,9 +130,8 @@ export class DronePage extends Component {
                 <div class="col-sm-6">
                   <br />
                   <br />
-                  <a href="Index.html">
-                    <img src={ASSETS_URL + '/images/assets/VALKYRIE (2).png'} />
-                  </a>
+
+                  <img src={ASSETS_URL + '/images/assets/VALKYRIE (2).png'} />
                 </div>
                 <div class="col-sm-6 text-center">
                   <br />
@@ -149,16 +145,16 @@ export class DronePage extends Component {
                     platform for testing new control software. The small size
                     and low weight means that we can test new control
                     strategies, including landing on ground robots, with less
-                    risk of damage to equipment.
+                    risk of damage to the equipment.
                   </p>
 
                   <p class="lead">
                     It has a Pixhawk flight controller and an Intel NUC onboard
                     computer running Ubuntu Server with ROS. The custom made
-                    frame made of carbon fiber and 3D-printed parts allows
-                    compact placement of the hardware and even weight
+                    frame consisting of carbon fiber and 3D-printed parts allows
+                    for compact placement of the hardware and an even weight
                     distribution, and well balanced motors from T-Motor minimize
-                    vibrations and yields high efficiency.
+                    vibrations and yield high efficiency.
                   </p>
                 </div>
               </div>
@@ -179,14 +175,14 @@ export class DronePage extends Component {
                   </center>
                   <hr />
                   <p>
-                    Our second aerial robot is custom designed using carbon
-                    fiber and 3D-printed parts. It was build for the 2016 IARC
-                    and designed with Mission 7 in mind, and it is able to carry
-                    all the equipment we need to herd the target robots across
-                    the green line. The sensors it has for navigation, ground
-                    robot detection and collision avoidance is five cameras, one
-                    laser rangefinder, one 2D laser scanner, and an inertial
-                    measurement unit.
+                    Our second aerial robot was custom designed and built using
+                    carbon fiber and 3D-printed parts. It was built for the IARC
+                    of 2016 and designed with Mission 7 in mind, and is able to
+                    carry all the equipment needed to herd the target robots
+                    across the green line. The sensors the drone uses for
+                    navigation, ground robot detection and collision avoidance
+                    includes five cameras, one laster rangefinder, a 2D laser
+                    scanner and an inertial measurment unit.
                   </p>
 
                   <p>
@@ -202,9 +198,8 @@ export class DronePage extends Component {
                   <br />
                   <br />
                   <br />
-                  <a href="alphapilot.html">
-                    <img src={ASSETS_URL + '/images/assets/drone2_0.png'} />
-                  </a>
+
+                  <img src={ASSETS_URL + '/images/assets/drone2_0.png'} />
                 </div>
               </div>
             </div>
