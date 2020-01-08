@@ -37,7 +37,7 @@ export class DronePage extends Component {
                 <div class="col-sm-6 text-center">
                   <h1>INKY, BLINKY, PINKY & CLYDE</h1>
                   <center>
-                    <h2>2019</h2>
+                    <h2>&#9733; 2019 &#9733;</h2>
                   </center>
                   <hr />
                   <p class="lead">
@@ -87,7 +87,7 @@ export class DronePage extends Component {
                     <h1>MIST </h1>
                   </center>
                   <center>
-                    <h2>2018</h2>
+                    <h2>&#9733; 2018 &#9733;</h2>
                   </center>
                   <hr />
                   <left>
@@ -137,7 +137,7 @@ export class DronePage extends Component {
                   <br />
                   <h1>Valkyrie</h1>
                   <center>
-                    <h2>2017</h2>
+                    <h2>&#9733; 2017 &#9733;</h2>
                   </center>
                   <hr />
                   <p class="lead">
@@ -171,7 +171,7 @@ export class DronePage extends Component {
                     <h1>Drone 2.0</h1>
                   </center>
                   <center>
-                    <h2>2016</h2>
+                    <h2>&#9733; 2016 &#9733;</h2>
                   </center>
                   <hr />
                   <p>
