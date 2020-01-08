@@ -341,7 +341,7 @@ export class JoinPage extends Component {
             </p>
           </SubSection>
           <br />
-          <YouTube videoId="OxzKLLsIOGU" opts={opts} onReady={this._onReady} />
+          <YouTube videoId="DLbBztP8Yi4" opts={opts} onReady={this._onReady} />
           <a
             className="button active"
             style={{
