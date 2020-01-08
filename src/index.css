@@ -713,6 +713,7 @@ body.no-scroll {
   right: 14px;
   margin: 16px;
   cursor: pointer;
+  border-radius: 50%;
 }
 
 .totop-button.hover {
@@ -727,7 +728,7 @@ body.no-scroll {
 }
 
 .totop-button path {
-  stroke: #fff;
+  stroke: #d7572d;
 }
 
 .sponsors .sponsor img {
