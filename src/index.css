@@ -33,7 +33,7 @@
 }
 
 body {
-  font-family: 'Times New Roman', sans-serif;
+  font-family: 'questrial', sans-serif;
   margin: 0;
   background-color: var(--primary-dark);
 }
@@ -955,7 +955,7 @@ body.no-scroll {
 .dark-theme h4,
 .dark-theme h5,
 .dark-theme h6 {
-  text-shadow: 0 1px 4px #000;
+  text-shadow: 0 1px 4px rgb(32, 32, 32);
 }
 
 .dark-theme .section-title:empty,
@@ -2223,7 +2223,7 @@ p {
 * {
   margin: 0;
   padding: 0;
-  font-family: 'montserrat', sans-serif;
+  font-family: 'Questrial', sans-serif;
   box-sizing: border-box;
 }
 
