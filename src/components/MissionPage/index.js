@@ -881,9 +881,9 @@ export class MissionPage extends Component {
               padding-top: 40px;
               color: #DE5021;
               font-weight: lighter;
-              font-family: Nova Mono, serif;
               text-align: center;
-              word-spacing: 15px;
+              font-family: 'Orbitron', monospace;
+              word-spacing: 5px;
               font-size: 60px;
             }
             
