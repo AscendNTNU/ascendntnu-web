@@ -393,7 +393,7 @@ body.no-scroll {
 }
 
 .page-container {
-  max-width: 768px;
+  max-width: 970px;
   width: 100%;
   flex: 1 0 auto;
   margin: auto;
@@ -1491,7 +1491,6 @@ found {
   min-width: 100%;
   max-width: 100%;
   max-height: none;
-  border-radius: 10%;
 }
 
 .page img:after {
