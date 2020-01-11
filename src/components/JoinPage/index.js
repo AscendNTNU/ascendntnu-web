@@ -6,6 +6,7 @@ import { Section, SubSection } from '../PageLayout'
 import { Breadcrumb } from '../Common/breadcrumb'
 
 import YouTube from 'react-youtube'
+import { Color } from 'three'
 export class JoinPage extends Component {
   constructor(props) {
     super(props)
@@ -367,47 +368,41 @@ export class JoinPage extends Component {
           {positions[this.state.language][1]}
           <SubSection titleText="Why should you apply?">
             <hr />
-            <ul>
-              <li>
+            <ul className="intro_pakke">
+              <li className="intro">
                 {' '}
-                <strong> Be a part of an environment. </strong>
+                <strong>Be a part of an environment </strong>
                 By being a part of Ascend you become a part of a goal oriented
                 and technology focused project where we work together to reach
                 our goals.
               </li>
-              <li>
-                {' '}
-                <strong> From theory to the real world. </strong>
+              <li className="intro2">
+                <strong>Add theory to the real world </strong>
                 In Ascend you take some of the most advanced topics you learn on
-                NTNU from the courses out in real life.{' '}
+                NTNU from the courses out in real life.
               </li>
-              <li>
-                {' '}
-                <strong> Combine it with your studies. </strong>
+              <li className="intro">
+                <strong> Combine it with your studies </strong>
                 Several of our members write project/maaster thesis in related
                 to their work in Ascend. There is also an oppurtunity to do
-                "Eksperter i Team" with Ascend.{' '}
+                "Eksperter i Team" with Ascend.
               </li>
-              <li>
-                {' '}
-                <strong> Project / Organization experience </strong>
+              <li className="intro4">
+                <strong>Organization experience </strong>
                 In Ascend you are being a part of leading a technical project
                 from start to finish - This gives lots of valuable experience.{' '}
               </li>
-              <li>
-                {' '}
-                <strong> Cutting edge. </strong>
+              <li className="intro5">
+                <strong>Cutting edge technology</strong>
                 Be a part of an organization which needs to use and develop
                 state of the art technology within the field of autonomous
-                robotics.{' '}
+                robotics.
               </li>
-              <li>
-                {' '}
-                <strong> Creative, flexible and innovative culture </strong>
-                We wish to have an everchanging work culture in Ascend so your
-                contribution to the organization can also involve tasks outside
-                your job description that will be inspired by your interests and
-                experiences!{' '}
+              <li className="intro6">
+                <strong>Innovative culture </strong>
+                Our work culture is flexible, and your contribution can involve
+                tasks outside your job description if they fit your interests
+                and experience.
               </li>
             </ul>
           </SubSection>
