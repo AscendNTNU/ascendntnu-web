@@ -250,9 +250,14 @@ export class DronePage extends Component {
           background-color: #37373b;
         }
         
-        h2, h3, h4 {
+        h3, h4 {
           color: #FFF;
           text-align: center;
+        }
+
+        h2{
+          text-align: center;
+          color: #c49a6c;
         }
         
         h1 {
