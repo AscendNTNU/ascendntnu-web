@@ -2366,61 +2366,61 @@ strong:hover {
   text-align: left;
   padding: 10px;
   text-decoration: none;
-  width: 320px;
+  width: 281.4px;
   height: 300px;
   display: -webkit-inline-flex;
   flex-wrap: wrap;
-  margin: 20px;
+  margin: 10px;
 }
 
 .intro2 {
   text-align: left;
   padding: 10px;
   text-decoration: none;
-  width: 320px;
+  width: 281.4px;
   height: 300px;
   display: -webkit-inline-flex;
   flex-wrap: wrap;
-  margin: 20px;
+  margin: 10px;
 }
 
 .intro4 {
   text-align: left;
   padding: 10px;
   text-decoration: none;
-  width: 320px;
+  width: 281.4px;
   height: 300px;
   display: -webkit-inline-flex;
   flex-wrap: wrap;
-  margin: 20px;
+  margin: 10px;
 }
 
 .intro5 {
   text-align: left;
   padding: 10px;
   text-decoration: none;
-  width: 320px;
+  width: 281.4px;
   height: 300px;
   display: -webkit-inline-flex;
   flex-wrap: wrap;
-  margin: 20px;
+  margin: 10px;
 }
 
 .intro6 {
   text-align: left;
   padding: 10px;
   text-decoration: none;
-  width: 320px;
+  width: 281.4px;
   height: 300px;
   display: -webkit-inline-flex;
   flex-wrap: wrap;
-  margin: 20px;
+  margin: 10px;
 }
 
 .intro,
 #text {
   font-size: 19px;
-  padding-bottom: 35px;
+  margin-bottom: 10px;
 }
 
 .intro2,
@@ -2438,7 +2438,7 @@ strong:hover {
 .intro5,
 #text {
   font-size: 19px;
-  padding-bottom: 60px;
+  padding-bottom: 35px;
 }
 
 .intro6,
