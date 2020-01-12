@@ -1040,6 +1040,22 @@ h4,
   }
 }
 
+@media (max-width: 370px) {
+  .intro,
+  .intro2,
+  .intro4,
+  .intro5,
+  .intro6 {
+    text-align: left;
+    padding: 10px;
+    text-decoration: none;
+    height: 300px;
+    display: -webkit-inline-flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 10px;
+  }
+}
 .sub-section {
   flex: 1 0 auto;
   margin: 0 auto;
@@ -2350,61 +2366,61 @@ strong:hover {
   text-align: left;
   padding: 10px;
   text-decoration: none;
-  width: 30%;
+  width: 320px;
   height: 300px;
   display: -webkit-inline-flex;
   flex-wrap: wrap;
-  margin: 10px;
+  margin: 20px;
 }
 
 .intro2 {
   text-align: left;
   padding: 10px;
   text-decoration: none;
-  width: 30%;
+  width: 320px;
   height: 300px;
   display: -webkit-inline-flex;
   flex-wrap: wrap;
-  margin: 10px;
+  margin: 20px;
 }
 
 .intro4 {
   text-align: left;
   padding: 10px;
   text-decoration: none;
-  width: 30%;
+  width: 320px;
   height: 300px;
   display: -webkit-inline-flex;
   flex-wrap: wrap;
-  margin: 10px;
+  margin: 20px;
 }
 
 .intro5 {
   text-align: left;
   padding: 10px;
   text-decoration: none;
-  width: 30%;
+  width: 320px;
   height: 300px;
   display: -webkit-inline-flex;
   flex-wrap: wrap;
-  margin: 10px;
+  margin: 20px;
 }
 
 .intro6 {
   text-align: left;
   padding: 10px;
   text-decoration: none;
-  width: 30%;
+  width: 320px;
   height: 300px;
   display: -webkit-inline-flex;
   flex-wrap: wrap;
-  margin: 10px;
+  margin: 20px;
 }
 
 .intro,
 #text {
   font-size: 19px;
-  margin-bottom: 15px;
+  padding-bottom: 35px;
 }
 
 .intro2,
@@ -2422,7 +2438,7 @@ strong:hover {
 .intro5,
 #text {
   font-size: 19px;
-  padding-bottom: 35px;
+  padding-bottom: 60px;
 }
 
 .intro6,
