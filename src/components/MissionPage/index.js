@@ -470,7 +470,10 @@ export class MissionPage extends Component {
       <div className="page page-mission">
         <div class="padding">
           <div class="container">
-            <div class="row">
+            <div
+              class="row"
+              style={{ display: 'flex', flexWrap: 'wrap-reverse' }}
+            >
               <div class="col-sm-6">
                 <img src={ASSETS_URL + '/images/assets/iarc.png'} />
               </div>
