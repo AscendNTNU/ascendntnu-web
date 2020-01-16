@@ -37,9 +37,6 @@ export class Header extends Component {
               />
               <div className="logo-title-text">
                 asc<span className="logo-title-e">e</span>nd
-                <div className="logo-title-text-mini">
-                  areal robotics team <strong>NTNU</strong>
-                </div>
               </div>
             </div>
           </NavLink>
