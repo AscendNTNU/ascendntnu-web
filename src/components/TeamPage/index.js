@@ -313,7 +313,7 @@ export class TeamPage extends Component {
           <SubSection className="page-container-big">{teamPhoto}</SubSection>
           <SubSection titleText="Groups" className="page-container-big">
             {this.state.year == 2020
-              ? `We currently consist of ${this.state.memberCount} students at NTNU, working together, to solve mission 9. Our team consists of seven groups: The board, AI, Control, Hardware, Marketing, Perception and AlphaPilot.`
+              ? `We currently consist of ${this.state.memberCount} students at NTNU working together to solve mission 9 and AlphaPilot competition. Our team consists of seven groups: The board, AI, Control, Hardware, Marketing, Perception and AlphaPilot.`
               : ''}
             {groups}
           </SubSection>

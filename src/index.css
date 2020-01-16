@@ -142,12 +142,20 @@ input[type='submit'].active,
 
 .logo-title .logo-img {
   height: 36px;
+  margin-top: 5px;
 }
 
 .logo-title-text {
-  margin-left: 8px;
+  margin-left: px;
   letter-spacing: -0.05em;
   white-space: nowrap;
+}
+
+.logo-title-text-mini {
+  margin-left: px;
+  letter-spacing: -0.05em;
+  white-space: nowrap;
+  font-size: 8px;
 }
 
 .logo-title-e {
