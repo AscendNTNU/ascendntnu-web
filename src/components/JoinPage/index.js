@@ -54,7 +54,7 @@ export class JoinPage extends Component {
         <Section titleText="Positions we offer" key="2">
           <hr />
           <p>
-            <div class="paragraf_T"> The Board</div> is responsible for the
+            <div class="paragraf_T"> The Board</div> Is responsible for the
             organizational and managerial tasks related to running Ascend NTNU.
             You will coordinate the high level work of the team, ensuring that
             plans and deadlines are kept, budgets are met, and that work is
@@ -98,7 +98,7 @@ export class JoinPage extends Component {
               </li>
 
               <p id="tittel">
-                <div class="paragraf_T">The technical group leaders</div> are
+                <div class="paragraf_T">The technical group leaders</div> Are
                 responsible for leading one of the five technical groups in
                 Ascend NTNU: AlphaPilot, AI, Control, Hardware or Perception. As
                 a group leader, your main responsibility is to organize the
