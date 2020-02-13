@@ -26,7 +26,7 @@ export class JoinPage extends Component {
   }
 
   setAnchor(anchor) {
-    let top = document.getElementById(anchor).offsetTop - 71
+    let top = document.getElementById(anchor).offsetTop - 70
     document.querySelector('body').scrollTop = top
     document.querySelector('#app').scrollTop = top
     console.log(this.refs)
