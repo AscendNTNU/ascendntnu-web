@@ -2458,3 +2458,24 @@ strong:hover {
 .intro_pakke {
   text-align: center;
 }
+
+.paragraf {
+  color: #c49a6c;
+  font-style: sans-serif;
+}
+.paragraf:hover {
+  text-decoration-line: underline;
+}
+
+.paragraf_T {
+  color: #c49a6c;
+  font-style: sans-serif;
+}
+.paragraf_T:hover {
+  text-decoration-line: underline;
+  font-size: 26px;
+}
+
+#tittel {
+  text-align: left;
+}
