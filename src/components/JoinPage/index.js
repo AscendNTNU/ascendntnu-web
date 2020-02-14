@@ -687,8 +687,8 @@ export class JoinPage extends Component {
             </a>
             . We wish to create an environment where students can learn about
             autonomous drones, and have the yearly competition as a joint goal.
-            We look as Ascend as an arena to develop both technical and
-            administrative skills
+            Ascend is an organization where you can develop both technical and
+            administrative skills.
           </p>
           <SubSection titleText="How we work">
             <ul>
@@ -717,43 +717,6 @@ export class JoinPage extends Component {
               </li>
             </ul>{' '}
           </SubSection>{' '}
-          <SubSection titleText="Our collaboration platforms">
-            <ul>
-              <li>
-                {' '}
-                <strong> Slack: </strong>{' '}
-                <a href="https:/ / slack.com / ">Slack </a>
-                is a web application for chatting with teams. Using slack we get
-                easy, open and straightforward communication - where everybody
-                gets the opportunity to get updated and contribute in the areas
-                they want. Because of slack we do almost never use email for
-                communication within the team.
-              </li>
-              <li>
-                <strong> Github: </strong>We host our code on{' '}
-                <a href="https:/ / github.com / ">github</a>, and use the git
-                workflow while collaborating
-              </li>
-              <li>
-                <strong> Jira: </strong>
-                <a href="https:/ / www.atlassian.com / software / jira ">
-                  Jira{' '}
-                </a>
-                is a project management tool from Atlassian. We use Jira to keep
-                track of which tasks are being worked on, and which needs to be
-                finished to complete the different parts of the projects.
-              </li>
-              <li>
-                <strong> Confluence: </strong>We use{' '}
-                <a href="https:/ / www.atlassian.com / software / confluence ">
-                  Confluence{' '}
-                </a>
-                to keep and share the knowledge we have within the organization.
-                By posting things in the wikis, the organization grows its
-                knowledge base, even though new members come and go.
-              </li>
-            </ul>{' '}
-          </SubSection>
           <SubSection titleText="Our workspace">
             <p>
               {' '}
@@ -773,7 +736,7 @@ export class JoinPage extends Component {
               equipment and competence. Several of our members are writing
               projects and master thesis connected with the work at Ascend for
               IDI and ITK. A collection of all of our sponsors can be found at
-              the bottom on our frontpage.
+              the homepage.
             </p>{' '}
           </SubSection>{' '}
           <SubSection titleText="Questions?">
