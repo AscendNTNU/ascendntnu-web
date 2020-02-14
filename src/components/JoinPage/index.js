@@ -132,7 +132,7 @@ export class JoinPage extends Component {
                 <a> AI Group Leader </a>
               </li>
 
-              <li onClick={() => this.setAnchor('AlphaPilot-Group-Leaders')}>
+              <li onClick={() => this.setAnchor('AlphaPilot-Group-Leader')}>
                 {' '}
                 <a> AlphaPilot Group Leader </a>
               </li>
@@ -193,11 +193,11 @@ export class JoinPage extends Component {
                 <br></br>
               </div>
               If you have any question about these positions, do not hesitate to
-              contact: Jo Aleksander Johansen (Project Manager) at{' '}
+              contact: Jo Aleksander Johansen (Project Manager) at :
               <a href=" mailto:jo.johansen@ascendntnu.no ">
                 jo.johansen@ascendntnu.no
               </a>
-              or Airin Thodesen (Deputy Project Manager) at{' '}
+              , or Airin Thodesen (Deputy Project Manager) at{' '}
               <a href=" mailto:airin.thodesen@ascendntnu.no ">
                 airin.thodesen@ascendntnu.no
               </a>
@@ -272,11 +272,11 @@ export class JoinPage extends Component {
                 <br></br>
               </div>
               If you have any questions about those positions, you can contact:
-              Filip Grevle Lolland (Chief Engineer) at{' '}
+              Filip Grevle Lolland (Chief Engineer) at :
               <a href=" mailto:filip.lolland@ascendntnu.no ">
                 filip.lolland@ascendntnu.no
               </a>
-              or Kevin Dinulong Meyer (Deputy Chief Engineer) at{' '}
+              , or Kevin Dinulong Meyer (Deputy Chief Engineer) at :
               <a href=" mailto:kevin.meyer@ascendntnu.no ">
                 kevin.meyer@ascendntnu.no
               </a>
@@ -330,7 +330,7 @@ export class JoinPage extends Component {
                 <br></br>
               </div>
               If you have any questions about this position, you can contact:
-              Airin Thodesen at{' '}
+              Airin Thodesen at :
               <a href=" mailto:airin.thodesen@ascendntnu.no ">
                 airin.thodesen@ascendntnu.no
               </a>
@@ -388,8 +388,10 @@ export class JoinPage extends Component {
                 <br></br>
                 <br></br>
               </div>
-              If you have any questions about this position, you can contact:
-              Inger-Lovise Fjellgaard (Head of Marketing) at
+              <p>
+                If you have any questions about this position, you can contact
+                Inger-Lovise Fjellgaard at:
+              </p>
               <a href=" mailto:ingerlovise.fjellgaard@ascendntnu.no ">
                 ingerlovise.fjellgaard@ascendntnu.no
               </a>
@@ -424,7 +426,7 @@ export class JoinPage extends Component {
               necessary to create an autonomous racing drone.
               <br></br>
               If you have any questions about this position, you can contact
-              Paul Frivold at{' '}
+              Paul Frivold at:{' '}
               <a href=" mailto:paul.frivold@ascendntnu.no ">
                 paul.frivold@ascendntnu.no
               </a>
@@ -461,7 +463,7 @@ export class JoinPage extends Component {
               <br></br>
               <br></br>
               If you have any question about this position, you can contact
-              Håvard Brenne at{' '}
+              Håvard Brenne at:{' '}
               <a href=" mailto:haavard.brenne@ascendntnu.no ">
                 haavard.brenne@ascendntnu.no
               </a>
@@ -536,8 +538,10 @@ export class JoinPage extends Component {
               drone.
               <br></br>
               <br></br>
-              If you have any questions about this position can contact Simen
-              Gangstad at{' '}
+              <p>
+                If you have any questions about this position can contact Simen
+                Gangstad at:{' '}
+              </p>{' '}
               <a href=" mailto:simen.gangstad@ascendntnu.no ">
                 simen.gangstad@ascendntnu.no
               </a>
@@ -574,7 +578,9 @@ export class JoinPage extends Component {
               information.
               <br></br>
               <br></br>
-              Should you have any questions, you can reach Torjus Bakkene at
+              <p>
+                Should you have any questions, you can reach Torjus Bakkene at:
+              </p>
               <a href=" mailto:torjus.bakkene@ascendntnu.no ">
                 torjus.bakkene@ascendntnu.no
               </a>
@@ -723,7 +729,7 @@ export class JoinPage extends Component {
               </li>
               <li>
                 {' '}
-                <strong> Learning by doing. </strong> Noone in Ascend knows the
+                <strong> Learning by doing. </strong> None in Ascend knows the
                 exact solution to the problems we are trying to solve. But we
                 are open to learn new concepts and technologies . Our idea is
                 that the way to accomplish our goals are through trying and
@@ -794,7 +800,7 @@ export class JoinPage extends Component {
             <p>
               {' '}
               If you have any questions, please reach out to us at:{' '}
-              <a href="mailto:hi@ascendntnu.no"> hi @ascendntnu.no </a>
+              <a href="mailto:hi@ascendntnu.no"> hi@ascendntnu.no </a>
             </p>
           </SubSection>
         </Section>

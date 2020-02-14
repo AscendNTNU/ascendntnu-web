@@ -169,14 +169,13 @@ export class FrontPage extends Component {
                   <br />
                   <br />
                   <br />
-                  <a href="">
-                    <img
-                      src={
-                        ASSETS_URL +
-                        '/images/teams/logoes/2020/Alphapilot-logo.svg'
-                      }
-                    />
-                  </a>
+
+                  <img
+                    src={
+                      ASSETS_URL +
+                      '/images/teams/logoes/2020/Alphapilot-logo.svg'
+                    }
+                  />
                 </div>
               </div>
             </div>
