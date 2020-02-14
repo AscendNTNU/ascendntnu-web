@@ -203,11 +203,6 @@ export class JoinPage extends Component {
               </a>
               <br></br>
               <br></br>
-              <i className="key-words">
-                {' '}
-                Keywords: Presentation Techniques, Negotiations, Extrovert,
-                Organized, Networking
-              </i>
             </p>
           </SubSection>
           <SubSection
@@ -282,11 +277,6 @@ export class JoinPage extends Component {
               </a>
               <br></br>
               <br></br>
-              <i className="key-words">
-                {' '}
-                Keywords: Presentation, Organizing, Outgoing, Standing and Event
-                Planning.
-              </i>
             </p>
           </SubSection>
 
@@ -336,11 +326,6 @@ export class JoinPage extends Component {
               </a>
               <br></br>
               <br></br>
-              <i className="key-words">
-                {' '}
-                Keywords: Presentation, Organizing, Outgoing, Standing and Event
-                Planning.
-              </i>
             </p>
           </SubSection>
           <SubSection
@@ -397,11 +382,6 @@ export class JoinPage extends Component {
               </a>
               <br></br>
               <br></br>
-              <i className="key-words">
-                {' '}
-                Keywords: Presentation, Organizing, Outgoing, Standing and Event
-                Planning.
-              </i>
             </p>
           </SubSection>
 
