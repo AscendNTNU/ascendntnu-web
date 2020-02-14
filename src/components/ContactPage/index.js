@@ -32,7 +32,7 @@ export class ContactInfo extends Component {
         <div class="border"></div>
         <div class="services-container">
           <div class="service-box">
-            <a href="mailto: jo.johansen@ascendntnu.no ">
+            <a href="mailto:jo.johansen@ascendntnu.no ">
               <div class="service-icon">
                 <i class="fas fa-male"></i>
               </div>
@@ -51,7 +51,7 @@ export class ContactInfo extends Component {
           </div>
 
           <div class="service-box">
-            <a href="mailto: Ingerlovise.fjellgaard@ascendntnu.no">
+            <a href="mailto:Ingerlovise.fjellgaard@ascendntnu.no">
               <div class="service-icon">
                 <i class="fas fa-female"></i>
               </div>
@@ -70,68 +70,29 @@ export class ContactInfo extends Component {
           </div>
 
           <div class="service-box">
-            <a href="mailto: paul.frivold@ascendntnu.no ">
+            <a href="mailto:filip.lolland@ascendntnu.no ">
               <div class="service-icon">
                 <i class="fas fa-male"></i>
               </div>
             </a>
             <h2>
-              <div class="service-title">AlphaPilot Leader</div>
+              <div class="service-title">Chief Engineer</div>
             </h2>
             <div class="service-desc">
               <h4>
-                <center>Paul Erik Frivold</center>
+                <center>Filip Grevle Lolland</center>
               </h4>
               <br />
-              The Alpha Pilot team aims to develop and create Scandinavia’s
-              first ever autonomous racing drone!
-            </div>
-          </div>
-
-          <div class="service-box">
-            <a href="https://www.google.com/maps/place/Ascend+NTNU/@63.4186185,10.4009943,19z/data=!3m1!4b1!4m5!3m4!1s0x466d3195aefc6cbf:0x353c741de61a935b!8m2!3d63.4186179!4d10.4015415">
-              <div class="service-icon">
-                <i class="fas fa-map-pin"></i>
-              </div>
-            </a>
-            <h2>
-              <div class="service-title">You can find us here</div>
-            </h2>
-            <div class="service-desc">
-              Ascend NTNU, Gløshaugen O.S. Bragstads plass 2 A/B, 7034 Trondheim
-              Norway
-            </div>
-          </div>
-
-          <div class="service-box">
-            <a href={ASSETS_URL + '/images/assets/Nyhetsbrev_finalfinal.pdf'}>
-              <div class="service-icon">
-                <i class="fas fa-newspaper"></i>
-              </div>
-            </a>
-            <h2>
-              <div class="service-title">Our newsletter</div>
-            </h2>
-            <div class="service-desc">
-              Read our new newspaper and find out more about our team leaders
-            </div>
-          </div>
-
-          <div class="service-box">
-            <Link to="blog">
-              <div class="service-icon">
-                <i class="fas fa-blog"></i>
-              </div>
-            </Link>
-            <h2>
-              <div class="service-title">Follow our journey</div>
-            </h2>
-            <div class="service-desc">
-              Follow our journey to the competition with our blog to keep you
-              updated on everything that have happend with our drones
+              The board is responsible for the whole team. They make sure
+              organization is moving forward and plan the future of Ascend.
             </div>
           </div>
         </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         <br />
         <br />
         <br />

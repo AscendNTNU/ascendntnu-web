@@ -426,7 +426,7 @@ export class MissionPage extends Component {
       },
     ]
 
-    const countDownDate = new Date('Jul 20, 2020 00:00:00').getTime()
+    const countDownDate = new Date('Aug 4, 2020 00:12:00').getTime()
     this.state = {
       countDownDate,
       ...this.getTimeLeft(countDownDate),
@@ -678,7 +678,7 @@ export class MissionPage extends Component {
                     Mission 7 ended in 2018 and took place indoors on a 20x20
                     meter grid arena. The mission was the following: The square
                     arena has two white edges, one green edge and one red edge,
-                    as shown in figure 1. In the middle of the arena 10 ground
+                    as shown in top figure. In the middle of the arena 10 ground
                     robots starts driving outwards towards the edges. The ground
                     robots moves in a specific pattern:
                     <ul>
@@ -698,7 +698,7 @@ export class MissionPage extends Component {
                       create havoc and must be avoided. If the drone hits them
                       twice, the run is terminated. The mission is to herd at
                       least four of the ground robots over the green line in
-                      order to complete the mission.To interact with the ground
+                      order to complete the mission. To interact with the ground
                       robots, there are two different options:
                     </p>
                     <ul>
@@ -718,16 +718,14 @@ export class MissionPage extends Component {
                     </ul>
                   </p>
                   <p>
-                    The mission must be solved in a maximum of 10 minutes, all
-                    the sensors must be onboard the drone and it has to be fully
-                    autonomous.{' '}
+                    {' '}
                     <a href="https://www.youtube.com/watch?v=LOU6-r7TRAA">
                       Here is video of the competing drones executing the tasks
                       of Mission 7
                     </a>{' '}
                     and{' '}
                     <a href="/images/assets/mission7rules_legacy.pdf">
-                      Here are the complete ruleset of Mission 7
+                      here are the complete ruleset of Mission 7
                     </a>
                   </p>
                   <br />
