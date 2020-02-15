@@ -208,16 +208,11 @@ export class Splash extends Component {
           style={{ position: 'absolute' }}
         />
         <div className="front-splash-left" style={styles.leftStyle}>
-          <p>
-            Autonomous aerial robotics for learning. Ascend NTNU is the{' '}
-            <a href="http://www.ntnu.edu/">
-              Norwegian University Of Science and Technology's
-            </a>{' '}
-            team in the{' '}
-            <a href="http://www.aerialroboticscompetition.org/">
-              International Aerial Robotics Competition
-            </a>
-            .
+          <p id="top-left">
+            Autonomous aerial robotics for learning. Ascend NTNU is the
+            Norwegian University of Science and Technology’s team in the
+            International Aerial Robotics Competition and in the AlphaPilot
+            Challenge.
           </p>
         </div>
         <div
