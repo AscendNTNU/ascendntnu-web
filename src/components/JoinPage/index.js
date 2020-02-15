@@ -401,7 +401,7 @@ export class JoinPage extends Component {
 
           <SubSection
             titleText="AlphaPilot Group Leaders"
-            id="AlphaPilot-Group-Leaders"
+            id="AlphaPilot-Group-Leader"
             ref={e => this.addRef(e, 'AlphaPilot-Group-Leaders')}
           >
             <hr />
