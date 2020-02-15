@@ -202,7 +202,7 @@ export class JoinPage extends Component {
                 <br></br>
               </div>
               If you have any question about these positions, do not hesitate to
-              contact: Jo Aleksander Johansen (Project Manager) at :
+              contact: Jo Aleksander Johansen (Project Manager) at,
               <a href=" mailto:jo.johansen@ascendntnu.no ">
                 jo.johansen@ascendntnu.no
               </a>
@@ -276,11 +276,11 @@ export class JoinPage extends Component {
                 <br></br>
               </div>
               If you have any questions about those positions, you can contact:
-              Filip Grevle Lolland (Chief Engineer) at :
+              Filip Grevle Lolland (Chief Engineer) at
               <a href=" mailto:filip.lolland@ascendntnu.no ">
                 filip.lolland@ascendntnu.no
               </a>
-              , or Kevin Dinulong Meyer (Deputy Chief Engineer) at :
+              , or Kevin Dinulong Meyer (Deputy Chief Engineer) at
               <a href=" mailto:kevin.meyer@ascendntnu.no ">
                 kevin.meyer@ascendntnu.no
               </a>
@@ -329,7 +329,7 @@ export class JoinPage extends Component {
                 <br></br>
               </div>
               If you have any questions about this position, you can contact:
-              Airin Thodesen at :
+              Airin Thodesen at
               <a href=" mailto:airin.thodesen@ascendntnu.no ">
                 airin.thodesen@ascendntnu.no
               </a>
@@ -384,7 +384,7 @@ export class JoinPage extends Component {
               </div>
               <p>
                 If you have any questions about this position, you can contact
-                Inger-Lovise Fjellgaard at:
+                Inger-Lovise Fjellgaard at
               </p>
               <a href=" mailto:ingerlovise.fjellgaard@ascendntnu.no ">
                 ingerlovise.fjellgaard@ascendntnu.no
@@ -420,7 +420,7 @@ export class JoinPage extends Component {
               necessary to create an autonomous racing drone.
               <br></br>
               If you have any questions about this position, you can contact
-              Paul Frivold at:{' '}
+              Paul Frivold at{' '}
               <a href=" mailto:paul.frivold@ascendntnu.no ">
                 paul.frivold@ascendntnu.no
               </a>
@@ -457,7 +457,7 @@ export class JoinPage extends Component {
               <br></br>
               <br></br>
               If you have any question about this position, you can contact
-              Håvard Brenne at:{' '}
+              Håvard Brenne at{' '}
               <a href=" mailto:haavard.brenne@ascendntnu.no ">
                 haavard.brenne@ascendntnu.no
               </a>
@@ -534,7 +534,7 @@ export class JoinPage extends Component {
               <br></br>
               <p>
                 If you have any questions about this position can contact Simen
-                Gangstad at:{' '}
+                Gangstad at{' '}
               </p>{' '}
               <a href=" mailto:simen.gangstad@ascendntnu.no ">
                 simen.gangstad@ascendntnu.no
@@ -573,7 +573,7 @@ export class JoinPage extends Component {
               <br></br>
               <br></br>
               <p>
-                Should you have any questions, you can reach Torjus Bakkene at:
+                Should you have any questions, you can reach Torjus Bakkene at
               </p>
               <a href=" mailto:torjus.bakkene@ascendntnu.no ">
                 torjus.bakkene@ascendntnu.no

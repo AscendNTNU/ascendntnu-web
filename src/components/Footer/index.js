@@ -93,6 +93,7 @@ export class Footer extends Component {
             </a>
           </div>
         </div>
+        <br></br>
         <iframe
           src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fascendntnu%2F&width=140&layout=button_count&action=like&size=small&share=true&height=46&appId"
           width="140"
