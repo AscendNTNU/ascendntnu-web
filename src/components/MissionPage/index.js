@@ -553,7 +553,11 @@ export class MissionPage extends Component {
                     which the communications module is attached. The drone must
                     synchronize with the mast movements, detach and drop the
                     original module and finally attach the replacement module.{' '}
-                    <a href="/images/assets/mission9rules_1.03.pdf">
+                    <a
+                      href={
+                        ASSETS_URL + '/images/assets/mission9rules_1.03.pdf'
+                      }
+                    >
                       {' '}
                       Here are the rules of Mission 9
                     </a>
@@ -645,7 +649,9 @@ export class MissionPage extends Component {
                     course, so the person knows where both the object, and the
                     enemy drones are located. The helper drones are also able to
                     heal the person.{' '}
-                    <a href="/images/assets/mission8rules_1.0.pdf">
+                    <a
+                      href={ASSETS_URL + '/images/assets/mission8rules_1.0.pdf'}
+                    >
                       Here are the rules of Mission 8
                     </a>
                   </p>
@@ -724,7 +730,11 @@ export class MissionPage extends Component {
                       of Mission 7
                     </a>{' '}
                     and{' '}
-                    <a href="/images/assets/mission7rules_legacy.pdf">
+                    <a
+                      href={
+                        ASSETS_URL + '/images/assets/mission7rules_legacy.pdf'
+                      }
+                    >
                       here are the complete ruleset of Mission 7
                     </a>
                   </p>
