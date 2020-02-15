@@ -93,17 +93,17 @@ export class Footer extends Component {
             </a>
           </div>
         </div>
-        <div
-          className="fb-like"
-          data-href="https://www.facebook.com/ascendntnu/?fref=ts"
-          data-width="100"
-          data-layout="standard"
-          data-action="like"
-          data-size="small"
-          data-colorscheme="dark"
-          data-show-faces="false"
-          data-share="true"
-        />
+        <iframe
+          src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fascendntnu%2F&width=140&layout=button_count&action=like&size=small&share=true&height=46&appId"
+          width="140"
+          height="46"
+          style={{ border: 'none', overflow: 'hidden' }}
+          scrolling="no"
+          frameborder="0"
+          allowTransparency="true"
+          allow="encrypted-media"
+        ></iframe>
+        <div />
       </footer>
     )
   }

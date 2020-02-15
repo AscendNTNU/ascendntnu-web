@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import scrollToComponent from 'react-scroll-to-component'
+import { ASSETS_URL } from '../../constants'
 
 import { Section, SubSection } from '../PageLayout'
 import { Breadcrumb } from '../Common/breadcrumb'
@@ -52,6 +53,13 @@ export class JoinPage extends Component {
     let positions = {
       en: [
         <Section titleText="Positions we offer" key="2">
+          <a
+            id="styled"
+            type="button"
+            href="https://docs.google.com/forms/d/1kKJENDVeQ-Us7-hCmK3bh-BCrufqKowE07zHvejpUEM/viewform?edit_requested=true"
+          >
+            Click here to apply for Team 2021
+          </a>
           <hr />
           <p>
             <div class="paragraf_T"> The Board</div> Is responsible for the
@@ -78,7 +86,7 @@ export class JoinPage extends Component {
                 }
               >
                 {' '}
-                <a> Project manager & Deputy Project Manager </a>
+                <a> Project Manager & Deputy Project Manager </a>
               </li>
               <li
                 onClick={() =>
@@ -114,6 +122,7 @@ export class JoinPage extends Component {
                 team. The technical group leader positions offered for Team 2021
                 are the following:
               </p>
+
               <li onClick={() => this.setAnchor('Hardware-Group-Leader')}>
                 {' '}
                 <a> Hardware Group Leader </a>
@@ -382,6 +391,11 @@ export class JoinPage extends Component {
               </a>
               <br></br>
               <br></br>
+              <i className="key-words">
+                {' '}
+                Social Media, Photography, Videomaking, Graphic Design, Digital
+                Marketing, Web Development.
+              </i>
             </p>
           </SubSection>
 
@@ -582,7 +596,7 @@ export class JoinPage extends Component {
         <Section titleText="Reach new heights - Join Ascend NTNU" key="1">
           <hr />
           <img
-            src="https://preview.ibb.co/kuE9OK/ascend111.jpg"
+            src={ASSETS_URL + '/images/assets/join_front.jpg'}
             alt="Group 2018"
             className="fullscale-image"
           />
@@ -621,13 +635,13 @@ export class JoinPage extends Component {
           </a>
           <h4>
             <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSdgvQ1jVRs8iJmglmyGoaWiigi1E-Q8AdNjzrBWqwz0D9ukCA/viewform"
+              href="https://docs.google.com/forms/d/1kKJENDVeQ-Us7-hCmK3bh-BCrufqKowE07zHvejpUEM/viewform?edit_requested=true"
               target="
           _blank "
               rel="
           noopener noreferrer "
             >
-              Application survey for team 2021 will come soon
+              Application form for team 2021 will come soon
             </a>
           </h4>{' '}
           {positions[this.state.language][1]}

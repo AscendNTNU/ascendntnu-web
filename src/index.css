@@ -2479,3 +2479,42 @@ strong:hover {
 #tittel {
   text-align: left;
 }
+
+#top-left {
+  color: #c49a6c;
+}
+
+#styled {
+  border: 0;
+  line-height: 2.5;
+  padding: 0 20px;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+  border-radius: 10px;
+  width: 430px;
+  margin: auto;
+  height: 45px;
+  background-color: #c49a6c;
+  text-decoration: none;
+  background-image: linear-gradient(
+    to top left,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.2) 30%,
+    rgba(0, 0, 0, 0)
+  );
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+    inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+}
+
+#styled:hover {
+  background-color: #d7572d;
+  transition-duration: 1s;
+}
+
+#styled:active {
+  box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+    inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+  margin: auto;
+}
