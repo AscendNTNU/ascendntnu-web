@@ -641,7 +641,7 @@ export class JoinPage extends Component {
               rel="
           noopener noreferrer "
             >
-              Application form for team 2021 will come soon
+              Application form for team 2021
             </a>
           </h4>{' '}
           {positions[this.state.language][1]}
