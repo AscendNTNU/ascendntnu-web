@@ -202,7 +202,7 @@ export class JoinPage extends Component {
                 <br></br>
               </div>
               If you have any question about these positions, do not hesitate to
-              contact: Jo Aleksander Johansen (Project Manager) at,
+              contact: Jo Aleksander Johansen (Project Manager) at ,
               <a href=" mailto:jo.johansen@ascendntnu.no ">
                 jo.johansen@ascendntnu.no
               </a>
@@ -276,11 +276,11 @@ export class JoinPage extends Component {
                 <br></br>
               </div>
               If you have any questions about those positions, you can contact:
-              Filip Grevle Lolland (Chief Engineer) at
+              Filip Grevle Lolland (Chief Engineer) at ,
               <a href=" mailto:filip.lolland@ascendntnu.no ">
                 filip.lolland@ascendntnu.no
               </a>
-              , or Kevin Dinulong Meyer (Deputy Chief Engineer) at
+              , or Kevin Dinulong Meyer (Deputy Chief Engineer) at ,
               <a href=" mailto:kevin.meyer@ascendntnu.no ">
                 kevin.meyer@ascendntnu.no
               </a>
@@ -329,7 +329,7 @@ export class JoinPage extends Component {
                 <br></br>
               </div>
               If you have any questions about this position, you can contact:
-              Airin Thodesen at
+              Airin Thodesen at ,
               <a href=" mailto:airin.thodesen@ascendntnu.no ">
                 airin.thodesen@ascendntnu.no
               </a>
@@ -337,6 +337,7 @@ export class JoinPage extends Component {
               <br></br>
             </p>
           </SubSection>
+
           <SubSection
             titleText="Head of Marketing"
             id="Head-of-Marketing"
@@ -393,16 +394,24 @@ export class JoinPage extends Component {
               <br></br>
               <i className="key-words">
                 {' '}
-                Social Media, Photography, Videomaking, Graphic Design, Digital
-                Marketing, Web Development.
+                Keywords: Social Media, Photography, Videomaking, Graphic
+                Design, Digital Marketing, Web Development.
               </i>
             </p>
+
+            <br></br>
+            <div
+              id="fixed_gif"
+              style={{
+                backgroundImage: `url('${ASSETS_URL}/images/assets/drone_2.gif')`,
+              }}
+            ></div>
           </SubSection>
 
           <SubSection
-            titleText="AlphaPilot Group Leaders"
+            titleText="AlphaPilot Group Leader"
             id="AlphaPilot-Group-Leader"
-            ref={e => this.addRef(e, 'AlphaPilot-Group-Leaders')}
+            ref={e => this.addRef(e, 'AlphaPilot-Group-Leader')}
           >
             <hr />
             <p>
@@ -419,8 +428,9 @@ export class JoinPage extends Component {
               unique responsibility and opportunity in realizing all the systems
               necessary to create an autonomous racing drone.
               <br></br>
+              <br></br>
               If you have any questions about this position, you can contact
-              Paul Frivold at{' '}
+              Paul Frivold at <br></br>
               <a href=" mailto:paul.frivold@ascendntnu.no ">
                 paul.frivold@ascendntnu.no
               </a>
@@ -605,7 +615,7 @@ export class JoinPage extends Component {
               fontSize: '1.4em',
             }}
           ></p>
-          <SubSection titleText=" Application for team 2021 will start soon, stay tuned on our social media for more information">
+          <SubSection titleText=" Application for team 2021 has started, apply now!">
             <hr />
             <p>
               Ascend NTNU develops an autonomous drone and competes in the
