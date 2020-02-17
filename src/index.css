@@ -8,7 +8,7 @@
   --navbar-background-color: #fff;
   --navbar-background-color-dark: #333;
   --head-background-color: #fff;
-  --head-background-color-dark: #222;
+  --head-background-color-dark: rgb(15, 15, 15);
   --head-after-background-color: linear-gradient(
     0deg,
     transparent,
@@ -45,7 +45,7 @@ a {
 }
 
 a.button {
-  color: #f3ba37 !important;
+  color: #f80 !important;
   color: var(--button-color) !important;
   text-decoration: none;
   border: none !important;
@@ -315,7 +315,8 @@ input[type='submit'].active,
 }
 
 .app .nav-bar > .nav-element.active {
-  color: #f3ba37;
+  color: #ff8800;
+  text-decoration: none;
 }
 
 .dark-theme .nav-bar > .nav-element,
@@ -963,6 +964,7 @@ body.no-scroll {
 .dark-theme h5,
 .dark-theme h6 {
   text-shadow: 0 1px 4px rgb(32, 32, 32);
+  color: #c49a6c;
 }
 
 .dark-theme .section-title:empty,
@@ -1064,6 +1066,16 @@ h4,
     margin: 10px;
   }
 }
+
+.intro,
+.intro2,
+.intro4,
+.intro5,
+.intro6,
+strong {
+  text-decoration: none;
+}
+
 .sub-section {
   flex: 1 0 auto;
   margin: 0 auto;
@@ -1341,10 +1353,6 @@ figcaption {
 .app .blog-post-categories > .category.selected:hover {
   background-color: rgba(255, 127, 0, 0.8);
   background-color: var(--tag-background-color-selected-hover);
-}
-
-.page-blog video {
-  max-width: 100%;
 }
 
 .page-blog input,
@@ -1732,16 +1740,6 @@ found {
   .team-text {
     font-size: 1.2rem;
   }
-}
-
-.page-about .about-mission-video {
-  border: none;
-  width: calc(100vw - 32px * 2);
-  height: calc((100vw - 32px * 2) * 360 / 640);
-  max-width: 640px;
-  max-height: 360px;
-  display: block;
-  margin: auto;
 }
 
 .split-img-container {
@@ -2187,7 +2185,7 @@ code {
 
 footer {
   width: 100%;
-  background-color: #252222;
+  background-color: #1b1919;
   padding: 5% 5% 5% 5%;
   color: #fff;
 }
@@ -2209,6 +2207,7 @@ footer {
 
 .padding {
   padding: 35px 0;
+  background-color: #232323;
 }
 .padding img {
   width: 100%;
@@ -2223,6 +2222,18 @@ footer {
   background-size: cover;
   background-attachment: fixed;
   background-position: center center;
+}
+
+#fixed_gif {
+  height: 100vh;
+  max-height: 400px;
+  min-height: 100px;
+  position: relative;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 h3,
@@ -2284,6 +2295,7 @@ p {
   text-align: center;
   color: #ddd;
   cursor: pointer;
+  padding-top: 60px;
 }
 
 .service-icon {
@@ -2343,31 +2355,39 @@ div.fb-like {
 }*/
 
 .page.page-join {
-  background-color: #333333;
+  background-color: #232323;
+  position: relative;
+  z-index: 1;
 }
 
 .page.page-blog {
-  background-color: #333333;
+  background-color: #232323;
 }
 
 .page.page-team {
-  background-color: #333333;
+  background-color: #232323;
 }
 
 .team-page,
 button:hover {
-  background-color: rgba(255, 127, 0, 0.7);
+  background-color: #ff8800;
+  transition-duration: 0.5s;
+}
+
+.team-page,
+button:active {
+  background-color: #ff8800;
   transition-duration: 0.5s;
 }
 
 strong {
-  color: #c49a6c;
+  color: #726659;
   width: 320px;
   height: 5px;
 }
 
 strong:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .intro {
@@ -2462,18 +2482,31 @@ strong:hover {
 .paragraf {
   color: #c49a6c;
   font-style: sans-serif;
+  font-size: 16px;
+  transition: all 0.5s;
 }
 .paragraf:hover {
-  text-decoration-line: underline;
+  text-decoration-line: none;
+  transition-duration: 0.5s;
+  font-size: 20px;
+  font-size-adjust: 16px;
+}
+
+hr {
+  background-color: #d7572d;
+  height: 1px;
 }
 
 .paragraf_T {
   color: #c49a6c;
   font-style: sans-serif;
+  transition: all 0.5s;
 }
 .paragraf_T:hover {
   text-decoration-line: underline;
   font-size: 26px;
+  font-size-adjust: 20px;
+  text-decoration: none;
 }
 
 #tittel {
