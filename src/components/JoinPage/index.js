@@ -543,8 +543,8 @@ export class JoinPage extends Component {
               <br></br>
               <br></br>
               <p>
-                If you have any questions about this position can contact Simen
-                Gangstad at{' '}
+                If you have any questions about this position, you can contact
+                Simen Gangstad at{' '}
               </p>{' '}
               <a href=" mailto:simen.gangstad@ascendntnu.no ">
                 simen.gangstad@ascendntnu.no
