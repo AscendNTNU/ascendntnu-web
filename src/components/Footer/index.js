@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { ASSETS_URL } from '../../constants'
 
 export class Footer extends Component {
   constructor(props) {
@@ -56,14 +57,13 @@ export class Footer extends Component {
       <footer className="container-fluid text-center">
         <div className="row">
           <div className="col-sm-4">
-            <h3>Project manager</h3>
-            <h4>Jo Aleksander Johansen</h4>
-            <br />
-            <h4>
-              <a href="mailto: jo.johansen@ascendntnu.no subject=subject text">
-                jo.johansen@ascendntnu.no
-              </a>
-            </h4>
+            <h3>Sponsors</h3>
+            <a href="">
+              <img
+                src={ASSETS_URL + '/images/assets/sponsor_trans.png'}
+                className="icon_sponsor"
+              />
+            </a>
           </div>
           <div className="col-sm-4">
             <h3>Follow us on</h3>
