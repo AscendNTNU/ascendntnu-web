@@ -18,59 +18,57 @@ export class DronePage extends Component {
           </slider>
         </div>
 
-        <div class="padding">
-          <div id="nxt">
-            <div class="container">
-              <div
-                class="row"
-                style={{ display: 'flex', flexWrap: 'wrap-reverse' }}
-              >
-                <div class="col-sm-6">
-                  <br />
-                  <br />
-                  <br />
-                  <br />
-                  <br />
+        <div class="padding_2">
+          <div class="container">
+            <div
+              class="row"
+              style={{ display: 'flex', flexWrap: 'wrap-reverse' }}
+            >
+              <div class="col-sm-6">
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
 
-                  <img src={ASSETS_URL + '/images/assets/2019_new.png'} />
-                </div>
-                <div class="col-sm-6 text-center">
-                  <h1>INKY, BLINKY, PINKY & CLYDE</h1>
-                  <center>
-                    <h2>&#9733; 2019 &#9733;</h2>
-                  </center>
-                  <hr />
-                  <p class="lead">
-                    To solve IARC Mission 8, Ascend has for the first time
-                    developed a swarm of four drones. The drones prominently
-                    feature carbon fiber ducts around the propellers, which
-                    ensures human-safe operation and provides an increase in
-                    lift. Other parts of the frame are constructed using carbon
-                    fiber and 3d printed parts to ensure strength and light
-                    weight. Each drone is equipped with an Nvidia Jetson TX2
-                    computer. These provide ample computing power to handle data
-                    from the stereo cameras and other sensors. The systems are
-                    built on the framework of ROS (Robot Operating Systems),
-                    allowing for a modular structure of the software stack from
-                    the sensors to the control systems.
-                  </p>
+                <img src={ASSETS_URL + '/images/assets/2019_new.png'} />
+              </div>
+              <div class="col-sm-6 text-center">
+                <h1>INKY, BLINKY, PINKY & CLYDE</h1>
+                <center>
+                  <h2>&#9733; 2019 &#9733;</h2>
+                </center>
+                <hr />
+                <p class="lead">
+                  To solve IARC Mission 8, Ascend has for the first time
+                  developed a swarm of four drones. The drones prominently
+                  feature carbon fiber ducts around the propellers, which
+                  ensures human-safe operation and provides an increase in lift.
+                  Other parts of the frame are constructed using carbon fiber
+                  and 3d printed parts to ensure strength and light weight. Each
+                  drone is equipped with an Nvidia Jetson TX2 computer. These
+                  provide ample computing power to handle data from the stereo
+                  cameras and other sensors. The systems are built on the
+                  framework of ROS (Robot Operating Systems), allowing for a
+                  modular structure of the software stack from the sensors to
+                  the control systems.
+                </p>
 
-                  <p class="lead">
-                    The drones localize themselves on the field using
-                    SLAM-systems with data from the stereo cameras, while
-                    simultaneously detecting QR-code segments and human poses
-                    for gesture recognition. The player on the field can
-                    communicate with the drones through a microphone and speech
-                    recognition, with the drones being able to perform complex
-                    tasks from simple commands. Upon executing the commands,
-                    obstacle avoidance systems ensure that the drones don't
-                    collide with the environment or the player on the field.
-                  </p>
-                  <br />
-                  <br />
-                  <br />
-                  <br />
-                </div>
+                <p class="lead">
+                  The drones localize themselves on the field using SLAM-systems
+                  with data from the stereo cameras, while simultaneously
+                  detecting QR-code segments and human poses for gesture
+                  recognition. The player on the field can communicate with the
+                  drones through a microphone and speech recognition, with the
+                  drones being able to perform complex tasks from simple
+                  commands. Upon executing the commands, obstacle avoidance
+                  systems ensure that the drones don't collide with the
+                  environment or the player on the field.
+                </p>
+                <br />
+                <br />
+                <br />
+                <br />
               </div>
             </div>
           </div>
@@ -78,133 +76,128 @@ export class DronePage extends Component {
           <br />
         </div>
 
-        <div class="inner">
-          <div class="padding">
-            <div class="container">
-              <div class="row">
-                <div class="col-sm-6">
-                  <center>
-                    <h1>MIST </h1>
-                  </center>
-                  <center>
-                    <h2>&#9733; 2018 &#9733;</h2>
-                  </center>
-                  <hr />
-                  <left>
-                    <p>
-                      Mist was Ascend NTNUs final Mission 7 drone, and was an
-                      improved version of the previous drones. The structure is
-                      made out of carbon fiber, with 3D printed parts making for
-                      a modular design and allowing easy testing of multiple
-                      technologies. One of the key improvements is the landing
-                      gear, which integrates sensors for height, landing and
-                      physical contact with the ground robots.
-                    </p>
+        <div class="padding">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6">
+                <center>
+                  <h1>MIST </h1>
+                </center>
+                <center>
+                  <h2>&#9733; 2018 &#9733;</h2>
+                </center>
+                <hr />
+                <left>
+                  <p>
+                    Mist was Ascend NTNUs final Mission 7 drone, and was an
+                    improved version of the previous drones. The structure is
+                    made out of carbon fiber, with 3D printed parts making for a
+                    modular design and allowing easy testing of multiple
+                    technologies. One of the key improvements is the landing
+                    gear, which integrates sensors for height, landing and
+                    physical contact with the ground robots.
+                  </p>
 
-                    <p>
-                      The drone features two Jetson Nvidia TX2 computers running
-                      systems communicating through ROS. Images from the
-                      vibration-isolated cameras are fed into a neural network
-                      to detect ground robots, and the AI systems determine the
-                      strategy the drone should execute to solve the mission.
-                    </p>
-                  </left>
+                  <p>
+                    The drone features two Jetson Nvidia TX2 computers running
+                    systems communicating through ROS. Images from the
+                    vibration-isolated cameras are fed into a neural network to
+                    detect ground robots, and the AI systems determine the
+                    strategy the drone should execute to solve the mission.
+                  </p>
+                </left>
+              </div>
+              <div class="col-sm-6">
+                <div class="mist">
+                  <img src={ASSETS_URL + '/images/assets/mist_2.png'} />
                 </div>
-                <div class="col-sm-6">
-                  <div class="mist">
-                    <img src={ASSETS_URL + '/images/assets/mist_2.png'} />
-                  </div>
-                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="padding_2">
+          <div class="container">
+            <div
+              class="row"
+              style={{ display: 'flex', flexWrap: 'wrap-reverse' }}
+            >
+              <div class="col-sm-6">
+                <br />
+                <br />
+
+                <img src={ASSETS_URL + '/images/assets/VALKYRIE (2).png'} />
+              </div>
+              <div class="col-sm-6 text-center">
+                <br />
+                <h1>Valkyrie</h1>
+                <center>
+                  <h2>&#9733; 2017 &#9733;</h2>
+                </center>
+                <hr />
+                <p class="lead">
+                  Our third quadcopter was designed as a physically robust
+                  platform for testing new control software. The small size and
+                  low weight means that we can test new control strategies,
+                  including landing on ground robots, with less risk of damage
+                  to the equipment.
+                </p>
+
+                <p class="lead">
+                  It has a Pixhawk flight controller and an Intel NUC onboard
+                  computer running Ubuntu Server with ROS. The custom made frame
+                  consisting of carbon fiber and 3D-printed parts allows for
+                  compact placement of the hardware and an even weight
+                  distribution, and well balanced motors from T-Motor minimize
+                  vibrations and yield high efficiency.
+                </p>
               </div>
             </div>
           </div>
         </div>
 
         <div class="padding">
-          <div id="nxt">
-            <div class="container">
-              <div
-                class="row"
-                style={{ display: 'flex', flexWrap: 'wrap-reverse' }}
-              >
-                <div class="col-sm-6">
-                  <br />
-                  <br />
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6">
+                <center>
+                  <h1>Drone 2.0</h1>
+                </center>
+                <center>
+                  <h2>&#9733; 2016 &#9733;</h2>
+                </center>
+                <hr />
+                <p>
+                  Our second aerial robot was custom designed and built using
+                  carbon fiber and 3D-printed parts. It was built for the IARC
+                  of 2016 and designed with Mission 7 in mind, and is able to
+                  carry all the equipment needed to herd the target robots
+                  across the green line. The sensors the drone uses for
+                  navigation, ground robot detection and collision avoidance
+                  includes five cameras, one laster rangefinder, a 2D laser
+                  scanner and an inertial measurment unit.
+                </p>
 
-                  <img src={ASSETS_URL + '/images/assets/VALKYRIE (2).png'} />
-                </div>
-                <div class="col-sm-6 text-center">
-                  <br />
-                  <h1>Valkyrie</h1>
-                  <center>
-                    <h2>&#9733; 2017 &#9733;</h2>
-                  </center>
-                  <hr />
-                  <p class="lead">
-                    Our third quadcopter was designed as a physically robust
-                    platform for testing new control software. The small size
-                    and low weight means that we can test new control
-                    strategies, including landing on ground robots, with less
-                    risk of damage to the equipment.
-                  </p>
+                <p>
+                  The data processing is done using an on-board Intel NUC, in
+                  addition to an external computer communicating using WiFi. The
+                  flight controller is a Pixhawk connected to the NUC. Our
+                  software can recognize the lines and corners of the grid,
+                  detect target robots and decide when and how to interact with
+                  them.
+                </p>
+              </div>
+              <div class="col-sm-6">
+                <br />
+                <br />
+                <br />
 
-                  <p class="lead">
-                    It has a Pixhawk flight controller and an Intel NUC onboard
-                    computer running Ubuntu Server with ROS. The custom made
-                    frame consisting of carbon fiber and 3D-printed parts allows
-                    for compact placement of the hardware and an even weight
-                    distribution, and well balanced motors from T-Motor minimize
-                    vibrations and yield high efficiency.
-                  </p>
-                </div>
+                <img src={ASSETS_URL + '/images/assets/drone2_0.png'} />
               </div>
             </div>
           </div>
         </div>
 
-        <div class="inner">
-          <div class="padding">
-            <div class="container">
-              <div class="row">
-                <div class="col-sm-6">
-                  <center>
-                    <h1>Drone 2.0</h1>
-                  </center>
-                  <center>
-                    <h2>&#9733; 2016 &#9733;</h2>
-                  </center>
-                  <hr />
-                  <p>
-                    Our second aerial robot was custom designed and built using
-                    carbon fiber and 3D-printed parts. It was built for the IARC
-                    of 2016 and designed with Mission 7 in mind, and is able to
-                    carry all the equipment needed to herd the target robots
-                    across the green line. The sensors the drone uses for
-                    navigation, ground robot detection and collision avoidance
-                    includes five cameras, one laster rangefinder, a 2D laser
-                    scanner and an inertial measurment unit.
-                  </p>
-
-                  <p>
-                    The data processing is done using an on-board Intel NUC, in
-                    addition to an external computer communicating using WiFi.
-                    The flight controller is a Pixhawk connected to the NUC. Our
-                    software can recognize the lines and corners of the grid,
-                    detect target robots and decide when and how to interact
-                    with them.
-                  </p>
-                </div>
-                <div class="col-sm-6">
-                  <br />
-                  <br />
-                  <br />
-
-                  <img src={ASSETS_URL + '/images/assets/drone2_0.png'} />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
         <style
           dangerouslySetInnerHTML={{
             __html: `
@@ -226,6 +219,19 @@ export class DronePage extends Component {
         .padding{
           padding: 0px 0;
         }
+        
+        .padding_2{
+          padding: 0px 0;
+      
+        }
+        .padding_2 img {
+          width: 100%;
+          padding-bottom: 70px;
+          height: 590px;
+          margin-top: 45px; 
+        }
+
+
         .padding img {
           width: 100%;
           padding-bottom: 70px;
@@ -244,10 +250,6 @@ export class DronePage extends Component {
           position: relative;
           width: 100%;
           background-size: cover;
-        }
-        
-        .inner{
-          background-color: #37373b;
         }
         
         h3, h4 {

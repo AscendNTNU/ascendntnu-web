@@ -201,15 +201,18 @@ export class JoinPage extends Component {
                 <br></br>
                 <br></br>
               </div>
-              If you have any question about these positions, do not hesitate to
-              contact: Jo Aleksander Johansen (Project Manager) at ,
-              <a href=" mailto:jo.johansen@ascendntnu.no ">
-                jo.johansen@ascendntnu.no
-              </a>
-              , or Airin Thodesen (Deputy Project Manager) at{' '}
-              <a href=" mailto:airin.thodesen@ascendntnu.no ">
-                airin.thodesen@ascendntnu.no
-              </a>
+              <p>
+                If you have any question about these positions, do not hesitate
+                to contact: Jo Aleksander Johansen (Project Manager) at{' '}
+                <a href=" mailto:jo.johansen@ascendntnu.no ">
+                  jo.johansen@ascendntnu.no
+                </a>
+                , or Airin Thodesen (Deputy Project Manager) at{' '}
+                <a href=" mailto:airin.thodesen@ascendntnu.no ">
+                  airin.thodesen@ascendntnu.no
+                </a>
+                .
+              </p>
               <br></br>
               <br></br>
             </p>
@@ -275,17 +278,19 @@ export class JoinPage extends Component {
                 <br></br>
                 <br></br>
               </div>
-              If you have any questions about those positions, you can contact:
-              Filip Grevle Lolland (Chief Engineer) at ,
-              <a href=" mailto:filip.lolland@ascendntnu.no ">
-                filip.lolland@ascendntnu.no
-              </a>
-              , or Kevin Dinulong Meyer (Deputy Chief Engineer) at ,
-              <a href=" mailto:kevin.meyer@ascendntnu.no ">
-                kevin.meyer@ascendntnu.no
-              </a>
-              <br></br>
-              <br></br>
+              <p>
+                If you have any questions about those positions, you can
+                contact: Filip Grevle Lolland (Chief Engineer) at,{' '}
+                <a href=" mailto:filip.lolland@ascendntnu.no ">
+                  filip.lolland@ascendntnu.no
+                </a>
+                , or Kevin Dinulong Meyer (Deputy Chief Engineer) at{' '}
+                <a href=" mailto:kevin.meyer@ascendntnu.no ">
+                  kevin.meyer@ascendntnu.no
+                </a>
+                .<br></br>
+                <br></br>
+              </p>
             </p>
           </SubSection>
 
@@ -329,11 +334,11 @@ export class JoinPage extends Component {
                 <br></br>
               </div>
               If you have any questions about this position, you can contact:
-              Airin Thodesen at ,
+              Airin Thodesen at,{' '}
               <a href=" mailto:airin.thodesen@ascendntnu.no ">
                 airin.thodesen@ascendntnu.no
               </a>
-              <br></br>
+              .<br></br>
               <br></br>
             </p>
           </SubSection>
@@ -390,7 +395,7 @@ export class JoinPage extends Component {
               <a href=" mailto:ingerlovise.fjellgaard@ascendntnu.no ">
                 ingerlovise.fjellgaard@ascendntnu.no
               </a>
-              <br></br>
+              .<br></br>
               <br></br>
               <i className="key-words">
                 {' '}
@@ -434,7 +439,7 @@ export class JoinPage extends Component {
               <a href=" mailto:paul.frivold@ascendntnu.no ">
                 paul.frivold@ascendntnu.no
               </a>
-              <br></br>
+              .<br></br>
               <br></br>
               <i className="key-words">
                 {' '}
@@ -471,7 +476,7 @@ export class JoinPage extends Component {
               <a href=" mailto:haavard.brenne@ascendntnu.no ">
                 haavard.brenne@ascendntnu.no
               </a>
-              <br></br>
+              .<br></br>
               <br></br>
               <i className="key-words">
                 {' '}
@@ -509,7 +514,7 @@ export class JoinPage extends Component {
               <a href=" mailto:haakon.grov@ascendntnu.no ">
                 haakon.grov@ascendntnu.no
               </a>
-              <br></br>
+              .<br></br>
               <br></br>
               <i className="key-words">
                 {' '}
@@ -549,7 +554,7 @@ export class JoinPage extends Component {
               <a href=" mailto:simen.gangstad@ascendntnu.no ">
                 simen.gangstad@ascendntnu.no
               </a>
-              <br></br>
+              .<br></br>
               <br></br>
               <i className="key-words">
                 {' '}
@@ -588,7 +593,7 @@ export class JoinPage extends Component {
               <a href=" mailto:torjus.bakkene@ascendntnu.no ">
                 torjus.bakkene@ascendntnu.no
               </a>
-              <br></br>
+              .<br></br>
               <br></br>
               <i className="key-words">
                 {' '}
