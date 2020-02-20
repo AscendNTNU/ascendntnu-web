@@ -2376,8 +2376,8 @@ button:hover {
 
 .team-page,
 button:active {
-  background-color: #72665;
-  transition-duration: 0.5s;
+  background-color: #c49a6c;
+  transition-duration: 0.2s;
 }
 
 strong {
