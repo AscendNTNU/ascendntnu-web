@@ -2202,9 +2202,13 @@ footer {
 }
 
 .icon_social_media {
+  padding-top: 20px;
   max-width: 200px;
 }
 
+.icon_sponsor {
+  max-width: 300px;
+}
 .padding {
   padding: 35px 0;
   background-color: #232323;
