@@ -1,7 +1,7 @@
 @import 'https://fonts.googleapis.com/css?family=Open+Sans|Questrial|Roboto+Slab';
 
 :root {
-  --primary: #eee;
+  --primary: eee;
   --primary-dark: #444;
   --logo-color: #c49a6c;
   --link-color: #81d4fa;
@@ -92,7 +92,7 @@ input[type='submit'].active,
 .active input[type='reset'] {
   transition-duration: 0.05s;
   background-color: rgba(255, 127, 0, 0.7);
-  background-color: var(--markdown-link-color);
+  background-color: #c49a6c;
   box-shadow: 0 1px 8px -2px #000;
 }
 
@@ -315,7 +315,7 @@ input[type='submit'].active,
 }
 
 .app .nav-bar > .nav-element.active {
-  color: #ff8800;
+  color: #c49a6c;
   text-decoration: none;
 }
 
@@ -2370,13 +2370,13 @@ div.fb-like {
 
 .team-page,
 button:hover {
-  background-color: #ff8800;
-  transition-duration: 0.5s;
+  background-color: #726659;
+  transition-duration: 0.2s;
 }
 
 .team-page,
 button:active {
-  background-color: #ff8800;
+  background-color: #72665;
   transition-duration: 0.5s;
 }
 

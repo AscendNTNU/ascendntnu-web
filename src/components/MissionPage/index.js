@@ -516,256 +516,246 @@ export class MissionPage extends Component {
           </div>
         </div>
 
-        <div class="inner">
-          <div class="padding">
-            <div class="container">
-              <div class="row">
-                <div class="col-sm-6">
-                  <br />
-                  <br />
-                  <br />
-                  <center>
-                    <h1>Misson 9</h1>
-                  </center>
-                  <center>
-                    <h3>2019</h3>
-                  </center>
-                  <hr />
-                  <p>
-                    Following the resolution of Mission 8 in the summer of 2019,
-                    IARC released the Mission 9 details the following October.
-                    The narrative revolves around a dystopian future, where an
-                    AI overlord dominates the earth and patrols the seas using
-                    autonomous Hunter-Killer vessels. The team is part of a
-                    resistance group based on a remote island. The mission is to
-                    take control of one of these vessels using an autonomous
-                    drone to replace the communications module on the ships mast
-                    with one of our own modules.
-                  </p>
-                  <br />
-                  <p>
-                    Mission 9 presents a vastly different set of challenges when
-                    compared to previous missions. The mission will take place
-                    outdoors and over long distances, with the first and last
-                    parts of the mission involving flying the drone 3 km to and
-                    from the vessel. During the competition, the vessel will
-                    only be represented by a periodically moving mast, onto
-                    which the communications module is attached. The drone must
-                    synchronize with the mast movements, detach and drop the
-                    original module and finally attach the replacement module.{' '}
-                    <a
-                      href={
-                        ASSETS_URL + '/images/assets/mission9rules_1.03.pdf'
-                      }
-                    >
-                      {' '}
-                      Here are the rules of Mission 9
-                    </a>
-                  </p>
-                  <br />
-                  <br />
-                  <br />
-                  <br />
-                </div>
-                <div class="col-sm-6">
-                  <center>
-                    <div class="countdown">
-                      <h1>COUNTDOWN TO MISSION 9</h1>
-                    </div>
-                    {this.state.timeLeft > 0 ? (
-                      <p id="show">
-                        {this.state.days} Days <br />
-                        {this.state.hour} Hours
-                        <br />
-                        {this.state.minutes} Minute
-                        {this.state.minutes === 1 ? '' : 's'}
-                        <br />
-                        {this.state.second} Second
-                        {this.state.second === 1 ? '' : 's'}
-                      </p>
-                    ) : (
-                      <p id="show">
-                        It's on. The IARC Mission 9 competition has launched
-                      </p>
-                    )}
-                  </center>
-                  <br />
-                  <br />
-                </div>
+        <div class="padding_2">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6">
+                <br />
+                <br />
+                <br />
+                <center>
+                  <h1>Misson 9</h1>
+                </center>
+                <center>
+                  <h3>2019</h3>
+                </center>
+                <hr />
+                <p>
+                  Following the resolution of Mission 8 in the summer of 2019,
+                  IARC released the Mission 9 details the following October. The
+                  narrative revolves around a dystopian future, where an AI
+                  overlord dominates the earth and patrols the seas using
+                  autonomous Hunter-Killer vessels. The team is part of a
+                  resistance group based on a remote island. The mission is to
+                  take control of one of these vessels using an autonomous drone
+                  to replace the communications module on the ships mast with
+                  one of our own modules.
+                </p>
+                <br />
+                <p>
+                  Mission 9 presents a vastly different set of challenges when
+                  compared to previous missions. The mission will take place
+                  outdoors and over long distances, with the first and last
+                  parts of the mission involving flying the drone 3 km to and
+                  from the vessel. During the competition, the vessel will only
+                  be represented by a periodically moving mast, onto which the
+                  communications module is attached. The drone must synchronize
+                  with the mast movements, detach and drop the original module
+                  and finally attach the replacement module.{' '}
+                  <a
+                    href={ASSETS_URL + '/images/assets/mission9rules_1.03.pdf'}
+                  >
+                    {' '}
+                    Here are the rules of Mission 9
+                  </a>
+                </p>
+                <br />
+                <br />
+                <br />
+                <br />
+              </div>
+              <div class="col-sm-6">
+                <center>
+                  <div class="countdown">
+                    <h1>COUNTDOWN TO MISSION 9</h1>
+                  </div>
+                  {this.state.timeLeft > 0 ? (
+                    <p id="show">
+                      {this.state.days} Days <br />
+                      {this.state.hour} Hours
+                      <br />
+                      {this.state.minutes} Minute
+                      {this.state.minutes === 1 ? '' : 's'}
+                      <br />
+                      {this.state.second} Second
+                      {this.state.second === 1 ? '' : 's'}
+                    </p>
+                  ) : (
+                    <p id="show">
+                      It's on. The IARC Mission 9 competition has launched
+                    </p>
+                  )}
+                </center>
+                <br />
+                <br />
               </div>
             </div>
           </div>
         </div>
 
         <div class="padding">
-          <div id="nxt">
-            <div class="container">
-              <div
-                class="row"
-                style={{ display: 'flex', flexWrap: 'wrap-reverse' }}
-              >
-                <div class="col-sm-6">
-                  <br />
-                  <br />
-                  <br />
-                  <br />
-                  <br />
-                  <br />
-                  <br />
-                  <br />
-                  <br />
-                  <div class="m8_IMG">
-                    <img src={ASSETS_URL + '/images/assets/mission_8.png'} />
-                  </div>
+          <div class="container">
+            <div
+              class="row"
+              style={{ display: 'flex', flexWrap: 'wrap-reverse' }}
+            >
+              <div class="col-sm-6">
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <div class="m8_IMG">
+                  <img src={ASSETS_URL + '/images/assets/mission_8.png'} />
                 </div>
-                <div class="col-sm-6">
-                  <br />
-                  <br />
-                  <br />
-                  <center>
-                    <h1>Misson 8</h1>
-                  </center>
-                  <center>
-                    <h3>2018-2019</h3>
-                  </center>
-                  <hr />
-                  <p>
-                    This summer will be the last year that the International
-                    Aerial Robotic Competition (IARC) will run mission 7. This
-                    is because several competitors are expected to solve mission
-                    7 this summer. Last summer a team in the Asian venue managed
-                    to get three ground robots out of the course. To win the
-                    competition you have to get at least four ground robots out
-                    of the course.
-                  </p>
-                  <br />
-                  <p>
-                    IARC has therefore released Mission 8. The mission is for a
-                    human person to retrieve objects from bins that are located
-                    on the course. While the person is trying to do this, they
-                    will be attacked by flying enemy drones. If they are hit ten
-                    times, they will lose. The person will have help from up to
-                    four helper drones. These drones will be able to scout the
-                    course, so the person knows where both the object, and the
-                    enemy drones are located. The helper drones are also able to
-                    heal the person.{' '}
-                    <a
-                      href={ASSETS_URL + '/images/assets/mission8rules_1.0.pdf'}
-                    >
-                      Here are the rules of Mission 8
-                    </a>
-                  </p>
-                  <br />
-                  <br />
-                  <br />
-                  <br />
-                </div>
+              </div>
+              <div class="col-sm-6">
+                <br />
+                <br />
+                <br />
+                <center>
+                  <h1>Misson 8</h1>
+                </center>
+                <center>
+                  <h3>2018-2019</h3>
+                </center>
+                <hr />
+                <p>
+                  This summer will be the last year that the International
+                  Aerial Robotic Competition (IARC) will run mission 7. This is
+                  because several competitors are expected to solve mission 7
+                  this summer. Last summer a team in the Asian venue managed to
+                  get three ground robots out of the course. To win the
+                  competition you have to get at least four ground robots out of
+                  the course.
+                </p>
+                <br />
+                <p>
+                  IARC has therefore released Mission 8. The mission is for a
+                  human person to retrieve objects from bins that are located on
+                  the course. While the person is trying to do this, they will
+                  be attacked by flying enemy drones. If they are hit ten times,
+                  they will lose. The person will have help from up to four
+                  helper drones. These drones will be able to scout the course,
+                  so the person knows where both the object, and the enemy
+                  drones are located. The helper drones are also able to heal
+                  the person.{' '}
+                  <a href={ASSETS_URL + '/images/assets/mission8rules_1.0.pdf'}>
+                    Here are the rules of Mission 8
+                  </a>
+                </p>
+                <br />
+                <br />
+                <br />
+                <br />
               </div>
             </div>
           </div>
         </div>
 
-        <div class="inner">
-          <div class="padding">
-            <div class="container">
-              <div class="row">
-                <br />
-                <br />
-                <br />
-                <div class="col-sm-6">
-                  <center>
-                    <h1>Misson 7</h1>
-                  </center>
-                  <center>
-                    <h3>2014-2017</h3>
-                  </center>
-                  <hr />
+        <div class="padding_2">
+          <div class="container">
+            <div class="row">
+              <br />
+              <br />
+              <br />
+              <div class="col-sm-6">
+                <center>
+                  <h1>Misson 7</h1>
+                </center>
+                <center>
+                  <h3>2014-2017</h3>
+                </center>
+                <hr />
+                <p>
+                  Mission 7 ended in 2018 and took place indoors on a 20x20
+                  meter grid arena. The mission was the following: The square
+                  arena has two white edges, one green edge and one red edge, as
+                  shown in top figure. In the middle of the arena 10 ground
+                  robots starts driving outwards towards the edges. The ground
+                  robots moves in a specific pattern:
+                  <ul>
+                    <li>Every 20 seconds they rotate 180 degrees.</li>
+                    <li>
+                      Every 5 seconds they rotate a random amount of degrees on
+                      the interval [-20, 20].
+                    </li>
+                    <li>
+                      If they bump into anything, they rotate 180 degrees.
+                    </li>
+                  </ul>
                   <p>
-                    Mission 7 ended in 2018 and took place indoors on a 20x20
-                    meter grid arena. The mission was the following: The square
-                    arena has two white edges, one green edge and one red edge,
-                    as shown in top figure. In the middle of the arena 10 ground
-                    robots starts driving outwards towards the edges. The ground
-                    robots moves in a specific pattern:
-                    <ul>
-                      <li>Every 20 seconds they rotate 180 degrees.</li>
-                      <li>
-                        Every 5 seconds they rotate a random amount of degrees
-                        on the interval [-20, 20].
-                      </li>
-                      <li>
-                        If they bump into anything, they rotate 180 degrees.
-                      </li>
-                    </ul>
-                    <p>
-                      In addition to these ground robots, there are four
-                      obstacle robots. These have an 1-2 meter pole on the top
-                      and moves around in a circular pattern. They are there to
-                      create havoc and must be avoided. If the drone hits them
-                      twice, the run is terminated. The mission is to herd at
-                      least four of the ground robots over the green line in
-                      order to complete the mission. To interact with the ground
-                      robots, there are two different options:
-                    </p>
-                    <ul>
-                      <li>
-                        Tapping a tactile button on the top of the ground
-                        robots, turning them 45 degrees, clockwise.
-                      </li>
-                      <li>
-                        Bumping into the ground robots from the front, turning
-                        them 180 degrees.
-                      </li>
-                      <li>
-                        The mission must be solved in a maximum of 10 minutes,
-                        all the sensors must be onboard the drone and it has to
-                        be fully autonomous.
-                      </li>
-                    </ul>
+                    In addition to these ground robots, there are four obstacle
+                    robots. These have an 1-2 meter pole on the top and moves
+                    around in a circular pattern. They are there to create havoc
+                    and must be avoided. If the drone hits them twice, the run
+                    is terminated. The mission is to herd at least four of the
+                    ground robots over the green line in order to complete the
+                    mission. To interact with the ground robots, there are two
+                    different options:
                   </p>
-                  <p>
-                    {' '}
-                    <a href="https://www.youtube.com/watch?v=LOU6-r7TRAA">
-                      Here is video of the competing drones executing the tasks
-                      of Mission 7
-                    </a>{' '}
-                    and{' '}
-                    <a
-                      href={
-                        ASSETS_URL + '/images/assets/mission7rules_legacy.pdf'
-                      }
-                    >
-                      here are the complete ruleset of Mission 7
-                    </a>
-                  </p>
-                  <br />
-                  <br />
-                  <br />
-                  <br />
+                  <ul>
+                    <li>
+                      Tapping a tactile button on the top of the ground robots,
+                      turning them 45 degrees, clockwise.
+                    </li>
+                    <li>
+                      Bumping into the ground robots from the front, turning
+                      them 180 degrees.
+                    </li>
+                    <li>
+                      The mission must be solved in a maximum of 10 minutes, all
+                      the sensors must be onboard the drone and it has to be
+                      fully autonomous.
+                    </li>
+                  </ul>
+                </p>
+                <p>
+                  {' '}
+                  <a href="https://www.youtube.com/watch?v=LOU6-r7TRAA">
+                    Here is video of the competing drones executing the tasks of
+                    Mission 7
+                  </a>{' '}
+                  and{' '}
+                  <a
+                    href={
+                      ASSETS_URL + '/images/assets/mission7rules_legacy.pdf'
+                    }
+                  >
+                    here are the complete ruleset of Mission 7
+                  </a>
+                </p>
+                <br />
+                <br />
+                <br />
+                <br />
+              </div>
+              <div class="col-sm-6">
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <img src={ASSETS_URL + '/images/assets/start-state.png'} />
+                <div class="drone_IMG">
+                  <img
+                    src={
+                      ASSETS_URL + '/images/assets/180-degree-turn-cartoon.png'
+                    }
+                  />
                 </div>
-                <div class="col-sm-6">
-                  <br />
-                  <br />
-                  <br />
-                  <br />
-                  <br />
-                  <br />
-                  <img src={ASSETS_URL + '/images/assets/start-state.png'} />
-                  <div class="drone_IMG">
-                    <img
-                      src={
-                        ASSETS_URL +
-                        '/images/assets/180-degree-turn-cartoon.png'
-                      }
-                    />
-                  </div>
-                  <br />
-                  <br />
-                </div>
+                <br />
+                <br />
               </div>
             </div>
           </div>
         </div>
+
         <style
           dangerouslySetInnerHTML={{
             __html: `
@@ -863,9 +853,6 @@ export class MissionPage extends Component {
                 }
             }
             
-            .inner{
-              background-color: #37373b;
-            }
             
             h3, h4 {
               color: #FFF;
