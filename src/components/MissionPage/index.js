@@ -742,7 +742,11 @@ export class MissionPage extends Component {
                 <br />
                 <br />
                 <img src={ASSETS_URL + '/images/assets/start-state.png'} />
+
                 <div class="drone_IMG">
+                  <br></br>
+                  <br></br>
+                  <br></br>
                   <img
                     src={
                       ASSETS_URL + '/images/assets/180-degree-turn-cartoon.png'
@@ -766,6 +770,7 @@ export class MissionPage extends Component {
             }
 
             .drone_IMG {
+              padding-top: 20px;
               height: 400px;
             }
 
