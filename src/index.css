@@ -252,6 +252,10 @@ input[type='submit'].active,
     display: flex;
   }
 
+  .Modal {
+    display: none;
+  }
+
   .nav-bar {
     display: none;
     flex-direction: column;
@@ -1048,6 +1052,10 @@ h4,
     line-height: calc(1.5);
     font-size: 16px;
   }
+
+  .Modal {
+    display: none;
+  }
 }
 
 @media (max-width: 370px) {
@@ -1064,6 +1072,10 @@ h4,
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     margin: 10px;
+  }
+
+  .Modal {
+    display: none;
   }
 }
 
@@ -1198,6 +1210,10 @@ strong {
 @media (max-width: 540px) {
   .page-blog-list-link .blog-list-link {
     font-size: 1.2em;
+  }
+
+  .Modal {
+    display: none;
   }
 }
 
@@ -1544,6 +1560,10 @@ found {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .Modal {
+    display: none;
   }
 }
 
@@ -2036,6 +2056,10 @@ code {
     left: 72.6px;
   }
 
+  .Modal {
+    display: none;
+  }
+
   .front-splash-right:after {
     left: -72.6px;
   }
@@ -2087,6 +2111,10 @@ code {
     position: absolute;
     bottom: 0;
     z-index: 0;
+  }
+
+  .Modal {
+    display: none;
   }
 
   .front-splash-left {
@@ -2171,6 +2199,10 @@ code {
     transform: skewY(0) skewX(0);
   }
 
+  .Modal {
+    display: none;
+  }
+
   .front-splash-right {
     flex-basis: 160px;
   }
@@ -2211,7 +2243,7 @@ footer {
 }
 .padding {
   padding: 35px 0;
-  background-color: #232323;
+  background-color: #2b2b2b;
 }
 .padding img {
   width: 100%;
@@ -2359,17 +2391,17 @@ div.fb-like {
 }*/
 
 .page.page-join {
-  background-color: #232323;
+  background-color: #2b2b2b;
   position: relative;
   z-index: 1;
 }
 
 .page.page-blog {
-  background-color: #232323;
+  background-color: #2b2b2b;
 }
 
 .page.page-team {
-  background-color: #232323;
+  background-color: #2b2b2b;
 }
 
 .team-page,
@@ -2554,4 +2586,56 @@ hr {
   box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6),
     inset 2px 2px 3px rgba(0, 0, 0, 0.6);
   margin: auto;
+}
+
+.Modal {
+  position: absolute;
+  top: 200px;
+  left: 280px;
+  right: 280px;
+  bottom: 100px;
+  background-color: #3b3838;
+  border-radius: 10px;
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+p#Modul_txt {
+  text-align: center;
+  font-size: 30px;
+  color: #c49a6c;
+  transition-delay: 1s;
+  text-decoration-line: underline;
+}
+
+#bilde {
+  border: 0;
+  height: 300px;
+  float: left;
+  margin-left: 200px;
+}
+
+.text {
+  height: 225px;
+  width: 250px;
+  margin-top: 40px;
+  float: left;
+}
+
+#apply {
+  color: #c49a6c;
+  font-style: sans-serif;
+  font-size: 20px;
+  transition: all 0.5s;
+}
+#apply:hover {
+  transition-duration: 0.5s;
+  font-size: 22px;
+  font-size-adjust: 20px;
 }

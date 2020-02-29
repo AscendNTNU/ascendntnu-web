@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 
+import ReactDOM from 'react-dom'
+import ReactModal from 'react-modal'
+
 import Splash from './splash'
 //import Announcement from './announcement'
 import SponsorList from '../Common/sponsorlist'
@@ -11,20 +14,59 @@ import { ASSETS_URL } from '../../constants'
 
 //import { Link } from 'react-router-dom'
 export class FrontPage extends Component {
-  render() {
-    //Used for youtube player
-    const opts = {
-      height: 150,
-      width: 200,
-      playerVars: {
-        // https://developers.google.com/youtube/player_parameters
-        autoplay: 0,
-      },
+  constructor() {
+    super()
+    this.state = {
+      showModal: true,
     }
 
+    this.handleOpenModal = this.handleOpenModal.bind(this)
+    this.handleCloseModal = this.handleCloseModal.bind(this)
+  }
+
+  handleOpenModal() {
+    this.setState({ showModal: true })
+  }
+
+  handleCloseModal() {
+    this.setState({ showModal: false })
+  }
+
+  render() {
     return (
       <div className="page-front page">
         <Splash />
+
+        <div>
+          <button onClick={this.handleOpenModal}>Modal</button>
+          <ReactModal
+            isOpen={this.state.showModal}
+            contentLabel="Minimal Modal Example"
+            onRequestClose={this.handleCloseModal}
+            className="Modal"
+            overlayClassName="Overlay"
+          >
+            <button onClick={this.handleCloseModal}>Close</button>
+
+            <p id="Modul_txt">Apply for Team 2021!</p>
+            <div class="bilde">
+              <img
+                id="bilde"
+                src={ASSETS_URL + '/images/assets/join_front.jpg'}
+              />
+            </div>
+            <div class="text">
+              <p>
+                We are recruiting for a new Board and Technical group leaders
+                for Team 2021. <br></br>
+                <br></br> To apply or read more about these positions visit our{' '}
+                <a id="apply" href="https://ascendntnu.no/join">
+                  Join page
+                </a>{' '}
+              </p>
+            </div>
+          </ReactModal>
+        </div>
 
         <div style={{ backgroundColor: 'var(--primary-dark)' }}>
           <div class="padding">
