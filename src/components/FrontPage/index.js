@@ -129,8 +129,7 @@ export class FrontPage extends Component {
                 </div>
 
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                  <h2>Kongsberg</h2>
-                  <hr />
+                  <div id="vertical_2"> </div>
 
                   <p>
                     Our main sponsor, Kongsberg, is an international,
@@ -154,8 +153,8 @@ export class FrontPage extends Component {
                 </div>
 
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                  <h2>Equinor</h2>
-                  <hr />
+                  <div id="vertical"> </div>
+                  <br />
                   <p>
                     Equinor is an international, knowledge-based energy company
                     pushing the boundaries of imagination and technology,

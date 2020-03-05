@@ -2639,3 +2639,23 @@ p#Modul_txt {
   font-size: 22px;
   font-size-adjust: 20px;
 }
+
+#vertical {
+  border-left: 1.5px solid #c49a6c;
+  height: 290px;
+  padding-left: 15px;
+  position: absolute;
+  left: 50%;
+  margin-left: -150px;
+  top: 0;
+}
+
+#vertical_2 {
+  border-left: 1.5px solid #c49a6c;
+  height: 290px;
+  padding-left: 15px;
+  position: absolute;
+  left: 50%;
+  margin-left: -150px;
+  top: 0;
+}
