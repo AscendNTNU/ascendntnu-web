@@ -130,6 +130,7 @@ export class FrontPage extends Component {
 
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                   <div id="vertical_2"> </div>
+                  <br />
 
                   <p>
                     Our main sponsor, Kongsberg, is an international,
