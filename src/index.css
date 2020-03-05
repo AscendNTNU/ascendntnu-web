@@ -2304,6 +2304,7 @@ footer {
 
 .icon_sponsor {
   max-width: 350px;
+  padding-top: 3px;
 }
 .padding {
   padding: 35px 0;
