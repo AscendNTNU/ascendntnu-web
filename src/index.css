@@ -2391,3 +2391,9 @@ p#Modul_txt {
   margin-left: -150px;
   top: 0;
 }
+
+#front {
+  height: 750px;
+  object-fit: cover;
+  margin-top: 30px;
+}
