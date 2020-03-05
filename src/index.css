@@ -1492,6 +1492,10 @@ found {
     font-size: 1.2rem;
   }
 }
+#front {
+  height: 100%;
+  object-fit: cover;
+}
 
 .split-img-container {
   display: flex;
@@ -2428,8 +2432,7 @@ p#Modul_txt {
 }
 
 #front {
-  height: 750px;
+  height: 100%;
   object-fit: cover;
-  margin-top: 30px;
-  width: 100%;
+  margin-top: 100px;
 }
