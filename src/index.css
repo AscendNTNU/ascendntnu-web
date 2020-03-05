@@ -1024,6 +1024,11 @@ h4,
   #vertical {
     display: none;
   }
+
+  #front {
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 @media (max-width: 370px) {
@@ -1044,6 +1049,11 @@ h4,
 
   .Modal {
     display: none;
+  }
+
+  #front {
+    height: 100%;
+    object-fit: cover;
   }
 
   #vertical_2 {
@@ -1163,6 +1173,11 @@ strong {
     display: none;
   }
 
+  #front {
+    height: 100%;
+    object-fit: cover;
+  }
+
   #vertical_2 {
     display: none;
   }
@@ -1267,6 +1282,11 @@ found {
 
   .Modal {
     display: none;
+  }
+
+  #front {
+    height: 100%;
+    object-fit: cover;
   }
 
   #vertical_2 {
@@ -1771,6 +1791,11 @@ code {
     display: none;
   }
 
+  #front {
+    height: 100%;
+    object-fit: cover;
+  }
+
   #vertical_2 {
     display: none;
   }
@@ -1834,6 +1859,11 @@ code {
 
   .Modal {
     display: none;
+  }
+
+  #front {
+    height: 100%;
+    object-fit: cover;
   }
 
   #vertical_2 {
@@ -1928,6 +1958,11 @@ code {
 
   .Modal {
     display: none;
+  }
+
+  #front {
+    height: 100%;
+    object-fit: cover;
   }
 
   #vertical_2 {
@@ -2396,4 +2431,5 @@ p#Modul_txt {
   height: 750px;
   object-fit: cover;
   margin-top: 30px;
+  width: 100%;
 }
