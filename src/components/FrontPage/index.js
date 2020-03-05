@@ -76,7 +76,11 @@ export class FrontPage extends Component {
                   <br />
                   <br />
                   <img
-                    src={ASSETS_URL + '/images/assets/ascend-no-background.png'}
+                    id="front"
+                    src={
+                      ASSETS_URL +
+                      '/images/assets/ascend-logo-background.png.svg'
+                    }
                   />
                 </div>
                 <div class="col-sm-6">
