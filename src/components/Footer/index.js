@@ -60,7 +60,7 @@ export class Footer extends Component {
             <h3>Sponsors</h3>
             <a href="">
               <img
-                src={ASSETS_URL + '/images/assets/sponsor_trans.png'}
+                src={ASSETS_URL + '/images/assets/Sponsor_collation.svg'}
                 className="icon_sponsor"
               />
             </a>
