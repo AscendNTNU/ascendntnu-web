@@ -9,6 +9,8 @@ export class DronePage extends Component {
   render() {
     return (
       <div className="page page-drone">
+        {/*Image slider */}
+        {/*To add antoher image, just add another slide attribute and add image in with css down below*/}
         <div id="home">
           <slider>
             <slide></slide>
@@ -18,12 +20,14 @@ export class DronePage extends Component {
           </slider>
         </div>
 
+        {/*INKY, BLINKY, PINKY & CLYDE */}
         <div class="padding_2">
           <div class="container">
             <div
               class="row"
               style={{ display: 'flex', flexWrap: 'wrap-reverse' }}
             >
+              {/*Image of drone*/}
               <div class="col-sm-6">
                 <br />
                 <br />
@@ -35,6 +39,8 @@ export class DronePage extends Component {
               </div>
               <div class="col-sm-6 text-center">
                 <h1>INKY, BLINKY, PINKY & CLYDE</h1>
+
+                {/*Icon*/}
                 <center>
                   <h2>&#9733; 2019 &#9733;</h2>
                 </center>
@@ -76,6 +82,7 @@ export class DronePage extends Component {
           <br />
         </div>
 
+        {/*Drone: Mist*/}
         <div class="padding">
           <div class="container">
             <div class="row">
@@ -84,6 +91,7 @@ export class DronePage extends Component {
                   <h1>MIST </h1>
                 </center>
                 <center>
+                  {/*Icon*/}
                   <h2>&#9733; 2018 &#9733;</h2>
                 </center>
                 <hr />
@@ -108,6 +116,7 @@ export class DronePage extends Component {
                 </left>
               </div>
               <div class="col-sm-6">
+                {/*Image of drone*/}
                 <div class="mist">
                   <img src={ASSETS_URL + '/images/assets/mist_2.png'} />
                 </div>
@@ -116,22 +125,24 @@ export class DronePage extends Component {
           </div>
         </div>
 
+        {/*Droen: Valkyrie*/}
         <div class="padding_2">
           <div class="container">
             <div
               class="row"
               style={{ display: 'flex', flexWrap: 'wrap-reverse' }}
             >
+              {/*Image of drone*/}
               <div class="col-sm-6">
                 <br />
                 <br />
-
                 <img src={ASSETS_URL + '/images/assets/VALKYRIE (2).png'} />
               </div>
               <div class="col-sm-6 text-center">
                 <br />
                 <h1>Valkyrie</h1>
                 <center>
+                  {/*Icon*/}
                   <h2>&#9733; 2017 &#9733;</h2>
                 </center>
                 <hr />
@@ -156,6 +167,7 @@ export class DronePage extends Component {
           </div>
         </div>
 
+        {/*Drone: Drone 2.0*/}
         <div class="padding">
           <div class="container">
             <div class="row">
@@ -164,6 +176,7 @@ export class DronePage extends Component {
                   <h1>Drone 2.0</h1>
                 </center>
                 <center>
+                  {/*Icon*/}
                   <h2>&#9733; 2016 &#9733;</h2>
                 </center>
                 <hr />
@@ -191,13 +204,14 @@ export class DronePage extends Component {
                 <br />
                 <br />
                 <br />
-
+                {/*Image of drone*/}
                 <img src={ASSETS_URL + '/images/assets/drone2_0.png'} />
               </div>
             </div>
           </div>
         </div>
 
+        {/* Css-code to ONLY to this page */}
         <style
           dangerouslySetInnerHTML={{
             __html: `

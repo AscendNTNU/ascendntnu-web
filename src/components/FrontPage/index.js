@@ -17,6 +17,7 @@ export class FrontPage extends Component {
   constructor() {
     super()
     this.state = {
+      /*To remove pop-up window, Change statement to false */
       showModal: true,
     }
 
@@ -36,7 +37,7 @@ export class FrontPage extends Component {
     return (
       <div className="page-front page">
         <Splash />
-
+        {/* Pop-up window */}
         <div>
           <button onClick={this.handleOpenModal}>Modal</button>
           <ReactModal
@@ -47,7 +48,7 @@ export class FrontPage extends Component {
             overlayClassName="Overlay"
           >
             <button onClick={this.handleCloseModal}>Close</button>
-
+            {/*Modal txt */}
             <p id="Modul_txt">Apply for Team 2021!</p>
             <div class="bilde">
               <img
@@ -67,7 +68,7 @@ export class FrontPage extends Component {
             </div>
           </ReactModal>
         </div>
-
+        {/* Front-page intro */}
         <div style={{ backgroundColor: 'var(--primary-dark)' }}>
           <div class="padding">
             <div class="container">
@@ -116,6 +117,7 @@ export class FrontPage extends Component {
               </div>
             </div>
           </div>
+          {/* Main sponsor Kongsberg */}
           <div class="padding">
             <div class="container">
               <div class="row">
@@ -133,6 +135,7 @@ export class FrontPage extends Component {
                 </div>
 
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                  {/* Vertical line_1 */}
                   <div id="vertical_2"> </div>
                   <br />
 
@@ -144,7 +147,7 @@ export class FrontPage extends Component {
                     industries.
                   </p>
                 </div>
-
+                {/* Main sponsor Equinor */}
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                   <a href="https://www.equinor.com/en.html">
                     <img
@@ -158,6 +161,7 @@ export class FrontPage extends Component {
                 </div>
 
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                  {/* Vertical line_1 */}
                   <div id="vertical"> </div>
                   <br />
                   <p>
@@ -169,7 +173,7 @@ export class FrontPage extends Component {
               </div>
             </div>
           </div>
-
+          {/* FIXED Background scroll-image */}
           <div
             id="fixed"
             style={{
@@ -181,7 +185,7 @@ export class FrontPage extends Component {
             <br />
             <br />
           </div>
-
+          {/* AlphaPilot introduction */}
           <div class="padding">
             <div class="container">
               <div class="row">

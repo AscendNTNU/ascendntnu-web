@@ -288,6 +288,7 @@ export class TeamPage extends Component {
                 <h1>The Team</h1>
               </div>
               <div>
+                {/* Links between teams */}
                 <NavLink to="/team/2016" activeClassName="active">
                   <button>2016</button>
                 </NavLink>
