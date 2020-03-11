@@ -30,6 +30,7 @@ export class Header extends Component {
         <div className="head-content page-container">
           <NavLink exact onClick={this.hideMenu} to="/">
             <div className="logo-title">
+              {/* logo on top left header */}
               <img
                 className="logo-img"
                 alt="Logo"
@@ -43,7 +44,9 @@ export class Header extends Component {
           <div className="toggle-menu" onClick={this.props.toggleMenuHandler}>
             <i className={'fa fa-' + (this.props.toggle ? 'times' : 'bars')} />
           </div>
+          {/* Linkt to different pagees */}
           <nav className="nav-bar">
+            {/* Home */}
             <NavLink
               exact
               onClick={this.toggleMenuHandler}
@@ -53,14 +56,18 @@ export class Header extends Component {
             >
               Home
             </NavLink>
+            {/* Join */}
             <NavLink
               onClick={this.toggleMenuHandler}
               className="nav-element"
+              /* To remove, change to false */
               activeClassName="active"
+              /* linke to page /"name" */
               to="/join"
             >
               Join
             </NavLink>
+            {/* Drones */}
             <NavLink
               onClick={this.toggleMenuHandler}
               className="nav-element"
@@ -69,6 +76,7 @@ export class Header extends Component {
             >
               Drones
             </NavLink>
+            {/* team */}
             <NavLink
               onClick={this.toggleMenuHandler}
               className="nav-element"
@@ -77,6 +85,7 @@ export class Header extends Component {
             >
               Team
             </NavLink>
+            {/* Missions */}
             <NavLink
               onClick={this.props.toggleMenuHandler}
               className="nav-element"
@@ -85,6 +94,7 @@ export class Header extends Component {
             >
               Missions
             </NavLink>
+            {/* Contact */}
             <NavLink
               onClick={this.props.toggleMenuHandler}
               className="nav-element"

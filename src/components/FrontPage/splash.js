@@ -207,6 +207,7 @@ export class Splash extends Component {
           wireframe={true}
           style={{ position: 'absolute' }}
         />
+        {/* Text on the left side on front animation */}
         <div className="front-splash-left" style={styles.leftStyle}>
           <p id="top-left">
             Autonomous aerial robotics for learning. Ascend NTNU is the
