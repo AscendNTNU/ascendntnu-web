@@ -39,7 +39,6 @@ export class FrontPage extends Component {
         <Splash />
         {/* Pop-up window */}
         <div>
-          <button onClick={this.handleOpenModal}>Modal</button>
           <ReactModal
             isOpen={this.state.showModal}
             contentLabel="Minimal Modal Example"
