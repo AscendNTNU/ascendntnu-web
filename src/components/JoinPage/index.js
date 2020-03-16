@@ -58,7 +58,7 @@ export class JoinPage extends Component {
             type="button"
             href="https://docs.google.com/forms/d/1kKJENDVeQ-Us7-hCmK3bh-BCrufqKowE07zHvejpUEM/viewform?edit_requested=true"
           >
-            Click here to apply for Team 2021
+            Application for team 2021 has ended
           </a>
           <hr />
           <p>
@@ -620,7 +620,7 @@ export class JoinPage extends Component {
               fontSize: '1.4em',
             }}
           ></p>
-          <SubSection titleText=" Application for team 2021 has started, apply now!">
+          <SubSection titleText=" Application for team 2021">
             <hr />
             <p>
               Ascend NTNU develops an autonomous drone and competes in the
@@ -646,7 +646,7 @@ export class JoinPage extends Component {
             href="https://docs.google.com/forms/d/e/1FAIpQLSdgvQ1jVRs8iJmglmyGoaWiigi1E-Q8AdNjzrBWqwz0D9ukCA/viewform"
           >
             {' '}
-            Søk her!{' '}
+            Application for team 2021 has ended{' '}
           </a>
           <h4>
             <a
@@ -656,7 +656,7 @@ export class JoinPage extends Component {
               rel="
           noopener noreferrer "
             >
-              Application form for team 2021
+              Application for team 2021 has ended
             </a>
           </h4>{' '}
           {positions[this.state.language][1]}
