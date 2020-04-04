@@ -24,7 +24,7 @@ export class Section extends Component {
   constructor(props) {
     super(props)
 
-    this.className = 'section page-container'
+    this.className = 'section page-join_style'
 
     if (this.props.className) this.className += ' ' + this.props.className
 
