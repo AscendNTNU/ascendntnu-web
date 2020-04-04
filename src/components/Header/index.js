@@ -92,7 +92,7 @@ export class Header extends Component {
               activeClassName="active"
               to="/missions"
             >
-              Missions
+              Competitions
             </NavLink>
             {/* Contact */}
             <NavLink

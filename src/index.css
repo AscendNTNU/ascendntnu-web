@@ -691,6 +691,7 @@ body.no-scroll {
   display: -webkit-inline-flex;
   border: solid #d7572d 1px;
   margin: 10px;
+  border-radius: 50px;
 }
 
 .anchor-list > li:hover {
@@ -1561,6 +1562,7 @@ h2 {
 p {
   color: #fff;
   font-size: 20px;
+  margin: 0px 0 15px;
 }
 
 * {
