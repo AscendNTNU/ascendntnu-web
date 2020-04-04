@@ -68,7 +68,7 @@ export class FrontPage extends Component {
           </ReactModal>
         </div>
         {/* Front-page intro */}
-        <div style={{ backgroundColor: 'var(--primary-dark)' }}>
+        <div>
           <div class="padding">
             <div class="container">
               <div class="row">
