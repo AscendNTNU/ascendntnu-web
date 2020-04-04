@@ -363,6 +363,10 @@ input[type='submit'].active,
     overflow: hidden;
   }
 
+  .spons {
+    display: none;
+  }
+
   body .app-container {
     /*-webkit-overflow-scrolling: touch;*/
     height: calc(100vh - 64px);
@@ -478,6 +482,9 @@ body.no-scroll {
 @media (min-width: 1600px) {
   .front-announcement {
     font-size: 2em;
+  }
+  .spons {
+    display: none;
   }
 }
 
@@ -788,10 +795,6 @@ h4,
 @media (max-width: 512px) {
   .Modal {
     display: none;
-  }
-
-  .spons {
-    display: block;
   }
 
   #fixed {
@@ -1189,6 +1192,10 @@ found {
 @media (min-width: 987px) {
   .team-title {
     font-size: 5rem;
+  }
+
+  .spons {
+    display: none;
   }
 
   .team-text {
@@ -1982,8 +1989,4 @@ p#Modul_txt {
   height: 100%;
   object-fit: cover;
   margin-top: 100px;
-}
-
-.spons {
-  display: none;
 }
