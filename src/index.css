@@ -264,6 +264,10 @@ input[type='submit'].active,
     display: none;
   }
 
+  .spons {
+    display: block;
+  }
+
   #fixed {
     display: none;
   }
@@ -786,6 +790,10 @@ h4,
     display: none;
   }
 
+  .spons {
+    display: block;
+  }
+
   #fixed {
     display: none;
   }
@@ -882,6 +890,9 @@ strong {
     display: none;
   }
 
+  .spons {
+    display: block;
+  }
   #fixed {
     display: none;
   }
@@ -998,6 +1009,10 @@ found {
 
   .Modal {
     display: none;
+  }
+
+  .spons {
+    display: block;
   }
 
   #fixed {
@@ -1304,6 +1319,10 @@ found {
     display: none;
   }
 
+  .spons {
+    display: block;
+  }
+
   #front {
     height: 100%;
     object-fit: cover;
@@ -1475,6 +1494,10 @@ found {
 
   .Modal {
     display: none;
+  }
+
+  .spons {
+    display: block;
   }
 
   #front {
@@ -1959,4 +1982,8 @@ p#Modul_txt {
   height: 100%;
   object-fit: cover;
   margin-top: 100px;
+}
+
+.spons {
+  display: none;
 }

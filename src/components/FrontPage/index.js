@@ -184,6 +184,10 @@ export class FrontPage extends Component {
             <br />
             <br />
           </div>
+          <div class="spons">
+            {' '}
+            <img src={ASSETS_URL + '/images/assets/Sponsor_collation.svg'} />
+          </div>
           {/* AlphaPilot introduction */}
           <div class="padding">
             <div class="container">
