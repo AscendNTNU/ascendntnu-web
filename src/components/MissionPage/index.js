@@ -13,7 +13,7 @@ export class MissionPage extends Component {
     super(props)
 
     /* Set date and time for countdown timer */
-    const countDownDate = new Date('Aug 4, 2020 00:12:00').getTime()
+    const countDownDate = new Date('Apr 9, 2020 00:12:00').getTime()
     this.state = {
       countDownDate,
       ...this.getTimeLeft(countDownDate),
@@ -167,7 +167,7 @@ export class MissionPage extends Component {
                   ) : (
                     /* Text that is shown on website when the countdown is done */
                     <p id="show">
-                      It's on. The IARC Mission 9 competition has launched
+                      The IARC Mission 9 competition has been cancelled
                     </p>
                   )}
                 </center>
