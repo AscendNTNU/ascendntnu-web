@@ -221,6 +221,7 @@ export class FrontPage extends Component {
                   <br />
 
                   <img
+                    id="spons_list_img"
                     src={ASSETS_URL + '/images/assets/Sponsor_collation.svg'}
                   />
                 </div>
