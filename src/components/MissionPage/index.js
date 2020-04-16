@@ -47,7 +47,53 @@ export class MissionPage extends Component {
   render() {
     return (
       <div className="page page-mission">
-        <div class="padding">
+        {/* Introduction */}
+        <div
+          class="padding_3"
+          style={{
+            backgroundImage: `url('${ASSETS_URL}/images/assets/Ciruit.png')`,
+          }}
+        >
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6">
+                <center>
+                  <h1>IARC</h1>
+                </center>
+                <img src={ASSETS_URL + '/images/assets/iarc.png'} />
+                <center>
+                  <a href="#section1">
+                    <button>Read more about IARC</button>
+                  </a>
+                </center>
+              </div>
+              <div class="col-sm-6">
+                <center>
+                  <h1>AlphaPilot</h1>
+                </center>
+                <br />
+                <img
+                  id="AP_comp"
+                  src={ASSETS_URL + '/images/assets/AlphaPilot.jpg'}
+                />
+                <center>
+                  <a href="#section2">
+                    <button>Read more about The AlphaPilot challenge</button>
+                  </a>
+                </center>
+              </div>
+            </div>
+          </div>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+        </div>
+
+        {/*IARC Intro */}
+        <div class="padding" id="section1">
           <div class="container">
             <div
               class="row"
@@ -345,6 +391,50 @@ export class MissionPage extends Component {
                 </div>
                 <br />
                 <br />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="padding" id="section2">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6">
+                <br />
+                <br />
+                <br />
+                <h2>AlphaPilot</h2>
+                <hr />
+                <p>
+                  The AlphaPilot group was started in February 2019 as Ascends
+                  first foray into the world of autonomous drone racing. Formed
+                  to compete in Lockheed Martin and DRL’s brand new AlphaPilot
+                  competition we placed 10th of 425 teams in the virtual
+                  qualifier. Unfortunately only the top 9 teams qualified for
+                  the four race long 2019 season.
+                </p>
+
+                <p>
+                  This year we are out for revenge. Our team, which previously
+                  consisted of three members, has expanded to include seven
+                  talented members with backgrounds in autonomous racing,
+                  competitive programming and previous experience in Ascend. Our
+                  goals for the next month are to physically test our control
+                  systems and visual odometry on our test drone, and to have our
+                  whole pipeline, from detection to control, running together in
+                  the simulator.
+                </p>
+              </div>
+              <div class="col-sm-6">
+                <br />
+                <br />
+                <br />
+
+                <img
+                  src={
+                    ASSETS_URL + '/images/teams/logoes/2020/Alphapilot-logo.svg'
+                  }
+                />
               </div>
             </div>
           </div>

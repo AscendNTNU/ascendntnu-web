@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    href="https://fonts.googleapis.com/css?family=Raleway"
+    rel="stylesheet"
+  />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+ 
+    body {
+      background-color:#483e3e ;
+    }
+
+    html{
+      background-color: #413838;
+    }
+
+    textarea:focus {
+        background-color: blanchedalmond;
+    }
+ 
+    #regForm {
+      background-color: #483e3e;
+      margin: 100px auto;
+      font-family: 'Times New Roman', Times, serif;
+      padding: 40px;
+      width: 70%;
+      height: 100%;
+      min-width: 300px;
+    }
+ 
+    h1, h2, p {
+      text-align: center;
+    }
+ 
+    h1,h2{
+      color: #c49a6c;
+    }
+
+    .optionalfeild {
+        display: inline;
+    }
+ 
+    p{
+      font-weight: bold;
+      font-size: 20px;
+      color:#c9b49d;
+    }
+ 
+    input {
+      padding: 10px;
+      font-size: 17px;
+      font-family: Raleway;
+      border: 1px solid #aaaaaa;
+      margin: 5px;
+    }
+ 
+    select {
+   -webkit-appearance:none;
+   -moz-appearance:none;
+   -ms-appearance:none;
+   appearance:none;
+   outline:0;
+   box-shadow:none;
+   border:0!important;
+   background: #5c6664;
+   background-image: none;
+   flex: 1;
+   display: flex;
+   flex-direction: row-reverse;
+   padding: 0 .5em;
+   color:#fff;
+   cursor:pointer;
+   font-size: 1em;
+   font-family: 'Open Sans', sans-serif;
+}
+select::-ms-expand {
+   display: block;
+}
+.select {
+   position: relative;
+   display: flex;
+   width: 20em;
+   margin: 5px;
+   height: 3em;
+   line-height: 3;
+   background: #5c6664;
+   border-radius: .25em;
+   margin: auto;
+}
+.select::after {
+   content: '\25BC';
+   position: absolute;
+   top: 0;
+   right: 0;
+   padding: 0 1em;
+   background: #2b2e2e;
+   cursor:pointer;
+   pointer-events:none;
+   transition:.25s all ease;
+}
+
+input#navnRegistreing:focus, input#mail:focus, input#nummer:focus {
+    background-color: blanchedalmond;
+}
+
+.p_element {
+    color: #eee;
+    text-align: left;
+}
+ 
+.select option:hover{
+  display: block;
+}
+ 
+    /* Mark input boxes that gets an error on validation: */
+    input.invalid {
+      background-color: #ffdddd;
+    }
+ 
+    /* Hide all steps by default: */
+    .tab {
+      display: none;
+    }
+ 
+    button {
+      background-color: #c49a6c;
+      color: #eee;
+      border: none;
+      padding: 15px 20px;
+      font-size: 17px;
+      border-radius: 5px;
+      font-family: Raleway;
+      cursor: pointer;
+    }
+ 
+    button:hover {
+      text-decoration-line: none;
+      transition: all 0.5s;
+      font-size: 22px;
+      font-size-adjust: 17px;
+    }
+ 
+    #prevBtn {
+      background-color: #bbbbbb;
+      border-radius: 5px;
+      padding: 15px 20px;
+      font-size: 17px;
+      margin: 10px;
+    }
+    #prevBtn:hover {
+      text-decoration-line: none;
+      transition: all 0.5s;
+      font-size: 22px;
+      font-size-adjust: 17px;
+    }
+ 
+    /* Make circles that indicate the steps of the form: */
+    .step {
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbbbbb;
+      border: none;
+      border-radius: 50%;
+      display: inline-block;
+      opacity: 0.5;
+      padding-top: 3px;
+    }
+
+    input#other_studys {
+      background-color: #c49a6c;
+      border-radius: 5px;
+    }
+
+    input#other_studys:hover {
+      text-decoration-line: none;
+      transition: all 0.5s;
+      font-size: 20px;
+      font-size-adjust: 17px;
+    }
+ 
+    .step.active {
+      opacity: 1;
+    }
+ 
+    /* Mark the steps that are finished and valid: */
+    .step.finish {
+      background-color: #c49a6c;
+    }
+
+    #fail{
+        color: red;
+    }
+
+    #text{
+        color: #eee;
+    }
+ 
+    /* The container */
+    .container {
+      display: block;
+      position: relative;
+      padding-left: 35px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      font-size: 22px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    select {
+      text-align: center;
+    }
+ 
+    /* Hide the browser's default radio button */
+    .container input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+ 
+    /* Create a custom radio button */
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 25px;
+      width: 25px;
+      background-color: #c49a6c;
+      border-radius: 50%;
+    }
+
+    #help{
+        color: #eee;
+        font-size: 18px;
+    }
+
+    b {
+        font-size: 18px;
+    }
+ 
+    #mail,
+    #nummer,
+    #navnRegistreing,
+    #preview {
+      width: 50%;
+    }
+ 
+    /* On mouse-over, add a grey background color */
+    .container:hover input ~ .checkmark {
+      background-color: #eee;
+    }
+ 
+    /* When the radio button is checked, add a blue background */
+    .container input:checked ~ .checkmark {
+      background-color: #c49a6c;
+    }
+ 
+    /* Create the indicator (the dot/circle - hidden when not checked) */
+    .checkmark:after {
+      content: '';
+      position: absolute;
+      display: none;
+    }
+ 
+    /* Show the indicator (dot/circle) when checked */
+    .container input:checked ~ .checkmark:after {
+      display: block;
+    }
+ 
+    /* Style the indicator (dot/circle) */
+    .container .checkmark:after {
+      top: 9px;
+      left: 9px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: white;
+    }
+  </style>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+ 
+    <form
+      action="https://formspree.io/bharatpremkumar@gmail.com"
+      method="POST"
+      id="regForm"
+    >
+      <!-- One "tab" for each step in the form: -->
+      <div id="tab1" class="tab">
+        <h1>Contact Information</h1>
+          <hr/>
+        <label>
+          <p>
+            <input
+              placeholder="Full name..."
+              name="From "
+              id="navnRegistreing"
+              class="name"
+            />
+          </p>
+        </label>
+ 
+        <label>
+          <p>
+            <input
+              input="mail"
+              placeholder="E-mail..."
+              id="mail"
+              name="_replyto"
+              class="email"
+            />
+          </p>
+        </label>
+ 
+        <label>
+          <p>
+            <input
+              placeholder="Phone number..."
+              type="text"
+              id="nummer"
+              name="Phonenumber"
+              class="number"
+              name="TLF:"
+            />
+          </p>
+        </label>
+      </div>
+ 
+      <div id="tab2" class="tab">
+
+        <h1>Choose your study program</h1>
+        <hr/>
+        <br/>
+      <div id="marked"></div>
+        <label class="container">
+            <p class="p_element">Kybernetikk og Robotikk</p>
+          <input
+            type="radio"
+            id = "radio_1"
+            name="Study field"
+            value="I study: Kybernetikk og Robotikk"
+          />
+          <span class="checkmark"></span>
+        </label>
+ 
+        <label class="container">
+            <p class="p_element">Datateknologi</p>
+          <input
+            type="radio"
+            id = "radio_2"
+            id= "Datateknologi"
+            name="Study field"
+            value="I study: Datateknologi"
+          />
+          <span class="checkmark"></span>
+        </label>
+ 
+        <label class="container">
+            <p class="p_element">Elektronisk systemdesign og innovasjon</p>
+          <input
+            type="radio"
+            id = "radio_3"
+            name="Study field"
+            value="I study: Elektronisk systemdesign og
+            innovasjon"
+          />
+          <span class="checkmark"></span>
+        </label>
+ 
+        <label class="container">
+            <p class="p_element">Industriell økonomi</p>
+          <input
+            type="radio"
+            id = "radio_4"
+            name="Study field"
+            value="I study: Industriell økonomi"
+          />
+          <span class="checkmark"></span>
+        </label>
+ 
+        <label class="container">
+            <p class="p_element">Produktutvikling og produksjon</p>
+          <input
+            type="radio"
+            id = "radio_5"
+            name="Study field"
+            value="I study: Produktutvikling og produksjon"
+          />
+          <span class="checkmark"></span>
+        </label>
+ 
+        <label class="container">
+            <p class="p_element">Kommunikasjonsteknologi</p>
+          <input
+            type="radio"
+            id = "radio_6"
+            name="Study field"
+            value="I study: Kommunikasjonsteknologi"
+          />
+          <span class="checkmark"></span>
+        </label>
+ 
+        <label class="container">
+            <p class="p_element">Energi og miljø</p>
+          <input type="radio"
+          id = "radio_7" name="Study field" value="Energi og miljø" />
+          <span class="checkmark"></span>
+        </label>
+ 
+        <label class="container">
+            <p class="p_element">Bygg og miljøteknikk</p>
+          <input
+            type="radio"
+            id = "radio_8"
+            name="Study field"
+            value="I study: Bygg og miljøteknikk"
+          />
+          <span class="checkmark"></span>
+        </label>
+ 
+        <label class="container">
+            <p class="p_element">Ingeniørvitenskap og IKT</p>
+          <input
+            type="radio"
+            id = "radio_9"
+            name="Study field"
+            value="I study: Ingeniørvitenskap og IKT"
+          />
+          <span class="checkmark"></span>
+        </label>
+ 
+        <label class="container">
+            <p class="p_element">Fysikk og matematikk</p>
+          <input
+            type="radio"
+            id = "radio_10"
+            name="Study field"
+            value="I study: Fysikk og matematikk"
+          />
+          <span class="checkmark"></span>
+        </label>
+ 
+        <label class="container">
+          <p class="p_element">Materialteknologi</p>
+          <input
+            type="radio"
+            id = "radio_11"
+            name="Study field"
+            value="I study: Materialteknikk"
+          />
+          <span class="checkmark"></span>
+        </label>
+        
+        <label class="other_program">
+          <input
+            onclick="myFunction()"
+            type="button"
+            id="other_studys"
+            value="Other studys? Enter here: "
+          />
+          <div class="others"></div>
+        </label>
+      </div>
+      </div>
+ 
+      <script type="text/javascript">
+        //opprette element//
+        var radio_1El = document.querySelector("#radio_1");
+        var radio_2El = document.querySelector("#radio_2");
+        var radio_3El = document.querySelector("#radio_3");
+        var radio_4El = document.querySelector("#radio_4");
+        var radio_5El = document.querySelector("#radio_5");
+        var radio_6El = document.querySelector("#radio_6");
+        var radio_7El = document.querySelector("#radio_7");
+        var radio_8El = document.querySelector("#radio_8");
+        var radio_9El = document.querySelector("#radio_9");
+        var radio_10El = document.querySelector("#radio_10");
+        var radio_11El = document.querySelector("#radio_11");
+        var other_studysEl = document.querySelector("#other_studys");
+       
+        radio_1El.addEventListener("click", sjekkdor);
+        radio_2El.addEventListener("click", sjekkdor);
+        radio_3El.addEventListener("click", sjekkdor);
+        radio_4El.addEventListener("click", sjekkdor);
+        radio_5El.addEventListener("click", sjekkdor);
+        radio_6El.addEventListener("click", sjekkdor);
+        radio_7El.addEventListener("click", sjekkdor);
+        radio_8El.addEventListener("click", sjekkdor);
+        radio_9El.addEventListener("click", sjekkdor);
+        radio_10El.addEventListener("click", sjekkdor);
+        radio_11El.addEventListener("click", sjekkdor);
+        other_studysEl.addEventListener("click", sjekkdor);
+       
+      function sjekkdor(e) { //e er argument for event->hendelse// bruker variablene over her//
+        var skjekk = e.target;
+ 
+        if(skjekk.checked){
+          var elem = document.getElementById('other_studys');
+          elem.parentNode.removeChild(elem);
+          console.log(e.target);
+        }
+      }      
+     
+      </script>
+ 
+      <script>
+        var innpakningEl = document.querySelector('.others');
+        var other_studysEl = document.querySelector("#other_studys");
+ 
+        function myFunction() {
+          var x = document.createElement('INPUT');
+          x.setAttribute('type', 'text');
+          x.setAttribute('name', 'I study');
+          x.setAttribute('class', 'other_feilds');
+          x.setAttribute('placeholder', 'Enter studyprogram');
+ 
+          innpakningEl.appendChild(x);
+ 
+          document.getElementById('marked').style.textDecoration = "line-through";
+       
+          document.getElementById('radio_1').disabled = true;
+          document.getElementById('radio_2').disabled = true;
+          document.getElementById('radio_3').disabled = true;
+          document.getElementById('radio_4').disabled = true;
+          document.getElementById('radio_5').disabled = true;
+          document.getElementById('radio_6').disabled = true;
+          document.getElementById('radio_7').disabled = true;
+          document.getElementById('radio_8').disabled = true;
+          document.getElementById('radio_9').disabled = true;
+          document.getElementById('radio_10').disabled = true;
+          document.getElementById('radio_11').disabled = true;
+          
+ 
+          var elem = document.getElementById('other_studys');
+          elem.parentNode.removeChild(elem);        
+        }
+       
+</script>
+ 
+     <!--Here are the HTML-code for the Select element-->
+      <div id="tab3" class="tab">
+        <h1>Position priority</h1>
+        <h2>Choose upto 3 positions (Choose after priority 1-3)</h2><br/>
+        <hr/>
+        <h1 id="tilbakemelding" ></h1>
+        <br/>
+        <p>Project Manager</p>
+        <div class="select">
+          <select
+            id="Project_m"
+            class="optionalfield"
+            name="Position priority: Project Manager"
+          >
+            <option value="Not interested">Not interested</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </div>
+ 
+ 
+          <p>Deputy Project Manager</p>
+          <div class="select">
+          <select
+            id="Deputy_pm"
+            class="optionalfield"
+            name="Position priority: Deputy Project Manager"
+          >
+            <option value="Not interested">Not interested</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </div>
+ 
+        <p>Chief Engineer</p>
+          <div class="select">
+          <select
+            id="Chief_eng"
+            class="optionalfield"
+            name="Position priority: Chief Engineer"
+          >
+            <option value="Not interested">Not interested</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </div>
+ 
+        <p>Deputy Chief Engineer</p>
+          <div class="select">
+          <select
+            id="Deputy_ce"
+            class="optionalfield"
+            name="Position priority: Deputy Chief Engineer"
+          >
+            <option value="Not interested">Not interested</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </div>
+ 
+     
+        <p>Head of Economics</p>
+        <div class="select">
+        <select
+            id="Head_eco"
+            class="optionalfield"
+            name="Position priority: Head of Economics"
+          >
+            <option value="Not interested">Not interested</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </div>
+ 
+        <p>Head of Marketing</p>
+        <div class="select">
+        <select
+            id="Head_mar"
+            class="optionalfield"
+            name="Position priority: Head of Marketing"
+          >
+            <option value="Not interested">Not interested</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+      </div>
+ 
+      <p>Group Leader AI</p>
+          <div class="select">
+          <select
+            id="Group_ai"
+            class="optionalfield"
+            name="Position priority: Group Leader AI"
+          >
+            <option value="Not interested">Not interested</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </div>
+       
+        <p> Group Leader Hardware</p>
+          <div class="select">
+          <select
+            id="Group_har"
+            class="optionalfield"
+            name="Position priority: Group Leader Hardware"
+          >
+            <option value="Not interested">Not interested</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </div>
+ 
+        <p>Group Leader AlphaPilot</p>
+          <div class="select">
+          <select
+            id="Group_alp"
+            class="optionalfield"
+            name="Position priority: Group Leader AlphaPilot"
+          >
+            <option value="Not interested">Not interested</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </div>
+ 
+        <p> Group Leader Control</p>
+          <div class="select">
+          <select
+            id="Group_con"
+            class="optionalfield"
+            name="Position priority: Group Leader Control"
+          >
+            <option value="Not interested">Not interested</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </div>
+ 
+          <p>Group Leader Perception</p>
+          <div class="select">
+          <select
+            id="Group_per"
+            class="optionalfield"
+            name="Position priority: Group Leader Perception"
+          >
+            <option value="Not interested">Not interested</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </div>
+        </label>
+      </div>
+ 
+      <script type="text/javascript">
+        //opprette element//
+    var project_mEl = document.querySelector("#Project_m");
+    var deputy_pmEl = document.querySelector("#Deputy_pm");
+    var chief_engEl = document.querySelector("#Chief_eng");
+    var deputy_ceEl = document.querySelector("#Deputy_ce");
+    var head_ecoEl = document.querySelector("#Head_eco");
+    var head_marEl = document.querySelector("#Head_mar");
+    var group_aiEl = document.querySelector("#Group_ai");
+    var group_perEl = document.querySelector("#Group_per");
+    var group_alpEl = document.querySelector("#Group_alp");
+    var group_conEl = document.querySelector("#Group_con");
+    var group_harEl = document.querySelector("#Group_har");
+ 
+    var tilbakemeldingEl = document.querySelector("#tilbakemelding");
+ 
+    project_mEl.addEventListener("click", check);
+    deputy_pmEl.addEventListener("click", check);
+    chief_engEl.addEventListener("click", check);
+    deputy_ceEl.addEventListener("click", check);
+    head_ecoEl.addEventListener("click", check);
+    head_marEl.addEventListener("click", check);
+     group_aiEl.addEventListener("click", check);
+    group_perEl.addEventListener("click", check);
+    group_alpEl.addEventListener("click", check);
+     group_conEl.addEventListener("click", check);
+  group_harEl.addEventListener("click", check);
+ 
+  var sum = 0;
+  var ones = 0;
+  var twos = 0;
+  var threes = 0;
+
+    function check(e) { //e er argument for event->hendelse// bruker variablene over her//
+  var value = Number(e.target.value);
+ 
+  if(value == "Not interested") {
+    sum += 0;
+  }
+ 
+  if(value == 1) {
+    sum += 1;
+    ones++;
+    console.log(ones);
+  }
+ 
+  if(value == 2) {
+    sum += 2;
+    twos++;
+  }
+ 
+  if(value == 3) {
+    sum += 3;
+    threes++;
+  }
+
+  
+  if(ones == 3) {
+    alert("you have given positions the same priority. Start over");
+    document.getElementById("Project_m").selectedIndex = "0";
+    document.getElementById("Deputy_pm").selectedIndex = "0";
+    document.getElementById("Deputy_ce").selectedIndex = "0";
+    document.getElementById("Chief_eng").selectedIndex = "0";
+    document.getElementById("Head_mar").selectedIndex = "0";
+    document.getElementById("Head_eco").selectedIndex = "0";
+    document.getElementById("Group_ai").selectedIndex = "0";
+    document.getElementById("Group_alp").selectedIndex = "0";
+    document.getElementById("Group_har").selectedIndex = "0";
+    document.getElementById("Group_per").selectedIndex = "0";
+    document.getElementById("Group_con").selectedIndex = "0";
+    sum = 0;
+    ones = 0;
+    twos = 0;
+    threes = 0;
+  }
+
+  if(twos == 3) {
+    alert("you have given positions the same priority. Start over");
+    document.getElementById("Project_m").selectedIndex = "0";
+    document.getElementById("Deputy_pm").selectedIndex = "0";
+    document.getElementById("Deputy_ce").selectedIndex = "0";
+    document.getElementById("Chief_eng").selectedIndex = "0";
+    document.getElementById("Head_mar").selectedIndex = "0";
+    document.getElementById("Head_eco").selectedIndex = "0";
+    document.getElementById("Group_ai").selectedIndex = "0";
+    document.getElementById("Group_alp").selectedIndex = "0";
+    document.getElementById("Group_har").selectedIndex = "0";
+    document.getElementById("Group_per").selectedIndex = "0";
+    document.getElementById("Group_con").selectedIndex = "0";
+    sum = 0;
+    ones = 0;
+    twos = 0;
+    threes = 0;
+  }
+
+  if(threes == 3) {
+    alert("you have given positions the same priority. Start over");
+    document.getElementById("Project_m").selectedIndex = "0";
+    document.getElementById("Deputy_pm").selectedIndex = "0";
+    document.getElementById("Deputy_ce").selectedIndex = "0";
+    document.getElementById("Chief_eng").selectedIndex = "0";
+    document.getElementById("Head_mar").selectedIndex = "0";
+    document.getElementById("Head_eco").selectedIndex = "0";
+    document.getElementById("Group_ai").selectedIndex = "0";
+    document.getElementById("Group_alp").selectedIndex = "0";
+    document.getElementById("Group_har").selectedIndex = "0";
+    document.getElementById("Group_per").selectedIndex = "0";
+    document.getElementById("Group_con").selectedIndex = "0";
+    sum = 0;
+    ones = 0;
+    twos = 0;
+    threes = 0;
+  }
+ 
+  if (sum > 6) {
+    alert("you have choosen more than 3 positions. Or you have given positions the same priority. Start over");
+    document.getElementById("Project_m").selectedIndex = "0";
+    document.getElementById("Deputy_pm").selectedIndex = "0";
+    document.getElementById("Deputy_ce").selectedIndex = "0";
+    document.getElementById("Chief_eng").selectedIndex = "0";
+    document.getElementById("Head_mar").selectedIndex = "0";
+    document.getElementById("Head_eco").selectedIndex = "0";
+    document.getElementById("Group_ai").selectedIndex = "0";
+    document.getElementById("Group_alp").selectedIndex = "0";
+    document.getElementById("Group_har").selectedIndex = "0";
+    document.getElementById("Group_per").selectedIndex = "0";
+    document.getElementById("Group_con").selectedIndex = "0";
+    sum = 0;
+  }
+ 
+  if(sum == 6) {
+    document.getElementById("prevBtn").disabled = false;
+  }
+ 
+  if(sum < 6) {
+    document.getElementById("prevBtn").disabled = true;
+  }
+}      
+ 
+</script>
+     
+ 
+      <div id="tab4" class="tab">
+        <h1>Programing experience: 1 = Never used, 5 = Expert</h1>
+        <hr/>
+        <label name="experience">
+          <p>Programming</p>
+          <div class="select">
+          <select id="Programming" class="" name="Programming experience">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+ 
+          <p>Solidworks</p>
+          <div class="select">
+          <select id="Solidworks" class="" name="Solidworks experience">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+          </div>
+ 
+          <p>ROS (Robotic Operating System)</p>
+          <div class="select">
+          <select
+            id="ROS"
+            class=""
+            name=" ROS (Robotic Operating System) experience"
+          >
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+ 
+          <p>Linux/Ubuntu</p>
+          <div class="select">
+          <select id="Linux" class="" name="Linux/Ubuntu experience">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+          </div>
+ 
+          <p>Photoshop/Illustrator/inDesign</p>
+          <div class="select">
+          <select
+            id="inDesign"
+            class=""
+            name="Photoshop and Illustrator experience"
+          >  
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+         
+        <p>VISMA E-accounting</p>
+        <div class="select">
+          <select id="VISMA" class="" name=" VISMA E-accounting experience">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+        </label>
+      </div>
+ 
+      <div id="tab5" class="tab">
+        <h1>Essay section</h1>
+        <hr>
+        <br>
+        <div>
+          <label>
+            <p>
+              What makes you a good team member?
+            </p>
+            <center> <textarea
+              id="msg_1"
+              rows="4"
+              cols="70"
+              name="What makes you a good team member?"
+              class="essay"
+              placeholder="Enter Text Here"
+            ></textarea></center>
+          </label>
+          <br>
+         
+          <label>
+            <p>
+              What makes you a good leader?
+            </p>
+            <center><textarea
+              id="msg_2"
+              rows="4"
+              cols="70"
+              name="What makes you a good leader?"
+              class="essay"
+              placeholder="Enter Text Here"
+            ></textarea></center>
+          </label>
+          <br>
+         
+          <label>
+            <p>
+              What motivates you to join Ascend NTNU?
+            </p>
+            <center><textarea
+              id="msg_3"
+              rows="4"
+              cols="70"
+              name="What motivates you to join Ascend NTNU?"
+              class="essay"
+              placeholder="Enter Text Here"
+            ></textarea></center>
+          </label>
+        </div>
+        <br>
+        <center><button type="submit" class="submit">
+                     Validation Check: 
+          To submit, validation check must be approved
+
+        </button></center>
+        <br>
+        <center><div class="status"></div></center>
+      </div>
+ 
+      <div style="overflow:auto;">
+        <div style="float:right;">
+          <button type="button" id="prevBtn" onclick="nextPrev(-1)">
+            Previous
+          </button>
+          <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+        </div>
+      </div>
+      <!-- Circles which indicates the steps of the form: -->
+      <div style="text-align:center;margin-top:40px;">
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+      </div>
+    </form>
+ 
+   <!--Here is the function-->
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('.submit').click(function(event) {
+          event.preventDefault()
+          console.log('clicked')
+ 
+          var email = $('.email').val()
+          var name = $('.name').val()
+          var number = $('.number').val()
+          var essay = $('.essay').val()
+          var statusEl = $('.status')
+          var btn = $('.submit')
+          var optionalfieldEl = $('.optionalfield').val()
+          var other_studys = $('.other_feilds').val()
+          statusEl.empty()
+
+          $('.optionalfield').each(function() {                                                     
+            if($(this).val() == 'Not interested') {                                                                                                                                                               
+                $(this).prop('disabled', true);                                                     
+            }                                                                                       
+          })   
+
+          if (email.length > 5 && email.includes('@') && email.includes('.')) {
+            console.log('mail good')
+          } else {
+            event.preventDefault()
+            statusEl.append('<div id = "help"><b>Solution</b>: Go back to first page and see if you have misspelled. Then do a validation Check again </div>')
+            document.getElementById('nextBtn').disabled = false
+            btn.append('<div id = "fail"> - Error: Invalid E-mail</div>')
+            document.getElementById('prevBtn').style.display = 'inline'
+          }
+ 
+          if (name.length < 40) {
+            console.log('name good')
+          } else {
+            event.preventDefault()
+            console.log('name fail')
+          }
+ 
+          if (number.length >= 8) {
+            console.log('number good')
+          } else {
+            event.preventDefault()
+            statusEl.append('<div id = "help"><b>Solution</b>: Go back to first page and see if you have misspelled. Then do a validation Check again </div>')
+            document.getElementById('nextBtn').disabled = false
+            btn.append('<div id = "fail"> - Error: Invalid number</div>')
+            document.getElementById('prevBtn').style.display = 'inline'
+          }
+ 
+          if (essay == "") {
+            document.getElementById("msg_1").style.backgroundColor = "#ffdddd";
+            document.getElementById("msg_2").style.backgroundColor = "#ffdddd";
+            document.getElementById("msg_3").style.backgroundColor = "#ffdddd";
+            statusEl.append('<div id = "help"><b>Solution</b>: Answer all the questions. Then do a validation Check again </div>')
+            btn.append('<div id = "fail"> - Error: All text fields are empty</div>')
+          } else {
+            event.preventDefault()
+          }
+ 
+          var list_1 = String(document.getElementById("msg_1").value);
+          var list_2 = String(document.getElementById("msg_2").value);
+          var list_3 = String(document.getElementById("msg_3").value);
+ 
+          if ((list_1.length && list_2.length && list_3.length) <= 90 && (list_1.length && list_2.length && list_3.length) >=1) {
+            statusEl.append('<div id = "help"><b>Solution</b>: Write more! We want supplementary sentences. Then do a validation Check again</div>')
+            btn.append('<div id = "fail"> - Error: Not enough information in the text fields</div>')
+            document.getElementById("msg_1").style.backgroundColor = "#ffdddd";
+            document.getElementById("msg_2").style.backgroundColor = "#ffdddd";
+            document.getElementById("msg_3").style.backgroundColor = "#ffdddd";
+            console.log(list_1.length);
+            console.log(list_2.length);
+            console.log(list_3.length);
+          } else {
+            event.preventDefault()
+          }
+ 
+ 
+          if (
+            email.length > 5 &&
+            email.includes('@') &&
+            email.includes('.') &&
+            name.length < 40 &&
+            number.length >= 8 &&
+            list_1.length >= 90 &&
+            list_2.length >= 90 &&
+            list_3.length >= 90
+          ) {
+            btn.html('<div>Everything is in order, click submit</div>')
+           document.getElementById('nextBtn').disabled = false
+          } else {
+            event.preventDefault()
+          }
+        })
+      })
+    </script>
+ 
+    <script>
+      var currentTab = 0 // Current tab is set to be the first tab (0)
+      showTab(currentTab) // Display the current tab
+ 
+      function showTab(n) {
+        // This function will display the specified tab of the form...
+        var x = document.getElementsByClassName('tab')
+        x[n].style.display = 'block'
+        //... and fix the Previous/Next buttons:
+        if (n == 0) {
+          document.getElementById('prevBtn').style.display = 'none'
+        } else {
+          document.getElementById('prevBtn').style.display = 'inline'
+        }
+        if (n == x.length - 1) {
+          document.getElementById('nextBtn').innerHTML = 'Submit'
+          document.getElementById('nextBtn').disabled = true;
+          document.getElementById('prevBtn').style.display = "none";
+        } else {
+          document.getElementById('nextBtn').innerHTML = 'Next'
+        }
+        //... and run a function that will display the correct step indicator:
+        fixStepIndicator(n)
+      }
+ 
+      function nextPrev(n) {
+        // This function will figure out which tab to display
+        var x = document.getElementsByClassName('tab')
+        // Exit the function if any field in the current tab is invalid:
+        if (n == 1 && !validateForm()) return false
+        // Hide the current tab:
+        x[currentTab].style.display = 'none'
+        // Increase or decrease the current tab by 1:
+        currentTab = currentTab + n
+        // if you have reached the end of the form...
+        if (currentTab >= x.length) {
+          // ... the form gets submitted:
+          document.getElementById('regForm').submit()
+          return false
+        }
+        // Otherwise, display the correct tab:
+        showTab(currentTab)
+      }
+ 
+      function validateForm() {
+        // This function deals with validation of the form fields
+        var x,
+          y,
+          i,
+          valid = true
+        x = document.getElementsByClassName('tab')
+        y = x[currentTab].getElementsByTagName('input')
+        // A loop that checks every input field in the current tab:
+        for (i = 0; i < y.length; i++) {
+          // If a field is empty...
+          if (y[i].value == '') {
+            // add an "invalid" class to the field:
+            y[i].className += ' invalid'
+            // and set the current valid status to false
+            valid = false
+          }
+        }
+        // If the valid status is true, mark the step as finished and valid:
+        if (valid) {
+          document.getElementsByClassName('step')[currentTab].className +=
+            ' finish'
+        }
+        return valid // return the valid status
+      }
+ 
+      function fixStepIndicator(n) {
+        // This function removes the "active" class of all steps...
+        var i,
+          x = document.getElementsByClassName('step')
+        for (i = 0; i < x.length; i++) {
+          x[i].className = x[i].className.replace(' active', '')
+        }
+        //... and adds the "active" class on the current step:
+        x[n].className += ' active '
+      }
+    </script>
+  </body>
+</html>

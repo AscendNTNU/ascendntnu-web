@@ -21,7 +21,7 @@
   );
   --markdown-link-color: rgba(255, 127, 0, 0.7);
   --button-color: #fff;
-  --button-background-color: rgba(0, 0, 0, 0.3);
+  --button-background-color: rgba(163, 128, 128, 0.3);
   --tag-color: #444;
   --tag-color-dark: #ddd;
   --tag-background-color: rgba(0, 0, 0, 0.1);
@@ -36,6 +36,10 @@ body {
   font-family: 'questrial', sans-serif;
   margin: 0;
   background-color: var(--primary-dark);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 a {
@@ -357,24 +361,28 @@ input[type='submit'].active,
   width: 100%;
 }
 
+#AP_comp {
+  object-fit: cover;
+  border-radius: 50%;
+  height: 390px;
+  width: 390px;
+  padding-bottom: 5px;
+}
+
 /*Mobile device*/
 @media only screen and (min-device-width: 1024px) {
-  body {
+  /*body {
     overflow: hidden;
-  }
+  }*/
 
   .spons {
     display: none;
   }
 
   body .app-container {
-    /*-webkit-overflow-scrolling: touch;*/
-    height: calc(100vh - 64px);
+    /*-webkit-overflow-scrolling: touch;
+    height: calc(100vh - 10px);*/
   }
-}
-
-body.no-scroll {
-  overflow: hidden;
 }
 
 .app-container {
@@ -435,7 +443,7 @@ body.no-scroll {
 }
 
 .page-container {
-  max-width: 1400px;
+  max-width: 1500px;
   width: 100%;
   flex: 1 0 auto;
   margin: auto;
@@ -1577,6 +1585,10 @@ div.fb-like {
   height: 100%;
 }
 
+.padding_3 {
+  background-color: #1d1b1b;
+}
+
 /*Gif in join page*/
 #fixed {
   height: 100vh;
@@ -1851,7 +1863,6 @@ strong:hover {
 }
 
 hr {
-  background-color: #d7572d;
   height: 1px;
 }
 
