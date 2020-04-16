@@ -196,27 +196,24 @@ export class FrontPage extends Component {
                   <br />
                   <br />
                   <br />
-                  <h2>AlphaPilot</h2>
+                  <h2>Our sponsors enjoy the benefits of </h2>
                   <hr />
-                  <p>
-                    The AlphaPilot group was started in February 2019 as Ascends
-                    first foray into the world of autonomous drone racing.
-                    Formed to compete in Lockheed Martin and DRL’s brand new
-                    AlphaPilot competition we placed 10th of 425 teams in the
-                    virtual qualifier. Unfortunately only the top 9 teams
-                    qualified for the four race long 2019 season.
-                  </p>
 
-                  <p>
-                    This year we are out for revenge. Our team, which previously
-                    consisted of three members, has expanded to include seven
-                    talented members with backgrounds in autonomous racing,
-                    competitive programming and previous experience in Ascend.
-                    Our goals for the next month are to physically test our
-                    control systems and visual odometry on our test drone, and
-                    to have our whole pipeline, from detection to control,
-                    running together in the simulator.
-                  </p>
+                  <ul class="spons_list">
+                    <li id="spons_values">
+                      Having their logo on our drone(s) and clothes
+                    </li>
+                    <li id="spons_values">
+                      Being promoted through our social media presence
+                    </li>
+                    <li id="spons_values">
+                      Having access to our members through Ascends CV-database
+                    </li>
+                    <li id="spons_values">
+                      Visiting our office and presenting their open positions to
+                      our members
+                    </li>
+                  </ul>
                 </div>
                 <div class="col-sm-6">
                   <br />
@@ -224,10 +221,7 @@ export class FrontPage extends Component {
                   <br />
 
                   <img
-                    src={
-                      ASSETS_URL +
-                      '/images/teams/logoes/2020/Alphapilot-logo.svg'
-                    }
+                    src={ASSETS_URL + '/images/assets/Sponsor_collation.svg'}
                   />
                 </div>
               </div>

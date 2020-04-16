@@ -78,7 +78,7 @@ export class MissionPage extends Component {
                 />
                 <center>
                   <a href="#section2">
-                    <button>Read more about The AlphaPilot challenge</button>
+                    <button>Read more about The AlphaPilot Challenge</button>
                   </a>
                 </center>
               </div>
@@ -403,15 +403,15 @@ export class MissionPage extends Component {
                 <br />
                 <br />
                 <br />
-                <h2>AlphaPilot</h2>
+                <h2>The AlphaPilot Challenge</h2>
                 <hr />
                 <p>
-                  The AlphaPilot group was started in February 2019 as Ascends
-                  first foray into the world of autonomous drone racing. Formed
-                  to compete in Lockheed Martin and DRL’s brand new AlphaPilot
-                  competition we placed 10th of 425 teams in the virtual
-                  qualifier. Unfortunately only the top 9 teams qualified for
-                  the four race long 2019 season.
+                  The ADR group was started in February 2019 as Ascends first
+                  foray into the world of autonomous drone racing. Formed to
+                  compete in Lockheed Martin and DRL’s brand new ADR competition
+                  we placed 10th of 425 teams in the virtual qualifier.
+                  Unfortunately only the top 9 teams qualified for the four race
+                  long 2019 season.
                 </p>
 
                 <p>
