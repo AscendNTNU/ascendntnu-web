@@ -38,6 +38,11 @@ body {
   background-color: var(--primary-dark);
 }
 
+#spons_values {
+  margin: 7px;
+  font-size: 20px;
+}
+
 html {
   scroll-behavior: smooth;
 }

@@ -298,6 +298,8 @@ input#navnRegistreing:focus, input#mail:focus, input#nummer:focus {
           <hr/>
         <label>
           <p>
+            Name
+            <br/>
             <input
               placeholder="Full name..."
               name="From "
@@ -309,6 +311,8 @@ input#navnRegistreing:focus, input#mail:focus, input#nummer:focus {
  
         <label>
           <p>
+            E-mail
+            <br/>
             <input
               input="mail"
               placeholder="E-mail..."
@@ -320,7 +324,9 @@ input#navnRegistreing:focus, input#mail:focus, input#nummer:focus {
         </label>
  
         <label>
-          <p>
+          <p> 
+            Phone number 
+            <br/>
             <input
               placeholder="Phone number..."
               type="text"
@@ -1072,7 +1078,7 @@ input#navnRegistreing:focus, input#mail:focus, input#nummer:focus {
           var list_2 = String(document.getElementById("msg_2").value);
           var list_3 = String(document.getElementById("msg_3").value);
  
-          if ((list_1.length && list_2.length && list_3.length) <= 90 && (list_1.length && list_2.length && list_3.length) >=1) {
+          if ((list_1.length && list_2.length && list_3.length) <= 10 && (list_1.length && list_2.length && list_3.length) >=1) {
             statusEl.append('<div id = "help"><b>Solution</b>: Write more! We want supplementary sentences. Then do a validation Check again</div>')
             btn.html('<div id = "fail"> - Error: Not enough information in the text fields</div>')
             document.getElementById("msg_1").style.backgroundColor = "#ffdddd";
@@ -1092,9 +1098,9 @@ input#navnRegistreing:focus, input#mail:focus, input#nummer:focus {
             email.includes('.') &&
             name.length < 40 &&
             number.length >= 8 &&
-            list_1.length >= 90 &&
-            list_2.length >= 90 &&
-            list_3.length >= 90
+            list_1.length >= 10 &&
+            list_2.length >= 10 &&
+            list_3.length >= 10
           ) {
             btn.html('<div>Everything is in order, click submit</div>')
            document.getElementById('nextBtn').disabled = false

@@ -73,8 +73,8 @@ export class TeamPage extends Component {
     let setup = process.env.NODE_ENV === 'production' ? {} : { mode: 'cors' }
 
     fetch(`${API_URL}/titles?title-year_contains=${year}`, setup)
-      .then(r => r.json())
-      .then(titles => {
+      .then((r) => r.json())
+      .then((titles) => {
         const memberTitles = {}
         for (let title of titles) {
           for (let member of title.members) {
@@ -84,11 +84,11 @@ export class TeamPage extends Component {
         this.setState({ memberTitles })
       })
     fetch(`${API_URL}/teams?name-year_contains=${year}`, setup)
-      .then(r => r.json())
-      .then(r => {
+      .then((r) => r.json())
+      .then((r) => {
         const uniqueMembers = new Set()
         const groups = r
-          .map(group => {
+          .map((group) => {
             const groupName = group['name-year'].split('-')[0]
             const leader = !!group.leader
               ? {
@@ -102,7 +102,7 @@ export class TeamPage extends Component {
             if (groupName.toLowerCase() !== 'coach' && leader)
               uniqueMembers.add(leader.id)
             const members = group.members
-              .filter(member => (leader ? member.id !== leader.id : true))
+              .filter((member) => (leader ? member.id !== leader.id : true))
               .map(({ id, name, image, mail = '', background }) => {
                 if (groupName.toLowerCase() !== 'coach') uniqueMembers.add(id)
                 return {
@@ -314,7 +314,7 @@ export class TeamPage extends Component {
           <SubSection className="page-container-big">{teamPhoto}</SubSection>
           <SubSection titleText="Groups" className="page-container-big">
             {this.state.year == 2020
-              ? `We currently consist of ${this.state.memberCount} students at NTNU working together to solve IARC´s mission 9 and the AlphaPilot challenge. Our team consists of seven groups: The board, AI, Control, Hardware, Marketing, Perception and AlphaPilot.`
+              ? `We currently consist of ${this.state.memberCount} students at NTNU working together to solve IARC´s mission 9. Our team consists of seven groups: The board, AI, Control, Hardware, Marketing, Perception and AlphaPilot.`
               : ''}
             {groups}
           </SubSection>
