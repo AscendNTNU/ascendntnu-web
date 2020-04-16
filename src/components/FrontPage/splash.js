@@ -212,8 +212,7 @@ export class Splash extends Component {
           <p id="top-left">
             Autonomous aerial robotics for learning. Ascend NTNU is the
             Norwegian University of Science and Technology’s team in the
-            International Aerial Robotics Competition and in the AlphaPilot
-            Challenge.
+            International Aerial Robotics Competition.
           </p>
         </div>
         <div

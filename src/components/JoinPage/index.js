@@ -32,7 +32,11 @@ export class JoinPage extends Component {
     document.querySelector('#app').scrollTop = top
     console.log(this.refs)
     if (anchor in this.refs) {
-      scrollToComponent(this.refs[anchor], { offset: -70, align: 'top' })
+      scrollToComponent(this.refs[anchor], {
+        offset: -70,
+        align: 'top',
+        duration: 200,
+      })
     }
   }
 
@@ -53,13 +57,10 @@ export class JoinPage extends Component {
     let positions = {
       en: [
         <Section titleText="Positions we offer" key="2">
-          <a
-            id="styled"
-            type="button"
-            href="https://docs.google.com/forms/d/1kKJENDVeQ-Us7-hCmK3bh-BCrufqKowE07zHvejpUEM/viewform?edit_requested=true"
-          >
+          <a id="styled" type="button" href="forum.html">
             Application for team 2021 has ended
           </a>
+
           <hr />
           <p>
             <div class="paragraf_T"> The Board</div> Is responsible for the
@@ -150,7 +151,9 @@ export class JoinPage extends Component {
           <SubSection
             titleText="Project manager & Deputy Project Manager"
             id="Project-manager-Deputy-Project-Manager"
-            ref={e => this.addRef(e, 'Project-manager-Deputy-Project-Manager')}
+            ref={(e) =>
+              this.addRef(e, 'Project-manager-Deputy-Project-Manager')
+            }
           >
             <hr />
             <p>
@@ -220,7 +223,7 @@ export class JoinPage extends Component {
           <SubSection
             titleText="Chief Engineer & Deputy Chief Engineer"
             id="Chief-Engineer-Deputy-Chief-Engineer"
-            ref={e => this.addRef(e, 'Chief-Engineer-Deputy-Chief-Engineer')}
+            ref={(e) => this.addRef(e, 'Chief-Engineer-Deputy-Chief-Engineer')}
           >
             <hr />
             <p>
@@ -297,7 +300,7 @@ export class JoinPage extends Component {
           <SubSection
             titleText="Head of Economics"
             id="Head-of-Economics"
-            ref={e => this.addRef(e, 'Head-of-Economics')}
+            ref={(e) => this.addRef(e, 'Head-of-Economics')}
           >
             <hr />
             <p>
@@ -346,7 +349,7 @@ export class JoinPage extends Component {
           <SubSection
             titleText="Head of Marketing"
             id="Head-of-Marketing"
-            ref={e => this.addRef(e, 'Head-of-Marketing')}
+            ref={(e) => this.addRef(e, 'Head-of-Marketing')}
           >
             <hr />
             <p>
@@ -416,7 +419,7 @@ export class JoinPage extends Component {
           <SubSection
             titleText="AlphaPilot Group Leader"
             id="AlphaPilot-Group-Leader"
-            ref={e => this.addRef(e, 'AlphaPilot-Group-Leader')}
+            ref={(e) => this.addRef(e, 'AlphaPilot-Group-Leader')}
           >
             <hr />
             <p>
@@ -452,7 +455,7 @@ export class JoinPage extends Component {
           <SubSection
             titleText="Hardware Group Leader"
             id="Hardware-Group-Leader"
-            ref={e => this.addRef(e, 'Hardware-Group-Leader')}
+            ref={(e) => this.addRef(e, 'Hardware-Group-Leader')}
           >
             <hr />
             <p>
@@ -489,7 +492,7 @@ export class JoinPage extends Component {
           <SubSection
             titleText="AI Group Leader"
             id="AI-Group-Leader"
-            ref={e => this.addRef(e, 'AI-Group-Leader')}
+            ref={(e) => this.addRef(e, 'AI-Group-Leader')}
           >
             <hr />
             <p>
@@ -526,7 +529,7 @@ export class JoinPage extends Component {
           <SubSection
             titleText="Control Group Leader"
             id="Control-Group-Leader"
-            ref={e => this.addRef(e, 'Control-Group-Leader')}
+            ref={(e) => this.addRef(e, 'Control-Group-Leader')}
           >
             <hr />
             <p>
@@ -566,7 +569,7 @@ export class JoinPage extends Component {
           <SubSection
             titleText="Perception Group Leader"
             id="Perception-Group-Leader"
-            ref={e => this.addRef(e, 'Perception-Group-Leader')}
+            ref={(e) => this.addRef(e, 'Perception-Group-Leader')}
           >
             <hr />
             <p>
