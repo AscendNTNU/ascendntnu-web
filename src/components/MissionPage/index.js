@@ -406,23 +406,27 @@ export class MissionPage extends Component {
                 <h2>The AlphaPilot Challenge</h2>
                 <hr />
                 <p>
-                  The ADR group was started in February 2019 as Ascends first
-                  foray into the world of autonomous drone racing. Formed to
-                  compete in Lockheed Martin and DRL’s brand new ADR competition
-                  we placed 10th of 425 teams in the virtual qualifier.
-                  Unfortunately only the top 9 teams qualified for the four race
-                  long 2019 season.
+                  The Autonomous Drone Racing (ADR) group was started in
+                  February 2019 as Ascend's first foray into the world of
+                  autonomous drone racing. Formed to compete in Lockheed Martin
+                  and DRL’s brand new ADR competition - AlphaPilot - we placed
+                  10th of 425 teams in the virtual qualifier. Unfortunately only
+                  the top 9 teams qualified for the four race long 2019 season.
                 </p>
 
                 <p>
-                  This year we are out for revenge. Our team, which previously
-                  consisted of three members, has expanded to include seven
-                  talented members with backgrounds in autonomous racing,
-                  competitive programming and previous experience in Ascend. Our
-                  goals for the next month are to physically test our control
-                  systems and visual odometry on our test drone, and to have our
-                  whole pipeline, from detection to control, running together in
-                  the simulator.
+                  Although no ADR competitions were held this year, the group
+                  has been hard at work building and testing systems both in
+                  simulation and on the group's test drone. In the future the
+                  ADR group aims to represent Ascend NTNU in AlphaPilot or in
+                  other autonomous drone racing competitions.This year we are
+                  out for revenge. Our team, which previously consisted of three
+                  members, has expanded to include seven talented members with
+                  backgrounds in autonomous racing, competitive programming and
+                  previous experience in Ascend. Our goals for the next month
+                  are to physically test our control systems and visual odometry
+                  on our test drone, and to have our whole pipeline, from
+                  detection to control, running together in the simulator.
                 </p>
               </div>
               <div class="col-sm-6">
