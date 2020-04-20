@@ -213,7 +213,8 @@ export class MissionPage extends Component {
                   ) : (
                     /* Text that is shown on website when the countdown is done */
                     <p id="show">
-                      The IARC Mission 9 competition has been cancelled
+                      The Mission 9 competition has been postponed to summer
+                      2021
                     </p>
                   )}
                 </center>
@@ -412,21 +413,22 @@ export class MissionPage extends Component {
                   and DRL’s brand new ADR competition - AlphaPilot - we placed
                   10th of 425 teams in the virtual qualifier. Unfortunately only
                   the top 9 teams qualified for the four race long 2019 season.
-                </p>
-
-                <p>
                   Although no ADR competitions were held this year, the group
                   has been hard at work building and testing systems both in
                   simulation and on the group's test drone. In the future the
                   ADR group aims to represent Ascend NTNU in AlphaPilot or in
-                  other autonomous drone racing competitions.This year we are
-                  out for revenge. Our team, which previously consisted of three
-                  members, has expanded to include seven talented members with
-                  backgrounds in autonomous racing, competitive programming and
-                  previous experience in Ascend. Our goals for the next month
-                  are to physically test our control systems and visual odometry
-                  on our test drone, and to have our whole pipeline, from
-                  detection to control, running together in the simulator.
+                  other autonomous drone racing competitions.
+                </p>
+                <br />
+                <p>
+                  This year we are out for revenge. Our team, which previously
+                  consisted of three members, has expanded to include seven
+                  talented members with backgrounds in autonomous racing,
+                  competitive programming and previous experience in Ascend. Our
+                  goals for the next month are to physically test our control
+                  systems and visual odometry on our test drone, and to have our
+                  whole pipeline, from detection to control, running together in
+                  the simulator.
                 </p>
               </div>
               <div class="col-sm-6">

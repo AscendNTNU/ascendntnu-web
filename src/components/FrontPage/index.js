@@ -108,9 +108,8 @@ export class FrontPage extends Component {
                     innovative drone, again! In 2019 At mission 8, we won the
                     awards for Best Technical Demonstration and Best System
                     Design, and with that we also came in 1st overall in the
-                    American Venue! Currently, we are preparing for mission 9 in
-                    2020! We are also attempting to qualify for the competition
-                    AlphaPilot.
+                    American Venue! Currently, we are preparing for mission 9 in
+                    2021!
                   </p>
                 </div>
               </div>
