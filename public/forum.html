@@ -143,6 +143,18 @@ input#navnRegistreing:focus, input#mail:focus, input#nummer:focus {
       font-size: 22px;
       font-size-adjust: 17px;
     }
+
+    input#resetBtn {
+      background-color: #c49a6c;
+      border-radius: 5px;
+    }
+
+    input#resetBtn:hover {
+      text-decoration-line: none;
+      transition: all 0.5s;
+      font-size: 20px;
+      font-size-adjust: 17px;
+    }
  
     #prevBtn {
       background-color: #bbbbbb;
@@ -473,6 +485,7 @@ input#navnRegistreing:focus, input#mail:focus, input#nummer:focus {
           />
           <div class="others"></div>
         </label>
+        <input type="button" id = "resetBtn" onclick="window.location=document.referrer;" value="reset"></input>
       </div>
       </div>
  
@@ -514,9 +527,6 @@ input#navnRegistreing:focus, input#mail:focus, input#nummer:focus {
         }
       }      
      
-      </script>
- 
-      <script>
         var innpakningEl = document.querySelector('.others');
         var other_studysEl = document.querySelector("#other_studys");
  
@@ -845,13 +855,6 @@ input#navnRegistreing:focus, input#mail:focus, input#nummer:focus {
     sum = 0;
   }
  
-  if(sum == 6) {
-    document.getElementById("prevBtn").disabled = false;
-  }
- 
-  if(sum < 6) {
-    document.getElementById("prevBtn").disabled = true;
-  }
 }      
  
 </script>
@@ -1012,7 +1015,7 @@ input#navnRegistreing:focus, input#mail:focus, input#nummer:focus {
    <!--Here is the function-->
     <script type="text/javascript">
       $(document).ready(function() {
-       $('.nextBtn').click(function(event) {
+       $('.nextbtn').click(function(event) {
           event.preventDefault()
           console.log('clicked')
  
