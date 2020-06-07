@@ -143,18 +143,6 @@ input#navnRegistreing:focus, input#mail:focus, input#nummer:focus {
       font-size: 22px;
       font-size-adjust: 17px;
     }
-
-    input#resetBtn {
-      background-color: #c49a6c;
-      border-radius: 5px;
-    }
-
-    input#resetBtn:hover {
-      text-decoration-line: none;
-      transition: all 0.5s;
-      font-size: 20px;
-      font-size-adjust: 17px;
-    }
  
     #prevBtn {
       background-color: #bbbbbb;
@@ -189,6 +177,18 @@ input#navnRegistreing:focus, input#mail:focus, input#nummer:focus {
     }
 
     input#other_studys:hover {
+      text-decoration-line: none;
+      transition: all 0.5s;
+      font-size: 20px;
+      font-size-adjust: 17px;
+    }
+
+    input.reset{
+    background-color: #c49a6c;
+    border-radius: 5px;
+    }
+
+    input.reset:hover{
       text-decoration-line: none;
       transition: all 0.5s;
       font-size: 20px;
@@ -478,16 +478,18 @@ input#navnRegistreing:focus, input#mail:focus, input#nummer:focus {
         
         <label class="other_program">
           <input
-            onclick="myFunction()"
             type="button"
             id="other_studys"
             value="Other studys? Enter here: "
           />
-          <div class="others"></div>
+          <div class="others" id="others"></div>
         </label>
-        <input type="button" id = "resetBtn" onclick="window.location=document.referrer;" value="reset"></input>
+      <label>
+        <input class = "reset" type="button" id="reset" value="Reset" ></div>
+      </label>
       </div>
       </div>
+
  
       <script type="text/javascript">
         //opprette element//
@@ -503,7 +505,8 @@ input#navnRegistreing:focus, input#mail:focus, input#nummer:focus {
         var radio_10El = document.querySelector("#radio_10");
         var radio_11El = document.querySelector("#radio_11");
         var other_studysEl = document.querySelector("#other_studys");
-       
+        var resetEl = document.querySelector("#reset");
+        
         radio_1El.addEventListener("click", sjekkdor);
         radio_2El.addEventListener("click", sjekkdor);
         radio_3El.addEventListener("click", sjekkdor);
@@ -514,48 +517,78 @@ input#navnRegistreing:focus, input#mail:focus, input#nummer:focus {
         radio_8El.addEventListener("click", sjekkdor);
         radio_9El.addEventListener("click", sjekkdor);
         radio_10El.addEventListener("click", sjekkdor);
-        radio_11El.addEventListener("click", sjekkdor);
+        radio_11El.addEventListener("click", sjekkdor); 
         other_studysEl.addEventListener("click", sjekkdor);
+        resetEl.addEventListener("click", sjekkdor)
        
       function sjekkdor(e) { //e er argument for event->hendelse// bruker variablene over her//
         var skjekk = e.target;
  
-        if(skjekk.checked){
-          var elem = document.getElementById('other_studys');
-          elem.parentNode.removeChild(elem);
-          console.log(e.target);
-        }
-      }      
-     
+        if (skjekk.id == "reset") { 
+          document.getElementById('radio_1').checked = false;
+          document.getElementById('radio_2').checked = false;
+          document.getElementById('radio_3').checked = false;
+          document.getElementById('radio_4').checked = false;
+          document.getElementById('radio_5').checked = false;
+          document.getElementById('radio_6').checked = false;
+          document.getElementById('radio_7').checked = false;
+          document.getElementById('radio_8').checked = false;
+          document.getElementById('radio_9').checked = false;
+          document.getElementById('radio_10').checked = false;
+          document.getElementById('radio_11').checked = false;
+        }    
+      }  
+  
+      </script>
+      
+      <script>
         var innpakningEl = document.querySelector('.others');
+        var resetEl = document.querySelector("#reset");
         var other_studysEl = document.querySelector("#other_studys");
+            resetEl.addEventListener("click", reset_value);
+            other_studysEl.addEventListener("click",other_studysFun);
  
-        function myFunction() {
+        function other_studysFun(e) {
+          var skjekk = e.target;
           var x = document.createElement('INPUT');
           x.setAttribute('type', 'text');
           x.setAttribute('name', 'I study');
-          x.setAttribute('class', 'other_feilds');
+          x.setAttribute('id', 'other_feilds');
           x.setAttribute('placeholder', 'Enter studyprogram');
  
           innpakningEl.appendChild(x);
- 
-          document.getElementById('marked').style.textDecoration = "line-through";
-       
-          document.getElementById('radio_1').disabled = true;
-          document.getElementById('radio_2').disabled = true;
-          document.getElementById('radio_3').disabled = true;
-          document.getElementById('radio_4').disabled = true;
-          document.getElementById('radio_5').disabled = true;
-          document.getElementById('radio_6').disabled = true;
-          document.getElementById('radio_7').disabled = true;
-          document.getElementById('radio_8').disabled = true;
-          document.getElementById('radio_9').disabled = true;
-          document.getElementById('radio_10').disabled = true;
-          document.getElementById('radio_11').disabled = true;
+        
+         
+          console.log(skjekk.id);
+        
+          }
+
+        var innpakningEl = document.querySelector('#others');
+        var resetEl = document.querySelector("#reset");
+        var other_studysEl = document.querySelector("#other_studys");
+            resetEl.addEventListener("click", reset_value);
+        
+          function reset_value(e){
+          var skjekk = e.target;
           
- 
-          var elem = document.getElementById('other_studys');
-          elem.parentNode.removeChild(elem);        
+          if (skjekk.id == "reset") { 
+          document.getElementById('radio_1').disabled = false;
+          document.getElementById('radio_2').disabled = false;
+          document.getElementById('radio_3').disabled = false;
+          document.getElementById('radio_4').disabled = false;
+          document.getElementById('radio_5').disabled = false;
+          document.getElementById('radio_6').disabled = false;
+          document.getElementById('radio_7').disabled = false;
+          document.getElementById('radio_8').disabled = false;
+          document.getElementById('radio_9').disabled = false;
+          document.getElementById('radio_10').disabled = false;
+          document.getElementById('radio_11').disabled = false;
+      
+         var a = document.getElementById('others');
+          var el = document.getElementById('other_feilds');
+          a.removeChild(el);
+
+          }
         }
        
 </script>
@@ -563,7 +596,7 @@ input#navnRegistreing:focus, input#mail:focus, input#nummer:focus {
      <!--Here are the HTML-code for the Select element-->
       <div id="tab3" class="tab">
         <h1>Position priority</h1>
-        <h2>Choose upto 3 positions (Choose after priority 1-3)</h2><br/>
+        <h2>Choose 3 positions (Choose after priority 1-3)</h2><br/>
         <hr/>
         <h1 id="tilbakemelding" ></h1>
         <br/>
@@ -723,6 +756,7 @@ input#navnRegistreing:focus, input#mail:focus, input#nummer:focus {
           </select>
         </div>
         </label>
+        <input class = "reset" type="button" id="reset_positions" value="Reset" ></div>
       </div>
  
       <script type="text/javascript">
@@ -738,8 +772,7 @@ input#navnRegistreing:focus, input#mail:focus, input#nummer:focus {
     var group_alpEl = document.querySelector("#Group_alp");
     var group_conEl = document.querySelector("#Group_con");
     var group_harEl = document.querySelector("#Group_har");
- 
-    var tilbakemeldingEl = document.querySelector("#tilbakemelding");
+    var resetEl = document.querySelector("#reset_positions");
  
     project_mEl.addEventListener("click", check);
     deputy_pmEl.addEventListener("click", check);
@@ -747,11 +780,12 @@ input#navnRegistreing:focus, input#mail:focus, input#nummer:focus {
     deputy_ceEl.addEventListener("click", check);
     head_ecoEl.addEventListener("click", check);
     head_marEl.addEventListener("click", check);
-     group_aiEl.addEventListener("click", check);
+    group_aiEl.addEventListener("click", check);
     group_perEl.addEventListener("click", check);
     group_alpEl.addEventListener("click", check);
-     group_conEl.addEventListener("click", check);
-  group_harEl.addEventListener("click", check);
+    group_conEl.addEventListener("click", check);
+    group_harEl.addEventListener("click", check);
+    resetEl.addEventListener("click", reset_prioity);
  
   var sum = 0;
   var ones = 0;
@@ -760,6 +794,7 @@ input#navnRegistreing:focus, input#mail:focus, input#nummer:focus {
 
     function check(e) { //e er argument for event->hendelse// bruker variablene over her//
   var value = Number(e.target.value);
+  var sjekk = e.target.id;
  
   if(value == "Not interested") {
     sum += 0;
@@ -769,78 +804,96 @@ input#navnRegistreing:focus, input#mail:focus, input#nummer:focus {
     sum += 1;
     ones++;
     console.log(ones);
+    document.getElementById(sjekk).style.backgroundColor = "#c49a6c";
+    document.getElementById(sjekk).disabled = true;
   }
  
   if(value == 2) {
     sum += 2;
     twos++;
+    document.getElementById(sjekk).style.backgroundColor = "#c49a6c";
+    document.getElementById(sjekk).disabled = true;
   }
  
   if(value == 3) {
     sum += 3;
     threes++;
+    document.getElementById(sjekk).style.backgroundColor = "#c49a6c";
+    document.getElementById(sjekk).disabled = true;
   }
 
   
-  if(ones == 3) {
-    alert("you have given positions the same priority. Start over");
-    document.getElementById("Project_m").selectedIndex = "0";
-    document.getElementById("Deputy_pm").selectedIndex = "0";
-    document.getElementById("Deputy_ce").selectedIndex = "0";
-    document.getElementById("Chief_eng").selectedIndex = "0";
-    document.getElementById("Head_mar").selectedIndex = "0";
-    document.getElementById("Head_eco").selectedIndex = "0";
-    document.getElementById("Group_ai").selectedIndex = "0";
-    document.getElementById("Group_alp").selectedIndex = "0";
-    document.getElementById("Group_har").selectedIndex = "0";
-    document.getElementById("Group_per").selectedIndex = "0";
-    document.getElementById("Group_con").selectedIndex = "0";
-    sum = 0;
-    ones = 0;
+  if(ones == 2) {
+    alert("you have given positions the same priority.");
+    document.getElementById(sjekk).selectedIndex = "0";
+    document.getElementById(sjekk).style.backgroundColor = "#5c6664";
+    document.getElementById(sjekk).disabled = false;
+    sum -=1;
+    ones -= 1;
     twos = 0;
     threes = 0;
   }
 
-  if(twos == 3) {
-    alert("you have given positions the same priority. Start over");
-    document.getElementById("Project_m").selectedIndex = "0";
-    document.getElementById("Deputy_pm").selectedIndex = "0";
-    document.getElementById("Deputy_ce").selectedIndex = "0";
-    document.getElementById("Chief_eng").selectedIndex = "0";
-    document.getElementById("Head_mar").selectedIndex = "0";
-    document.getElementById("Head_eco").selectedIndex = "0";
-    document.getElementById("Group_ai").selectedIndex = "0";
-    document.getElementById("Group_alp").selectedIndex = "0";
-    document.getElementById("Group_har").selectedIndex = "0";
-    document.getElementById("Group_per").selectedIndex = "0";
-    document.getElementById("Group_con").selectedIndex = "0";
-    sum = 0;
+  if(twos == 2) {
+    alert("you have given positions the same priority.");
+    document.getElementById(sjekk).selectedIndex = "0";
+    document.getElementById(sjekk).style.backgroundColor = "#5c6664";
+    document.getElementById(sjekk).disabled = false;
+    sum -=2;
     ones = 0;
-    twos = 0;
+    twos -= 1;
     threes = 0;
   }
 
-  if(threes == 3) {
-    alert("you have given positions the same priority. Start over");
-    document.getElementById("Project_m").selectedIndex = "0";
-    document.getElementById("Deputy_pm").selectedIndex = "0";
-    document.getElementById("Deputy_ce").selectedIndex = "0";
-    document.getElementById("Chief_eng").selectedIndex = "0";
-    document.getElementById("Head_mar").selectedIndex = "0";
-    document.getElementById("Head_eco").selectedIndex = "0";
-    document.getElementById("Group_ai").selectedIndex = "0";
-    document.getElementById("Group_alp").selectedIndex = "0";
-    document.getElementById("Group_har").selectedIndex = "0";
-    document.getElementById("Group_per").selectedIndex = "0";
-    document.getElementById("Group_con").selectedIndex = "0";
-    sum = 0;
+  if(threes == 2) {
+    alert("you have given positions the same priority.");
+    document.getElementById(sjekk).selectedIndex = "0";
+    document.getElementById(sjekk).style.backgroundColor = "#5c6664";
+    document.getElementById(sjekk).disabled = false;
+    sum -=3;
     ones = 0;
     twos = 0;
-    threes = 0;
+    threes -= 1;
   }
+
+  console.log("sum: " + sum);
  
-  if (sum > 6) {
-    alert("you have choosen more than 3 positions. Or you have given positions the same priority. Start over");
+  if (sum == 6) {
+    alert("You have choosen 3 positions. Press the reset button to change priority");
+    document.getElementById("Project_m").disabled = true;
+    document.getElementById("Deputy_pm").disabled = true;
+    document.getElementById("Deputy_ce").disabled = true;
+    document.getElementById("Chief_eng").disabled = true;
+    document.getElementById("Head_mar").disabled = true;
+    document.getElementById("Head_eco").disabled = true;
+    document.getElementById("Group_ai").disabled = true;
+    document.getElementById("Group_alp").disabled = true;
+    document.getElementById("Group_har").disabled = true;
+    document.getElementById("Group_per").disabled = true;
+    document.getElementById("Group_con").disabled = true;
+    sum = 0;
+   }
+  }
+
+  function reset_prioity(){
+    
+  sum = 0;
+  ones = 0;
+  twos = 0;
+  threes = 0;
+
+    document.getElementById("Project_m").disabled = false;
+    document.getElementById("Deputy_pm").disabled = false;
+    document.getElementById("Deputy_ce").disabled = false;
+    document.getElementById("Chief_eng").disabled = false;
+    document.getElementById("Head_mar").disabled = false;
+    document.getElementById("Head_eco").disabled = false;
+    document.getElementById("Group_ai").disabled = false;
+    document.getElementById("Group_alp").disabled = false;
+    document.getElementById("Group_har").disabled = false;
+    document.getElementById("Group_per").disabled = false;
+    document.getElementById("Group_con").disabled = false;
+
     document.getElementById("Project_m").selectedIndex = "0";
     document.getElementById("Deputy_pm").selectedIndex = "0";
     document.getElementById("Deputy_ce").selectedIndex = "0";
@@ -852,11 +905,21 @@ input#navnRegistreing:focus, input#mail:focus, input#nummer:focus {
     document.getElementById("Group_har").selectedIndex = "0";
     document.getElementById("Group_per").selectedIndex = "0";
     document.getElementById("Group_con").selectedIndex = "0";
-    sum = 0;
+
+    
+    document.getElementById("Project_m").style.backgroundColor = "#5c6664";
+    document.getElementById("Deputy_pm").style.backgroundColor = "#5c6664";
+    document.getElementById("Deputy_ce").style.backgroundColor = "#5c6664";
+    document.getElementById("Chief_eng").style.backgroundColor = "#5c6664";
+    document.getElementById("Head_mar").style.backgroundColor = "#5c6664";
+    document.getElementById("Head_eco").style.backgroundColor = "#5c6664";
+    document.getElementById("Group_ai").style.backgroundColor = "#5c6664";
+    document.getElementById("Group_alp").style.backgroundColor = "#5c6664";
+    document.getElementById("Group_har").style.backgroundColor = "#5c6664";
+    document.getElementById("Group_per").style.backgroundColor = "#5c6664";
+    document.getElementById("Group_con").style.backgroundColor = "#5c6664";
   }
- 
-}      
- 
+  
 </script>
      
  
@@ -990,7 +1053,11 @@ input#navnRegistreing:focus, input#mail:focus, input#nummer:focus {
           </label>
         </div>
         <br>
-        
+        <center><button type="submit" class="submit">
+                     Submit
+
+        </button></center>
+        <br>
         <center><div class="status"></div></center>
       </div>
  
@@ -1015,7 +1082,7 @@ input#navnRegistreing:focus, input#mail:focus, input#nummer:focus {
    <!--Here is the function-->
     <script type="text/javascript">
       $(document).ready(function() {
-       $('.nextbtn').click(function(event) {
+        $('.submit').click(function(event) {
           event.preventDefault()
           console.log('clicked')
  
@@ -1024,6 +1091,7 @@ input#navnRegistreing:focus, input#mail:focus, input#nummer:focus {
           var number = $('.number').val()
           var essay = $('.essay').val()
           var statusEl = $('.status')
+          var btn = $('.submit')
           var optionalfieldEl = $('.optionalfield').val()
           var other_studys = $('.other_feilds').val()
           statusEl.empty()
@@ -1038,8 +1106,9 @@ input#navnRegistreing:focus, input#mail:focus, input#nummer:focus {
             console.log('mail good')
           } else {
             event.preventDefault()
-            statusEl.append('<div id = "help"><b>Solution</b>: Go back to first page and see if you have misspelled. Then do a validation Check again </div>')
-        
+            statusEl.append('<div id = "fail"> - Error: Invalid E-mail</div>')
+            document.getElementById('nextBtn').disabled = false
+            statusEl.append('<div id = "help"><b>Solution</b>: Go back to first page and see if you have misspelled. Then press submit again </div>')
           }
  
           if (name.length < 40) {
@@ -1053,16 +1122,17 @@ input#navnRegistreing:focus, input#mail:focus, input#nummer:focus {
             console.log('number good')
           } else {
             event.preventDefault()
-            statusEl.append('<div id = "help"><b>Solution</b>: Go back to first page and see if you have misspelled. Then do a validation Check again </div>')
-      
+            statusEl.append('<div id = "fail"> - Error: Invalid number</div>')
+            document.getElementById('nextBtn').disabled = false
+            statusEl.append('<div id = "help"><b>Solution</b>: Go back to first page and see if you have misspelled. Then press submit again </div>')
           }
  
           if (essay == "") {
             document.getElementById("msg_1").style.backgroundColor = "#ffdddd";
             document.getElementById("msg_2").style.backgroundColor = "#ffdddd";
             document.getElementById("msg_3").style.backgroundColor = "#ffdddd";
-            statusEl.append('<div id = "help"><b>Solution</b>: Answer all the questions. Then do a validation Check again </div>')
-            
+            statusEl.append('<div id = "fail"> - Error: All text fields are empty</div>')
+            statusEl.append('<div id = "help"><b>Solution</b>: Answer all the questions. Then press submit again </div>')
           } else {
             event.preventDefault()
           }
@@ -1071,9 +1141,9 @@ input#navnRegistreing:focus, input#mail:focus, input#nummer:focus {
           var list_2 = String(document.getElementById("msg_2").value);
           var list_3 = String(document.getElementById("msg_3").value);
  
-          if ((list_1.length && list_2.length && list_3.length) <= 10 && (list_1.length && list_2.length && list_3.length) >=1) {
-            statusEl.append('<div id = "help"><b>Solution</b>: Write more! We want supplementary sentences. Then do a validation Check again</div>')
-           
+          if ((list_1.length && list_2.length && list_3.length) <= 40 && (list_1.length && list_2.length && list_3.length) >=1) {
+            statusEl.append('<div id = "fail"> - Error: Not enough information in the text fields</div>')
+            statusEl.append('<div id = "help"><b>Solution</b>: Write more! We want supplementary sentences. Then press submit again</div>')
             document.getElementById("msg_1").style.backgroundColor = "#ffdddd";
             document.getElementById("msg_2").style.backgroundColor = "#ffdddd";
             document.getElementById("msg_3").style.backgroundColor = "#ffdddd";
@@ -1083,7 +1153,24 @@ input#navnRegistreing:focus, input#mail:focus, input#nummer:focus {
           } else {
             event.preventDefault()
           }
-          
+ 
+ 
+          if (
+            email.length > 5 &&
+            email.includes('@') &&
+            email.includes('.') &&
+            name.length < 40 &&
+            number.length >= 8 &&
+            list_1.length >= 20 &&
+            list_2.length >= 20 &&
+            list_3.length >= 20
+          ) {
+          statusEl.html('<div id = "help"> processing application....... </div>')
+          document.getElementById('regForm').submit()
+          return false
+          } else {
+            event.preventDefault()
+          }
         })
       })
     </script>
@@ -1102,8 +1189,12 @@ input#navnRegistreing:focus, input#mail:focus, input#nummer:focus {
         } else {
           document.getElementById('prevBtn').style.display = 'inline'
         }
+        if (n == 1 || n == 2 || n == 3 || n == 4 ){
+          document.getElementById('nextBtn').style.display = 'inline'
+        }
         if (n == x.length - 1) {
-          document.getElementById('nextBtn').innerHTML = 'Submit'
+          document.getElementById('nextBtn').style.display = 'none'
+          document.getElementById('prevBtn').style.display = "inline";
         } else {
           document.getElementById('nextBtn').innerHTML = 'Next'
         }
@@ -1120,12 +1211,6 @@ input#navnRegistreing:focus, input#mail:focus, input#nummer:focus {
         x[currentTab].style.display = 'none'
         // Increase or decrease the current tab by 1:
         currentTab = currentTab + n
-        // if you have reached the end of the form...
-        if (currentTab >= x.length) {
-          // ... the form gets submitted:
-          document.getElementById('regForm').submit()
-          return false
-        }
         // Otherwise, display the correct tab:
         showTab(currentTab)
       }
