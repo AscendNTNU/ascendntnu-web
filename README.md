@@ -27,7 +27,7 @@ To set up the developent environment, follow the instructions below.
 
 You should have `node.js` installed with `npm`. Just go to their [website](https://nodejs.org) and download. Any version should work.
 
-If you are a Ascend NTNU member, we will give you access to content belonging to the project. If you have acces, run:
+If you are a Ascend NTNU member, we will give you access to content belonging to the project. If you have access, run:
 
 ```bash
 make download-images
