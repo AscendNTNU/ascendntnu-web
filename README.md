@@ -27,7 +27,7 @@ To set up the developent environment, follow the instructions below.
 
 You should have `node.js` installed with `npm`. Just go to their [website](https://nodejs.org) and download. Any version should work.
 
-If you are a Ascend NTNU member, we will give you access to content belonging to the project. If you have acces, run:
+If you are a Ascend NTNU member, we will give you access to content belonging to the project. If you have access, run:
 
 ```bash
 make download-images
@@ -50,7 +50,7 @@ $ npm start # This should open the project in the browser at localhost:8081 (def
 
 ### Deploy, Production
 
-Most production environments likes to use their own set of environment variables to control the state. We therefore have an option for adding environment variables. You can either:
+Most production environments like to use their own set of environment variables to control the state. We therefore have an option for adding environment variables. You can either:
 
 1. Change a env var before the server starts. Linux: `NODE_ENV=production npm run ...`
 2. Or add them to a `.env.local` file. Format (and defaults) are set in `.env`.
