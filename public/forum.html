@@ -5,6 +5,7 @@
     href="https://fonts.googleapis.com/css?family=Raleway"
     rel="stylesheet"
   />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;1,300&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
@@ -22,10 +23,11 @@
         background-color: blanchedalmond;
     }
  
+ /*the size, color and font of the forum*/
     #regForm {
       background-color: #272727;
       margin: 100px auto;
-      font-family: 'Times New Roman', Times, serif;
+      font-family: 'Roboto', sans-serif;
       color: #fff;
       padding: 40px;
       width: 70%;
@@ -33,10 +35,12 @@
       min-width: 300px;
     }
  
+ /*title position*/
     h1, h2, p {
       text-align: center;
     }
- 
+
+/*title color*/
     h1,h2{
       color: #c49a6c;
     }
@@ -59,6 +63,7 @@
       margin: 5px;
     }
  
+ /*Drop down inputs*/
     select {
    -webkit-appearance:none;
    -moz-appearance:none;
@@ -87,6 +92,7 @@ select::-ms-expand {
    width: 20em;
    margin: 5px;
    height: 3em;
+   width: 40%;
    line-height: 3;
    background: #5c6664;
    border-radius: .25em;
@@ -116,7 +122,7 @@ input#navnRegistreing:focus, input#mail:focus, input#nummer:focus {
 .select option:hover{
   display: block;
 }
- 
+ /*tabel styling*/
 table {
   border-collapse: collapse;
   width: 100%;
@@ -140,7 +146,7 @@ td {
 }
  
 tr:nth-child(even) {
-  background-color: #495250;
+  background-color: #353a39;
 }
  
     /* Mark input boxes that gets an error on validation: */
@@ -153,6 +159,7 @@ tr:nth-child(even) {
       display: none;
     }
  
+ /*buttons, prevbtn and nextbtn styling*/
     button {
       background-color: #716658;
       color: #eee;
@@ -194,6 +201,7 @@ tr:nth-child(even) {
       padding-top: 3px;
     }
  
+ /*other studys input styling*/
     input#other_studys {
       background-color: #716658;
       border-radius: 5px;
@@ -247,6 +255,7 @@ tr:nth-child(even) {
  
     select {
       text-align: center;
+      width: auto;
     }
  
     /* Hide the browser's default radio button */
@@ -267,6 +276,7 @@ tr:nth-child(even) {
       border-radius: 50%;
     }
  
+ /*style the help paragraph*/
     #help{
         color: #eee;
         font-size: 18px;
@@ -275,7 +285,8 @@ tr:nth-child(even) {
     b {
         font-size: 18px;
     }
- 
+
+ /*width of inputs*/
     #mail,
     #nummer,
     #navnRegistreing,
@@ -304,7 +315,32 @@ tr:nth-child(even) {
     .container input:checked ~ .checkmark:after {
       display: block;
     }
- 
+
+    @media only screen and (max-width: 950px) {
+      #msg_1, #msg_2,#msg_3{
+      width: 100%;
+       }
+
+    #mail,
+    #nummer,
+    #navnRegistreing{
+      width: 100%;
+    }
+    
+    .select {
+      position: relative;
+      display: flex;
+      width: 20em;
+      margin: 5px;
+      height: 3em;
+      width: 100%;
+      line-height: 3;
+      background: #5c6664;
+      border-radius: .25em;
+      margin: auto;
+    }
+}
+
     /* Style the indicator (dot/circle) */
     .container .checkmark:after {
       top: 9px;
@@ -325,6 +361,7 @@ tr:nth-child(even) {
     >
       <!-- One "tab" for each step in the form: -->
       <div id="tab1" class="tab">
+        <!--Contact info page-->
         <h1>Contact Information</h1>
           <hr/>
         <label>
@@ -372,7 +409,7 @@ tr:nth-child(even) {
           <center><div class="error_number"></div></center>
         </label>
       </div>
- 
+ <!--Instant validation scripts for first page-->
       <script>
         $(document).ready(function() {
           $('.email').change(function(event) {
@@ -433,6 +470,7 @@ tr:nth-child(even) {
  
  
       <div id="tab2" class="tab">
+ <!--study program page-->
  
         <h1>Choose your study program</h1>
         <hr/>
@@ -448,7 +486,7 @@ tr:nth-child(even) {
           />
           <span class="checkmark"></span>
         </label>
- 
+ <!--Study program-->
         <label class="container">
             <p class="p_element">Datateknologi</p>
           <input
@@ -460,7 +498,7 @@ tr:nth-child(even) {
           />
           <span class="checkmark"></span>
         </label>
- 
+ <!--Study program-->
         <label class="container">
             <p class="p_element">Elektronisk systemdesign og innovasjon</p>
           <input
@@ -472,7 +510,7 @@ tr:nth-child(even) {
           />
           <span class="checkmark"></span>
         </label>
- 
+ <!--Study program-->
         <label class="container">
             <p class="p_element">Industriell økonomi</p>
           <input
@@ -483,6 +521,7 @@ tr:nth-child(even) {
           />
           <span class="checkmark"></span>
         </label>
+        <!--Study program-->
  
         <label class="container">
             <p class="p_element">Produktutvikling og produksjon</p>
@@ -494,6 +533,7 @@ tr:nth-child(even) {
           />
           <span class="checkmark"></span>
         </label>
+        <!--Study program-->
  
         <label class="container">
             <p class="p_element">Kommunikasjonsteknologi</p>
@@ -505,6 +545,7 @@ tr:nth-child(even) {
           />
           <span class="checkmark"></span>
         </label>
+        <!--Study program-->
  
         <label class="container">
             <p class="p_element">Energi og miljø</p>
@@ -512,6 +553,7 @@ tr:nth-child(even) {
           id = "radio_7" name="Study field" value="Energi og miljø" />
           <span class="checkmark"></span>
         </label>
+        <!--Study program-->
  
         <label class="container">
             <p class="p_element">Bygg og miljøteknikk</p>
@@ -523,6 +565,7 @@ tr:nth-child(even) {
           />
           <span class="checkmark"></span>
         </label>
+        <!--Study program-->
  
         <label class="container">
             <p class="p_element">Ingeniørvitenskap og IKT</p>
@@ -534,6 +577,7 @@ tr:nth-child(even) {
           />
           <span class="checkmark"></span>
         </label>
+        <!--Study program-->
  
         <label class="container">
             <p class="p_element">Fysikk og matematikk</p>
@@ -545,6 +589,7 @@ tr:nth-child(even) {
           />
           <span class="checkmark"></span>
         </label>
+        <!--Study program-->
  
         <label class="container">
           <p class="p_element">Materialteknologi</p>
@@ -556,6 +601,7 @@ tr:nth-child(even) {
           />
           <span class="checkmark"></span>
         </label>
+        <!--Study program-->
        
         <label class="other_program">
           <input
@@ -565,13 +611,14 @@ tr:nth-child(even) {
           />
           <div class="others" id="others"></div>
         </label>
+        <!--Study program-->
       <label>
         <input class = "reset" type="button" id="reset" value="Reset" ></div>
       </label>
       </div>
       </div>
  
- 
+ <!--script to reset and send information to formspree-->
       <script type="text/javascript">
         //opprette element//
         var radio_1El = document.querySelector("#radio_1");
@@ -621,7 +668,8 @@ tr:nth-child(even) {
       }  
  
       </script>
-     
+     <!--create inputfeild when btn is pressed-->
+     <!--and reset function below-->
       <script>
         var innpakningEl = document.querySelector('.others');
         var resetEl = document.querySelector("#reset");
@@ -674,7 +722,7 @@ tr:nth-child(even) {
        
 </script>
  
-     <!--Here are the HTML-code for the Select element-->
+     <!--position priority page-->
       <div id="tab3" class="tab">
         <h1>Position priority</h1>
         <hr/>
@@ -927,7 +975,8 @@ tr:nth-child(even) {
         </div>
         </label>
       </div>
- 
+
+ <!--scipts on value that is going to be sendt to formspree-->
       <script type="text/javascript">
         //opprette element//
     var project_mEl = document.querySelector("#Project_m");
@@ -1250,7 +1299,7 @@ tr:nth-child(even) {
     document.getElementById("Group_har").style.backgroundColor = "#5c6664";
     document.getElementById("Group_per").style.backgroundColor = "#5c6664";
     document.getElementById("Group_con").style.backgroundColor = "#5c6664";
-   
+
  }
  
 </script>
@@ -1533,7 +1582,7 @@ tr:nth-child(even) {
             ></textarea></center>
           </label>
         </div>
-        <center><input type="checkbox" id="box">I consent to AscendNTNU storing the information given until the admission period is over</input></center>
+        <center><input type="checkbox" id="box">I consent to AscendNTNU storing the information given <br/> until the admission period is over</input></center>
         <br>
         <center><button type="submit" class="submit">
                      Submit
@@ -1561,7 +1610,7 @@ tr:nth-child(even) {
       </div>
     </form>
  
-   <!--Here is the function-->
+   <!--Here is the function for submtion and validation before submiting form to formspree-->
     <script type="text/javascript">
       $(document).ready(function() {
         $('.submit').click(function(event) {
