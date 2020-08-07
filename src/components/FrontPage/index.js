@@ -18,7 +18,7 @@ export class FrontPage extends Component {
     super()
     this.state = {
       /*To remove pop-up window, Change statement to false */
-      showModal: false,
+      showModal: true,
     }
 
     this.handleOpenModal = this.handleOpenModal.bind(this)
@@ -57,8 +57,7 @@ export class FrontPage extends Component {
             </div>
             <div class="text">
               <p>
-                We are recruiting for a new Board and Technical group leaders
-                for Team 2021. <br></br>
+                We are recruiting for a new members for Team 2021. <br></br>
                 <br></br> To apply or read more about these positions visit our{' '}
                 <a id="apply" href="https://ascendntnu.no/join">
                   Join page
