@@ -60,7 +60,7 @@ export class JoinPage extends Component {
           <a
             id="styled"
             type="button"
-            href="url('${ASSETS_URL}/images/assets/survey.html')"
+            href={ASSETS_URL + '/images/assets/survey.html'}
           >
             Application for team 2021 has ended
           </a>
