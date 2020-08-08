@@ -158,15 +158,16 @@ export class JoinPage extends Component {
           >
             <hr />
             <p>
-              The Hardware group is responsible for developing and testing the
-              drone itself, but also all other physical systems that comes with
-              it. This includes design of the airframe, strength calculations
-              and simulations, circuit design and component layout. This years’
-              mission also demands complex electromechanical systems that needs
-              development and optimizing. After design is completed all the
-              different parts needs to be produced and assembled into one
-              complete system. Do you like working with both design and
-              practical tasks? Then apply for a position in our Hardware group!
+              The Artificial Intellience group works with the drones artificial
+              intelligence. Through development of different machine learning
+              models we control the world view and decision making of the drone,
+              which is critical for solving the mission. The drone has know
+              where it is, efficiently decide where to fly to search for its
+              target, and be able to predict the movement of other objects using
+              cameras. In the AI group you will get to program how a drone that
+              flies at speeds up to 100km/h interprets its surroundings,
+              predicts movement of objects and decides where to fly next using
+              state of the art tools in artificial intelligence.
             </p>
             <br />
             <p>
@@ -181,8 +182,8 @@ export class JoinPage extends Component {
             <br></br>
             <i className="key-words">
               {' '}
-              Nøkkelord: #CAD, #PCB-design, #RC, #aerodynamikk,
-              #elektromekanikk, #lodding, #3D-printing
+              Keywords: machine learning, deep learning, world mapping, neural
+              networks
             </i>
             {/* text for Cheif Engineer <p>
               The Chief Engineer and Deputy Chief Engineer have managerial
@@ -421,8 +422,8 @@ export class JoinPage extends Component {
             <br></br>
             <i className="key-words">
               {' '}
-              Keywords: #CAD, #PCB-design, #RC, #aerodynamics,
-              #electromechanics, #soldering, #3D-printing DevOps
+              Keywords: CAD, PCB-design, RC, aerodynamics, electromechanics,
+              soldering, 3D-printing DevOps
             </i>
             {/* text for Head of Economics <p>
               The Head of Economics controls the use of resources in the
