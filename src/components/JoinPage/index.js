@@ -57,11 +57,7 @@ export class JoinPage extends Component {
     let positions = {
       en: [
         <Section titleText="Positions we offer" key="2">
-          <a
-            id="styled"
-            type="button"
-            href={ASSETS_URL + '/images/assets/survey.html'}
-          >
+          <a id="styled" type="button" href="forum.html">
             Application for team 2021 has ended
           </a>
 
