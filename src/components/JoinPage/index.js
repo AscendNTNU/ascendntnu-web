@@ -262,15 +262,14 @@ export class JoinPage extends Component {
           >
             <hr />
             <p>
-              The Hardware group is responsible for developing and testing the
-              drone itself, but also all other physical systems that comes with
-              it. This includes design of the airframe, strength calculations
-              and simulations, circuit design and component layout. This years’
-              mission also demands complex electromechanical systems that needs
-              development and optimizing. After design is completed all the
-              different parts needs to be produced and assembled into one
-              complete system. Do you like working with both design and
-              practical tasks? Then apply for a position in our Hardware group!
+              Control has the responsibility to make sure that the drone is able
+              to move safely from A to B and is in many ways the link between
+              software and the physical world. In the Control group you will get
+              to know many different systems like state machines, obstacle
+              avoidance and sensor fusion. Control will let you work with
+              development of software and testing in a simulator, as well as
+              getting to know all the physical systems on the drone. Does this
+              sound interesting? Apply for the Control group!
             </p>
             <br />
             <p>
@@ -285,8 +284,8 @@ export class JoinPage extends Component {
             <br></br>
             <i className="key-words">
               {' '}
-              Keywords: #CAD, #PCB-design, #RC, #aerodynamics,
-              #electromechanics, #soldering, #3D-printing DevOps
+              Keywords: gimball control, obstacle avoidance, state estimation,
+              control engineering.
             </i>
             {/* text for Project manager <p>
               The Project Manager is the chair of the board and works to further
@@ -387,8 +386,8 @@ export class JoinPage extends Component {
             <br></br>
             <i className="key-words">
               {' '}
-              Keywords: #CAD, #PCB-design, #RC, #aerodynamics,
-              #electromechanics, #soldering, #3D-printing DevOps
+              Keywords: computer vision, state estimation, digital signal
+              processing, data analysis, machine learning, SLAM, data
             </i>
           </SubSection>
 
