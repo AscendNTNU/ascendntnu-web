@@ -2058,3 +2058,8 @@ p#Modul_txt {
   object-fit: cover;
   margin-top: 100px;
 }
+
+.benefits {
+  margin: auto;
+  width: 60%;
+}

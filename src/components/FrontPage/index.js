@@ -190,7 +190,7 @@ export class FrontPage extends Component {
           <div class="padding">
             <div class="container">
               <div class="row">
-                <div class="col-sm-6">
+                <div class="benefits">
                   <br />
                   <br />
                   <br />
@@ -213,6 +213,7 @@ export class FrontPage extends Component {
                     </li>
                   </ul>
                 </div>
+
                 <div class="col-sm-6">
                   <br />
                   <br />
