@@ -942,7 +942,7 @@ export class JoinPage extends Component {
               rel="
           noopener noreferrer "
             >
-              Application for team 2021 is started
+              Application for team 2021 has started
             </a>
           </h4>{' '}
           {positions[this.state.language][1]}
