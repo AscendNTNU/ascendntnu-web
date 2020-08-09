@@ -62,7 +62,7 @@ export class JoinPage extends Component {
             type="button"
             href={ASSETS_URL + '/images/assets/survey.html'}
           >
-            Application for team 2021 starts soon
+            Click here to apply for Team 2021!
           </a>
 
           <hr />
@@ -932,7 +932,7 @@ export class JoinPage extends Component {
             href="https://docs.google.com/forms/d/e/1FAIpQLSdgvQ1jVRs8iJmglmyGoaWiigi1E-Q8AdNjzrBWqwz0D9ukCA/viewform"
           >
             {' '}
-            Application for team 2021 is starting soon{' '}
+            Application for team 2021 has started{' '}
           </a>
           <h4>
             <a
@@ -942,7 +942,7 @@ export class JoinPage extends Component {
               rel="
           noopener noreferrer "
             >
-              Application for team 2021 is starting soon
+              Application for team 2021 is started
             </a>
           </h4>{' '}
           {positions[this.state.language][1]}
