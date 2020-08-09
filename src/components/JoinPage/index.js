@@ -66,7 +66,7 @@ export class JoinPage extends Component {
           </a>
 
           <hr />
-          <p>
+          {/*<p>
             <div class="paragraf_T"> The Board</div> Is responsible for the
             organizational and managerial tasks related to running Ascend NTNU.
             You will coordinate the high level work of the team, ensuring that
@@ -81,7 +81,7 @@ export class JoinPage extends Component {
             student organization and shaping the team and organization going
             forward. The board member positions offered for Team 2021 are the
             following:
-          </p>
+          </p>*/}
 
           <center>
             <ul className="anchor-list">
