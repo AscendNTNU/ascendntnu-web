@@ -906,7 +906,7 @@ export class JoinPage extends Component {
               fontSize: '1.4em',
             }}
           ></p>
-          <SubSection titleText=" Application for team 2021">
+          <SubSection titleText=" Application for team 2021 has started">
             <hr />
             <p>
               Ascend NTNU develops an autonomous drone and competes in the
