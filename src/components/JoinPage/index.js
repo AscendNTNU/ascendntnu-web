@@ -60,7 +60,8 @@ export class JoinPage extends Component {
           <a
             id="styled"
             type="button"
-            href={ASSETS_URL + '/images/assets/survey.html'}
+            /*href={ASSETS_URL + '/images/assets/survey.html'}*/
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfpeI_3Dk6OCxfIqooM8nzatSlpTLV-Y104cq323-eqnzRXAw/viewform?usp=sf_link"
           >
             Click here to apply for Team 2021!
           </a>
