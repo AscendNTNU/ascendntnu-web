@@ -52,7 +52,7 @@ export class FrontPage extends Component {
             <div class="bilde">
               <img
                 id="bilde"
-                src={ASSETS_URL + '/images/assets/join_front.jpg'}
+                src={ASSETS_URL + '/images/assets/front_2020.jpg'}
               />
             </div>
             <div class="text">
