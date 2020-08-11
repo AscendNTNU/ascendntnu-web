@@ -2007,9 +2007,11 @@ p#Modul_txt {
 /*photo on modual*/
 #bilde {
   border: 0;
-  height: 300px;
+  height: 250px;
   float: left;
+  border-radius: 20px;
   margin-left: 200px;
+  padding-right: 10px;
 }
 
 /*text on modual*/
