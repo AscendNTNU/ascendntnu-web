@@ -898,7 +898,7 @@ export class JoinPage extends Component {
         <Section titleText="Reach new heights - Join Ascend NTNU" key="1">
           <hr />
           <img
-            src={ASSETS_URL + '/images/assets/join_front.jpg'}
+            src={ASSETS_URL + '/images/assets/front_2020.jpg'}
             alt="Group 2018"
             className="fullscale-image"
           />
