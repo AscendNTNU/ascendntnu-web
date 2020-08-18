@@ -937,7 +937,7 @@ export class JoinPage extends Component {
           </a>
           <h4>
             <a
-              href="https://docs.google.com/forms/d/1kKJENDVeQ-Us7-hCmK3bh-BCrufqKowE07zHvejpUEM/viewform?edit_requested=true"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfpeI_3Dk6OCxfIqooM8nzatSlpTLV-Y104cq323-eqnzRXAw/viewform?usp=sf_link"
               target="
           _blank "
               rel="
