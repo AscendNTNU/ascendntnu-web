@@ -18,7 +18,7 @@ export class FrontPage extends Component {
     super()
     this.state = {
       /*To remove pop-up window, Change statement to false */
-      showModal: true,
+      showModal: false,
     }
 
     this.handleOpenModal = this.handleOpenModal.bind(this)

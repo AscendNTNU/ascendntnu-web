@@ -2028,6 +2028,7 @@ p#Modul_txt {
   font-size: 20px;
   transition: all 0.5s;
 }
+
 #apply:hover {
   transition-duration: 0.5s;
   font-size: 22px;
