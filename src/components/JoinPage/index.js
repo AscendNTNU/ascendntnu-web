@@ -907,7 +907,7 @@ export class JoinPage extends Component {
               fontSize: '1.4em',
             }}
           ></p>
-          <SubSection titleText=" Application for team 2021 has started">
+          <SubSection titleText=" Application for team 2021 has ended">
             <hr />
             <p>
               Ascend NTNU develops an autonomous drone and competes in the
@@ -933,7 +933,7 @@ export class JoinPage extends Component {
             href="https://docs.google.com/forms/d/e/1FAIpQLSdgvQ1jVRs8iJmglmyGoaWiigi1E-Q8AdNjzrBWqwz0D9ukCA/viewform"
           >
             {' '}
-            Application for team 2021 has started{' '}
+            Application for team 2021 has ended{' '}
           </a>
           <h4>
             <a
@@ -943,7 +943,7 @@ export class JoinPage extends Component {
               rel="
           noopener noreferrer "
             >
-              Application for team 2021 has started
+              Application for team 2021 has ended
             </a>
           </h4>{' '}
           {positions[this.state.language][1]}
