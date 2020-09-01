@@ -904,7 +904,7 @@ export class JoinPage extends Component {
           />
           <p
             style={{
-              fontSize: '1.4em',
+              fontSize: '1.5em',
             }}
           ></p>
           <SubSection titleText=" Application for team 2021 has ended">
