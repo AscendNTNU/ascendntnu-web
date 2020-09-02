@@ -7,7 +7,11 @@ admin.site.register(Member)
 admin.site.register(Sponsor)
 admin.site.register(History)
 
+from django.contrib.admin import AdminSite
+from django.utils.translation import ugettext_lazy
+
 @admin.register(BlogPost)
 class BlogPostAdmin(admin.ModelAdmin):
     form = Blog_Post_Form
     fields = 'layout', 'title', 'date', 'categories', 'author', 'blog_content'
+

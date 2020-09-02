@@ -16,7 +16,6 @@ services:
 
   dev:
     build: .
-    command: npm start
     environment:
       - NODE_ENV
     ports:
@@ -30,7 +29,7 @@ services:
   build:
     build: .
     user: ${DOCKER_USER-1000}:${DOCKER_USER-1000}
-    command: sh -c "npm install && npm run build"
+    command: sh -c "npm run build"
     volumes:
       - .:/srv/ascend
     working_dir: /srv/ascend
@@ -40,7 +39,7 @@ services:
     tty: true
 
   api:
-    image: ascendntnu/apiv2:2.1.1
+    build: apiv2
     command: ./docker-setup.sh
     depends_on:
       - db
@@ -49,3 +48,4 @@ services:
     tty: true
     volumes:
       - ./apiv2:/code:rw
+      - ./apiv2:/usr/src/app

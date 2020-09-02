@@ -142,3 +142,9 @@ STATIC_URL = '/apiv2/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'apiv2/static'),
 )
+
+# Variables used for customization of django admin page
+ADMIN_SITE_HEADER = "Ascend api v2"
+ADMIN_SITE_INDEX_TITLE = "Objekter"
+ADMIN_SITE_TITLE = "Ascend api v2"
+

@@ -1,12 +1,15 @@
-FROM python:3
+FROM alpine:3.7
 
-ENV PYTHONUNBUFFERED 1
-ENV WS /code
+WORKDIR /usr/src/app
 
-# Create workspace directory
-RUN mkdir -p $WS
-WORKDIR $WS
+COPY requirements.txt .
 
-# Install requirements.txt
-ADD requirements.txt $WS
-RUN pip install -r requirements.txt
+RUN apk update && \
+ apk add python3 postgresql-libs && \
+ apk add --virtual .build-deps gcc python3-dev musl-dev postgresql-dev && \
+ python3 -m pip install -r requirements.txt --no-cache-dir && \
+ apk --purge del .build-deps
+
+RUN apk add --no-cache bash
+
+COPY . .
